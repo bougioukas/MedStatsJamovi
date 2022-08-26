@@ -1,0 +1,1011 @@
+# Descriptive statistics {#sec-descriptive}
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+
+library(scales)
+library(patchwork)
+library(gridExtra)
+library(ggdist)
+
+
+library(readr)
+data_corn <- read_csv(here("data", "data_corn.csv"))
+
+
+data_corn <- data_corn %>% 
+ mutate(group = factor(group, levels = c(1, 2), 
+                              labels=c('scalpel', 'corn plaster')),
+        center = factor(center, levels = c(1, 2, 3, 4, 5,  9,  11 ),
+                          labels = c('Central', 'Manor', 'Jordanthorpe', 'Limbrick',
+                                     'First Park', 'Huddersfield', 'Darnall')),
+        gender = factor(gender, levels = c(1, 2), 
+                              labels=c('male', 'female')),
+        pain_baseline = round(pain_baseline, 3),
+        eq5d_baseline = round(eq5d_baseline, 3)
+         
+ )
+```
+
+**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs.
+
+@tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
+
+::: {.callout-note icon="false"}
+## **Example: Summary table with characteristics of patients with foot corns treated with salicylic acid plasters or scalpel debridement [@farndon2013]**
+
++----------------------+-----------------+---------------------+-------------------+
+|                      |                 | Corn Plaster, n (%) | Scalpel, n (%)    |
+|                      |                 |                     |                   |
+|                      |                 | (n=101)             | (n=101)           |
++======================+=================+=====================+===================+
+| **Gender**           | Male            | 42 (42)             | 42 (42)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Female          | 59 (59)             | 59 (58)           |
++----------------------+-----------------+---------------------+-------------------+
+| **Center**           | Central         | 58 (57)             | 52 (52)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Manor           | 13 (13)             | 20 (20)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Jordanthorpe    | 10 (10)             | 14 (14)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Limbrick        | 3 (3)               | 6 (6)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Firth Park      | 7 (7)               | 4 (4)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Huddersfield    | 5 (5)               | 4 (4)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Darnall         | 5 (5)               | 1 (1)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Smoking**          | Non-smoker      | 34 (35)             | 40 (40)           |
+|                      |                 |                     |                   |
+| **History**          |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Previous smoker | 22 (22)             | 16 (16)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Current smoker  | 42 (43)             | 43 (43)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Missing         | 3 (3)               | 2 (2)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Numbers of corns** | 1               | 48 (48)             | 66 (65)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | 2               | 28 (28)             | 23 (23)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | 3               | 24 (24)             | 12 (12)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Missing         | 1 (1)               | 0 (0)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Age (yrs),**       |                 | 58.5 (15.6)         | 59.7 (17.5)       |
+|                      |                 |                     |                   |
+| **mean (sd)**        |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+| **Corn size (mm),**  |                 | 4 (3, 5)            | 3 (3, 5)          |
+|                      |                 |                     |                   |
+| **median (IQR)**     |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+| **EQ-5D,**           |                 | 0.73 (0.59, 0.80)   | 0.73 (0.66, 0.80) |
+|                      |                 |                     |                   |
+| **median (IQR)**     |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+
+: Baseline characteristics of patients with foot corns by treatment group. [@farndon2013] {#tbl-corn}
+
+In this example since we have 101 patients in each randomized group the percentages are almost the same as the raw counts. However, for most studies we are unlikely to have exactly 100 participants in each group!
+:::
+
+ 
+
+## Summarizing Categorical Data (Frequency Statistics)
+
+Binary data are the simplest type of data. Each individual has a label which takes one of two values such as male or female, corn healed or not healed. A simple summary would be to count the different types of labels and find the **frequencies**. The set of frequencies of all the possible categories is called the **frequency distribution** of the variable.
+
+However, a raw count is rarely useful. For example, in @tbl-corn there are more non-smokers in the scalpel group (40 out of 99 or 40%) compared to corn plaster group (34 out of 98 or 35%). It is only when this count is expressed as a proportion (relative frequency) that it becomes useful. Hence the first step to analyzing categorical data is to count the number of observations in each category (frequencies) and express them as **proportions** of the total sample size (relative frequencies).
+
+::: {.callout-note icon="false"}
+## **Example - Distribution of treatment center and center by randomized group for 202 patients with foot corns [@farndon2013]**
+
+Farndon et al. (2013) reports a RCT that investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. As we have already mentioned one categorical variable recorded was the center where each trial participant was treated. Trial participants were treated at one of seven centers and the corresponding categories as displayed in @tbl-centers1. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. @tbl-centers1 clearly shows that the majority (54.5%) of patients were treated at the "Central" treatment center.
+
+| Treatment center | Frequency | Percentage |
+|------------------|-----------|------------|
+| Central          | 110       | 54.5%      |
+| Manor            | 33        | 16.3%      |
+| Jordanthorpe     | 24        | 11.9%      |
+| Limbrick         | 9         | 4.5%       |
+| Firth Park       | 11        | 5.4%       |
+| Huddersfield     | 9         | 4.5%       |
+| Darnall          | 6         | 3.0%       |
+| **Total**        | 202       | 100.0%     |
+
+: Frequency and percentage distributions of treatment center for 202 patients with foot corns [@farndon2013] {#tbl-centers1}
+
+In addition to tabulating each variable separately, we might be interested in whether the distribution of patients across each center is the same for each randomized group. @tbl-centers2 shows the distribution of the number of patients treated at center by randomized group; in this case it can be said that the treatment center has been ***cross-tabulated*** with randomized group. @tbl-centers2 is an example of a ***contingency*** table with seven rows (representing treatment center) and two columns (randomized group). Note that we are interested in the distribution of patients across the seven centers in each randomized group (to see whether or not we have similar numbers of patients randomized to each treatment within each center), and so the percentages add to 100 down each column, rather than across the rows.
+
+|              | Corn plaster, n(%) | Scalpel, n(%) | All, n(%)  |
+|--------------|--------------------|---------------|------------|
+|              |                    |               |            |
+| Central      | 58 (57)            | 52 (52)       | 110 (54.5) |
+| Manor        | 13 (13)            | 20 (20)       | 33 (16.3)  |
+| Jordanthorpe | 10 (10)            | 14 (14)       | 24 (11.9)  |
+| Limbrick     | 3 (3)              | 6 (6)         | 9 (4.5)    |
+| Firth Park   | 7 (7)              | 4 (4)         | 11 (5.4)   |
+| Huddersfield | 5 (5)              | 4 (4)         | 9 (4.5)    |
+| Darnall      | 5 (5)              | 1 (1)         | 6 (3.0)    |
+| **Total**    | 101 (100)          | 101 (100)     | 202 (100)  |
+
+: Cross-tabulation distribution of treatment center by randomized group for 202 patients with foot corns [@farndon2013] {#tbl-centers2}
+:::
+
+ 
+
+::: {.callout-tip icon="false"}
+## Recommendations for reporting numbers and percentages
+
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Recommendation                                                                      | Correct expression                                                                           |
++=====================================================================================+==============================================================================================+
+| **Numbers**                                                                         |                                                                                              |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| In a sentence, numbers less than 10 are words.                                      | Smoking history was missing from **three** patients in the corn plaster study group.         |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+|                                                                                     |                                                                                              |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| In a sentence, numbers 10 or more are numbers.                                      | There are **34** non-smokers patients in the corn plaster group.                             |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+|                                                                                     |                                                                                              |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Use words to express any number that begins a sentence, title or heading.           | **Thirty-four** non-smokers patients recorded in the cord plaster group.                     |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+|                                                                                     |                                                                                              |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| **Percentages**                                                                     |                                                                                              |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Report percentages to only one decimal place if the sample size is larger than 100. | In the sample of **202** patients, **4.5%** were treated at the "Limbrick" treatment center. |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+|                                                                                     |                                                                                              |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Report percentages with no decimal places if the sample size is less than 100.      | In the sample of **98** patients in the corn plaster group, **35%** were non-smokers.        |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+|                                                                                     |                                                                                              |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Do not use percentages if the sample size is less than 20.                          | From **16** previous smokers in the scalpel group, **7** were females.                       |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+: Reporting numbers and percentages [examples relevant to the data provided in @farndon2013 study] {#tbl-rules1}
+:::
+
+ 
+
+## Displaying Categorical Data
+
+While frequency tables are extremely useful, the best way to investigate a data set is to plot it. For categorical variables, such as gender and treatment center, it is straightforward to present the number in each category, usually indicating the frequency and percentage of the total number of patients. When shown graphically this is called a **bar plot**.
+
+ 
+
+**A. Simple Bar Plot**
+
+A simple bar plot is an easy way to make comparisons across categories. @fig-barplot1 shows the centers where 202 patients with foot corns were treated in the trial of @farndon2013. Along the horizontal axis (x-axis) are the different treatment centers whilst on the vertical axis (y-axis) is the percentage. The height of each bar represents the percentage of the total patients in that category. For example, it can be seen that the percentage of participants who were treated in the "Central" center was about 55%.
+
+```{r}
+#| echo: false
+#| label: fig-barplot1
+#| fig-cap: Bar plot showing where 202 patients with corns were treated [@farndon2013].
+#| fig-width: 7
+
+data_centers <- data_corn %>% 
+  count(center) %>% 
+  mutate(pct = n / sum(n))
+
+
+ggplot(data_centers, aes(x = center, y = pct)) +
+  geom_col(width=0.65, fill = "steelblue4") +
+  geom_text(aes(label=paste0(round(pct*100, 1), "%")),
+            vjust=1.6, color = "white", size = 3) +
+  labs(x = "Treatment center", y = "Percent",
+       subtitle = "Number of patients: 202") +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  theme(
+    axis.title=element_text(size = 11),
+    axis.text=element_text(size = 11)
+  )
+```
+
+::: {.callout-tip icon="false"}
+## **Basic Properties of Simple Bar plot**
+
+-   All rectangular bars should have equal width and should have equal space between them.
+
+-   The rectangular bars can be drawn horizontally or vertically.
+
+-   The height of the rectangular bar is equivalent to the data they represent.
+
+-   The rectangular bars must be plotted against a common zero-valued baseline.
+:::
+
+ 
+
+**B. Side-by-side and Grouped Bar Plots**
+
+If the sample is further classified into whether the patient was treated with corn plasters or scalpel then it becomes impossible to present the data as a single bar plot. We could present the data as a side by side bar plot (see @fig-barplot2) but is preferable to present the data in one graph with the same scales and axes to make the visual comparisons easier (grouped bar plot) (see @fig-barplot3).
+
+```{r}
+#| echo: false
+#| label: fig-barplot2
+#| fig-cap: Side-by-side bar plot showing where 202 patients with corns were treated by randomized group [@farndon2013].
+#| fig-width: 9.5
+#| fig-height: 5
+
+data_centers2 <- data_corn %>% 
+  count(center, group) %>% 
+  group_by(group) %>% 
+  mutate(pct = n / sum(n))
+
+
+ggplot(data_centers2) + 
+  geom_col(aes(center, pct, fill = group), width=0.7, position = "dodge") +
+  geom_text(aes(center, pct, label = paste0(round(pct*100, 0), "%"), 
+                group = group), color = "white", size = 3,vjust=1.2,
+            position = position_dodge(width = .9)) +
+labs(x = "Treatment center", y = "Percent",
+     caption = "Scalpel: n=101, Corn plaster: n=101") +
+  scale_y_continuous(labels = scales::percent) +
+  ggsci::scale_fill_jco() +
+  theme_minimal() +
+  theme(
+    legend.position="none",
+    axis.title=element_text(size = 11),
+    axis.text=element_text(size = 11),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+   facet_wrap(~group, ncol = 2)
+
+```
+
+```{r}
+#| echo: false
+#| label: fig-barplot3
+#| fig-cap: Grouped bar plot showing where 202 patients with corns were treated by randomized group [@farndon2013].
+#| fig-width: 9
+#| fig-height: 5
+#| 
+
+ggplot(data_centers2) + 
+  geom_col(aes(center, pct, fill = group), width = 0.8, position = "dodge") +
+  geom_text(aes(center, pct, label = paste0(round(pct*100, 0), "%"), 
+                group = group), color = "white", size = 3,vjust=1.2,
+            position = position_dodge(width = .9)) +
+labs(x = "Treatment center", y = "Percent",
+     caption = "Scalpel: n=101, Corn plaster: n=101") +
+  scale_y_continuous(labels = scales::percent) +
+  ggsci::scale_fill_jco() +
+  theme_minimal() +
+  theme(
+    axis.title=element_text(size = 11),
+    axis.text=element_text(size = 11)
+  )
+
+
+```
+
+::: {.callout-tip icon="false"}
+## Report the actual total sample sizes for each group
+
+If we do use the relative frequency scale as we have, then it is recommended to report the actual total sample sizes for each group (e.g., in the legend or caption). In this way, given the total sample size and relative frequency (from the height of the bars) we can work out the actual numbers treated in each center.
+:::
+
+ 
+
+**C. Stacked Bar Plot**
+
+Unlike a side-by-side or grouped graphs, **Stacked Bar Plots** segment their bars. A **100% Stack Bar Plot** shows the percentage-of-the-whole of each group and are plotted by the percentage of each value to the total amount in each group. This makes it easier to see if relative differences exist between quantities in each group (see @fig-stacked).
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-stacked
+#| fig-cap: A horizontal 100% stacked bar plot showing the distribution of gender by randomized group [@farndon2013].
+#| fig-width: 7
+#| fig-height: 1.8
+
+data_stacked <- data_corn%>% 
+  group_by(group) %>% 
+  count(gender) %>% 
+  mutate(pct = n / sum(n))
+
+
+ggplot(data_stacked, aes(x = group, y = pct, fill = gender))+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label = paste0(round(pct*100, 0), "%"), y = pct), 
+            position = position_stack(vjust = 0.5))+
+  coord_flip()+
+  ggsci::scale_fill_simpsons() +
+  scale_y_continuous(labels = scales::percent)+
+  labs(x = "Treatment Group", y = "Percent", fill = "Gender") +
+  theme_minimal() +
+  theme(
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 12),
+    axis.title=element_text(size = 12),
+    axis.text=element_text(size = 12)
+  )
+
+```
+
+In @fig-stacked the bars are divided into two segments only (i.e., female and male) so it is easy to read the values of each segment and to compare a specific segment through the entire set of bars (in our case the percentages are equal). This comparison can be easily made because each segment is aligned through the entire set of bars (female to the left and men to the right). If more segments were added, however, the segments in the middle would not be aligned to the left or right, which would make comparisons difficult (see @fig-stacked2).
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-stacked2
+#| fig-cap: A horizontal 100% stacked bar plot showing the distribution of treatment centers by randomized group [@farndon2013].
+#| fig-width: 11.5
+#| fig-height: 2.8
+
+data_stacked2 <- data_corn%>% 
+  group_by(group) %>% 
+  count(center) %>% 
+  mutate(pct = n / sum(n))
+
+
+ggplot(data_stacked2, aes(x = group, y = pct, fill = center))+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label = paste0(round(pct*100, 0), "%"), y = pct), 
+            position = position_stack(vjust = 0.5))+
+  coord_flip()+
+  ggsci::scale_fill_simpsons() +
+  scale_y_continuous(labels = scales::percent)+
+  labs(x = "Treatmengt group", y = "Percent", fill = "Treatment Center") +
+  theme_minimal() +
+  theme(
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 12),
+    axis.title=element_text(size = 12),
+    axis.text=element_text(size = 12)
+  )
+
+```
+
+::: callout-important
+## Stacked bar plots tend to become confusing when the variable has many levels
+
+One issue to consider when using stacked bar plots is the number of variable levels: when dealing with many categories, stacked bar plots tend to become rather confusing.
+:::
+
+ 
+
+## Summarizing Numerical Data
+
+A quantitative measurement contains more information than a categorical one, and so summarizing these data is more complex. One chooses summary statistics to condense a large amount of information into a few intelligible numbers, the sort that could be communicated verbally. The two most important pieces of information about a quantitative measurement are **'where is it?'** and **'how variable is it?'** These are categorized as **measures of location** (or sometimes 'central tendency') and **measures of spread** or variability.
+
+::: {.callout-tip icon="false"}
+## Two summary measures should be reported for a numerical variable
+
+A measure of **location** (where the center of the distribution of the values is located) and **variability** (how widely the values are spread above and below the central value) provides an informative but brief summary of a set of observations.
+:::
+
+ 
+
+### Measures of Location
+
+**A. Sample Mean or Average**
+
+Let $x_1, x_2,...,x_{n-1}, x_n$ be a set of *n* measurements. The arithmetic sample mean or average, $\bar{x}$ (pronounced x bar), is simply the sum of the observations divided by their number *n*, thus:
+
+$$
+\bar{x}= \frac{Sum \ of \ all \ sample \ values }{Size \ of \ sample}= \frac{x_1 + x_2 + ... + x_{n-1} + x_n}{n}
+$$
+
+This formula is entirely correct, but it's too long, so we make use of the ***summation symbol*** $\scriptstyle\sum$ to shorten it:
+
+$$\bar{x}=\frac{\sum_{i=1}^{n}x_{i}}{n}=\frac{1}{n}\sum_{i=1}^{n}x_{i}$$ {#eq-mean}
+
+In the above @eq-mean, $x_{i}$ represents the individual sample values and ${\sum_{i=1}^{n}x_{i}}$ their sum. The Greek letter ${\Sigma}$ (sigma) is the Greek capital 'S' and stands for 'sum' and simply means 'add up the *n* observations $x_{i}$ from the 1st to the last (nth)'.
+
+Usually, we cannot measure the population mean ${\mu}$, which is the unknown constant that we want to estimate using the sample mean $\bar{x}$.
+
+```{r}
+#| include = F
+
+x <- c(2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3)
+
+x2 <- c(2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 100, 3)
+
+```
+
+ 
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Mean - Corn size data (mm)
+
+In the RCT by @farndon2013, the baseline size of the corn (as its widest diameter in mm) was measured by a podiatrist (foot specialist). Consider the following 16 baseline corn sizes selected from the patients:
+
+2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3
+
+ 
+
+The sum of the 16 observations is:
+
+$2 + 2 + 6 + 3 + 4 + 2 + 2 + 5 + 3 + 4 + 1 + 2 + 6 + 3 + 10 + 3$ = `r sum(x)`
+
+ 
+
+Thus, the arithmetic mean is:
+
+$\bar{x}$ = `r sum(x)`/`r length(x)` = `r mean(x)` mm or `r round(mean(x), digits = 1)` mm. It is usual to report one more decimal place for the mean than the data recorded.
+:::
+
+The major advantage of the mean is that it uses all the data values, while the main disadvantage is its sensitivity to very large or very small values, which might be **outliers** (unusual values). For example, if we entered "100 mm" instead of "10 mm", for the 15th patient, in the calculation of the mean, we would find the mean changed from `r round(mean(x), digits = 1)` to `r round(mean(x2), digits = 1)`. It does not necessarily follow, however, that outliers should be excluded from the final data summary, or that they result from a human error. Outliers can be legitimate anomalies that are vital for capturing information on the subject of interest.
+
+If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of individuals with value 1, and this can also be expressed as a percentage. In @farndon2013 data, the cases in which the corn was healed are coded as '1s' and the cases in which the corn was not healed as '0s'. The corn had healed in 52 out of 189 patients (0.28 or 28%), which is equal to the "mean" of this variable `r round(mean(data_corn$complete_healed, na.rm=T), digits = 2)`.
+
+::: {.callout-tip icon="false"}
+## Advantages and Disadvantages of arithmetic mean
+
+**Advantages of mean**
+
+1.  is simple to understand and easy to calculate
+2.  uses all the data values in the calculation
+3.  is algebraically defined and thus mathematically manageable
+4.  has a known sampling distribution
+
+ 
+
+**Disadvantages of mean**
+
+1.  is highly affected by the presence of a few abnormally high or abnormally low values (outliers)
+2.  is not an appropriate average for highly skewed (asymmetrical) distributions
+3.  cannot be determined if any item of observation is missing
+4.  cannot be determined easily by inspection of the data
+:::
+
+ 
+
+**B. Median**
+
+The **sample median**, *md*, is an alternative measure of location, which is less sensitive to outliers. For observed values $x_1, x_2,...,x_{n-1}, x_n$ the median is calculated by first sorting the observed values (i.e., arranging them in an ascending/descending order) and selecting the middle one. If the sample size *n* is **odd**, the median is the number at the middle of the ordered observations. If the sample size is **even**, the median is the average of the two middle numbers.
+
+Therefore, the sample median, *md*, of *n* observations is:
+
+-   the $\frac{n+1}{2}$th ordered value, $md=x_{\frac{n+1}{2}}$, if *n* is odd.
+
+-   the average of the $\frac{n}{2}$th and $\frac{n+1}{2}$th ordered values, $md=\frac{1}{2}(x_{\frac{n}{2}}+x_{\frac{n+1}{2}})$, if *n* is even.
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Median - Corn size data (mm)
+
+**1st case: Even observations**
+
+> We have selected 16 baseline corn sizes:
+>
+> **original data:** 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3
+>
+> We arrange the data in an ascending order:
+>
+> **ordered data:** 1, 2, 2, 2, 2, 2, 3, **3**, **3**, 3, 4, 4, 5, 6, 6, 10
+>
+> As the number of observations are **even** (n=16), the median is the average of the two middle ordered numbers (the eighth and ninth): (3+3)/2=3 mm.
+
+ 
+
+**2nd case: Odd observations**
+
+> Suppose we select an additional 17th subject with corn size of 10 mm, so the data are as following:
+>
+> **original data:** 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3, 10
+>
+> We arrange the data in an ascending order:
+>
+> **ordered data:** 1, 2, 2, 2, 2, 2, 3, 3, **3**, 3, 4, 4, 5, 6, 6, 10, 10
+>
+> The median would be the 9th ordered observation, which is also 3 mm.
+
+ 
+
+**Main Advantages and Disadvantages of median**
+
+The median has the advantage that is not affected by outliers, so for example, the median in the data would be unaffected by replacing the largest corn size of 10 mm with 100 mm. However, it does not take into account the precise value of each observation and hence does not use all information available in the data.Additionally, it is not a good measure of central tendency when there are heavy ties in the data.
+:::
+
+ 
+
+**C. Mode**
+
+A third measure of location is termed the **mode**. This is the value that occurs **most frequently**, or, if the data are grouped, the group with the highest frequency. It is not used much in statistical analysis, since its value depends on the accuracy with which the data are measured and ignores most of the information; although it may be useful for categorical data to describe the most frequent category. Note that some data sets do not have a mode because each value occurs only once.
+
+However, the expression **'bimodal'** distribution is used to describe a distribution with **two peaks** in it. This can be caused by mixing two or more populations together. For example, height might appear to have a bimodal distribution if one had men and women in the population.
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Mode - Corn size data (mm)
+
+**original data:** **2**, **2**, 6, 3, 4, **2**, **2**, 5, 3, 4, 1, **2**, 6, 3, 10, 3
+
+\vspace{15pt}
+
+In the 16 patients with corns, 5 patients have corn size of 2 mm; thus, the **modal corn size is 2 mm**.
+:::
+
+ 
+
+### Measures of Dispersion
+
+We also need a numerical way of summarizing the amount of spread or variability in a data set. The tree main approaches to quantifying variability are: the range, the interquartile range (IQR), and the standard deviation.
+
+**A. Range**
+
+The simplest way to describe the spread of a data set is to report the minimum (lowest) and maximum (highest) values. The **range** is defined as the difference between the largest and the smallest observations in a sample. For some data it is very useful, because one would want to know these numbers, for example in a sample the age of the youngest and oldest participant. However, if outliers are present it may give a distorted impression of the variability of the data, since only two of the data points are included in making the estimate. Thus the range is **affected by extreme values** at each end of the data.
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Range - Corn size data (mm)
+
+The range for the corn size data is `r min(x)` to `r max(x)` mm or described by a single number `r max(x)`-`r min(x)` = `r max(x) - min(x)` mm.
+:::
+
+ 
+
+**B. Quartiles and Interquartile Range**
+
+The **quartiles**, namely the lower quartile ($Q_{1}$), the median ($Q_{2}$) and the upper quartile ($Q_{3}$), split sorted data into four equal parts. That is there will be approximately equal numbers of observations in the four sections (and exactly equal if the sample size is divisible by four and the measures are all distinct). The quartiles are calculated in a similar way to the median; first order the data and then count the appropriate number from the bottom. The $Q_{1}$ is the value below which 25% of the observations may be found, while the $Q_{3}$ is the value above which the top 25% of the observations may be found (meaning that 75% of the data falls below the $Q_{3}$).
+
+The **interquartile range** (IQR) is a useful measure of variability and is given by the difference of the lower and upper quartiles (IQR=$Q_{3}$-$Q_{1}$). It indicates the spread of the middle 50% (75%-25%) of the data.The IQR is an especially good measure of variability for skewed distributions or distributions with outliers.
+
+The median and the quartiles are examples of **percentiles** - points which split the distribution of data into percentages above or below a certain value. The median is the 50th percentile, the $Q_{1}$ is the 25th percentile, and the the $Q_{3}$ is the 75th percentile.
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Quartiles and Interquartile Range - Corn size data (mm)
+
+The $Q_{1}$ lies somewhere between the $\color{red}{fourth}$ and $\color{blue}{fifth}$ ordered observations (2+2)/2= 2mm. The median, $Q_{2}$, is the average of the $\color{blue}{eighth}$ and $\color{green}{ninth}$ ordered observations (3+3)/2=3 mm. Similarly, The $Q_{3}$ lies somewhere between the $\color{green}{12th}$ and $\color{orange}{13th}$ ordered observations (4+5)/2= 4.5 mm.
+
+So, the IQR for the corn size data is 2.0 to 4.5 mm or described by a single number 2.5 mm.
+
+|                            |                  |                  |                  |                           |                            |                   |                   |                            |                             |                    |                    |                             |                              |                     |                     |                      |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| **Ordered data** | $\color{red}{1}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{red}{\textbf{2}}$ | $\color{blue}{\textbf{2}}$ | $\color{blue}{2}$ | $\color{blue}{3}$ | $\color{blue}{\textbf{3}}$ | $\color{green}{\textbf{3}}$ | $\color{green}{3}$ | $\color{green}{4}$ | $\color{green}{\textbf{4}}$ | $\color{orange}{\textbf{5}}$ | $\color{orange}{6}$ | $\color{orange}{6}$ | $\color{orange}{10}$ |
+
+: Calculating quartiles for the corn size data {#tbl-quartiles}
+:::
+
+ 
+
+**C. Variance and Standard Deviation**
+
+For an individual with an observed value $x_{i}$ the distance from the mean is $x_{i}-\bar{x}$. With *n* such observations we have a set of *n* differences, one for each individual. The sum of the differences, ${\sum_{i=1}^{n}(x_{i}-\bar{x})}$ is always zero. However, if we square the distances before we sum them, we get always a positive quantity.This sum is then divided by **n-1** and thus gives an average measure for the square of the deviation from the sample mean. This quantity is called the sample **variance** and is defined as @eq-var:
+
+$$variance = s^2 = \frac{\sum\limits_{i=1}^n (x -\bar{x})^2}{n-1}$$ {#eq-var}
+
+The variance is expressed in square units, so we can take the square root to return to the original units. This gives us the **standard deviation** (usually abbreviated as sd) defined as @eq-sd:
+
+$$sd=s = \sqrt\frac{\sum_{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}$$ {#eq-sd}
+
+Examining this expression it can be seen that if all the *x's* were the same, then they would equal *x* and so *sd* would be zero. If the x's were widely scattered about *x*, then *sd* would be large. In this way *sd* reflects the variability in the data. Both, variance and standard deviation, are sensitive to outliers and thus they are inappropriate for skewed data.
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Variance and Standard Deviation - Corn size data (mm)
+
+Consider the 16 observations from the corn data. The calculations to work out the standard deviation are given in the @tbl-sd.
+
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| id       | Corn size (mm) | Mean      | Difference from mean $(x_{i}-\bar{x})$ | Square of difference from mean $(x_{i}-\bar{x})^2$ |
++==========+================+===========+========================================+====================================================+
+| 1        | 2              | 3.625     | -1.625                                 | 2.641                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 2        | 2              | 3.625     | -1.625                                 | 2.641                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 3        | 6              | 3.625     | 2.375                                  | 5.641                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 4        | 3              | 3.625     | -0.625                                 | 0.391                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 5        | 4              | 3.625     | 0.375                                  | 0.141                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 6        | 2              | 3.625     | -1.625                                 | 2.641                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 7        | 2              | 3.625     | -1.625                                 | 2.641                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 8        | 5              | 3.625     | 1.375                                  | 1.891                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 9        | 3              | 3.625     | -0.625                                 | 0.391                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 10       | 4              | 3.625     | 0.375                                  | 0.141                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 11       | 1              | 3.625     | -2.625                                 | 6.891                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 12       | 2              | 3.625     | -1.625                                 | 2.641                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 13       | 6              | 3.625     | 2.375                                  | 5.641                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 14       | 3              | 3.625     | -0.625                                 | 0.391                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 15       | 10             | 3.625     | 6.375                                  | 40.641                                             |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 16       | 3              | 3.625     | -0.625                                 | 0.391                                              |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| **Sum**  | **58**         | **3.625** | **0.000**                              | **75.756**                                         |
++----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+
+: Calculating variance and standard deviation for the corn size data {#tbl-sd}
+
+From the @eq-sd we have:
+
+$$sd = \sqrt\frac{\sum_{i=1}^{16}(x_{i}-\bar{x})^2}{16-1} = \sqrt\frac{75.756}{15}= \sqrt{5.05}=2.247 \ or \ 2.3 \ mm$$
+
+Note that the majority of this sum is contributed by one observation, the value of 10 mm from participant 15, which is the observation further from the mean. This shows that much of the value of an *sd* is derived from the outlying observation.
+
+ 
+
+**Why is the standard deviation useful?**
+
+> It turns out in many situations that about **95% of observations** will be within **two standard deviations of the mean**. This is known as a reference interval and it is this characteristic of the standard deviation which makes it so useful. It holds for a large number of measurements commonly made in medicine. In particular it holds for data that follow a **Normal distribution** (see Chapter XX). For example, if the age of participants in the corn plaster group is normally distributed, we would expect the majority of participants in this treatment group to have age between 58.5-2 $\times$ 15.6 and 58.5+2 $\times$ 15.6 or 27.3 and 89.7 years.
+:::
+
+ 
+
+::: {.callout-tip icon="false"}
+## How to report summary statistics for numerical data?
+
+Mean and median convey different impressions of the location of data in presence of skewness (or outliers).
+
+-   If the distribution is **symmetric** (mean=median=mode) (@fig-skew b), then in general the **mean** is the better summary statistic (see also @sec-normal).
+
+-   If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails (see also @sec-distributions).
+
+```{r}
+#| label: fig-skew
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| fig-cap: Types of distribution according to the summetry (a) left skewed, (b) symmetric, and (c) right skewed distribution.
+
+knitr::include_graphics(here::here("images", "skew.png"))
+```
+
+Thus, the following format is recommended for reporting summary statistics for numerical data:
+
+> **Mean (sd)** for data with **symmetric** distribution. A distribution, or data set, is symmetric if its left and right sides are mirror images.
+
+> **Median (Q1, Q3)** for those with **skewed** (or asymetrical) distribution.  
+
+@tbl-rules2 presents recommendations for reporting summary statistics for numerical data.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Recommendation**                                                                                                                                   | **Correct expression**                                                                                                                                                                                                                                   |
++======================================================================================================================================================+==========================================================================================================================================================================================================================================================+
+| Do not imply greater precision than the measurement instrument                                                                                       | Only use one decimal place more than the basic unit of measurement when reporting statistics (means, medians, standard deviations, inter-quartile ranges, etc.), for example, the mean age of participants in the corn plaster group was **58.5** years. |
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| For ranges use 'to' or a comma but not '-' to avoid confusion with a minus sign. Also use the same number of decimal places as the summary statistic | The **mean (sd)** age of participants in the corn plaster group was **58.5 years (15.6)**.                                                                                                                                                               |
+|                                                                                                                                                      |                                                                                                                                                                                                                                                          |
+|                                                                                                                                                      | The **median (IQR)** EQ-5D of participants in the corn plaster group was **0.73 (0.59, 0.80)**                                                                                                                                                           |
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Recommendations for reporting summary statistics [examples relevant to the data provided in @farndon2013 study] {#tbl-rules2}
+:::
+
+ 
+
+## Displaying Numerical Data
+
+The best way for examining the distribution of numerical data is to generate an appropriate graph.
+
+**A. Histogram and density plot**
+
+The most common way of depicting a frequency distribution of a continuous variable is with a histogram.
+
+A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric variable's values as a series of bars without space between them. Each bar typically covers a range of numeric values called a bin or class; a bar's height indicates the frequency of observations with a value within the corresponding bin. A density plot (@fig-histo1 b) is a smoothed, continuous version of a histogram estimated from the data. In a density plot the total area under the curve integrates to one.
+
+@fig-histo1 shows the distribution of age for the participants in @farndon2013 study. The vertical scale shows (a) frequency (histogram) or (b) probability density (density plot).
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-histo1
+#| fig-cap: Distribution of age of the 202 participants in @farndon2013 study (a) histogram (b) density plot.
+#| fig-width: 7.5
+#| fig-height: 5.0
+
+h1 <- data_corn |>
+  ggplot(aes(x = age)) +
+  geom_histogram(binwidth=10, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Histohram") +
+  geom_vline(aes(xintercept=mean(age)), color="009e73", linetype="dashed", size=0.8) +
+  geom_vline(aes(xintercept=median(age)), color="grey", linetype="dashed", size=0.8) +
+  labs(y="Frequency") +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size=15)
+    ) +
+  annotate('text', x = 52, y = 43, label = 'mean', color = '009e73') +
+  annotate('text', x = 70, y = 43, label = 'median', color = 'grey')
+
+h2 <- data_corn |>
+  ggplot(aes(x = age)) +
+  geom_density(fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Density plot") +
+  geom_vline(aes(xintercept=mean(age)), color="009e73", linetype="dashed", size=0.8) +
+  geom_vline(aes(xintercept=median(age)), color="grey", linetype="dashed", size=0.8) +
+  labs(y="Probability density") +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size=15)
+    ) +
+  annotate('text', x = 52, y = 0.025, label = 'mean', color = '009e73') +
+  annotate('text', x = 70, y = 0.025, label = 'median', color = 'grey')
+
+h1 + h2 + plot_annotation(tag_levels = 'a')
+
+```
+
+A histogram (or density plot) gives information about:
+
+-   How the data are distributed: (a) left-skewed, (b) symmetric (e.g., normal distribution), (c) right-skewed and if there are any outliers.
+
+-   The amount of variability in the data.
+
+-   Where the peaks of the distribution are.
+
+ 
+
+::: {.callout-tip icon="false"}
+## Choose an appropriate number of bins
+
+While tools that can generate histograms usually have some default algorithms for selecting bin boundaries, we will likely want to play around with the binning parameters to choose something that is representative of our data.
+
+Choice of bin size has an inverse relationship with the number of bins @fig-histo2. The smaller the bin sizes, the more bins there will be to cover the whole range of data. With a larger bin size, the fewer bins there will need to be. It is worth taking some time to test out different bin sizes to see how the distribution looks in each one, then choose the plot that represents the data best.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-histo2
+#| fig-cap: Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15.
+#| fig-width: 8.5
+#| fig-height: 4.5
+
+
+p1 <- data_corn |>
+  ggplot(aes(x = age)) +
+  geom_histogram(binwidth=2, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Bin size = 2") +
+  labs(y="Frequency") +
+  theme_minimal() +
+  theme(
+      plot.title = element_text(size=14),
+      axis.title = element_blank()
+    ) +
+  scale_y_continuous(limits=c(0, 65))
+
+p2 <- data_corn |>
+  ggplot(aes(x = age)) +
+  geom_histogram(binwidth=10, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Bin size = 10") +
+  labs(y="Frequency") +
+  theme_minimal() +
+  theme(
+      plot.title = element_text(size=14),
+      axis.title = element_blank(),
+      axis.text.y = element_blank()
+    ) +
+  scale_y_continuous(limits=c(0, 65))
+
+p3 <- data_corn |>
+  ggplot(aes(x = age)) +
+  geom_histogram(binwidth=15, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Bin size = 15") +
+  labs(y="Frequency") +
+  theme_minimal() +
+  theme(
+      plot.title = element_text(size=14),
+      axis.title = element_blank(),
+      axis.text.y = element_blank()
+    ) +
+  scale_y_continuous(limits=c(0, 65))
+
+
+result <- p1 + p2 + p3 + plot_annotation(tag_levels = 'a')
+
+gt <- patchwork::patchworkGrob(result)
+gridExtra::grid.arrange(gt, left = "Frequency", bottom = "Age")
+
+```
+
+If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo2 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo2 b).
+:::
+
+We can also create a histogram or density plot by group. @fig-histo3 depicts the probability density of age by treatment group.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-histo3
+#| fig-cap: Histogram of age of participants  by treatment group in @farndon2013 study.
+#| fig-width: 7.5
+#| fig-height: 5.0
+
+age_by_group <- data_corn |>
+  group_by(group)|>
+  summarize(age_mean = mean(age),
+            age_median = median(age))
+
+
+data_corn |>
+  ggplot(aes(x = age)) +
+  geom_density(aes(fill=group), binwidth=10, color="#8fb4d9", alpha=0.6) +
+  ggtitle("Density Plot by group") +
+  labs(y="Probability density") +
+  facet_grid(~group) +
+  theme_minimal() +
+  ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15),
+      strip.text.x = element_text(size=0)
+    ) +  
+  annotate('text', x = 50, y = 0.025, label = 'mean', color = '009e73') +
+  annotate('text', x = 75, y = 0.025, label = 'median', color = 'grey') +
+  geom_vline(data = age_by_group, aes(xintercept= age_mean), color="009e73", linetype="dashed", size=0.8) +
+  geom_vline(data = age_by_group, aes(xintercept= age_median), color="grey", linetype="dashed", size=0.8)
+
+```
+
+ 
+
+::: callout-important
+## Histograms must be plotted with a zero-valued baseline
+
+An important aspect of histograms is that they must be plotted with a zero-valued baseline. Since the frequency of data in each bin is implied by the height of each bar, changing the baseline or introducing a gap in the scale will skew the perception of the distribution of data.
+:::
+
+ 
+
+**B. Box Plot**
+
+A box plot chart is another graph that can be used for conveying location and variation information for continuous data, particularly for detecting changes between different groups of data before any formal analyses are performed.
+
+A box plot (aka box and whisker plot) uses boxes and lines to depict the distributions of one or more groups of numerical data. Box limits indicate the range of the central **50%** of the data, with a central line marking the **median** value. Lines extend from each box to capture the **range** of the remaining data, with **dots** placed past the line edges to indicate outliers.
+
+```{r}
+#| label: fig-boxplot1
+#| fig-align: center
+#| out-width: "90%"
+#| echo: false
+#| fig-cap: Broad classification of the different types of data with examples
+
+knitr::include_graphics(here::here("images", "boxplot.png"))
+```
+
+In @fig-boxplot1 the distance between ${Q3}$ and ${Q1}$ is the interquartile range (IQR) and plays a major part in how long the whiskers extending from the box are. Each whisker extends to the furthest data point in each wing that is within 1.5 times the IQR. Any data point further than that distance is considered an outlier, and is marked with a dot. There are other ways of defining the whisker lengths, which are not presented in this textbook.
+
+@fig-boxplot2 illustrates a box plot that presents the age of participants in @farndon2013 study.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-boxplot2
+#| fig-cap: A box plot of age of the participants in @farndon2013 study.
+#| fig-width: 3.0
+#| fig-height: 4.0
+
+data_corn |>
+  ggplot(aes(y = age)) +
+  geom_boxplot(fill = "steelblue4", alpha=0.6) +
+  ggtitle("Box Plot") +
+    theme_minimal() +
+   ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15),
+      axis.text.x = element_blank()
+    )
+
+```
+
+@fig-boxplot3 illustrates a grouped box plot that presents the age by treatment group.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-boxplot3
+#| fig-cap: A box plot of age of the participants by treatment group in @farndon2013 study.
+#| fig-width: 5.5
+#| fig-height: 4.0
+
+data_corn |>
+  ggplot(aes(x = group, y = age, fill = group)) +
+  geom_boxplot(alpha=0.6) +
+  ggtitle("Grouped Box Plot") +
+    theme_minimal() +
+   ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15),
+      legend.position = "none"
+    )
+
+```
+
+ 
+
+::: {.callout-tip icon="false"}
+## Identifying Outliers in the data based on quartiles
+
+An **outlier** is a data value significantly far removed from the main body of a data set. We say any value outside of the following interval is an outlier:
+
+$$(Q_1 - 1.5 \times IQR, \ Q_3 + 1.5 \times IQR)$$
+:::
+
+ 
+
+**C. Raincloud Plot**
+
+There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter, in an appealing and flexible format with minimal redundancy, using the raincloud plot (@fig-raincloud):
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-raincloud
+#| fig-cap: A raincloud plot of age of the participants by treatment group in @farndon2013 study.
+#| fig-width: 6.5
+#| fig-height: 4.0
+
+data_corn |>
+  ggplot(aes(x = group, y = age, fill = group)) +
+  stat_slab(aes(thickness = stat(pdf*n)), 
+                scale = 0.5) +
+  stat_dotsinterval(side = "bottom", 
+                    scale = 0.5, 
+                    slab_size = 0.2) +
+  ggtitle("Raincloud Plots") +
+    theme_minimal() +
+   ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15),
+      legend.position = "none"
+    )
+```
+
+ 
+
+**D. Scatter plot**
+
+Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-scatterplot
+#| fig-cap: Association between (a) age and baseline pain, and (b) taking into acound the gender of the participants in @farndon2013 study.
+#| fig-width: 8.5
+#| fig-height: 4.0
+
+s1 <- data_corn |>
+  ggplot(aes(x = age, y = pain_baseline)) +
+  geom_point(size = 2) +
+  ggtitle("Scatterplot") +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size=15)
+
+    )
+
+
+s2 <- data_corn |>
+  ggplot(aes(x = age, y = pain_baseline, color = gender)) +
+  geom_point(size = 2) +
+  ggtitle("Scatterplot by group") +
+    theme_minimal() +
+   ggsci::scale_color_jco() +
+    theme(
+      plot.title = element_text(size=15)
+    )
+
+
+
+s1 + s2 + plot_annotation(tag_levels = 'a')
+
+```
+
+As the scatter plots suggest, there is not association between age and baseline pain: the points seem to be scattered randomly.
+
+ 
+
+## Exercises
+
+-   First Exercise
+-   Second Exercise

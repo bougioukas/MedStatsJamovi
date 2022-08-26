@@ -1,0 +1,54 @@
+project:
+  type: book
+  output-dir: _book
+book:
+  title: "Introduction to Medical Statistics with Jamovi"
+  subtitle: "1st Edition"
+  author: 
+    - "Konstantinos I. Bougioukas, PhD"
+    - "Anna-Bettina Haidich, Associate Professor"
+  date: "August 7, 2022"
+  cover-image: images/cover.png
+  repo-url: https://github.com/bougioukas/medstatsjamovi
+  chapters:
+    - index.qmd
+    - part: "Medical Statistics"
+      chapters:
+        - introduction.qmd
+        - descriptive.qmd
+        - distributions.qmd
+        - estimation.qmd
+        - inference.qmd
+        - two_samples.qmd
+        - more_samples.qmd
+        - categorical.qmd
+        - correlation.qmd
+        - linear.qmd
+    - part: "Jamovi LAB"
+      chapters:
+        - lab1.qmd
+        - lab2.qmd
+        - lab3.qmd
+        - lab4.qmd
+        - lab5.qmd
+        - lab6.qmd
+        - lab7.qmd
+        - lab8.qmd
+        - lab9.qmd
+        - lab10.qmd
+    - references.qmd
+  
+  page-footer: 
+    left: "Copyright 2022, Konstantinos I. Bougioukas" 
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    fontsize: 1.2em
+    linestretch: 1.8
+    link-external-newwindow: true
+    code-link: true
+    number-depth: 2
+editor: visual

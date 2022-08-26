@@ -1,0 +1,17 @@
+# Preface {.unnumbered}
+
+**This is a working draft.**
+
+This online textbook is for medical students, doctors, medical researchers, nurses, members of professions allied to medicine, and all others concerned with medical data.
+
+While statistics books focus on mathematics, this textbook focuses on using a computer to conduct data analysis. That means using a statistical software program, in this case the [Jamovi](https://www.jamovi.org/) software for statistics and graphics. Our aim is to keep a balance between mathematical rigor and readability as well as learning Jamovi and statistics simultaneously.
+
+Most of the examples discussed in this textbook are based on scientific studies whose data are publicly available. For each example, we provide the step-by-step application in Jamovi. Readers are encouraged to follow these steps while reading the textbook so that they can learn statistics through hands-on experience.
+
+All sections of this textbook are reproducible as they were made using [Quarto](https://quarto.org/)^®^ which is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/).
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+## License
+
+This textbook is **free to use**, and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License.

@@ -1,0 +1,1116 @@
+# Probability Distributions - Normal distribution {#sec-distributions}
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+
+library(stevemisc)
+library(patchwork)
+
+library(gganimate)
+
+
+x <- seq(from=4-3*2, to= 4+3*2, length.out=400) # a vector of size 200 with numbers in [-4,4]
+y <- dnorm(x, mean = 4, sd = 2) # y is a vector of the same size as x, with values from the PDF
+
+
+library(readr)
+data_birthweight <- read_csv(here("data", "data_birthweight.csv"))
+
+```
+
+## Sample Space and Random Events
+
+In nature, people often encounter two types of **phenomena**:
+
+-   One is the **deterministic phenomenon**, which is characterized by conditions under which the result is completely predictable, that is, the same result is observed each time the experiment is conducted. For example, water at 100°C under standard atmospheric pressure inevitably boils.
+
+-   The other is the **random phenomenon**, which is characterized by conditions under which the result cannot be determined with certainty before it occurs, that is, one of several possible outcomes is observed each time the experiment is conducted. For example, when a coin is tossed, the outcome is either heads H or tails T, but unknown before the coin is tossed. Die rolling is also a random phenomenon, whose outcome is an integer from 1 to 6, unknown before the die is rolled. Likewise, for a bi-allelic gene A, the possible alleles are A and a, and the possible corresponding genotypes are AA, Aa, and aa.
+
+The process of obtaining an observation or making a measurement for a random phenomenon/process is called a **random experiment** (briefly, an experiment), and is denoted by E.
+
+The **sample space Ω** is defined as the set of **all** possible outcomes of the experiment. In the case of the roll of a die, the sample space can be written as the set of the six possible outcomes, Ω = {1, 2, 3, 4, 5, 6}.
+
+Different experiments will have different sample spaces that can be written in an equivalent way (flipping a coin: Ω ={H, T}, flipping two coins: Ω ={HH, HT, TH, TT}, testing for possible genotypes of a bi-allelic gene A: Ω ={AA, Aa, aa}).
+
+A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents **a number** of possible outcomes for the experiment. In the case of the roll of a die, the event "even number" may be represented by A = {2, 4, 6}, and the event "odd number" as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.
+
+::: {.callout-tip icon="false"}
+## Two events always exist for an experiment
+
+For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
+:::
+
+::: {.callout-caution collapse="true"}
+## Basic types and operations of events using set theory
+
+**Simple and Compound Events**
+
+> If an event consists of a single outcome from the sample space, it is termed a **simple event**. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event.
+>
+> If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a **compound event** in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.
+
+**Union of Events** The union symbol (∪) is used to denote the OR event.
+
+> For any two events A and B, "at least one of A and B occurs" is also an event. This event is called the union of A and B, and is denoted by **A∪ B**, which includes only A occurring, only B occurring, and A and B occurring simultaneously.
+>
+> In the experiment of rolling a single die, find the union of the events A : "the number rolled is even" and B : "the number rolled is greater than two." Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} (or both) are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .
+
+**Intersection of Events** The intersection symbol (∩) is used to denote the AND event.
+
+> For any two events A and B, "A and B occur simultaneously" is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.
+>
+> For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.
+
+**Inverse Events**
+
+> For any event A, "event A does not occur" is also an event. This event is called the inverse of event A or the complement of A, and is denoted by $\bar{A}$.
+
+**Mutually Exclusive Events**
+
+> For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.
+:::
+
+## Probability
+
+The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.
+
+The first step towards determining the probability of an event is to establish a number of **basic rules** that capture the meaning of probability. The probability of an event is required to satisfy three **axioms** defined by **Kolmogorov**:
+
+::: {.callout-tip icon="false"}
+## **The Kolmogorov Axioms**
+
+1.  The probability of an event A is a non-negative number, **P(A) ≥ 0**
+2.  The probability of all possible outcomes, or sample space, is **P(Ω) = 1**
+3.  If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)** and **P(A ∩ B) = 0**.
+:::
+
+::: {.callout-note icon="false"}
+## Example - Dice: Mutually exclusive events
+
+Suppose we throw a six-die what is the probability of rolling either 5 or 6?
+
+The probability of rolling a 6 is 1/6 and the probability of a 5 is also 1/6. We cannot take a 5 and 6 at the same time (these events are mutually exclusive) so:
+
+P(rolling a 5 or 6) = P(rolling a 5) + P(rolling a 6) = 1/6 + 1/6 = 1/3
+:::
+
+These axioms should be regarded as the basic "ground rules" of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are **two** major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the **frequentist approach**. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the **Bayesian approach**.
+
+ 
+
+### Definition of Probability
+
+**A. Frequentist approach**
+
+Consider performing an experiment a **large number** N of times, under the same experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:
+
+$$ P(A) = \lim_{N\to\infty} \frac{N(A)}{N}$$ {#eq-probability}
+
+that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment.
+
+The obvious **limitation** of this definition is the need to perform the experiment a **large number of times**. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a **coin toss**: no matter the number of tosses, the occurrence of heads up **will never be exactly** 50%, which is what one would expect based on an empirical knowledge of the experiment at hand @fig-run.
+
+```{r}
+#| echo: false
+#| label: fig-run
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: Coin Flips Simulation showing long-term probability close to 0.5.
+
+set.seed(123)
+flips <- sample(c(0, 1), 500, replace = TRUE)
+N <- seq(1, 500, 1)
+flipsim <- data.frame(flips, N)
+colnames(flipsim) <- c("Heads", "N")
+flipsim[,"Cum_Heads"] <- cumsum(flipsim$Heads)
+
+flipsim <- flipsim %>% 
+  mutate(Pct_Heads = Cum_Heads/N)
+
+
+flipsim %>% ggplot(aes(x = N, y = Pct_Heads)) + 
+  geom_point(color="deeppink", size = 4) +
+  geom_hline(yintercept = 0.5) +
+  ylim(0, 1) + 
+  transition_time(N) +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+Therefore, we may say that the probability of an event is the **relative frequency** of this set of outcomes over an indefinitely large number of experiments.
+
+$$ P(A) \approx  \frac{number\ of\ times \ A\ occured}{total\ number\ of\  experiments}$$ {#eq-probability2}
+
+::: {.callout-note icon="false"}
+## Examples: Probability based on on Frequentist approach
+
+**Prevalense of blood type**
+
+Sampling many (say, 100,000) people in the Greece, finding that roughly 45,000 of them had blood type O. $$ P(O) \approx  \frac{number\ of\ people \ with\ blood\ type\ O}{total\ number\ of\  sample}= \frac{45,000}{100,000}=0.45$$ is the estimate for the probability for the event "having blood type O."
+
+**Prevalence of a disease**
+
+Suppose the **prevalence of diabetes** in the population is **1%**. The prevalence of a disease is the number of people in a population with the disease at a certain time divided by the number of people in the population. If a trial was then conducted by **randomly selecting one person** from the population and testing him or her for diabetes, the individual would be **expected to be diabetic with probability 0.01**. If this type of sampling of individuals from the population were repeated, then the proportion of diabetics in the total sample taken would be expected to be approximately 1%.
+:::
+
+**B. Bayesian approach**
+
+Another method to assign probabilities is to use **knowledge** of the experiment, both theoretical and experimental, but without the need for extensive experimental data. The probability assigned to an event represents the **degree of belief** that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes' theorem.
+
+::: {.callout-note icon="false"}
+## Example - Coin toss experiment
+
+In the coin toss experiment, the determination of the subjective probability for events "Heads up" or "Tails up" relies on the knowledge that the coin is **unbiased**, and therefore it must be true that P(T) = P(H). With this information, we can then simply use the Kolmogorov axioms to state that P(T) + P(H) = 1, and therefore obtain the intuitive result that P(T) = P(H) = 1/2.
+:::
+
+In this textbook, we'll focus on "Frequentist" approach of probability.
+
+ 
+
+### Fundamental Properties of Probability
+
+The following **properties** are useful to assign and manipulate event probabilities.
+
+::: {.callout-tip icon="false"}
+## Fundamental Properties of Probability
+
+1.  The probability of the null event is zero, **P(∅) = 0**.
+
+2.  The probability of the complementary event A satisfies the property:
+
+$$P(A) = 1 − P(A)$$ {#eq-complementary}
+
+3.  The probability of the union of two events satisfies the general property that (**Addition Rule of Probability**) :
+
+$$P(A ∪ B) = P(A) + P(B) − P(A ∩ B)$$ {#eq-union}
+:::
+
+ 
+
+### The Conditional Probability
+
+The conditional probability is indicated as **P(A\|B)** or A **given** B. The following relationship defines the conditional probability:
+
+$$P(A ∩ B) = P(A|B) · P(B)$$ {#eq-conditional}
+
+or
+
+$$ P(A|B)=  \frac{P(A ∩ B)}{P(B)}$$ {#eq-conditional2}
+
+::: {.callout-caution collapse="true"}
+## Example - Dice: Conditional probability
+
+Calculate the probability of obtaining **8 as the sum of two rolls** of a die, **given that the first roll was a 3**.
+
+The sample space of the experement consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),... , (1, 6), (2, 1),... , (6, 6)}.
+
+It is useful to define the following two events:
+
+-   **A** = {The sum of two rolls is 8}.
+
+-   **B** = {The first roll shows 3, and the second any number}.
+
+**Event A** is given by outcomes A={(2,6), (3,5), (4,4), (5,3), (6,2)} :
+
+|              |     |       |     |     |     |
+|--------------|-----|-------|-----|-----|-----|
+| **1st roll** | 2   | **3** | 4   | 5   | 6   |
+| **2nd roll** | 6   | **5** | 4   | 3   | 2   |
+| **Sum**      | 8   | **8** | 8   | 8   | 8   |
+
+and since each combination has a probability of 1/36, **P(A) = 5/36**.
+
+**Event B** is given by outcomes B={(3,1), (3,2), (3,3), (3,4), (3,5), (3, 6)}. The probability of event B is **P(B) = 6/36 = 1/6**.
+
+Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of **(3,5)** takes place, thus with probability **P(A ∩ B) = 1/36**.
+
+According to the definition of conditional probability @eq-conditional2, the probability of interest is:
+
+$P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}$
+
+Therefore, the occurrence of 3 in the first roll has **increased** the probability of A from P(A) = 5/36 to P(A\|B) = 1/6.
+:::
+
+ 
+
+### Statistical Independence
+
+The concept of statistical independence among events means that the occurrence of one event has **no influence** on the occurrence of other events. Consider, for example, rolling two dice, one after the other: the outcome of one die is independent of the other and the two tosses are said to be statistically independent.
+
+On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event---e.g., the sum of both dice---depends on the first toss and the two events are not independent.
+
+Two events A and B are said to be **statistically independent** if:
+
+$$P(A ∩ B) = P(A) · P(B)$$ {#eq-independent}
+
+@eq-independent, known as **Multiplication Rule of Probability**, follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A\|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.
+
+::: {.callout-caution collapse="true"}
+## Example - Statistical independence with dice
+
+Determine the probability of obtaining two 3s when rolling two dice. This event can be decomposed in two events:
+
+-   **A** = {die 1 shows 3, and die 2 shows any number},
+
+-   **B** = {die 2 shows 3, and die 1 shows any number}.
+
+It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is A ∩ B, and the definition of probability of two statistically independent events leads to $P(A ∩ B) = P(A) · P(B) = 1/36$.
+
+This result can be confirmed by a direct count of all possible outcomes in the toss of two dice, and the fact that there is only one combination out of 36 that gives rise to two consecutive 3s.
+:::
+
+ 
+
+### Bayes' theorem
+
+The Bayes' theorem can be written as:
+
+$$P(A|B) = \frac{P(B|A)· P(A)}{P(B)}$$ {#eq-bayes}
+
+where A and B are events and $P(B)\neq 0$.
+
+::: {.callout-caution collapse="true"}
+## Probabilities involved in Bayes' theorem (Advanced)
+
+The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.
+
+Accordingly, the probabilities involved in Bayes' theorem can be interpreted as follows:
+
+(a) **P(B\|A)** is the probability, or **likelihood** L, of the data given the specified model. Notice how P(B\|A) means that the model A is given, or known.
+
+(b) **P(A)** is the probability of the model A, without any knowledge of the data.This term is interpreted as a **prior probability**, or the degree of belief that the model is true before the measurements are made.
+
+(c) **P(B)** is the probability of collecting the dataset B.
+
+(d) Finally, **P(A\|B)** is the **posterior** **probability** of the model after the data have been collected.The posterior probability is the ultimate goal of the analysis since it describes the probability of the model based on the collection of data.
+
+This interpretation of Bayes' theorem is the foundation of Bayesian statistics, and it can be summarized as:
+
+**Posterior probability ∝ Likelihood × Prior probability**
+
+Bayes' theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probability is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
+:::
+
+::: {.callout-note icon="false"}
+## Example - Probability of developing lung cancer for smokers
+
+Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25
+
+Further, suppose we know that if a person has lung cancer, the probability of being a smoker increases to P(SM\|C) = 0.4. We are, however, interested in the probability of developing lung cancer if a person is a smoker, P(C\|SM).
+
+From @eq-bayes:
+
+$$P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016$$ Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.
+:::
+
+ 
+
+## Random Variables
+
+Formally, a random variable X assigns a numerical value to each possible outcome of a random phenomenon. For instance, we can define X based on possible genotypes of a bi-allelic gene A as follows:
+
+$$X={\begin{cases}0,&for\ genotype\ AA\\1,&for\ genotype\ Aa\\2,&for\ genotype\ aa\end{cases}}$$
+
+In this case, the random variable assigns 0 to the outcome AA, 1 to the outcome Aa, and 2 to the outcome aa.
+
+The set of values that a random variable can assume is called its range. For the above example, the range of X is {0, 1, 2}.
+
+After we define a random variable, we can find the probability for its possible value based on the underlying random phenomenon. This way, instead of talking about the probability for different outcomes and events, we can talk about **the probability of different values for a random variable**.
+
+Assume that the individual probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09.
+
+Note that the total probability for the random variable is still 1. In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values. **The probability rules we discussed earlier also apply to random variables**. Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other's probabilities, we say that they are independent.
+
+A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.
+
+Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.
+
+::: {.callout-tip icon="false"}
+## What do we need to know for a random variable?
+
+To fully understand a random variable, we need to know:
+
+(1) **every possible value**, or the interval of values of the random variable.
+(2) the **probability** corresponding to each possible value or value ranges (**probability distribution**).
+:::
+
+For the random variable X defined based on genotypes, the **probability distribution** can be simply specified as follows:
+
+$$P(X=x)={\begin{cases}0.49,&for\ x=0\\0.42,&for\ x=1\\0.09,&for\ x=2\end{cases}}$$ Here, x denotes a specific value (i.e., 0, 1, or 2) of the random variable. Probability distributions are specified differently for different types of random variables. In the following, we divide the random variables into two major groups: **discrete** and **continuous**. Then, we provide several examples for each group.
+
+## Probability distributions for Discrete Outcomes
+
+For discrete random variables, the probability distribution is fully defined by the **probability mass function** (pmf). This is a function that specifies the probability of each possible value within range of random variable.
+
+ 
+
+### **Bernoulli distribution**
+
+Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.
+
+A **Bernoulli event** is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p. As before, the probability for all possible values is one: P(X = 0) + P(X = 1) = 1.
+
+A **Bernoulli trial** is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a **Bernoulli process**.
+
+::: {.callout-tip icon="false"}
+## **Definition-Bernoulli distribution**
+
+The binary random variable X with possible values 0 and 1 has a Bernoulli distribution with parameter p , where P(X = 1) = p and P(X = 0) = 1 − p . We denote this as X ∼ Bernoulli(p), where 0 ≤ p ≤ 1.
+
+Here, p is the unknown parameter. If p were known, we could fully specify the probability mass function:
+
+$$P(X=x)={\begin{cases}q=1-p,&for\ x=0\\p,&for\ x=1\end{cases}}$$
+
+where ${0\leq p\leq 1}$.
+
+The mean of a binary random variable, X, with Bernoulli(p) distribution is p. We show this as:
+
+$$μ = p$$ {#eq-bernouli1}
+
+In this case, the mean can be interpreted as the proportion of the population who have the outcome of interest.
+
+Furthermore, the variance of a random variable with Bernoulli(p) distribution is:
+
+$$ \sigma^2= pq=p(1-p)= μ(μ-1)$$ {#eq-bernouli2}
+
+$$ \sigma= \sqrt{p(1-p)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
+:::
+
+::: {.callout-note icon="false"}
+## **Example-Bernoulli distribution: breast cancer**
+
+For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise. Suppose that the probability of survival is p = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − p = 0.2. Then X has a Bernoulli distribution with parameter p = 0.8, and we denote this as
+
+$$X ∼ Bernoulli(0.8)$$ The pmf for this distribution is:
+
+$$P(X=x)={\begin{cases}0.2,&for\ x=0\\0.8,&for\ x=1\end{cases}}$$ Additionally, we can plot pmf for visualizing the distribution @fig-bern1.
+
+```{r}
+#| echo: false
+#| label: fig-bern1
+#| out-width: "80%"
+#| fig-align: "center"
+#| fig-cap: Plot of the pmf for Bernoulli(0.8) distribution.
+
+ber_q <- c(0, 1)
+ber_pmf <- dbinom(ber_q, 1, 0.8)
+
+plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBernoulli(0.8)", ylim = c(0, 1), xaxt='n', lwd = 2,frame.plot = FALSE)
+ points(ber_q , ber_pmf, col="deeppink", pch = 20, cex = 2)
+ axis(1, at = c(0, 1), lab=expression(0, 1))
+
+```
+
+The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights add up to 1.
+
+In the above example, from @eq-bernouli1 we take μ = 0.8. Therefore, we expect 80% of patients survive.
+
+From @eq-bernouli2 the variance of the random variable is $σ^2 = 0.8 × 0.2 = 0.16$, and its standard deviation is $σ = 0.4$. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). For comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes $σ^2 = 0.6×(1−0.6) = 0.24$. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.
+:::
+
+ 
+
+### **Binomial distribution**
+
+The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.
+
+The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of successes and failures in $n$ **independent** Bernoulli trials for some given value of n.
+
+::: {.callout-tip icon="false"}
+## **Definition-Binomial distribution**
+
+The random variable X representing the **number of times** the outcome of interest occurs in $n$ Bernoulli trials has a $Binomial(n, p)$ distribution, where p is the probability of the outcome of interest (success). A binomial distribution is defined by the number of Bernoulli trials $n$ and the probability of the outcome of interest p for the underlying Bernoulli trials.
+
+$$ P(X=x) = {{n}\choose{x}} \cdot p^xq^{n-x}$$ {#eq-binom0}
+
+where x = 0, 1, ... , n, ${0\leq p\leq 1}$, q = 1 − p and $\binom{n}{x} = \frac{n!}{x!(n-x)!}$
+
+Note that: $n! = 1\cdot 2 \cdot 3\cdot \ldots \cdot (n-2)\cdot (n-1)\cdot n$
+
+If is a binomial random variable with parameters and n and p, then
+
+$$μ = np$$ {#eq-binom1}
+
+$$σ^2 = npq$$ {#eq-binom2}
+
+$$σ = \sqrt{npq}$$ {#eq-binom3}
+:::
+
+::: {.callout-note icon="false"}
+## **Example-Binomial distribution: breast cancer**
+
+Suppose that we plan to recruit a group of 50 patients with breast cancer and study their survival within five years from diagnosis. We represent the survival status for these patient by a set of Bernoulli random variables $X_1, . . . , X_{50}$. (For each patient, the outcome is either 0 or 1). Assuming that all patients have the same survival probability, p = 0.8, and the survival status of one patient does not affect the probability of survival for another patient, $X_1, . . . , X_{50}$ form a set of 50 Bernoulli trials.
+
+Now we can create a new random variable X representing the number of patients out of 50 who survive for five years. The number of survivals is the number of 1s in the set of Bernoulli trials. This is the same as the sum of Bernoulli trials, whose values are either 0 or 1:
+
+$$X=\sum_{i=1}^{50}X_{i}$$ {#eq-X}
+
+where $X_i = 1$ if the ith patient survive and $X_i = 0$ otherwise.
+
+Since X can be any integer number from 0 (no one survives) through 50 (everyone survives), its range is {0, 1, . . . , 50}. The range is a countable set. Therefore, the random variable X is discrete. The probability distribution of X is a binomial distribution, shown as:
+
+$$X ∼ Binomial(50, 0.8)$$
+
+The pmf of Binomial(50, 0.8) distribution specifies the probability of 0 through 50 survivals.
+
+According to @eq-binom0 we have:
+
+|          |     |     |     |      |      |      |     |      |     |
+|----------|-----|-----|-----|------|------|------|-----|------|-----|
+| **X**    | 0   | 1   | ... | 34   | 35   | 36   | ... | 40   | ... |
+| **P(X)** | 0   | 0   | ... | 0.02 | 0.03 | 0.05 | ... | 0.14 | ... |
+
+```{r}
+#| echo: false
+#| label: fig-binom1
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: Plot of the pmf for Binomial(50, 0.8) distribution.
+
+binom_q <- 0:50
+binom_pmf <- dbinom(binom_q, size = 50, prob = 0.8)
+
+plot(binom_q , binom_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBinomial(50, 0.8)", ylim = c(0, 0.15),  lwd = 1, frame.plot = FALSE)
+ points(binom_q , binom_pmf,  col="deeppink", pch = 20, cex = 1)
+
+```
+
+As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probability for all possible values of the random variable is 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.
+
+Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:
+
+$$P(33<X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1$$
+
+For the breast cancer example and @eq-binom1, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to @eq-binom2, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.
+:::
+
+### **Poisson distribution**
+
+So far, we have discussed the Bernoulli distribution for binary variables, and the binomial distribution for the number of times the outcome of interest (one of the two possible categories of the binary variable) occur within a set of n Bernoulli trials.
+
+While a random variable with a Binomial distribution is a count variable (e.g., number of people survived), its range is restricted to include integers from 0 through n only. For example, the number of survivals in a group of n = 50 cancer patients cannot exceed 50.
+
+Now, suppose that we are investigating the **number of physician visits for each person in one year**. Although very large numbers such as 100 are quite unlikely, there is no theoretical and prespecified upper limit to this random variable. Theoretically, its range is the set of all nonnegative integers.
+
+::: {.callout-tip icon="false"}
+## **Definition-Poisson distribution**
+
+Random variables representing counts within temporal and/or spacial limits but without prespecified upper limits are often assumed to have Poisson distributions. The range of these variables is the set of all non negative integers (i.e., the lower limit is zero, but there is no upper limit). A Poisson distribution is specified by a parameter λ, which is interpreted as the **rate of occurrence within a time period or space limit**. We show this as X ∼ Poisson(λ), where λ is a positive real number (λ\>0).
+
+$$ P(X=x)={\frac {\lambda ^{x}e^{-\lambda }}{x!}} $$ {#eq-poisson1}
+
+where x = 0, 1, ... +∞, λ \> 0.
+
+The mean and variance of a random variable with Poisson(λ) distribution are the same and equal to λ. That is, μ = λ and $σ^2 = λ$.
+:::
+
+::: {.callout-note icon="false"}
+## **Example-Poisson distribution: physician visits**
+
+As an example, assume that the rate of physician visits per year is 2.5:
+
+$$X ∼ Poisson(2.5)$$ Therefore, the population mean and variance of this variable is 2.5.
+
+According to @eq-poisson1 the resulting probability table is:
+
+|          |      |      |      |      |      |      |
+|----------|------|------|------|------|------|------|
+| **X**    | 0    | 1    | 2    | 3    | 5    | 6    |
+| **P(X)** | 0.08 | 0.21 | 0.26 | 0.21 | 0.07 | 0.03 |
+
+The resulting plot of the pmf shows the probability of each possible value, which is any integer from 0 to infinity [@fig-poisson1]. In this case, the probability of values above 8 becomes almost 0.
+
+```{r}
+#| echo: false
+#| label: fig-poisson1
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: Plot of the pmf for Poisson(2.5) distribution.
+
+pois_q <- 0:12
+pois_pmf <- dpois(pois_q, lambda = 2.5)
+
+plot(pois_q , pois_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nPoisson(2.5)", ylim = c(0, 0.30),  lwd = 1, frame.plot = FALSE)
+ points(pois_q , pois_pmf,  col="deeppink", pch = 20, cex = 1)
+
+```
+
+For this example, the probability that a person does not visit her/his physician within a year is P(X = 0) = 0.08, while the probability of one visit per year increases to P(X = 1) = 0.21.
+
+Now suppose that we want to know the probability of up to three visits per year: P(X ≤ 3). This is the probability that a person visit her/his physician 0, or 1, or 2, or 3 times within one year. As before, we add the individual probabilities for the corresponding outcomes: P(X ≤ 3) = 0.08 + 0.21 + 0.26 + 0.21 = 0.76.
+
+The population mean and variance of this variable is 2.5 visits per year.
+:::
+
+## Probability distributions for Continuous Outcomes
+
+For discrete random variables, the pmf provides the probability of each possible value. For continuous random variables, the number of possible values is uncountable, and the probability of any specific value is zero.
+
+Therefore, instead of talking about the probability of any specific value x for continuous random variable X, we talk about the probability that the value of the random variable is within a specific interval from x1 to x2; we show this probability as P(x1 ≤ X ≤ x2).
+
+$$ P(x_1\leq X \leq x_2)=\int_{x_1}^{x_2}f(x)dx $$ {#eq-continuous1}
+
+where f(x) is the probability density functions (pdf) of X .
+
+Clearly, in @eq-continuous1, the probability of a certain point value in X is zero, and the area under the probability density curve of the interval (−∞, +∞) should be 1.
+
+ 
+
+### **Normal Distribution**
+
+There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
+
+A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (@fig-normal).
+
+```{r}
+#| echo: false
+#| label: fig-normal
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: The Normal probability distribution (often called Gaussian or bell-shaped distribution).
+
+
+x <- seq(-4, 4, length=100)
+y <- dnorm(x)
+
+plot(x,y, main="Normal Distribution", type = "l", lwd = 2,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+axis(1, at = -3:3, lab=expression(-3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma))
+
+```
+
+::: {.callout-tip icon="false"}
+## Definition and Properties of Normal Distribution
+
+Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean, $\mu$, represents the population mean and is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as @eq-gauss:
+
+$$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}} $$ {#eq-gauss}
+
+Populations with small values of the standard deviation, $\sigma$, have a distribution concentrated close to the centre, $\mu$; those with large standard deviation, $\sigma$, have a distribution widely spread along the measurement axis @fig-compare_normal.
+
+```{r}
+#| echo: false
+#| label: fig-compare_normal
+#| fig-cap: Probability distribution functions of the Normal distributions with different means and standard deviations.
+#| fig-subcap: 
+#|   - "Effect of changing mean."
+#|   - "Effect of changing standard deviation."
+#| layout-ncol: 2
+
+x <- seq(-6, 6, length=200)
+y1 <- dnorm(x)
+y2 <- dnorm(x, mean= 2)
+y3 <- dnorm(x, sd= 2)
+
+plot(x,y1, main="Normal Distribution", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+axis(1, at = c(0, 2), lab = expression(mu[1], mu[2]))
+lines(x,y2,col="deeppink", lwd = 3)
+text(1.0, 0.4, expression(mu[1] < mu[2]), col="gray30")
+
+plot(x,y1, main="Normal Distributions", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
+lines(x,y3,col="deeppink", lwd = 3)
+text(1.5, 0.3, expression(sigma[1]))
+text(2.9, 0.10, expression(sigma[2]), col="deeppink")
+text(2.5, 0.20, expression(sigma[1] < sigma[2]), col="gray30")
+```
+
+The Normal distribution has the properties summarized as follows:
+
+-   Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
+
+-   The peak of the curve lies above the mean.
+
+-   Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean.
+
+-   All three measures of central tendency mean, the median, and the mode will be the same.
+
+-   Much of the area (68%) of the distribution is between -1 $\sigma$ below the mean and +1 $\sigma$ above the mean, the large majority (95%) between -1.96 $\sigma$ below the mean and +1.96 $\sigma$ above the mean (often used as a reference range), and almost all (99%) between -2.58 $\sigma$ below the mean and +2.58 $\sigma$ above the mean. The total area under the curve equals to 1 (or 100%).
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-normal_auc
+#| fig-height: 7.2
+#| fig-width: 12.5
+#| fig-align: "center"
+#| fig-cap: The area underneath a Normal Distribution
+
+
+normal_dist("#522d80","deeppink") + 
+  theme_steve() + 
+  post_bg() +
+    labs(title = "The Area Underneath a Normal Distribution",
+       subtitle = "The tails extend to infinity and are asymptote to zero, but the full domain sums to 1. The 95% of all possible values are within about 1.96 standard units from the mean.",
+       y = "Probability density",
+       x = "") +
+scale_x_continuous(breaks = c(-4, -2.58, -1.96, -1.65, -1, 0,
+                              1, 1.65, 1.96, 2.58, 4),
+                   labels = expression(-4*sigma, -2.58*sigma, -1.96*sigma,-1.65*sigma, 
+                                       -1*sigma, mu, 1*sigma, 1.65*sigma, 1.96*sigma, 2.58*sigma, 4*sigma)) +
+  theme(axis.text = element_text(size=10))
+
+```
+:::
+
+ 
+
+::: {.callout-note icon="false"}
+## Example-Normal distribution: systolic blood pressure
+
+Suppose we know that the population mean and standard deviation for systolic blood pressure (sbp) are μ = 125 mmHg and σ = 15 mmHg, respectively.
+
+(a) About what percentage of population has sbp in the range μ±σ ?
+
+The X random variable of sbp follows the normal distribution:
+
+$$ X ∼ N(125, 15^2)$$
+
+Thus, the percentage of the distribution between -1 $\sigma$ below the mean and +1 $\sigma$ above the mean is:
+
+$$ P(125 −15≤X≤ 125+15) = P(110≤X≤ 140) = 0.68\ or\ 68\% $$
+
+(b) Calculate a 95% reference range for the sbp:
+
+$$ (125 - 1.96\times 15,\ 125 + 1.96\times 15) = (95.6, 154.4) $$
+:::
+
+ 
+
+
+### **Standard Normal distribution**
+
+If the random variable X has a normal distribution with $\mu$ and standard deviation $\sigma$, then the standardized Normal deviate is:
+
+$$ z= \frac{x-\mu}{\sigma} $$ {#eq-z}
+
+The z (often called z-score) is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$. In this case, @eq-gauss is transformed as follows:
+
+$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd}
+
+```{r}
+#| echo: false
+#| label: fig-standard_normal
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: Standard Normal Distribution
+
+
+x <- seq(-4, 4, length=100)
+y <- dnorm(x)
+
+plot(x,y, main="Standard Normal Distribution", type = "l", lwd = 2,  xlab = "Z", ylab = "Probability Density", frame.plot = FALSE)
+axis(1, at = -4:4)
+
+```
+
+::: {.callout-caution collapse="true"}
+## Understanding the formula of Standard Normal distribution
+
+We can break down individual components of a z-distribution (@eq-z) and explain them until they seem more accessible.
+
+**First**, we know from algebra that the formula $\ {\frac {1}{2}}z^{2}$ is a basic parabola (notice the square term). Adding a minus sign just flips the basic parabola $\ {\frac {1}{2}}z^{2}$ downward and we take a negative parabola $\ -{\frac {1}{2}}z^{2}$.
+
+```{r}
+#| echo: false
+#| label: fig-basic_parabola
+#| fig-height: 4.0
+#| fig-width: 8.0
+#| fig-cap: (a) A basic parabola and (b) a negative parabola.
+
+parab <- function(x) {x^2/2}
+parab2 <- function(x) {-x^2/2}
+
+
+p_parab <- ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = parab, color="#522d80", size=1.5) +
+  theme_steve() + 
+  post_bg() +
+  labs(title="A basic parabola",
+       x = "", y="") +
+theme(plot.title.position = "plot",
+        plot.title = element_text(size= 10),
+        plot.subtitle = element_text(size= 8))
+
+p_parab2 <- ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = parab2, color="#522d80", size=1.5) +
+  theme_steve() + post_bg() +
+  labs(title="A Negative Parabola",
+       subtitle = "Notice the height is at 0 because the negative part \nflipped the parabola downward.",
+       x = "", y="") +
+theme(plot.title.position = "plot",
+        plot.title = element_text(size= 10),
+        plot.subtitle = element_text(size= 8))
+
+
+p_parab + p_parab2
+```
+
+**Second**, exponentiating the negative parabola ($\  e^{-{\frac {1}{2}}z^{2}}$) makes it asymptote to 0.
+
+```{r}
+#| echo: false
+#| label: fig-neg_parabola
+#| fig-height: 4.2
+#| fig-width: 6.0
+#| fig-align: "center"
+#| fig-cap: An exponentiated negative parabola.
+
+
+
+expparab <- function(x) {exp(-x^2/2)}
+
+p_expparab <- ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = expparab, color="#522d80", size=1.5) +
+  theme_steve() + 
+  post_bg() +
+  labs(title="An Exponentiated Negative Parabola",
+       subtitle = "Exponentiating squeezes the parabola, adjusts the height, and makes \nthe tails asymptote to 0.",
+       x = "", y="") +
+theme(plot.title.position = "plot",
+        plot.title = element_text(size= 10),
+        plot.subtitle = element_text(size= 8))
+
+p_expparab
+```
+
+Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly "unlikely".
+
+**Third**, and with the above point in mind, it should be clear that $\ {\frac {1}{{\sqrt {2\pi }}}}$ will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by $\ {\frac {1}{\sqrt {2\pi }}}$ to equal about 0.398.
+
+**Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z.
+:::
+
+ 
+
+The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
+
+To find the area under the curve between two z-scores, $z_1$ and $z_2$, we have to integrate the pdf @eq-zd as following:
+
+$$ E=P(z_1\leq Z\leq z_2)={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz $$ {#eq-integral}
+
+ 
+
+::: {.callout-note icon="false"}
+## Example-Area under the curve
+
+Calculate the area under the curve:
+
+```{r}
+#| echo: false
+#| label: fig-area
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: Standard normal distribution with a shaded region
+
+x <- seq(from=-3, to= 3, length.out=200) # a vector of size 200 with numbers in [-4,4]
+y <- dnorm(x) # y is a vector of the same size as x, with values from the PDF
+
+# The polygon follows the density curve where 1 <= x <= 2
+region.x <- x[1 <= x & x <= 2] # subset from x satisfying the condition
+region.y <- y[1 <= x & x <= 2] # subset from y satisfying the condition
+# We add initial and final segments, which drop down to the Y axis
+region.x <- c(region.x[1], region.x, tail(region.x,1))
+region.y <- c(0,region.y,0)
+
+
+plot(x, y, main="Standard Normal Distribution with a Shaded Region",
+type='l', ylab="Probability Density", xlab="z",lwd=3,col="#522d80", frame.plot = F)
+#abline(h=0) # adds the x-axis to the plot
+polygon(region.x, region.y, density=-1, col="#F66733")
+
+```
+
+One solution is to use the {#eq-integral} with $z_1$ = 1 and $z_2$ = 2:
+
+$$ E=P(1\leq Z\leq 2)={\frac {1}{{\sqrt {2\pi }}}}\int_{1}^{2}e^{-{\frac {1}{2}}z^2}dz $$
+
+In this case, however, we can easily calculate the area using the properties of the normal distribution:
+
+$E = P(0\leq Z\leq 2) - P(0\leq Z\leq 1) \approx 0.475 - 0.34 \approx 0.135$
+:::
+
+ 
+
+### **t-distribution**
+
+The t-distribution (Student's t-distribution) is a continuous probability distribution that is used in place of the Standard Normal distribution for small samples when the population variance, $σ^2$, is unknown. William Sealy Gosset derived the t-distribution whilst working at the Guinness brewery, but was not permitted by his employer to publish under his own name so he decided to use the pseudonym "Student" for his published work.
+
+::: {.callout-tip icon="false"}
+## Definition and properties of t-distribution
+
+A t-distribution is specified by only one parameter called the degrees of freedom df. The t-distribution with df degrees of freedom is usually denoted as t(df), where df is a positive real number (df \> 0) and equals to the sample size minus one.
+
+The mean of this distribution is μ = 0, and the variance is determined by the degrees of freedom parameter, $σ^2 = df/(df −2)$, which is of course defined when df \> 2.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-t
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: t-distribution with df=3 Vs Standard Normal distribution
+
+
+curve(dnorm(x), -4, 4, xlab = "t", ylab = "Probability Density", frame.plot = FALSE)
+curve(dt(x, df = 3), col = "red", add = TRUE)
+axis(1, at = -4:4)
+text(0, 0.41, expression("st. normal"))
+text(0, 0.34, expression(t(3)))
+
+```
+
+Similar to the standard normal distribution, the probability density curve for a t-distribution is unimodal and symmetric around its mean of μ = 0. However, the variance of a t-distribution is greater than the variance of the standard normal distribution: df/(df − 2) \> 1. As a result, the probability density curve for a t -distribution approaches zero more slowly than that of the standard normal. We say that t-distributions have heavier tails than the standard normal distribution.
+
+**Basic Properties of t-distribution:**
+
+-   A t-distribution is symmetric about 0.
+
+-   A t-distribution extends indefinitely in both directions, approaching, but never touching, the horizontal axis as it does so.
+
+-   The total area under a t-curve equals 1.
+
+-   As the sample size (and degrees of freedom) becomes larger (\>30), t-distributions look increasingly like the Standard Normal distribution.
+:::
+
+ 
+
+### **Chi-squared distribution**
+
+Chi-square ($\chi^2$-distribution) distributions are a family of continuous probability distributions. They're widely used in hypothesis tests, including the chi-square goodness of fit test and the chi-square test of independence.
+
+::: {.callout-tip icon="false"}
+## Definition and properties of chi-squared distribution
+
+The chi-squared distribution (or $\chi^2$-distribution) with n degrees of freedom is the distribution of a sum of the squares of n independent Standard Normal random variables.
+
+$$X^2 =\sum _{i=1}^{n}Z_{i}^{2}$$ {#eq-chi}
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-chi
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: chi-squared distribution with df=10, 15, and 20
+
+curve(dchisq(x, df = 10), from = 0, to = 50, xlab = "chi-squared", ylab = "Probability Density", frame.plot = FALSE)
+
+curve(dchisq(x, df = 15), from = 0, to = 50, col = "red", add = TRUE)
+curve(dchisq(x, df = 20), from = 0, to = 50, col = "green", add = TRUE)
+axis(2, at = seq(0, 01, by= 0.02))
+text(10, 0.1, expression("df=10"))
+text(15, 0.08, expression("df= 15"))
+text(24, 0.06, expression("df=20"))
+
+```
+
+The mean of this distribution is μ = df, and the variance is determined by the degrees of freedom parameter, $σ^2 = 2df$
+
+**Basic Properties of chi-squared distribution:** The chi-squared distribution is always positive and its shape is uniquely determined by the degrees of freedom. The distribution becomes more symmetrical as the degrees of freedom increase and when df\>50, the chi-squared distribution is very similar to the Normal distribution.
+:::
+
+ 
+
+### **F-distribution**
+
+The F-distribution is the ratio of two chi-squared distributions and is used in hypothesis testing of whether two observed samples have the same variance.
+
+::: {.callout-tip icon="false"}
+## Definition and properties of chi-squared distribution
+
+Let $X_n^2$ and $X_m^2$ be independent variates distributed as chi-squared with n and m degrees of freedom. $$F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}$$
+
+The mean of this distribution is:
+
+$$\frac {m} {(m - 2)} \;,\;\;\;\ with\;\ m > 2$$
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-f
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: F-distribution with different df1 and df2
+
+
+curve(df(x, df1 = 2, df2 = 1), from = 0, to = 5, col= 'black', xlab = "F", ylab = "Probability Density")
+curve(df(x, df1 = 4, df2 = 6), from = 0, to = 5, col= 'red',
+      add = TRUE)
+curve(df(x, df1 = 12, df2 = 12), from = 0, to = 5, col= 'green',
+      add = TRUE)
+
+axis(2, at = seq(0, 1, by= 0.2))
+text(0.5, 0.9, expression("df1=2, df2=1"))
+text(1.1, 0.6, expression("df1=4, df2=6"))
+text(1.3, 0.8, expression("df1=12, df2=12"))
+
+```
+
+**Basic Properties of F-distribution:**
+
+The F-distribution is always positive, but the exact shape depends on the degrees of freedom for the two chi-squared distributions that determine it.
+:::
+
+
+
+## Descriptive Methods for Assessing Normality
+
+It is important to assess whether the distribution of a set of empirical data approximates the normal distribution. There are three simple and practical methods:
+
+
+(a) Histogram: If the data are approximately normally distributed, the shape of the histogram is similar to the normal distribution curve.
+
+(b) Shape statistics: One way of measuring non-Normality **skewness** and **kurtosis** are two statistical moments for assessing Normality.
+
+(c) Q-Q plot: A graphical method for comparing two probability distributions by plotting their quantiles against each other.
+
+
+### **Bell-shaped Empirical Distribution**
+
+The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
+
+
+::: {.callout-note icon="false"}
+## **Example-Bell-shaped Empirical Distribution**
+
+If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-empirical
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: Empirical relative frequency distribution of the birthweight.
+
+
+h<-hist(data_birthweight$birthweight, breaks= 30, plot=F)
+h$counts <- h$counts / sum(h$counts)
+plot(h, freq=TRUE, main="Empirical distribution", xlab = "Birthweight (in Kg)", ylab="Relative Frequency", frame.plot = FALSE)
+
+```
+
+
+:::
+
+
+
+### **Shape statistis and normality**
+
+There are two shape statistics that can indicate deviation from normality: **skewness** and **kurtosis**.
+
+**Skewness**
+
+Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry.
+
+Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
+
+Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
+
+```{r}
+#| echo: false
+#| label: fig-skew2
+#| out-width: "105%"
+#| fig-align: "center"
+#| fig-cap: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.
+
+
+knitr::include_graphics(here("images", "skew2.png"))
+```
+
+ 
+
+**Kurtosis**
+
+The other way that distributions can deviate from normality is **kurtosis**. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
+
+Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
+
+A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
+
+```{r}
+#| echo: false
+#| label: fig-kurtosis
+#| out-width: "105%"
+#| fig-align: "center"
+#| fig-cap: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.
+
+
+knitr::include_graphics(here("images", "kurtosis.png"))
+```
+
+
+ 
+
+
+### **Q-Q plots**
+
+The normal Q–Q plot shows each data value plotted against the value that would be expected if the data came from a normal distribution. The values in the plot are the quantiles of the variable distribution plotted against the quantiles that would be expected if the distribution was normal. If the variable was normally distributed, the, points would fall directly on the **straight** line. Any deviations from the straight line indicate some degree of non-normality.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-qq
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: Q-Q plot of Birthweight.
+
+
+qqnorm(data_birthweight$birthweight, pch = 1, frame = FALSE)
+qqline(data_birthweight$birthweight, col = "steelblue", lwd = 2)
+
+```
+
+
+
+
+::: {.callout-tip icon="false"}
+## Properties of an approximately bell-shaped empirical distribution
+
+In an approximately **bell-shaped** empirical distribution:
+
+-   the mean, the median and the mode have very close values
+
+-   the histogram is symmetric about the mean
+
+-   "nearly all" values (99.7%) are within -3 and +3 standard deviations of the mean (@fig-normal_auc)
+
+-   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.
+
+-   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
+
+- In Q-Q plot (@fig-qq) the points fall close to the **straight line**.
+:::
+
+
+
+## Exercises
+
+
+::: {.callout appearance="simple" icon="false"}
+## **Exercise 1.1**
+
+In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean  μ=496  and a standard deviation  σ=114 . Let  X=  a SAT exam verbal section score in 2012. Then  $X∼N(496,114^2)$.
+
+Find the  z -scores for  $x_1$=325  and  $x_2$=366.21 . Interpret each  z -score. What can you say about  $x_1$=325   and  $x_2$=366.21 ?
+
+::: {.callout-note collapse="true" icon="false"}
+## **Solution**
+
+The z-score (@eq-z) for  x1=325  is  $z_1$=–1.5 .
+
+The z-score (@eq-z) for  x2=366.21  is  $z_2$=–1.14 .
+
+Student 2 scored closer to the mean than Student 1 and, since they both had negative  z -scores, Student 2 had the better score.
+
+:::
+:::
+
