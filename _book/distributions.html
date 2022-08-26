@@ -1015,7 +1015,7 @@ Example-Area under the curve
 </div>
 </div>
 </div>
-<p>One solution is to use the {#eq-integral} with <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2:</p>
+<p>One solution is to use the <a href="#eq-integral">Equation&nbsp;<span>3.22</span></a> with <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2:</p>
 <p><span class="math display">\[ E=P(1\leq Z\leq 2)={\frac {1}{{\sqrt {2\pi }}}}\int_{1}^{2}e^{-{\frac {1}{2}}z^2}dz \]</span></p>
 <p>In this case, however, we can easily calculate the area using the properties of the normal distribution:</p>
 <p><span class="math inline">\(E = P(0\leq Z\leq 2) - P(0\leq Z\leq 1) \approx 0.475 - 0.34 \approx 0.135\)</span></p>
@@ -1147,22 +1147,39 @@ Definition and properties of chi-squared distribution
 <p>&nbsp;</p>
 </section><section id="shape-statistis-and-normality" class="level3"><h3 class="anchored" data-anchor-id="shape-statistis-and-normality"><strong>Shape statistis and normality</strong></h3>
 <p>There are two shape statistics that can indicate deviation from normality: <strong>skewness</strong> and <strong>kurtosis</strong>.</p>
-<p><strong>Skewness</strong></p>
-<p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
-<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> c).</p>
+<p><strong>A. Skewness</strong></p>
+<p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry. Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<span class="quarto-unresolved-ref">?fig-skew2</span> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<span class="quarto-unresolved-ref">?fig-skew2</span> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<span class="quarto-unresolved-ref">?fig-skew2</span> c).</p>
 <p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.16: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
+<div id="fig-compare_skewness" class="cell quarto-layout-panel">
+<figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-compare_skewness-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-compare_skewness-1.png" class="img-fluid figure-img" data-ref-parent="fig-compare_skewness" width="672"></p>
+<p></p><figcaption class="figure-caption">(a) Effect of changing mean.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-compare_skewness-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-compare_skewness-2.png" class="img-fluid figure-img" data-ref-parent="fig-compare_skewness" width="672"></p>
+<p></p><figcaption class="figure-caption">(b) Effect of changing standard deviation.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-compare_skewness-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-compare_skewness-3.png" class="img-fluid figure-img" data-ref-parent="fig-compare_skewness" width="672"></p>
+<p></p><figcaption class="figure-caption">(c) Effect blaaa</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
+<p></p><figcaption class="figure-caption">Figure 3.16: Probability distribution functions of the Normal distributions with different means and standard deviations.</figcaption><p></p>
+</figure>
+</div>
 <p>&nbsp;</p>
-<p><strong>Kurtosis</strong></p>
-<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
+<p><strong>B. Kurtosis</strong></p>
+<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The <strong>excess kurtosis</strong> parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
 <p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> c).</p>
 <p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
 <div class="cell" data-layout-align="center">
@@ -1201,7 +1218,7 @@ Properties of an approximately bell-shaped empirical distribution
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
 <li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean (<a href="#fig-normal_auc">Figure&nbsp;<span>3.7</span></a>)</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<span class="quarto-unresolved-ref">?fig-skew2</span> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
 <li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
 <li><p>In Q-Q plot (<a href="#fig-qq">Figure&nbsp;<span>3.18</span></a>) the points fall close to the <strong>straight line</strong>.</p></li>
 </ul>

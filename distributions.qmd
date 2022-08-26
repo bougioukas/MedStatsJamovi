@@ -843,7 +843,7 @@ polygon(region.x, region.y, density=-1, col="#F66733")
 
 ```
 
-One solution is to use the {#eq-integral} with $z_1$ = 1 and $z_2$ = 2:
+One solution is to use the @eq-integral with $z_1$ = 1 and $z_2$ = 2:
 
 $$ E=P(1\leq Z\leq 2)={\frac {1}{{\sqrt {2\pi }}}}\int_{1}^{2}e^{-{\frac {1}{2}}z^2}dz $$
 
@@ -878,7 +878,7 @@ The mean of this distribution is μ = 0, and the variance is determined by the d
 curve(dnorm(x), -4, 4, xlab = "t", ylab = "Probability Density", frame.plot = FALSE)
 curve(dt(x, df = 3), col = "red", add = TRUE)
 axis(1, at = -4:4)
-text(0, 0.41, expression("st. normal"))
+text(0, 0.41, expression("standard normal"))
 text(0, 0.34, expression(t(3)))
 
 ```
@@ -1019,30 +1019,67 @@ plot(h, freq=TRUE, main="Empirical distribution", xlab = "Birthweight (in Kg)", 
 
 There are two shape statistics that can indicate deviation from normality: **skewness** and **kurtosis**.
 
-**Skewness**
+**A. Skewness**
 
 Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry.
-
 Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
 
 Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
 
+
 ```{r}
 #| echo: false
-#| label: fig-skew2
-#| out-width: "105%"
-#| fig-align: "center"
-#| fig-cap: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.
+#| label: fig-compare_skewness
+#| fig-cap: Probability distribution functions of the Normal distributions with different means and standard deviations.
+#| fig-subcap: 
+#|   - "Effect of changing mean."
+#|   - "Effect of changing standard deviation."
+#|   - "Effect blaaa"
+#| layout-ncol: 3
 
 
-knitr::include_graphics(here("images", "skew2.png"))
+curve(dbeta(x, 2, 7), col="green", type="l",lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
+segments(x0 = 0.15, x1 = 0.15, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
+text(0.15, 3.25, expression("mode"), font =2, cex = 1.5, col = "orange")
+segments(x0 = 0.25, x1 = 0.25, y0 = 0, y1 = 2.5, lty = 2, lwd = 2, col = "blue") 
+text(0.25, 2.6, expression("median"), font = 2, cex = 1.5, col = "blue")
+segments(x0 = 0.3, x1 = 0.3, y0 = 0, y1 = 1.9, lty = 2, lwd = 2, col = "black") 
+text(0.35, 1.95, expression("mean"), font=2, cex = 1.5, col = "black")
+       
+
+curve(dbeta(x, 7, 7), col="green", type="l", lwd = 2, xlab="x", ylab="Probability distribution", frame.plot = FALSE)
+
+segments(x0 = 0.45, x1 = 0.45, y0 = 0, y1 = 2.9, lty = 2, lwd = 2, col = "orange") 
+text(0.4, 2.85, expression("mode"), font =2, cex = 1.5, col = "orange")
+
+segments(x0 = 0.5, x1 = 0.5, y0 = 0, y1 = 3.0, lty = 2, lwd = 2, col = "black") 
+text(0.5, 3.0, expression("mean"), font = 2, cex = 1.5, col = "black")
+
+segments(x0 = 0.55, x1 = 0.55, y0 = 0, y1 = 2.8, lty = 2, lwd = 2, col = "blue") 
+text(0.63, 2.9, expression("median"), font=2, cex = 1.5, col = "blue")
+       
+
+
+curve(dbeta(x, 7, 2), col="green", type="l", lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
+
+segments(x0 = 0.7, x1 = 0.7, y0 = 0, y1 = 1.75, lty = 2, lwd = 2, col = "black") 
+text(0.7, 1.7, expression("mean"), font = 2, cex = 1.5, col = "black")
+
+segments(x0 = 0.75, x1 = 0.75, y0 = 0, y1 = 2.35, lty = 2, lwd = 2, col = "blue") 
+text(0.73, 2.7, expression("median"), font=2, cex = 1.5, col = "blue")
+
+segments(x0 = 0.85, x1 = 0.85, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
+text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
+
+
 ```
+
 
  
 
-**Kurtosis**
+**B. Kurtosis**
 
-The other way that distributions can deviate from normality is **kurtosis**. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
+The other way that distributions can deviate from normality is **kurtosis**. The **excess kurtosis** parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
 
 Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
 
@@ -1117,3 +1154,9 @@ The z-score (@eq-z) for x2=366 is $z_2$=--1.14 .
 Student 2 scored closer to the mean than Student 1 and, since they both had negative z -scores, Student 2 had the better score.
 :::
 :::
+
+
+
+
+
+
