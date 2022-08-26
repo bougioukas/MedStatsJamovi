@@ -1027,7 +1027,7 @@ Skewness values that are **negative** indicate a tail to the **left** (@fig-comp
 Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
 
 
-```{r}{.lightbox}
+```{r}
 #| echo: false
 #| label: fig-compare_skewness
 #| fig-cap: Probability distribution functions of the Normal distributions with different means and standard deviations.
