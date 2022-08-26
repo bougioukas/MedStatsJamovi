@@ -43,6 +43,10 @@ book:
 
 bibliography: references.bib
 
+filters:
+  - lightbox
+lightbox: auto
+
 format:
   html:
     theme: cosmo

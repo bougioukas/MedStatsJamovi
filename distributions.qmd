@@ -1022,12 +1022,12 @@ There are two shape statistics that can indicate deviation from normality: **ske
 **A. Skewness**
 
 Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry.
-Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
+Skewness values that are **negative** indicate a tail to the **left** (@fig-compare_skewness a), **zero** value indicate a **symmetric** distribution (@fig-compare_skewness b), while values that are **positive** indicate a tail to the **right** (@fig-compare_skewness c).
 
 Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
 
 
-```{r}
+```{r}{.lightbox}
 #| echo: false
 #| label: fig-compare_skewness
 #| fig-cap: Probability distribution functions of the Normal distributions with different means and standard deviations.
@@ -1075,7 +1075,6 @@ text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
 ```
 
 
- 
 
 **B. Kurtosis**
 
@@ -1154,9 +1153,4 @@ The z-score (@eq-z) for x2=366 is $z_2$=--1.14 .
 Student 2 scored closer to the mean than Student 1 and, since they both had negative z -scores, Student 2 had the better score.
 :::
 :::
-
-
-
-
-
 
