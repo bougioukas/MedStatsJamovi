@@ -561,7 +561,7 @@ The $Q_{1}$ lies somewhere between the $\color{red}{fourth}$ and $\color{blue}{f
 
 So, the IQR for the corn size data is 2.0 to 4.5 mm or described by a single number 2.5 mm.
 
-|                            |                  |                  |                  |                           |                            |                   |                   |                            |                             |                    |                    |                             |                              |                     |                     |                      |
+|                  |                  |                  |                  |                           |                            |                   |                   |                            |                             |                    |                    |                             |                              |                     |                     |                      |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **Ordered data** | $\color{red}{1}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{red}{\textbf{2}}$ | $\color{blue}{\textbf{2}}$ | $\color{blue}{2}$ | $\color{blue}{3}$ | $\color{blue}{\textbf{3}}$ | $\color{green}{\textbf{3}}$ | $\color{green}{3}$ | $\color{green}{4}$ | $\color{green}{\textbf{4}}$ | $\color{orange}{\textbf{5}}$ | $\color{orange}{6}$ | $\color{orange}{6}$ | $\color{orange}{10}$ |
 
@@ -652,13 +652,50 @@ Mean and median convey different impressions of the location of data in presence
 -   If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails (see also @sec-distributions).
 
 ```{r}
-#| label: fig-skew
-#| fig-align: center
-#| out-width: "80%"
 #| echo: false
-#| fig-cap: Types of distribution according to the summetry (a) left skewed, (b) symmetric, and (c) right skewed distribution.
+#| label: fig-skew
+#| fig-cap: Types of distribution according to the summetry.
+#| fig-subcap: 
+#|   - "Left skewed distribution."
+#|   - "Symmetric distribution."
+#|   - "Right skewed distribution"
+#| layout-ncol: 3
 
-knitr::include_graphics(here::here("images", "skew.png"))
+
+curve(dbeta(x, 2, 7), col="green", type="l",lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
+segments(x0 = 0.15, x1 = 0.15, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
+text(0.15, 3.25, expression("mode"), font =2, cex = 1.5, col = "orange")
+segments(x0 = 0.25, x1 = 0.25, y0 = 0, y1 = 2.5, lty = 2, lwd = 2, col = "blue") 
+text(0.25, 2.6, expression("median"), font = 2, cex = 1.5, col = "blue")
+segments(x0 = 0.3, x1 = 0.3, y0 = 0, y1 = 1.9, lty = 2, lwd = 2, col = "black") 
+text(0.35, 1.95, expression("mean"), font=2, cex = 1.5, col = "black")
+       
+
+curve(dbeta(x, 7, 7), col="green", type="l", lwd = 2, xlab="x", ylab="Probability distribution", frame.plot = FALSE)
+
+segments(x0 = 0.45, x1 = 0.45, y0 = 0, y1 = 2.9, lty = 2, lwd = 2, col = "orange") 
+text(0.4, 2.85, expression("mode"), font =2, cex = 1.5, col = "orange")
+
+segments(x0 = 0.5, x1 = 0.5, y0 = 0, y1 = 3.0, lty = 2, lwd = 2, col = "black") 
+text(0.5, 3.0, expression("mean"), font = 2, cex = 1.5, col = "black")
+
+segments(x0 = 0.55, x1 = 0.55, y0 = 0, y1 = 2.8, lty = 2, lwd = 2, col = "blue") 
+text(0.63, 2.9, expression("median"), font=2, cex = 1.5, col = "blue")
+       
+
+
+curve(dbeta(x, 7, 2), col="green", type="l", lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
+
+segments(x0 = 0.7, x1 = 0.7, y0 = 0, y1 = 1.75, lty = 2, lwd = 2, col = "black") 
+text(0.7, 1.7, expression("mean"), font = 2, cex = 1.5, col = "black")
+
+segments(x0 = 0.75, x1 = 0.75, y0 = 0, y1 = 2.35, lty = 2, lwd = 2, col = "blue") 
+text(0.73, 2.7, expression("median"), font=2, cex = 1.5, col = "blue")
+
+segments(x0 = 0.85, x1 = 0.85, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
+text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
+
+
 ```
 
 Thus, the following format is recommended for reporting summary statistics for numerical data:

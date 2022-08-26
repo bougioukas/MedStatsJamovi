@@ -589,7 +589,6 @@ $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu
 
 where $\pi=3.14$ and $e = 2.718$.
 
-
 Populations with small values of the standard deviation, $\sigma$, have a distribution concentrated close to the centre, $\mu$; those with large standard deviation, $\sigma$, have a distribution widely spread along the measurement axis @fig-compare_normal.
 
 ```{r}
@@ -606,7 +605,7 @@ y1 <- dnorm(x)
 y2 <- dnorm(x, mean= 2)
 y3 <- dnorm(x, sd= 2)
 
-plot(x,y1, main="Normal Distribution", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+plot(x,y1, main="Normal Distributions", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
 axis(1, at = c(0, 2), lab = expression(mu[1], mu[2]))
 lines(x,y2,col="deeppink", lwd = 3)
 text(1.0, 0.4, expression(mu[1] < mu[2]), col="gray30")
@@ -788,11 +787,10 @@ Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a f
 
 The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
 
-
 ::: {.callout-note icon="false"}
 ## Example-Diastolic Blood Pressure
 
-Z-scores are often used in medical settings to assess how an individual’s blood pressure compares to the mean population blood pressure.
+Z-scores are often used in medical settings to assess how an individual's blood pressure compares to the mean population blood pressure.
 
 For example, the distribution of diastolic blood pressure for men is normally distributed with a mean of about 80 and a standard deviation of 20.
 
@@ -801,7 +799,6 @@ If a certain man has a diastolic blood pressure of 100, we would calculate their
 $z = \frac{(100 – 80)}{20} = 1$
 
 This means that this man has a diastolic blood pressure that is 1 standard deviation above the mean.
-
 :::
 
  
@@ -1021,20 +1018,18 @@ There are two shape statistics that can indicate deviation from normality: **ske
 
 **A. Skewness**
 
-Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry.
-Skewness values that are **negative** indicate a tail to the **left** (@fig-compare_skewness a), **zero** value indicate a **symmetric** distribution (@fig-compare_skewness b), while values that are **positive** indicate a tail to the **right** (@fig-compare_skewness c).
+Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry. Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
 
 Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
 
-
 ```{r}
 #| echo: false
-#| label: fig-compare_skewness
-#| fig-cap: Probability distribution functions of the Normal distributions with different means and standard deviations.
+#| label: fig-skew2
+#| fig-cap: Types of distribution according to the summetry.
 #| fig-subcap: 
-#|   - "Effect of changing mean."
-#|   - "Effect of changing standard deviation."
-#|   - "Effect blaaa"
+#|   - "Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode."
+#|   - "Symmetric distribution (zero skewness). The mean, median and mode are the same."
+#|   - "Right skewed distribution (positively skewed). The mean and median are to the right of the mode."
 #| layout-ncol: 3
 
 
@@ -1049,13 +1044,13 @@ text(0.35, 1.95, expression("mean"), font=2, cex = 1.5, col = "black")
 
 curve(dbeta(x, 7, 7), col="green", type="l", lwd = 2, xlab="x", ylab="Probability distribution", frame.plot = FALSE)
 
-segments(x0 = 0.45, x1 = 0.45, y0 = 0, y1 = 2.9, lty = 2, lwd = 2, col = "orange") 
+segments(x0 = 0.48, x1 = 0.48, y0 = 0, y1 = 2.9, lty = 2, lwd = 2, col = "orange") 
 text(0.4, 2.85, expression("mode"), font =2, cex = 1.5, col = "orange")
 
 segments(x0 = 0.5, x1 = 0.5, y0 = 0, y1 = 3.0, lty = 2, lwd = 2, col = "black") 
 text(0.5, 3.0, expression("mean"), font = 2, cex = 1.5, col = "black")
 
-segments(x0 = 0.55, x1 = 0.55, y0 = 0, y1 = 2.8, lty = 2, lwd = 2, col = "blue") 
+segments(x0 = 0.52, x1 = 0.52, y0 = 0, y1 = 2.9, lty = 2, lwd = 2, col = "blue") 
 text(0.63, 2.9, expression("median"), font=2, cex = 1.5, col = "blue")
        
 
@@ -1066,15 +1061,13 @@ segments(x0 = 0.7, x1 = 0.7, y0 = 0, y1 = 1.75, lty = 2, lwd = 2, col = "black")
 text(0.7, 1.7, expression("mean"), font = 2, cex = 1.5, col = "black")
 
 segments(x0 = 0.75, x1 = 0.75, y0 = 0, y1 = 2.35, lty = 2, lwd = 2, col = "blue") 
-text(0.73, 2.7, expression("median"), font=2, cex = 1.5, col = "blue")
+text(0.73, 2.5, expression("median"), font=2, cex = 1.5, col = "blue")
 
 segments(x0 = 0.85, x1 = 0.85, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
 text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
 
 
 ```
-
-
 
 **B. Kurtosis**
 
@@ -1084,16 +1077,41 @@ Distributions with **negative** excess kurtosis are called ***platykurtic*** (@f
 
 A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
 
+
 ```{r}
 #| echo: false
 #| label: fig-kurtosis
-#| out-width: "105%"
-#| fig-align: "center"
-#| fig-cap: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.
+#| fig-cap: Types of distribution according to the summetry.
+#| fig-subcap: 
+#|   - "Platykurtic distribution (negative excess kurtosis)."
+#|   - "Mesokurtic distribution (zero excess kurtosis)."
+#|   - "Leptokurtic (positive excess kurtosis). "
+#| layout-ncol: 3
+
+x <- seq(-6, 6, length=200)
+y1 <- dnorm(x)
+y2 <- dnorm(x, sd= 0.5)
+
+plot(x,y1, main="Platykurtic distribution", type = "l", lty = 3, lwd = 2,  xlab = "", ylab = "Probability Density", col="grey50", xaxt='n', frame.plot = FALSE)
+axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
+lines(x,y3,col="deeppink", lwd = 3)
+text(1.5, 0.3, expression(normal))
+text(3.5, 0.10, expression(platykurtic), col="deeppink")
 
 
-knitr::include_graphics(here("images", "kurtosis.png"))
+plot(x,y1, main="Normal distribution", type = "l", lwd = 2,  xlab = "", ylab = "Probability Density", col="deeppink", xaxt='n', frame.plot = FALSE)
+axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
+
+
+plot(x,y1, main="Leptokurtic distribution", type = "l", lty = 3, lwd = 2,  xlab = "", ylab = "Probability Density", col="grey50", xaxt='n', ylim=c(0,0.8), frame.plot = FALSE)
+axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
+lines(x,y2,col="deeppink", lwd = 3)
+text(1.7, 0.25, expression(normal))
+text(1.5, 0.7, expression(leptokurtic), col="deeppink")
+
+
 ```
+
 
  
 
@@ -1153,4 +1171,3 @@ The z-score (@eq-z) for x2=366 is $z_2$=--1.14 .
 Student 2 scored closer to the mean than Student 1 and, since they both had negative z -scores, Student 2 had the better score.
 :::
 :::
-
