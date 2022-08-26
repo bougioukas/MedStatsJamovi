@@ -10,7 +10,7 @@ library(stevemisc)
 library(patchwork)
 
 library(gganimate)
-
+library(fontawesome)
 
 x <- seq(from=4-3*2, to= 4+3*2, length.out=400) # a vector of size 200 with numbers in [-4,4]
 y <- dnorm(x, mean = 4, sd = 2) # y is a vector of the same size as x, with values from the PDF
@@ -346,7 +346,7 @@ For discrete random variables, the probability distribution is fully defined by 
 
  
 
-### **Bernoulli distribution**
+### Bernoulli distribution
 
 Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.
 
@@ -412,7 +412,7 @@ From @eq-bernouli2 the variance of the random variable is $σ^2 = 0.8 × 0.2 = 0
 
  
 
-### **Binomial distribution**
+### Binomial distribution
 
 The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.
 
@@ -486,7 +486,7 @@ $$P(33<X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1$$
 For the breast cancer example and @eq-binom1, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to @eq-binom2, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.
 :::
 
-### **Poisson distribution**
+### Poisson distribution
 
 So far, we have discussed the Bernoulli distribution for binary variables, and the binomial distribution for the number of times the outcome of interest (one of the two possible categories of the binary variable) occur within a set of n Bernoulli trials.
 
@@ -558,7 +558,7 @@ Clearly, in @eq-continuous1, the probability of a certain point value in X is ze
 
  
 
-### **Normal Distribution**
+### Normal Distribution
 
 There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
 
@@ -680,7 +680,7 @@ $$ (125 - 1.96\times 15,\ 125 + 1.96\times 15) = (95.6, 154.4) $$
 
  
 
-### **Standard Normal distribution**
+### Standard Normal distribution
 
 If the random variable X has a normal distribution with $\mu$ and standard deviation $\sigma$, then the standardized Normal deviate is:
 
@@ -851,7 +851,7 @@ $E = P(0\leq Z\leq 2) - P(0\leq Z\leq 1) \approx 0.475 - 0.34 \approx 0.135$
 
  
 
-### **t-distribution**
+### t-distribution
 
 The t-distribution (Student's t-distribution) is a continuous probability distribution that is used in place of the Standard Normal distribution for small samples when the population variance, $σ^2$, is unknown. William Sealy Gosset derived the t-distribution whilst working at the Guinness brewery, but was not permitted by his employer to publish under his own name so he decided to use the pseudonym "Student" for his published work.
 
@@ -895,7 +895,7 @@ Similar to the standard normal distribution, the probability density curve for a
 
  
 
-### **Chi-squared distribution**
+### Chi-squared distribution
 
 Chi-square ($\chi^2$-distribution) distributions are a family of continuous probability distributions. They're widely used in hypothesis tests, including the chi-square goodness of fit test and the chi-square test of independence.
 
@@ -933,7 +933,7 @@ The mean of this distribution is μ = df, and the variance is determined by the 
 
  
 
-### **F-distribution**
+### F-distribution
 
 The F-distribution is the ratio of two chi-squared distributions and is used in hypothesis testing of whether two observed samples have the same variance.
 
@@ -956,7 +956,7 @@ $$\frac {m} {(m - 2)} \;,\;\;\;\ with\;\ m > 2$$
 #| fig-cap: F-distribution with different df1 and df2
 
 
-curve(df(x, df1 = 2, df2 = 1), from = 0, to = 5, col= 'black', xlab = "F", ylab = "Probability Density")
+curve(df(x, df1 = 2, df2 = 1), from = 0, to = 5, col= 'black', xlab = "F", ylab = "Probability Density", frame.plot = FALSE)
 curve(df(x, df1 = 4, df2 = 6), from = 0, to = 5, col= 'red',
       add = TRUE)
 curve(df(x, df1 = 12, df2 = 12), from = 0, to = 5, col= 'green',
@@ -984,12 +984,14 @@ It is important to assess whether the distribution of a set of empirical data ap
 
 (c) **Q-Q plot**: A graphical method for comparing two probability distributions by plotting their quantiles against each other.
 
-### **Bell-shaped Empirical Distribution**
+
+
+### Bell-shaped Empirical Distribution
 
 The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
 
 ::: {.callout-note icon="false"}
-## **Example-Bell-shaped Empirical Distribution**
+## `r fa("cube", fill = "steelblue")`  **Example-Bell-shaped Empirical Distribution**
 
 If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.
 
@@ -1012,7 +1014,7 @@ plot(h, freq=TRUE, main="Empirical distribution", xlab = "Birthweight (in Kg)", 
 
  
 
-### **Shape statistis and normality**
+### Shape statistis and normality
 
 There are two shape statistics that can indicate deviation from normality: **skewness** and **kurtosis**.
 
@@ -1077,7 +1079,6 @@ Distributions with **negative** excess kurtosis are called ***platykurtic*** (@f
 
 A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
 
-
 ```{r}
 #| echo: false
 #| label: fig-kurtosis
@@ -1112,10 +1113,9 @@ text(1.5, 0.7, expression(leptokurtic), col="deeppink")
 
 ```
 
-
  
 
-### **Q-Q plots**
+### Q-Q plots
 
 The normal Q--Q plot shows each data value plotted against the value that would be expected if the data came from a normal distribution. The values in the plot are the quantiles of the variable distribution plotted against the quantiles that would be expected if the distribution was normal. If the variable was normally distributed, the, points would fall directly on the **straight** line. Any deviations from the straight line indicate some degree of non-normality.
 
@@ -1135,7 +1135,7 @@ qqline(data_birthweight$birthweight, col = "steelblue", lwd = 2)
 ```
 
 ::: {.callout-tip icon="false"}
-## Properties of an approximately bell-shaped empirical distribution
+## `r fa("highlighter", fill = "steelblue")` Properties of an approximately bell-shaped empirical distribution
 
 In an approximately **bell-shaped** empirical distribution:
 
@@ -1152,7 +1152,10 @@ In an approximately **bell-shaped** empirical distribution:
 -   In Q-Q plot (@fig-qq) the points fall close to the **straight line**.
 :::
 
-## Exercises
+
+ 
+
+## `r fa("compass-drafting", fill = "steelblue")` Exercises {.unnumbered}
 
 ::: {.callout appearance="simple" icon="false"}
 ## **Exercise 1.1**
