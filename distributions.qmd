@@ -587,6 +587,9 @@ Gauss' normal distribution, technically a density function, is a distribution de
 
 $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}} $$ {#eq-gauss}
 
+where $\pi=3.14$ and $e = 2.718$.
+
+
 Populations with small values of the standard deviation, $\sigma$, have a distribution concentrated close to the centre, $\mu$; those with large standard deviation, $\sigma$, have a distribution widely spread along the measurement axis @fig-compare_normal.
 
 ```{r}
@@ -677,7 +680,6 @@ $$ (125 - 1.96\times 15,\ 125 + 1.96\times 15) = (95.6, 154.4) $$
 :::
 
  
-
 
 ### **Standard Normal distribution**
 
@@ -785,6 +787,24 @@ Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a f
  
 
 The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
+
+
+::: {.callout-note icon="false"}
+## Example-Diastolic Blood Pressure
+
+Z-scores are often used in medical settings to assess how an individual’s blood pressure compares to the mean population blood pressure.
+
+For example, the distribution of diastolic blood pressure for men is normally distributed with a mean of about 80 and a standard deviation of 20.
+
+If a certain man has a diastolic blood pressure of 100, we would calculate their z-score (@eq-zd) to be:
+
+$z = \frac{(100 – 80)}{20} = 1$
+
+This means that this man has a diastolic blood pressure that is 1 standard deviation above the mean.
+
+:::
+
+ 
 
 To find the area under the curve between two z-scores, $z_1$ and $z_2$, we have to integrate the pdf @eq-zd as following:
 
@@ -957,24 +977,19 @@ text(1.3, 0.8, expression("df1=12, df2=12"))
 The F-distribution is always positive, but the exact shape depends on the degrees of freedom for the two chi-squared distributions that determine it.
 :::
 
-
-
 ## Descriptive Methods for Assessing Normality
 
 It is important to assess whether the distribution of a set of empirical data approximates the normal distribution. There are three simple and practical methods:
 
+(a) **Histogram**: If the data are approximately normally distributed, the shape of the histogram is similar to the normal distribution curve.
 
-(a) Histogram: If the data are approximately normally distributed, the shape of the histogram is similar to the normal distribution curve.
+(b) **Shape statistics**: One way of measuring non-Normality **skewness** and **kurtosis** are two statistical moments for assessing Normality.
 
-(b) Shape statistics: One way of measuring non-Normality **skewness** and **kurtosis** are two statistical moments for assessing Normality.
-
-(c) Q-Q plot: A graphical method for comparing two probability distributions by plotting their quantiles against each other.
-
+(c) **Q-Q plot**: A graphical method for comparing two probability distributions by plotting their quantiles against each other.
 
 ### **Bell-shaped Empirical Distribution**
 
 The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
-
 
 ::: {.callout-note icon="false"}
 ## **Example-Bell-shaped Empirical Distribution**
@@ -996,11 +1011,9 @@ h$counts <- h$counts / sum(h$counts)
 plot(h, freq=TRUE, main="Empirical distribution", xlab = "Birthweight (in Kg)", ylab="Relative Frequency", frame.plot = FALSE)
 
 ```
-
-
 :::
 
-
+ 
 
 ### **Shape statistis and normality**
 
@@ -1046,13 +1059,11 @@ A kurtosis value between −1 and +1 indicates normality and a value between −
 knitr::include_graphics(here("images", "kurtosis.png"))
 ```
 
-
  
-
 
 ### **Q-Q plots**
 
-The normal Q–Q plot shows each data value plotted against the value that would be expected if the data came from a normal distribution. The values in the plot are the quantiles of the variable distribution plotted against the quantiles that would be expected if the distribution was normal. If the variable was normally distributed, the, points would fall directly on the **straight** line. Any deviations from the straight line indicate some degree of non-normality.
+The normal Q--Q plot shows each data value plotted against the value that would be expected if the data came from a normal distribution. The values in the plot are the quantiles of the variable distribution plotted against the quantiles that would be expected if the distribution was normal. If the variable was normally distributed, the, points would fall directly on the **straight** line. Any deviations from the straight line indicate some degree of non-normality.
 
 ```{r}
 #| echo: false
@@ -1069,9 +1080,6 @@ qqline(data_birthweight$birthweight, col = "steelblue", lwd = 2)
 
 ```
 
-
-
-
 ::: {.callout-tip icon="false"}
 ## Properties of an approximately bell-shaped empirical distribution
 
@@ -1087,30 +1095,25 @@ In an approximately **bell-shaped** empirical distribution:
 
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
 
-- In Q-Q plot (@fig-qq) the points fall close to the **straight line**.
+-   In Q-Q plot (@fig-qq) the points fall close to the **straight line**.
 :::
 
-
-
 ## Exercises
-
 
 ::: {.callout appearance="simple" icon="false"}
 ## **Exercise 1.1**
 
-In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean  μ=496  and a standard deviation  σ=114 . Let  X=  a SAT exam verbal section score in 2012. Then  $X∼N(496,114^2)$.
+In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean μ=496 and a standard deviation σ=114 . Let X= a SAT exam verbal section score in 2012. Then $X∼N(496,114^2)$.
 
-Find the  z -scores for  $x_1$=325  and  $x_2$=366.21 . Interpret each  z -score. What can you say about  $x_1$=325   and  $x_2$=366.21 ?
+Find the z -scores for $x_1$=325 and $x_2$=366.21. Interpret each z -score. What can you say about $x_1$=325 and $x_2$=366 ?
 
 ::: {.callout-note collapse="true" icon="false"}
 ## **Solution**
 
-The z-score (@eq-z) for  x1=325  is  $z_1$=–1.5 .
+The z-score (@eq-z) for x1=325 is $z_1$=--1.5 .
 
-The z-score (@eq-z) for  x2=366.21  is  $z_2$=–1.14 .
+The z-score (@eq-z) for x2=366 is $z_2$=--1.14 .
 
-Student 2 scored closer to the mean than Student 1 and, since they both had negative  z -scores, Student 2 had the better score.
-
+Student 2 scored closer to the mean than Student 1 and, since they both had negative z -scores, Student 2 had the better score.
 :::
 :::
-
