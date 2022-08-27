@@ -30,12 +30,10 @@ data_corn <- data_corn %>%
  )
 ```
 
-**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs.
-
-@tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
+**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs. For example, @tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
 
 ::: {.callout-note icon="false"}
-## **Example: Summary table with characteristics of patients with foot corns treated with salicylic acid plasters or scalpel debridement [@farndon2013]**
+## Example: Summary table with characteristics of patients [@farndon2013]
 
 +----------------------+-----------------+---------------------+-------------------+
 |                      |                 | Corn Plaster, n (%) | Scalpel, n (%)    |
@@ -91,10 +89,10 @@ data_corn <- data_corn %>%
 | **median (IQR)**     |                 |                     |                   |
 +----------------------+-----------------+---------------------+-------------------+
 
-: Baseline characteristics of patients with foot corns by treatment group. [@farndon2013] {#tbl-corn}
+: Baseline characteristics of patients with foot corns by treatment group. {#tbl-corn}
+:::
 
 In this example since we have 101 patients in each randomized group the percentages are almost the same as the raw counts. However, for most studies we are unlikely to have exactly 100 participants in each group!
-:::
 
  
 
@@ -120,7 +118,7 @@ Farndon et al. (2013) reports a RCT that investigated the effectiveness of salic
 | Darnall          | 6         | 3.0%       |
 | **Total**        | 202       | 100.0%     |
 
-: Frequency and percentage distributions of treatment center for 202 patients with foot corns [@farndon2013] {#tbl-centers1}
+: Frequency and percentage distributions of treatment center for 202 patients with foot corns {#tbl-centers1}
 :::
 
  
@@ -143,14 +141,14 @@ In addition to tabulating each variable separately, we might be interested in wh
 | Darnall      | 5 (5)              | 1 (1)         | 6 (3.0)    |
 | **Total**    | 101 (100)          | 101 (100)     | 202 (100)  |
 
-: Cross-tabulation distribution of treatment center by randomized group for 202 patients with foot corns [@farndon2013] {#tbl-centers2}
+: Cross-tabulation distribution of treatment center by randomized group for 202 patients with foot corns {#tbl-centers2}
 :::
 
  
 
-### How to report summary statistics for categorical data?
+### How to report descriptive statistics for categorical data?
 
-Display the **number** and **proportion** of cases that fall into each category. The following format is recommended for reporting summary statistics for categorical data:
+Display the **number** and **proportion** of cases that fall into each category. The following format is recommended for reporting descriptive statistics for categorical data:
 
 ::: {.callout-tip icon="false"}
 ## Recommendations for reporting numbers and percentages
@@ -434,17 +432,13 @@ x2 <- c(2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 100, 3)
 
 In the RCT by @farndon2013, the baseline size of the corn (as its widest diameter in mm) was measured by a podiatrist (foot specialist). Consider the following 16 baseline corn sizes selected from the patients:
 
-2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3
+**Data**: 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3
 
- 
+The **sum** of the 16 observations is:
 
-The sum of the 16 observations is:
+2 + 2 + 6 + 3 + 4 + 2 + 2 + 5 + 3 + 4 + 1 + 2 + 6 + 3 + 10 + 3 = `r sum(x)`
 
-$2 + 2 + 6 + 3 + 4 + 2 + 2 + 5 + 3 + 4 + 1 + 2 + 6 + 3 + 10 + 3$ = `r sum(x)`
-
- 
-
-Thus, the arithmetic mean is:
+Thus, the **arithmetic mean** is:
 
 $\bar{x}$ = `r sum(x)`/`r length(x)` = `r mean(x)` mm or `r round(mean(x), digits = 1)` mm. It is usual to report one more decimal place for the mean than the data recorded.
 :::
@@ -462,8 +456,6 @@ If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of
 2.  uses all the data values in the calculation
 3.  is algebraically defined and thus mathematically manageable
 4.  has a known sampling distribution
-
- 
 
 **Disadvantages of mean**
 
@@ -488,38 +480,52 @@ Therefore, the sample median, *md*, of *n* observations is:
 ::: {.callout-note icon="false"}
 ## Example: Calculation of the Median - Corn size data (mm)
 
-**1st case: Even observations**
+> **1st case: Even observations**
 
-> We have selected 16 baseline corn sizes:
->
-> **original data:** 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3
->
-> We arrange the data in an ascending order:
->
-> **ordered data:** 1, 2, 2, 2, 2, 2, 3, **3**, **3**, 3, 4, 4, 5, 6, 6, 10
->
-> As the number of observations are **even** (n=16), the median is the average of the two middle ordered numbers (the eighth and ninth): (3+3)/2=3 mm.
+We have selected 16 baseline corn sizes:
 
- 
+**original data:** 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3
 
-**2nd case: Odd observations**
+We arrange the data in an ascending order:
 
-> Suppose we select an additional 17th subject with corn size of 10 mm, so the data are as following:
->
-> **original data:** 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3, 10
->
-> We arrange the data in an ascending order:
->
-> **ordered data:** 1, 2, 2, 2, 2, 2, 3, 3, **3**, 3, 4, 4, 5, 6, 6, 10, 10
->
-> The median would be the 9th ordered observation, which is also 3 mm.
+**ordered data:** 1, 2, 2, 2, 2, 2, 3, **3**, **3**, 3, 4, 4, 5, 6, 6, 10
+
+As the number of observations are **even** (n=16), the median is the average of the two middle ordered numbers (the eighth and ninth): (3+3)/2=3 mm.
 
  
 
-**Main Advantages and Disadvantages of median**
+> **2nd case: Odd observations**
 
-The median has the advantage that is not affected by outliers, so for example, the median in the data would be unaffected by replacing the largest corn size of 10 mm with 100 mm. However, it does not take into account the precise value of each observation and hence does not use all information available in the data.Additionally, it is not a good measure of central tendency when there are heavy ties in the data.
+Suppose we select an additional 17th subject with corn size of 10 mm, so the data are as following:
+
+**original data:** 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3, 10
+
+We arrange the data in an ascending order:
+
+**ordered data:** 1, 2, 2, 2, 2, 2, 3, 3, **3**, 3, 4, 4, 5, 6, 6, 10, 10
+
+The median would be the 9th ordered observation, which is also 3 mm.
+
 :::
+
+ 
+
+::: {.callout-tip icon="false"}
+## Advantages and Disadvantages of median
+
+**Advantages**
+
+1. The median has the advantage that is not affected by outliers, so for example, the median in the data would be unaffected by replacing the largest corn size of 10 mm with 100 mm. 
+
+
+**Disadvantages**
+
+1. However, it does not take into account the precise value of each observation and hence does not use all information available in the data.
+
+2. Additionally, it is not a good measure of central tendency when there are heavy ties in the data.
+
+:::
+
 
  
 
@@ -653,7 +659,7 @@ It turns out in many situations that about **95% of observations** will be withi
 
  
 
-### How to report summary statistics for numerical data?
+### How to report descriptive (or summary) statistics for numerical data?
 
 Mean and median convey different impressions of the location of data in presence of skewness (or outliers).
 
