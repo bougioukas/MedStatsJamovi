@@ -43,34 +43,24 @@ A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it
 For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
 :::
 
-::: {.callout-caution collapse="true"}
-## Basic types and operations of events using set theory
 
-**Simple and Compound Events**
+::: {.callout-caution collapse="true" icon="false"}
+## `r fa("rocket", fill = "orange")` Basic types and operations of events using set theory
 
-> If an event consists of a single outcome from the sample space, it is termed a **simple event**. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event.
->
-> If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a **compound event** in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.
+**Simple and Compound Events:** If an event consists of a single outcome from the sample space, it is termed a **simple event**. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event. If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a **compound event** in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.
 
-**Union of Events** The union symbol (∪) is used to denote the OR event.
 
-> For any two events A and B, "at least one of A and B occurs" is also an event. This event is called the union of A and B, and is denoted by **A∪ B**, which includes only A occurring, only B occurring, and A and B occurring simultaneously.
->
-> In the experiment of rolling a single die, find the union of the events A : "the number rolled is even" and B : "the number rolled is greater than two." Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} (or both) are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .
+**Union of Events:** The union symbol (∪) is used to denote the OR event. For any two events A and B, "at least one of A and B occurs" is also an event. This event is called the union of A and B, and is denoted by **A∪ B**, which includes only A occurring, only B occurring, and A and B occurring simultaneously.
 
-**Intersection of Events** The intersection symbol (∩) is used to denote the AND event.
+In the experiment of rolling a single die, find the union of the events A : "the number rolled is even" and B : "the number rolled is greater than two." Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} (or both) are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .
 
-> For any two events A and B, "A and B occur simultaneously" is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.
->
-> For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.
+**Intersection of Events:** The intersection symbol (∩) is used to denote the AND event. For any two events A and B, "A and B occur simultaneously" is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.
 
-**Inverse Events**
+For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.
 
-> For any event A, "event A does not occur" is also an event. This event is called the inverse of event A or the complement of A, and is denoted by $\bar{A}$.
+**Inverse Events:** For any event A, "event A does not occur" is also an event. This event is called the inverse of event A or the complement of A, and is denoted by $\bar{A}$.
 
-**Mutually Exclusive Events**
-
-> For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.
+**Mutually Exclusive Events:** For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.
 :::
 
 ## Probability
@@ -80,7 +70,7 @@ The concept of probability is used in day-to-day life which stands for the proba
 The first step towards determining the probability of an event is to establish a number of **basic rules** that capture the meaning of probability. The probability of an event is required to satisfy three **axioms** defined by **Kolmogorov**:
 
 ::: {.callout-tip icon="false"}
-## **The Kolmogorov Axioms**
+## The Kolmogorov Axioms
 
 1.  The probability of an event A is a non-negative number, **P(A) ≥ 0**
 2.  The probability of all possible outcomes, or sample space, is **P(Ω) = 1**
@@ -199,7 +189,9 @@ or
 
 $$ P(A|B)=  \frac{P(A ∩ B)}{P(B)}$$ {#eq-conditional2}
 
-::: {.callout-caution collapse="true"}
+
+
+::: {.callout-note icon="false"}
 ## Example - Dice: Conditional probability
 
 Calculate the probability of obtaining **8 as the sum of two rolls** of a die, **given that the first roll was a 3**.
@@ -247,7 +239,9 @@ $$P(A ∩ B) = P(A) · P(B)$$ {#eq-independent}
 
 @eq-independent, known as **Multiplication Rule of Probability**, follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A\|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.
 
-::: {.callout-caution collapse="true"}
+
+
+::: {.callout-note icon="false"}
 ## Example - Statistical independence with dice
 
 Determine the probability of obtaining two 3s when rolling two dice. This event can be decomposed in two events:
@@ -271,8 +265,10 @@ $$P(A|B) = \frac{P(B|A)· P(A)}{P(B)}$$ {#eq-bayes}
 
 where A and B are events and $P(B)\neq 0$.
 
-::: {.callout-caution collapse="true"}
-## Probabilities involved in Bayes' theorem (Advanced)
+
+
+::: {.callout-caution collapse="true" icon="false"}
+## `r fa("rocket", fill = "orange")` Probabilities involved in Bayes' theorem (Advanced)
 
 The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.
 
@@ -355,7 +351,7 @@ A **Bernoulli event** is one for which the probability the event occurs (success
 A **Bernoulli trial** is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a **Bernoulli process**.
 
 ::: {.callout-tip icon="false"}
-## **Definition-Bernoulli distribution**
+## Definition-Bernoulli distribution
 
 The binary random variable X with possible values 0 and 1 has a Bernoulli distribution with parameter p , where P(X = 1) = p and P(X = 0) = 1 − p . We denote this as X ∼ Bernoulli(p), where 0 ≤ p ≤ 1.
 
@@ -379,7 +375,7 @@ $$ \sigma= \sqrt{p(1-p)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
 :::
 
 ::: {.callout-note icon="false"}
-## **Example-Bernoulli distribution: breast cancer**
+## Example-Bernoulli distribution: breast cancer
 
 For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise. Suppose that the probability of survival is p = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − p = 0.2. Then X has a Bernoulli distribution with parameter p = 0.8, and we denote this as
 
@@ -397,7 +393,7 @@ $$P(X=x)={\begin{cases}0.2,&for\ x=0\\0.8,&for\ x=1\end{cases}}$$ Additionally, 
 ber_q <- c(0, 1)
 ber_pmf <- dbinom(ber_q, 1, 0.8)
 
-plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBernoulli(0.8)", ylim = c(0, 1), xaxt='n', lwd = 2,frame.plot = FALSE)
+plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBernoulli(0.8)", ylim = c(0, 1), xaxt='n', lwd = 2, bty="n")
  points(ber_q , ber_pmf, col="deeppink", pch = 20, cex = 2)
  axis(1, at = c(0, 1), lab=expression(0, 1))
 
@@ -419,7 +415,7 @@ The binomial distribution is an important theoretical distribution with wide app
 The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of successes and failures in $n$ **independent** Bernoulli trials for some given value of n.
 
 ::: {.callout-tip icon="false"}
-## **Definition-Binomial distribution**
+## Definition-Binomial distribution
 
 The random variable X representing the **number of times** the outcome of interest occurs in $n$ Bernoulli trials has a $Binomial(n, p)$ distribution, where p is the probability of the outcome of interest (success). A binomial distribution is defined by the number of Bernoulli trials $n$ and the probability of the outcome of interest p for the underlying Bernoulli trials.
 
@@ -439,7 +435,7 @@ $$σ = \sqrt{npq}$$ {#eq-binom3}
 :::
 
 ::: {.callout-note icon="false"}
-## **Example-Binomial distribution: breast cancer**
+## Example-Binomial distribution: breast cancer
 
 Suppose that we plan to recruit a group of 50 patients with breast cancer and study their survival within five years from diagnosis. We represent the survival status for these patient by a set of Bernoulli random variables $X_1, . . . , X_{50}$. (For each patient, the outcome is either 0 or 1). Assuming that all patients have the same survival probability, p = 0.8, and the survival status of one patient does not affect the probability of survival for another patient, $X_1, . . . , X_{50}$ form a set of 50 Bernoulli trials.
 
@@ -472,7 +468,7 @@ According to @eq-binom0 we have:
 binom_q <- 0:50
 binom_pmf <- dbinom(binom_q, size = 50, prob = 0.8)
 
-plot(binom_q , binom_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBinomial(50, 0.8)", ylim = c(0, 0.15),  lwd = 1, frame.plot = FALSE)
+plot(binom_q , binom_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBinomial(50, 0.8)", ylim = c(0, 0.15),  lwd = 1, bty="n")
  points(binom_q , binom_pmf,  col="deeppink", pch = 20, cex = 1)
 
 ```
@@ -495,7 +491,7 @@ While a random variable with a Binomial distribution is a count variable (e.g., 
 Now, suppose that we are investigating the **number of physician visits for each person in one year**. Although very large numbers such as 100 are quite unlikely, there is no theoretical and prespecified upper limit to this random variable. Theoretically, its range is the set of all nonnegative integers.
 
 ::: {.callout-tip icon="false"}
-## **Definition-Poisson distribution**
+## Definition-Poisson distribution
 
 Random variables representing counts within temporal and/or spacial limits but without prespecified upper limits are often assumed to have Poisson distributions. The range of these variables is the set of all non negative integers (i.e., the lower limit is zero, but there is no upper limit). A Poisson distribution is specified by a parameter λ, which is interpreted as the **rate of occurrence within a time period or space limit**. We show this as X ∼ Poisson(λ), where λ is a positive real number (λ\>0).
 
@@ -507,7 +503,7 @@ The mean and variance of a random variable with Poisson(λ) distribution are the
 :::
 
 ::: {.callout-note icon="false"}
-## **Example-Poisson distribution: physician visits**
+## Example-Poisson distribution: physician visits
 
 As an example, assume that the rate of physician visits per year is 2.5:
 
@@ -532,7 +528,7 @@ The resulting plot of the pmf shows the probability of each possible value, whic
 pois_q <- 0:12
 pois_pmf <- dpois(pois_q, lambda = 2.5)
 
-plot(pois_q , pois_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nPoisson(2.5)", ylim = c(0, 0.30),  lwd = 1, frame.plot = FALSE)
+plot(pois_q , pois_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nPoisson(2.5)", ylim = c(0, 0.30),  lwd = 1, bty="n")
  points(pois_q , pois_pmf,  col="deeppink", pch = 20, cex = 1)
 
 ```
@@ -556,8 +552,6 @@ where f(x) is the probability density functions (pdf) of X .
 
 Clearly, in @eq-continuous1, the probability of a certain point value in X is zero, and the area under the probability density curve of the interval (−∞, +∞) should be 1.
 
- 
-
 ### Normal Distribution
 
 There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
@@ -575,19 +569,20 @@ A normal distribution is the familiar "bell curve" and it's a way of formalizing
 x <- seq(-4, 4, length=100)
 y <- dnorm(x)
 
-plot(x,y, main="Normal Distribution", type = "l", lwd = 2,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+plot(x,y, main="Normal Distribution", type = "l", lwd = 2,  xlab = "", ylab = "Probability Density", xaxt='n', bty="n")
 axis(1, at = -3:3, lab=expression(-3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma))
 
 ```
 
 ::: {.callout-tip icon="false"}
-## Definition and Properties of Normal Distribution
+## Definition of Normal Distribution
 
 Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean, $\mu$, represents the population mean and is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as @eq-gauss:
 
 $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}} $$ {#eq-gauss}
 
 where $\pi=3.14$ and $e = 2.718$.
+:::
 
 Populations with small values of the standard deviation, $\sigma$, have a distribution concentrated close to the centre, $\mu$; those with large standard deviation, $\sigma$, have a distribution widely spread along the measurement axis @fig-compare_normal.
 
@@ -605,12 +600,12 @@ y1 <- dnorm(x)
 y2 <- dnorm(x, mean= 2)
 y3 <- dnorm(x, sd= 2)
 
-plot(x,y1, main="Normal Distributions", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+plot(x,y1, main="Normal Distributions", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', bty="n")
 axis(1, at = c(0, 2), lab = expression(mu[1], mu[2]))
 lines(x,y2,col="deeppink", lwd = 3)
 text(1.0, 0.4, expression(mu[1] < mu[2]), col="gray30")
 
-plot(x,y1, main="Normal Distributions", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+plot(x,y1, main="Normal Distributions", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', bty="n")
 axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
 lines(x,y3,col="deeppink", lwd = 3)
 text(1.5, 0.3, expression(sigma[1]))
@@ -618,17 +613,10 @@ text(2.9, 0.10, expression(sigma[2]), col="deeppink")
 text(2.5, 0.20, expression(sigma[1] < sigma[2]), col="gray30")
 ```
 
-The Normal distribution has the properties summarized as follows:
+ 
 
--   Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
-
--   The peak of the curve lies above the mean.
-
--   Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean.
-
--   All three measures of central tendency mean, the median, and the mode will be the same.
-
--   Much of the area (68%) of the distribution is between -1 $\sigma$ below the mean and +1 $\sigma$ above the mean, the large majority (95%) between -1.96 $\sigma$ below the mean and +1.96 $\sigma$ above the mean (often used as a reference range), and almost all (99%) between -2.58 $\sigma$ below the mean and +2.58 $\sigma$ above the mean. The total area under the curve equals to 1 (or 100%).
+::: {.callout-tip icon="false"}
+## `r fa("highlighter", fill = "steelblue")` Properties of Normal Distribution
 
 ```{r}
 #| echo: false
@@ -640,7 +628,7 @@ The Normal distribution has the properties summarized as follows:
 #| fig-cap: The area underneath a Normal Distribution
 
 
-normal_dist("#522d80","deeppink") + 
+normal_dist("#522d80","#00868B") + 
   theme_steve() + 
   post_bg() +
     labs(title = "The Area Underneath a Normal Distribution",
@@ -654,6 +642,18 @@ scale_x_continuous(breaks = c(-4, -2.58, -1.96, -1.65, -1, 0,
   theme(axis.text = element_text(size=10))
 
 ```
+
+The Normal distribution has the properties summarized as follows:
+
+-   Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
+
+-   The peak of the curve lies above the mean.
+
+-   Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean.
+
+-   All three measures of central tendency mean, the median, and the mode will be the same.
+
+-   Much of the area (68%) of the distribution is between -1 $\sigma$ below the mean and +1 $\sigma$ above the mean, the large majority (95%) between -1.96 $\sigma$ below the mean and +1.96 $\sigma$ above the mean (often used as a reference range), and almost all (99%) between -2.58 $\sigma$ below the mean and +2.58 $\sigma$ above the mean. The total area under the curve equals to 1 (or 100%).
 :::
 
  
@@ -701,13 +701,14 @@ $$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd}
 x <- seq(-4, 4, length=100)
 y <- dnorm(x)
 
-plot(x,y, main="Standard Normal Distribution", type = "l", lwd = 2,  xlab = "Z", ylab = "Probability Density", frame.plot = FALSE)
+plot(x,y, main="Standard Normal Distribution", type = "l", lwd = 2,  xlab = "Z", ylab = "Probability Density", bty="n")
 axis(1, at = -4:4)
 
 ```
 
-::: {.callout-caution collapse="true"}
-## Understanding the formula of Standard Normal distribution
+
+::: {.callout-caution collapse="true" icon="false"}
+## `r fa("rocket", fill = "orange")` Understanding the formula of Standard Normal distribution
 
 We can break down individual components of a z-distribution (@eq-z) and explain them until they seem more accessible.
 
@@ -834,7 +835,7 @@ region.y <- c(0,region.y,0)
 
 
 plot(x, y, main="Standard Normal Distribution with a Shaded Region",
-type='l', ylab="Probability Density", xlab="z",lwd=3,col="#522d80", frame.plot = F)
+type='l', ylab="Probability Density", xlab="z",lwd=3,col="#522d80", bty="n")
 #abline(h=0) # adds the x-axis to the plot
 polygon(region.x, region.y, density=-1, col="#F66733")
 
@@ -858,7 +859,7 @@ The t-distribution (Student's t-distribution) is a continuous probability distri
 ::: {.callout-tip icon="false"}
 ## Definition and properties of t-distribution
 
-A t-distribution is specified by only one parameter called the degrees of freedom df. The t-distribution with df degrees of freedom is usually denoted as t(df), where df is a positive real number (df \> 0) and equals to the sample size minus one.
+A t-distribution is specified by only one parameter called the degrees of freedom (df). The t-distribution with df degrees of freedom is usually denoted as t(df), where df is a positive real number (df \> 0) and equals to the sample size minus one.
 
 The mean of this distribution is μ = 0, and the variance is determined by the degrees of freedom parameter, $σ^2 = df/(df −2)$, which is of course defined when df \> 2.
 
@@ -872,7 +873,7 @@ The mean of this distribution is μ = 0, and the variance is determined by the d
 #| fig-cap: t-distribution with df=3 Vs Standard Normal distribution
 
 
-curve(dnorm(x), -4, 4, xlab = "t", ylab = "Probability Density", frame.plot = FALSE)
+curve(dnorm(x), -4, 4, xlab = "t", ylab = "Probability Density", bty="n")
 curve(dt(x, df = 3), col = "red", add = TRUE)
 axis(1, at = -4:4)
 text(0, 0.41, expression("standard normal"))
@@ -902,7 +903,7 @@ Chi-square ($\chi^2$-distribution) distributions are a family of continuous prob
 ::: {.callout-tip icon="false"}
 ## Definition and properties of chi-squared distribution
 
-The chi-squared distribution (or $\chi^2$-distribution) with n degrees of freedom is the distribution of a sum of the squares of n independent Standard Normal random variables.
+The chi-squared distribution (or $\chi^2$-distribution) with **n degrees of freedom** (df=n) is the distribution of a sum of the squares of n independent Standard Normal random variables $Z_i$.
 
 $$X^2 =\sum _{i=1}^{n}Z_{i}^{2}$$ {#eq-chi}
 
@@ -915,14 +916,13 @@ $$X^2 =\sum _{i=1}^{n}Z_{i}^{2}$$ {#eq-chi}
 #| fig-align: "center"
 #| fig-cap: chi-squared distribution with df=10, 15, and 20
 
-curve(dchisq(x, df = 10), from = 0, to = 50, xlab = "chi-squared", ylab = "Probability Density", frame.plot = FALSE)
-
-curve(dchisq(x, df = 15), from = 0, to = 50, col = "red", add = TRUE)
-curve(dchisq(x, df = 20), from = 0, to = 50, col = "green", add = TRUE)
-axis(2, at = seq(0, 01, by= 0.02))
+curve(dchisq(x, df = 10), from = 0, to = 50, xlab = "chi-squared", ylab = "Probability Density", bty="n")
+curve(dchisq(x, df = 15), col = "red", add = TRUE)
+curve(dchisq(x, df = 20), col = "green", add = TRUE)
+axis(2, at = seq(0, 0.1, by= 0.02))
 text(10, 0.1, expression("df=10"))
-text(15, 0.08, expression("df= 15"))
-text(24, 0.06, expression("df=20"))
+text(15, 0.08, expression("df= 15"), col = "red")
+text(24, 0.06, expression("df=20"), col = "green")
 
 ```
 
@@ -956,16 +956,14 @@ $$\frac {m} {(m - 2)} \;,\;\;\;\ with\;\ m > 2$$
 #| fig-cap: F-distribution with different df1 and df2
 
 
-curve(df(x, df1 = 2, df2 = 1), from = 0, to = 5, col= 'black', xlab = "F", ylab = "Probability Density", frame.plot = FALSE)
-curve(df(x, df1 = 4, df2 = 6), from = 0, to = 5, col= 'red',
-      add = TRUE)
-curve(df(x, df1 = 12, df2 = 12), from = 0, to = 5, col= 'green',
-      add = TRUE)
+curve(df(x, df1 = 2, df2 = 1), from = 0, to = 5, col= 'black', xlab = "F", ylab = "Probability Density", bty="n")
+curve(df(x, df1 = 4, df2 = 6), col= 'red', add = TRUE)
+curve(df(x, df1 = 12, df2 = 12), col= 'green', add = TRUE)
 
 axis(2, at = seq(0, 1, by= 0.2))
 text(0.5, 0.9, expression("df1=2, df2=1"))
-text(1.1, 0.6, expression("df1=4, df2=6"))
-text(1.3, 0.8, expression("df1=12, df2=12"))
+text(1.1, 0.6, expression("df1=4, df2=6"), col= 'red')
+text(1.3, 0.8, expression("df1=12, df2=12"), col= 'green')
 
 ```
 
@@ -984,14 +982,12 @@ It is important to assess whether the distribution of a set of empirical data ap
 
 (c) **Q-Q plot**: A graphical method for comparing two probability distributions by plotting their quantiles against each other.
 
-
-
 ### Bell-shaped Empirical Distribution
 
 The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
 
 ::: {.callout-note icon="false"}
-## `r fa("cube", fill = "steelblue")`  **Example-Bell-shaped Empirical Distribution**
+## Example-Bell-shaped Empirical Distribution
 
 If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.
 
@@ -1007,7 +1003,7 @@ If the shape of empirical distributions of random variables approximates the Gau
 
 h<-hist(data_birthweight$birthweight, breaks= 30, plot=F)
 h$counts <- h$counts / sum(h$counts)
-plot(h, freq=TRUE, main="Empirical distribution", xlab = "Birthweight (in Kg)", ylab="Relative Frequency", frame.plot = FALSE)
+plot(h, freq=TRUE, main="Empirical distribution", xlab = "Birthweight (in Kg)", ylab="Relative Frequency", bty="n")
 
 ```
 :::
@@ -1035,29 +1031,29 @@ Skewness values between −1 and +1 indicate an approximate bell-shaped curve. V
 #| layout-ncol: 3
 
 
-curve(dbeta(x, 2, 7), col="green", type="l",lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
+curve(dbeta(x, 2, 7), col="green", type="l",lwd = 2, xlab="x", ylab="Probability density", bty="n")
 segments(x0 = 0.15, x1 = 0.15, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
-text(0.15, 3.25, expression("mode"), font =2, cex = 1.5, col = "orange")
+text(0.22, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
 segments(x0 = 0.25, x1 = 0.25, y0 = 0, y1 = 2.5, lty = 2, lwd = 2, col = "blue") 
 text(0.25, 2.6, expression("median"), font = 2, cex = 1.5, col = "blue")
 segments(x0 = 0.3, x1 = 0.3, y0 = 0, y1 = 1.9, lty = 2, lwd = 2, col = "black") 
-text(0.35, 1.95, expression("mean"), font=2, cex = 1.5, col = "black")
+text(0.34, 2.0, expression("mean"), font=2, cex = 1.5, col = "black")
        
 
-curve(dbeta(x, 7, 7), col="green", type="l", lwd = 2, xlab="x", ylab="Probability distribution", frame.plot = FALSE)
+curve(dbeta(x, 7, 7), col="green", type="l", lwd = 2, xlab="x", ylab="Probability density", bty="n")
 
 segments(x0 = 0.48, x1 = 0.48, y0 = 0, y1 = 2.9, lty = 2, lwd = 2, col = "orange") 
-text(0.4, 2.85, expression("mode"), font =2, cex = 1.5, col = "orange")
+text(0.4, 2.8, expression("mode"), font =2, cex = 1.5, col = "orange")
 
 segments(x0 = 0.5, x1 = 0.5, y0 = 0, y1 = 3.0, lty = 2, lwd = 2, col = "black") 
-text(0.5, 3.0, expression("mean"), font = 2, cex = 1.5, col = "black")
+text(0.5, 2.95, expression("mean"), font = 2, cex = 1.5, col = "black")
 
 segments(x0 = 0.52, x1 = 0.52, y0 = 0, y1 = 2.9, lty = 2, lwd = 2, col = "blue") 
-text(0.63, 2.9, expression("median"), font=2, cex = 1.5, col = "blue")
+text(0.63, 2.8, expression("median"), font=2, cex = 1.5, col = "blue")
        
 
 
-curve(dbeta(x, 7, 2), col="green", type="l", lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
+curve(dbeta(x, 7, 2), col="green", type="l", lwd = 2, xlab="x", ylab="Probability density", bty="n")
 
 segments(x0 = 0.7, x1 = 0.7, y0 = 0, y1 = 1.75, lty = 2, lwd = 2, col = "black") 
 text(0.7, 1.7, expression("mean"), font = 2, cex = 1.5, col = "black")
@@ -1066,7 +1062,7 @@ segments(x0 = 0.75, x1 = 0.75, y0 = 0, y1 = 2.35, lty = 2, lwd = 2, col = "blue"
 text(0.73, 2.5, expression("median"), font=2, cex = 1.5, col = "blue")
 
 segments(x0 = 0.85, x1 = 0.85, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
-text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
+text(0.88, 3.15, expression("mode"), font =2, cex = 1.5, col = "orange")
 
 
 ```
@@ -1093,18 +1089,18 @@ x <- seq(-6, 6, length=200)
 y1 <- dnorm(x)
 y2 <- dnorm(x, sd= 0.5)
 
-plot(x,y1, main="Platykurtic distribution", type = "l", lty = 3, lwd = 2,  xlab = "", ylab = "Probability Density", col="grey50", xaxt='n', frame.plot = FALSE)
+plot(x,y1, main="Platykurtic distribution", type = "l", lty = 3, lwd = 2,  xlab = "", ylab = "Probability Density", col="grey10", xaxt='n', bty="n")
 axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
 lines(x,y3,col="deeppink", lwd = 3)
 text(1.5, 0.3, expression(normal))
 text(3.5, 0.10, expression(platykurtic), col="deeppink")
 
 
-plot(x,y1, main="Normal distribution", type = "l", lwd = 2,  xlab = "", ylab = "Probability Density", col="deeppink", xaxt='n', frame.plot = FALSE)
+plot(x,y1, main="Normal distribution", type = "l", lwd = 2,  xlab = "", ylab = "Probability Density", col="deeppink", xaxt='n', bty="n")
 axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
 
 
-plot(x,y1, main="Leptokurtic distribution", type = "l", lty = 3, lwd = 2,  xlab = "", ylab = "Probability Density", col="grey50", xaxt='n', ylim=c(0,0.8), frame.plot = FALSE)
+plot(x,y1, main="Leptokurtic distribution", type = "l", lty = 3, lwd = 2,  xlab = "", ylab = "Probability Density", col="grey10", xaxt='n', ylim=c(0,0.8), bty="n")
 axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
 lines(x,y2,col="deeppink", lwd = 3)
 text(1.7, 0.25, expression(normal))
@@ -1135,7 +1131,7 @@ qqline(data_birthweight$birthweight, col = "steelblue", lwd = 2)
 ```
 
 ::: {.callout-tip icon="false"}
-## `r fa("highlighter", fill = "steelblue")` Properties of an approximately bell-shaped empirical distribution
+## Properties of an approximately bell-shaped empirical distribution
 
 In an approximately **bell-shaped** empirical distribution:
 
@@ -1152,7 +1148,6 @@ In an approximately **bell-shaped** empirical distribution:
 -   In Q-Q plot (@fig-qq) the points fall close to the **straight line**.
 :::
 
-
  
 
 ## `r fa("compass-drafting", fill = "steelblue")` Exercises {.unnumbered}
@@ -1162,7 +1157,7 @@ In an approximately **bell-shaped** empirical distribution:
 
 In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean μ=496 and a standard deviation σ=114 . Let X= a SAT exam verbal section score in 2012. Then $X∼N(496,114^2)$.
 
-Find the z -scores for $x_1$=325 and $x_2$=366.21. Interpret each z -score. What can you say about $x_1$=325 and $x_2$=366 ?
+Find the z -scores for $x_1$=325 and $x_2$=366. Interpret each z -score. What can you say about $x_1$=325 and $x_2$=366 ?
 
 ::: {.callout-note collapse="true" icon="false"}
 ## **Solution**
