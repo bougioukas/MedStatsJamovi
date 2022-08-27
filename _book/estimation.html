@@ -56,6 +56,7 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -226,14 +227,25 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"> <span class="header-section-number">4.1</span> Estimation of population parametres</a>
+  <ul class="collapse">
+  <li><a href="#population" id="toc-population" class="nav-link" data-scroll-target="#population">Population</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Estimation</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></h1>
+<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></span></h1>
 </div>
 
 
@@ -247,8 +259,38 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<section id="estimation-of-population-parametres" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="estimation-of-population-parametres"><span class="header-section-number">4.1</span> Estimation of population parametres</h2>
+<section id="population" class="level3">
+<h3 class="anchored" data-anchor-id="population">Population</h3>
+<p>In the statistical sense a <strong>population</strong> is a theoretical concept used to describe an entire group of individuals in whom we are interested. Examples are the population of all patients with diabetes mellitus, or the population of all middle-aged women.</p>
+</section>
+<section id="parameters" class="level3">
+<h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
+<p>We are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as <strong>parameters</strong>. Here, we use parameters <span class="math inline">\(μ\)</span> and <span class="math inline">\(σ^2\)</span> to denote the unknown population mean and variance respectively.</p>
+<p>Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions <span class="math inline">\(N(μ,σ^2)\)</span>, which are widely used in statistics, the population mean and variance are exactly the same parameters used to specify the distribution.</p>
+</section>
+<section id="estimation" class="level3">
+<h3 class="anchored" data-anchor-id="estimation">Estimation</h3>
+<p>Generally, it is costly and labour intensive to study the entire population. Therefore we collect data on a sample of individuals from the population who we believe are representative of that population, that is, they have similar characteristics to the individuals in the population. We then use them to draw conclusions, technically make inferences, about the population as a whole.</p>
+<p>The process is represented schematically in Figure 6.1. So, samples are taken from populations to provide estimates of population parameters. Some common population parameters and their corresponding statistics or estimates are described in Table 6.1.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Estimation of population parametres
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Estimation</strong> refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a <strong>statistic</strong>. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, the sample mean and sample variance are statistics.</p>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

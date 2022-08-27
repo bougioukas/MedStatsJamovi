@@ -1,1 +1,42 @@
-# Estimation and Confidence Interval
+# Estimation and Confidence Interval {#sec-estimation}
+
+
+## Estimation of population parametres
+
+
+### Population
+
+In the statistical sense a **population** is a theoretical concept used to describe an entire group of individuals in whom we are interested. Examples are the population of all patients with diabetes mellitus, or the population of all middle-aged women.
+
+
+
+### Parameters
+
+We are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as **parameters**. Here, we use parameters $μ$ and $σ^2$ to denote the unknown population mean and variance respectively.
+
+Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions $N(μ,σ^2)$, which are widely used in statistics, the population mean and variance are exactly the same parameters used to specify the distribution.
+
+
+### Estimation
+
+Generally, it is costly and labour intensive to study the entire population. Therefore we collect data on a sample of individuals from the population who we believe are representative of that population, that is, they have similar characteristics to the individuals in the population. We then use them to draw conclusions, technically make inferences, about the population as a whole.
+
+
+The process is represented schematically in Figure 6.1. So, samples are taken from populations to provide estimates of population parameters. Some common population parameters and their corresponding statistics or estimates are described in Table 6.1.
+
+
+
+::: {.callout-tip icon="false"}
+## Estimation of population parametres
+
+**Estimation** refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a **statistic**.  Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, the sample mean and sample variance are statistics.
+
+:::
+
+
+
+
+
+
+
+
