@@ -616,7 +616,7 @@ text(2.5, 0.20, expression(sigma[1] < sigma[2]), col="gray30")
  
 
 ::: {.callout-tip icon="false"}
-## `r fa("highlighter", fill = "steelblue")` Properties of Normal Distribution
+## Properties of Normal Distribution
 
 ```{r}
 #| echo: false

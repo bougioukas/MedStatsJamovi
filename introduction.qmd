@@ -5,7 +5,7 @@
 
 library(tidyverse)
 library(here)
-
+library(fontawesome)
 
 library(readr)
 data_corn <- read_csv(here("data", "data_corn.csv"))
@@ -31,79 +31,74 @@ This online textbook includes **two** Parts, **"Medical Statistics"** and **"Jam
 
 Additionally, throughout this online textbook there are some inserts or callouts (colored "boxes") that are designed to bring out some of the important information and help our learning. These inserts are distinguished by different colors:
 
-$\color{green}{Green\ color}$: Tips and notes that provide important information for a topic.
+$\color{green}{Green\ color}:$ Tips and notes that provide important information for a topic.
 
 ::: {.callout-tip icon="false"}
-## **A title**
+## A title
 
 Some **tip** or **important information**.
 :::
 
  
 
-$\color{orange}{Orange\ color\ with\ a\ traffic\ cone\ icon}$: Additional information that can be expanded by the user (**click on it**).
 
-::: {.callout-caution collapse="true"}
-## **A title**
+$\color{orange}{Orange\ color\ with\ a\ rocket\ icon}:$ Additional information that can be expanded by the user (**click on it**).
+
+::: {.callout-caution collapse="true" icon="false"}
+## `r fa("rocket", fill = "orange")` A title
 
 Some **additional** information.
 :::
 
  
 
-
-$\color{#CC5500}{Deep\ Orange\ color}$: Assumptions for a statistical test.
+$\color{#CC5500}{Deep\ Orange\ color}:$ Assumptions for a statistical test.
 
 ::: {.callout-warning icon="false"}
-## **A title**
+## A title
 
 Some **assumptions**.
 :::
 
  
 
-$\color{red}{Red\ color\ with\ an\ exclamation\ mark\ icon}$: Point caution that we should pay attention to.
+$\color{red}{Red\ color\ with\ an\ exclamation\ mark\ icon}:$ Point caution that we should pay attention to.
 
-::: {.callout-important}
-## **A title**
+::: callout-important
+## A title
 
 Some **point of caution**.
 :::
 
  
 
-$\color{blue}{Blue\ color}$: Examples provide step-by-step approaches to answering questions.
+$\color{blue}{Blue\ color}:$ Examples provide step-by-step approaches to answering questions.
 
 ::: {.callout-note icon="false"}
-## **Example: A title**
+## Example: A title
 
 Some **example**.
 :::
 
  
 
-
-$\color{grey}{Grey\ color}$: Exercises with embedded solution.
+$\color{grey}{Grey\ color}:$ Exercises with embedded solutions.
 
 ::: {.callout appearance="simple" icon="false"}
-## **Exercise 1.1**
+## Exercise 1.1
 
 This is the first exercise.
 
 ::: {.callout-note collapse="true" icon="false"}
-## **Example of a possible solution**
+## Solution
 
 This is a possible solution to the exercise.
 :::
-
 :::
 
  
 
-
-
 ## Statistics and Medicine
-
 
 ### Importance of Statistics in Medical field
 
@@ -112,7 +107,6 @@ Although some healthcare professionals may not carry out medical research, they 
 Statistics is not only a discipline in its own right but it is also a **fundamental tool** for investigation in all biological and medical sciences. As such, any serious investigator in these fields must have a grasp of the basic principles. With modern computer facilities there is little need for familiarity with the technical details of statistical calculations. However, a healthcare professional should understand when such calculations are valid, when they are not and how they should be interpreted.
 
 The use of statistical methods pervades the medical literature. In a survey of 350 original articles published in three UK journals of general practice: *British Medical Journal (General Practice Section)*, *British Journal of General Practice* and *Family Practice*, over a one-year period, @Rigby2004 found that **66% used some form of statistical analysis**. Another review by @strasak2007 of 91 original research articles published in *The New England Journal of Medicine* (one of the prestigious peer-reviewed medical journals) found an even higher percentage (95%) of using **inferential statistics**, for example, hypothesis testing and deriving estimates. It appears, therefore, that the majority of papers published in these journals require some statistical knowledge for a complete understanding.
-
 
 ### Why use Statistics?
 
@@ -289,7 +283,7 @@ Sometimes it is reasonable to treat discrete data as if they were continuous, at
 
 For simplicity, it is often the case in medicine that continuous data are dichotomized to make nominal data. For example, the diastolic blood pressure (DBP), which is continuous, is converted into hypertension (\>90 mmHg) and normotension (≤90 mmHg). There are **two main reasons** for doing this:
 
-(a) It is easier to describe a population by the **proportion** of people affected, for example, the proportion of people in the population with hypertension is 10%. 
+(a) It is easier to describe a population by the **proportion** of people affected, for example, the proportion of people in the population with hypertension is 10%.
 
 (b) It helps to **make a decision**: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. However, this dichotomization clearly leads to a loss of information.
 
@@ -310,8 +304,6 @@ When some calculation is necessary to derive the observation of interest this sh
 
 The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
 
-
-
 ## Exercises
 
 ::: {.callout appearance="simple" icon="false"}
@@ -324,12 +316,7 @@ This is the first exercise.
 
 This is a possible solution to the exercise.
 :::
-
 :::
-
-
-
-
 
 ::: {.callout appearance="simple" icon="false"}
 ::: {#exr-1}
