@@ -43,12 +43,10 @@ A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it
 For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
 :::
 
-
 ::: {.callout-caution collapse="true" icon="false"}
 ## `r fa("rocket", fill = "orange")` Basic types and operations of events using set theory
 
 **Simple and Compound Events:** If an event consists of a single outcome from the sample space, it is termed a **simple event**. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event. If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a **compound event** in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.
-
 
 **Union of Events:** The union symbol (∪) is used to denote the OR event. For any two events A and B, "at least one of A and B occurs" is also an event. This event is called the union of A and B, and is denoted by **A∪ B**, which includes only A occurring, only B occurring, and A and B occurring simultaneously.
 
@@ -189,8 +187,6 @@ or
 
 $$ P(A|B)=  \frac{P(A ∩ B)}{P(B)}$$ {#eq-conditional2}
 
-
-
 ::: {.callout-note icon="false"}
 ## Example - Dice: Conditional probability
 
@@ -239,8 +235,6 @@ $$P(A ∩ B) = P(A) · P(B)$$ {#eq-independent}
 
 @eq-independent, known as **Multiplication Rule of Probability**, follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A\|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.
 
-
-
 ::: {.callout-note icon="false"}
 ## Example - Statistical independence with dice
 
@@ -264,8 +258,6 @@ The Bayes' theorem can be written as:
 $$P(A|B) = \frac{P(B|A)· P(A)}{P(B)}$$ {#eq-bayes}
 
 where A and B are events and $P(B)\neq 0$.
-
-
 
 ::: {.callout-caution collapse="true" icon="false"}
 ## `r fa("rocket", fill = "orange")` Probabilities involved in Bayes' theorem (Advanced)
@@ -706,7 +698,6 @@ axis(1, at = -4:4)
 
 ```
 
-
 ::: {.callout-caution collapse="true" icon="false"}
 ## `r fa("rocket", fill = "orange")` Understanding the formula of Standard Normal distribution
 
@@ -1010,15 +1001,15 @@ plot(h, freq=TRUE, main="Empirical distribution", xlab = "Birthweight (in Kg)", 
 
  
 
-### Shape statistis and normality
+### Shape statistics and normality
 
 There are two shape statistics that can indicate deviation from normality: **skewness** and **kurtosis**.
 
 **A. Skewness**
 
-Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry. Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
+Skewness is usually described as a measure of a distribution's symmetry -- or lack of symmetry. Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
 
-Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
+Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values **above +3 or below−3** are a good indication that the variable is **not normally** distributed.
 
 ```{r}
 #| echo: false
@@ -1073,7 +1064,7 @@ The other way that distributions can deviate from normality is **kurtosis**. The
 
 Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
 
-A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
+A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values **below −3 or above +3** strongly indicate **non-normality**.
 
 ```{r}
 #| echo: false
@@ -1113,7 +1104,7 @@ text(1.5, 0.7, expression(leptokurtic), col="deeppink")
 
 ### Q-Q plots
 
-The normal Q--Q plot shows each data value plotted against the value that would be expected if the data came from a normal distribution. The values in the plot are the quantiles of the variable distribution plotted against the quantiles that would be expected if the distribution was normal. If the variable was normally distributed, the, points would fall directly on the **straight** line. Any deviations from the straight line indicate some degree of non-normality.
+The **normal Q--Q plot** shows each data value plotted against the value that would be expected if the data came from a normal distribution. The values in the plot are the **quantiles** of the variable distribution plotted against the quantiles that would be expected if the distribution was normal. If the variable was normally distributed, the, points would fall directly on the **straight** line. Any **deviations from the straight line indicate some degree of non-normality**.
 
 ```{r}
 #| echo: false

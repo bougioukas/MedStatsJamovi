@@ -55,6 +55,9 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -233,15 +236,15 @@ ul.task-list{list-style: none;}
   <ul>
   <li><a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"> <span class="header-section-number">4.1</span> Estimation of population parametres</a>
   <ul class="collapse">
-  <li><a href="#population" id="toc-population" class="nav-link" data-scroll-target="#population">Population</a></li>
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
-  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Estimation</a></li>
+  <li><a href="#population-and-parameters" id="toc-population-and-parameters" class="nav-link" data-scroll-target="#population-and-parameters">Population and parameters</a></li>
+  <li><a href="#sample-and-sample-statistics" id="toc-sample-and-sample-statistics" class="nav-link" data-scroll-target="#sample-and-sample-statistics">Sample and sample statistics</a></li>
+  <li><a href="#using-the-sample-to-etimate-a-population-parameter" id="toc-using-the-sample-to-etimate-a-population-parameter" class="nav-link" data-scroll-target="#using-the-sample-to-etimate-a-population-parameter">Using the sample to etimate a population parameter</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -259,21 +262,83 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="estimation-of-population-parametres" class="level2" data-number="4.1">
+<section id="estimation-of-population-parametres" class="level2 page-columns page-full" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="estimation-of-population-parametres"><span class="header-section-number">4.1</span> Estimation of population parametres</h2>
-<section id="population" class="level3">
-<h3 class="anchored" data-anchor-id="population">Population</h3>
-<p>In the statistical sense a <strong>population</strong> is a theoretical concept used to describe an entire group of individuals in whom we are interested. Examples are the population of all patients with diabetes mellitus, or the population of all middle-aged women.</p>
+<section id="population-and-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="population-and-parameters">Population and parameters</h3>
+<p>In the statistical sense a <strong>population</strong> is a theoretical concept used to describe an entire group of individuals (not necessarily people) that share a set of characteristics. Examples are the population of all patients with diabetes mellitus, all people with depression, or the population of all middle-aged women.</p>
+<p>Researchers are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as <strong>parameters</strong>. Here, we use parameters <span class="math inline">\(μ\)</span> and <span class="math inline">\(σ^2\)</span> to denote the unknown <strong>population</strong> mean and variance respectively. For example, researchers want to know what the <strong>mean depression score</strong> for the <strong>population</strong> would be if all people with depression were treated with a new anti-depression treatment.</p>
+<p>Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions <span class="math inline">\(N(μ,σ^2)\)</span>, which are widely used in statistics, the population mean and variance are exactly the <strong>same</strong> parameters used to specify the distribution.</p>
+<p>&nbsp;</p>
 </section>
-<section id="parameters" class="level3">
-<h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
-<p>We are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as <strong>parameters</strong>. Here, we use parameters <span class="math inline">\(μ\)</span> and <span class="math inline">\(σ^2\)</span> to denote the unknown population mean and variance respectively.</p>
-<p>Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions <span class="math inline">\(N(μ,σ^2)\)</span>, which are widely used in statistics, the population mean and variance are exactly the same parameters used to specify the distribution.</p>
+<section id="sample-and-sample-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="sample-and-sample-statistics">Sample and sample statistics</h3>
+<p>Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don’t have the resources and time to study every individual with depression in the world, so they must instead study a <strong>sample</strong>, a subset of the population that is intended to represent the population.</p>
+<p>In most cases, the best way to get a sample that accurately represents the population is by taking a <strong>random sample</strong> from the population. When taking a random sample, each individual in the population has the <strong>same chance</strong> <strong>of being selected</strong> for the sample.</p>
+<p>While researchers want to know a population parameter, their investigations usually produce a <strong>sample statistic</strong>, the value obtained from the sample.</p>
+<p>&nbsp;</p>
 </section>
-<section id="estimation" class="level3">
-<h3 class="anchored" data-anchor-id="estimation">Estimation</h3>
-<p>Generally, it is costly and labour intensive to study the entire population. Therefore we collect data on a sample of individuals from the population who we believe are representative of that population, that is, they have similar characteristics to the individuals in the population. We then use them to draw conclusions, technically make inferences, about the population as a whole.</p>
-<p>The process is represented schematically in Figure 6.1. So, samples are taken from populations to provide estimates of population parameters. Some common population parameters and their corresponding statistics or estimates are described in Table 6.1.</p>
+<section id="using-the-sample-to-etimate-a-population-parameter" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="using-the-sample-to-etimate-a-population-parameter">Using the sample to etimate a population parameter</h3>
+<p>The researchers use the sample statistic value as an <strong>estimate</strong> of the population parameter value. The researchers are making an <strong>inference</strong> that the sample statistic is a value <strong>similar</strong> to the population parameter value based on the premise that the characteristics of those in the sample are similar to the characteristics of those in the entire population. When researchers use a sample statistic to infer the value of a population parameter, it is called <strong>inferential statistics</strong>.</p>
+<p>The process is represented schematically in <a href="#fig-estimation">Figure&nbsp;<span>4.1</span></a>. So, a sample is taken from population of interest to provide an estimate of a population parameter. If the sampling method used is random sample then we obtain an <strong>unbiased estimate</strong> of the corresponding population parameter.</p>
+<div class="cell page-columns page-full" data-fig-width="12">
+<div class="cell-output-display column-screen-inset-right">
+<div id="fig-estimation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB  
+    A((population)) -- sampling method --&gt; B((sample))
+    A -.-&gt; C[Population parameter]
+    B --&gt; D[sample estimate <br> of a population parameter]
+    D --&gt; C
+
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure 4.1: Taking a sample of the population and using the sample to estimate a population parameter</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In some circumstances the sample may consist of <strong>all the members</strong> of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The <strong>dotted arrow</strong> in <a href="#fig-estimation">Figure&nbsp;<span>4.1</span></a> connecting the population circle to population parameter box illustrates this. However, this situation will <strong>rarely</strong> be the case so, in practice, we take a sample which is often much smaller in size than the population under study.</p>
+<p>Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in <a href="#tbl-parameters">Table&nbsp;<span>4.1</span></a>.</p>
+<div id="tbl-parameters" class="anchored">
+<table class="table">
+<caption>Table 4.1: Population parameters (Greek letters) and sample statistics</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th>Population parameter</th>
+<th>Sample statistic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mean</strong></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><span class="math inline">\(\bar{x}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Standard deviation</strong></td>
+<td><span class="math inline">\(\sigma\)</span></td>
+<td>s</td>
+</tr>
+<tr class="odd">
+<td><strong>Proportion</strong></td>
+<td><span class="math inline">\(\pi\)</span></td>
+<td>p</td>
+</tr>
+<tr class="even">
+<td><strong>Rate</strong></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -284,7 +349,7 @@ Estimation of population parametres
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Estimation</strong> refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a <strong>statistic</strong>. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, the sample mean and sample variance are statistics.</p>
+<p><strong>Estimation</strong> refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a <strong>statistic</strong>. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, <strong>the sample mean and sample variance are statistics</strong>.</p>
 </div>
 </div>
 

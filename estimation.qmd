@@ -1,42 +1,70 @@
 # Estimation and Confidence Interval {#sec-estimation}
 
-
 ## Estimation of population parametres
 
+### Population and parameters
 
-### Population
+In the statistical sense a **population** is a theoretical concept used to describe an entire group of individuals (not necessarily people) that share a set of characteristics. Examples are the population of all patients with diabetes mellitus, all people with depression, or the population of all middle-aged women.
 
-In the statistical sense a **population** is a theoretical concept used to describe an entire group of individuals in whom we are interested. Examples are the population of all patients with diabetes mellitus, or the population of all middle-aged women.
+Researchers are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as **parameters**. Here, we use parameters $μ$ and $σ^2$ to denote the unknown **population** mean and variance respectively. For example, researchers want to know what the **mean depression score** for the **population** would be if all people with depression were treated with a new anti-depression treatment.
+
+Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions $N(μ,σ^2)$, which are widely used in statistics, the population mean and variance are exactly the **same** parameters used to specify the distribution.
+
+ 
+
+### Sample and sample statistics
+
+Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don't have the resources and time to study every individual with depression in the world, so they must instead study a **sample**, a subset of the population that is intended to represent the population.
+
+In most cases, the best way to get a sample that accurately represents the population is by taking a **random sample** from the population. When taking a random sample, each individual in the population has the **same chance** **of being selected** for the sample.
+
+While researchers want to know a population parameter, their investigations usually produce a **sample statistic**, the value obtained from the sample.
+
+ 
+
+### Using the sample to etimate a population parameter
+
+The researchers use the sample statistic value as an **estimate** of the population parameter value. The researchers are making an **inference** that the sample statistic is a value **similar** to the population parameter value based on the premise that the characteristics of those in the sample are similar to the characteristics of those in the entire population. When researchers use a sample statistic to infer the value of a population parameter, it is called **inferential statistics**.
+
+The process is represented schematically in @fig-estimation. So, a sample is taken from population of interest to provide an estimate of a population parameter. If the sampling method used is random sample then we obtain an **unbiased estimate** of the corresponding population parameter.
+
+```{mermaid}
+%%| column: screen-inset-right
+%%| label: fig-estimation
+%%| fig-align: center
+%%| fig-width: 12
+%%| fig-cap: Taking a sample of the population and using the sample to estimate a population parameter 
+
+flowchart TB  
+    A((population)) -- sampling method --> B((sample))
+    A -.-> C[Population parameter]
+    B --> D[sample estimate <br> of a population parameter]
+    D --> C
+
+```
 
 
 
-### Parameters
-
-We are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as **parameters**. Here, we use parameters $μ$ and $σ^2$ to denote the unknown population mean and variance respectively.
-
-Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions $N(μ,σ^2)$, which are widely used in statistics, the population mean and variance are exactly the same parameters used to specify the distribution.
+In some circumstances the sample may consist of **all the members** of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The **dotted arrow** in @fig-estimation connecting the population circle to population parameter box illustrates this. However, this situation will **rarely** be the case so, in practice, we take a sample which is often much smaller in size than the population under study.
 
 
-### Estimation
 
-Generally, it is costly and labour intensive to study the entire population. Therefore we collect data on a sample of individuals from the population who we believe are representative of that population, that is, they have similar characteristics to the individuals in the population. We then use them to draw conclusions, technically make inferences, about the population as a whole.
+Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in @tbl-parameters.
 
 
-The process is represented schematically in Figure 6.1. So, samples are taken from populations to provide estimates of population parameters. Some common population parameters and their corresponding statistics or estimates are described in Table 6.1.
+|                        | Population parameter | Sample statistic |
+|------------------------|----------------------|------------------|
+| **Mean**               | $\mu$                | $\bar{x}$        |
+| **Standard deviation** | $\sigma$             |  s               |
+| **Proportion**         | $\pi$                |  p               |
+| **Rate**               | $\lambda$            |  r               |
+
+: Population parameters (Greek letters) and sample statistics {#tbl-parameters}
 
 
 
 ::: {.callout-tip icon="false"}
 ## Estimation of population parametres
 
-**Estimation** refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a **statistic**.  Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, the sample mean and sample variance are statistics.
-
+**Estimation** refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a **statistic**. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, **the sample mean and sample variance are statistics**.
 :::
-
-
-
-
-
-
-
-
