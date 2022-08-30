@@ -1014,45 +1014,36 @@ data_corn |>
  
 
 
-## Describing associations between continuous variables
+## Describing associations between two continuous variables
 
 It is convenient to use a single number to summarize a steadily increasing or decreasing association between two variables. A statistic that involves two continuous variables is the **correlation coefficient**. 
 This idea originally proposed by Francis Galton but formally published in 1895 by Karl Pearson, one of the founders of modern statistics.
 The concept of correlation implies that two variables covary. That is, **a change in variable X is associated with a change in variable Y**.
 
-We present two of the most important correlations coefficients in @sec-corralation.
-
-
 
 ::: {.callout-tip icon="false"}
-## Correlations coefficients
+## Correlation coefficient
 
-Correlations coefficients is a **descriptive measure** of the degree of association between two continuous variables. 
+Correlation coefficient is a **descriptive measure** of the degree of association between two continuous variables. 
 
 :::
 
 
+We present two of the most important correlations coefficients in @sec-correlation.
 
-## Displaying continuous variables - Scatter plot
+
+## Displaying associations between two continuous variables - Scatter plot
 
 Visual inspection of a plot of coordinate points for the X and Y variables is necessary. Such a plot is called a **scatter plot**
 and is illustrated in @fig-scatterplot.
 
 
 
-::: {.callout-tip icon="false"}
-## Scatter plot
-
-Scatter plots are **two dimensional** graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
-
-:::
-
-
 ```{r}
 #| echo: false
 #| warning: false
 #| label: fig-scatterplot
-#| fig-cap: Association between (a) age and baseline pain, and (b) taking into acound the gender of the participants in @farndon2013 study.
+#| fig-cap: Association between (a) age and baseline pain, and (b) age and baseline pain taking into acound the gender of the participants in @farndon2013 study.
 #| fig-width: 8.5
 #| fig-height: 4.0
 
@@ -1084,6 +1075,15 @@ s1 + s2 + plot_annotation(tag_levels = 'a')
 ```
 
 As the scatter plots suggest, there is not association between age and baseline pain: the points seem to be scattered randomly.
+
+
+::: {.callout-tip icon="false"}
+## Scatter plot
+
+Scatter plots are **two dimensional** graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
+
+:::
+
 
  
 
