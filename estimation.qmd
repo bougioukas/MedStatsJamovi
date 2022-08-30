@@ -1,4 +1,4 @@
-# Estimation and Confidence Interval {#sec-estimation}
+# Estimation and Confidence Intervals {#sec-estimation}
 
 ## Estimation of population parametres
 
@@ -10,15 +10,23 @@ Researchers are specifically interested in quantities such as population mean an
 
 Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions $N(μ,σ^2)$, which are widely used in statistics, the population mean and variance are exactly the **same** parameters used to specify the distribution.
 
+
+
+::: {.callout-tip icon="false"}
+## Parametric Tests
+
+The term parameter for a population characteristic explains why most of the statistical tests in this textbook are referred to as **parametric tests**. These tests are based on assumptions about the shape of the distribution and the parameters (i.e. mean and standard deviation), and most rely on an assumption of an approximately normal distribution.
+
+:::
+
+
  
 
 ### Sample and sample statistics
 
-Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don't have the resources and time to study every individual with depression in the world, so they must instead study a **sample**, a subset of the population that is intended to represent the population.
+Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don't usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a **sample**, a subset of the population that is intended to represent the population. In this case a **sample statistic** is used to estimate a population parameter (a **point estimator** since we estimate the parameter by a single value or point)
 
-In most cases, the best way to get a sample that accurately represents the population is by taking a **random sample** from the population. When taking a random sample, each individual in the population has the **same chance** **of being selected** for the sample.
-
-While researchers want to know a population parameter, their investigations usually produce a **sample statistic**, the value obtained from the sample.
+In most cases, the best way to get a sample that accurately represents the population is by taking a **random sample** from the population. When selecting a random sample, each individual in the population has the **same chance** **of being selected** for the sample.
 
  
 
@@ -26,7 +34,7 @@ While researchers want to know a population parameter, their investigations usua
 
 The researchers use the sample statistic value as an **estimate** of the population parameter value. The researchers are making an **inference** that the sample statistic is a value **similar** to the population parameter value based on the premise that the characteristics of those in the sample are similar to the characteristics of those in the entire population. When researchers use a sample statistic to infer the value of a population parameter, it is called **inferential statistics**.
 
-The process is represented schematically in @fig-estimation. So, a sample is taken from population of interest to provide an estimate of a population parameter. If the sampling method used is random sample then we obtain an **unbiased estimate** of the corresponding population parameter.
+The process is represented schematically in @fig-estimation. So, a sample is selected from population of interest to provide an **estimate** of a population parameter by using a **sample statistic**. If the sampling method used is random sample then we obtain an **unbiased estimate** of the population parameter.
 
 ```{mermaid}
 %%| column: screen-inset-right
@@ -38,33 +46,32 @@ The process is represented schematically in @fig-estimation. So, a sample is tak
 flowchart TB  
     A((population)) -- sampling method --> B((sample))
     A -.-> C[Population parameter]
-    B --> D[sample estimate <br> of a population parameter]
+    B --> D["point estimator <br> (a sample statistic)"]
     D --> C
 
 ```
 
-
-
 In some circumstances the sample may consist of **all the members** of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The **dotted arrow** in @fig-estimation connecting the population circle to population parameter box illustrates this. However, this situation will **rarely** be the case so, in practice, we take a sample which is often much smaller in size than the population under study.
-
-
-
-Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in @tbl-parameters.
-
-
-|                        | Population parameter | Sample statistic |
-|------------------------|----------------------|------------------|
-| **Mean**               | $\mu$                | $\bar{x}$        |
-| **Standard deviation** | $\sigma$             |  s               |
-| **Proportion**         | $\pi$                |  p               |
-| **Rate**               | $\lambda$            |  r               |
-
-: Population parameters (Greek letters) and sample statistics {#tbl-parameters}
-
 
 
 ::: {.callout-tip icon="false"}
 ## Estimation of population parametres
 
-**Estimation** refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a **statistic**. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, **the sample mean and sample variance are statistics**.
+**Point Estimation** refers to the process of guessing the unknown value of a parameter (e.g., population mean, $\mu$) using the observed data. For this, we use a **sample statistic** as a **point estimator** of the population parameter. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, **the sample mean and sample variance are statistics**.
 :::
+
+
+Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in @tbl-parameters.
+
+|                        | Population parameter | Sample statistic |
+|------------------------|----------------------|------------------|
+| **Mean**               | $\mu$                | $\bar{x}$        |
+| **Standard deviation** | $\sigma$             | s                |
+| **Proportion**         | $\pi$                | p                |
+| **Rate**               | $\lambda$            | r                |
+
+: Population parameters (Greek letters) and sample statistics {#tbl-parameters}
+
+
+
+

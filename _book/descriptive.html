@@ -129,7 +129,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -251,7 +251,9 @@ div.csl-indent {
   </ul>
 </li>
   <li><a href="#displaying-numerical-data" id="toc-displaying-numerical-data" class="nav-link" data-scroll-target="#displaying-numerical-data"> <span class="header-section-number">2.4</span> Displaying Numerical Data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">2.5</span> Exercises</a></li>
+  <li><a href="#describing-associations-between-continuous-variables" id="toc-describing-associations-between-continuous-variables" class="nav-link" data-scroll-target="#describing-associations-between-continuous-variables"> <span class="header-section-number">2.5</span> Describing associations between continuous variables</a></li>
+  <li><a href="#displaying-continuous-variables---scatter-plot" id="toc-displaying-continuous-variables---scatter-plot" class="nav-link" data-scroll-target="#displaying-continuous-variables---scatter-plot"> <span class="header-section-number">2.6</span> Displaying continuous variables - Scatter plot</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">2.7</span> Exercises</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -1375,8 +1377,39 @@ Identifying Outliers in the data based on quartiles
 </div>
 </div>
 <p>&nbsp;</p>
-<p><strong>D. Scatter plot</strong></p>
-<p>Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (<a href="#fig-scatterplot">Figure&nbsp;<span>2.14</span></a> a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (<a href="#fig-scatterplot">Figure&nbsp;<span>2.14</span></a> b).</p>
+</section><section id="describing-associations-between-continuous-variables" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="describing-associations-between-continuous-variables">
+<span class="header-section-number">2.5</span> Describing associations between continuous variables</h2>
+<p>It is convenient to use a single number to summarize a steadily increasing or decreasing association between two variables. A statistic that involves two continuous variables is the <strong>correlation coefficient</strong>. This idea originally proposed by Francis Galton but formally published in 1895 by Karl Pearson, one of the founders of modern statistics. The concept of correlation implies that two variables covary. That is, <strong>a change in variable X is associated with a change in variable Y</strong>.</p>
+<p>We present two of the most important correlations coefficients in <span class="quarto-unresolved-ref">?sec-corralation</span>.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Correlations coefficients
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Correlations coefficients is a <strong>descriptive measure</strong> of the degree of association between two continuous variables.</p>
+</div>
+</div>
+</section><section id="displaying-continuous-variables---scatter-plot" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="displaying-continuous-variables---scatter-plot">
+<span class="header-section-number">2.6</span> Displaying continuous variables - Scatter plot</h2>
+<p>Visual inspection of a plot of coordinate points for the X and Y variables is necessary. Such a plot is called a <strong>scatter plot</strong> and is illustrated in <a href="#fig-scatterplot">Figure&nbsp;<span>2.14</span></a>.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Scatter plot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Scatter plots are <strong>two dimensional</strong> graphs, showing the association between two continuous variables such as age and baseline pain (<a href="#fig-scatterplot">Figure&nbsp;<span>2.14</span></a> a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (<a href="#fig-scatterplot">Figure&nbsp;<span>2.14</span></a> b).</p>
+</div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-scatterplot" class="quarto-figure quarto-figure-center anchored">
@@ -1388,8 +1421,8 @@ Identifying Outliers in the data based on quartiles
 </div>
 <p>As the scatter plots suggest, there is not association between age and baseline pain: the points seem to be scattered randomly.</p>
 <p>&nbsp;</p>
-</section><section id="exercises" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="exercises">
-<span class="header-section-number">2.5</span> Exercises</h2>
+</section><section id="exercises" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="exercises">
+<span class="header-section-number">2.7</span> Exercises</h2>
 <ul>
 <li>First Exercise</li>
 <li>Second Exercise</li>
@@ -1526,7 +1559,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 </body></html>

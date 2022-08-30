@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Medical Statistics with Jamovi - 4&nbsp; Estimation and Confidence Interval</title>
+<title>Introduction to Medical Statistics with Jamovi - 4&nbsp; Estimation and Confidence Intervals</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -125,7 +125,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -248,7 +248,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></span></h1>
+<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></h1>
 </div>
 
 
@@ -269,19 +269,31 @@ ul.task-list{list-style: none;}
 <p>In the statistical sense a <strong>population</strong> is a theoretical concept used to describe an entire group of individuals (not necessarily people) that share a set of characteristics. Examples are the population of all patients with diabetes mellitus, all people with depression, or the population of all middle-aged women.</p>
 <p>Researchers are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as <strong>parameters</strong>. Here, we use parameters <span class="math inline">\(μ\)</span> and <span class="math inline">\(σ^2\)</span> to denote the unknown <strong>population</strong> mean and variance respectively. For example, researchers want to know what the <strong>mean depression score</strong> for the <strong>population</strong> would be if all people with depression were treated with a new anti-depression treatment.</p>
 <p>Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions <span class="math inline">\(N(μ,σ^2)\)</span>, which are widely used in statistics, the population mean and variance are exactly the <strong>same</strong> parameters used to specify the distribution.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Parametric Tests
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The term parameter for a population characteristic explains why most of the statistical tests in this textbook are referred to as <strong>parametric tests</strong>. These tests are based on assumptions about the shape of the distribution and the parameters (i.e.&nbsp;mean and standard deviation), and most rely on an assumption of an approximately normal distribution.</p>
+</div>
+</div>
 <p>&nbsp;</p>
 </section>
 <section id="sample-and-sample-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="sample-and-sample-statistics">Sample and sample statistics</h3>
-<p>Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don’t have the resources and time to study every individual with depression in the world, so they must instead study a <strong>sample</strong>, a subset of the population that is intended to represent the population.</p>
-<p>In most cases, the best way to get a sample that accurately represents the population is by taking a <strong>random sample</strong> from the population. When taking a random sample, each individual in the population has the <strong>same chance</strong> <strong>of being selected</strong> for the sample.</p>
-<p>While researchers want to know a population parameter, their investigations usually produce a <strong>sample statistic</strong>, the value obtained from the sample.</p>
+<p>Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don’t usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a <strong>sample</strong>, a subset of the population that is intended to represent the population. In this case a <strong>sample statistic</strong> is used to estimate a population parameter (a <strong>point estimator</strong> since we estimate the parameter by a single value or point)</p>
+<p>In most cases, the best way to get a sample that accurately represents the population is by taking a <strong>random sample</strong> from the population. When selecting a random sample, each individual in the population has the <strong>same chance</strong> <strong>of being selected</strong> for the sample.</p>
 <p>&nbsp;</p>
 </section>
 <section id="using-the-sample-to-etimate-a-population-parameter" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="using-the-sample-to-etimate-a-population-parameter">Using the sample to etimate a population parameter</h3>
 <p>The researchers use the sample statistic value as an <strong>estimate</strong> of the population parameter value. The researchers are making an <strong>inference</strong> that the sample statistic is a value <strong>similar</strong> to the population parameter value based on the premise that the characteristics of those in the sample are similar to the characteristics of those in the entire population. When researchers use a sample statistic to infer the value of a population parameter, it is called <strong>inferential statistics</strong>.</p>
-<p>The process is represented schematically in <a href="#fig-estimation">Figure&nbsp;<span>4.1</span></a>. So, a sample is taken from population of interest to provide an estimate of a population parameter. If the sampling method used is random sample then we obtain an <strong>unbiased estimate</strong> of the corresponding population parameter.</p>
+<p>The process is represented schematically in <a href="#fig-estimation">Figure&nbsp;<span>4.1</span></a>. So, a sample is selected from population of interest to provide an <strong>estimate</strong> of a population parameter by using a <strong>sample statistic</strong>. If the sampling method used is random sample then we obtain an <strong>unbiased estimate</strong> of the population parameter.</p>
 <div class="cell page-columns page-full" data-fig-width="12">
 <div class="cell-output-display column-screen-inset-right">
 <div id="fig-estimation" class="quarto-figure quarto-figure-center anchored">
@@ -290,7 +302,7 @@ ul.task-list{list-style: none;}
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB  
     A((population)) -- sampling method --&gt; B((sample))
     A -.-&gt; C[Population parameter]
-    B --&gt; D[sample estimate <br> of a population parameter]
+    B --&gt; D["point estimator <br> (a sample statistic)"]
     D --&gt; C
 
 </pre>
@@ -304,6 +316,19 @@ ul.task-list{list-style: none;}
 </div>
 </div>
 <p>In some circumstances the sample may consist of <strong>all the members</strong> of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The <strong>dotted arrow</strong> in <a href="#fig-estimation">Figure&nbsp;<span>4.1</span></a> connecting the population circle to population parameter box illustrates this. However, this situation will <strong>rarely</strong> be the case so, in practice, we take a sample which is often much smaller in size than the population under study.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Estimation of population parametres
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Point Estimation</strong> refers to the process of guessing the unknown value of a parameter (e.g., population mean, <span class="math inline">\(\mu\)</span>) using the observed data. For this, we use a <strong>sample statistic</strong> as a <strong>point estimator</strong> of the population parameter. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, <strong>the sample mean and sample variance are statistics</strong>.</p>
+</div>
+</div>
 <p>Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in <a href="#tbl-parameters">Table&nbsp;<span>4.1</span></a>.</p>
 <div id="tbl-parameters" class="anchored">
 <table class="table">
@@ -338,19 +363,6 @@ ul.task-list{list-style: none;}
 </tr>
 </tbody>
 </table>
-</div>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Estimation of population parametres
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Estimation</strong> refers to the process of guessing the unknown value of a parameter (e.g., population mean) using the observed data. For this, we will use an estimator, which is a <strong>statistic</strong>. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, <strong>the sample mean and sample variance are statistics</strong>.</p>
-</div>
 </div>
 
 

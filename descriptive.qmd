@@ -505,7 +505,6 @@ We arrange the data in an ascending order:
 **ordered data:** 1, 2, 2, 2, 2, 2, 3, 3, **3**, 3, 4, 4, 5, 6, 6, 10, 10
 
 The median would be the 9th ordered observation, which is also 3 mm.
-
 :::
 
  
@@ -515,17 +514,14 @@ The median would be the 9th ordered observation, which is also 3 mm.
 
 **Advantages**
 
-1. The median has the advantage that is not affected by outliers, so for example, the median in the data would be unaffected by replacing the largest corn size of 10 mm with 100 mm. 
-
+1.  The median has the advantage that is not affected by outliers, so for example, the median in the data would be unaffected by replacing the largest corn size of 10 mm with 100 mm.
 
 **Disadvantages**
 
-1. However, it does not take into account the precise value of each observation and hence does not use all information available in the data.
+1.  However, it does not take into account the precise value of each observation and hence does not use all information available in the data.
 
-2. Additionally, it is not a good measure of central tendency when there are heavy ties in the data.
-
+2.  Additionally, it is not a good measure of central tendency when there are heavy ties in the data.
 :::
-
 
  
 
@@ -1017,9 +1013,40 @@ data_corn |>
 
  
 
-**D. Scatter plot**
 
-Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
+## Describing associations between continuous variables
+
+It is convenient to use a single number to summarize a steadily increasing or decreasing association between two variables. A statistic that involves two continuous variables is the **correlation coefficient**. 
+This idea originally proposed by Francis Galton but formally published in 1895 by Karl Pearson, one of the founders of modern statistics.
+The concept of correlation implies that two variables covary. That is, **a change in variable X is associated with a change in variable Y**.
+
+We present two of the most important correlations coefficients in @sec-corralation.
+
+
+
+::: {.callout-tip icon="false"}
+## Correlations coefficients
+
+Correlations coefficients is a **descriptive measure** of the degree of association between two continuous variables. 
+
+:::
+
+
+
+## Displaying continuous variables - Scatter plot
+
+Visual inspection of a plot of coordinate points for the X and Y variables is necessary. Such a plot is called a **scatter plot**
+and is illustrated in @fig-scatterplot.
+
+
+
+::: {.callout-tip icon="false"}
+## Scatter plot
+
+Scatter plots are **two dimensional** graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
+
+:::
+
 
 ```{r}
 #| echo: false

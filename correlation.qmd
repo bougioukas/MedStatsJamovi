@@ -36,12 +36,10 @@ The **Pearson's correlation coefficient,** ${r}$, can be calculated for any data
 4.  Absence of outliers in the data set.
 :::
 
-
  
 
 ::: {.callout-tip icon="false"}
 ## Characteristics of Pearson's coefficient $r_{xy}$
-
 
 **Formula**
 
@@ -51,15 +49,13 @@ $$r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}
 
 The $r_{xy}$ statistic shows the **direction** and measures the **strength** of the linear association between the variables.
 
-
-
 **Range of values**
 
 Correlation coefficient is a **dimensionless** quantity that takes a value in the range **-1** to **+1**.
 
  
 
-**Direction of association**
+**Direction of the association**
 
 A **negative** correlation coefficient indicates that one variable decreases in value as the other variable increases (and vice versa), a **zero** value indicates that no association exists between the two variables, and a **positive** coefficient indicates that both variables increase (or decrease) in value together.
 
@@ -125,9 +121,9 @@ pcor1 + pcor2 + pcor3 + plot_annotation(tag_levels = 'a')
 
  
 
-**Strength of association**
+**Magnitude of the association**
 
-The **strength** of association can be anywhere between -1 and +1. The **stronger** the correlation, the **closer** the correlation coefficient comes to ±1 (@fig-correlation2). A correlation coefficient of **-1** or **+1** indicates a **perfect** negative or positive association, respectively (@fig-correlation2 c and f).
+The **magnitude** of association can be anywhere between -1 and +1. The **stronger** the correlation, the **closer** the correlation coefficient comes to ±1 (@fig-correlation2). A correlation coefficient of **-1** or **+1** indicates a **perfect** negative or positive association, respectively (@fig-correlation2 c and f).
 
 ```{r}
 #| echo: false
@@ -239,12 +235,8 @@ pcor9 <- dat9|>
 
  
 
-
-
-
 ::: {.callout-note icon="false"}
 ## Example
-
 
 ```{r}
 #| echo: false
@@ -262,9 +254,6 @@ data_bp|>
   #ggtitle(paste0("Negative Correlation r=", round(cor1, digits=1))) +
   theme_steve()
 ```
-
-
 :::
-
 
 ## Rank correlation (Spearman's coefficient rho )
