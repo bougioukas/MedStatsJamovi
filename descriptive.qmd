@@ -467,7 +467,7 @@ If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of
 
  
 
-**B. Median**
+**B. Median** of the sample
 
 The **sample median**, *md*, is an alternative measure of location, which is less sensitive to outliers. For observed values $x_1, x_2,...,x_{n-1}, x_n$ the median is calculated by first sorting the observed values (i.e., arranging them in an ascending/descending order) and selecting the middle one. If the sample size *n* is **odd**, the median is the number at the middle of the ordered observations. If the sample size is **even**, the median is the average of the two middle numbers.
 
@@ -525,7 +525,7 @@ The median would be the 9th ordered observation, which is also 3 mm.
 
  
 
-**C. Mode**
+**C. Mode** of the sample
 
 A third measure of location is termed the **mode**. This is the value that occurs **most frequently**, or, if the data are grouped, the group with the highest frequency. It is not used much in statistical analysis, since its value depends on the accuracy with which the data are measured and ignores most of the information; although it may be useful for categorical data to describe the most frequent category. Note that some data sets do not have a mode because each value occurs only once.
 
@@ -547,7 +547,7 @@ In the 16 patients with corns, 5 patients have corn size of 2 mm; thus, the **mo
 
 We also need a numerical way of summarizing the amount of spread or variability in a data set. The tree main approaches to quantifying variability are: the range, the interquartile range (IQR), and the standard deviation.
 
-**A. Range**
+**A. Range** of the sample
 
 The simplest way to describe the spread of a data set is to report the minimum (lowest) and maximum (highest) values. The **range** is defined as the difference between the largest and the smallest observations in a sample. For some data it is very useful, because one would want to know these numbers, for example in a sample the age of the youngest and oldest participant. However, if outliers are present it may give a distorted impression of the variability of the data, since only two of the data points are included in making the estimate. Thus the range is **affected by extreme values** at each end of the data.
 
@@ -559,7 +559,7 @@ The range for the corn size data is `r min(x)` to `r max(x)` mm or described by 
 
  
 
-**B. Quartiles and Interquartile Range**
+**B. Quartiles and Interquartile Range** of the sample
 
 The **quartiles**, namely the lower quartile ($Q_{1}$), the median ($Q_{2}$) and the upper quartile ($Q_{3}$), split sorted data into four equal parts. That is there will be approximately equal numbers of observations in the four sections (and exactly equal if the sample size is divisible by four and the measures are all distinct). The quartiles are calculated in a similar way to the median; first order the data and then count the appropriate number from the bottom. The $Q_{1}$ is the value below which 25% of the observations may be found, while the $Q_{3}$ is the value above which the top 25% of the observations may be found (meaning that 75% of the data falls below the $Q_{3}$).
 
@@ -583,7 +583,7 @@ So, the IQR for the corn size data is 2.0 to 4.5 mm or described by a single num
 
  
 
-**C. Variance and Standard Deviation**
+**C. Sample Variance and Standard Deviation**
 
 For an individual with an observed value $x_{i}$ the distance from the mean is $x_{i}-\bar{x}$. With *n* such observations we have a set of *n* differences, one for each individual. The sum of the differences, ${\sum_{i=1}^{n}(x_{i}-\bar{x})}$ is always zero. However, if we square the distances before we sum them, we get always a positive quantity.This sum is then divided by **n-1** and thus gives an average measure for the square of the deviation from the sample mean. This quantity is called the sample **variance** and is defined as @eq-var:
 
@@ -657,7 +657,7 @@ It turns out in many situations that about **95% of observations** will be withi
 
 ### How to report descriptive (or summary) statistics for numerical data?
 
-Mean and median convey different impressions of the location of data in presence of skewness (or outliers).
+Sample mean and median convey different impressions of the location of data in presence of skewness (or outliers).
 
 -   If the distribution is **symmetric** (mean=median=mode) (@fig-skew b), then in general the **mean** is the better summary statistic (see also @sec-distributions).
 
@@ -1013,31 +1013,21 @@ data_corn |>
 
  
 
-
 ## Describing associations between two continuous variables
 
-It is convenient to use a single number to summarize a steadily increasing or decreasing association between two variables. A statistic that involves two continuous variables is the **correlation coefficient**. 
-This idea originally proposed by Francis Galton but formally published in 1895 by Karl Pearson, one of the founders of modern statistics.
-The concept of correlation implies that two variables covary. That is, **a change in variable X is associated with a change in variable Y**.
-
+It is convenient to use a single number to summarize a steadily increasing or decreasing association between two variables. A statistic that involves two continuous variables is the **correlation coefficient**. This idea originally proposed by Francis Galton but formally published in 1895 by Karl Pearson, one of the founders of modern statistics. The concept of correlation implies that two variables covary. That is, **a change in variable X is associated with a change in variable Y**.
 
 ::: {.callout-tip icon="false"}
 ## Correlation coefficient
 
-Correlation coefficient is a **descriptive measure** of the degree of association between two continuous variables. 
-
+Correlation coefficient is a **descriptive measure** of the degree of association between two continuous variables.
 :::
-
 
 We present two of the most important correlations coefficients in @sec-correlation.
 
-
 ## Displaying associations between two continuous variables - Scatter plot
 
-Visual inspection of a plot of coordinate points for the X and Y variables is necessary. Such a plot is called a **scatter plot**
-and is illustrated in @fig-scatterplot.
-
-
+Visual inspection of a plot of coordinate points for the X and Y variables is necessary. Such a plot is called a **scatter plot** and is illustrated in @fig-scatterplot.
 
 ```{r}
 #| echo: false
@@ -1076,14 +1066,11 @@ s1 + s2 + plot_annotation(tag_levels = 'a')
 
 As the scatter plots suggest, there is not association between age and baseline pain: the points seem to be scattered randomly.
 
-
 ::: {.callout-tip icon="false"}
 ## Scatter plot
 
 Scatter plots are **two dimensional** graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
-
 :::
-
 
  
 

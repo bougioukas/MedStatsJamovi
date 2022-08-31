@@ -24,7 +24,7 @@ The term parameter for a population characteristic explains why most of the stat
 
 ### Sample and sample statistics
 
-Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don't usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a **sample**, a subset of the population that is intended to represent the population. In this case a **sample statistic** is used to estimate a population parameter (a **point estimator** since we estimate the parameter by a single value or point)
+Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don't usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a **sample**, a subset of the population that is intended to represent the population. In this case a **sample statistic** is used to estimate a population parameter (also named as **point estimator** since we estimate the parameter by a single value or point)
 
 In most cases, the best way to get a sample that accurately represents the population is by taking a **random sample** from the population. When selecting a random sample, each individual in the population has the **same chance** **of being selected** for the sample.
 
