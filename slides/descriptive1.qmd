@@ -1,0 +1,123 @@
+---
+title: "Descriptive Statistics"
+author: "Konstantinos Bougioukas<br>Medical Statistics<br>September 13, 2022"
+format: 
+  revealjs:
+    navigation-mode: vertical
+    theme: moon
+    preview-links: auto
+    chalkboard: 
+      boardmarker-width: 5
+from: markdown+emoji
+execute:
+  echo: true
+---
+
+## What are Descriptive Statistics?
+
+Descriptive statistics are used to describe and organize the basic characteristics of the data in a study.
+
+-   They allow us to have a quick glance of the [central tendency]{style="color:#F0FFFF"} and the extent of [dispersion]{style="color:#F0FFFF"} of values.
+
+-   They are useful in understanding a [data distribution]{style="color:#F0FFFF"} and in comparing data distributions and
+
+-   They are usually presented in [tables]{style="color:#F0FFFF"} and [graphs]{style="color:#F0FFFF"}.
+
+## Example {.scrollable}
+
+::: {.callout-note appearance="simple" icon="false"}
+## Baseline characteristics of patients with foot corns by treatment group (Farndon et al. 2013).
+
++----------------------+-----------------+---------------------+-------------------+
+|                      |                 | Corn Plaster, n (%) | Scalpel, n (%)    |
+|                      |                 |                     |                   |
+|                      |                 | (n=101)             | (n=101)           |
++======================+=================+=====================+===================+
+| **Gender**           | Male            | 42 (42)             | 42 (42)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Female          | 59 (59)             | 59 (58)           |
++----------------------+-----------------+---------------------+-------------------+
+| **Center**           | Central         | 58 (57)             | 52 (52)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Manor           | 13 (13)             | 20 (20)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Jordanthorpe    | 10 (10)             | 14 (14)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Limbrick        | 3 (3)               | 6 (6)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Firth Park      | 7 (7)               | 4 (4)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Huddersfield    | 5 (5)               | 4 (4)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Darnall         | 5 (5)               | 1 (1)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Smoking**          | Non-smoker      | 34 (35)             | 40 (40)           |
+|                      |                 |                     |                   |
+| **History**          |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Previous smoker | 22 (22)             | 16 (16)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Current smoker  | 42 (43)             | 43 (43)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Missing         | 3 (3)               | 2 (2)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Numbers of corns** | 1               | 48 (48)             | 66 (65)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | 2               | 28 (28)             | 23 (23)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | 3               | 24 (24)             | 12 (12)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Missing         | 1 (1)               | 0 (0)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Age (yrs),**       |                 | 58.5 (15.6)         | 59.7 (17.5)       |
+|                      |                 |                     |                   |
+| **mean (sd)**        |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+| **Corn size (mm),**  |                 | 4 (3, 5)            | 3 (3, 5)          |
+|                      |                 |                     |                   |
+| **median (IQR)**     |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+| **EQ-5D,**           |                 | 0.73 (0.59, 0.80)   | 0.73 (0.66, 0.80) |
+|                      |                 |                     |                   |
+| **median (IQR)**     |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+:::
+
+## Summarizing Categorical Data {.scrollable}
+
+Display the [number]{style="color:#F0FFFF"} and [proportion]{style="color:#F0FFFF"} of cases (percentage) that fall into each category.
+
+::: {.callout-note appearance="simple" icon="false"}
+## Frequency and percentage distributions of treatment center for 202 patients with foot corns (Farndon et al. 2013).
+
+| Treatment center | Frequency | Percentage |
+|------------------|-----------|------------|
+| Central          | 110       | 54.5%      |
+| Manor            | 33        | 16.3%      |
+| Jordanthorpe     | 24        | 11.9%      |
+| Limbrick         | 9         | 4.5%       |
+| Firth Park       | 11        | 5.4%       |
+| Huddersfield     | 9         | 4.5%       |
+| Darnall          | 6         | 3.0%       |
+| **Total**        | 202       | 100.0%     |
+:::
+
+## Displaying Categorical Data {.scrollable}
+
+While frequency tables are extremely useful, the best way to investigate a data set is to plot it.
+
+::: panel-tabset
+### Plot
+
+![](images_slides/barplot123.png)
+
+### Properties
+
+-   All rectangular bars should have equal width and should have equal space between them.
+
+-   The rectangular bars can be drawn horizontally or vertically.
+
+-   The height of the rectangular bar is equivalent to the data they represent.
+
+-   The rectangular bars must be plotted against a common zero-valued baseline.
+:::

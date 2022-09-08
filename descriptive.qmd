@@ -280,7 +280,7 @@ labs(x = "Treatment center", y = "Percent",
 #| fig-cap: Grouped bar plot showing where 202 patients with corns were treated by randomized group [@farndon2013].
 #| fig-width: 9
 #| fig-height: 5
-#| 
+
 
 ggplot(data_centers2) + 
   geom_col(aes(center, pct, fill = group), width = 0.8, position = "dodge") +
@@ -1013,7 +1013,7 @@ data_corn |>
 
  
 
-## Describing associations between two continuous variables
+## Describing and displaying associations between two continuous variables
 
 It is convenient to use a single number to summarize a steadily increasing or decreasing association between two variables. A statistic that involves two continuous variables is the **correlation coefficient**. This idea originally proposed by Francis Galton but formally published in 1895 by Karl Pearson, one of the founders of modern statistics. The concept of correlation implies that two variables covary. That is, **a change in variable X is associated with a change in variable Y**.
 
@@ -1024,8 +1024,6 @@ Correlation coefficient is a **descriptive measure** of the degree of associatio
 :::
 
 We present two of the most important correlations coefficients in @sec-correlation.
-
-## Displaying associations between two continuous variables - Scatter plot
 
 Visual inspection of a plot of coordinate points for the X and Y variables is necessary. Such a plot is called a **scatter plot** and is illustrated in @fig-scatterplot.
 
