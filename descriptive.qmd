@@ -190,7 +190,7 @@ Display the **number** and **proportion** of cases that fall into each category.
 
 ## Displaying Categorical Data
 
-While frequency tables are extremely useful, the best way to investigate a data set is to plot it. For categorical variables, such as gender and treatment center, it is straightforward to present the number in each category, usually indicating the frequency and percentage of the total number of patients. When shown graphically this is called a **bar plot**.
+While frequency tables are extremely useful, the best way to investigate a dataset is to plot it. For categorical variables, such as gender and treatment center, it is straightforward to present the number in each category, usually indicating the frequency and percentage of the total number of patients. When shown graphically this is called a **bar plot**.
 
  
 
@@ -527,7 +527,7 @@ The median would be the 9th ordered observation, which is also 3 mm.
 
 **C. Mode** of the sample
 
-A third measure of location is termed the **mode**. This is the value that occurs **most frequently**, or, if the data are grouped, the group with the highest frequency. It is not used much in statistical analysis, since its value depends on the accuracy with which the data are measured and ignores most of the information; although it may be useful for categorical data to describe the most frequent category. Note that some data sets do not have a mode because each value occurs only once.
+A third measure of location is termed the **mode**. This is the value that occurs **most frequently**, or, if the data are grouped, the group with the highest frequency. It is not used much in statistical analysis, since its value depends on the accuracy with which the data are measured and ignores most of the information; although it may be useful for categorical data to describe the most frequent category. Note that some datasets do not have a mode because each value occurs only once.
 
 However, the expression **'bimodal'** distribution is used to describe a distribution with **two peaks** in it. This can be caused by mixing two or more populations together. For example, height might appear to have a bimodal distribution if one had men and women in the population.
 
@@ -545,11 +545,11 @@ In the 16 patients with corns, 5 patients have corn size of 2 mm; thus, the **mo
 
 ### Measures of Dispersion
 
-We also need a numerical way of summarizing the amount of spread or variability in a data set. The tree main approaches to quantifying variability are: the range, the interquartile range (IQR), and the standard deviation.
+We also need a numerical way of summarizing the amount of spread or variability in a dataset. The tree main approaches to quantifying variability are: the range, the interquartile range (IQR), and the standard deviation.
 
 **A. Range** of the sample
 
-The simplest way to describe the spread of a data set is to report the minimum (lowest) and maximum (highest) values. The **range** is defined as the difference between the largest and the smallest observations in a sample. For some data it is very useful, because one would want to know these numbers, for example in a sample the age of the youngest and oldest participant. However, if outliers are present it may give a distorted impression of the variability of the data, since only two of the data points are included in making the estimate. Thus the range is **affected by extreme values** at each end of the data.
+The simplest way to describe the spread of a dataset is to report the minimum (lowest) and maximum (highest) values. The **range** is defined as the difference between the largest and the smallest observations in a sample. For some data it is very useful, because one would want to know these numbers, for example in a sample the age of the youngest and oldest participant. However, if outliers are present it may give a distorted impression of the variability of the data, since only two of the data points are included in making the estimate. Thus the range is **affected by extreme values** at each end of the data.
 
 ::: {.callout-note icon="false"}
 ## Example: Calculation of the Range - Corn size data (mm)
@@ -711,7 +711,7 @@ text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
 
 Thus, the following format is recommended for reporting summary statistics for numerical data:
 
-**A. Mean (sd)** for data with **symmetric** distribution. A distribution, or data set, is symmetric if its left and right sides are mirror images.
+**A. Mean (sd)** for data with **symmetric** distribution. A distribution, or dataset, is symmetric if its left and right sides are mirror images.
 
 **B. Median (Q1, Q3)** for those with **skewed** (or asymetrical) distribution.  
 
@@ -976,7 +976,7 @@ data_corn |>
 ::: {.callout-tip icon="false"}
 ## Identifying Outliers in the data based on quartiles
 
-An **outlier** is a data value significantly far removed from the main body of a data set. We say any value outside of the following interval is an outlier:
+An **outlier** is a data value significantly far removed from the main body of a dataset. We say any value outside of the following interval is an outlier:
 
 $$(Q_1 - 1.5 \times IQR, \ Q_3 + 1.5 \times IQR)$$
 :::

@@ -182,7 +182,7 @@ The measure types are designated by the symbol in the header of the variable's c
 
 ## Importing our Data
 
-It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the data set named `arrhythmia.omv` as an example.
+It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the dataset named `arrhythmia.omv` as an example (@fig-arrhythmia).
 
 ```{r}
 #| echo: false
@@ -195,7 +195,7 @@ DT::datatable(arrhythmia, extensions = 'Scroller',
 ```
 
 
- The meta-data (data about the data) for this data set are as following:  
+ The meta-data (data about the data) for this dataset are as following:  
 
 1. age: age (yrs)
 2. sex: sex (0=male, 1=female)
@@ -233,3 +233,31 @@ flowchart LR
   A[File tab ] -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open our file)
 ```
 
+
+ 
+
+We should see data now in the Spreadsheet view (@fig-dataset).
+
+```{r}
+#| label: fig-dataset
+#| fig-align: left
+#| out-width: "95%"
+#| echo: false
+#| fig-cap: The dataset 'arrhythmia'.
+
+knitr::include_graphics(here::here("images", "dataset.png"))
+```
+
+
+As we can see this is a data set with `r nrow(arrhythmia)` observations and `r ncol(arrhythmia)` variables. The categorical variable `sex` is coded as 0 for males and 1 for females, and it is stored as nominal ![](images/nominal.png){width="24" height="22"}. All other variables are continuous ![](images/continuous.png){width="23" height="21"}.
+
+
+
+We can add labels to numerically coded values of categorical variables. Double-click on the variable name `sex`. We will get an extra menu open at the top of the Jamovi screen:
+
+![Adding labels to numerically coded Values](images/labels.png)
+
+At this extra menu there is the **Levels** setup. We can set the labels that should appear for each level of that category.
+Click on the number '0' in the Levels box to enter the label for this level. Change this from a ‘0’ to the word ‘male’. Click on the number '1' and change it to ‘female’.
+
+Notice how the numbers 0 and 1 move to the lower right under the text we’re typing, so we can still see which label refers to which number. Click anywhere outside the labels box to save these labels.

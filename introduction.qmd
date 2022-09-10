@@ -41,7 +41,6 @@ Some **tip** or **important information**.
 
  
 
-
 $\color{orange}{Orange\ color\ with\ a\ rocket\ icon}:$ Additional information that can be expanded by the user (**click on it**).
 
 ::: {.callout-caution collapse="true" icon="false"}
@@ -182,7 +181,7 @@ There are three main data structures: structured data, unstructured data, and se
 
 **Unstructured data** usually open text (such as social media posts), images, videos, etc., that have no predetermined organization or design.
 
-In this textbook we use data organized in a structured format (spreadsheets). In statistics, tabular data refers to data that are organized in a table with rows and columns. A row is a observation (or record), which corresponds to the statistical unit of the data set. The columns are the variables (or characteristics) of interest.
+In this textbook we use data organized in a structured format (spreadsheets). In statistics, tabular data refers to data that are organized in a table with rows and columns. A row is a observation (or record), which corresponds to the statistical unit of the dataset. The columns are the variables (or characteristics) of interest.
 
  
 

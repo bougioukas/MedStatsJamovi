@@ -25,7 +25,7 @@ Pearson's coefficient measures **linear** correlation, while the Spearman's coef
 
 ## Linear correlation (Pearson's coefficient r)
 
-The **Pearson's correlation coefficient,** ${r}$, can be calculated for any data set with two continuous variables. However, before we calculate the correlation coefficient ${r}$ we should make sure that the following **assumptions** are met:
+The **Pearson's correlation coefficient,** ${r}$, can be calculated for any dataset with two continuous variables. However, before we calculate the correlation coefficient ${r}$ we should make sure that the following **assumptions** are met:
 
 ::: {.callout-warning icon="false"}
 ## **Assumptions for Pearson's coefficient** $r_{xy}$
