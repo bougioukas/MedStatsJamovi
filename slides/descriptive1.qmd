@@ -13,7 +13,8 @@ execute:
   echo: true
 ---
 
-## What are Descriptive Statistics?
+## What are Descriptive Statistics? 
+([Link to the Textbook](https://bougioukas-medstatsjamovi.netlify.app/descriptive.html))
 
 Descriptive statistics are used to describe and organize the basic characteristics of the data in a study.
 
@@ -22,6 +23,11 @@ Descriptive statistics are used to describe and organize the basic characteristi
 -   They are useful in understanding a [data distribution]{style="color:#F0FFFF"} and in comparing data distributions and
 
 -   They are usually presented in [tables]{style="color:#F0FFFF"} and [graphs]{style="color:#F0FFFF"}.
+
+
+
+
+
 
 ## Example {.scrollable}
 
@@ -121,3 +127,58 @@ While frequency tables are extremely useful, the best way to investigate a data 
 
 -   The rectangular bars must be plotted against a common zero-valued baseline.
 :::
+
+## Summarizing Numerical Data
+
+::: {.callout-tip icon="false"}
+## Two summary measures should be reported for a numerical variable
+
+-   A measure of [**location**]{style="color:#F0FFFF"} (where the center of the distribution of the values is located)
+    -   Sample Mean or Average (e.g., Age: mean = 58.5 years)
+    -   Median of the sample
+    -   Mode of the sample
+-   A measure of [**variability**]{style="color:#F0FFFF"} (how widely the values are spread above and below the central value) provides an informative but brief summary of a set of observations.
+    -   Range of the sample
+    -   Quartiles and Interquartile Range of the sample
+    -   Sample Variance and Standard Deviation (e.g., Age: sd = 15.6 years)
+:::
+
+## Displaying Numerical Data {.scrollable}
+
+The best way for examining the distribution of numerical data (e.g., age) is to generate an appropriate graph.
+
+<br>
+
+[**A. Histogram**]{style="color:#F0FFFF"}
+
+A histogram gives information about the most common way of depicting a frequency distribution of a continuous variable.
+
+-   The amount of variability in the data.
+
+-   Where the peaks of the distribution are.
+
+::: panel-tabset
+### Plot
+
+![](images_slides/histo123.png)
+
+### Properties
+
+-   It depicts the distribution of a numeric variable's values as a series of bars without space between them.
+
+-   Each bar typically covers a range of numeric values called a bin or class
+
+-   A bar's height indicates the frequency of observations with a value within the corresponding bin.
+:::
+
+<br>
+
+[**B. Raincloud Plot**]{style="color:#F0FFFF"}
+
+Combine raw data (dots), histogram, and key summary statistics such as median, and relevant intervals.
+
+![](images_slides/raincloud123.png)
+
+## 
+
+![](images_slides/thank.png)

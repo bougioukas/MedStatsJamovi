@@ -1,5 +1,18 @@
 # LAB I: Introduction to Jamovi
 
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+
+library(fontawesome)
+
+
+library(readr)
+arrhythmia <- read_csv(here("data", "arrhythmia.csv"))
+```
+
 The goal of this lab is to introduce you to Jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
 
 ## Why Jamovi?
@@ -11,9 +24,10 @@ Jamovi is a new fee open "3rd generation" statistical software that is built on 
 ::: {.callout-note icon="false"}
 ## **Some other advantages are:**
 
-1.  Enables integration with R
+1.  Point-and-click environment
 2.  It provides informative tables and neat visuals
-3.  Gives access to a user guide and community resources from the Jamovi website
+3.  Enables integration with R
+4.  Gives access to a user guide and community resources from the Jamovi website
 :::
 
 ## Downloading and installing Jamovi
@@ -22,14 +36,14 @@ Jamovi is a new fee open "3rd generation" statistical software that is built on 
 
 ## Navigating Jamovi
 
-When first starting jamovi, we will be presented with a user interface which looks something like this @fig-jamovi1.
+When jamovi first opens, we will see a screen something like in @fig-jamovi1.
 
 ```{r}
 #| label: fig-jamovi1
 #| fig-align: left
 #| out-width: "95%"
 #| echo: false
-#| fig-cap: The menu bar provides access to all functions of the program.
+#| fig-cap: Jamovi starts up!.
 
 knitr::include_graphics(here::here("images", "jamovi1.png"))
 ```
@@ -38,7 +52,7 @@ To the left is the spreadsheet view, and to the right is where the results of st
 
  
 
-Let's take a quick look at the Jamovi Main Menu, referred to hereafter as the **Menu**, as shown in (@fig-menu1). This Menu is displayed at the very top of the Jamovi screen:
+Let's take a quick look at the Jamovi Main Menu, referred to hereafter as the **Menu**, as shown in @fig-menu1. This Menu is displayed at the very top of the Jamovi screen:
 
 ```{r}
 #| label: fig-menu1
@@ -50,7 +64,7 @@ Let's take a quick look at the Jamovi Main Menu, referred to hereafter as the **
 knitr::include_graphics(here::here("images", "menu1.png"))
 ```
 
-There are six tabs in the Menu (from left to right): 1. **File** (a layer with three horizontal levels $\equiv$), 2. **Variables**, 3. **Data,** 4. **Analyses**, 5. **Edit**, 6. **Settings** (the three dots $\vdots$ at the top right of the window) tabs (@tbl-menu).
+There are six tabs in the Menu (from left to right): **File** (a layer with three horizontal levels $\equiv$), **Variables**, **Data**, **Analyses**, **Edit**, and **Settings** (the three dots $\vdots$ at the top right of the window) tabs. A toolbar appears whenever we click on a Menu tab (@tbl-menu).
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | Menu tab                                                                                                                                                    | Toolbar                                                                                                                                             |
@@ -168,21 +182,54 @@ The measure types are designated by the symbol in the header of the variable's c
 
 ## Importing our Data
 
-It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi.
+It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the data set named `arrhythmia.omv` as an example.
 
-To open a file, select the File tab ![](images/hbars.png){width="28" height="17"} at the top left hand corner, select 'Open' and then 'This PC', and choose from the files listed on 'Browse' that are stored on our computer:
+```{r}
+#| echo: false
+#| label: fig-arrhythmia
+#| fig-cap: Table with raw data of arrhythmia data set.
+
+DT::datatable(arrhythmia, extensions = 'Scroller', 
+              options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 1:6)), scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10))
+
+```
+
+
+ The meta-data (data about the data) for this data set are as following:  
+
+1. age: age (yrs)
+2. sex: sex (0=male, 1=female)
+3. height: height (cm)
+4. weight: weight (kg)
+5. QRS: mean duration of QRS (ms) ![](images/QRS_normal.png){width="88" height="68"}
+6. heart_rate:  heart rate (beats/min) 
+
+ 
+
+To open this Jamovi file, click on the File tab ![](images/hbars.png){width="28" height="17"} at the top left hand corner (just left of the 'Variables' tab) (@fig-tab_analysis_file).
+
+![Click on the File tab](images/tab_analysis_file.png){#fig-tab_analysis_file}
+
+This will open the menu shown in @fig-open_file. Select 'Open' and then 'This PC', and choose tha Jamovi file 'arrhythmia' from the files listed on 'Browse' which are stored on our computer:
+
+```{r}
+#| label: fig-open_file
+#| fig-align: left
+#| out-width: "95%"
+#| echo: false
+#| fig-cap: Open an existing file stored on our computer into Jamovi.
+
+knitr::include_graphics(here::here("images", "open_file.png"))
+```
+
+ 
+
+
+The flowchart of the process is: 
+
 
 ```{mermaid}
 flowchart LR
   A[File tab ] -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open our file)
 ```
 
-```{r}
-#| label: fig-open2
-#| fig-align: left
-#| out-width: "95%"
-#| echo: false
-#| fig-cap: Open an existing file stored on our computer into Jamovi.
-
-knitr::include_graphics(here::here("images", "open2.png"))
-```
