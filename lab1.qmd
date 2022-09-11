@@ -307,14 +307,14 @@ There is also a switch where we can activate ![](images/active.png){width="27" h
 
 But we can do more complicated filters than this! Let’s say that we’re interested in the **adult females**. In fact we can specify this in three ways:
 
-**a)** by using the `and` operator in 'Filter 1' which means that both conditions (adults and females) must be true at the same time. Therefore, we type the expression `age >= 18 and sex == 'female'` (@fig-filter1_age_and_sex):
+**a)** by using the `and` operator in 'Filter 1' which means that both conditions (adults and females) in the expression must be true at the same time. Therefore, we type the expression `age >= 18 and sex == 'female'` (@fig-filter1_age_and_sex):
 
 ```{r}
 #| label: fig-filter1_age_and_sex
 #| fig-align: center
 #| out-width: "85%"
 #| echo: false
-#| fig-cap: Compining conditions.
+#| fig-cap: Combining conditions with `and` operator in one expression.
 
 knitr::include_graphics(here::here("images", "filter1_age_and_sex.png"))
 ```
@@ -323,14 +323,14 @@ knitr::include_graphics(here::here("images", "filter1_age_and_sex.png"))
 Note that in the expression we can also use double quotes (i.e. `age >= 18 and sex == "female"`) or even the coded value of the level (i.e. `age >= 18 and sex == 1`).
 
 
-**b)** by adding the second condition (i.e. `sex == "female"`) as another expression to Filter 1 (by clicking the small `+` beside the first ecxpression) (@fig-filter1_age_sex):
+**b)** by adding the second condition (i.e. `sex == "female"`) as another expression to Filter 1 (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex): 
 
 ```{r}
 #| label: fig-filter1_age_sex
 #| fig-align: center
 #| out-width: "85%"
 #| echo: false
-#| fig-cap: Compining conditions.
+#| fig-cap: Multiple expressions in the same filter.
 
 knitr::include_graphics(here::here("images", "filter1_age_sex.png"))
 ```
@@ -348,7 +348,7 @@ This additional expression comes to be represented with its own column `F1(2)` (
 #| fig-align: center
 #| out-width: "85%"
 #| echo: false
-#| fig-cap: Compining conditions.
+#| fig-cap: Multiple expressions using multiple filters.
 
 knitr::include_graphics(here::here("images", "filter2.png"))
 ```
