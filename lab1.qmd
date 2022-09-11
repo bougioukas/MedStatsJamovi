@@ -182,6 +182,9 @@ The measure types are designated by the symbol in the header of the variable's c
 
 ## Importing our Data
 
+
+### The dataset
+
 It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the dataset named `arrhythmia.omv` as an example (@fig-arrhythmia).
 
 ```{r}
@@ -204,7 +207,9 @@ DT::datatable(arrhythmia, extensions = 'Scroller',
 5. QRS: mean duration of QRS (ms) ![](images/QRS_normal.png){width="88" height="68"}
 6. heart_rate:  heart rate (beats/min) 
 
- 
+
+
+### Opening the file
 
 To open this Jamovi file, click on the File tab ![](images/hbars.png){width="28" height="17"} at the top left hand corner (just left of the 'Variables' tab) (@fig-tab_analysis_file).
 
@@ -230,7 +235,7 @@ The flowchart of the process is:
 
 ```{mermaid}
 flowchart LR
-  A[File tab ] -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open our file)
+  A[File tab ] -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia.omv')
 ```
 
 
@@ -253,11 +258,34 @@ As we can see this is a data set with `r nrow(arrhythmia)` observations and `r n
 
 
 
-We can add labels to numerically coded values of categorical variables. Double-click on the variable name `sex`. We will get an extra menu open at the top of the Jamovi screen:
 
-![Adding labels to numerically coded Values](images/labels.png)
+### Adding labels to codes
+
+We can add labels to numerically coded values of categorical variables. Double-click on the variable name `sex`. We will get an extra menu open at the top of the Jamovi screen @fig-labels:
+
+![Adding labels to numerically coded Values](images/labels.png){#fig-labels}
 
 At this extra menu there is the **Levels** setup. We can set the labels that should appear for each level of that category.
 Click on the number '0' in the Levels box to enter the label for this level. Change this from a ‘0’ to the word ‘male’. Click on the number '1' and change it to ‘female’.
 
 Notice how the numbers 0 and 1 move to the lower right under the text we’re typing, so we can still see which label refers to which number. Click anywhere outside the labels box to save these labels.
+
+We close the variable settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
+
+
+ 
+
+## Filtering data
+
+Next, we select the Filters button ![](images/filters.png){width="25" height="23"} from the Data tab. This opens the **filter view** at the top of the Jamovi screen where we can add a filter called *Filter 1* (@fig-filter1). Let's say that we want to study only the adults from the participants.
+
+![Adding a filter](images/filter1.png){#fig-filter1}
+
+
+In order to access functions, press the ![](images/fx.png){width="23" height="21"} icon  in the filter settings and from `VARIABLES` double-click on `age`. Then we type the condition `age >= 18`.
+
+Notice that a column named `Filter 1` has been added to the Spreadsheet view. Cells that meet the condition `age >= 18` are checked with a green tick ![](images/tick.png){width="24" height="21"}, while the rest have a red x symbol ![](images/x.png){width="24" height="21"}. Lines with an `X` are grayed out indicating that these observations are now outside of the current dataset. There is also a switch where we can activate ![](images/active.png){width="27" height="20"} or inactivate ![](images/inactive.png){width="27" height="20"} the filter. Finally, it is also possible to add new filters to create new subsets of data.
+
+We close the filter settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
+
+
