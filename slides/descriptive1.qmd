@@ -13,8 +13,30 @@ execute:
   echo: true
 ---
 
-## What are Descriptive Statistics? 
+## Timeline of Course {.scrollable}
+
+![](images_slides/timeline1.png)
+
+![](images_slides/timeline2.png)
+
+## Online textbook of the course
+
+For each lecture we provide a corresponding chapter in the online textbook of the course. For example, every student in the course has open access in the material for the Descriptive Statistics.
+
 ([Link to the Textbook](https://bougioukas-medstatsjamovi.netlify.app/descriptive.html))
+
+## Objectives of this lecture {.scrollable}
+
+-   To introduce descriptive statistics for categorical data
+-   To present categorical data in tables and figures
+-   To introduce basic summary measures for describing numerical data
+-   Interpret histograms and raincloud plots
+
+## Descriptive Statistics as a branch of Statistics
+
+![](images_slides/branches.png)
+
+## What are Descriptive Statistics?
 
 Descriptive statistics are used to describe and organize the basic characteristics of the data in a study.
 
@@ -24,69 +46,60 @@ Descriptive statistics are used to describe and organize the basic characteristi
 
 -   They are usually presented in [tables]{style="color:#F0FFFF"} and [graphs]{style="color:#F0FFFF"}.
 
-
-
-
-
-
 ## Example {.scrollable}
 
 ::: {.callout-note appearance="simple" icon="false"}
 ## Baseline characteristics of patients with foot corns by treatment group (Farndon et al. 2013).
 
-+----------------------+-----------------+---------------------+-------------------+
-|                      |                 | Corn Plaster, n (%) | Scalpel, n (%)    |
-|                      |                 |                     |                   |
-|                      |                 | (n=101)             | (n=101)           |
-+======================+=================+=====================+===================+
-| **Gender**           | Male            | 42 (42)             | 42 (42)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Female          | 59 (59)             | 59 (58)           |
-+----------------------+-----------------+---------------------+-------------------+
-| **Center**           | Central         | 58 (57)             | 52 (52)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Manor           | 13 (13)             | 20 (20)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Jordanthorpe    | 10 (10)             | 14 (14)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Limbrick        | 3 (3)               | 6 (6)             |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Firth Park      | 7 (7)               | 4 (4)             |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Huddersfield    | 5 (5)               | 4 (4)             |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Darnall         | 5 (5)               | 1 (1)             |
-+----------------------+-----------------+---------------------+-------------------+
-| **Smoking**          | Non-smoker      | 34 (35)             | 40 (40)           |
-|                      |                 |                     |                   |
-| **History**          |                 |                     |                   |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Previous smoker | 22 (22)             | 16 (16)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Current smoker  | 42 (43)             | 43 (43)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Missing         | 3 (3)               | 2 (2)             |
-+----------------------+-----------------+---------------------+-------------------+
-| **Numbers of corns** | 1               | 48 (48)             | 66 (65)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | 2               | 28 (28)             | 23 (23)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | 3               | 24 (24)             | 12 (12)           |
-+----------------------+-----------------+---------------------+-------------------+
-|                      | Missing         | 1 (1)               | 0 (0)             |
-+----------------------+-----------------+---------------------+-------------------+
-| **Age (yrs),**       |                 | 58.5 (15.6)         | 59.7 (17.5)       |
-|                      |                 |                     |                   |
-| **mean (sd)**        |                 |                     |                   |
-+----------------------+-----------------+---------------------+-------------------+
-| **Corn size (mm),**  |                 | 4 (3, 5)            | 3 (3, 5)          |
-|                      |                 |                     |                   |
-| **median (IQR)**     |                 |                     |                   |
-+----------------------+-----------------+---------------------+-------------------+
-| **EQ-5D,**           |                 | 0.73 (0.59, 0.80)   | 0.73 (0.66, 0.80) |
-|                      |                 |                     |                   |
-| **median (IQR)**     |                 |                     |                   |
-+----------------------+-----------------+---------------------+-------------------+
++----------------------+-----------------+---------------------+----------------+
+|                      |                 | Corn Plaster, n (%) | Scalpel, n (%) |
+|                      |                 |                     |                |
+|                      |                 | (n=101)             | (n=101)        |
++======================+=================+=====================+================+
+| **Gender**           | Male            | 42 (42)             | 42 (42)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | Female          | 59 (59)             | 59 (58)        |
++----------------------+-----------------+---------------------+----------------+
+| **Center**           | Central         | 58 (57)             | 52 (52)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | Manor           | 13 (13)             | 20 (20)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | Jordanthorpe    | 10 (10)             | 14 (14)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | Limbrick        | 3 (3)               | 6 (6)          |
++----------------------+-----------------+---------------------+----------------+
+|                      | Firth Park      | 7 (7)               | 4 (4)          |
++----------------------+-----------------+---------------------+----------------+
+|                      | Huddersfield    | 5 (5)               | 4 (4)          |
++----------------------+-----------------+---------------------+----------------+
+|                      | Darnall         | 5 (5)               | 1 (1)          |
++----------------------+-----------------+---------------------+----------------+
+| **Smoking**          | Non-smoker      | 34 (35)             | 40 (40)        |
+|                      |                 |                     |                |
+| **History**          |                 |                     |                |
++----------------------+-----------------+---------------------+----------------+
+|                      | Previous smoker | 22 (22)             | 16 (16)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | Current smoker  | 42 (43)             | 43 (43)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | Missing         | 3 (3)               | 2 (2)          |
++----------------------+-----------------+---------------------+----------------+
+| **Numbers of corns** | 1               | 48 (48)             | 66 (65)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | 2               | 28 (28)             | 23 (23)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | 3               | 24 (24)             | 12 (12)        |
++----------------------+-----------------+---------------------+----------------+
+|                      | Missing         | 1 (1)               | 0 (0)          |
++----------------------+-----------------+---------------------+----------------+
+| **Age (yrs),**       |                 | 58.5 (15.6)         | 59.7 (17.5)    |
+|                      |                 |                     |                |
+| **mean (sd)**        |                 |                     |                |
++----------------------+-----------------+---------------------+----------------+
+| **Corn size (mm),**  |                 | 4 (3, 5)            | 3 (3, 5)       |
+|                      |                 |                     |                |
+| **median (IQR)**     |                 |                     |                |
++----------------------+-----------------+---------------------+----------------+
 :::
 
 ## Summarizing Categorical Data {.scrollable}
@@ -108,6 +121,25 @@ Display the [number]{style="color:#F0FFFF"} and [proportion]{style="color:#F0FFF
 | **Total**        | 202       | 100.0%     |
 :::
 
+ 
+
+In addition to tabulating each variable separately, we might be interested in whether the distribution of patients across each center is the same for each randomized group.
+
+::: {.callout-note appearance="simple" icon="false"}
+## Cross-tabulation distribution of treatment center by randomized group for 202 patients with foot corns
+
+|              | Corn plaster, n(%) | Scalpel, n(%) |
+|--------------|--------------------|---------------|
+| Central      | 58 (57)            | 52 (52)       |
+| Manor        | 13 (13)            | 20 (20)       |
+| Jordanthorpe | 10 (10)            | 14 (14)       |
+| Limbrick     | 3 (3)              | 6 (6)         |
+| Firth Park   | 7 (7)              | 4 (4)         |
+| Huddersfield | 5 (5)              | 4 (4)         |
+| Darnall      | 5 (5)              | 1 (1)         |
+| **Total**    | 101 (100)          | 101 (100)     |
+:::
+
 ## Displaying Categorical Data {.scrollable}
 
 While frequency tables are extremely useful, the best way to investigate a data set is to plot it.
@@ -119,14 +151,18 @@ While frequency tables are extremely useful, the best way to investigate a data 
 
 ### Properties
 
--   All rectangular bars should have equal width and should have equal space between them.
+-   All the bars should have equal width and should have equal space between them.
 
--   The rectangular bars can be drawn horizontally or vertically.
+-   The height of the bar is equivalent to the data they represent.
 
--   The height of the rectangular bar is equivalent to the data they represent.
-
--   The rectangular bars must be plotted against a common zero-valued baseline.
+-   The bars must be plotted against a common zero-valued baseline.
 :::
+
+ 
+
+If the sample is further classified into whether the patient was treated with corn plasters or scalpel then it becomes impossible to present the data as a single bar plot. We will present the data as a grouped barplot.
+
+![](images_slides/grouped123.png)
 
 ## Summarizing Numerical Data
 
@@ -141,6 +177,38 @@ While frequency tables are extremely useful, the best way to investigate a data 
     -   Range of the sample
     -   Quartiles and Interquartile Range of the sample
     -   Sample Variance and Standard Deviation (e.g., Age: sd = 15.6 years)
+:::
+
+## Mathematical formula for the mean {.scrollable}
+
+The sum of the observations $x_{i}$ divided by their number *n*, thus:
+
+$$
+\bar{x}= \frac{x_1 + x_2 + ... + x_{n-1} + x_n}{n}
+$$
+
+Using the ***summation symbol*** $\scriptstyle\sum$ to shorten it:
+
+$$\bar{x}=\frac{\sum_{i=1}^{n}x_{i}}{n}=\frac{1}{n}\sum_{i=1}^{n}x_{i}$$ The Greek letter ${\Sigma}$ (sigma) stands for 'sum' and simply means 'add up the *n* observations $x_{i}$ from the 1st to the last (nth)'.
+
+ 
+
+::: {.callout-tip icon="false"}
+## Advantages and Disadvantages of arithmetic mean
+
+[**Advantages**]{style="color:#F0FFFF"}
+
+1.  is simple to understand and easy to calculate
+2.  uses all the data values in the calculation
+3.  is algebraically defined and thus mathematically manageable
+4.  has a known sampling distribution
+
+[**Disadvantages**]{style="color:#F0FFFF"}
+
+1.  is highly affected by the presence of a few abnormally high or abnormally low values (outliers)
+2.  is not an appropriate average for highly skewed (asymmetrical) distributions
+3.  cannot be determined if any item of observation is missing
+4.  cannot be determined easily by inspection of the data
 :::
 
 ## Displaying Numerical Data {.scrollable}
@@ -175,7 +243,9 @@ A histogram gives information about the most common way of depicting a frequency
 
 [**B. Raincloud Plot**]{style="color:#F0FFFF"}
 
-Combine raw data (dots), histogram, and key summary statistics such as median, and relevant intervals.
+-   A modern, but more informative, alternative of a boxplot.
+
+-   Combines raw data (dots), histogram, and key summary statistics such as median, and relevant intervals.
 
 ![](images_slides/raincloud123.png)
 

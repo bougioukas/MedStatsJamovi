@@ -182,7 +182,6 @@ The measure types are designated by the symbol in the header of the variable's c
 
 ## Importing data
 
-
 ### The dataset
 
 It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the dataset named `arrhythmia.omv` as an example (@fig-arrhythmia).
@@ -197,17 +196,14 @@ DT::datatable(arrhythmia, extensions = 'Scroller',
 
 ```
 
+The meta-data (data about the data) for this dataset are as following:
 
- The meta-data (data about the data) for this dataset are as following:  
-
-1. age: age (yrs)
-2. sex: sex (0=male, 1=female)
-3. height: height (cm)
-4. weight: weight (kg)
-5. QRS: mean duration of QRS (ms) ![](images/QRS_normal.png){width="88" height="68"}
-6. heart_rate:  heart rate (beats/min) 
-
-
+1.  age: age (yrs)
+2.  sex: sex (0=male, 1=female)
+3.  height: height (cm)
+4.  weight: weight (kg)
+5.  QRS: mean duration of QRS (ms) ![](images/QRS_normal.png){width="88" height="68"}
+6.  heart_rate: heart rate (beats/min)
 
 ### Opening the file
 
@@ -229,15 +225,12 @@ knitr::include_graphics(here::here("images", "open_file.png"))
 
  
 
-
-The flowchart of the process is: 
-
+The flowchart of the process is:
 
 ```{mermaid}
 flowchart LR
   A[File tab ] -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia.omv')
 ```
-
 
  
 
@@ -253,10 +246,7 @@ We should see data now in the Spreadsheet view (@fig-dataset).
 knitr::include_graphics(here::here("images", "dataset.png"))
 ```
 
-
 As we can see this is a data set with `r nrow(arrhythmia)` observations and `r ncol(arrhythmia)` variables. The categorical variable `sex` is coded as 0 for males and 1 for females, and it is stored as nominal ![](images/nominal.png){width="24" height="22"}. All other variables are continuous ![](images/continuous.png){width="23" height="21"}.
-
-
 
 ## Transforming data
 
@@ -266,26 +256,21 @@ We can add labels to numerically coded values of categorical variables. Double-c
 
 ![Adding labels to numerically coded Values](images/labels.png){#fig-labels}
 
-At this extra menu there is the **Levels** setup. We can set the labels that should appear for each level of that category.
-Click on the number '0' in the Levels box to enter the label for this level. Change this from a ‘0’ to the word ‘male’. Click on the number '1' and change it to ‘female’.
+At this extra menu there is the **Levels** setup. We can set the labels that should appear for each level of that category. Click on the number '0' in the Levels box to enter the label for this level. Change this from a '0' to the word 'male'. Click on the number '1' and change it to 'female'.
 
-Notice how the numbers 0 and 1 move to the lower right under the text we’re typing, so we can still see which label refers to which number. Click anywhere outside the labels box to save these labels.
+Notice how the numbers 0 and 1 move to the lower right under the text we're typing, so we can still see which label refers to which number. Click anywhere outside the labels box to save these labels.
 
 We close the variable settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
-
 
  
 
 ### Filtering data
 
-Next, we select the Filters button ![](images/filters.png){width="25" height="23"} from the Data tab. This opens the **filter view** at the top of the Jamovi screen where we can add a filter called *Filter 1* (@fig-filter1_age). Let's say that we want to study only the adults from the participants.
+Next, we select the **Filters button** ![](images/filters.png){width="25" height="23"} from the Data tab. This opens the **filter view** at the top of the Jamovi screen where we can add a filter called *Filter 1* (@fig-filter1_age). Let's say that we want to study only the adults from the participants.
 
 ![Adding a filter](images/filter1_age.png){#fig-filter1_age}
 
-
-In order to access functions, press the ![](images/fx.png){width="25" height="23"} icon in the filter settings and from `VARIABLES` double-click on `age` (or we just type in the variable name but if the variable has a space, we must use `'..'` around the variable name). Then type the condition `age >= 18` and press `ENTER` from the keyboard.
-
-
+In order to access functions, press the ![](images/fx.png){width="25" height="23"} icon in the filter settings and from `VARIABLES` double-click on `age` (or we just type the variable name but if the variable has a space, we must use `'..'` around the variable name). Then type the condition `age >= 18` and press `ENTER` from the keyboard in the formula box.
 
 ::: callout-tip
 ## Relational (or comparison) operators in Jamovi
@@ -298,14 +283,17 @@ In order to access functions, press the ![](images/fx.png){width="25" height="23
 | \<=        | less than or equal to    |
 | \>=        | greater than or equal to |
 | !=         | not equal to             |
-
 :::
 
+Notice that a column named `Filter 1` has been added to the Spreadsheet view. Cells that meet the condition `age >= 18` are checked with a green tick ![](images/tick.png){width="24" height="21"}, while the rest have a red x symbol ![](images/x.png){width="24" height="21"}. Lines with an `X` are grayed out indicating that these observations are now outside of the current dataset.
 
-Notice that a column named `Filter 1` has been added to the Spreadsheet view. Cells that meet the condition `age >= 18` are checked with a green tick ![](images/tick.png){width="24" height="21"}, while the rest have a red x symbol ![](images/x.png){width="24" height="21"}. Lines with an `X` are grayed out indicating that these observations are now outside of the current dataset. 
-There is also a switch where we can activate ![](images/active.png){width="27" height="20"} or inactivate ![](images/inactive.png){width="27" height="20"} the filter. Finally, it is also possible to add new filters to create new subsets of data.
+There is also a switch where we can activate ![](images/active.png){width="27" height="20"} or inactivate ![](images/inactive.png){width="27" height="20"} the filter (note that an inactivate filter will remain visible and can be toggled to active at any time).
 
-But we can do more complicated filters than this! Let’s say that we’re interested in the **adult females**. In fact we can specify this in three ways:
+It is also possible to hide all filter columns by clicking on the eye symbol ![](images/eye.png){width="26" height="23"} of the filters. In this case, all filters and the filtered data will remain active but will be invisible.
+
+Finally, if we want to delete the filter permanently, click on the cross of the filter.
+
+But we can do more complicated filters than this! Let's say that we're interested in the **adult females**. In fact we can specify this in three ways:
 
 **a)** by using the `and` operator in 'Filter 1' which means that both conditions (adults and females) in the expression must be true at the same time. Therefore, we type the expression `age >= 18 and sex == 'female'` (@fig-filter1_age_and_sex):
 
@@ -319,11 +307,9 @@ But we can do more complicated filters than this! Let’s say that we’re inter
 knitr::include_graphics(here::here("images", "filter1_age_and_sex.png"))
 ```
 
+Note that in the above expression we can also use double quotes around the `"female"` (i.e. `age >= 18 and sex == "female"`) or even the coded value (i.e. `age >= 18 and sex == 1`).
 
-Note that in the expression we can also use double quotes (i.e. `age >= 18 and sex == "female"`) or even the coded value of the level (i.e. `age >= 18 and sex == 1`).
-
-
-**b)** by adding the second condition (i.e. `sex == "female"`) as another expression to Filter 1 (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex): 
+**b)** by adding the second condition (i.e. `sex == "female"`) as another expression to Filter 1 (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex):
 
 ```{r}
 #| label: fig-filter1_age_sex
@@ -335,11 +321,7 @@ Note that in the expression we can also use double quotes (i.e. `age >= 18 and s
 knitr::include_graphics(here::here("images", "filter1_age_sex.png"))
 ```
 
-
 This additional expression comes to be represented with its own column `F1(2)` (@fig-filter1_age_sex), and by looking at the ticks and crosses, we can see which expression is responsible for excluding each row.
-
-
-
 
 **c)** adding a new `Filter 2` (by selecting the large + to the left of the filters dialog box) (@fig-filter2). In this case, we can activate or inactivate the filters separately.
 
@@ -353,21 +335,42 @@ This additional expression comes to be represented with its own column `F1(2)` (
 knitr::include_graphics(here::here("images", "filter2.png"))
 ```
 
-
-
-
 We close the filter settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
 
-
 ::: callout-important
-
 Filters in Jamovi exclude the rows for which the expression is not true. When filters are active, **all results** will be based on the filtered data. If we want to see unfiltered results we will either need to delete the filter or toggle it to inactive.
 :::
 
+ 
 
+### Computing a new variable
 
+Sometimes we may need to compute a new variable based on existing information (from other variables) in our data. For example, we may want to compute the body mass index (BMI), from weight (Kg) and height (m) using the formula:
 
+$$BMI = weight/height^2$$ {#eq-bmi}
 
+Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab (or Compute button ![](images/compute_button.png){width="26" height="24"}) and then select **Append** from the Computed Variable list . An empty column has been created at the end of our dataset (@fig-append). The grey dot symbol in the right of the column header indicates that this is a computed variable.
 
+```{r}
+#| label: fig-append
+#| fig-align: center
+#| out-width: "75%"
+#| echo: false
+#| fig-cap: Adding computed variables to a Jamovi spreadsheet.
+
+knitr::include_graphics(here::here("images", "append.png"))
+```
+
+To set up the computed variable, either double-click on the column header, or select Setup from the data tab. This opens the "COMPUTED VARIABLE" view with the formula box where we can specify the formula @eq-bmi for the column that looks as follows (@fig-compute_bmi):
+
+```{r}
+#| label: fig-compute_bmi
+#| fig-align: center
+#| out-width: "75%"
+#| echo: false
+#| fig-cap: Setting up the computed variable.
+
+knitr::include_graphics(here::here("images", "compute_bmi.png"))
+```
 
 

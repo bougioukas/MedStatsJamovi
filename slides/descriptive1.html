@@ -325,9 +325,31 @@
   <p class="author">Konstantinos Bougioukas<br>Medical Statistics<br>September 13, 2022</p>
 </section>
 
+<section id="timeline-of-course" class="slide level2 scrollable">
+<h2>Timeline of Course</h2>
+<p><img data-src="images_slides/timeline1.png"></p>
+<p><img data-src="images_slides/timeline2.png"></p>
+</section>
+<section id="online-textbook-of-the-course" class="slide level2">
+<h2>Online textbook of the course</h2>
+<p>For each lecture we provide a corresponding chapter in the online textbook of the course. For example, every student in the course has open access in the material for the Descriptive Statistics.</p>
+<p>(<a href="https://bougioukas-medstatsjamovi.netlify.app/descriptive.html">Link to the Textbook</a>)</p>
+</section>
+<section id="objectives-of-this-lecture" class="slide level2 scrollable">
+<h2>Objectives of this lecture</h2>
+<ul>
+<li>To introduce descriptive statistics for categorical data</li>
+<li>To present categorical data in tables and figures</li>
+<li>To introduce basic summary measures for describing numerical data</li>
+<li>Interpret histograms and raincloud plots</li>
+</ul>
+</section>
+<section id="descriptive-statistics-as-a-branch-of-statistics" class="slide level2">
+<h2>Descriptive Statistics as a branch of Statistics</h2>
+
+<img data-src="images_slides/branches.png" class="r-stretch"></section>
 <section id="what-are-descriptive-statistics" class="slide level2">
 <h2>What are Descriptive Statistics?</h2>
-<p>(<a href="https://bougioukas-medstatsjamovi.netlify.app/descriptive.html">Link to the Textbook</a>)</p>
 <p>Descriptive statistics are used to describe and organize the basic characteristics of the data in a study.</p>
 <ul>
 <li><p>They allow us to have a quick glance of the <span style="color:#F0FFFF">central tendency</span> and the extent of <span style="color:#F0FFFF">dispersion</span> of values.</p></li>
@@ -345,10 +367,10 @@
 <div class="callout-content">
 <table>
 <colgroup>
+<col style="width: 28%">
+<col style="width: 22%">
 <col style="width: 27%">
 <col style="width: 21%">
-<col style="width: 25%">
-<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -478,13 +500,6 @@
 <td>4 (3, 5)</td>
 <td>3 (3, 5)</td>
 </tr>
-<tr class="even">
-<td><p><strong>EQ-5D,</strong></p>
-<p><strong>median (IQR)</strong></p></td>
-<td></td>
-<td>0.73 (0.59, 0.80)</td>
-<td>0.73 (0.66, 0.80)</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -554,6 +569,68 @@
 </div>
 </div>
 </div>
+<p>&nbsp;</p>
+<p>In addition to tabulating each variable separately, we might be interested in whether the distribution of patients across each center is the same for each randomized group.</p>
+<div class="callout callout-note no-icon callout-captioned callout-style-simple">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Cross-tabulation distribution of treatment center by randomized group for 202 patients with foot corns</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Corn plaster, n(%)</th>
+<th>Scalpel, n(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Central</td>
+<td>58 (57)</td>
+<td>52 (52)</td>
+</tr>
+<tr class="even">
+<td>Manor</td>
+<td>13 (13)</td>
+<td>20 (20)</td>
+</tr>
+<tr class="odd">
+<td>Jordanthorpe</td>
+<td>10 (10)</td>
+<td>14 (14)</td>
+</tr>
+<tr class="even">
+<td>Limbrick</td>
+<td>3 (3)</td>
+<td>6 (6)</td>
+</tr>
+<tr class="odd">
+<td>Firth Park</td>
+<td>7 (7)</td>
+<td>4 (4)</td>
+</tr>
+<tr class="even">
+<td>Huddersfield</td>
+<td>5 (5)</td>
+<td>4 (4)</td>
+</tr>
+<tr class="odd">
+<td>Darnall</td>
+<td>5 (5)</td>
+<td>1 (1)</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td>101 (100)</td>
+<td>101 (100)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </section>
 <section id="displaying-categorical-data" class="slide level2 scrollable">
 <h2>Displaying Categorical Data</h2>
@@ -566,14 +643,16 @@
 </div>
 <div id="tabset-1-2">
 <ul>
-<li><p>All rectangular bars should have equal width and should have equal space between them.</p></li>
-<li><p>The rectangular bars can be drawn horizontally or vertically.</p></li>
-<li><p>The height of the rectangular bar is equivalent to the data they represent.</p></li>
-<li><p>The rectangular bars must be plotted against a common zero-valued baseline.</p></li>
+<li><p>All the bars should have equal width and should have equal space between them.</p></li>
+<li><p>The height of the bar is equivalent to the data they represent.</p></li>
+<li><p>The bars must be plotted against a common zero-valued baseline.</p></li>
 </ul>
 </div>
 </div>
 </div>
+<p>&nbsp;</p>
+<p>If the sample is further classified into whether the patient was treated with corn plasters or scalpel then it becomes impossible to present the data as a single bar plot. We will present the data as a grouped barplot.</p>
+<p><img data-src="images_slides/grouped123.png"></p>
 </section>
 <section id="summarizing-numerical-data" class="slide level2">
 <h2>Summarizing Numerical Data</h2>
@@ -597,6 +676,39 @@
 <li>Sample Variance and Standard Deviation (e.g., Age: sd = 15.6 years)</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
+</section>
+<section id="mathematical-formula-for-the-mean" class="slide level2 scrollable">
+<h2>Mathematical formula for the mean</h2>
+<p>The sum of the observations <span class="math inline">\(x_{i}\)</span> divided by their number <em>n</em>, thus:</p>
+<p><span class="math display">\[
+\bar{x}= \frac{x_1 + x_2 + ... + x_{n-1} + x_n}{n}
+\]</span></p>
+<p>Using the <strong><em>summation symbol</em></strong> <span class="math inline">\(\scriptstyle\sum\)</span> to shorten it:</p>
+<p><span class="math display">\[\bar{x}=\frac{\sum_{i=1}^{n}x_{i}}{n}=\frac{1}{n}\sum_{i=1}^{n}x_{i}\]</span> The Greek letter <span class="math inline">\({\Sigma}\)</span> (sigma) stands for ‘sum’ and simply means ‘add up the <em>n</em> observations <span class="math inline">\(x_{i}\)</span> from the 1st to the last (nth)’.</p>
+<p>&nbsp;</p>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Advantages and Disadvantages of arithmetic mean</strong></p>
+</div>
+<div class="callout-content">
+<p><span style="color:#F0FFFF"><strong>Advantages</strong></span></p>
+<ol type="1">
+<li>is simple to understand and easy to calculate</li>
+<li>uses all the data values in the calculation</li>
+<li>is algebraically defined and thus mathematically manageable</li>
+<li>has a known sampling distribution</li>
+</ol>
+<p><span style="color:#F0FFFF"><strong>Disadvantages</strong></span></p>
+<ol type="1">
+<li>is highly affected by the presence of a few abnormally high or abnormally low values (outliers)</li>
+<li>is not an appropriate average for highly skewed (asymmetrical) distributions</li>
+<li>cannot be determined if any item of observation is missing</li>
+<li>cannot be determined easily by inspection of the data</li>
+</ol>
 </div>
 </div>
 </div>
@@ -628,7 +740,10 @@
 </div>
 <p><br></p>
 <p><span style="color:#F0FFFF"><strong>B. Raincloud Plot</strong></span></p>
-<p>Combine raw data (dots), histogram, and key summary statistics such as median, and relevant intervals.</p>
+<ul>
+<li><p>A modern, but more informative, alternative of a boxplot.</p></li>
+<li><p>Combines raw data (dots), histogram, and key summary statistics such as median, and relevant intervals.</p></li>
+</ul>
 <p><img data-src="images_slides/raincloud123.png"></p>
 </section>
 <section id="section" class="slide level2">

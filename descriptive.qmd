@@ -10,6 +10,7 @@ library(scales)
 library(patchwork)
 library(gridExtra)
 library(ggdist)
+library(MESS)
 
 
 library(readr)
@@ -30,7 +31,11 @@ data_corn <- data_corn %>%
  )
 ```
 
-**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs. For example, @tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
+**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs. 
+
+For example, @tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 randomized controlled trial (RCT). This study investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns.
+
+
 
 ::: {.callout-note icon="false"}
 ## Example: Summary table with characteristics of patients [@farndon2013]
@@ -44,7 +49,7 @@ data_corn <- data_corn %>%
 +----------------------+-----------------+---------------------+-------------------+
 |                      | Female          | 59 (59)             | 59 (58)           |
 +----------------------+-----------------+---------------------+-------------------+
-| **Center**           | Central         | 58 (57)             | 52 (52)           |
+| **Center**           | Central         | 58 (57)             | 52 (51)           |
 +----------------------+-----------------+---------------------+-------------------+
 |                      | Manor           | 13 (13)             | 20 (20)           |
 +----------------------+-----------------+---------------------+-------------------+
@@ -105,20 +110,23 @@ However, a raw count is rarely useful. For example, in @tbl-corn there are more 
 ::: {.callout-note icon="false"}
 ## Example - Distribution of treatment center for 202 patients with foot corns [@farndon2013]
 
-Farndon et al. (2013) reports a RCT that investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. As we have already mentioned one categorical variable recorded was the center where each trial participant was treated. Trial participants were treated at one of seven centers and the corresponding categories as displayed in @tbl-centers1. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. @tbl-centers1 clearly shows that the majority (54.5%) of patients were treated at the "Central" treatment center.
+One of the categorical variables recorded in @farndon2013 study was the treatment center. Trial participants were treated at one of seven centers and the corresponding categories as displayed in @tbl-centers1. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. @tbl-centers1 clearly shows that the majority (54.5%) of patients were treated at the "Central" treatment center.
 
 | Treatment center | Frequency | Percentage |
 |------------------|-----------|------------|
 | Central          | 110       | 54.5%      |
 | Manor            | 33        | 16.3%      |
 | Jordanthorpe     | 24        | 11.9%      |
-| Limbrick         | 9         | 4.5%       |
+| Limbrick         | 9         | 4.4%       |
 | Firth Park       | 11        | 5.4%       |
 | Huddersfield     | 9         | 4.5%       |
 | Darnall          | 6         | 3.0%       |
 | **Total**        | 202       | 100.0%     |
 
 : Frequency and percentage distributions of treatment center for 202 patients with foot corns {#tbl-centers1}
+
+Of note, the percentages add up to 100%.
+
 :::
 
  
@@ -132,10 +140,10 @@ In addition to tabulating each variable separately, we might be interested in wh
 
 |              | Corn plaster, n(%) | Scalpel, n(%) | All, n(%)  |
 |--------------|--------------------|---------------|------------|
-| Central      | 58 (57)            | 52 (52)       | 110 (54.5) |
+| Central      | 58 (57)            | 52 (51)       | 110 (54.5) |
 | Manor        | 13 (13)            | 20 (20)       | 33 (16.3)  |
 | Jordanthorpe | 10 (10)            | 14 (14)       | 24 (11.9)  |
-| Limbrick     | 3 (3)              | 6 (6)         | 9 (4.5)    |
+| Limbrick     | 3 (3)              | 6 (6)         | 9 (4.4)    |
 | Firth Park   | 7 (7)              | 4 (4)         | 11 (5.4)   |
 | Huddersfield | 5 (5)              | 4 (4)         | 9 (4.5)    |
 | Darnall      | 5 (5)              | 1 (1)         | 6 (3.0)    |
@@ -206,12 +214,12 @@ A simple bar plot is an easy way to make comparisons across categories. @fig-bar
 
 data_centers <- data_corn %>% 
   count(center) %>% 
-  mutate(pct = n / sum(n))
+  mutate(pct = round_percent(n, 1)/100)
 
 
 ggplot(data_centers, aes(x = center, y = pct)) +
   geom_col(width=0.65, fill = "steelblue4") +
-  geom_text(aes(label=paste0(round(pct*100, 1), "%")),
+  geom_text(aes(label=paste0(pct*100, "%")),
             vjust=1.6, color = "white", size = 3) +
   labs(x = "Treatment center", y = "Percent",
        subtitle = "Number of patients: 202") +
@@ -226,13 +234,11 @@ ggplot(data_centers, aes(x = center, y = pct)) +
 ::: {.callout-tip icon="false"}
 ## Basic Properties of Simple Bar plot
 
--   All rectangular bars should have equal width and should have equal space between them.
+-   All bars should have equal width and should have equal space between them.
 
--   The rectangular bars can be drawn horizontally or vertically.
+-   The height of the bar is equivalent to the data they represent.
 
--   The height of the rectangular bar is equivalent to the data they represent.
-
--   The rectangular bars must be plotted against a common zero-valued baseline.
+-   The  bars must be plotted against a common zero-valued baseline.
 :::
 
  
@@ -251,12 +257,12 @@ If the sample is further classified into whether the patient was treated with co
 data_centers2 <- data_corn %>% 
   count(center, group) %>% 
   group_by(group) %>% 
-  mutate(pct = n / sum(n))
+  mutate(pct = round_percent(n, 0)/100)
 
 
 ggplot(data_centers2) + 
   geom_col(aes(center, pct, fill = group), width=0.7, position = "dodge") +
-  geom_text(aes(center, pct, label = paste0(round(pct*100, 0), "%"), 
+  geom_text(aes(center, pct, label = paste0(pct*100, "%"), 
                 group = group), color = "white", size = 3,vjust=1.2,
             position = position_dodge(width = .9)) +
 labs(x = "Treatment center", y = "Percent",
@@ -284,7 +290,7 @@ labs(x = "Treatment center", y = "Percent",
 
 ggplot(data_centers2) + 
   geom_col(aes(center, pct, fill = group), width = 0.8, position = "dodge") +
-  geom_text(aes(center, pct, label = paste0(round(pct*100, 0), "%"), 
+  geom_text(aes(center, pct, label = paste0(pct*100, "%"), 
                 group = group), color = "white", size = 3,vjust=1.2,
             position = position_dodge(width = .9)) +
 labs(x = "Treatment center", y = "Percent",
@@ -455,7 +461,7 @@ If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of
 1.  is simple to understand and easy to calculate
 2.  uses all the data values in the calculation
 3.  is algebraically defined and thus mathematically manageable
-4.  has a known sampling distribution
+4.  has a known sampling distribution (see @sec-estimation)
 
 **Disadvantages of mean**
 
