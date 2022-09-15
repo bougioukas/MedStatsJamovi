@@ -362,7 +362,7 @@ An empty column has been created at the end of our dataset (@fig-append). The gr
 knitr::include_graphics(here::here("images", "append.png"))
 ```
 
-To set up the computed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "COMPUTED VARIABLE" view where we can set the name of the computed variable as BMI and specify the @eq-bmi in the formula box (note that we must divide the height by 100) (@fig-compute_bmi):
+To set up the computed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "COMPUTED VARIABLE" view where we can set the name of the computed variable as BMI and specify the @eq-bmi in the formula box (note that we must divide the height by 100 and use the exponentiation operator ^ or **) (@fig-compute_bmi):
 
 ```{r}
 #| label: fig-compute_bmi
