@@ -349,7 +349,8 @@ Sometimes we may need to compute a new variable based on existing information (f
 
 $$BMI = weight/height^2$$ {#eq-bmi}
 
-Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab (or Compute button ![](images/compute_button.png){width="26" height="24"}) and then select **Append** from the Computed Variable list . An empty column has been created at the end of our dataset (@fig-append). The grey dot symbol in the right of the column header indicates that this is a computed variable.
+Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab and then select **Append** from the Computed Variable list. (Alternatevely select the Compute button ![](images/compute_button.png){width="26" height="24"}).
+An empty column has been created at the end of our dataset (@fig-append). The grey dot symbol in the right of the column header indicates that this is a computed variable.
 
 ```{r}
 #| label: fig-append
@@ -361,7 +362,7 @@ Adding computed variables to a Jamovi spreadsheet is straightforward. Click on *
 knitr::include_graphics(here::here("images", "append.png"))
 ```
 
-To set up the computed variable, either double-click on the column header, or select Setup from the data tab. This opens the "COMPUTED VARIABLE" view with the formula box where we can specify the formula @eq-bmi for the column that looks as follows (@fig-compute_bmi):
+To set up the computed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "COMPUTED VARIABLE" view where we can set the name of the computed variable as BMI and specify the @eq-bmi in the formula box (note that we must divide the height by 100) (@fig-compute_bmi):
 
 ```{r}
 #| label: fig-compute_bmi
