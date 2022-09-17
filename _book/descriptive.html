@@ -2,16 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.1.251">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Introduction to Medical Statistics with Jamovi - 2&nbsp; Descriptive statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -232,27 +237,27 @@ div.csl-indent {
     </ul>
 </div>
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li>
-<a href="#summarizing-categorical-data-frequency-statistics" id="toc-summarizing-categorical-data-frequency-statistics" class="nav-link active" data-scroll-target="#summarizing-categorical-data-frequency-statistics"> <span class="header-section-number">2.1</span> Summarizing Categorical Data (Frequency Statistics)</a>
+<a href="#summarizing-categorical-data-frequency-statistics" id="toc-summarizing-categorical-data-frequency-statistics" class="nav-link active" data-scroll-target="#summarizing-categorical-data-frequency-statistics"><span class="toc-section-number">2.1</span>  Summarizing Categorical Data (Frequency Statistics)</a>
   <ul class="collapse">
 <li><a href="#how-to-report-descriptive-statistics-for-categorical-data" id="toc-how-to-report-descriptive-statistics-for-categorical-data" class="nav-link" data-scroll-target="#how-to-report-descriptive-statistics-for-categorical-data">How to report descriptive statistics for categorical data?</a></li>
   </ul>
 </li>
-  <li><a href="#displaying-categorical-data" id="toc-displaying-categorical-data" class="nav-link" data-scroll-target="#displaying-categorical-data"> <span class="header-section-number">2.2</span> Displaying Categorical Data</a></li>
+  <li><a href="#displaying-categorical-data" id="toc-displaying-categorical-data" class="nav-link" data-scroll-target="#displaying-categorical-data"><span class="toc-section-number">2.2</span>  Displaying Categorical Data</a></li>
   <li>
-<a href="#summarizing-numerical-data" id="toc-summarizing-numerical-data" class="nav-link" data-scroll-target="#summarizing-numerical-data"> <span class="header-section-number">2.3</span> Summarizing Numerical Data</a>
+<a href="#summarizing-numerical-data" id="toc-summarizing-numerical-data" class="nav-link" data-scroll-target="#summarizing-numerical-data"><span class="toc-section-number">2.3</span>  Summarizing Numerical Data</a>
   <ul class="collapse">
 <li><a href="#measures-of-location" id="toc-measures-of-location" class="nav-link" data-scroll-target="#measures-of-location">Measures of Location</a></li>
   <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion">Measures of Dispersion</a></li>
   <li><a href="#how-to-report-descriptive-or-summary-statistics-for-numerical-data" id="toc-how-to-report-descriptive-or-summary-statistics-for-numerical-data" class="nav-link" data-scroll-target="#how-to-report-descriptive-or-summary-statistics-for-numerical-data">How to report descriptive (or summary) statistics for numerical data?</a></li>
   </ul>
 </li>
-  <li><a href="#displaying-numerical-data" id="toc-displaying-numerical-data" class="nav-link" data-scroll-target="#displaying-numerical-data"> <span class="header-section-number">2.4</span> Displaying Numerical Data</a></li>
-  <li><a href="#describing-and-displaying-associations-between-two-continuous-variables" id="toc-describing-and-displaying-associations-between-two-continuous-variables" class="nav-link" data-scroll-target="#describing-and-displaying-associations-between-two-continuous-variables"> <span class="header-section-number">2.5</span> Describing and displaying associations between two continuous variables</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">2.6</span> Exercises</a></li>
+  <li><a href="#displaying-numerical-data" id="toc-displaying-numerical-data" class="nav-link" data-scroll-target="#displaying-numerical-data"><span class="toc-section-number">2.4</span>  Displaying Numerical Data</a></li>
+  <li><a href="#describing-and-displaying-associations-between-two-continuous-variables" id="toc-describing-and-displaying-associations-between-two-continuous-variables" class="nav-link" data-scroll-target="#describing-and-displaying-associations-between-two-continuous-variables"><span class="toc-section-number">2.5</span>  Describing and displaying associations between two continuous variables</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">2.6</span>  Exercises</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -283,22 +288,24 @@ Example: Summary table with characteristics of patients <span class="citation" d
 <div class="callout-body-container callout-body">
 <div id="tbl-corn" class="anchored">
 <table class="table">
-<caption>Table 2.1: Baseline characteristics of patients with foot corns by treatment group.</caption>
+<caption>Table&nbsp;2.1: Baseline characteristics of patients with foot corns by treatment group.</caption>
 <colgroup>
 <col style="width: 27%">
 <col style="width: 21%">
 <col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 23%">
 </colgroup>
 <thead><tr class="header">
 <th></th>
 <th></th>
 <th>
 <p>Corn Plaster, n (%)</p>
-(n=101)</th>
+<p>(n=101)</p>
+</th>
 <th>
 <p>Scalpel, n (%)</p>
-(n=101)</th>
+<p>(n=101)</p>
+</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -457,7 +464,7 @@ Example - Distribution of treatment center for 202 patients with foot corns <spa
 <p>One of the categorical variables recorded in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study was the treatment center. Trial participants were treated at one of seven centers and the corresponding categories as displayed in <a href="#tbl-centers1">Table&nbsp;<span>2.2</span></a>. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. <a href="#tbl-centers1">Table&nbsp;<span>2.2</span></a> clearly shows that the majority (54.5%) of patients were treated at the “Central” treatment center.</p>
 <div id="tbl-centers1" class="anchored">
 <table class="table">
-<caption>Table 2.2: Frequency and percentage distributions of treatment center for 202 patients with foot corns</caption>
+<caption>Table&nbsp;2.2: Frequency and percentage distributions of treatment center for 202 patients with foot corns</caption>
 <thead><tr class="header">
 <th>Treatment center</th>
 <th>Frequency</th>
@@ -525,7 +532,7 @@ Example - Distribution of treatment center by randomized group for 202 patients 
 <p><a href="#tbl-centers2">Table&nbsp;<span>2.3</span></a> shows the distribution of the number of patients treated at center by randomized group; in this case it can be said that the treatment center has been <strong><em>cross-tabulated</em></strong> with randomized group. <a href="#tbl-centers2">Table&nbsp;<span>2.3</span></a> is an example of a <strong><em>contingency</em></strong> table with seven rows (representing treatment center) and two columns (randomized group). Note that we are interested in the distribution of patients across the seven centers in each randomized group (to see whether or not we have similar numbers of patients randomized to each treatment within each center), and so the percentages add to 100 down each column, rather than across the rows.</p>
 <div id="tbl-centers2" class="anchored">
 <table class="table">
-<caption>Table 2.3: Cross-tabulation distribution of treatment center by randomized group for 202 patients with foot corns</caption>
+<caption>Table&nbsp;2.3: Cross-tabulation distribution of treatment center by randomized group for 202 patients with foot corns</caption>
 <thead><tr class="header">
 <th></th>
 <th>Corn plaster, n(%)</th>
@@ -601,7 +608,7 @@ Recommendations for reporting numbers and percentages
 <div class="callout-body-container callout-body">
 <div id="tbl-rules1" class="anchored">
 <table class="table">
-<caption>Table 2.4: Reporting numbers and percentages <span class="citation" data-cites="farndon2013">(examples relevant to the data provided in <a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a> study)</span>
+<caption>Table&nbsp;2.4: Reporting numbers and percentages <span class="citation" data-cites="farndon2013">(examples relevant to the data provided in <a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a> study)</span>
 </caption>
 <colgroup>
 <col style="width: 47%">
@@ -680,8 +687,8 @@ Recommendations for reporting numbers and percentages
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-barplot1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-barplot1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Bar plot showing where 202 patients with corns were treated [@farndon2013]."><img src="descriptive_files/figure-html/fig-barplot1-1.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.1: Bar plot showing where 202 patients with corns were treated <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-barplot1-1.png" class="lightbox" title="Bar plot showing where 202 patients with corns were treated [@farndon2013]." data-gallery="quarto-lightbox-gallery-1"><img src="descriptive_files/figure-html/fig-barplot1-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: Bar plot showing where 202 patients with corns were treated <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -709,8 +716,8 @@ Basic Properties of Simple Bar plot
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-barplot2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-barplot2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Side-by-side bar plot showing where 202 patients with corns were treated by randomized group [@farndon2013]."><img src="descriptive_files/figure-html/fig-barplot2-1.png" class="img-fluid figure-img" width="912"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.2: Side-by-side bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-barplot2-1.png" class="lightbox" title="Side-by-side bar plot showing where 202 patients with corns were treated by randomized group [@farndon2013]." data-gallery="quarto-lightbox-gallery-2"><img src="descriptive_files/figure-html/fig-barplot2-1.png" class="img-fluid figure-img" width="912"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.2: Side-by-side bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -718,8 +725,8 @@ Basic Properties of Simple Bar plot
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-barplot3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-barplot3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Grouped bar plot showing where 202 patients with corns were treated by randomized group [@farndon2013]."><img src="descriptive_files/figure-html/fig-barplot3-1.png" class="img-fluid figure-img" width="864"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.3: Grouped bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-barplot3-1.png" class="lightbox" title="Grouped bar plot showing where 202 patients with corns were treated by randomized group [@farndon2013]." data-gallery="quarto-lightbox-gallery-3"><img src="descriptive_files/figure-html/fig-barplot3-1.png" class="img-fluid figure-img" width="864"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.3: Grouped bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -743,8 +750,8 @@ Report the actual total sample sizes for each group
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-stacked" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-stacked-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="A horizontal 100% stacked bar plot showing the distribution of gender by randomized group [@farndon2013]."><img src="descriptive_files/figure-html/fig-stacked-1.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.4: A horizontal 100% stacked bar plot showing the distribution of gender by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-stacked-1.png" class="lightbox" title="A horizontal 100% stacked bar plot showing the distribution of gender by randomized group [@farndon2013]." data-gallery="quarto-lightbox-gallery-4"><img src="descriptive_files/figure-html/fig-stacked-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.4: A horizontal 100% stacked bar plot showing the distribution of gender by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -753,8 +760,8 @@ Report the actual total sample sizes for each group
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-stacked2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-stacked2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="A horizontal 100% stacked bar plot showing the distribution of treatment centers by randomized group [@farndon2013]."><img src="descriptive_files/figure-html/fig-stacked2-1.png" class="img-fluid figure-img" width="1104"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.5: A horizontal 100% stacked bar plot showing the distribution of treatment centers by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-stacked2-1.png" class="lightbox" title="A horizontal 100% stacked bar plot showing the distribution of treatment centers by randomized group [@farndon2013]." data-gallery="quarto-lightbox-gallery-5"><img src="descriptive_files/figure-html/fig-stacked2-1.png" class="img-fluid figure-img" width="1104"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.5: A horizontal 100% stacked bar plot showing the distribution of treatment centers by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -961,7 +968,7 @@ Example: Calculation of the Quartiles and Interquartile Range - Corn size data (
 <p>So, the IQR for the corn size data is 2.0 to 4.5 mm or described by a single number 2.5 mm.</p>
 <div id="tbl-quartiles" class="anchored">
 <table class="table">
-<caption>Table 2.5: Calculating quartiles for the corn size data</caption>
+<caption>Table&nbsp;2.5: Calculating quartiles for the corn size data</caption>
 <colgroup>
 <col style="width: 5%">
 <col style="width: 5%">
@@ -1024,13 +1031,13 @@ Example: Calculation of the Variance and Standard Deviation - Corn size data (mm
 <p>Consider the 16 observations from the corn data. The calculations to work out the standard deviation are given in the <a href="#tbl-sd">Table&nbsp;<span>2.6</span></a>.</p>
 <div id="tbl-sd" class="anchored">
 <table class="table">
-<caption>Table 2.6: Calculating variance and standard deviation for the corn size data</caption>
+<caption>Table&nbsp;2.6: Calculating variance and standard deviation for the corn size data</caption>
 <colgroup>
 <col style="width: 8%">
 <col style="width: 12%">
 <col style="width: 8%">
-<col style="width: 30%">
-<col style="width: 39%">
+<col style="width: 29%">
+<col style="width: 38%">
 </colgroup>
 <thead><tr class="header">
 <th>id</th>
@@ -1182,22 +1189,22 @@ Example: Calculation of the Variance and Standard Deviation - Corn size data (mm
 <div id="fig-skew" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-skew-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-skew-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Left skewed distribution."><img src="descriptive_files/figure-html/fig-skew-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-skew-1.png" class="lightbox" title="Left skewed distribution." data-gallery="quarto-lightbox-gallery-6"><img src="descriptive_files/figure-html/fig-skew-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(a) Left skewed distribution.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-skew-2" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-skew-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Symmetric distribution."><img src="descriptive_files/figure-html/fig-skew-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-skew-2.png" class="lightbox" title="Symmetric distribution." data-gallery="quarto-lightbox-gallery-7"><img src="descriptive_files/figure-html/fig-skew-2.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(b) Symmetric distribution.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-skew-3" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-skew-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Right skewed distribution"><img src="descriptive_files/figure-html/fig-skew-3.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-skew-3.png" class="lightbox" title="Right skewed distribution" data-gallery="quarto-lightbox-gallery-8"><img src="descriptive_files/figure-html/fig-skew-3.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(c) Right skewed distribution</figcaption><p></p>
 </figure>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure 2.6: Types of distribution according to the summetry.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.6: Types of distribution according to the summetry.</figcaption><p></p>
 </figure>
 </div>
 <p>Thus, the following format is recommended for reporting summary statistics for numerical data:</p>
@@ -1216,7 +1223,7 @@ Recommendations for reporting summary statistics for numerical data
 <p><a href="#tbl-rules2">Table&nbsp;<span>2.7</span></a> presents recommendations for reporting summary statistics for numerical data.</p>
 <div id="tbl-rules2" class="anchored">
 <table class="table">
-<caption>Table 2.7: Recommendations for reporting summary statistics <span class="citation" data-cites="farndon2013">(examples relevant to the data provided in <a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a> study)</span>
+<caption>Table&nbsp;2.7: Recommendations for reporting summary statistics <span class="citation" data-cites="farndon2013">(examples relevant to the data provided in <a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a> study)</span>
 </caption>
 <colgroup>
 <col style="width: 37%">
@@ -1254,8 +1261,8 @@ Recommendations for reporting summary statistics for numerical data
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-histo1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-histo1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Distribution of age of the 202 participants in @farndon2013 study (a) histogram (b) density plot."><img src="descriptive_files/figure-html/fig-histo1-1.png" class="img-fluid figure-img" width="720"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.7: Distribution of age of the 202 participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study (a) histogram (b) density plot.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-histo1-1.png" class="lightbox" title="Distribution of age of the 202 participants in @farndon2013 study (a) histogram (b) density plot." data-gallery="quarto-lightbox-gallery-9"><img src="descriptive_files/figure-html/fig-histo1-1.png" class="img-fluid figure-img" width="720"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.7: Distribution of age of the 202 participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study (a) histogram (b) density plot.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1282,8 +1289,8 @@ Choose an appropriate number of bins
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-histo2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-histo2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15."><img src="descriptive_files/figure-html/fig-histo2-1.png" class="img-fluid figure-img" width="816"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.8: Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-histo2-1.png" class="lightbox" title="Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15." data-gallery="quarto-lightbox-gallery-10"><img src="descriptive_files/figure-html/fig-histo2-1.png" class="img-fluid figure-img" width="816"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.8: Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1295,8 +1302,8 @@ Choose an appropriate number of bins
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-histo3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-histo3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Histogram of age of participants by treatment group in @farndon2013 study."><img src="descriptive_files/figure-html/fig-histo3-1.png" class="img-fluid figure-img" width="720"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.9: Histogram of age of participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-histo3-1.png" class="lightbox" title="Histogram of age of participants by treatment group in @farndon2013 study." data-gallery="quarto-lightbox-gallery-11"><img src="descriptive_files/figure-html/fig-histo3-1.png" class="img-fluid figure-img" width="720"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.9: Histogram of age of participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1322,8 +1329,8 @@ Histograms must be plotted with a zero-valued baseline
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-boxplot1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/boxplot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Broad classification of the different types of data with examples"><img src="images/boxplot.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.10: Broad classification of the different types of data with examples</figcaption><p></p>
+<figure class="figure"><p><a href="images/boxplot.png" class="lightbox" title="Broad classification of the different types of data with examples" data-gallery="quarto-lightbox-gallery-12"><img src="images/boxplot.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.10: Broad classification of the different types of data with examples</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1333,8 +1340,8 @@ Histograms must be plotted with a zero-valued baseline
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-boxplot2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-boxplot2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="A box plot of age of the participants in @farndon2013 study."><img src="descriptive_files/figure-html/fig-boxplot2-1.png" class="img-fluid figure-img" width="288"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.11: A box plot of age of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-boxplot2-1.png" class="lightbox" title="A box plot of age of the participants in @farndon2013 study." data-gallery="quarto-lightbox-gallery-13"><img src="descriptive_files/figure-html/fig-boxplot2-1.png" class="img-fluid figure-img" width="288"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.11: A box plot of age of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1343,8 +1350,8 @@ Histograms must be plotted with a zero-valued baseline
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-boxplot3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-boxplot3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="A box plot of age of the participants by treatment group in @farndon2013 study."><img src="descriptive_files/figure-html/fig-boxplot3-1.png" class="img-fluid figure-img" width="528"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.12: A box plot of age of the participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-boxplot3-1.png" class="lightbox" title="A box plot of age of the participants by treatment group in @farndon2013 study." data-gallery="quarto-lightbox-gallery-14"><img src="descriptive_files/figure-html/fig-boxplot3-1.png" class="img-fluid figure-img" width="528"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.12: A box plot of age of the participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1370,8 +1377,8 @@ Identifying Outliers in the data based on quartiles
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-raincloud" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-raincloud-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="A raincloud plot of age of the participants by treatment group in @farndon2013 study."><img src="descriptive_files/figure-html/fig-raincloud-1.png" class="img-fluid figure-img" width="624"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.13: A raincloud plot of age of the participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-raincloud-1.png" class="lightbox" title="A raincloud plot of age of the participants by treatment group in @farndon2013 study." data-gallery="quarto-lightbox-gallery-15"><img src="descriptive_files/figure-html/fig-raincloud-1.png" class="img-fluid figure-img" width="624"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.13: A raincloud plot of age of the participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1398,8 +1405,8 @@ Correlation coefficient
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-scatterplot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="descriptive_files/figure-html/fig-scatterplot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Association between (a) age and baseline pain, and (b) age and baseline pain taking into acound the gender of the participants in @farndon2013 study."><img src="descriptive_files/figure-html/fig-scatterplot-1.png" class="img-fluid figure-img" width="816"></a></p>
-<p></p><figcaption class="figure-caption">Figure 2.14: Association between (a) age and baseline pain, and (b) age and baseline pain taking into acound the gender of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<figure class="figure"><p><a href="descriptive_files/figure-html/fig-scatterplot-1.png" class="lightbox" title="Association between (a) age and baseline pain, and (b) age and baseline pain taking into acound the gender of the participants in @farndon2013 study." data-gallery="quarto-lightbox-gallery-16"><img src="descriptive_files/figure-html/fig-scatterplot-1.png" class="img-fluid figure-img" width="816"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.14: Association between (a) age and baseline pain, and (b) age and baseline pain taking into acound the gender of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1501,7 +1508,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -1557,7 +1565,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
 
 
 </body></html>

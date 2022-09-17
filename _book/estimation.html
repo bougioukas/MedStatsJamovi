@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -230,11 +235,11 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"> <span class="header-section-number">4.1</span> Estimation of population parametres</a>
+  <li><a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"><span class="toc-section-number">4.1</span>  Estimation of population parametres</a>
   <ul class="collapse">
   <li><a href="#population-and-parameters" id="toc-population-and-parameters" class="nav-link" data-scroll-target="#population-and-parameters">Population and parameters</a></li>
   <li><a href="#sample-and-sample-statistics" id="toc-sample-and-sample-statistics" class="nav-link" data-scroll-target="#sample-and-sample-statistics">Sample and sample statistics</a></li>
@@ -302,7 +307,7 @@ Parametric Tests
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB  
     A((population)) -- sampling method --&gt; B((sample))
     A -.-&gt; C[Population parameter]
-    B --&gt; D["point estimator <br> (a sample statistic)"]
+    B --&gt; D["point estimator &lt;br&gt; (a sample statistic)"]
     D --&gt; C
 
 </pre>
@@ -310,7 +315,7 @@ Parametric Tests
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure 4.1: Taking a sample of the population and using the sample to estimate a population parameter</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: Taking a sample of the population and using the sample to estimate a population parameter</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -332,7 +337,7 @@ Estimation of population parametres
 <p>Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in <a href="#tbl-parameters">Table&nbsp;<span>4.1</span></a>.</p>
 <div id="tbl-parameters" class="anchored">
 <table class="table">
-<caption>Table 4.1: Population parameters (Greek letters) and sample statistics</caption>
+<caption>Table&nbsp;4.1: Population parameters (Greek letters) and sample statistics</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -439,7 +444,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

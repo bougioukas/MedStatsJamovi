@@ -2,16 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.1.251">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Introduction to Medical Statistics with Jamovi - 9&nbsp; Correlation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -213,11 +218,11 @@ ul.task-list{list-style: none;}
     </ul>
 </div>
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#linear-correlation-pearsons-coefficient-r" id="toc-linear-correlation-pearsons-coefficient-r" class="nav-link active" data-scroll-target="#linear-correlation-pearsons-coefficient-r"> <span class="header-section-number">9.1</span> Linear correlation (Pearson’s coefficient r)</a></li>
-  <li><a href="#rank-correlation-spearmans-coefficient-rho" id="toc-rank-correlation-spearmans-coefficient-rho" class="nav-link" data-scroll-target="#rank-correlation-spearmans-coefficient-rho"> <span class="header-section-number">9.2</span> Rank correlation (Spearman’s coefficient rho )</a></li>
+<li><a href="#linear-correlation-pearsons-coefficient-r" id="toc-linear-correlation-pearsons-coefficient-r" class="nav-link active" data-scroll-target="#linear-correlation-pearsons-coefficient-r"><span class="toc-section-number">9.1</span>  Linear correlation (Pearson’s coefficient r)</a></li>
+  <li><a href="#rank-correlation-spearmans-coefficient-rho" id="toc-rank-correlation-spearmans-coefficient-rho" class="nav-link" data-scroll-target="#rank-correlation-spearmans-coefficient-rho"><span class="toc-section-number">9.2</span>  Rank correlation (Spearman’s coefficient rho )</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -287,7 +292,7 @@ Characteristics of Pearson’s coefficient <span class="math inline">\(r_{xy}\)<
 <div class="cell-output-display">
 <div id="fig-correlation1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The direction of association can be (a) negative, (b) no association, or (c) positive."><img src="correlation_files/figure-html/fig-correlation1-1.png" class="img-fluid figure-img" width="1132"></a></p>
-<p></p><figcaption class="figure-caption">Figure 9.1: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.1: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -299,7 +304,7 @@ Characteristics of Pearson’s coefficient <span class="math inline">\(r_{xy}\)<
 <div class="cell-output-display">
 <div id="fig-correlation2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The stronger the correlation, the closer the correlation coefficient comes to ±1."><img src="correlation_files/figure-html/fig-correlation2-1.png" class="img-fluid figure-img" width="1132"></a></p>
-<p></p><figcaption class="figure-caption">Figure 9.2: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.2: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -321,7 +326,7 @@ Example
 <div class="cell-output-display">
 <div id="fig-correlation0" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation0-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="The direction of association can be (a) negative, (b) no association, or (c) positive."><img src="correlation_files/figure-html/fig-correlation0-1.png" class="img-fluid figure-img" width="864"></a></p>
-<p></p><figcaption class="figure-caption">Figure 9.3: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.3: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -401,7 +406,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -457,7 +463,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
 
 
 </body></html>

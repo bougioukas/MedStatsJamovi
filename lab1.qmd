@@ -13,6 +13,7 @@ library(readr)
 arrhythmia <- read_csv(here("data", "arrhythmia.csv"))
 ```
 
+
 The goal of this lab is to introduce you to Jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
 
 ## Why Jamovi?
@@ -229,7 +230,7 @@ The flowchart of the process is:
 
 ```{mermaid}
 flowchart LR
-  A[File tab ] -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia.omv')
+  A(File tab) -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia.omv')
 ```
 
  
@@ -266,7 +267,7 @@ We close the variable settings by pressing the arrow in the top-right corner ![]
 
 ### Filtering data
 
-Next, we select the **Filters button** ![](images/filters.png){width="25" height="23"} from the Data tab. This opens the **filter view** at the top of the Jamovi screen where we can add a filter called *Filter 1* (@fig-filter1_age). Let's say that we want to study only the adults from the participants.
+Next, we select the **Filters button** ![](images/filters.png){width="25" height="23"} from the Data tab. This opens the "Row FILTERS" view at the top of the Jamovi screen where we can add a filter called *Filter 1* (@fig-filter1_age). Let's say that we want to study only the adults from the participants.
 
 ![Adding a filter](images/filter1_age.png){#fig-filter1_age}
 
@@ -300,7 +301,7 @@ But we can do more complicated filters than this! Let's say that we're intereste
 ```{r}
 #| label: fig-filter1_age_and_sex
 #| fig-align: center
-#| out-width: "85%"
+#| out-width: "95%"
 #| echo: false
 #| fig-cap: Combining conditions with `and` operator in one expression.
 
@@ -314,7 +315,7 @@ Note that in the above expression we can also use double quotes around the `"fem
 ```{r}
 #| label: fig-filter1_age_sex
 #| fig-align: center
-#| out-width: "85%"
+#| out-width: "95%"
 #| echo: false
 #| fig-cap: Multiple expressions in the same filter.
 
@@ -328,7 +329,7 @@ This additional expression comes to be represented with its own column `F1(2)` (
 ```{r}
 #| label: fig-filter2
 #| fig-align: center
-#| out-width: "85%"
+#| out-width: "95%"
 #| echo: false
 #| fig-cap: Multiple expressions using multiple filters.
 
@@ -349,29 +350,174 @@ Sometimes we may need to compute a new variable based on existing information (f
 
 $$BMI = weight/height^2$$ {#eq-bmi}
 
-Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab and then select **Append** from the Computed Variable list. (Alternatevely select the Compute button ![](images/compute_button.png){width="26" height="24"}).
-An empty column has been created at the end of our dataset (@fig-append). The grey dot symbol in the right of the column header indicates that this is a computed variable.
+::: {.callout-tip icon="false"}
+## Body Mass Index (BMI)
+
+BMI is a person's weight in kilograms divided by the square of height in meters. A high BMI can indicate high body fatness.
+:::
+
+Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab and then select **Append** from the **Computed Variable** list. (Alternatively, select the Compute button ![](images/compute_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-compute_append). The grey dot symbol in the right of the column header indicates that this is a computed variable.
 
 ```{r}
-#| label: fig-append
+#| label: fig-compute_append
 #| fig-align: center
-#| out-width: "75%"
+#| out-width: "95%"
 #| echo: false
 #| fig-cap: Adding computed variables to a Jamovi spreadsheet.
 
-knitr::include_graphics(here::here("images", "append.png"))
+knitr::include_graphics(here::here("images", "compute_append.png"))
 ```
 
-To set up the computed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "COMPUTED VARIABLE" view where we can set the name of the computed variable as BMI and specify the @eq-bmi in the formula box (note that we must divide the height by 100 and use the exponentiation operator ^ or **) (@fig-compute_bmi):
+To set up the computed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "COMPUTED VARIABLE" view where we can set the name of the computed variable as BMI and specify the @eq-bmi in the formula box (note that we must divide the height by 100 and use the exponentiation operator \^ or \*\*) (@fig-compute_bmi):
 
 ```{r}
 #| label: fig-compute_bmi
 #| fig-align: center
-#| out-width: "75%"
+#| out-width: "95%"
 #| echo: false
 #| fig-cap: Setting up the computed variable.
 
 knitr::include_graphics(here::here("images", "compute_bmi.png"))
 ```
 
+
+Finally, we can round the variable BMI to one decimal place using the `ROUND()` function:
+
+```{r}
+#| label: fig-round
+#| fig-align: center
+#| out-width: "85%"
+#| echo: false
+#| fig-cap: Rounding up the computed variable.
+
+knitr::include_graphics(here::here("images", "round.png"))
+```
+
+
+
+
+### Transforming a variable
+
+Sometimes it can be useful to convert a quantitative variable into a qualitative variable with levels. For example, the BMI is often categorized as follows:
+
+-   less than 18.5 `r fa("arrow-right", fill = "orange")` underweight
+
+-   18.5 to \<25.0 `r fa("arrow-right", fill = "orange")` healthy weight
+
+-   25.0 to \<30.0 `r fa("arrow-right", fill = "orange")` overweight
+
+-   30.0 or higher `r fa("arrow-right", fill = "orange")` obesity
+
+Click on **Add** button available on the Data tab and select **Append** from the **Transformed Variable** list. (Alternatively, select the Transform button ![](images/transform_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-transform_append). 
+
+```{r}
+#| label: fig-transform_append
+#| fig-align: center
+#| out-width: "95%"
+#| echo: false
+#| fig-cap: Adding transformed variables to a Jamovi spreadsheet.
+
+knitr::include_graphics(here::here("images", "transform_append.png"))
+```
+
+To set up the transformed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "TRANSFORMED VARIABLE" view where we can set the name of the transformed variable such as BMI2 and create the transformation by selecting the source variable, here the BMI, in the Source Variable field, and creating a new transformation using transform field (@fig-create_new_transf).
+
+```{mermaid}
+flowchart LR
+  A(Source variable) -.-> B[[BMI]]
+  C(using transform) -.-> D[[Create New Transform...]]
+```
+
+
+
+```{r}
+#| label: fig-create_new_transf
+#| fig-align: center
+#| out-width: "95%"
+#| echo: false
+#| fig-cap: Setting up the transformation of a variable.
+
+knitr::include_graphics(here::here("images", "create_new_transf.png"))
+```
+
+
+This opens the "TRANSFORM" view where Jamovi gives each transformation a name (e.g., `Transform 1`; if we want we can change it). This allows us to use it again later on other variables if we wish. We can also add a description (@fig-transf_view).
+
+
+
+```{r}
+#| label: fig-transf_view
+#| fig-align: center
+#| out-width: "75%"
+#| echo: false
+#| fig-cap: Adding conditions.
+
+knitr::include_graphics(here::here("images", "transf_view.png"))
+```
+
+Now we need to add conditions. Jamovi uses simple `if ... else` statements and executes each statement starting from the top. So let's start!
+
+First, select **`+ Add recode condition`**. Second, we need to populate the **boxes** with the information as follows (@fig-recode1): 
+
+- The $source is the variable we want to transform (here BMI)- don't change this. 
+- Select the appropriate comparison operator (here < ) 
+- In the next box, we will put our condition e.g. the BMI we want as the cut off point
+- After the use, add your new label (here `'underweight'`). If we are using text we must enclose it in `'...'`
+
+```{r}
+#| label: fig-recode1
+#| fig-align: center
+#| out-width: "75%"
+#| echo: false
+#| fig-cap: Adding the first condition.
+
+knitr::include_graphics(here::here("images", "recode1.png"))
+```
+
+
+We can add as many conditions as we want by selecting `+ Add recode condition`. This will add a new `if $source` line into the box. Remember they will be executed in order.
+
+
+```{r}
+#| label: fig-recode2
+#| fig-align: center
+#| out-width: "75%"
+#| echo: false
+#| fig-cap: Adding more conditions.
+
+knitr::include_graphics(here::here("images", "recode2.png"))
+```
+
+
+Finally, after the `else use` box just add the label (here `'obese'`) for the data that does not meet the above conditions.
+
+```{r}
+#| label: fig-recode3
+#| fig-align: center
+#| out-width: "75%"
+#| echo: false
+#| fig-cap: Adding the last label for the data that does not meet the above conditions.
+
+knitr::include_graphics(here::here("images", "recode3.png"))
+```
+
+
+
+
+::: {.callout-tip icon="false"}
+## Editing the transformed variable
+The red dot symbol in the right of the column header indicates that this is a transformed variable.
+Additionally, we can edit existing transformations by selecting **Edit** (@fig-edit). 
+
+```{r}
+#| label: fig-edit
+#| fig-align: center
+#| out-width: "75%"
+#| echo: false
+#| fig-cap: The transformed variable is recognized by a red dot in the right of the column header
+
+knitr::include_graphics(here::here("images", "edit.png"))
+```
+
+:::
 
