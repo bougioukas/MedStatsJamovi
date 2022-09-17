@@ -13,7 +13,6 @@ library(readr)
 arrhythmia <- read_csv(here("data", "arrhythmia.csv"))
 ```
 
-
 The goal of this lab is to introduce you to Jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
 
 ## Why Jamovi?
@@ -356,7 +355,7 @@ $$BMI = weight/height^2$$ {#eq-bmi}
 BMI is a person's weight in kilograms divided by the square of height in meters. A high BMI can indicate high body fatness.
 :::
 
-Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab and then select **Append** from the **Computed Variable** list. (Alternatively, select the Compute button ![](images/compute_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-compute_append). The grey dot symbol in the right of the column header indicates that this is a computed variable.
+Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab and then select **Append** from the **Computed Variable** list. (Alternatively, select the Compute button ![](images/compute_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-compute_append). The black dot symbol in the right of the column header indicates that this is a computed variable.
 
 ```{r}
 #| label: fig-compute_append
@@ -380,7 +379,6 @@ To set up the computed variable, either double-click on the column header, or se
 knitr::include_graphics(here::here("images", "compute_bmi.png"))
 ```
 
-
 Finally, we can round the variable BMI to one decimal place using the `ROUND()` function:
 
 ```{r}
@@ -392,9 +390,6 @@ Finally, we can round the variable BMI to one decimal place using the `ROUND()` 
 
 knitr::include_graphics(here::here("images", "round.png"))
 ```
-
-
-
 
 ### Transforming a variable
 
@@ -408,7 +403,7 @@ Sometimes it can be useful to convert a quantitative variable into a qualitative
 
 -   30.0 or higher `r fa("arrow-right", fill = "orange")` obesity
 
-Click on **Add** button available on the Data tab and select **Append** from the **Transformed Variable** list. (Alternatively, select the Transform button ![](images/transform_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-transform_append). 
+Click on **Add** button available on the Data tab and select **Append** from the **Transformed Variable** list. (Alternatively, select the Transform button ![](images/transform_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-transform_append).
 
 ```{r}
 #| label: fig-transform_append
@@ -428,8 +423,6 @@ flowchart LR
   C(using transform) -.-> D[[Create New Transform...]]
 ```
 
-
-
 ```{r}
 #| label: fig-create_new_transf
 #| fig-align: center
@@ -440,29 +433,26 @@ flowchart LR
 knitr::include_graphics(here::here("images", "create_new_transf.png"))
 ```
 
-
 This opens the "TRANSFORM" view where Jamovi gives each transformation a name (e.g., `Transform 1`; if we want we can change it). This allows us to use it again later on other variables if we wish. We can also add a description (@fig-transf_view).
-
-
 
 ```{r}
 #| label: fig-transf_view
 #| fig-align: center
 #| out-width: "75%"
 #| echo: false
-#| fig-cap: Adding conditions.
+#| fig-cap: Adding conditions window.
 
 knitr::include_graphics(here::here("images", "transf_view.png"))
 ```
 
 Now we need to add conditions. Jamovi uses simple `if ... else` statements and executes each statement starting from the top. So let's start!
 
-First, select **`+ Add recode condition`**. Second, we need to populate the **boxes** with the information as follows (@fig-recode1): 
+First, select **`+ Add recode condition`**. Second, we need to populate the **boxes** with the information as follows (@fig-recode1):
 
-- The $source is the variable we want to transform (here BMI)- don't change this. 
-- Select the appropriate comparison operator (here < ) 
-- In the next box, we will put our condition e.g. the BMI we want as the cut off point
-- After the use, add your new label (here `'underweight'`). If we are using text we must enclose it in `'...'`
+-   The **`$source`** is the variable we want to transform (here BMI)- don't change this.
+-   Select the appropriate **comparison operator** (here `<` )
+-   In the next box, we will put the BMI value we want as the cut off point.
+-   After the use, add our new label (here `'underweight'`). If we are using text we must enclose it in `'...'`
 
 ```{r}
 #| label: fig-recode1
@@ -474,9 +464,7 @@ First, select **`+ Add recode condition`**. Second, we need to populate the **bo
 knitr::include_graphics(here::here("images", "recode1.png"))
 ```
 
-
 We can add as many conditions as we want by selecting `+ Add recode condition`. This will add a new `if $source` line into the box. Remember they will be executed in order.
-
 
 ```{r}
 #| label: fig-recode2
@@ -487,7 +475,6 @@ We can add as many conditions as we want by selecting `+ Add recode condition`. 
 
 knitr::include_graphics(here::here("images", "recode2.png"))
 ```
-
 
 Finally, after the `else use` box just add the label (here `'obese'`) for the data that does not meet the above conditions.
 
@@ -501,13 +488,10 @@ Finally, after the `else use` box just add the label (here `'obese'`) for the da
 knitr::include_graphics(here::here("images", "recode3.png"))
 ```
 
-
-
-
 ::: {.callout-tip icon="false"}
 ## Editing the transformed variable
-The red dot symbol in the right of the column header indicates that this is a transformed variable.
-Additionally, we can edit existing transformations by selecting **Edit** (@fig-edit). 
+
+The **red dot** symbol in the right of the column header indicates that this is a transformed variable. Additionally, we can edit existing transformations by selecting **Edit** (@fig-edit).
 
 ```{r}
 #| label: fig-edit
@@ -518,6 +502,4 @@ Additionally, we can edit existing transformations by selecting **Edit** (@fig-e
 
 knitr::include_graphics(here::here("images", "edit.png"))
 ```
-
 :::
-
