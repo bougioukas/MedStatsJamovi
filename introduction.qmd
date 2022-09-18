@@ -231,7 +231,7 @@ For example, in a randomized controlled trial (RCT), @farndon2013 investigated t
 #| fig-cap: Table with raw data as recorded in @farndon2013 study.
 
 DT::datatable(data_corn, extensions = 'Scroller', 
-              options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 1:20)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 10))
+              options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 1:20)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 5)) 
 
 ```
 :::
@@ -260,7 +260,6 @@ The degree of **measurement accuracy** and the **type of data** are both importa
 :::
 
  
-
 
 ### Categorical Data
 
@@ -312,7 +311,7 @@ In practice discrete data are often treated in statistical analyses as if they w
 
 **Β. Continuous (or measured) Data**
 
-Such data are measurements that can, in theory at least, **take any value within a given range** (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in @farndon2013 study are: age, corn size, and EQ-5D.
+Such data are measurements with units that can, in theory at least, **take any value within a given range** (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in @farndon2013 study are: age, corn size, and EQ-5D.
 
 Sometimes it is reasonable to treat discrete data as if they were continuous, at least as far as statistical analysis goes. While age is a continuous measurement, **age at last birthday is discrete**. In studies of adults with ages ranging from, say, 16 to 80, no harm is done in considering age in years as a continuous measurement (and this is standard practice), but for studies of pre-school children it would be better to use age in months. **Heart rate** (in beats per minute) is another discrete measurement that is usually regarded as continuous. Although the essential requirement for this change of status is that there should be a large number of different possible values, in practice we do not worry too much about analysing discrete measurements as if they were continuous.
 
