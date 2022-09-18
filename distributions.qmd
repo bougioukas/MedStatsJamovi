@@ -1141,7 +1141,7 @@ In an approximately **bell-shaped** empirical distribution:
 
  
 
-## `r fa("compass-drafting", fill = "steelblue")` Exercises {.unnumbered}
+## `r fa("pencil", fill = "steelblue")` Exercises {.unnumbered}
 
 ::: {.callout appearance="simple" icon="false"}
 ## **Exercise 1.1**

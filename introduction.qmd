@@ -25,6 +25,19 @@ data_corn <- data_corn %>%
  )
 ```
 
+
+When we have finished this chapter, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+- Know the two main branches of Statistics, descriptive and inferential statistics.
+- Explain the difference between qualitative and quantitative data.
+- Understand the difference between dependent and independent variables.
+- Identify the type of any given variable.
+:::
+
+
 ## How to use this online textbook
 
 This online textbook includes **two** Parts, **"Medical Statistics"** and **"Jamovi LAB"**. For each theoretical chapter (e.g., "Descriptive Statistics") in first part there is a practical lab with Jamovi in the second part (e.g., "Lab II:Descriptive Statistics").
@@ -38,6 +51,20 @@ $\color{green}{Green\ color}:$ Tips and notes that provide important information
 
 Some **tip** or **important information**.
 :::
+
+ 
+
+
+$\color{orange}{Orange\ color}:$ Objectives of the chapter.
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+- Objective 1
+- Objective 2
+- Objective 3
+:::
+
 
  
 
@@ -81,7 +108,7 @@ Some **example**.
 
  
 
-$\color{grey}{Grey\ color}:$ Exercises with embedded solutions.
+$\color{grey}{Grey\ color}:$ Exercises with embedded answers.
 
 ::: {.callout appearance="simple" icon="false"}
 ## Exercise 1.1
@@ -89,9 +116,9 @@ $\color{grey}{Grey\ color}:$ Exercises with embedded solutions.
 This is the first exercise.
 
 ::: {.callout-note collapse="true" icon="false"}
-## Solution
+## Answer
 
-This is a possible solution to the exercise.
+This is a possible answer to the exercise.
 :::
 :::
 
@@ -149,11 +176,13 @@ flowchart LR
 
 The methods and techniques of descriptive statistics aim at summarizing large quantities of data by a few numbers, in a way that highlights the most important numerical features of the data.
 
-Descriptive statistics include measures of frequency, measures of location and dispersion, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in the corresponding chapters.
+Descriptive statistics include measures of frequency, measures of location and dispersion, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in @sec-descriptive.
 
 ### Inferential Statistics
 
-Inferential statistics include estimation and hypothesis testing. They aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.
+Inferential statistics include estimation and hypothesis testing. They aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. We could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population (see @sec-estimation and @sec-inference).
+
+
 
 ## Data and Variables
 
@@ -223,6 +252,16 @@ knitr::include_graphics(here::here("images", "types_data.png"))
 
  
 
+::: {.callout-tip icon="false"}
+## Note
+
+The degree of **measurement accuracy** and the **type of data** are both important in relation to carrying out a **proper statistical analysis**.
+
+:::
+
+ 
+
+
 ### Categorical Data
 
 **A. Nominal Data**
@@ -239,7 +278,7 @@ We can denote a male and female as 1 and 2 for gender and denote A, B, AB and 0,
 
 **Β. Ordinal Data**
 
-If there are more than two categories of classification it may be possible to **order** them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable **pain** where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In @farndon2013 study, the **smoking history** variable has three categories coded as non-smoker=0, previous smoker=1, and current smoker=2. We know that someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, **without further knowledge** (of the current and past levels of tobacco consumption) it would be wrong to treat the codes of the categories as numerical quantities, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.
+If there are more than two categories of classification it may be possible to **order** them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable **pain** where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In @farndon2013 study, the **smoking history** variable has three categories coded as non-smoker = 0, previous smoker = 1, and current smoker = 2. We know that someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, **without further knowledge** (of the current and past levels of tobacco consumption) it would be wrong to treat the codes of the categories as numerical quantities, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.
 
 ::: callout-important
 ## Collapsion of categories leads to a loss of information
@@ -284,11 +323,14 @@ For simplicity, it is often the case in medicine that continuous data are dichot
 
 (a) It is easier to describe a population by the **proportion** of people affected, for example, the proportion of people in the population with hypertension is 10%.
 
-(b) It helps to **make a decision**: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. However, this dichotomization clearly leads to a loss of information.
+(b) It helps to **make a decision**: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. 
+
+
+Some statisticians have termed the habit of categorizing continuous variables as **"dichotomania"**, which they regard as poor research practice since it leads to a **loss of information** and assumes a discontinuous relationship that is unlikely in nature.
+
 
 One can also divide a continuous variable into **more than two** groups. For example, we could divide age into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. When categorizing continuous data authors should give an indication as to **why they chose these cut-off points**, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.
 
-Some statisticians have termed the habit of categorizing continuous variables as **"dichotomania"**, which they regard as poor practice since it **loses information** and assumes a discontinuous relationship that is unlikely in nature.
 :::
 
  
@@ -296,31 +338,97 @@ Some statisticians have termed the habit of categorizing continuous variables as
 ::: {.callout-tip icon="false"}
 ## Record the actual values
 
-It is best to **record the actual value** of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, the statistical analysis of continuous data is more powerful, and often simpler.
+It is best to **record the actual value** of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, **the statistical analysis of continuous data is more powerful**, and often simpler.
 
 When some calculation is necessary to derive the observation of interest this should be done by the computer. Thus it is much better to record date of birth and date of examination for subsequent calculation of age rather than to rely on mental arithmetic.
 :::
 
-The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
 
-## Exercises
+
+
+
+## `r fa("pencil", fill = "steelblue")` Exercises {.unnumbered}
+
 
 ::: {.callout appearance="simple" icon="false"}
 ## **Exercise 1.1**
 
-This is the first exercise.
+Which are the main branches of statistics?
 
 ::: {.callout-note collapse="true" icon="false"}
-## **Example of a possible solution**
+## **Answer**
 
-This is a possible solution to the exercise.
+The two branches of statistics are descriptive statistics and inferential statistics.
 :::
 :::
+
+
+
 
 ::: {.callout appearance="simple" icon="false"}
-::: {#exr-1}
-This is the first exercise.
+## **Exercise 1.2**
+
+**A.** What is the difference between dependent and independent variables?
+
+**B.** Try to identify the independent and dependent variables in the following example study:
+
+"Examining the difference between paracetamol and aspirin in the relief of pain experienced by migraine sufferers."
+
+::: {.callout-note collapse="true" icon="false"}
+## **Answer**
+
+**A.** A dependent variable is the variable being tested and measured in a scientific experiment (outcome).
+An independent variable is the variable that is changed or controlled in a scientific experiment to test the effects on the dependent variable.
+
+
+**B.** Independent variable is the type of therapy (paracetamol or aspirin) and dependent variable is measured experience of pain relief.
+
 :::
 :::
 
-@exr-1
+
+
+::: {.callout appearance="simple" icon="false"}
+## **Exercise 1.3**
+
+Which of the following is a qualitative nominal variable:
+
+a. Value of blood pH
+b. Sensitivity of a diagnostic test (poor, moderate, high)
+c. Hospitalization expenses in a hospital
+d. Assignment of a person in three groups in a clinical trial
+
+
+
+::: {.callout-note collapse="true" icon="false"}
+## **Answer**
+
+**d.** Assignment of a person in three groups in a clinical trial
+
+:::
+:::
+
+
+
+
+::: {.callout appearance="simple" icon="false"}
+## **Exercise 1.4**
+
+Which of the following is a quantitative continuous variable:
+
+a. Number of doctors in a hospital
+b. An individual’s health status (healthy/diseased)
+c. Blood cholesterol levels
+d. Result of a biopsy (positive/negative)
+
+
+
+::: {.callout-note collapse="true" icon="false"}
+## **Answer**
+
+**c.** Blood cholesterol levels
+
+:::
+:::
+
+
