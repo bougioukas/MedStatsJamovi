@@ -13,7 +13,20 @@ library(readr)
 arrhythmia <- read_csv(here("data", "arrhythmia.csv"))
 ```
 
-The goal of this lab is to introduce you to Jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
+
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Navigate Jamovi, import files and transform the data.
+-   Filter data.
+-   Compute new variables based on other variables in our data.
+-   Transform existing variables.
+:::
+
+ 
 
 ## Why Jamovi?
 
@@ -184,7 +197,7 @@ The measure types are designated by the symbol in the header of the variable's c
 
 ### The dataset
 
-It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the dataset named `arrhythmia.omv` as an example (@fig-arrhythmia).
+It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the dataset named `arrhythmia` as an example (@fig-arrhythmia).
 
 ```{r}
 #| echo: false
@@ -503,3 +516,39 @@ The **red dot** symbol in the right of the column header indicates that this is 
 knitr::include_graphics(here::here("images", "edit.png"))
 ```
 :::
+
+ 
+
+## `r fa("pencil", fill = "steelblue")` Exercises {.unnumbered}
+
+
+::: {.callout appearance="simple" icon="false"}
+## Exercise
+
+Download and import the `birthwt` dataset into Jamovi. This dataset includes the **birth weight** (in grams) of 189 newborn babies along with some characteristics (e.g., age, smoking status) of their mothers. The data were collected at Baystate Medical Center, Springfield, MA, during 1986.
+
+The dataset includes the following variables:
+
+- low: indicator of birth weight less than 2.5 kg (0 = normal birth weight, 1 = low birth weight).
+- age: mother’s age in years.
+- lwt: mother’s weight in pounds at last menstrual period.
+- race: mother’s race (1 = white, 2 = African-American, 3 = other).
+- smoke: smoking status during pregnancy (0 = not smoking, 1 = smoking).
+- ptl: number of previous premature labors.
+- ht: history of hypertension (0 = no, 1 = yes).
+- ui: presence of uterine irritability (0 = no, 1 = yes).
+- ftv: number of physician visits during the first trimester.
+- bwt: birth weight in grams.
+
+**Try to:**
+
+**A.** Describe the variables of the dataset.
+
+**B.** Add labels to the codes of categorical variables.
+
+**C.** Compute a new variable named `bwt.kg` in which the values of birth weight are given in kilograms (Kg).
+
+:::
+
+
+
