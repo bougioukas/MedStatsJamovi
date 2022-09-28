@@ -30,7 +30,7 @@ When we have finished this chapter, we should be able to:
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Know the two main branches of Statistics, descriptive and inferential statistics.
+-   Distinguish descriptive from inferential statistics.
 -   Explain the difference between qualitative and quantitative data.
 -   Understand the difference between dependent and independent variables.
 -   Identify the type of any given variable.
@@ -142,6 +142,8 @@ With such variability, it follows that in any comparison made in a medical conte
 
 ## The discipline of statistics
 
+Statistics is an empirical or practical method for collecting, organizing, summarizing, and presenting data, and for making inferences about the population from which the data are drawn. 
+
 The discipline of statistics includes two main branches:
 
 -   descriptive statistics
@@ -212,12 +214,12 @@ In this textbook we use data organized in a structured format (spreadsheets). In
 
 A **variable** is a quantity or property that is **free to vary**, or take on different values. To gain information on a variable, it is necessary to design and conduct experiments.
 
-Researchers design experiments to test if changes to one or more variables are **associated** with changes to another variable of interest. For example, if researchers think a new therapy is more effective than the usual care for the treatment of foot corns, they could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment. In this experiment, the type of treatment each participant received (i.e., new treatment vs. no treatment) is the **independent variable** (IV), while the number of depressive symptoms observed in each person is the **dependent variable** (DV) or the **outcome** variable.
+Researchers design experiments to test if changes to one or more variables are **associated** with changes to another variable of interest. For example, if researchers think a new therapy is more effective than the usual care for the treatment of foot corns, they could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment. In this experiment, the type of treatment each participant received (i.e., new treatment vs. conventional treatment) is the **independent variable** (IV), while the number of patients with completely healed corns is the **dependent variable** (DV) or the **outcome** variable.
 
-For example, in a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. They recorded 20 variables for 202 patients; the data are presented in the table of @fig-data_corn:
+In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns at three months. They recorded 20 variables for 202 patients; the data are presented in the table of @fig-data_corn:
 
 ::: {.callout-note icon="false"}
-## **Example: Raw data of 20 variables for 202 patients with foot corns treated with salicylic acid plasters or scalpel debridement in @farndon2013 study**
+## Example: Raw data of 20 variables for 202 patients with foot corns treated with salicylic acid plasters or scalpel debridement in @farndon2013 study
 
 ```{r}
 #| echo: false
@@ -228,7 +230,21 @@ DT::datatable(data_corn, extensions = 'Scroller',
               options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 1:20)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 5)) 
 
 ```
+
+In this example, the main independent variable of interest is the `group` (salicylic acid plasters Vs usual scalpel debridement) and the dependent variable is the `complete_heal` (completely healed corns at three months post-randomization).
+
 :::
+
+
+::: {.callout-tip icon="false"}
+## Independent Vs Dependent variables
+
+An **independent** variable is the variable that is changed or controlled in a scientific experiment to test the effects on another variable.
+
+A **dependent** (outcome) variable is the variable being tested in a scientific experiment and is affected by at least one independent variable. 
+:::
+
+ 
 
 ## Types of Data
 
@@ -258,12 +274,12 @@ The degree of **measurement accuracy** and the **type of data** are both importa
 
 **A. Nominal Data**
 
-**Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; cured or not cured; pregnant or not pregnant. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, O; country of origin; ethnic group; eye color. In @farndon2013 study **gender** is a binary variable (male or female), and the **center** where the the participants were treated is a nominal variable with seven level (Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).
+**Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; cured or not cured; pregnant or not pregnant. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, O; country of origin; ethnic group; eye color. In @farndon2013 study **gender** is a binary variable (male or female), and the **center** where the the participants were treated is a nominal variable with seven levels (Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).
 
 ::: callout-important
 ## Numerical representation of categories are just codes
 
-We can denote a male and female as 1 and 2 for gender and denote A, B, AB and O, as 1, 2, 3, and 4 for blood type. Unlike numerical data, the numbers representing different categories do not have mathematical meanings (they are just codes).
+We can denote a male and female as 1 and 2 for gender and denote A, B, AB and O, as 1, 2, 3, and 4 for blood type. Unlike numerical data, the numbers representing different categories **do not have mathematical meaning** (they are just codes).
 :::
 
  
@@ -284,7 +300,7 @@ Ordinal data are often reduced to two categories to simplify analysis and presen
 
 **A. Discrete (or count) Data**
 
-@farndon2013 study recorded the number of corns each participant had at the start of the trial, since this can only be a whole number or integer value, for example, 0, 1, 2, or 3 in this trial, this is termed discrete or count data. Other examples are often counts per unit of time such as the number of deaths in a hospital per year, the number of visits to the GP in a year, or the number of attacks of asthma a person has per month. In dentistry, a common measure is the number of decayed, filled or missing teeth (DFM).
+@farndon2013 study recorded the number of corns each participant had at the start of the trial, since this can only be a whole number or integer value, for example, 0, 1, 2, or 3 in this trial, this is termed **discrete** or **count** data. Other examples are often counts per unit of time such as the number of deaths in a hospital per year, the number of visits to the GP in a year, or the number of attacks of asthma a person has per month. In dentistry, a common measure is the number of decayed, filled or missing teeth (DFM).
 
 The difference between discrete data and the ordinal data described earlier can be seen by considering an example of each:
 
@@ -295,7 +311,7 @@ The difference between discrete data and the ordinal data described earlier can 
 
 ***Discrete numerical:*** Number of children: 0 1 2 3 4 5+
 
-We cannot say that stage IV is twice as bad as stage II nor that the difference between stages I and II is equivalent to that between stages III and IV. In contrast, three children are three times as many as one, and a difference of one means the same throughout the range of values.
+We **cannot** say that stage IV is twice as bad as stage II nor that the difference between stages I and II is equivalent to that between stages III and IV. In contrast, three children are three times as many as one, and a difference of one means the same throughout the range of values.
 
 In practice discrete data are often treated in statistical analyses as if they were ordered categories. This is not wrong, but it may not be getting the most out of the data. Conversely, when ordered categories are numbered, as with stage of disease, the temptation to treat these numbers as statistically meaningful must be resisted. For example, **it is not sensible to calculate the average stage of cancer**. The only information the numbers contain is in the ordering, which would be conveyed equally by calling them A, B, C, D and so on.
 :::
@@ -319,7 +335,9 @@ For simplicity, it is often the case in medicine that continuous data are dichot
 
 Some statisticians have termed the habit of categorizing continuous variables as **"dichotomania"**, which they regard as poor research practice since it leads to a **loss of information** and assumes a discontinuous relationship that is unlikely in nature.
 
-One can also divide a continuous variable into **more than two** groups. For example, we could divide age into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. When categorizing continuous data authors should give an indication as to **why they chose these cut-off points**, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.
+One can also divide a continuous variable into **more than two** groups. For example, DBP may be categorized as low, normal, or high; age can be divided into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. 
+
+When categorizing continuous data authors should give an indication as to **why they chose these cut-off points**, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.
 :::
 
  

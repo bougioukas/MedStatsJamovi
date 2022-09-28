@@ -31,11 +31,9 @@ data_corn <- data_corn %>%
  )
 ```
 
-**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs. 
+**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs.
 
 For example, @tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 randomized controlled trial (RCT). This study investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns.
-
-
 
 ::: {.callout-note icon="false"}
 ## Example: Summary table with characteristics of patients [@farndon2013]
@@ -126,7 +124,6 @@ One of the categorical variables recorded in @farndon2013 study was the treatmen
 : Frequency and percentage distributions of treatment center for 202 patients with foot corns {#tbl-centers1}
 
 Of note, the percentages add up to 100%.
-
 :::
 
  
@@ -238,7 +235,7 @@ ggplot(data_centers, aes(x = center, y = pct)) +
 
 -   The height of the bar is equivalent to the data they represent.
 
--   The  bars must be plotted against a common zero-valued baseline.
+-   The bars must be plotted against a common zero-valued baseline.
 :::
 
  
@@ -672,7 +669,7 @@ Sample mean and median convey different impressions of the location of data in p
 ```{r}
 #| echo: false
 #| label: fig-skew
-#| fig-cap: Types of distribution according to the summetry.
+#| fig-cap: Types of distribution according to the symmetry.
 #| fig-subcap: 
 #|   - "Left skewed distribution."
 #|   - "Symmetric distribution."
