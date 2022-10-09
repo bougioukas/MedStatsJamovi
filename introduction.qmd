@@ -231,7 +231,7 @@ DT::datatable(data_corn, extensions = 'Scroller',
 
 ```
 
-In this example, the main independent variable of interest is the `group` (salicylic acid plasters Vs usual scalpel debridement) and the dependent variable is the `complete_heal` (completely healed corns at three months post-randomization).
+In this example, the main independent variable of interest is the `group` (salicylic acid plasters Vs usual scalpel debridement) and the dependent variable is the `complete_healed` (completely healed corns at three months post-randomization).
 
 :::
 
@@ -241,7 +241,7 @@ In this example, the main independent variable of interest is the `group` (salic
 
 An **independent** variable is the variable that is changed or controlled in a scientific experiment to test the effects on another variable.
 
-A **dependent** (outcome) variable is the variable being tested in a scientific experiment and is affected by at least one independent variable. 
+A **dependent** (outcome) variable is the variable being tested in a scientific experiment and is affected by the independent variable(s) of interest. 
 :::
 
  
