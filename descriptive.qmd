@@ -676,15 +676,18 @@ Sample mean and median convey different impressions of the location of data in p
 #|   - "Right skewed distribution"
 #| layout-ncol: 3
 
+curve(dbeta(x, 7, 2), col="green", type="l", lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
 
-curve(dbeta(x, 2, 7), col="green", type="l",lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
-segments(x0 = 0.15, x1 = 0.15, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
-text(0.15, 3.25, expression("mode"), font =2, cex = 1.5, col = "orange")
-segments(x0 = 0.25, x1 = 0.25, y0 = 0, y1 = 2.5, lty = 2, lwd = 2, col = "blue") 
-text(0.25, 2.6, expression("median"), font = 2, cex = 1.5, col = "blue")
-segments(x0 = 0.3, x1 = 0.3, y0 = 0, y1 = 1.9, lty = 2, lwd = 2, col = "black") 
-text(0.35, 1.95, expression("mean"), font=2, cex = 1.5, col = "black")
-       
+segments(x0 = 0.7, x1 = 0.7, y0 = 0, y1 = 1.75, lty = 2, lwd = 2, col = "black") 
+text(0.7, 1.7, expression("mean"), font = 2, cex = 1.5, col = "black")
+
+segments(x0 = 0.75, x1 = 0.75, y0 = 0, y1 = 2.35, lty = 2, lwd = 2, col = "blue") 
+text(0.73, 2.7, expression("median"), font=2, cex = 1.5, col = "blue")
+
+segments(x0 = 0.85, x1 = 0.85, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
+text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
+
+
 
 curve(dbeta(x, 7, 7), col="green", type="l", lwd = 2, xlab="x", ylab="Probability distribution", frame.plot = FALSE)
 
@@ -698,17 +701,16 @@ segments(x0 = 0.55, x1 = 0.55, y0 = 0, y1 = 2.8, lty = 2, lwd = 2, col = "blue")
 text(0.63, 2.9, expression("median"), font=2, cex = 1.5, col = "blue")
        
 
+curve(dbeta(x, 2, 7), col="green", type="l",lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
+segments(x0 = 0.15, x1 = 0.15, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
+text(0.15, 3.25, expression("mode"), font =2, cex = 1.5, col = "orange")
+segments(x0 = 0.25, x1 = 0.25, y0 = 0, y1 = 2.5, lty = 2, lwd = 2, col = "blue") 
+text(0.25, 2.6, expression("median"), font = 2, cex = 1.5, col = "blue")
+segments(x0 = 0.3, x1 = 0.3, y0 = 0, y1 = 1.9, lty = 2, lwd = 2, col = "black") 
+text(0.35, 1.95, expression("mean"), font=2, cex = 1.5, col = "black")
+       
 
-curve(dbeta(x, 7, 2), col="green", type="l", lwd = 2, xlab="x", ylab="Beta Density", frame.plot = FALSE)
 
-segments(x0 = 0.7, x1 = 0.7, y0 = 0, y1 = 1.75, lty = 2, lwd = 2, col = "black") 
-text(0.7, 1.7, expression("mean"), font = 2, cex = 1.5, col = "black")
-
-segments(x0 = 0.75, x1 = 0.75, y0 = 0, y1 = 2.35, lty = 2, lwd = 2, col = "blue") 
-text(0.73, 2.7, expression("median"), font=2, cex = 1.5, col = "blue")
-
-segments(x0 = 0.85, x1 = 0.85, y0 = 0, y1 = 3.1, lty = 2, lwd = 2, col = "orange") 
-text(0.88, 3.1, expression("mode"), font =2, cex = 1.5, col = "orange")
 
 ```
 
@@ -1017,8 +1019,6 @@ data_corn |>
 ```
 
  
-
-
 
 ## Exercises
 
