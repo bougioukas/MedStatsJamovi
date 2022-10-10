@@ -805,7 +805,7 @@ A histogram (or density plot) gives information about:
 
 While tools that can generate histograms usually have some default algorithms for selecting bin boundaries, we will likely want to play around with the binning parameters to choose something that is representative of our data.
 
-Choice of number of bins has an inverse relationship with the bin width @fig-histo2. The smaller the number of bins, the larger bin width there will be to cover the whole range of data. 
+Choice of number of bins has an inverse relationship with the bin width @fig-histo2. The smaller the number of bins, the larger bin width there will be to cover the whole range of data.
 
 It is worth taking some time to test out different number of bins to see how the distribution looks in each one, then choose the plot that represents the data best.
 
@@ -813,7 +813,7 @@ It is worth taking some time to test out different number of bins to see how the
 #| echo: false
 #| warning: false
 #| label: fig-histo2
-#| fig-cap: Histogram of age for different number of bins (a) bins = 50, (b) bins = 15, and (c) bin width = 8.
+#| fig-cap: Histogram of age for different number of bins (a) bins = 50, (b) bins = 15, and (c) bins = 8.
 #| fig-width: 8.5
 #| fig-height: 4.5
 

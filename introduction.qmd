@@ -173,7 +173,7 @@ flowchart LR
 
 The methods and techniques of descriptive statistics aim at summarizing large quantities of data by a few numbers, in a way that highlights the most important numerical features of the data.
 
-Descriptive statistics include measures of frequency, measures of location and dispersion, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in @sec-descriptive.
+Descriptive statistics include measures of frequency and measures of location and dispersion. They also include a description of the general shape of the distribution of the data. These terms will be explained in @sec-descriptive.
 
 ### Inferential Statistics
 
@@ -317,7 +317,7 @@ In practice discrete data are often treated in statistical analyses as if they w
 
 **Β. Continuous (or measured) Data**
 
-Such data are measurements with units that can, in theory at least, **take any value within a given range** (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in @farndon2013 study are: age, corn size, and EQ-5D.
+Such data are measurements with units that can, in theory at least, **take any value within a given range** (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in @farndon2013 study are: age, corn size, and EQ-5D health-related quality of life questionnaire.
 
 Sometimes it is reasonable to treat discrete data as if they were continuous, at least as far as statistical analysis goes. While age is a continuous measurement, **age at last birthday is discrete**. In studies of adults with ages ranging from, say, 16 to 80, no harm is done in considering age in years as a continuous measurement (and this is standard practice), but for studies of pre-school children it would be better to use age in months. **Heart rate** (in beats per minute) is another discrete measurement that is usually regarded as continuous. Although the essential requirement for this change of status is that there should be a large number of different possible values, in practice we do not worry too much about analysing discrete measurements as if they were continuous.
 
