@@ -134,15 +134,15 @@ The use of statistical methods pervades the medical literature. In a survey of 3
 
 To students schooled in the 'hard' sciences of physics and chemistry it may be difficult to appreciate the variability of biological data. If one repeatedly puts blue litmus paper into acid solutions it turns red 100% of the time, not most (say 95%) of the time. In contrast, if one gives aspirin to a group of people with headaches, not all of them will experience relief. Penicillin was perhaps one of the few 'miracle' cures where the results were so dramatic that little evaluation was required. Absolute certainty in medicine is rare.
 
-Measurements on human subjects seldom give exactly the same results from one occasion to the next. For example, @osullivan1999, found that systolic blood pressure (SBP) in normal healthy children has a wide range, with 95% of children having SBPs below 130 mmHg when they were resting, rising to 160 mmHg during the school day, and falling again to below 130 mmHg at night. Furthermore, @hansen2010 in a study of over 8000 subjects found that increasing **variability** in blood pressure over 24 hours was a significant and independent predictor of mortality and a cardiovascular and stroke events.
+Measurements on human subjects seldom give exactly the same results from one occasion to the next. For example, @osullivan1999, found that systolic blood pressure (SBP) in normal healthy children has a wide range, with 95% of children having SBPs below 130 mmHg when they were resting, rising to 160 mmHg during the school day, and falling again to below 130 mmHg at night. Furthermore, @hansen2010 in a study of over 8000 subjects found that increasing **variability** in blood pressure over 24 hours was a significant and independent predictor of mortality and cardiovascular and stroke events.
 
-This variability is also inherent in responses to biological hazards. Most people now accept that cigarette smoking causes lung cancer and heart disease, and yet nearly everyone can point to an apparently healthy 80-year-old who has smoked for many years without apparent ill effect. Although it is now known from the report of @doll2004 that about half of all persistent cigarette smokers are killed by their habit, it is usually forgotten that until the 1950s, the cause of the rise in lung cancer deaths was a mystery and commonly associated with general atmospheric pollution such as the exhaust fumes of cars. It was not until the carefully designed and statistically analysed **case--control** and **cohort studies** of Richard Doll and Austin Bradford Hill and others, that smoking was identified as the true cause. @enstrom2003 moved the debate on to ask whether or not passive smoking causes lung cancer. This is a more difficult question to answer since the association is weaker. However, an **overview of reviews** by @cao2015 has now shown that it is a major health problem and scientists at the International Agency for Rsearch on Cancer (IARC) have concluded that there is sufficient evidence that second-hand smoke causes lung cancer (IARC 2012). Restrictions on smoking in public places have been imposed to smokers.
+This variability is also inherent in responses to biological hazards. Most people now accept that cigarette smoking causes lung cancer and heart disease, and yet nearly everyone can point to an apparently healthy 80-year-old who has smoked for many years without apparent ill effect. Although it is now known from the report of @doll2004 that about half of all persistent cigarette smokers are killed by their habit, it is usually forgotten that until the 1950s, the cause of the rise in lung cancer deaths was a mystery and commonly associated with general atmospheric pollution such as the exhaust fumes of cars. It was not until the carefully designed and statistically analysed **case--control** and **cohort studies** of Richard Doll and Austin Bradford Hill and others, that smoking was identified as the true cause. @enstrom2003 moved the debate on to ask whether or not passive smoking causes lung cancer. This is a more difficult question to answer since the association is weaker. However, an **overview of reviews** by @cao2015 has now shown that it is a major health problem and scientists at the International Agency for Research on Cancer (IARC) have concluded that there is sufficient evidence that second-hand smoke causes lung cancer (IARC 2012). Restrictions on smoking in public places have been imposed to smokers.
 
 With such variability, it follows that in any comparison made in a medical context, such as people on different treatments, differences are almost bound to occur. **These differences may be due to real effects, random variation or variation in some other factor** that may affect an outcome. It is the job of the analyst to decide how much variation should be ascribed to chance or other factors, so that any remaining variation can be assumed to be due to a real effect. This is the art of statistics.
 
 ## The discipline of statistics
 
-Statistics is an empirical or practical method for collecting, organizing, summarizing, and presenting data, and for making inferences about the population from which the data are drawn. 
+Statistics is an empirical or practical method for collecting, organizing, summarizing, and presenting data, and for making inferences about the population from which the data are drawn.
 
 The discipline of statistics includes two main branches:
 
@@ -162,7 +162,6 @@ flowchart LR
     A --- C[Inferential statistics]
     B --- D[Measures of frequency: <br/> e.g., frequency, percentage.]
     B --- E[Measures of location <br/> and dispersion: <br/> e.g., mean, standard deviation.]
-    B --- G[Measures of association: <br/> e.g., correlation coefficients]
     C --- H[Estimation]
     C --- I[Hypothesis Testing]
     style A color:#980000, stroke:#333,stroke-width:4px
@@ -184,7 +183,7 @@ Inferential statistics include estimation and hypothesis testing. They aim at ge
 
 ### Biomedical Data
 
-**Biomedical data** have unique features compared with data in other domains. The data may include administrative health data, biomarker data, biometric data (for example, from wearable technologies) and imaging, and may originate from many different sources, including EHRs, clinical registries, biobanks, the internet and patient self-reports.
+**Biomedical data** have unique features compared with data in other domains. The data may include administrative health data, biomarker data, biometric data (for example, from wearable technologies) and imaging, and may originate from many different sources, including Electronic Health Records (EHRs), clinical registries, biobanks, the internet and patient self-reports.
 
 Biomedical data can be transformed into **information**. This information can become **knowledge** if the researchers and clinicians understand it (@fig-info).
 
@@ -232,16 +231,14 @@ DT::datatable(data_corn, extensions = 'Scroller',
 ```
 
 In this example, the main independent variable of interest is the `group` (salicylic acid plasters Vs usual scalpel debridement) and the dependent variable is the `complete_healed` (completely healed corns at three months post-randomization).
-
 :::
-
 
 ::: {.callout-tip icon="false"}
 ## Independent Vs Dependent variables
 
 An **independent** variable is the variable that is changed or controlled in a scientific experiment to test the effects on another variable.
 
-A **dependent** (outcome) variable is the variable being tested in a scientific experiment and is affected by the independent variable(s) of interest. 
+A **dependent** (outcome) variable is the variable being tested in a scientific experiment and is affected by the independent variable(s) of interest.
 :::
 
  
@@ -335,7 +332,7 @@ For simplicity, it is often the case in medicine that continuous data are dichot
 
 Some statisticians have termed the habit of categorizing continuous variables as **"dichotomania"**, which they regard as poor research practice since it leads to a **loss of information** and assumes a discontinuous relationship that is unlikely in nature.
 
-One can also divide a continuous variable into **more than two** groups. For example, DBP may be categorized as low, normal, or high; age can be divided into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. 
+One can also divide a continuous variable into **more than two** groups. For example, DBP may be categorized as low, normal, or high; age can be divided into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc.
 
 When categorizing continuous data authors should give an indication as to **why they chose these cut-off points**, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.
 :::
@@ -390,12 +387,12 @@ Which of the following is a qualitative nominal variable:
 a.  Value of blood pH
 b.  Sensitivity of a diagnostic test (poor, moderate, high)
 c.  Hospitalization expenses in a hospital
-d.  Assignment of a person in three groups in a clinical trial
+d.  Assignment of a person in one of three groups in a clinical trial
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-**d.** Assignment of a person in three groups in a clinical trial
+**d.** Assignment of a person in one of three groups in a clinical trial
 :::
 :::
 
@@ -406,12 +403,12 @@ Which of the following is a quantitative continuous variable:
 
 a.  Number of doctors in a hospital
 b.  An individual's health status (healthy/diseased)
-c.  Blood cholesterol levels
+c.  Blood cholesterol levels (mg/DL)
 d.  Result of a biopsy (positive/negative)
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-**c.** Blood cholesterol levels
+**c.** Blood cholesterol levels (mg/DL)
 :::
 :::
