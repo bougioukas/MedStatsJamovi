@@ -9,11 +9,9 @@ library(here)
 library(fontawesome)
 
 
-library(readr)
-arrhythmia <- read_csv(here("data", "arrhythmia.csv"))
+library(readxl)
+arrhythmia <- read_excel(here("data", "arrhythmia.xlsx"))
 ```
-
-
 
 When we have finished this Lab, we should be able to:
 
@@ -224,7 +222,7 @@ To open this Jamovi file, click on the File tab ![](images/hbars.png){width="28"
 
 ![Click on the File tab](images/tab_analysis_file.png){#fig-tab_analysis_file}
 
-This will open the menu shown in @fig-open_file. Select 'Open' and then 'This PC', and choose tha Jamovi file 'arrhythmia' from the files listed on 'Browse' which are stored on our computer:
+This will open the menu shown in @fig-open_file. Select 'Open' and then 'This PC', and choose the excel file 'arrhythmia' from the files listed on 'Browse' which are stored on our computer:
 
 ```{r}
 #| label: fig-open_file
@@ -242,7 +240,7 @@ The flowchart of the process is:
 
 ```{mermaid}
 flowchart LR
-  A(File tab) -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia.omv')
+  A(File tab) -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia.xlsx')
 ```
 
  
@@ -521,7 +519,6 @@ knitr::include_graphics(here::here("images", "edit.png"))
 
 ## `r fa("pencil", fill = "steelblue")` Exercises {.unnumbered}
 
-
 ::: {.callout appearance="simple" icon="false"}
 ## Exercise
 
@@ -529,16 +526,16 @@ Download and import the `birthwt` dataset into Jamovi. This dataset includes the
 
 The dataset includes the following variables:
 
-- low: indicator of birth weight less than 2.5 kg (0 = normal birth weight, 1 = low birth weight).
-- age: mother’s age in years.
-- lwt: mother’s weight in pounds at last menstrual period.
-- race: mother’s race (1 = white, 2 = African-American, 3 = other).
-- smoke: smoking status during pregnancy (0 = not smoking, 1 = smoking).
-- ptl: number of previous premature labors.
-- ht: history of hypertension (0 = no, 1 = yes).
-- ui: presence of uterine irritability (0 = no, 1 = yes).
-- ftv: number of physician visits during the first trimester.
-- bwt: birth weight in grams.
+-   low: indicator of birth weight less than 2.5 kg (0 = normal birth weight, 1 = low birth weight).
+-   age: mother's age in years.
+-   lwt: mother's weight in pounds at last menstrual period.
+-   race: mother's race (1 = white, 2 = African-American, 3 = other).
+-   smoke: smoking status during pregnancy (0 = not smoking, 1 = smoking).
+-   ptl: number of previous premature labors.
+-   ht: history of hypertension (0 = no, 1 = yes).
+-   ui: presence of uterine irritability (0 = no, 1 = yes).
+-   ftv: number of physician visits during the first trimester.
+-   bwt: birth weight in grams.
 
 **Try to:**
 
@@ -547,8 +544,4 @@ The dataset includes the following variables:
 **B.** Add labels to the codes of categorical variables.
 
 **C.** Compute a new variable named `bwt.kg` in which the values of birth weight are given in kilograms (Kg).
-
 :::
-
-
-
