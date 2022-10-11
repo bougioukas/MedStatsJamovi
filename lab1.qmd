@@ -222,7 +222,7 @@ To open this Jamovi file, click on the File tab ![](images/hbars.png){width="28"
 
 ![Click on the File tab](images/tab_analysis_file.png){#fig-tab_analysis_file}
 
-This will open the menu shown in @fig-open_file. Select 'Open' and then 'This PC', and choose the excel file 'arrhythmia' from the files listed on 'Browse' which are stored on our computer:
+This will open the menu shown in @fig-open_file. Select 'Open' and then 'This PC', and choose the excel file 'arrhythmia' from the files listed on 'Browse' which are stored on our computer folders:
 
 ```{r}
 #| label: fig-open_file
