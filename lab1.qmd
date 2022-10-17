@@ -1,4 +1,4 @@
-# LAB I: Introduction to Jamovi
+# LAB I: Introduction to Jamovi {#sec-lab1}
 
 ```{r}
 #| include: false

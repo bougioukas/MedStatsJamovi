@@ -1,9 +1,69 @@
-# LAB II: Descriptive Statistics
+# LAB II: Descriptive Statistics {#sec-lab2}
+
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+
+library(fontawesome)
+
+
+library(readxl)
+arrhythmia <- read_excel(here("data", "arrhythmia.xlsx"))
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Navigate Jamovi, import files and transform the data.
+-   Filter data.
+-   Compute new variables based on other variables in our data.
+-   Transform existing variables.
+:::
+
+ 
+
+In this Lab, we will use the data from `arrhythmia` dataset that we have already downloaded in our PC.
+
+
+
+
+## Summarizing Categorical Data (Frequency Statistics for one categorical variable)
+
+Consider the binary `sex` variable in arrhythmia dataset. A simple way for summarizing the data is to create a table that shows the number of times each category has been observed.
+
+Firstly, we add labels to numerically coded values of `sex` variable (see @sec-lab1) (0 = male, 1 = female). 
+
+Then we select:
 
 ```{mermaid}
 flowchart LR
-  A[Analyses] -.-> B(Explorations) -.-> C(Descriptives)
+  A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
+from the top menu, as shown below in @fig-descriptives1.
 
-$\equiv$
+![In the Analyses Tab select Exploration and click on Descriptives](images/descriptives1.png){#fig-descriptives1}
+
+The `Descriptives` dialogue box opens, as shown below:
+
+![The Descriptives dialogue box](images/descriptives2.png){#fig-descriptives2 width="500" height="442"}
+
+
+Transfer the `sex` variable from the box on the left side of the screen into the `Variables` box on the right side by highlighting the variable and pressing the Arrow Button (alternatively, drag and drop the variable `sex`). We will end up with the following screen:
+
+![Transfer the `sex` variable into the `Variables` box](images/descriptives3.png){#fig-descriptives3 width="500" height="442"}
+
+Finally, tick the `Frequency tables` as shown below:
+
+![Transfer the `sex` variable into the `Variables` box](images/descriptives4.png){#fig-descriptives4}
+
+
+
+
+
+
