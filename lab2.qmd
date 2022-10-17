@@ -19,10 +19,10 @@ When we have finished this Lab, we should be able to:
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Navigate Jamovi, import files and transform the data.
--   Filter data.
--   Compute new variables based on other variables in our data.
--   Transform existing variables.
+-   Summarize a categorical variables.
+-   Display a categorical variable with a simple plot.
+-   Summarize numerical variables.
+-   Dispaly numerical variables with histograms and box plots.
 :::
 
  
@@ -75,4 +75,63 @@ To generate a basic descriptive plot navigate to the `Plot` section and check th
 
 The Bar Plot produced here presents the absolute frequencies (counts).
 
-![ The `Bar Plot` produced from Jamovi for a binary variable](images/descriptives7.png){#fig-descriptives7}
+![The `Bar Plot` produced by Jamovi for a binary variable](images/descriptives7.png){#fig-descriptives7}
+
+More descriptive plots are available for all data types using the `surveymv` and `JJStatsPlot` modules.
+
+
+
+## Summarizing Numerical Data
+
+Navigate to:
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
+```
+
+Now, select the variables `age` and `QRS` and drag them in the empty `Variables` box, as shown below:
+
+![select the variables `age` and `QRS`](images/descriptives8.png){#fig-descriptives8}
+
+
+Next, we decide how to display our data tables. We have got the following two options:
+
+- Variables across columns
+
+- Variables across rows
+
+Let' select variable across columns (the default). 
+
+
+We can now select the relevant descriptive statistics in the `Statistics` section:
+
+![select the descriptive statistics of interest](images/descriptives9.png){#fig-descriptives9}
+
+
+Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below:
+
+
+![Descriptive statistics of interest for `age` and `QRS` variables](images/descriptives10.png){#fig-descriptives10}
+
+For continuous data we can select Histograms, Box Plots, Violin and Data as shown below:
+
+![Select Histograms, Box Plots, and Violin plots.](images/descriptives11.png){#fig-descriptives11}
+
+![Histograms of age](images/hist1.png){#fig-hist1}
+
+
+![Violin plot of age](images/violin1.png){#fig-violin1}
+
+Age is a symmetrical distribution.
+
+
+
+![Histograms of QRS](images/hist2.png){#fig-hist2}
+
+
+![Violin plot of QRS](images/violin2.png){#fig-violin2}
+
+QRS is an asymmetrical distribution (the data are skewed to the right).
+
+
