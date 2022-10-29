@@ -37,28 +37,34 @@ Different experiments will have different sample spaces that can be written in a
 
 A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents **a number** of possible outcomes for the experiment. In the case of the roll of a die, the event "even number" may be represented by A = {2, 4, 6}, and the event "odd number" as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.
 
-::: {.callout-tip icon="false"}
+::: {.callout-important icon="false"}
 ## Two events always exist for an experiment
 
 For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
 :::
 
-::: {.callout-caution collapse="true" icon="false"}
-## `r fa("rocket", fill = "orange")` Basic types and operations of events using set theory
+::: {.callout-tip icon="false"}
+## Basic types and operations of events using set theory
 
 **Simple and Compound Events:** If an event consists of a single outcome from the sample space, it is termed a **simple event**. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event. If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a **compound event** in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.
 
 **Union of Events:** The union symbol (∪) is used to denote the OR event. For any two events A and B, "at least one of A and B occurs" is also an event. This event is called the union of A and B, and is denoted by **A∪ B**, which includes only A occurring, only B occurring, and A and B occurring simultaneously.
 
-In the experiment of rolling a single die, find the union of the events A : "the number rolled is even" and B : "the number rolled is greater than two." Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} (or both) are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .
+In the experiment of rolling a single die, find the union of the events A : "the number rolled is even" and B : "the number rolled is greater than two." Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} or both are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .
 
 **Intersection of Events:** The intersection symbol (∩) is used to denote the AND event. For any two events A and B, "A and B occur simultaneously" is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.
 
 For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.
 
-**Inverse Events:** For any event A, "event A does not occur" is also an event. This event is called the inverse of event A or the complement of A, and is denoted by $\bar{A}$.
+**Complement Events:** For any event A, "event A does not occur" is also an event. This event is called the complement of A or the inverse of event A, and is denoted by $\bar{A}$.
 
-**Mutually Exclusive Events:** For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.
+**Mutually Exclusive Events (or incompatible events or disjoint):** For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events or incompatible events.
+
+
+Venn diagrams allow us to understand compound events:
+
+![](images/events.png){width="330" height="240"}
+
 :::
 
 ## Probability
@@ -172,17 +178,10 @@ $$P(A') = 1 − P(A)$$ {#eq-complementary}
 
 The complement of event A is shown by a little mark after the letter such as $A'$ (or sometimes $A^{c}$ or $\bar{A}$):
 
-
 3.  The probability of the union of two events satisfies the general property that (**Addition Rule of Probability**) :
 
 $$P(A ∪ B) = P(A) + P(B) − P(A ∩ B)$$ {#eq-union}
 :::
-
-
-Venn diagrams allow us to understand combined events:
-
-![](images/events.png){width="330" height="240"}
-
 
  
 
@@ -195,10 +194,8 @@ Suppose we throw a six-die, what is the complement probability of the event A "r
 
 The complement of Event A = {5, 6} is $A'$ = {1, 2, 3, 4} and the complement probability is:
 
-
 $P(A')$ = 1-P(rolling a 5 or 6) = 1-P(rolling a 5) - P(rolling a 6) = 1- 1/6 - 1/6 = 2/3
 :::
-
 
  
 
@@ -910,6 +907,18 @@ Similar to the standard normal distribution, the probability density curve for a
 -   As the sample size (and degrees of freedom) becomes larger (\>30), t-distributions look increasingly like the Standard Normal distribution.
 :::
 
+::: {.callout-note icon="false"}
+## Example-Degrees of freedom
+
+> Degrees of freedom, often represented by df, is the number of independent pieces of information used to calculate a statistic. It's calculated as the sample size minus the number of restrictions.
+
+Suppose we take a random sample of 10 adults and measure their daily calcium intake. Let's say we find that the sample mean is 820 mg.
+
+For example, assume that the nine of the ten people in the sample have daily calcium intakes of 410, 1230, 870, 1110, 570, 390, 1030, 1080, and 630 mg. The tenth individual must have a daily calcium intake of 880 mg for the sample to have a mean of 820 mg.
+
+Because of the restriction, only nine values in the sample are free to vary. Consequently, the final value isn't free to vary; it only has one possible value. In this case, the degrees of freedom are df = 10-1 = 9.
+:::
+
  
 
 ### Chi-squared distribution
@@ -1085,7 +1094,7 @@ text(0.34, 2.0, expression("mean"), font=2, cex = 1.5, col = "black")
 
 **B. Kurtosis**
 
-The other way that distributions can deviate from normality is **kurtosis**. The **excess kurtosis** parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
+The other way that distributions can deviate from normality is **kurtosis**. The **excess kurtosis** parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low compared to a "normal" distribution).
 
 Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
 
@@ -1178,9 +1187,9 @@ Find the z -scores for $x_1$=325 and $x_2$=366. Interpret each z -score. What ca
 ::: {.callout-note collapse="true" icon="false"}
 ## **Solution**
 
-The z-score (@eq-z) for x1=325 is $z_1$=--1.5 .
+The z-score (@eq-z) for $x_1$=325 is $z_1$=--1.5 .
 
-The z-score (@eq-z) for x2=366 is $z_2$=--1.14 .
+The z-score (@eq-z) for $x_2$=366 is $z_2$=--1.14 .
 
 Student 2 scored closer to the mean than Student 1 and, since they both had negative z -scores, Student 2 had the better score.
 :::

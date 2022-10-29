@@ -287,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The <strong>sample space Ω</strong> is defined as the set of <strong>all</strong> possible outcomes of the experiment. In the case of the roll of a die, the sample space can be written as the set of the six possible outcomes, Ω = {1, 2, 3, 4, 5, 6}.</p>
 <p>Different experiments will have different sample spaces that can be written in an equivalent way (flipping a coin: Ω ={H, T}, flipping two coins: Ω ={HH, HT, TH, TT}, testing for possible genotypes of a bi-allelic gene A: Ω ={AA, Aa, aa}).</p>
 <p>A <strong>random event A</strong>, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents <strong>a number</strong> of possible outcomes for the experiment. In the case of the roll of a die, the event “even number” may be represented by A = {2, 4, 6}, and the event “odd number” as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -300,25 +300,27 @@ Two events always exist for an experiment
 <p>For each experiment, two events always exist: the <strong>sample space</strong> itself which comprises all possible outcomes and the <strong>empty set</strong> that contains no outcomes represented as <strong>A = ∅</strong> and called the impossible event.</p>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"></path></svg> Basic types and operations of events using set theory
+Basic types and operations of events using set theory
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Simple and Compound Events:</strong> If an event consists of a single outcome from the sample space, it is termed a <strong>simple event</strong>. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event. If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a <strong>compound event</strong> in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.</p>
 <p><strong>Union of Events:</strong> The union symbol (∪) is used to denote the OR event. For any two events A and B, “at least one of A and B occurs” is also an event. This event is called the union of A and B, and is denoted by <strong>A∪ B</strong>, which includes only A occurring, only B occurring, and A and B occurring simultaneously.</p>
-<p>In the experiment of rolling a single die, find the union of the events A : “the number rolled is even” and B : “the number rolled is greater than two.” Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} (or both) are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .</p>
+<p>In the experiment of rolling a single die, find the union of the events A : “the number rolled is even” and B : “the number rolled is greater than two.” Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} or both are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .</p>
 <p><strong>Intersection of Events:</strong> The intersection symbol (∩) is used to denote the AND event. For any two events A and B, “A and B occur simultaneously” is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.</p>
 <p>For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.</p>
-<p><strong>Inverse Events:</strong> For any event A, “event A does not occur” is also an event. This event is called the inverse of event A or the complement of A, and is denoted by <span class="math inline">\(\bar{A}\)</span>.</p>
-<p><strong>Mutually Exclusive Events:</strong> For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.</p>
+<p><strong>Complement Events:</strong> For any event A, “event A does not occur” is also an event. This event is called the complement of A or the inverse of event A, and is denoted by <span class="math inline">\(\bar{A}\)</span>.</p>
+<p><strong>Mutually Exclusive Events (or incompatible events or disjoint):</strong> For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events or incompatible events.</p>
+<p>Venn diagrams allow us to understand compound events:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/events.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/events.png" width="330" height="240" class="figure-img"></a></p>
+</figure>
 </div>
 </div>
 </div>
@@ -371,7 +373,7 @@ Example - Dice: Mutually exclusive events
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-run" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-run-1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Coin Flips Simulation showing long-term probability close to 0.5."><img src="distributions_files/figure-html/fig-run-1.gif" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-run-1.gif" class="lightbox" title="Coin Flips Simulation showing long-term probability close to 0.5." data-gallery="quarto-lightbox-gallery-2"><img src="distributions_files/figure-html/fig-run-1.gif" class="img-fluid figure-img" style="width:100.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.1: Coin Flips Simulation showing long-term probability close to 0.5.</figcaption><p></p>
 </figure>
 </div>
@@ -435,11 +437,6 @@ Fundamental Properties of Probability
 </ol>
 <p><span id="eq-union"><span class="math display">\[P(A ∪ B) = P(A) + P(B) − P(A ∩ B) \tag{3.4}\]</span></span></p>
 </div>
-</div>
-<p>Venn diagrams allow us to understand combined events:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/events.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/events.png" width="330" height="240" class="figure-img"></a></p>
-</figure>
 </div>
 <p>&nbsp;</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
@@ -670,7 +667,7 @@ Example-Bernoulli distribution: breast cancer
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-bern1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-bern1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Plot of the pmf for Bernoulli(0.8) distribution."><img src="distributions_files/figure-html/fig-bern1-1.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-bern1-1.png" class="lightbox" title="Plot of the pmf for Bernoulli(0.8) distribution." data-gallery="quarto-lightbox-gallery-4"><img src="distributions_files/figure-html/fig-bern1-1.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.2: Plot of the pmf for Bernoulli(0.8) distribution.</figcaption><p></p>
 </figure>
 </div>
@@ -752,7 +749,7 @@ Example-Binomial distribution: breast cancer
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-binom1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-binom1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Plot of the pmf for Binomial(50, 0.8) distribution."><img src="distributions_files/figure-html/fig-binom1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-binom1-1.png" class="lightbox" title="Plot of the pmf for Binomial(50, 0.8) distribution." data-gallery="quarto-lightbox-gallery-5"><img src="distributions_files/figure-html/fig-binom1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.3: Plot of the pmf for Binomial(50, 0.8) distribution.</figcaption><p></p>
 </figure>
 </div>
@@ -821,7 +818,7 @@ Example-Poisson distribution: physician visits
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-poisson1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-poisson1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Plot of the pmf for Poisson(2.5) distribution."><img src="distributions_files/figure-html/fig-poisson1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-poisson1-1.png" class="lightbox" title="Plot of the pmf for Poisson(2.5) distribution." data-gallery="quarto-lightbox-gallery-6"><img src="distributions_files/figure-html/fig-poisson1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.4: Plot of the pmf for Poisson(2.5) distribution.</figcaption><p></p>
 </figure>
 </div>
@@ -845,7 +842,7 @@ Example-Poisson distribution: physician visits
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="The Normal probability distribution (often called Gaussian or bell-shaped distribution)."><img src="distributions_files/figure-html/fig-normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal-1.png" class="lightbox" title="The Normal probability distribution (often called Gaussian or bell-shaped distribution)." data-gallery="quarto-lightbox-gallery-7"><img src="distributions_files/figure-html/fig-normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.5: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption><p></p>
 </figure>
 </div>
@@ -870,12 +867,12 @@ Definition of Normal Distribution
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-compare_normal-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Effect of changing mean."><img src="distributions_files/figure-html/fig-compare_normal-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-1.png" class="lightbox" title="Effect of changing mean." data-gallery="quarto-lightbox-gallery-8"><img src="distributions_files/figure-html/fig-compare_normal-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(a) Effect of changing mean.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-compare_normal-2" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Effect of changing standard deviation."><img src="distributions_files/figure-html/fig-compare_normal-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-2.png" class="lightbox" title="Effect of changing standard deviation." data-gallery="quarto-lightbox-gallery-9"><img src="distributions_files/figure-html/fig-compare_normal-2.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(b) Effect of changing standard deviation.</figcaption><p></p>
 </figure>
 </div>
@@ -897,7 +894,7 @@ Properties of Normal Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-normal_auc" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal_auc-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="The area underneath a Normal Distribution"><img src="distributions_files/figure-html/fig-normal_auc-1.png" class="img-fluid figure-img" width="1200"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal_auc-1.png" class="lightbox" title="The area underneath a Normal Distribution" data-gallery="quarto-lightbox-gallery-10"><img src="distributions_files/figure-html/fig-normal_auc-1.png" class="img-fluid figure-img" width="1200"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.7: The area underneath a Normal Distribution</figcaption><p></p>
 </figure>
 </div>
@@ -947,7 +944,7 @@ Example-Normal distribution: systolic blood pressure
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-standard_normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Standard Normal Distribution"><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-standard_normal-1.png" class="lightbox" title="Standard Normal Distribution" data-gallery="quarto-lightbox-gallery-11"><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.8: Standard Normal Distribution</figcaption><p></p>
 </figure>
 </div>
@@ -970,7 +967,7 @@ Example-Normal distribution: systolic blood pressure
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-basic_parabola-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="(a) A basic parabola and (b) a negative parabola."><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-basic_parabola-1.png" class="lightbox" title="(a) A basic parabola and (b) a negative parabola." data-gallery="quarto-lightbox-gallery-12"><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.9: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
 </figure>
 </div>
@@ -980,7 +977,7 @@ Example-Normal distribution: systolic blood pressure
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-neg_parabola-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="An exponentiated negative parabola."><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-neg_parabola-1.png" class="lightbox" title="An exponentiated negative parabola." data-gallery="quarto-lightbox-gallery-13"><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.10: An exponentiated negative parabola.</figcaption><p></p>
 </figure>
 </div>
@@ -1029,7 +1026,7 @@ Example-Area under the curve
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-area" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-area-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Standard normal distribution with a shaded region"><img src="distributions_files/figure-html/fig-area-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-area-1.png" class="lightbox" title="Standard normal distribution with a shaded region" data-gallery="quarto-lightbox-gallery-14"><img src="distributions_files/figure-html/fig-area-1.png" class="img-fluid figure-img" width="768"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.11: Standard normal distribution with a shaded region</figcaption><p></p>
 </figure>
 </div>
@@ -1059,7 +1056,7 @@ Definition and properties of t-distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-t" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-t-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="t-distribution with df=3 Vs Standard Normal distribution"><img src="distributions_files/figure-html/fig-t-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-t-1.png" class="lightbox" title="t-distribution with df=3 Vs Standard Normal distribution" data-gallery="quarto-lightbox-gallery-15"><img src="distributions_files/figure-html/fig-t-1.png" class="img-fluid figure-img" width="768"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.12: t-distribution with df=3 Vs Standard Normal distribution</figcaption><p></p>
 </figure>
 </div>
@@ -1073,6 +1070,24 @@ Definition and properties of t-distribution
 <li><p>The total area under a t-curve equals 1.</p></li>
 <li><p>As the sample size (and degrees of freedom) becomes larger (&gt;30), t-distributions look increasingly like the Standard Normal distribution.</p></li>
 </ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example-Degrees of freedom
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>Degrees of freedom, often represented by df, is the number of independent pieces of information used to calculate a statistic. It’s calculated as the sample size minus the number of restrictions.</p>
+</blockquote>
+<p>Suppose we take a random sample of 10 adults and measure their daily calcium intake. Let’s say we find that the sample mean is 820 mg.</p>
+<p>For example, assume that the nine of the ten people in the sample have daily calcium intakes of 410, 1230, 870, 1110, 570, 390, 1030, 1080, and 630 mg. The tenth individual must have a daily calcium intake of 880 mg for the sample to have a mean of 820 mg.</p>
+<p>Because of the restriction, only nine values in the sample are free to vary. Consequently, the final value isn’t free to vary; it only has one possible value. In this case, the degrees of freedom are df = 10-1 = 9.</p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1093,7 +1108,7 @@ Definition and properties of chi-squared distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-chi" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-chi-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="chi-squared distribution with df=10, 15, and 20"><img src="distributions_files/figure-html/fig-chi-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-chi-1.png" class="lightbox" title="chi-squared distribution with df=10, 15, and 20" data-gallery="quarto-lightbox-gallery-16"><img src="distributions_files/figure-html/fig-chi-1.png" class="img-fluid figure-img" width="768"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.13: chi-squared distribution with df=10, 15, and 20</figcaption><p></p>
 </figure>
 </div>
@@ -1122,7 +1137,7 @@ Definition and properties of chi-squared distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-f" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-f-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="F-distribution with different df1 and df2"><img src="distributions_files/figure-html/fig-f-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-f-1.png" class="lightbox" title="F-distribution with different df1 and df2" data-gallery="quarto-lightbox-gallery-17"><img src="distributions_files/figure-html/fig-f-1.png" class="img-fluid figure-img" width="768"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.14: F-distribution with different df1 and df2</figcaption><p></p>
 </figure>
 </div>
@@ -1156,7 +1171,7 @@ Example-Bell-shaped Empirical Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-empirical" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-empirical-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Empirical relative frequency distribution of the birthweight."><img src="distributions_files/figure-html/fig-empirical-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-empirical-1.png" class="lightbox" title="Empirical relative frequency distribution of the birthweight." data-gallery="quarto-lightbox-gallery-18"><img src="distributions_files/figure-html/fig-empirical-1.png" class="img-fluid figure-img" width="768"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.15: Empirical relative frequency distribution of the birthweight.</figcaption><p></p>
 </figure>
 </div>
@@ -1173,17 +1188,17 @@ Example-Bell-shaped Empirical Distribution
 <div id="fig-skew2" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-skew2-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode."><img src="distributions_files/figure-html/fig-skew2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-1.png" class="lightbox" title="Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode." data-gallery="quarto-lightbox-gallery-19"><img src="distributions_files/figure-html/fig-skew2-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(a) Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-skew2-2" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Symmetric distribution (zero skewness). The mean, median and mode are the same."><img src="distributions_files/figure-html/fig-skew2-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-2.png" class="lightbox" title="Symmetric distribution (zero skewness). The mean, median and mode are the same." data-gallery="quarto-lightbox-gallery-20"><img src="distributions_files/figure-html/fig-skew2-2.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(b) Symmetric distribution (zero skewness). The mean, median and mode are the same.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-skew2-3" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Right skewed distribution (positively skewed). The mean and median are to the right of the mode."><img src="distributions_files/figure-html/fig-skew2-3.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-3.png" class="lightbox" title="Right skewed distribution (positively skewed). The mean and median are to the right of the mode." data-gallery="quarto-lightbox-gallery-21"><img src="distributions_files/figure-html/fig-skew2-3.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(c) Right skewed distribution (positively skewed). The mean and median are to the right of the mode.</figcaption><p></p>
 </figure>
 </div>
@@ -1192,23 +1207,23 @@ Example-Bell-shaped Empirical Distribution
 </figure>
 </div>
 <p><strong>B. Kurtosis</strong></p>
-<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The <strong>excess kurtosis</strong> parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
+<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The <strong>excess kurtosis</strong> parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low compared to a “normal” distribution).</p>
 <p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> c).</p>
 <p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values <strong>below −3 or above +3</strong> strongly indicate <strong>non-normality</strong>.</p>
 <div id="fig-kurtosis" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-kurtosis-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Platykurtic distribution (negative excess kurtosis)."><img src="distributions_files/figure-html/fig-kurtosis-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-1.png" class="lightbox" title="Platykurtic distribution (negative excess kurtosis)." data-gallery="quarto-lightbox-gallery-22"><img src="distributions_files/figure-html/fig-kurtosis-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(a) Platykurtic distribution (negative excess kurtosis).</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-kurtosis-2" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Mesokurtic distribution (zero excess kurtosis)."><img src="distributions_files/figure-html/fig-kurtosis-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-2.png" class="lightbox" title="Mesokurtic distribution (zero excess kurtosis)." data-gallery="quarto-lightbox-gallery-23"><img src="distributions_files/figure-html/fig-kurtosis-2.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(b) Mesokurtic distribution (zero excess kurtosis).</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-kurtosis-3" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Leptokurtic (positive excess kurtosis)."><img src="distributions_files/figure-html/fig-kurtosis-3.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-3.png" class="lightbox" title="Leptokurtic (positive excess kurtosis)." data-gallery="quarto-lightbox-gallery-24"><img src="distributions_files/figure-html/fig-kurtosis-3.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">(c) Leptokurtic (positive excess kurtosis).</figcaption><p></p>
 </figure>
 </div>
@@ -1222,7 +1237,7 @@ Example-Bell-shaped Empirical Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-qq" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-qq-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Q-Q plot of Birthweight."><img src="distributions_files/figure-html/fig-qq-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-qq-1.png" class="lightbox" title="Q-Q plot of Birthweight." data-gallery="quarto-lightbox-gallery-25"><img src="distributions_files/figure-html/fig-qq-1.png" class="img-fluid figure-img" width="768"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.18: Q-Q plot of Birthweight.</figcaption><p></p>
 </figure>
 </div>
@@ -1265,7 +1280,7 @@ Properties of an approximately bell-shaped empirical distribution
 <p>In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean μ=496 and a standard deviation σ=114 . Let X= a SAT exam verbal section score in 2012. Then <span class="math inline">\(X∼N(496,114^2)\)</span>.</p>
 <p>Find the z -scores for <span class="math inline">\(x_1\)</span>=325 and <span class="math inline">\(x_2\)</span>=366. Interpret each z -score. What can you say about <span class="math inline">\(x_1\)</span>=325 and <span class="math inline">\(x_2\)</span>=366 ?</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1274,10 +1289,10 @@ Properties of an approximately bell-shaped empirical distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The z-score (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) for x1=325 is <span class="math inline">\(z_1\)</span>=–1.5 .</p>
-<p>The z-score (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) for x2=366 is <span class="math inline">\(z_2\)</span>=–1.14 .</p>
+<p>The z-score (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) for <span class="math inline">\(x_1\)</span>=325 is <span class="math inline">\(z_1\)</span>=–1.5 .</p>
+<p>The z-score (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) for <span class="math inline">\(x_2\)</span>=366 is <span class="math inline">\(z_2\)</span>=–1.14 .</p>
 <p>Student 2 scored closer to the mean than Student 1 and, since they both had negative z -scores, Student 2 had the better score.</p>
 </div>
 </div>
@@ -1412,7 +1427,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
 
 
 </body></html>
