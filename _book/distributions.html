@@ -757,7 +757,7 @@ Example-Binomial distribution: breast cancer
 </div>
 <p>As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probability for all possible values of the random variable is 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.</p>
 <p>Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:</p>
-<p><span class="math display">\[P(33&lt;X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1\]</span></p>
+<p><span class="math display">\[P(34≤X ≤ 36) = P(X = 34) + P(X = 35) + P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1\]</span></p>
 <p>For the breast cancer example and <a href="#eq-binom1">Equation&nbsp;<span>3.13</span></a>, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to <a href="#eq-binom2">Equation&nbsp;<span>3.14</span></a>, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.</p>
 </div>
 </div>
@@ -814,7 +814,7 @@ Example-Poisson distribution: physician visits
 <td>0.03</td>
 </tr>
 </tbody></table>
-<p>The resulting plot of the pmf shows the probability of each possible value, which is any integer from 0 to infinity <a href="#fig-poisson1">Figure&nbsp;<span>3.4</span></a>. In this case, the probability of values above 8 becomes almost 0.</p>
+<p>The resulting plot of the pmf shows the probability of each possible value, which is any integer from 0 to infinity <a href="lab3.html#fig-poisson1">Figure&nbsp;<span>13.8</span></a>. In this case, the probability of values above 8 becomes almost 0.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-poisson1" class="quarto-figure quarto-figure-center anchored">
@@ -1427,7 +1427,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});</script>
 
 
 </body></html>
