@@ -1,5 +1,22 @@
 # Estimation and Confidence Intervals {#sec-estimation}
 
+```{r}
+#| include: false
+
+library(post8000r)
+library(psych)
+library(gghighlight)
+library(ggforce)
+library(stevemisc)
+library(patchwork)
+
+library(dqrng)
+library(here)
+library(tidyverse)
+
+```
+
+
 ## Estimation of population parametres
 
 ### Population and parameters
@@ -10,23 +27,29 @@ Researchers are specifically interested in quantities such as population mean an
 
 Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions $N(μ,σ^2)$, which are widely used in statistics, the population mean and variance are exactly the **same** parameters used to specify the distribution.
 
-
-
 ::: {.callout-tip icon="false"}
 ## Parametric Tests
 
-The term parameter for a population characteristic explains why most of the statistical tests in this textbook are referred to as **parametric tests**. These tests are based on assumptions about the shape of the distribution and the parameters (i.e. mean and standard deviation), and most rely on an assumption of an approximately normal distribution.
-
+The term parameter for a population characteristic explains why most of the statistical tests in this textbook are referred to as **parametric tests**. These tests are based on assumptions about the shape of the distribution and the parameters (i.e. mean and standard deviation), and most rely on the assumption of an approximately normal distribution.
 :::
-
 
  
 
 ### Sample and sample statistics
 
-Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don't usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a **sample**, a subset of the population that is intended to represent the population. In this case a **sample statistic** is used to estimate a population parameter (also named as **point estimator** since we estimate the parameter by a single value or point)
+Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don't usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a **sample**, a subset of the population that is intended to represent the population. In this case a **sample statistic** is used to estimate a population parameter (also named as **point estimator** since we estimate the parameter by a single value or point).
 
-In most cases, the best way to get a sample that accurately represents the population is by taking a **random sample** from the population. When selecting a random sample, each individual in the population has the **same chance** **of being selected** for the sample.
+In most cases, the best way to get a sample that accurately represents the population is by taking a **random sample** from the population (@fig-sample_param). When selecting a random sample, each individual in the population has the **same chance** **of being selected** for the sample.
+
+```{r}
+#| label: fig-sample_param
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| fig-cap: Parameters are referred to the population while statistics are referred to the sample.
+
+knitr::include_graphics(here::here("images", "sample_param.png"))
+```
 
  
 
@@ -53,13 +76,11 @@ flowchart TB
 
 In some circumstances the sample may consist of **all the members** of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The **dotted arrow** in @fig-estimation connecting the population circle to population parameter box illustrates this. However, this situation will **rarely** be the case so, in practice, we take a sample which is often much smaller in size than the population under study.
 
-
 ::: {.callout-tip icon="false"}
 ## Estimation of population parametres
 
 **Point Estimation** refers to the process of guessing the unknown value of a parameter (e.g., population mean, $\mu$) using the observed data. For this, we use a **sample statistic** as a **point estimator** of the population parameter. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, **the sample mean and sample variance are statistics**.
 :::
-
 
 Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in @tbl-parameters.
 
@@ -72,6 +93,297 @@ Some common population parameters (Greek Letters) and their corresponding sample
 
 : Population parameters (Greek letters) and sample statistics {#tbl-parameters}
 
+ 
+
+## Sample Distribution vs Sampling Distribution
+
+### Sample Distribution
+
+The sample distribution is simply the data distribution of the sample which is randomly taken from the population. We can calculate a sample statistic such as the sample mean from the data in the sample.
+
+```{r}
+#| label: fig-sample1
+#| fig-align: center
+#| out-width: "20%"
+#| echo: false
+#| fig-cap: Sample distribution of data from one sample.
+
+knitr::include_graphics(here::here("images", "sample1.png"))
+```
+
+ 
+
+### Sampling Distribution
+
+The sampling distribution is the distribution of the sample statistic (e.g., the sample mean) over many samples drawn from the same population (i.e., repeated sampling).
+
+```{r}
+#| label: fig-sampst
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| fig-cap: Sampling distribution of a statistic (e.g. sample mean) from many samples.
+
+knitr::include_graphics(here::here("images", "sampst.gif"))
+```
+
+::: {.callout-tip icon="false"}
+## Sampling distribution
+
+The sampling distribution is the theoretical distribution of possible values for a sample statistic.
+:::
+
+
+## What is Standard Error (SE) of the mean?
+
+The standard deviation of the sampling distribution is known as the standard error (SE). There are multiple formulas for standard error depending of exactly what is our sampling distribution. The standard error of a mean is the population σ divided by the square root of the sample size n:
+
+$$ SE = \frac{\sigma}{\sqrt{n}}$$ {#eq-se}
+
+However, because we usually do not have access to the population parameter σ, we instead use the sample standard deviation sd, as it is an estimate of the population standard deviation.
+
+$$ SE = \frac{sd}{\sqrt{n}}$$
+
+The **Standard Error** (SE) **of the mean** is a metric that describes the variability of sample means in the **sampling distribution**. SE gives us an indication of the uncertainty attached to the estimate of the population mean when taking only a sample - very uncertain when the sample size is small.
+
+
+## Central Limit Theorem (CLM)
+
+The Central Limit Theorem (CLM) in statistics states that, given a sufficiently large sample size, the sampling distribution of the mean for a variable will approximate a normal distribution **regardless** of that variable's distribution in the population.
+
+### A hypothetical population
+
+The importance of central limit theorem is that it works no matter the underlying distribution of the population data. The underlying population data could be noisy and central limit theorem will still hold. To illustrate this, let’s draw some data (100,000 observations):
+
+
+```{r}
+#| echo: false
+
+Population <- rbnorm(100000, mean =40.01578, sd = 40.24403,
+                     lowerbound = 0, 
+                     upperbound = 100,
+                     round = TRUE,
+                     seed = 8675309)
+
+```
 
 
 
+```{r}
+#| echo: false
+#| #| fig-align: center
+#| warning: false
+#| label: fig-population
+#| fig-cap: A hypothetical population of 100,000 observations.
+#| fig-width: 6.0
+#| fig-height: 4.0
+
+ggplot(data = as.data.frame(Population), aes(x=Population)) +
+         geom_bar(fill="#619cff", color="black") +
+  theme_steve() + post_bg() +
+  scale_x_continuous(breaks = seq(0, 100, by=10)) +
+  labs(x = "X",
+       y = "Y")
+```
+
+Here are some descriptive statistics to show how ugly these data are:
+
+```{r}
+#| echo: false
+
+describe(Population)
+```
+
+If we knew nothing else from the data other than the descriptive statistics above, we would likely guess the data would look anything other than “normal” no matter how many different values there are. There is a clear bimodality problem in these data. Namely, that “average” (i.e. the mean) doesn’t look “average” at all.
+
+
+The data, we have just created above, will serve as the entire population (N=100,000) of data from which we can sample.
+
+
+
+### The Sampling Distribution of the means
+
+Now, what if we get 50,000 samples, each sample consisting of just 10 observations, save the means of those samples, and draw their histogram?
+
+```{r}
+#| echo: false
+
+# Note dqrng offers much faster sampling at scale
+set.seed(8675309)
+Popsamples <- tibble(
+  samplemean=sapply(1:50000, 
+           function(i){ x <- mean(
+             dqsample(Population, 10, 
+                    replace = FALSE)) 
+           })) 
+
+```
+
+
+The distribution of sample means (as a density plot) converges on a normal distribution where the provided location and scale parameters are from 50,000 sample means. Further, the center of the distribution is converging on the known population mean. The true population mean  40.16 (red dashed line) is very close to the mean of the 50,000 sample means.
+
+```{r}
+#| echo: false
+#| #| fig-align: center
+#| warning: false
+#| label: fig-sampling_dis
+#| fig-cap: The distribution of 50,000 sample means, each of size=10.
+#| fig-width: 8.0
+#| fig-height: 6.0
+
+Popsamples %>%
+  ggplot(aes(x=samplemean)) + 
+  geom_histogram(binwidth=0.5, aes(y=..density..),alpha=0.7) +
+  theme_steve() + post_bg() +
+  geom_vline(xintercept = mean(Population), size = 0.8, color = "#f62658", linetype="dashed") +
+  stat_function(fun=dnorm,
+                color="#522d80", size=1.5,
+                args=list(mean=mean(Popsamples$samplemean), 
+                          sd=sd(Popsamples$samplemean))) +
+  labs(x = "Sample Mean", y = "Density",
+       title = "The Distribution of 50,000 Sample Means, Each of Size 10",
+       subtitle = "Notice the distribution is normal and the mean of sample means converges on the known population mean \n(vertical red dashed line).",
+       caption = "Data: Simulated data")
+```
+
+ 
+
+::: {.callout-tip icon="false"}
+## Properties of the sampling distribution of the mean
+
+-   The mean of the sampling distribution is the same as the mean of the population.
+-   The standard deviation of the sampling distribution (i.e., the standard error) gets smaller as the sample size increases.
+-   The shape of the sampling distribution becomes **normal** as the sample size increases regardless of the distribution of the variable.
+:::
+
+
+## The confidence intervals
+
+We will base the definition of confidence interval on two ideas:
+
+1. Our point estimate (e.g., mean from the sample) is the most plausible value of the actual parameter, so it makes sense to build the confidence interval around the point estimate.
+
+2. The plausibility of a range of values can be defined from the sampling distribution of the estimate.
+
+For the case of the mean, the Central Limit Theorem states that its sampling distribution is normal. Additionally, recall that the standard deviation of the sampling distribution of the mean is the standard error (SE) of the mean.
+
+In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: roughly 95\% of the time our estimate will be within 1.96 standard errors of the true mean of the distribution. If the interval spreads out 1.96 standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true parameter.
+
+The formula for the confidence interval looks like this:
+
+$$ 95\%CI=mean \ \pm 1.96 \ SE_{mean} = mean \ \pm 1.96  \frac{sd}{\sqrt{n}} $$ {#eq-CI}
+
+
+The real meaning of “confidence” is not evident and it must be understood from the point of view of the generating process. Suppose we took many (infinite) samples from a population and built a 95\% confidence interval from each sample. Then about 95\% of those intervals would contain the actual parameter.
+
+
+Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our population. Each horizontal bar is a confidence interval, centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line $\mu$ = 40.16). This is what we would expect using a 95\% confidence level– approximately 95\% of the intervals covering the population mean.
+
+
+```{r}
+#| echo: false
+
+sample_sizes <- c(10)
+
+Samps = list() 
+set.seed(8675309)
+for (j in sample_sizes) {
+   Samps[[paste0("Sample size: ", j)]] = data.frame(sampsize=j, samp=sapply(1:100, function(i){ x <- sample(Population, j, replace = TRUE) }))
+}
+
+Samps %>%
+  map_df(as_tibble) %>%
+  gather(samp, value, samp.1:samp.100) -> Samps
+```
+
+
+```{r}
+#| echo: false
+#| #| fig-align: center
+#| warning: false
+#| label: fig-intervals1
+#| fig-cap: 100 Sample Means of Size 10 (with 95% Intervals) from the Population.
+#| fig-width: 9.5
+#| fig-height: 12.0
+
+
+Samps %>%
+  group_by(sampsize, samp) %>%
+  mutate(sampmean = mean(value),
+         se = sd(Population)/sqrt((sampsize)),
+         lb95 = sampmean - 1.96*se,
+         ub95 = sampmean + 1.96*se) %>%
+  distinct(sampsize, samp, sampmean, se, lb95, ub95) %>%
+  ungroup() %>%
+  mutate(sampsize = fct_inorder(paste0("Sample Size: ", sampsize)),
+         samp = as.numeric(str_replace(samp, "samp.", ""))) %>%
+  ggplot(.,aes(as.factor(samp), sampmean, ymax=ub95, ymin=lb95)) +
+  theme_steve() + post_bg() +
+  geom_hline(yintercept = mean(Population), color = "red", linetype="dashed") +
+  geom_pointrange() + coord_flip() +
+  gghighlight(lb95 > 40.16112 | ub95 < 40.16112) +
+  scale_y_continuous(limits = c(-25, 100)) +
+  labs(y = "Sample Mean (with 95% Intervals)",
+       x = "Sample Number [1:100]",
+       title = "100 Sample Means of Size 10 (with 95% Intervals) from the Population",
+       caption = "Data: Simulated data")
+
+```
+
+
+
+Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population: 
+
+```{r}
+#| echo: false
+#| 
+sample_sizes <- c(50)
+
+Samps = list() 
+set.seed(8675339)
+for (j in sample_sizes) {
+   Samps[[paste0("Sample size: ", j)]] = data.frame(sampsize=j, samp=sapply(1:100, function(i){ x <- sample(Population, j, replace = TRUE) }))
+}
+
+Samps %>%
+  map_df(as_tibble) %>%
+  gather(samp, value, samp.1:samp.100) -> Samps
+```
+
+
+
+
+```{r}
+#| echo: false
+#| #| fig-align: center
+#| warning: false
+#| label: fig-intervals2
+#| fig-cap: 100 Sample Means of Size 50 (with 95% Intervals) from the Population.
+#| fig-width: 9.5
+#| fig-height: 12.0
+
+Samps %>%
+  group_by(sampsize, samp) %>%
+  mutate(sampmean = mean(value),
+         se = sd(Population)/sqrt((sampsize)),
+         lb95 = sampmean - 1.96*se,
+         ub95 = sampmean + 1.96*se) %>%
+  distinct(sampsize, samp, sampmean, se, lb95, ub95) %>%
+  ungroup() %>%
+  mutate(sampsize = fct_inorder(paste0("Sample Size: ", sampsize)),
+         samp = as.numeric(str_replace(samp, "samp.", ""))) %>%
+  ggplot(.,aes(as.factor(samp), sampmean, ymax=ub95, ymin=lb95)) +
+  theme_steve() + post_bg() +
+  geom_hline(yintercept = mean(Population), color = "red", linetype="dashed") +
+  geom_pointrange() + coord_flip() +
+  gghighlight(lb95 > 40.16112 | ub95 < 40.16112) +
+  scale_y_continuous(limits = c(-25, 100)) +
+  labs(y = "Sample Mean (with 95% Intervals)",
+       x = "Sample Number [1:100]",
+       title = "100 Sample Means of Size 50 (with 95% Intervals) from the Population",
+       caption = "Data: Simulated data")
+
+```
+
+
+Increasing sample size not only converges the sample statistic on the population parameter (red dashed line) but decreases the uncertainty around the estimate.
