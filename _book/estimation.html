@@ -467,7 +467,7 @@ Properties of the sampling distribution of the mean
 <ul>
 <li>The mean of the sampling distribution is the same as the mean of the population.</li>
 <li>The standard deviation of the sampling distribution (i.e., the standard error) gets smaller as the sample size increases.</li>
-<li>The shape of the sampling distribution becomes <strong>normal</strong> as the sample size increases regardless of the distribution of the variable.</li>
+<li>The shape of the sampling distribution becomes <strong>normal</strong> as the sample size increases regardless of the population distribution of the variable.</li>
 </ul>
 </div>
 </div>
@@ -478,12 +478,13 @@ Properties of the sampling distribution of the mean
 <li><p>Our point estimate (e.g., mean from the sample) is the most plausible value of the actual parameter, so it makes sense to build the confidence interval around the point estimate.</p></li>
 <li><p>The plausibility of a range of values can be defined from the sampling distribution of the estimate.</p></li>
 </ol>
-<p>For the case of the mean, the Central Limit Theorem states that its sampling distribution is normal. Additionally, recall that the standard deviation of the sampling distribution of the mean is the standard error (SE) of the mean.</p>
-<p>In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: roughly 95% of the time our estimate will be within 1.96 standard errors of the true mean of the distribution. If the interval spreads out 1.96 standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true parameter.</p>
-<p>The formula for the confidence interval looks like this:</p>
-<p><span id="eq-CI"><span class="math display">\[ 95\%CI=mean \ \pm 1.96 \ SE_{mean} = mean \ \pm 1.96  \frac{sd}{\sqrt{n}}  \tag{4.2}\]</span></span></p>
-<p>The real meaning of “confidence” is not evident and it must be understood from the point of view of the generating process. Suppose we took many (infinite) samples from a population and built a 95% confidence interval from each sample. Then about 95% of those intervals would contain the actual parameter.</p>
-<p>Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our population. Each horizontal bar is a confidence interval, centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line <span class="math inline">\(\mu\)</span> = 40.16). This is what we would expect using a 95% confidence level– approximately 95% of the intervals covering the population mean.</p>
+<p>For the case of the mean, the Central Limit Theorem states that its sampling distribution is Normal. Additionally, recall that the standard deviation of the sampling distribution of the mean is the standard error (SE) of the mean.</p>
+<p>In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: 95% of the distribution of sample means lies within <span class="math inline">\(\pm 1.96\)</span> standard errors (the standard deviation of this distribution) of the population mean.</p>
+<p>If the interval spreads out <span class="math inline">\(\pm 1.96\)</span> standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true but unknown population parameter.</p>
+<p>The formula for the confidence interval (CI) of mean looks like this:</p>
+<p><span id="eq-CI"><span class="math display">\[ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{sd}{\sqrt{n}}  \tag{4.2}\]</span></span></p>
+<p>The real meaning of “confidence” is not evident and it must be understood from the point of view of the generating process. The confidence interval is based on the concept of repetition of the study under consideration. Thus, suppose we took many (infinite) samples from a population and built a 95% confidence interval from each sample. Then about 95% of those intervals would contain the population parameter.</p>
+<p>Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our hypothetical population (<a href="#fig-intervals1">Figure&nbsp;<span>4.7</span></a>). Each horizontal bar is a confidence interval (CI), centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line <span class="math inline">\(\mu\)</span> = 40.16). This is what we would expect using a 95% confidence level– approximately 95% of the intervals covering the population mean.</p>
 <div class="cell">
 
 </div>
@@ -496,7 +497,7 @@ Properties of the sampling distribution of the mean
 </div>
 </div>
 </div>
-<p>Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population:</p>
+<p>Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population (<a href="#fig-intervals2">Figure&nbsp;<span>4.8</span></a>):</p>
 <div class="cell">
 
 </div>
@@ -509,7 +510,7 @@ Properties of the sampling distribution of the mean
 </div>
 </div>
 </div>
-<p>Increasing sample size not only converges the sample statistic on the population parameter (red dashed line) but decreases the uncertainty around the estimate.</p>
+<p>Increasing the sample size not only converges the sample statistic (the points) on the population parameter (red dashed line) but decreases the uncertainty around the estimate (the CIs become narrower).</p>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -638,7 +639,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom"});</script>
 
 
 </body></html>

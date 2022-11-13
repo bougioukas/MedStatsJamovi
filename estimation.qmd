@@ -16,7 +16,6 @@ library(tidyverse)
 
 ```
 
-
 ## Estimation of population parametres
 
 ### Population and parameters
@@ -133,7 +132,6 @@ knitr::include_graphics(here::here("images", "sampst.gif"))
 The sampling distribution is the theoretical distribution of possible values for a sample statistic.
 :::
 
-
 ## What is Standard Error (SE) of the mean?
 
 The standard deviation of the sampling distribution is known as the standard error (SE). There are multiple formulas for standard error depending of exactly what is our sampling distribution. The standard error of a mean is the population σ divided by the square root of the sample size n:
@@ -146,15 +144,13 @@ $$ SE = \frac{sd}{\sqrt{n}}$$
 
 The **Standard Error** (SE) **of the mean** is a metric that describes the variability of sample means in the **sampling distribution**. SE gives us an indication of the uncertainty attached to the estimate of the population mean when taking only a sample - very uncertain when the sample size is small.
 
-
 ## Central Limit Theorem (CLM)
 
 The Central Limit Theorem (CLM) in statistics states that, given a sufficiently large sample size, the sampling distribution of the mean for a variable will approximate a normal distribution **regardless** of that variable's distribution in the population.
 
 ### A hypothetical population
 
-The importance of central limit theorem is that it works no matter the underlying distribution of the population data. The underlying population data could be noisy and central limit theorem will still hold. To illustrate this, let’s draw some data (100,000 observations):
-
+The importance of central limit theorem is that it works no matter the underlying distribution of the population data. The underlying population data could be noisy and central limit theorem will still hold. To illustrate this, let's draw some data (100,000 observations):
 
 ```{r}
 #| echo: false
@@ -166,8 +162,6 @@ Population <- rbnorm(100000, mean =40.01578, sd = 40.24403,
                      seed = 8675309)
 
 ```
-
-
 
 ```{r}
 #| echo: false
@@ -194,12 +188,9 @@ Here are some descriptive statistics to show how ugly these data are:
 describe(Population)
 ```
 
-If we knew nothing else from the data other than the descriptive statistics above, we would likely guess the data would look anything other than “normal” no matter how many different values there are. There is a clear bimodality problem in these data. Namely, that “average” (i.e. the mean) doesn’t look “average” at all.
-
+If we knew nothing else from the data other than the descriptive statistics above, we would likely guess the data would look anything other than "normal" no matter how many different values there are. There is a clear bimodality problem in these data. Namely, that "average" (i.e. the mean) doesn't look "average" at all.
 
 The data, we have just created above, will serve as the entire population (N=100,000) of data from which we can sample.
-
-
 
 ### The Sampling Distribution of the means
 
@@ -219,8 +210,7 @@ Popsamples <- tibble(
 
 ```
 
-
-The distribution of sample means (as a density plot) converges on a normal distribution where the provided location and scale parameters are from 50,000 sample means. Further, the center of the distribution is converging on the known population mean. The true population mean  40.16 (red dashed line) is very close to the mean of the 50,000 sample means.
+The distribution of sample means (as a density plot) converges on a normal distribution where the provided location and scale parameters are from 50,000 sample means. Further, the center of the distribution is converging on the known population mean. The true population mean 40.16 (red dashed line) is very close to the mean of the 50,000 sample means.
 
 ```{r}
 #| echo: false
@@ -253,32 +243,31 @@ Popsamples %>%
 
 -   The mean of the sampling distribution is the same as the mean of the population.
 -   The standard deviation of the sampling distribution (i.e., the standard error) gets smaller as the sample size increases.
--   The shape of the sampling distribution becomes **normal** as the sample size increases regardless of the distribution of the variable.
+-   The shape of the sampling distribution becomes **normal** as the sample size increases regardless of the population distribution of the variable.
 :::
-
 
 ## The confidence intervals
 
 We will base the definition of confidence interval on two ideas:
 
-1. Our point estimate (e.g., mean from the sample) is the most plausible value of the actual parameter, so it makes sense to build the confidence interval around the point estimate.
+1.  Our point estimate (e.g., mean from the sample) is the most plausible value of the actual parameter, so it makes sense to build the confidence interval around the point estimate.
 
-2. The plausibility of a range of values can be defined from the sampling distribution of the estimate.
+2.  The plausibility of a range of values can be defined from the sampling distribution of the estimate.
 
-For the case of the mean, the Central Limit Theorem states that its sampling distribution is normal. Additionally, recall that the standard deviation of the sampling distribution of the mean is the standard error (SE) of the mean.
+For the case of the mean, the Central Limit Theorem states that its sampling distribution is Normal. Additionally, recall that the standard deviation of the sampling distribution of the mean is the standard error (SE) of the mean.
 
-In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: roughly 95\% of the time our estimate will be within 1.96 standard errors of the true mean of the distribution. If the interval spreads out 1.96 standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true parameter.
+In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: 
+95% of the distribution of sample means lies within $\pm 1.96$ standard errors (the standard deviation of this distribution) of the population mean. 
 
-The formula for the confidence interval looks like this:
+If the interval spreads out $\pm 1.96$ standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true but unknown population parameter.
 
-$$ 95\%CI=mean \ \pm 1.96 \ SE_{mean} = mean \ \pm 1.96  \frac{sd}{\sqrt{n}} $$ {#eq-CI}
+The formula for the confidence interval (CI) of mean looks like this:
 
+$$ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{sd}{\sqrt{n}} $$ {#eq-CI}
 
-The real meaning of “confidence” is not evident and it must be understood from the point of view of the generating process. Suppose we took many (infinite) samples from a population and built a 95\% confidence interval from each sample. Then about 95\% of those intervals would contain the actual parameter.
+The real meaning of "confidence" is not evident and it must be understood from the point of view of the generating process. The confidence interval is based on the concept of repetition of the study under consideration. Thus, suppose we took many (infinite) samples from a population and built a 95% confidence interval from each sample. Then about 95% of those intervals would contain the population parameter.
 
-
-Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our population. Each horizontal bar is a confidence interval, centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line $\mu$ = 40.16). This is what we would expect using a 95\% confidence level– approximately 95\% of the intervals covering the population mean.
-
+Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our hypothetical population (@fig-intervals1). Each horizontal bar is a confidence interval (CI), centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line $\mu$ = 40.16). This is what we would expect using a 95% confidence level-- approximately 95% of the intervals covering the population mean.
 
 ```{r}
 #| echo: false
@@ -295,7 +284,6 @@ Samps %>%
   map_df(as_tibble) %>%
   gather(samp, value, samp.1:samp.100) -> Samps
 ```
-
 
 ```{r}
 #| echo: false
@@ -319,7 +307,7 @@ Samps %>%
          samp = as.numeric(str_replace(samp, "samp.", ""))) %>%
   ggplot(.,aes(as.factor(samp), sampmean, ymax=ub95, ymin=lb95)) +
   theme_steve() + post_bg() +
-  geom_hline(yintercept = mean(Population), color = "red", linetype="dashed") +
+  geom_hline(yintercept = mean(Population), color = "red", linetype="dashed", size = 1) +
   geom_pointrange() + coord_flip() +
   gghighlight(lb95 > 40.16112 | ub95 < 40.16112) +
   scale_y_continuous(limits = c(-25, 100)) +
@@ -330,13 +318,11 @@ Samps %>%
 
 ```
 
-
-
-Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population: 
+Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population (@fig-intervals2):
 
 ```{r}
 #| echo: false
-#| 
+ 
 sample_sizes <- c(50)
 
 Samps = list() 
@@ -349,9 +335,6 @@ Samps %>%
   map_df(as_tibble) %>%
   gather(samp, value, samp.1:samp.100) -> Samps
 ```
-
-
-
 
 ```{r}
 #| echo: false
@@ -374,7 +357,7 @@ Samps %>%
          samp = as.numeric(str_replace(samp, "samp.", ""))) %>%
   ggplot(.,aes(as.factor(samp), sampmean, ymax=ub95, ymin=lb95)) +
   theme_steve() + post_bg() +
-  geom_hline(yintercept = mean(Population), color = "red", linetype="dashed") +
+  geom_hline(yintercept = mean(Population), color = "red", linetype="dashed", size = 1) +
   geom_pointrange() + coord_flip() +
   gghighlight(lb95 > 40.16112 | ub95 < 40.16112) +
   scale_y_continuous(limits = c(-25, 100)) +
@@ -385,5 +368,4 @@ Samps %>%
 
 ```
 
-
-Increasing sample size not only converges the sample statistic on the population parameter (red dashed line) but decreases the uncertainty around the estimate.
+Increasing the sample size not only converges the sample statistic (the points) on the population parameter (red dashed line) but decreases the uncertainty around the estimate (the CIs become narrower).
