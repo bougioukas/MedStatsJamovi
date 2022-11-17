@@ -19,7 +19,6 @@ When we have finished this Lab, we should be able to:
 
  
 
-
 ## The Sampling Distribution of mean and the Central Limit Theorem (CLT)
 
 In this Lab we will learn the Central Limit Theorem (CLT), which is the basis for many statistical concepts. We are going to explore this concept with the help of a `Shiny` application. So, clink on the following link [CLM](https://gallery.shinyapps.io/CLT_mean/).
@@ -58,20 +57,17 @@ We observe that the sampling distribution becomes closer and closer to Normal an
 -   **According to the Central Limit Theorem (CLM)**, the shape of the sampling distribution becomes normal as the sample size increases regardless of the variable's population distribution.
 :::
 
-
 ## The confidence interval of mean
 
 We are going to explore the concept of confidence interval (CI) of mean with the help of a `Shiny` application. So, clink on the following link [CIs](https://shiny.rit.albany.edu/stat/confidence/).
 
 A `Shiny` app opens in a web window as shown below (@fig-shiny_app6):
 
-![Shiny application that simulates the concept of confidence interval (CI) of mean ](images/shiny_app6.png){#fig-shiny_app6}
-
+![Shiny application that simulates the concept of confidence interval (CI) of mean](images/shiny_app6.png){#fig-shiny_app6}
 
 To the left is the interactive panel with radio buttons and drop down menus, and to the right there are two tabs: `Plots and About`.
 
-First we are asked to choose if we want the `Confidence Interval Graph only` or the `Confidence Interval Graph Plus Sampling Distribution of the Mean`.
-Let's select the first choice and set the value of the `Number of Simulated Samples` to `one` and the `Sample Size` to `10` from the drop down menus  (@fig-shiny_app7). 
+First we are asked to choose if we want the `Confidence Interval Graph only` or the `Confidence Interval Graph Plus Sampling Distribution of the Mean`. Let's select the first choice and set the value of the `Number of Simulated Samples` to `one` and the `Sample Size` to `10` from the drop down menus (@fig-shiny_app7).
 
 We observe at the `Plot` tab that a horizontal bar has been created which represents the confidence interval (CI), centered on the sample mean (point). In this case, the 95%CI for the sample mean includes the true value of the population mean (it crosses the solid vertical line) and it is drawn as a black line (@fig-shiny_app7).
 
@@ -81,22 +77,16 @@ Now, try to increase the `Number of Simulated Samples` to 100 (@fig-shiny_app8):
 
 ![Confidence Interval Graph with 100 random samples, each consisting of 10 observations from a normal population distribution](images/shiny_app8.png){#fig-shiny_app8}
 
-We observe that 5 out of 100 confidence intervals (red horizontal lines) do not include the true population mean (the solid vertical line) (@fig-shiny_app8). This is what we would expect – that the 95% confidence interval will not include the true population mean 5% of the time.
-
+We observe that 5 out of 100 confidence intervals (red horizontal lines) do not include the true population mean (the solid vertical line) (@fig-shiny_app8). This is what we would expect -- that the 95% confidence interval will not include the true population mean 5% of the time.
 
 ::: {.callout-tip icon="false"}
 ## 95%CI of the mean interpretation
 
-For 95% of the calculated confidence intervals it will be true to say that the population mean, μ, lies within this interval. The problem is, as @fig-shiny_app8 shows, with a single study we just
-do not know which one of these 100 intervals we will obtain and hence we will not know if it includes μ. Unfortunately, the CIs ARE NOT pre-labelled with "I am poor CI and do not include the population mean: do not choose me!". Therefore, we usually interpret a 95% confidence interval of mean as the range of values within which we are 95% confident that the true population mean lies.
-
+For 95% of the calculated confidence intervals it will be true to say that the population mean, μ, lies within this interval. The problem is, as @fig-shiny_app8 shows, with a single study we just do not know which one of these 100 intervals we will obtain and hence we will not know if it includes μ. Unfortunately, the CIs ARE NOT pre-labelled with "I am poor CI and do not include the population mean: do not choose me!". Therefore, we usually interpret a 95% confidence interval of mean as the range of values within which we are 95% confident that the true population mean lies.
 :::
-
 
 Next, we create the confidence intervals of 100 randomly generated samples of size = 50 from the population (@fig-shiny_app9):
 
 ![Confidence Interval Graph with 100 random samples, each consisting of 50 observations from a normal population distribution](images/shiny_app9.png){#fig-shiny_app9}
 
-
 We observe that the sample means are closer to the true population mean and the 95%CIs of the mean become narrower (@fig-shiny_app8) increasing the sample size.
-

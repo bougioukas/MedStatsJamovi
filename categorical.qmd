@@ -1,1 +1,13 @@
-# Inference for categorical data
+# Inference for categorical data {#sec-categorical}
+
+```{r}
+#| include: false
+
+```
+
+## Head 1
+
+
+### Head 2
+    
+    

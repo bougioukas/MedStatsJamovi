@@ -1,1 +1,138 @@
-# LAB V: Foundations for Statistical Inference
+# LAB V: Foundations for Statistical Inference {#sec-lab5}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Know the basic properties of sampling distribution of mean
+-   Understand the Central Limit Theorem (CLM)
+-   Understand the concept of the confidence interval of mean
+:::
+
+ 
+
+In this Lab we are going to test whether the sample mean and the mean of the population of a variable of interest differ significantly (@fig-z1) using the theory of hypothesis testing.
+
+![Example of a simple research question](images/z1.png){#fig-z1}
+
+
+We are going to answer in the research question with the help of a `Shiny` application. So, clink on the following link [Z-Test](https://antoinesoetewey.shinyapps.io/statistics-201/).
+
+A `Shiny` app opens in a web window as shown below (@fig-shiny_app10):
+
+![The Shiny application for hypothesis testing](images/shiny_app10.png){#fig-shiny_app10}
+
+To the left is the interactive panel with drop down menus, radio buttons and slider bars, and to the right is the place where the results appear (@fig-shiny_app10).
+
+
+
+## The Research question
+
+**Research question:** Does a new experimental treatment affect the number of days it takes for patients to recover from a disease?
+
+As reported by hospitals across the nation, the patients in the population who received the usual care have a mean number of days to recover equal to 8 (`μ= 8 days`) with standard deviation 2 days (`σ= 2 days`). Additionally, assume that the the variable of "number of days for recovering from the disease" is normally distributed.
+
+As we run the experiment, we track how long it takes for each patient to fully recover from the disease and we record for 10 patients the following values: 7, 6, 9, 8, 8, 7, 7, 6, 8, 6.
+
+We summarize the previous information in @tbl-recover1.
+
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| **Research question**                     | Does a new experimental treatment affect the number of days it takes for patients to recover from a disease?            |
++===========================================+=========================================================================================================================+
+| **Variable of interest**                  | Time to recover from the disease in days (discrete numerical variable; normally distributed).                           |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| **Population group (μ=8 days, σ=2 days)** | Patients in the population received the usual care as reported by hospitals across the nation.                          |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| **Treatment group**                       | Ten patients received the experimental medical treatment with the following times in days to recover from the disease:  |
+|                                           |                                                                                                                         |
+|                                           | 7, 6, 9, 8, 8, 7, 7, 6, 8, 6                                                                                            |
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+
+: Organize the information of the example {#tbl-recover1}
+
+
+
+## Applying the theory of Hypothesis Testing (One Sample Z-Test)
+
+
+::: {.callout-note icon="false"}
+## Step 1: Determine the appropriate null hypothesis and alternative hypothesis
+
+The null hypothesis, $H_{0}$, states that the treatment group and the population group will recover from the disease in about the same number of days, on average ($μ = 8$).
+
+The alternative hypothesis, $H_{a}$, states that the experimental medical treatment will affect the number of days it takes for patients to recover from the disease. The two groups will differ significantly ($μ \neq 8$).
+:::
+
+First, we select from the drop down menu **Inference for one mean**. Then we set the **Null hypothesis:** **$H_{0}: μ= 8$** and the **Alternative** **$\neq$** (two sided test). We also check the box of variance of the population, where we type **$\sigma^2 = 4$**, as shown below (@fig-shiny_app11):
+
+![Settings for one sample Z-test](images/shiny_app11.png){#fig-shiny_app11 width="400"}
+
+
+::: {.callout-note icon="false"}
+## Step 2: Set the level of significance, α 
+
+We set the value α=0.05 for the level of significance (type I error). 
+
+:::
+
+
+At the slider bar we keep  the default value α=0.05 for the level of significance (@fig-shiny_app12):
+
+![We set the value α=0.05 for the level of significance](images/shiny_app12.png){#fig-shiny_app12 width="400"}
+
+
+
+
+::: {.callout-note icon="false"}
+## Step 3: Identify the appropriate test statistic and check the assumptions. Calculate the test statistic.
+
+Supposing the distribution of number of days until the recover is Normal, the appropriate test statistic is the z-statistic:
+
+$$z = \frac{\bar{x} - \mu_{o}}{SE_{z}}= \frac{\bar{x} - \mu_{o}}{\sigma/ \sqrt{n}} $$
+To calculate the z-statistic we also need the data from the treatment group.
+:::
+
+In the **Sample** box type the values of the treatment group 7, 6, 9, 8, 8, 7, 7, 6, 8, 6 (@fig-shiny_app13):
+
+![The sample data of the treatment group](images/shiny_app13.png){#fig-shiny_app13 width="400"}
+
+The sample mean is equal to $\bar{x} = 7.2$ days. Therefore:
+
+$$z = \frac{\bar{x} - \mu_{o}}{\sigma/ \sqrt{n}}= \frac{7.2 - 8}{2/ \sqrt{10}}= \frac{- 0.8}{2/ \sqrt{10}}= \frac{- 0.8}{0.632}= -1.265$$
+
+
+
+::: {.callout-note icon="false"}
+## Step 4: Decide whether or not the result is statistically significant
+
+When we run the analysis, we get a z-value and a p-value. 
+
+- The z-value is a measure of how different the two groups are on our variable of interest. 
+
+
+- A p-value is the probability of obtaining the observed results, or something more extreme, if the null hypothesis is true. In our example, the chance of observing our results assuming that the new treatment does not differ from the usual care in population regarding the number of recovery days. 
+
+A p-value less than 0.05 means that our result is statistically significant and there is evidence that the difference in recovery days is not due to chance alone (reject $H_{0}$).
+
+A p-value greater than or equal to 0.05 means that our result is not statistically significant. There is no evidence of a significant difference between the mean recovery days in the treatment group and the population (not reject $H_{0}$).
+
+:::
+
+In our example, we observe that the p-value for a two-sided test is equal to 2*0.103= 0.206 > 0.05 (@fig-shiny_app14). So, the sample mean and the mean of the population does not differ significantly in days to recover from the disease, we can not reject the null hypothesis, $H_{0}$.
+
+![The blue vertical line of Test stististic=-1.265 is outside of the rejection region. Therefore, we failed to reject Ho.](images/shiny_app14.png){#fig-shiny_app14 width="800"}
+
+::: {.callout-note icon="false"}
+## Step 5: Interpret the results
+
+There is no evidence that the new experimental treatment affect significantly the number of days it takes for patients to recover from the disease compared to the usual care in the population.
+:::
+
