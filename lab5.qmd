@@ -136,3 +136,9 @@ In our example, we observe that the p-value for a two-sided test is equal to 2*0
 There is no evidence that the new experimental treatment affect significantly the number of days it takes for patients to recover from the disease compared to the usual care in the population.
 :::
 
+
+Finally, we can calculate the 95%CI of mean as following:
+
+$$ 95\%CI= \bar{x} \ \pm 1.96  \frac{\sigma}{\sqrt{n}}= 7.2 \ \pm 1.96  \frac{2}{\sqrt{10}}= 7.2 \ \pm \frac{3.92}{3.162} = 7.2 \ \pm 1.24 = [5.96, 8.44]$$
+Note that, in our example, the value of population mean (μ=8) is included in the range of values of the 95%CI.
+

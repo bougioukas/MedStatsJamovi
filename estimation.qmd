@@ -256,14 +256,19 @@ We will base the definition of confidence interval on two ideas:
 
 For the case of the mean, the Central Limit Theorem states that its sampling distribution is Normal. Additionally, recall that the standard deviation of the sampling distribution of the mean is the standard error (SE) of the mean.
 
-In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: 
-95% of the distribution of sample means lies within $\pm 1.96$ standard errors (the standard deviation of this distribution) of the population mean. 
+In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: 95% of the distribution of sample means lies within $\pm 1.96$ standard errors (the standard deviation of this distribution) of the population mean.
 
 If the interval spreads out $\pm 1.96$ standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true but unknown population parameter.
 
 The formula for the confidence interval (CI) of mean looks like this:
 
-$$ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{sd}{\sqrt{n}} $$ {#eq-CI}
+$$ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{\sigma}{\sqrt{n}} $$ {#eq-CI}
+
+
+and if the population standard deviation σ is unknown, the the sample standard deviation, sd, is used in the formula @eq-CI:
+
+$$ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{sd}{\sqrt{n}} $$ {#eq-CI2}
+
 
 The real meaning of "confidence" is not evident and it must be understood from the point of view of the generating process. The confidence interval is based on the concept of repetition of the study under consideration. Thus, suppose we took many (infinite) samples from a population and built a 95% confidence interval from each sample. Then about 95% of those intervals would contain the population parameter.
 
