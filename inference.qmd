@@ -1,1 +1,60 @@
 # Foundations for statistical inference {#sec-inference}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+
+```
+
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Understand the hypothesis testing
+-   Know how to apply the one sample z-test
+:::
+
+
+## Hypothesis Testsing
+
+Hypothesis testing is a method of deciding whether the data are consistent
+with the null hypothesis. The calculation of the p-value is an important part of the procedure. Given a study with a single outcome measure and a statistical test, hypothesis testing can be summarized in five steps.
+
+
+- Step 1: State the null hypothesis $H_{0}$ and alternative hypothesis $H_{a}$
+
+- Step 2: Set the level of significance, α
+
+- Step 3: Identify the appropriate test statistic and check the assumptions. Calculate the test statistic using the data.
+
+- Step 4: Decide whether or not the result is statistically significant
+
+- Step 5: Interpret the results.
+
+
+
+Let us discuss this procedure with an example.
+
+Suppose the mean pulse rate in healthy adults is 72 beats per min with standard deviation 15 beats per min. Research was conducted to examine the pulse rate in patients with hyperthyroidism.
+Twenty patients were randomly enrolled with a mean of 80 and a standard deviation. Assuming that the pulse rate follows a normal distribution, is the mean pulse rate in hyperthyroidism patients different from that in healthy adults?
+
+This type of question can be formulated in a hypothesis testing framework by specifying two hypotheses: a null and an alternative hypothesis.
+
+**1. State the hypotheses**
+
+The null hypothesis, denoted by H0 , is the hypothesis that is to be tested. The alternative hypothesis, denoted by H1, is the hypothesis that, in some sense, contradicts the null hypothesis.
+
+In our example, the null hypothesis H0 is that the mean pulse rate in hyperthyroidism patients μ is the same as the mean pulse rate in healthy adults μ0. Here μ0 is known and μ is unknown; the alternative hypothesis H1 is that the mean pulse rate in hyperthyroidism patients μ is not the same as the mean pulse rate in healthy adults μ0. Note that H1 may have multiple options (more than, less than, or not the same as).
+
+- H0 : μ=μ0,  H1 : μ>μ0 (one-sided hypothesis)
+- H0 : μ=μ0,  H1 : μ<μ0 (one sided hypothesis)
+- H0 : μ=μ0,  H1 : μ $\neq$ μ0 (two-sided hypothesis)
+
+In our example, we state the two-sided hypothesis; i.e., assume that the mean pulse rate in hyperthyroidism patients may deviate from 72 in either direction. That is:
+
+- H0 : μ=72,  H1 : μ $\neq$ 72
+
+Thus, we have generated two mutually exclusive and all-inclusive possibilities.
+Either H0 or H1 will be true, but not both. So is our decision when we compare the probabilities of obtaining the sample data under each of these hypotheses. In practice, the testing procedure usually starts with H0 , and when it is completed, the hypothesis testing will suggest either the rejection or non-rejection of H0, indirectly also determining H1 .
+
