@@ -1,1 +1,119 @@
-# LAB VI: Inference for numerical data (2 samples)
+# LAB VI: Inference for numerical data (2 samples) {#sec-lab6}
+
+
+
+```{r}
+#| include: false
+
+library(fontawesome)
+
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Applying hypothesis testing
+-   Compare two independent samples
+-   Compare paired (related) samples
+-   Interpret the results
+:::
+
+ 
+
+
+## Parametric and non-parametric statistical tests
+
+There are two types of statistical tests and they are described as parametric and nonparametric. The parametric tests (e.g., t-test, ANOVA), make certain assumptions about the distribution of the unknown parameter of interest and thus the test statistic is valid under these assumptions. For non-parametric tests (e.g., Mann-Whitney test, Wilcoxon tests), there are no such assumptions. Most nonparametric tests use some way of ranking the measurements. Nonparametric tests are about 95% as powerful as parametric tests.
+
+
+## The samples
+
+Two samples are independent if the sample values selected from one population are not related to or somehow paired or matched with the sample values selected from the other population.
+For example, one group of subjects is treated with a drug, while a second and separate group of subjects is given a placebo. These two sample groups are independent because the individuals in the treatment group are in no way paired or matched with corresponding members in the placebo group.  
+
+
+
+## Two-sample t-test (Student's t-test)
+
+Two sample t-test (Student's t-test) can be used if we have two independent (unrelated) groups (e.g., males-females, treatment-non treatment) and one quantitative variable of interest.
+
+### Research question
+
+In an experiment designed to test the effectiveness of paroxetine for treating bipolar depression, the participants were randomly assigned into two groups (intervention Vs placebo).
+
+The researchers used the Hamilton Depression Rating Scale (HDRS) to measure the depression state of the participants and wanted to find out if the HDRS score is different in paroxetine group as compared to placebo group at the end of the experiment. The significance level α was set to 0.05.
+
+Note A score of 0--7 in HDRS is generally accepted to be within the normal range, while a score of 20 or higher indicates at least moderate severity.
+
+### Hypothesis Testsing
+
+::: {.callout-note icon="false"}
+## Null hypothesis and alternative hypothesis
+
+* $H_0$: the  means of HDRS in the two groups are equal ($\mu_{1} = \mu_{2}$)
+* $H_1$: the means of HDRS in the two groups are different ($\mu_{1} \neq \mu_{2}$)
+
+:::
+
+
+### Opening the file
+
+
+Open the dataset named `depression` from the file tab in the menu:
+
+![The depression dataset](images/depression1.png){#fig-depression1}
+
+The dataset `depression` has 76 patients and includes two variables. The `treatment` variable and the `HDRS` variable (@fig-depression1). 
+Double-click on the variable name `HDRS` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
+
+
+### Assumptions
+
+::: {.callout-note icon="false"}
+## Assumptions of the Student's t-test
+
+1. The data are **normally** distributed in both groups
+2. The data in both groups have similar **variance** (also named as homogeneity of variance or homoscedasticity)
+
+:::
+
+
+**A. Explore the descriptive characteristics of distribution for each group and check for normality**
+
+The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test) and for equality of variances (e.g., Levene’s test) can be used.
+
+We select:
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
+```
+
+
+Drag the variable `HDRS` into the `Variables` box and split it by the  `treatment` variable, as shown below (@fig-descriptives12):
+
+![select the descriptive statistics of interest](images/descriptives12.png){#fig-descriptives12}
+
+
+
+
+
+We can now select the relevant descriptive statistics in the `Statistics` section:
+
+![select the descriptive statistics of interest](images/descriptives13.png){#fig-descriptives13}
+
+
+Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below:
+
+![Descriptive statistics of HDSR by group](images/descriptives14.png){#fig-descriptives14}
+
+
+Then we can check the Density from Histograms, as shown below (@fig-descriptives15):
+
+![Select Histograms, Box Plots, and Violin plots.](images/descriptives15.png){#fig-descriptives15}
+
+
+
+

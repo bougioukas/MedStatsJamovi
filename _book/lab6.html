@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.251">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Introduction to Medical Statistics with Jamovi - 16&nbsp; LAB VI: Inference for numerical data (2 samples)</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,7 +18,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -41,7 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -59,29 +57,21 @@ ul.task-list li input[type="checkbox"] {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
@@ -96,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -108,8 +98,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
@@ -160,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
@@ -168,8 +158,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
   </div>
@@ -220,25 +210,34 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#parametric-and-non-parametric-statistical-tests" id="toc-parametric-and-non-parametric-statistical-tests" class="nav-link active" data-scroll-target="#parametric-and-non-parametric-statistical-tests"><span class="toc-section-number">16.1</span>  Parametric and non-parametric statistical tests</a></li>
+  <li><a href="#the-samples" id="toc-the-samples" class="nav-link" data-scroll-target="#the-samples"><span class="toc-section-number">16.2</span>  The samples</a></li>
+  <li>
+<a href="#two-sample-t-test-students-t-test" id="toc-two-sample-t-test-students-t-test" class="nav-link" data-scroll-target="#two-sample-t-test-students-t-test"><span class="toc-section-number">16.3</span>  Two-sample t-test (Student’s t-test)</a>
+  <ul class="collapse">
+<li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#hypothesis-testsing" id="toc-hypothesis-testsing" class="nav-link" data-scroll-target="#hypothesis-testsing">Hypothesis Testsing</a></li>
+  <li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link" data-scroll-target="#opening-the-file">Opening the file</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-lab6" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span></h1>
 </div>
 
 
@@ -250,13 +249,128 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header>
+</header><p>When we have finished this Lab, we should be able to:</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Applying hypothesis testing</li>
+<li>Compare two independent samples</li>
+<li>Compare paired (related) samples</li>
+<li>Interpret the results</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<section id="parametric-and-non-parametric-statistical-tests" class="level2" data-number="16.1"><h2 data-number="16.1" class="anchored" data-anchor-id="parametric-and-non-parametric-statistical-tests">
+<span class="header-section-number">16.1</span> Parametric and non-parametric statistical tests</h2>
+<p>There are two types of statistical tests and they are described as parametric and nonparametric. The parametric tests (e.g., t-test, ANOVA), make certain assumptions about the distribution of the unknown parameter of interest and thus the test statistic is valid under these assumptions. For non-parametric tests (e.g., Mann-Whitney test, Wilcoxon tests), there are no such assumptions. Most nonparametric tests use some way of ranking the measurements. Nonparametric tests are about 95% as powerful as parametric tests.</p>
+</section><section id="the-samples" class="level2" data-number="16.2"><h2 data-number="16.2" class="anchored" data-anchor-id="the-samples">
+<span class="header-section-number">16.2</span> The samples</h2>
+<p>Two samples are independent if the sample values selected from one population are not related to or somehow paired or matched with the sample values selected from the other population. For example, one group of subjects is treated with a drug, while a second and separate group of subjects is given a placebo. These two sample groups are independent because the individuals in the treatment group are in no way paired or matched with corresponding members in the placebo group.</p>
+</section><section id="two-sample-t-test-students-t-test" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="two-sample-t-test-students-t-test">
+<span class="header-section-number">16.3</span> Two-sample t-test (Student’s t-test)</h2>
+<p>Two sample t-test (Student’s t-test) can be used if we have two independent (unrelated) groups (e.g., males-females, treatment-non treatment) and one quantitative variable of interest.</p>
+<section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
+<p>In an experiment designed to test the effectiveness of paroxetine for treating bipolar depression, the participants were randomly assigned into two groups (intervention Vs placebo).</p>
+<p>The researchers used the Hamilton Depression Rating Scale (HDRS) to measure the depression state of the participants and wanted to find out if the HDRS score is different in paroxetine group as compared to placebo group at the end of the experiment. The significance level α was set to 0.05.</p>
+<p>Note A score of 0–7 in HDRS is generally accepted to be within the normal range, while a score of 20 or higher indicates at least moderate severity.</p>
+</section><section id="hypothesis-testsing" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing">Hypothesis Testsing</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Null hypothesis and alternative hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<span class="math inline">\(H_0\)</span>: the means of HDRS in the two groups are equal (<span class="math inline">\(\mu_{1} = \mu_{2}\)</span>)</li>
+<li>
+<span class="math inline">\(H_1\)</span>: the means of HDRS in the two groups are different (<span class="math inline">\(\mu_{1} \neq \mu_{2}\)</span>)</li>
+</ul>
+</div>
+</div>
+</section><section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
+<p>Open the dataset named <code>depression</code> from the file tab in the menu:</p>
+<div id="fig-depression1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/depression1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The depression dataset"><img src="images/depression1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.1: The depression dataset</figcaption><p></p>
+</figure>
+</div>
+<p>The dataset <code>depression</code> has 76 patients and includes two variables. The <code>treatment</code> variable and the <code>HDRS</code> variable (<a href="#fig-depression1">Figure&nbsp;<span>16.1</span></a>). Double-click on the variable name <code>HDRS</code> and change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/continuous.png" width="23" height="21"></a>.</p>
+</section><section id="assumptions" class="level3"><h3 class="anchored" data-anchor-id="assumptions">Assumptions</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Assumptions of the Student’s t-test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The data are <strong>normally</strong> distributed in both groups</li>
+<li>The data in both groups have similar <strong>variance</strong> (also named as homogeneity of variance or homoscedasticity)</li>
+</ol>
+</div>
+</div>
+<p><strong>A. Explore the descriptive characteristics of distribution for each group and check for normality</strong></p>
+<p>The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test) and for equality of variances (e.g., Levene’s test) can be used.</p>
+<p>We select:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A(Analyses) -.-&gt; B(Exploration) -.-&gt; C(Descriptives)
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<p>Drag the variable <code>HDRS</code> into the <code>Variables</code> box and split it by the <code>treatment</code> variable, as shown below (<a href="#fig-descriptives12">Figure&nbsp;<span>16.2</span></a>):</p>
+<div id="fig-descriptives12" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/descriptives12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="select the descriptive statistics of interest"><img src="images/descriptives12.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.2: select the descriptive statistics of interest</figcaption><p></p>
+</figure>
+</div>
+<p>We can now select the relevant descriptive statistics in the <code>Statistics</code> section:</p>
+<div id="fig-descriptives13" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="select the descriptive statistics of interest"><img src="images/descriptives13.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.3: select the descriptive statistics of interest</figcaption><p></p>
+</figure>
+</div>
+<p>Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below:</p>
+<div id="fig-descriptives14" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/descriptives14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Descriptive statistics of HDSR by group"><img src="images/descriptives14.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.4: Descriptive statistics of HDSR by group</figcaption><p></p>
+</figure>
+</div>
+<p>Then we can check the Density from Histograms, as shown below (<a href="#fig-descriptives15">Figure&nbsp;<span>16.5</span></a>):</p>
+<div id="fig-descriptives15" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/descriptives15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Select Histograms, Box Plots, and Violin plots."><img src="images/descriptives15.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.5: Select Histograms, Box Plots, and Violin plots.</figcaption><p></p>
+</figure>
+</div>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -367,9 +481,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./lab5.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span>
       </a>          
@@ -381,12 +493,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer>
-
+</footer><script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});</script>
 
 
 </body></html>

@@ -7,7 +7,7 @@ book:
   author: 
     - "Konstantinos I. Bougioukas, PhD"
     - "Anna-Bettina Haidich, Associate Professor"
-  date: "August 7, 2022"
+  date: "November 26, 2022"
   cover-image: images/cover.png
   repo-url: https://github.com/bougioukas/medstatsjamovi
   chapters:
@@ -55,4 +55,6 @@ format:
     link-external-newwindow: true
     code-link: true
     number-depth: 2
+    include-in-header: 
+      \usepackage{tikz}
 editor: visual
