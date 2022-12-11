@@ -61,7 +61,7 @@ We summarize the previous information in @tbl-recover1.
 
 The null hypothesis, $H_{0}$, states that the treatment group and the population group will recover from the disease in about the same number of days, on average ($μ = 8$).
 
-The alternative hypothesis, $H_{a}$, states that the experimental medical treatment will affect the number of days it takes for patients to recover from the disease. The two groups will differ significantly ($μ \neq 8$).
+The alternative hypothesis, $H_{1}$, states that the experimental medical treatment will affect the number of days it takes for patients to recover from the disease. The two groups will differ significantly ($μ \neq 8$).
 :::
 
 First, we select from the drop down menu **Inference for one mean**. Then we set the **Null hypothesis:** $H_{0}: μ= 8$ and the **Alternative** $\neq$ (two sided test). We also check the box of variance of the population, where we type $\sigma^2 = 4$, as shown below (@fig-shiny_app11):

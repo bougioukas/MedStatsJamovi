@@ -17,6 +17,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -221,8 +240,16 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#linear-correlation-pearsons-coefficient-r" id="toc-linear-correlation-pearsons-coefficient-r" class="nav-link active" data-scroll-target="#linear-correlation-pearsons-coefficient-r"><span class="toc-section-number">9.1</span>  Linear correlation (Pearson’s coefficient r)</a></li>
-  <li><a href="#rank-correlation-spearmans-coefficient-rho" id="toc-rank-correlation-spearmans-coefficient-rho" class="nav-link" data-scroll-target="#rank-correlation-spearmans-coefficient-rho"><span class="toc-section-number">9.2</span>  Rank correlation (Spearman’s coefficient rho )</a></li>
+<li><a href="#what-is-correlation" id="toc-what-is-correlation" class="nav-link active" data-scroll-target="#what-is-correlation"><span class="toc-section-number">9.1</span>  What is correlation?</a></li>
+  <li>
+<a href="#linear-correlation-pearsons-r-coefficient" id="toc-linear-correlation-pearsons-r-coefficient" class="nav-link" data-scroll-target="#linear-correlation-pearsons-r-coefficient"><span class="toc-section-number">9.2</span>  Linear correlation (Pearson’s <span class="math inline">\(r\)</span> coefficient)</a>
+  <ul class="collapse">
+<li><a href="#graphical-display-with-a-scatter-plot" id="toc-graphical-display-with-a-scatter-plot" class="nav-link" data-scroll-target="#graphical-display-with-a-scatter-plot">Graphical display with a scatter plot</a></li>
+  <li><a href="#pearsons-r-correlation-coefficient" id="toc-pearsons-r-correlation-coefficient" class="nav-link" data-scroll-target="#pearsons-r-correlation-coefficient">Pearson’s <span class="math inline">\({r}\)</span> correlation coefficient</a></li>
+  <li><a href="#hypothesis-testing-for-pearsons-r-correlation-coefficient" id="toc-hypothesis-testing-for-pearsons-r-correlation-coefficient" class="nav-link" data-scroll-target="#hypothesis-testing-for-pearsons-r-correlation-coefficient">Hypothesis Testing for Pearson’s <span class="math inline">\(r\)</span> correlation coefficient</a></li>
+  </ul>
+</li>
+  <li><a href="#rank-correlation-spearmans-r_s-coefficient" id="toc-rank-correlation-spearmans-r_s-coefficient" class="nav-link" data-scroll-target="#rank-correlation-spearmans-r_s-coefficient"><span class="toc-section-number">9.3</span>  Rank correlation (Spearman’s <span class="math inline">\(r_{s}\)</span> coefficient)</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -239,23 +266,67 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header><p><strong>Correlation</strong> is a statistical method used to assess a possible <strong>association</strong> between two continuous variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this tutorial, you’ll learn about two correlation coefficients:</p>
+</header><p>When we have finished this chapter, we should be able to:</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><p>Pearson’s r</p></li>
-<li><p>Spearman’s rho</p></li>
+<li>Explain the concept of correlation of two numeric variables.</li>
+<li>Understand the most commonly used correlation coefficients, Pearson’s r and Spearman’s <span class="math inline">\(r_{s}\)</span> coefficients.</li>
+</ul>
+</div>
+</div>
+<section id="what-is-correlation" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="what-is-correlation">
+<span class="header-section-number">9.1</span> What is correlation?</h2>
+<p><strong>Correlation</strong> is a statistical method used to assess a possible <strong>association</strong> between two numeric variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this chapter, we’ll learn about two correlation coefficients:</p>
+<ul>
+<li><p>Pearson’s <span class="math inline">\(r\)</span></p></li>
+<li><p>Spearman’s <span class="math inline">\(r_{s}\)</span></p></li>
 </ul>
 <p>Pearson’s coefficient measures <strong>linear</strong> correlation, while the Spearman’s coefficient compare the <strong>ranks</strong> of data and measures <strong>monotonic</strong> associations.</p>
 <p>&nbsp;</p>
-<section id="linear-correlation-pearsons-coefficient-r" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="linear-correlation-pearsons-coefficient-r">
-<span class="header-section-number">9.1</span> Linear correlation (Pearson’s coefficient r)</h2>
-<p>The <strong>Pearson’s correlation coefficient,</strong> <span class="math inline">\({r}\)</span>, can be calculated for any dataset with two continuous variables. However, before we calculate the correlation coefficient <span class="math inline">\({r}\)</span> we should make sure that the following <strong>assumptions</strong> are met:</p>
+</section><section id="linear-correlation-pearsons-r-coefficient" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="linear-correlation-pearsons-r-coefficient">
+<span class="header-section-number">9.2</span> Linear correlation (Pearson’s <span class="math inline">\(r\)</span> coefficient)</h2>
+<section id="graphical-display-with-a-scatter-plot" class="level3"><h3 class="anchored" data-anchor-id="graphical-display-with-a-scatter-plot">Graphical display with a scatter plot</h3>
+<p>The most useful graph for displaying the association between two numeric variables is a scatter plot. <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> shows the association between systolic blood pressure (sbp) and diastolic blood pressure (dpb) in 96 patients with carotid artery disease, aged 42-89, prior to surgery. (Note that sbp and dpb can be plotted on either axis).</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example-Association between systolic and diastolic blood pressure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-correlation0" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation0-1.png" class="lightbox" title="Scatter plot of the association between systolic blood pressure (sbp) and diastolic blood pressure (dbp) in 96 patients with carotid artery disease, aged 42-89, prior to surgery." data-gallery="quarto-lightbox-gallery-1"><img src="correlation_files/figure-html/fig-correlation0-1.png" class="img-fluid figure-img" width="864"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.1: Scatter plot of the association between systolic blood pressure (sbp) and diastolic blood pressure (dbp) in 96 patients with carotid artery disease, aged 42-89, prior to surgery.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>From the scatter plot, there appears to be a linear association between sbp and dbp, with higher values of dbp being associated with higher values of sbp. How can we summarize this association simply? We could calculate the Pearson’s correlation coefficient, <span class="math inline">\(r\)</span>, which is a measure of the linear association between two numeric variables.</p>
+</section><section id="pearsons-r-correlation-coefficient" class="level3"><h3 class="anchored" data-anchor-id="pearsons-r-correlation-coefficient">Pearson’s <span class="math inline">\({r}\)</span> correlation coefficient</h3>
+<p>The <strong>Pearson’s correlation coefficient</strong>, <span class="math inline">\({r}\)</span>, can be calculated for any dataset with two numeric variables. However, before we calculate the Pearson’s <span class="math inline">\({r}\)</span> coefficient we should make sure that the following <strong>assumptions</strong> are met:</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-<strong>Assumptions for Pearson’s coefficient</strong> <span class="math inline">\(r_{xy}\)</span>
+<strong>Assumptions for Pearson’s</strong> <span class="math inline">\(r\)</span> coefficient
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -275,14 +346,14 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Characteristics of Pearson’s coefficient <span class="math inline">\(r_{xy}\)</span>
+Characteristics of Pearson’s coefficient <span class="math inline">\(r\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Formula</strong></p>
-<p>Given a set of <span class="math inline">\({n}\)</span> pairs of observations <span class="math inline">\((x_{1},y_{1}),\ldots ,(x_{n},y_{n})\)</span> with means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> respectively, <span class="math inline">\(r_{xy}\)</span> is defined as:</p>
-<p><span id="eq-r1"><span class="math display">\[r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}} \tag{9.1}\]</span></span></p>
-<p>The <span class="math inline">\(r_{xy}\)</span> statistic shows the <strong>direction</strong> and measures the <strong>strength</strong> of the linear association between the variables.</p>
+<p>Given a set of <span class="math inline">\({n}\)</span> pairs of observations <span class="math inline">\((x_{1},y_{1}),\ldots ,(x_{n},y_{n})\)</span> with means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> respectively, <span class="math inline">\(r\)</span> is defined as:</p>
+<p><span id="eq-r1"><span class="math display">\[r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}} \tag{9.1}\]</span></span></p>
+<p>The <span class="math inline">\(r\)</span> statistic shows the <strong>direction</strong> and measures the <strong>strength</strong> of the linear association between the variables.</p>
 <p><strong>Range of values</strong></p>
 <p>Correlation coefficient is a <strong>dimensionless</strong> quantity that takes a value in the range <strong>-1</strong> to <strong>+1</strong>.</p>
 <p>&nbsp;</p>
@@ -291,52 +362,135 @@ Characteristics of Pearson’s coefficient <span class="math inline">\(r_{xy}\)<
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-correlation1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The direction of association can be (a) negative, (b) no association, or (c) positive."><img src="correlation_files/figure-html/fig-correlation1-1.png" class="img-fluid figure-img" width="1132"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9.1: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation1-1.png" class="lightbox" title="The direction of association can be (a) negative, (b) no association, or (c) positive." data-gallery="quarto-lightbox-gallery-2"><img src="correlation_files/figure-html/fig-correlation1-1.png" class="img-fluid figure-img" width="1132"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.2: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
 <p><strong>Magnitude of the association</strong></p>
-<p>The <strong>magnitude</strong> of association can be anywhere between -1 and +1. The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1 (<a href="#fig-correlation2">Figure&nbsp;<span>9.2</span></a>). A correlation coefficient of <strong>-1</strong> or <strong>+1</strong> indicates a <strong>perfect</strong> negative or positive association, respectively (<a href="#fig-correlation2">Figure&nbsp;<span>9.2</span></a> c and f).</p>
+<p>The <strong>magnitude</strong> of association can be anywhere between -1 and +1. The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1 (<a href="#fig-correlation2">Figure&nbsp;<span>9.3</span></a>). A correlation coefficient of <strong>-1</strong> or <strong>+1</strong> indicates a <strong>perfect</strong> negative or positive association, respectively (<a href="#fig-correlation2">Figure&nbsp;<span>9.3</span></a> c and f).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-correlation2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The stronger the correlation, the closer the correlation coefficient comes to ±1."><img src="correlation_files/figure-html/fig-correlation2-1.png" class="img-fluid figure-img" width="1132"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9.2: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation2-1.png" class="lightbox" title="The stronger the correlation, the closer the correlation coefficient comes to ±1." data-gallery="quarto-lightbox-gallery-3"><img src="correlation_files/figure-html/fig-correlation2-1.png" class="img-fluid figure-img" width="1132"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.3: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
+<p>Using the data in <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> and the <a href="#eq-r1">Equation&nbsp;<span>9.1</span></a> we find the sample correlation coefficient is r=0.62.</p>
 <p>&nbsp;</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Correlation is not causation</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any observed association is not necessarily assumed to be a causal one- it may be caused by other factors.</p>
+<p>As an example, suppose we observe that people who daily drink more than 4 cups of coffee have a decreased chance of developing skin cancer. This does not necessarily mean that coffee confers resistance to cancer; one alternative explanation would be that people who drink a lot of coffee work indoors for long hours and thus have little exposure to the sun, a known risk. If this is the case, then the number of hours spent outdoors is a <strong>confounding variable</strong>—a cause common to both observations. In such a situation, a direct causal link cannot be inferred; the association merely suggests a hypothesis, such as a common cause, but does not offer proof. In addition, when many variables in complex systems are studied, spurious associations can arise. Thus, <strong>association does not imply causation</strong> <span class="citation" data-cites="altman2015">(<a href="references.html#ref-altman2015" role="doc-biblioref">Altman and Krzywinski 2015</a>)</span>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="hypothesis-testing-for-pearsons-r-correlation-coefficient" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testing-for-pearsons-r-correlation-coefficient">Hypothesis Testing for Pearson’s <span class="math inline">\(r\)</span> correlation coefficient</h3>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Example
+Step 1: Determine the appropriate null hypothesis and alternative hypothesis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-correlation0" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation0-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="The direction of association can be (a) negative, (b) no association, or (c) positive."><img src="correlation_files/figure-html/fig-correlation0-1.png" class="img-fluid figure-img" width="864"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9.3: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
-</figure>
+<ul>
+<li><p>The null hypothesis, <span class="math inline">\(H_{0}\)</span>, states that the population correlation, ρ, is zero (<span class="math inline">\(ρ = 0\)</span>). There is not association between dbp and spb.</p></li>
+<li><p>The alternative hypothesis, <span class="math inline">\(H_{1}\)</span>, states that the population correlation, ρ, is zero (<span class="math inline">\(ρ \neq 0\)</span>). There is association between dbp and spb.</p></li>
+</ul>
 </div>
 </div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Step 2: Set the level of significance, α
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>We set the value α=0.05 for the level of significance (type I error).</p>
 </div>
-</section><section id="rank-correlation-spearmans-coefficient-rho" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="rank-correlation-spearmans-coefficient-rho">
-<span class="header-section-number">9.2</span> Rank correlation (Spearman’s coefficient rho )</h2>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Step 3: Identify the appropriate test statistic and check the assumptions. Calculate the test statistic.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To test whether ρ is significantly different from zero, <span class="math inline">\(ρ \neq 0\)</span>, we calculate the test statistic:</p>
+<p><span id="eq-r2"><span class="math display">\[t = \frac{r}{SE_{r}}=\frac{r}{\sqrt{(1-r^2)/(n-2)}} \tag{9.2}\]</span></span></p>
+<p>where n is the sample size and <span class="math inline">\(SE_{r}=\sqrt{ \frac{(1-r^2)}{(n-2)}}\)</span>.</p>
+<p>For the data in our example, the number of observations are n= 96, r= 0.62 and <span class="math inline">\(SE_{r}=\sqrt{ \frac{(1-0.62^2)}{(96-2)}}= \sqrt{ \frac{(1-0.3844)}{94}} = \sqrt{\frac{0.6156}{94}}= 0.081\)</span>.</p>
+<p>According to <a href="#eq-r2">Equation&nbsp;<span>9.2</span></a>:</p>
+<p><span class="math display">\[t = \frac{r}{SE_{r}}= \frac{0.62}{0.081}= 7.65\]</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Step 4: Decide whether or not the result is statistically significant
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When we run the test, we get a value for the t-statistic (t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom. We also get a p-value &lt; 0.001 which is less than α=0.05 (so, reject <span class="math inline">\(H_{0}\)</span>).</p>
+<p>To find a 95% confidence interval for ρ we have to use a Fisher’s z transformation to get a quantity <span class="math inline">\(Z_{r}\)</span> that has approximately Normal distribution. The Fisher’s z transformation of sample correlation coefficient r is:</p>
+<p><span id="eq-r3"><span class="math display">\[ Z_{r}= \frac{1}{2} ln \frac{1+r}{1-r}  \tag{9.3}\]</span></span></p>
+<p>The 95% CI of the <span class="math inline">\(Z_{r}\)</span> is:</p>
+<p><span id="eq-r4"><span class="math display">\[ 95\%CI= z_{r} \ \pm 1.96 \cdot SE{z_{r}}= z_{r} \ \pm \frac{1.96}{\sqrt{n-3}}=[z_{r_{L}}, z_{r_{U}}] \tag{9.4}\]</span></span></p>
+<p>where <span class="math inline">\(SE{z_{r}}=\frac{1}{\sqrt{n-3}}\)</span> and <span class="math inline">\(z_{r_{L}}, z_{r_{U}}\)</span> the lower and upper limits of the 95%CI of <span class="math inline">\(Z_{r}\)</span> respectively.</p>
+<p>Finally, we invert the confidence limits of <span class="math inline">\(Z_{r}\)</span>; then the lower and upper limits of the 95%CI of ρ are:</p>
+<p><span id="eq-r5"><span class="math display">\[ ρ_{L}= \frac{e^{2 \cdot z_{r_{L}}}-1}{e^{2 \cdot z_{r_{L}}}+1}= 0.48  \tag{9.5}\]</span></span> <span id="eq-r6"><span class="math display">\[ ρ_{L}= \frac{e^{2 \cdot z_{r_{U}}}-1}{e^{2 \cdot z_{r_{U}}}+1}= 0.73  \tag{9.6}\]</span></span></p>
+<p>The 95% CI calculated from <a href="#eq-r5">Equation&nbsp;<span>9.5</span></a> and <a href="#eq-r6">Equation&nbsp;<span>9.6</span></a> is 0.48 to 0.73, so there are quite a wide range of plausible correlation values associated with these data. Additonally, note that the 95% CI of ρ is asymmetric.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Step 5: Interpret the results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is evidence of a positive association between dbp and sbp (r= 0.62, 95%CI: 0.48, 0.73, p &lt; 0.001).</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section></section><section id="rank-correlation-spearmans-r_s-coefficient" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="rank-correlation-spearmans-r_s-coefficient">
+<span class="header-section-number">9.3</span> Rank correlation (Spearman’s <span class="math inline">\(r_{s}\)</span> coefficient)</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-altman2015" class="csl-entry" role="doc-biblioentry">
+Altman, Naomi, and Martin Krzywinski. 2015. <span>“Association, Correlation and Causation.”</span> <em>Nature Methods</em> 12 (10): 899–900. <a href="https://doi.org/10.1038/nmeth.3587">https://doi.org/10.1038/nmeth.3587</a>.
+</div>
+</div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -463,7 +617,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
 
 
 </body></html>

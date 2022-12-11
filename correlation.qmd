@@ -13,22 +13,64 @@ library(readr)
 data_bp <- read_csv(here("data", "data_bp.csv"))
 ```
 
-**Correlation** is a statistical method used to assess a possible **association** between two continuous variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this tutorial, you'll learn about two correlation coefficients:
+When we have finished this chapter, we should be able to:
 
--   Pearson's r
+::: {.callout-caution icon="false"}
+## Learning objectives
 
--   Spearman's rho
+-   Explain the concept of correlation of two numeric variables.
+-   Understand the most commonly used correlation coefficients, Pearson's r and Spearman's $r_{s}$ coefficients.
+:::
+
+## What is correlation?
+
+**Correlation** is a statistical method used to assess a possible **association** between two numeric variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this chapter, we'll learn about two correlation coefficients:
+
+-   Pearson's $r$
+
+-   Spearman's $r_{s}$
 
 Pearson's coefficient measures **linear** correlation, while the Spearman's coefficient compare the **ranks** of data and measures **monotonic** associations.
 
  
 
-## Linear correlation (Pearson's coefficient r)
+## Linear correlation (Pearson's $r$ coefficient)
 
-The **Pearson's correlation coefficient,** ${r}$, can be calculated for any dataset with two continuous variables. However, before we calculate the correlation coefficient ${r}$ we should make sure that the following **assumptions** are met:
+### Graphical display with a scatter plot
+
+The most useful graph for displaying the association between two numeric variables is a scatter plot. @fig-correlation0 shows the association between systolic blood pressure (sbp) and diastolic blood pressure (dpb) in 96 patients with carotid artery disease, aged 42-89, prior to surgery. (Note that sbp and dpb can be plotted on either axis).
+
+::: {.callout-note icon="false"}
+## Example-Association between systolic and diastolic blood pressure
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-correlation0
+#| fig-cap: Scatter plot of the association between systolic blood pressure (sbp) and diastolic blood pressure (dbp) in 96 patients with carotid artery disease, aged 42-89, prior to surgery.
+#| fig-width: 9.0
+#| fig-height: 6.5
+
+
+# plot 0
+data_bp|>
+  ggplot(aes(dbp, sbp)) +
+  geom_point(color = "deeppink", size = 3 ,alpha = 0.7) +
+  #ggtitle(paste0("Negative Correlation r=", round(cor1, digits=1))) +
+  theme_steve()
+```
+:::
+
+From the scatter plot, there appears to be a linear association between sbp and dbp, with higher values of dbp being associated with higher values of sbp. How can we summarize this association simply? We could calculate the Pearson's correlation coefficient, $r$, which is a measure of the linear association between two numeric variables.
+
+
+
+### Pearson's ${r}$ correlation coefficient 
+
+The **Pearson's correlation coefficient**, ${r}$, can be calculated for any dataset with two numeric variables. However, before we calculate the Pearson's ${r}$ coefficient we should make sure that the following **assumptions** are met:
 
 ::: {.callout-warning icon="false"}
-## **Assumptions for Pearson's coefficient** $r_{xy}$
+## **Assumptions for Pearson's** $r$ coefficient
 
 1.  There is a linear association between the two variables
 2.  The variables are observed on a random sample of individuals (each individual should have a pair of values).\
@@ -39,15 +81,15 @@ The **Pearson's correlation coefficient,** ${r}$, can be calculated for any data
  
 
 ::: {.callout-tip icon="false"}
-## Characteristics of Pearson's coefficient $r_{xy}$
+## Characteristics of Pearson's coefficient $r$
 
 **Formula**
 
-Given a set of ${n}$ pairs of observations $(x_{1},y_{1}),\ldots ,(x_{n},y_{n})$ with means $\bar{x}$ and $\bar{y}$ respectively, $r_{xy}$ is defined as:
+Given a set of ${n}$ pairs of observations $(x_{1},y_{1}),\ldots ,(x_{n},y_{n})$ with means $\bar{x}$ and $\bar{y}$ respectively, $r$ is defined as:
 
-$$r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}}$$ {#eq-r1}
+$$r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}}$$ {#eq-r1}
 
-The $r_{xy}$ statistic shows the **direction** and measures the **strength** of the linear association between the variables.
+The $r$ statistic shows the **direction** and measures the **strength** of the linear association between the variables.
 
 **Range of values**
 
@@ -233,27 +275,99 @@ pcor9 <- dat9|>
 ```
 :::
 
+
+Using the data in @fig-correlation0 and the @eq-r1 we find the sample correlation coefficient is r=0.62.
+
  
 
-::: {.callout-note icon="false"}
-## Example
+::: callout-important
+## **Correlation is not causation**
 
-```{r}
-#| echo: false
-#| warning: false
-#| label: fig-correlation0
-#| fig-cap: The direction of association can be (a) negative, (b) no association, or (c) positive.
-#| fig-width: 9.0
-#| fig-height: 6.5
+Any observed association is not necessarily assumed to be a causal one- it may be caused by other factors.
 
-
-# plot 0
-data_bp|>
-  ggplot(aes(dbp, sbp)) +
-  geom_point(color = "deeppink", size = 3 ,alpha = 0.7) +
-  #ggtitle(paste0("Negative Correlation r=", round(cor1, digits=1))) +
-  theme_steve()
-```
+As an example, suppose we observe that people who daily drink more than 4 cups of coffee have a decreased chance of developing skin cancer. This does not necessarily mean that coffee confers resistance to cancer; one alternative explanation would be that people who drink a lot of coffee work indoors for long hours and thus have little exposure to the sun, a known risk. If this is the case, then the number of hours spent outdoors is a **confounding variable**---a cause common to both observations. In such a situation, a direct causal link cannot be inferred; the association merely suggests a hypothesis, such as a common cause, but does not offer proof. In addition, when many variables in complex systems are studied, spurious associations can arise. Thus, **association does not imply causation** [@altman2015].
 :::
 
-## Rank correlation (Spearman's coefficient rho )
+ 
+
+### Hypothesis Testing for Pearson's $r$ correlation coefficient
+
+::: {.callout-note icon="false"}
+## Step 1: Determine the appropriate null hypothesis and alternative hypothesis
+
+- The null hypothesis, $H_{0}$, states that the population correlation, ρ, is zero ($ρ = 0$). There is not association between dbp and spb.
+
+
+- The alternative hypothesis, $H_{1}$, states that the population correlation, ρ, is zero ($ρ \neq 0$). There is association between dbp and spb.
+:::
+
+
+
+::: {.callout-note icon="false"}
+## Step 2: Set the level of significance, α
+
+We set the value α=0.05 for the level of significance (type I error).
+:::
+
+
+::: {.callout-note icon="false"}
+## Step 3: Identify the appropriate test statistic and check the assumptions. Calculate the test statistic.
+
+To test whether ρ is significantly different from zero, $ρ \neq 0$, we calculate the test statistic:
+
+$$t = \frac{r}{SE_{r}}=\frac{r}{\sqrt{(1-r^2)/(n-2)}}$$ {#eq-r2}
+
+where n is the sample size and $SE_{r}=\sqrt{ \frac{(1-r^2)}{(n-2)}}$.
+
+
+For the data in our example, the number of observations are n= 96, r= 0.62 and $SE_{r}=\sqrt{ \frac{(1-0.62^2)}{(96-2)}}= \sqrt{ \frac{(1-0.3844)}{94}} = \sqrt{\frac{0.6156}{94}}= 0.081$.
+
+According to @eq-r2:
+
+$$t = \frac{r}{SE_{r}}= \frac{0.62}{0.081}= 7.65$$
+
+:::
+
+
+
+::: {.callout-note icon="false"}
+## Step 4: Decide whether or not the result is statistically significant
+
+When we run the test, we get a value for the t-statistic (t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom. We also get a p-value < 0.001 which is less than α=0.05 (so, reject $H_{0}$). 
+
+To find a 95% confidence interval for ρ we have to use a Fisher’s z transformation to get a quantity $Z_{r}$ that has approximately Normal distribution. The Fisher’s z transformation of sample correlation coefficient r is:
+
+$$ Z_{r}= \frac{1}{2} ln \frac{1+r}{1-r} $$ {#eq-r3}
+
+
+
+
+The 95% CI of the $Z_{r}$ is: 
+
+$$ 95\%CI= z_{r} \ \pm 1.96 \cdot SE{z_{r}}= z_{r} \ \pm \frac{1.96}{\sqrt{n-3}}=[z_{r_{L}}, z_{r_{U}}]$$ {#eq-r4}
+
+
+where $SE{z_{r}}=\frac{1}{\sqrt{n-3}}$ and $z_{r_{L}}, z_{r_{U}}$ the lower and upper limits of the 95%CI of $Z_{r}$ respectively.
+
+Finally, we invert the confidence limits of $Z_{r}$; then the lower and upper limits of the 95%CI of ρ are:
+
+$$ ρ_{L}= \frac{e^{2 \cdot z_{r_{L}}}-1}{e^{2 \cdot z_{r_{L}}}+1}= 0.48 $$ {#eq-r5}
+$$ ρ_{L}= \frac{e^{2 \cdot z_{r_{U}}}-1}{e^{2 \cdot z_{r_{U}}}+1}= 0.73 $$ {#eq-r6}
+
+
+The 95% CI calculated from @eq-r5 and @eq-r6 is 0.48 to 0.73, so there are quite a wide range of plausible correlation values associated with these data. Additonally, note that the 95% CI of ρ is asymmetric.
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Step 5: Interpret the results
+
+There is evidence of a positive association between dbp and sbp (r= 0.62, 95%CI: 0.48, 0.73, p < 0.001).
+
+:::
+
+
+ 
+
+## Rank correlation (Spearman's $r_{s}$ coefficient)

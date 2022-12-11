@@ -76,8 +76,46 @@ The **one-sample z-test** is used when we want to know whether the difference be
 
 **Step 4: Decide whether or not the result is statistically significant.**
 
-The p-value is \<0.001. Since p-value \< α, $H_{0}$ is rejected. We can also calculate the 95%CI of mean as following:
+We can calculate the p-value Using a statistical program such as Jamovi. In our example, the p-value is \<0.001. Since p-value \< α, $H_{0}$ is rejected. We can also estimate the 95%CI of mean as following:
 
 $$ 95\%CI= \bar{x} \ \pm 1.96  \frac{\sigma}{\sqrt{n}}= 82 \ \pm 1.96  \frac{8}{\sqrt{20}}= 82 \ \pm \frac{15.68}{4.472} = 82 \ \pm 3.506 = [78.49, 85.51]$$
 
 Note that, in this case, the value of null hypothesis, 68, is not included in the range of values of the 95%CI.
+
+
+**Step 5: Interpret the results.**
+
+The mean heart rate (82 bpm) in hyperthyroidism patients is significantly higher  than the heart rate in healthy adults (68 bpm).
+
+
+
+## Type of Errors and Power of the test
+
+
+**A. Types of error in hypothesis testing**
+
+**Type I error:** we reject the null hypothesis when it is true (false positive), and conclude that there is an effect when, in reality, there is none. The maximum chance (probability) of making a Type I error is denoted by α (alpha). This is the significance level of the test; we reject the null hypothesis if our p-value is less than the significance level, i.e. if p < a (@fig-type_errors).
+
+
+**Type II error:** we do not reject the null hypothesis when it is false (false negative), and conclude that there is no effect when one really exists. The chance of making a Type II error is denoted by β (beta); its compliment, (1 - β), is the power of the test. The power, therefore, is the probability of rejecting the null hypothesis when it is false; i.e. it is the chance (usually expressed as a percentage) of detecting, as statistically significant, a real treatment effect of a given size (@fig-type_errors).
+
+```{r}
+#| label: fig-type_errors
+#| fig-align: center
+#| out-width: "65%"
+#| echo: false
+#| fig-cap: Types of error in hypothesis testing.
+
+knitr::include_graphics(here::here("images", "type_errors.png"))
+```
+
+
+
+
+
+
+
+
+
+
+

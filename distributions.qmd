@@ -961,7 +961,7 @@ The mean of this distribution is μ = df, and the variance is determined by the 
 The F-distribution is the ratio of two chi-squared distributions and is used in hypothesis testing of whether two observed samples have the same variance.
 
 ::: {.callout-tip icon="false"}
-## Definition and properties of chi-squared distribution
+## Definition and properties of F-distribution
 
 Let $X_n^2$ and $X_m^2$ be independent variates distributed as chi-squared with n and m degrees of freedom. $$F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}$$
 
