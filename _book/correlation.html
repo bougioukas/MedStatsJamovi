@@ -327,7 +327,7 @@ Example-Association between systolic and diastolic blood pressure
 </div>
 </div>
 </div>
-<p><a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a> shows the scatter diagram of <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> with two blue new axes drawn through the mean point. The distances of the points from these axes represent the deviations from the mean.</p>
+<p><a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a> shows the scatter diagram of <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> with <strong>two blue new axes drawn through the mean point</strong>. The distances of the points from these axes represent the deviations from the mean.</p>
 <p><strong>Positive product:</strong> In the <strong>top right</strong> section of <a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a>, the deviations from the mean of both variables, dbp and sbp, are positive. Hence, their products will be positive. In the <strong>bottom left</strong> section, the deviations from the mean of the two variables will both be negative. Again, their product will be positive.</p>
 <p><strong>Negative product:</strong> In the <strong>top left</strong> section of <a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a>, the deviation of dbp from its mean will be negative, and the deviation of sbp from its mean will be positive. The product of these will be negative. In the <strong>bottom right</strong> section, the product will again be negative.</p>
 <p>So in <a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a> most of these products will be positive, and their sum will be positive. We say that there is a <strong>positive correlation</strong> between the two variables; as one increases so does the other. If one variable decreased as the other increased, we would have a scatter diagram where most of the points lay in the top left and bottom right sections. In this case the sum of the products would be negative and there would be a <strong>negative correlation</strong> between the variables. When the two variables are not related, we have a scatter diagram with roughly the same number of points in each of the sections. In this case, there are as many positive as negative products, and the sum is zero. There is <strong>zero correlation</strong> or <strong>no correlation</strong>. The variables are said to be uncorrelated.</p>
@@ -345,11 +345,12 @@ Example-Association between systolic and diastolic blood pressure
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>There is a linear association between the two variables</li>
-<li>The variables are observed on a random sample of individuals (each individual should have a pair of values).<br>
+<li>The variables are observed on a <strong>random sample</strong> of individuals (each individual should have a pair of values).<br>
 </li>
-<li>For a valid hypothesis testing and calculation of confidence intervals both variables should have an approximately normal distribution.</li>
-<li>Absence of outliers in the data set.</li>
+<li>There is a <strong>linear association</strong> between the two variables.</li>
+<li>For a valid hypothesis testing and calculation of confidence intervals both variables should have an approximately <strong>normal distribution</strong>.</li>
+<li>
+<strong>Absence of outliers</strong> in the data set.</li>
 </ol>
 </div>
 </div>
@@ -394,10 +395,23 @@ Characteristics of Pearson’s correlation coefficient <span class="math inline"
 </div>
 </div>
 </div>
-</div>
-</div>
-<p>Using the data in <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> and the <a href="#eq-r1">Equation&nbsp;<span>9.1</span></a> we find the Pearson’s correlation coefficient r=0.62.</p>
 <p>&nbsp;</p>
+<p><strong>Anscombe’s Quartet</strong></p>
+<p>Anscombe’s quartet comprises four datasets that have nearly identical simple descriptive statistics, yet have very different distributions and appear very different when graphed. Each dataset consists of eleven (x,y) points. They were constructed in 1973 by the statistician Francis Anscombe to demonstrate both the <strong>importance of graphing data</strong> when analyzing it, and the effect of outliers and other influential observations on statistical properties.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-anscombe" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-anscombe-1.png" class="lightbox" title="Anscombe’s quartet. All datasets have a Pearson’s correlation of r = 0.82." data-gallery="quarto-lightbox-gallery-5"><img src="correlation_files/figure-html/fig-anscombe-1.png" class="img-fluid figure-img" width="1132"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.5: Anscombe’s quartet. All datasets have a Pearson’s correlation of r = 0.82.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Though all datasets have a Pearson’s correlation of <span class="math inline">\(r = 0.82\)</span>, when plotted the four datasets look very different. Graph I is a standard linear association where a Pearson’s correlation would be suitable. Graph II would appear to be a non-linear association and a non-parametric analysis would be appropriate. Graph III again shows a linear relationship (approaching r = 1) where an outlier has lowered the correlation coefficient. Graph IV shows no association between the two variables (X, Y) but an oultier has inflated the correlation higher.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Using the data in <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> and the <a href="#eq-r1">Equation&nbsp;<span>9.1</span></a> we find the Pearson’s correlation coefficient r=0.62. However, correlation does not mean causation.</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -511,25 +525,22 @@ Step 5: Interpret the results
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>There is a <strong>monotonic association</strong> between the two variables (<a href="#fig-monotonicity">Figure&nbsp;<span>9.5</span></a> a and b)</li>
+<li><p>The variables are observed on a <strong>random sample</strong> of individuals (each individual should have a pair of values).<br></p></li>
+<li><p>There is a <strong>monotonic association</strong> between the two variables (<a href="#fig-monotonicity">Figure&nbsp;<span>9.6</span></a> a and b)</p></li>
 </ol>
 <p>In a monotonic association, the variables tend to move in the same relative direction, but not necessarily at a constant rate. So all linear correlations are monotonic but the opposite is not always true, because we can have also monotonic non-linear associations.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-monotonicity" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="correlation_files/figure-html/fig-monotonicity-1.png" class="lightbox" title="The association can be (a) linear monotonic (b) monotonic non-linear, or (c) non-monotonic." data-gallery="quarto-lightbox-gallery-5"><img src="correlation_files/figure-html/fig-monotonicity-1.png" class="img-fluid figure-img" width="1132"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9.5: The association can be (a) linear monotonic (b) monotonic non-linear, or (c) non-monotonic.</figcaption><p></p>
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-monotonicity-1.png" class="lightbox" title="The association can be (a) linear monotonic (b) monotonic non-linear, or (c) non-monotonic." data-gallery="quarto-lightbox-gallery-6"><img src="correlation_files/figure-html/fig-monotonicity-1.png" class="img-fluid figure-img" width="1132"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.6: The association can be (a) linear monotonic (b) monotonic non-linear, or (c) non-monotonic.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
+</div>
+</div>
 <p>&nbsp;</p>
-<ol start="2" type="1">
-<li>The variables are observed on a random sample of individuals (each individual should have a pair of values).<br>
-</li>
-</ol>
-</div>
-</div>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -684,7 +695,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
 
 
 </body></html>
