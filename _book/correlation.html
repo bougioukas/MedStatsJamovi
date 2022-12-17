@@ -317,7 +317,21 @@ Example-Association between systolic and diastolic blood pressure
 </div>
 </div>
 </div>
-<p>From the scatter plot, there appears to be a linear association between sbp and dbp, with higher values of dbp being associated with higher values of sbp. How can we summarize this association simply? We could calculate the Pearson’s correlation coefficient, <span class="math inline">\(r\)</span>, which is a measure of the linear association between two numeric variables.</p>
+<p>From the scatter plot, there appears to be a linear association between sbp and dbp, with higher values of dbp being associated with higher values of sbp. How can we summarize this association simply? We could calculate the Pearson’s correlation coefficient, <span class="math inline">\(r\)</span>, which is a measure of the linear association between two numeric variables. The Pearson’s correlation coefficient is based on <strong>the sum of products about the mean of the two variables</strong>, so we shall start by considering the properties of the sum of products.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-correlation01" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation01-1.png" class="lightbox" title="Scatter plot with axes through the mean point." data-gallery="quarto-lightbox-gallery-2"><img src="correlation_files/figure-html/fig-correlation01-1.png" class="img-fluid figure-img" width="864"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.2: Scatter plot with axes through the mean point.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a> shows the scatter diagram of <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> with two blue new axes drawn through the mean point. The distances of the points from these axes represent the deviations from the mean.</p>
+<p><strong>Positive product:</strong> In the <strong>top right</strong> section of <a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a>, the deviations from the mean of both variables, dbp and sbp, are positive. Hence, their products will be positive. In the <strong>bottom left</strong> section, the deviations from the mean of the two variables will both be negative. Again, their product will be positive.</p>
+<p><strong>Negative product:</strong> In the <strong>top left</strong> section of <a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a>, the deviation of dbp from its mean will be negative, and the deviation of sbp from its mean will be positive. The product of these will be negative. In the <strong>bottom right</strong> section, the product will again be negative.</p>
+<p>So in <a href="#fig-correlation01">Figure&nbsp;<span>9.2</span></a> most of these products will be positive, and their sum will be positive. We say that there is a <strong>positive correlation</strong> between the two variables; as one increases so does the other. If one variable decreased as the other increased, we would have a scatter diagram where most of the points lay in the top left and bottom right sections. In this case the sum of the products would be negative and there would be a <strong>negative correlation</strong> between the variables. When the two variables are not related, we have a scatter diagram with roughly the same number of points in each of the sections. In this case, there are as many positive as negative products, and the sum is zero. There is <strong>zero correlation</strong> or <strong>no correlation</strong>. The variables are said to be uncorrelated.</p>
+<p>&nbsp;</p>
 </section><section id="pearsons-r-correlation-coefficient" class="level3"><h3 class="anchored" data-anchor-id="pearsons-r-correlation-coefficient">Pearson’s <span class="math inline">\({r}\)</span> correlation coefficient</h3>
 <p>The <strong>Pearson’s correlation coefficient</strong>, <span class="math inline">\({r}\)</span>, can be calculated for any dataset with two numeric variables. However, before we calculate the Pearson’s <span class="math inline">\({r}\)</span> coefficient we should make sure that the following <strong>assumptions</strong> are met:</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
@@ -346,7 +360,7 @@ Example-Association between systolic and diastolic blood pressure
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Characteristics of Pearson’s coefficient <span class="math inline">\(r\)</span>
+Characteristics of Pearson’s correlation coefficient <span class="math inline">\(r\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -362,27 +376,27 @@ Characteristics of Pearson’s coefficient <span class="math inline">\(r\)</span
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-correlation1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation1-1.png" class="lightbox" title="The direction of association can be (a) negative, (b) no association, or (c) positive." data-gallery="quarto-lightbox-gallery-2"><img src="correlation_files/figure-html/fig-correlation1-1.png" class="img-fluid figure-img" width="1132"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9.2: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation1-1.png" class="lightbox" title="The direction of association can be (a) negative, (b) no association, or (c) positive." data-gallery="quarto-lightbox-gallery-3"><img src="correlation_files/figure-html/fig-correlation1-1.png" class="img-fluid figure-img" width="1132"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.3: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
 <p><strong>Magnitude of the association</strong></p>
-<p>The <strong>magnitude</strong> of association can be anywhere between -1 and +1. The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1 (<a href="#fig-correlation2">Figure&nbsp;<span>9.3</span></a>). A correlation coefficient of <strong>-1</strong> or <strong>+1</strong> indicates a <strong>perfect</strong> negative or positive association, respectively (<a href="#fig-correlation2">Figure&nbsp;<span>9.3</span></a> c and f).</p>
+<p>The <strong>magnitude</strong> of association can be anywhere between -1 and +1. The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1 (<a href="#fig-correlation2">Figure&nbsp;<span>9.4</span></a>). A correlation coefficient of <strong>-1</strong> or <strong>+1</strong> indicates a <strong>perfect</strong> negative or positive association, respectively (<a href="#fig-correlation2">Figure&nbsp;<span>9.4</span></a> c and f).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-correlation2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation2-1.png" class="lightbox" title="The stronger the correlation, the closer the correlation coefficient comes to ±1." data-gallery="quarto-lightbox-gallery-3"><img src="correlation_files/figure-html/fig-correlation2-1.png" class="img-fluid figure-img" width="1132"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9.3: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-correlation2-1.png" class="lightbox" title="The stronger the correlation, the closer the correlation coefficient comes to ±1." data-gallery="quarto-lightbox-gallery-4"><img src="correlation_files/figure-html/fig-correlation2-1.png" class="img-fluid figure-img" width="1132"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.4: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>Using the data in <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> and the <a href="#eq-r1">Equation&nbsp;<span>9.1</span></a> we find the sample correlation coefficient is r=0.62.</p>
+<p>Using the data in <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> and the <a href="#eq-r1">Equation&nbsp;<span>9.1</span></a> we find the Pearson’s correlation coefficient r=0.62.</p>
 <p>&nbsp;</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -394,8 +408,8 @@ Characteristics of Pearson’s coefficient <span class="math inline">\(r\)</span
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Any observed association is not necessarily assumed to be a causal one- it may be caused by other factors.</p>
-<p>As an example, suppose we observe that people who daily drink more than 4 cups of coffee have a decreased chance of developing skin cancer. This does not necessarily mean that coffee confers resistance to cancer; one alternative explanation would be that people who drink a lot of coffee work indoors for long hours and thus have little exposure to the sun, a known risk. If this is the case, then the number of hours spent outdoors is a <strong>confounding variable</strong>—a cause common to both observations. In such a situation, a direct causal link cannot be inferred; the association merely suggests a hypothesis, such as a common cause, but does not offer proof. In addition, when many variables in complex systems are studied, spurious associations can arise. Thus, <strong>association does not imply causation</strong> <span class="citation" data-cites="altman2015">(<a href="references.html#ref-altman2015" role="doc-biblioref">Altman and Krzywinski 2015</a>)</span>.</p>
+<p>Any observed association is not necessarily assumed to be a causal one- it may be caused by other factors. <strong>Correlation indicated only association, but it does not indicate cause-effect association.</strong></p>
+<p>As an example, suppose we observe that people who daily drink more than four cups of coffee have a decreased chance of developing skin cancer. This does not necessarily mean that coffee confers resistance to cancer; one alternative explanation would be that people who drink a lot of coffee work indoors for long hours and thus have little exposure to the sun, a known risk. If this is the case, then the number of hours spent outdoors is a <strong>confounding variable</strong>—a cause common to both observations. In such a situation, a direct causal link cannot be inferred; the association merely suggests a hypothesis, such as a common cause, but does not offer proof. In addition, when many variables in complex systems are studied, spurious associations can arise. Thus, <strong>association does not imply causation</strong> <span class="citation" data-cites="altman2015">(<a href="references.html#ref-altman2015" role="doc-biblioref">Altman and Krzywinski 2015</a>)</span>.</p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -457,7 +471,8 @@ Step 4: Decide whether or not the result is statistically significant
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When we run the test, we get a value for the t-statistic (t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom. We also get a p-value &lt; 0.001 which is less than α=0.05 (so, reject <span class="math inline">\(H_{0}\)</span>).</p>
+<p>When we run the test, we get a value for the t-statistic (here t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom.</p>
+<p>We also get a p-value. In our example, the p-value &lt; 0.001 which is less than α=0.05 (so, we reject <span class="math inline">\(H_{0}\)</span>). Note that the significance of correlation also depends upon the sample size. If the sample size is large, even a weak correlation may be significant, and for a small sample size, even a strong association may or may not be significant.</p>
 <p>To find a 95% confidence interval for ρ we have to use a Fisher’s z transformation to get a quantity <span class="math inline">\(Z_{r}\)</span> that has approximately Normal distribution. The Fisher’s z transformation of sample correlation coefficient r is:</p>
 <p><span id="eq-r3"><span class="math display">\[ Z_{r}= \frac{1}{2} ln \frac{1+r}{1-r}  \tag{9.3}\]</span></span></p>
 <p>The 95% CI of the <span class="math inline">\(Z_{r}\)</span> is:</p>
@@ -484,6 +499,58 @@ Step 5: Interpret the results
 <p>&nbsp;</p>
 </section></section><section id="rank-correlation-spearmans-r_s-coefficient" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="rank-correlation-spearmans-r_s-coefficient">
 <span class="header-section-number">9.3</span> Rank correlation (Spearman’s <span class="math inline">\(r_{s}\)</span> coefficient)</h2>
+<p>The basic idea of Spearman’s rank correlation is that the <strong>ranks of X and Y</strong> are obtained by first separately ordering their values from small to large and then computing the correlation between the two sets of ranks. The strength of correlation is denoted by the coefficient of rank correlation, named Spearman’s rank correlation coefficient, <span class="math inline">\(r_{s}\)</span>.</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Assumptions for Spearman’s</strong> <span class="math inline">\(r_{s}\)</span> coefficient
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>There is a <strong>monotonic association</strong> between the two variables (<a href="#fig-monotonicity">Figure&nbsp;<span>9.5</span></a> a and b)</li>
+</ol>
+<p>In a monotonic association, the variables tend to move in the same relative direction, but not necessarily at a constant rate. So all linear correlations are monotonic but the opposite is not always true, because we can have also monotonic non-linear associations.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-monotonicity" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="correlation_files/figure-html/fig-monotonicity-1.png" class="lightbox" title="The association can be (a) linear monotonic (b) monotonic non-linear, or (c) non-monotonic." data-gallery="quarto-lightbox-gallery-5"><img src="correlation_files/figure-html/fig-monotonicity-1.png" class="img-fluid figure-img" width="1132"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9.5: The association can be (a) linear monotonic (b) monotonic non-linear, or (c) non-monotonic.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<ol start="2" type="1">
+<li>The variables are observed on a random sample of individuals (each individual should have a pair of values).<br>
+</li>
+</ol>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Characteristics of Spearman’s rank correlation coefficient <span class="math inline">\(r\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Formula</strong></p>
+<p>Suppose a set of <span class="math inline">\({n}\)</span> pairs of observations <span class="math inline">\((x_{1},y_{1}),\ldots ,(x_{n},y_{n})\)</span>. Let <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(y_{i}\)</span> be arranged in ascending order, and the ranks of <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(y_{i}\)</span> in their respective order be denoted by <span class="math inline">\(R_{x_{i}}\)</span> and <span class="math inline">\(R_{y_{i}}\)</span>, respectively. Spearman’s rank correlation coefficient of the sample is defined as:</p>
+<p><span id="eq-rk1"><span class="math display">\[r_{s} = \frac{\sum_{i=1}^n (R_{x_i} - \bar{R_{x}})(R{y_i} - \bar{R{y}})}{\sqrt{\sum_{i=1}^n (R_{x_i} - \bar{R_x})^2 \sum_{i=1}^n(R_{y_i} - \bar{R_{y}})^2}} \tag{9.7}\]</span></span></p>
+<p>where <span class="math inline">\(\bar{R_{x}}= \frac{1}{n} \cdot \sum_{i=1}^n R_{x_i}\)</span> and <span class="math inline">\(\bar{R_{y}}= \frac{1}{n} \cdot \sum_{i=1}^n R_{y_i}\)</span></p>
+<p><strong>Range of values</strong></p>
+<p>The interpretation of Spearman’s rank correlation coefficient <span class="math inline">\(r_{s}\)</span> is similar to the Pearson correlation coefficient <span class="math inline">\(r\)</span> , and <span class="math inline">\(r_{s}\)</span> takes values from −1 to 1.</p>
+<p>The closer <span class="math inline">\(r_{s}\)</span> is to 0, the weaker is the correlation; <span class="math inline">\(r_{s}=1\)</span> indicates a perfect correlation of ranks, <span class="math inline">\(r_{s}=-1\)</span> indicates a perfect negative correlation of ranks, and <span class="math inline">\(r_{s}=0\)</span> indicates no monotonic correlation between ranks.</p>
+</div>
+</div>
+<p>Using the data in <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> and the <a href="#eq-rk1">Equation&nbsp;<span>9.7</span></a> we find the Spearman’s correlation coefficient <span class="math inline">\(r_{s}= 0.65\)</span>.</p>
+<p>&nbsp;</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -617,7 +684,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true});</script>
 
 
 </body></html>

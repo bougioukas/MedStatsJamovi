@@ -61,11 +61,42 @@ data_bp|>
 ```
 :::
 
-From the scatter plot, there appears to be a linear association between sbp and dbp, with higher values of dbp being associated with higher values of sbp. How can we summarize this association simply? We could calculate the Pearson's correlation coefficient, $r$, which is a measure of the linear association between two numeric variables.
+From the scatter plot, there appears to be a linear association between sbp and dbp, with higher values of dbp being associated with higher values of sbp. How can we summarize this association simply? We could calculate the Pearson's correlation coefficient, $r$, which is a measure of the linear association between two numeric variables. The Pearson's correlation coefficient is based on **the sum of products about the mean of the two variables**, so we shall start by considering the properties of the sum of products.
 
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-correlation01
+#| fig-cap: Scatter plot with axes through the mean point.
+#| fig-width: 9.0
+#| fig-height: 6.5
 
+# plot 0.1
+data_bp|>
+  ggplot(aes(dbp, sbp)) +
+  geom_point(color = "deeppink", size = 3 ,alpha = 0.7) +
+  #ggtitle(paste0("Negative Correlation r=", round(cor1, digits=1))) +
+  theme_steve() +
+  geom_vline(xintercept=mean(data_bp$dbp), linetype="dashed", color = "blue", size = 1.0) +
+  geom_hline(yintercept=mean(data_bp$sbp), linetype="dashed", color = "blue", size = 1.0) +
+  annotate("text", x = 100, y = 200, size = 5.0, label = "(+, +) = + \n+ positive association") +
+  annotate("text", x = 71, y = 103, size = 5.0, label = "(-, -) = + \n+ positive association") +
+  annotate("text", x = 70, y = 200, size = 5.0, label = "(-, +) = - \n- negative association") +
+  annotate("text", x = 100, y = 103, size = 5.0, label = "(+, -) = - \n- negative association") 
+  
+```
 
-### Pearson's ${r}$ correlation coefficient 
+@fig-correlation01 shows the scatter diagram of @fig-correlation0 with two blue new axes drawn through the mean point. The distances of the points from these axes represent the deviations from the mean.
+
+**Positive product:** In the **top right** section of @fig-correlation01, the deviations from the mean of both variables, dbp and sbp, are positive. Hence, their products will be positive. In the **bottom left** section, the deviations from the mean of the two variables will both be negative. Again, their product will be positive.
+
+**Negative product:** In the **top left** section of @fig-correlation01, the deviation of dbp from its mean will be negative, and the deviation of sbp from its mean will be positive. The product of these will be negative. In the **bottom right** section, the product will again be negative.
+
+So in @fig-correlation01 most of these products will be positive, and their sum will be positive. We say that there is a **positive correlation** between the two variables; as one increases so does the other. If one variable decreased as the other increased, we would have a scatter diagram where most of the points lay in the top left and bottom right sections. In this case the sum of the products would be negative and there would be a **negative correlation** between the variables. When the two variables are not related, we have a scatter diagram with roughly the same number of points in each of the sections. In this case, there are as many positive as negative products, and the sum is zero. There is **zero correlation** or **no correlation**. The variables are said to be uncorrelated.
+
+ 
+
+### Pearson's ${r}$ correlation coefficient
 
 The **Pearson's correlation coefficient**, ${r}$, can be calculated for any dataset with two numeric variables. However, before we calculate the Pearson's ${r}$ coefficient we should make sure that the following **assumptions** are met:
 
@@ -81,7 +112,7 @@ The **Pearson's correlation coefficient**, ${r}$, can be calculated for any data
  
 
 ::: {.callout-tip icon="false"}
-## Characteristics of Pearson's coefficient $r$
+## Characteristics of Pearson's correlation coefficient $r$
 
 **Formula**
 
@@ -275,17 +306,16 @@ pcor9 <- dat9|>
 ```
 :::
 
-
-Using the data in @fig-correlation0 and the @eq-r1 we find the sample correlation coefficient is r=0.62.
+Using the data in @fig-correlation0 and the @eq-r1 we find the Pearson's correlation coefficient r=0.62.
 
  
 
 ::: callout-important
 ## **Correlation is not causation**
 
-Any observed association is not necessarily assumed to be a causal one- it may be caused by other factors.
+Any observed association is not necessarily assumed to be a causal one- it may be caused by other factors. **Correlation indicated only association, but it does not indicate cause-effect association.**
 
-As an example, suppose we observe that people who daily drink more than 4 cups of coffee have a decreased chance of developing skin cancer. This does not necessarily mean that coffee confers resistance to cancer; one alternative explanation would be that people who drink a lot of coffee work indoors for long hours and thus have little exposure to the sun, a known risk. If this is the case, then the number of hours spent outdoors is a **confounding variable**---a cause common to both observations. In such a situation, a direct causal link cannot be inferred; the association merely suggests a hypothesis, such as a common cause, but does not offer proof. In addition, when many variables in complex systems are studied, spurious associations can arise. Thus, **association does not imply causation** [@altman2015].
+As an example, suppose we observe that people who daily drink more than four cups of coffee have a decreased chance of developing skin cancer. This does not necessarily mean that coffee confers resistance to cancer; one alternative explanation would be that people who drink a lot of coffee work indoors for long hours and thus have little exposure to the sun, a known risk. If this is the case, then the number of hours spent outdoors is a **confounding variable**---a cause common to both observations. In such a situation, a direct causal link cannot be inferred; the association merely suggests a hypothesis, such as a common cause, but does not offer proof. In addition, when many variables in complex systems are studied, spurious associations can arise. Thus, **association does not imply causation** [@altman2015].
 :::
 
  
@@ -295,20 +325,16 @@ As an example, suppose we observe that people who daily drink more than 4 cups o
 ::: {.callout-note icon="false"}
 ## Step 1: Determine the appropriate null hypothesis and alternative hypothesis
 
-- The null hypothesis, $H_{0}$, states that the population correlation, ρ, is zero ($ρ = 0$). There is not association between dbp and spb.
+-   The null hypothesis, $H_{0}$, states that the population correlation, ρ, is zero ($ρ = 0$). There is not association between dbp and spb.
 
-
-- The alternative hypothesis, $H_{1}$, states that the population correlation, ρ, is zero ($ρ \neq 0$). There is association between dbp and spb.
+-   The alternative hypothesis, $H_{1}$, states that the population correlation, ρ, is zero ($ρ \neq 0$). There is association between dbp and spb.
 :::
-
-
 
 ::: {.callout-note icon="false"}
 ## Step 2: Set the level of significance, α
 
 We set the value α=0.05 for the level of significance (type I error).
 :::
-
 
 ::: {.callout-note icon="false"}
 ## Step 3: Identify the appropriate test statistic and check the assumptions. Calculate the test statistic.
@@ -319,55 +345,134 @@ $$t = \frac{r}{SE_{r}}=\frac{r}{\sqrt{(1-r^2)/(n-2)}}$$ {#eq-r2}
 
 where n is the sample size and $SE_{r}=\sqrt{ \frac{(1-r^2)}{(n-2)}}$.
 
-
 For the data in our example, the number of observations are n= 96, r= 0.62 and $SE_{r}=\sqrt{ \frac{(1-0.62^2)}{(96-2)}}= \sqrt{ \frac{(1-0.3844)}{94}} = \sqrt{\frac{0.6156}{94}}= 0.081$.
 
 According to @eq-r2:
 
 $$t = \frac{r}{SE_{r}}= \frac{0.62}{0.081}= 7.65$$
-
 :::
-
-
 
 ::: {.callout-note icon="false"}
 ## Step 4: Decide whether or not the result is statistically significant
 
-When we run the test, we get a value for the t-statistic (t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom. We also get a p-value < 0.001 which is less than α=0.05 (so, reject $H_{0}$). 
+When we run the test, we get a value for the t-statistic (here t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom.
 
-To find a 95% confidence interval for ρ we have to use a Fisher’s z transformation to get a quantity $Z_{r}$ that has approximately Normal distribution. The Fisher’s z transformation of sample correlation coefficient r is:
+We also get a p-value. In our example, the p-value \< 0.001 which is less than α=0.05 (so, we reject $H_{0}$). Note that the significance of correlation also depends upon the sample size. If the sample size is large, even a weak correlation may be significant, and for a small sample size, even a strong association may or may not be significant.
+
+To find a 95% confidence interval for ρ we have to use a Fisher's z transformation to get a quantity $Z_{r}$ that has approximately Normal distribution. The Fisher's z transformation of sample correlation coefficient r is:
 
 $$ Z_{r}= \frac{1}{2} ln \frac{1+r}{1-r} $$ {#eq-r3}
 
-
-
-
-The 95% CI of the $Z_{r}$ is: 
+The 95% CI of the $Z_{r}$ is:
 
 $$ 95\%CI= z_{r} \ \pm 1.96 \cdot SE{z_{r}}= z_{r} \ \pm \frac{1.96}{\sqrt{n-3}}=[z_{r_{L}}, z_{r_{U}}]$$ {#eq-r4}
-
 
 where $SE{z_{r}}=\frac{1}{\sqrt{n-3}}$ and $z_{r_{L}}, z_{r_{U}}$ the lower and upper limits of the 95%CI of $Z_{r}$ respectively.
 
 Finally, we invert the confidence limits of $Z_{r}$; then the lower and upper limits of the 95%CI of ρ are:
 
-$$ ρ_{L}= \frac{e^{2 \cdot z_{r_{L}}}-1}{e^{2 \cdot z_{r_{L}}}+1}= 0.48 $$ {#eq-r5}
-$$ ρ_{L}= \frac{e^{2 \cdot z_{r_{U}}}-1}{e^{2 \cdot z_{r_{U}}}+1}= 0.73 $$ {#eq-r6}
-
+$$ ρ_{L}= \frac{e^{2 \cdot z_{r_{L}}}-1}{e^{2 \cdot z_{r_{L}}}+1}= 0.48 $$ {#eq-r5} $$ ρ_{L}= \frac{e^{2 \cdot z_{r_{U}}}-1}{e^{2 \cdot z_{r_{U}}}+1}= 0.73 $$ {#eq-r6}
 
 The 95% CI calculated from @eq-r5 and @eq-r6 is 0.48 to 0.73, so there are quite a wide range of plausible correlation values associated with these data. Additonally, note that the 95% CI of ρ is asymmetric.
-
 :::
-
 
 ::: {.callout-note icon="false"}
 ## Step 5: Interpret the results
 
-There is evidence of a positive association between dbp and sbp (r= 0.62, 95%CI: 0.48, 0.73, p < 0.001).
-
+There is evidence of a positive association between dbp and sbp (r= 0.62, 95%CI: 0.48, 0.73, p \< 0.001).
 :::
-
 
  
 
 ## Rank correlation (Spearman's $r_{s}$ coefficient)
+
+The basic idea of Spearman's rank correlation is that the **ranks of X and Y** are obtained by first separately ordering their values from small to large and then computing the correlation between the two sets of ranks. The strength of correlation is denoted by the coefficient of rank correlation, named Spearman's rank correlation coefficient, $r_{s}$.
+
+::: {.callout-warning icon="false"}
+## **Assumptions for Spearman's** $r_{s}$ coefficient
+
+1.  There is a **monotonic association** between the two variables (@fig-monotonicity a and b)
+
+In a monotonic association, the variables tend to move in the same relative direction, but not necessarily at a constant rate. So all linear correlations are monotonic but the opposite is not always true, because we can have also monotonic non-linear associations.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-monotonicity
+#| fig-cap: The association can be (a) linear monotonic (b) monotonic non-linear, or (c) non-monotonic.
+#| fig-width: 11.8
+#| fig-height: 4.0
+
+
+
+# plot 1
+set.seed(124)
+
+x1 <- runif(20, 0, 100)
+y1 <- 5*x1 + rnorm(20, 0, 10)
+df1 <- tibble(x1, y1)
+
+pmon1 <- df1|>
+  ggplot(aes(x1, y1)) +
+  geom_point(color = "chartreuse3", size= 3, alpha = 0.8) +
+  ggtitle("Linear monotonic association") +
+  theme_steve() +
+  theme(plot.title = element_text(size = 10, face = "bold"))
+
+
+# plot2
+x2 <- x1
+y2 <- x1^2
+df2 <- tibble(x2, y2)
+
+pmon2 <- df2|>
+  ggplot(aes(x2, y2)) +
+  geom_point(color = "blue", size= 3) +
+  ggtitle("Monotonic non-linear association") +
+  theme_steve() +
+  theme(plot.title = element_text(size = 10, face = "bold"))
+
+
+# plot3
+#create data frame
+df3 <- tibble(x3=1:20,
+                 y3=c(3, 14, 23, 25, 23, 15, 9, 5, 9, 13, 17, 24, 32, 36, 37, 35, 33, 31, 25, 20))
+
+
+pmon3 <- df3|>
+  ggplot(aes(x3, y3)) +
+  geom_point(color = "deeppink", size= 3, alpha = 0.8) +
+  ggtitle("Non-monotonic association") +
+  theme_steve() +
+  theme(plot.title = element_text(size = 10, face = "bold"))
+
+
+pmon1 + pmon2 + pmon3 + plot_annotation(tag_levels = 'a')
+```
+
+ 
+
+2.  The variables are observed on a random sample of individuals (each individual should have a pair of values).\
+:::
+
+::: {.callout-tip icon="false"}
+## Characteristics of Spearman's rank correlation coefficient $r$
+
+**Formula**
+
+Suppose a set of ${n}$ pairs of observations $(x_{1},y_{1}),\ldots ,(x_{n},y_{n})$. Let $x_{i}$ and $y_{i}$ be arranged in ascending order, and the ranks of $x_{i}$ and $y_{i}$ in their respective order be denoted by $R_{x_{i}}$ and $R_{y_{i}}$, respectively. Spearman's rank correlation coefficient of the sample is defined as:
+
+$$r_{s} = \frac{\sum_{i=1}^n (R_{x_i} - \bar{R_{x}})(R{y_i} - \bar{R{y}})}{\sqrt{\sum_{i=1}^n (R_{x_i} - \bar{R_x})^2 \sum_{i=1}^n(R_{y_i} - \bar{R_{y}})^2}}$$ {#eq-rk1}
+
+where $\bar{R_{x}}= \frac{1}{n} \cdot \sum_{i=1}^n R_{x_i}$ and $\bar{R_{y}}= \frac{1}{n} \cdot \sum_{i=1}^n R_{y_i}$
+
+**Range of values**
+
+The interpretation of Spearman's rank correlation coefficient $r_{s}$ is similar to the Pearson correlation coefficient $r$ , and $r_{s}$ takes values from −1 to 1.
+
+The closer $r_{s}$ is to 0, the weaker is the correlation; $r_{s}=1$ indicates a perfect correlation of ranks, $r_{s}=-1$ indicates a perfect negative correlation of ranks, and $r_{s}=0$ indicates no monotonic correlation between ranks.
+:::
+
+Using the data in @fig-correlation0 and the @eq-rk1 we find the Spearman's correlation coefficient $r_{s}= 0.65$.
+
+ 
