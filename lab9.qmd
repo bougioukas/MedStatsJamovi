@@ -1,1 +1,129 @@
-# LAB IX: Correlation
+# LAB IX: Correlation {#sec-lab9}
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+
+library(fontawesome)
+
+
+library(readxl)
+LungCapacity <- read_excel(here("data", "LungCapacity.xlsx"))
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Understand the concept of correlation of two numeric variables.
+-   Compute Pearson’s r and Spearmans $r_{s}$ correlation coefficients between two numeric variables
+-   Discuss the possible meaning of correlations that we observe.
+:::
+
+
+ 
+
+In this Lab, we will use the data from `LungCapacity` dataset.(**Note:** This starts by assuming we know how to get data into Jamovi).
+
+
+
+### Opening the file
+
+Open the dataset named `LungCapacity` from the file tab in the menu:
+
+![The LungCapacity dataset](images/lungcap.png){#fig-lungcap1}
+
+The dataset `LungCapacity` has 725 participants and includes three variables. The numeric variables of interest are the `Age` and the `LungCap` (@fig-lungcap1). Double-click on the variable name `Age` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
+
+
+### Research question
+
+Let’s say that we want to explore the association between age (in years) and lung capacity (in liters) for the sample of 725 participants in a survey.
+
+
+### Hypothesis Testsing
+
+::: {.callout-note icon="false"}
+## Null hypothesis and alternative hypothesis
+
+-   $H_{0}:$ there is not association between `Age` and `LungCap` ($ρ = 0$).
+
+-   $H_{1}:$ there is association between `Age` and `LungCap` ($ρ \neq 0$).
+:::
+
+
+### Graphical display with a scatter plot
+
+A first step that is usually useful in studying the association between two continuous variables is to prepare a **scatter plot** of the data.
+The pattern made by the points plotted on the scatter plot usually suggests the basic nature and strength of the association between two variables.
+
+The flowchart of the process is:
+
+```{mermaid}
+flowchart LR
+  A(Analyses tab) -.-> B(Exploration) -.-> C(Scatter plot)
+```
+
+from the top menu, as shown below in @fig-lungcap_scatter1.
+
+![In the Analyses Tab select Exploration and click on Scatterplot](images/lungcap_scatter1.png){#fig-lungcap_scatter1}
+
+
+The `Scatterplot` dialogue box opens, as shown below @fig-lungcap_scatter2:
+
+![The Scatterplot dialogue box](images/lungcap_scatter2.png){#fig-lungcap_scatter2 width="470" height="442"}
+
+Transfer the `Age` and `LungCap` variables from the box on the left side of the screen into the `X-Axis` and `Y-Axis` boxes on the right side by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"})  (alternatively, drag and drop the variables), respectively. Finally, from `Marginals` click on the `Densities` radio button. We will end up with the following screen:
+
+![Transfer the `Age` variable into the `X-Axis` box and the `LungCap` variable into the `Y-Axis` box ](images/lungcap_scatter3.png){#fig-lungcap_scatter3 width="500" height="442"}
+
+The output should look like the following graph (@fig-lungcap_scatter4):
+
+![The Scatter of Age and Lung Capacity with the marginal density plots](images/lungcap_scatter4.png){#fig-lungcap_scatter4 width="600"}
+
+The above density plots (light blue histograms) show that the data are approximately **normally distributed** for both `Age` and `LungCap` (we have a large sample so the graphs are reliable).
+
+Additionally, the points in the scatter plot seem to be scattered around an invisible **line**. The scatter plot also shows that, in general, older participants tend to have higher lung capacity (**positive association**).
+
+The Pearson’s correlation coefficient can quantify the strength of this linear association (alternative is Spearman's correlation coefficients).
+
+ 
+
+### Applying the Pearson’s correlation coefficient, r
+
+Running correlation in Jamovi requires only a few steps once the data is ready to go. To start, click on the `Regression` and then on `Correlation Matrix`: 
+
+```{mermaid}
+flowchart LR
+  A(Analyses tab) -.-> B(Regression) -.-> C(Correlation Matrix)
+```
+
+from the top menu, as shown below in @fig-lungcap_scatter5.
+
+![In the Analyses Tab select Regression and click on Correlation Matrix](images/lungcap_scatter5.png){#fig-lungcap_scatter5}
+
+The `Correlation Matrix` dialogue box opens, as shown below @fig-lungcap_scatter6:
+
+![The Correlation Matrix dialogue box](images/lungcap_scatter6.png){#fig-lungcap_scatter6 width="500" height="530"}
+
+
+Transfer the `Age` and `LungCap` variables from the box on the left-hand side of the screen into the box on the right-hand side by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"})  (alternatively, drag and drop the variables), respectively. Finally, from `Additional Options` check the `Confidence Intervals` box. We will end up with the following screen:
+
+![Transfer the `Age` and `LungCap` variables from the left-hand side to the right-hand side box and  check the  `Confidence Intervals` box](images/lungcap_scatter7.png){#fig-lungcap_scatter7 width="500" height="530"}
+
+The output table should look like the following (@fig-lungcap_cortable):
+
+![The output table of correlation coefficient ](images/lungcap_cortable.png){#fig-lungcap_cortable width="350" height="290"}
+
+
+::: {.callout-note icon="false"}
+## Interpretation of the results
+
+There is evidence of a significant **linear positive very strong** association between **Age** and **Lung Capacity** (r= 0.82, 95% CI: 0.79, 0.84, p \< 0.001).
+:::
+
+
+

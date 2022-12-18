@@ -1,6 +1,5 @@
 # LAB II: Descriptive Statistics {#sec-lab2}
 
-
 ```{r}
 #| include: false
 
@@ -27,16 +26,14 @@ When we have finished this Lab, we should be able to:
 
  
 
-In this Lab, we will use the data from `arrhythmia` dataset that we have already downloaded in our PC.
-
-
+In this Lab, we will use the data from `arrhythmia` dataset that we have already downloaded in our PC. (**Note:** This starts by assuming we know how to get data into Jamovi).
 
 
 ## Summarizing Categorical Data (Frequency Statistics for one categorical variable)
 
 Consider the binary `sex` variable in arrhythmia dataset. A simple way for summarizing the data is to create a table that shows the number of times each category has been observed.
 
-Firstly, we add labels to numerically coded values of `sex` variable (see @sec-lab1) (0 = male, 1 = female). 
+Firstly, we add labels to numerically coded values of `sex` variable (see @sec-lab1) (0 = male, 1 = female).
 
 Then we select:
 
@@ -49,10 +46,9 @@ from the top menu, as shown below in @fig-descriptives1.
 
 ![In the Analyses Tab select Exploration and click on Descriptives](images/descriptives1.png){#fig-descriptives1}
 
-The `Descriptives` dialogue box opens, as shown below:
+The `Descriptives` dialogue box opens, as shown below @fig-descriptives2:
 
 ![The Descriptives dialogue box](images/descriptives2.png){#fig-descriptives2 width="500" height="442"}
-
 
 Transfer the `sex` variable from the box on the left side of the screen into the `Variables` box on the right side by highlighting the variable and pressing the Arrow Button (alternatively, drag and drop the variable `sex`). We will end up with the following screen:
 
@@ -64,22 +60,19 @@ Finally, we check the `Frequency tables` box and we also unchecked all the other
 
 The output should look like the following:
 
-![The output of frequency distribution of  sex](images/descriptives5.png){#fig-descriptives5}
+![The output of frequency distribution of sex](images/descriptives5.png){#fig-descriptives5}
 
 The percentage of female patients (55%, 249/452) is larger than the percentage of male patients (45%, 203/452) in our data.
 
-
 To generate a basic descriptive plot navigate to the `Plot` section and check the `Bar Plot`, as shown below:
 
-![From the Plot section check the `Bar Plot` ](images/descriptives6.png){#fig-descriptives6}
+![From the Plot section check the `Bar Plot`](images/descriptives6.png){#fig-descriptives6}
 
 The Bar Plot produced here presents the absolute frequencies (counts).
 
 ![The `Bar Plot` produced by Jamovi for a binary variable](images/descriptives7.png){#fig-descriptives7}
 
 More descriptive plots are available for all data types using the `surveymv` and `JJStatsPlot` modules.
-
-
 
 ## Summarizing Numerical Data
 
@@ -94,23 +87,19 @@ Now, select the variables `age` and `QRS` and drag them in the empty `Variables`
 
 ![select the variables `age` and `QRS`](images/descriptives8.png){#fig-descriptives8}
 
-
 Next, we decide how to display our data tables. We have got the following two options:
 
-- Variables across columns
+-   Variables across columns
 
-- Variables across rows
+-   Variables across rows
 
-Let' select variable across columns (the default). 
-
+Let' select variable across columns (the default).
 
 We can now select the relevant descriptive statistics in the `Statistics` section:
 
 ![select the descriptive statistics of interest](images/descriptives9.png){#fig-descriptives9}
 
-
 Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below:
-
 
 ![Descriptive statistics of interest for `age` and `QRS` variables](images/descriptives10.png){#fig-descriptives10}
 
@@ -120,18 +109,12 @@ For continuous data we can select Histograms, Box Plots, Violin and Data as show
 
 ![Histograms of age](images/hist1.png){#fig-hist1}
 
-
 ![Violin plot of age](images/violin1.png){#fig-violin1}
 
 Age is a symmetrical distribution.
 
-
-
 ![Histograms of QRS](images/hist2.png){#fig-hist2}
-
 
 ![Violin plot of QRS](images/violin2.png){#fig-violin2}
 
 QRS is an asymmetrical distribution (the data are skewed to the right).
-
-

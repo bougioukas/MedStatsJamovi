@@ -227,9 +227,9 @@ ul.task-list li input[type="checkbox"] {
   <li>
 <a href="#two-sample-t-test-students-t-test" id="toc-two-sample-t-test-students-t-test" class="nav-link" data-scroll-target="#two-sample-t-test-students-t-test"><span class="toc-section-number">16.3</span>  Two-sample t-test (Student’s t-test)</a>
   <ul class="collapse">
-<li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+<li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link" data-scroll-target="#opening-the-file">Opening the file</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
   <li><a href="#hypothesis-testsing" id="toc-hypothesis-testsing" class="nav-link" data-scroll-target="#hypothesis-testsing">Hypothesis Testsing</a></li>
-  <li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link" data-scroll-target="#opening-the-file">Opening the file</a></li>
   <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
   </ul>
 </li>
@@ -278,7 +278,15 @@ Learning objectives
 </section><section id="two-sample-t-test-students-t-test" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="two-sample-t-test-students-t-test">
 <span class="header-section-number">16.3</span> Two-sample t-test (Student’s t-test)</h2>
 <p>Two sample t-test (Student’s t-test) can be used if we have two independent (unrelated) groups (e.g., males-females, treatment-non treatment) and one quantitative variable of interest.</p>
-<section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
+<section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
+<p>Open the dataset named <code>depression</code> from the file tab in the menu:</p>
+<div id="fig-depression1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/depression1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The depression dataset"><img src="images/depression1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.1: The depression dataset</figcaption><p></p>
+</figure>
+</div>
+<p>The dataset <code>depression</code> has 76 patients and includes two variables. The <code>treatment</code> variable and the <code>HDRS</code> variable (<a href="#fig-depression1">Figure&nbsp;<span>16.1</span></a>). Double-click on the variable name <code>HDRS</code> and change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/continuous.png" width="23" height="21"></a>.</p>
+</section><section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
 <p>In an experiment designed to test the effectiveness of paroxetine for treating bipolar depression, the participants were randomly assigned into two groups (intervention Vs placebo).</p>
 <p>The researchers used the Hamilton Depression Rating Scale (HDRS) to measure the depression state of the participants and wanted to find out if the HDRS score is different in paroxetine group as compared to placebo group at the end of the experiment. The significance level α was set to 0.05.</p>
 <p>Note A score of 0–7 in HDRS is generally accepted to be within the normal range, while a score of 20 or higher indicates at least moderate severity.</p>
@@ -301,14 +309,6 @@ Null hypothesis and alternative hypothesis
 </ul>
 </div>
 </div>
-</section><section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
-<p>Open the dataset named <code>depression</code> from the file tab in the menu:</p>
-<div id="fig-depression1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/depression1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The depression dataset"><img src="images/depression1.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.1: The depression dataset</figcaption><p></p>
-</figure>
-</div>
-<p>The dataset <code>depression</code> has 76 patients and includes two variables. The <code>treatment</code> variable and the <code>HDRS</code> variable (<a href="#fig-depression1">Figure&nbsp;<span>16.1</span></a>). Double-click on the variable name <code>HDRS</code> and change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/continuous.png" width="23" height="21"></a>.</p>
 </section><section id="assumptions" class="level3"><h3 class="anchored" data-anchor-id="assumptions">Assumptions</h3>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -496,7 +496,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true});</script>
 
 
 </body></html>

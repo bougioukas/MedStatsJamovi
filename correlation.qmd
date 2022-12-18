@@ -307,6 +307,23 @@ pcor9 <- dat9|>
 
  
 
+**Interpretation of the association**
+
+The @tbl-correlation demonstrates how to interpret the strength of an association.
+
+
+| Value of r          | Strength of association |
+|---------------------|-------------------------|
+| $|r| \geq{0.8}$     | very strong association |
+| $0.6\leq|r| < 0.8$  | strong association      |
+| $0.4\leq|r| < 0.6$  | moderate association    |
+| $0.2\leq|r| < 0.4$  | weak association        |
+| $|r| < 0.2$         | very weak association   |
+
+: Interpretation of the values of the sample estimate of the correlation coefficient {#tbl-correlation}
+
+ 
+
 **Anscombe's Quartet**
 
 Anscombe's quartet comprises four datasets that have nearly identical simple descriptive statistics, yet have very different distributions and appear very different when graphed. Each dataset consists of eleven (x,y) points. They were constructed in 1973 by the statistician Francis Anscombe to demonstrate both the **importance of graphing data** when analyzing it, and the effect of outliers and other influential observations on statistical properties.
@@ -338,7 +355,7 @@ anscombe_quartet <- ggplot(anscombe_tidy, aes(x, y)) +
 anscombe_quartet
 ```
 
-Though all datasets have a Pearson's correlation of $r = 0.82$, when plotted the four datasets look very different. Graph I is a standard linear association where a Pearson's correlation would be suitable. Graph II would appear to be a non-linear association and a non-parametric analysis would be appropriate. Graph III again shows a linear relationship (approaching r = 1) where an outlier has lowered the correlation coefficient. Graph IV shows no association between the two variables (X, Y) but an oultier has inflated the correlation higher.
+Though all datasets have a Pearson's correlation of $r = 0.82$, when plotted the four datasets look very different. Graph I is a standard linear association where a Pearson's correlation would be suitable. Graph II would appear to be a non-linear association and a non-parametric analysis would be appropriate. Graph III again shows a linear association (approaching r = 1) where an outlier has lowered the correlation coefficient. Graph IV shows no association between the two variables (X, Y) but an oultier has inflated the correlation higher.
 :::
 
  
@@ -486,7 +503,6 @@ pmon3 <- df3|>
 
 pmon1 + pmon2 + pmon3 + plot_annotation(tag_levels = 'a')
 ```
-
 :::
 
  
@@ -510,5 +526,3 @@ The closer $r_{s}$ is to 0, the weaker is the correlation; $r_{s}=1$ indicates a
 :::
 
 Using the data in @fig-correlation0 and the @eq-rk1 we find the Spearman's correlation coefficient $r_{s}= 0.65$.
-
- 

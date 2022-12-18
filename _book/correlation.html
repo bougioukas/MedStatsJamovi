@@ -396,6 +396,40 @@ Characteristics of Pearson’s correlation coefficient <span class="math inline"
 </div>
 </div>
 <p>&nbsp;</p>
+<p><strong>Interpretation of the association</strong></p>
+<p>The <a href="#tbl-correlation">Table&nbsp;<span>9.1</span></a> demonstrates how to interpret the strength of an association.</p>
+<div id="tbl-correlation" class="anchored">
+<table class="table">
+<caption>Table&nbsp;9.1: Interpretation of the values of the sample estimate of the correlation coefficient</caption>
+<thead><tr class="header">
+<th>Value of r</th>
+<th>Strength of association</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(|r| \geq{0.8}\)</span></td>
+<td>very strong association</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(0.6\leq|r| &lt; 0.8\)</span></td>
+<td>strong association</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(0.4\leq|r| &lt; 0.6\)</span></td>
+<td>moderate association</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(0.2\leq|r| &lt; 0.4\)</span></td>
+<td>weak association</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(|r| &lt; 0.2\)</span></td>
+<td>very weak association</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
 <p><strong>Anscombe’s Quartet</strong></p>
 <p>Anscombe’s quartet comprises four datasets that have nearly identical simple descriptive statistics, yet have very different distributions and appear very different when graphed. Each dataset consists of eleven (x,y) points. They were constructed in 1973 by the statistician Francis Anscombe to demonstrate both the <strong>importance of graphing data</strong> when analyzing it, and the effect of outliers and other influential observations on statistical properties.</p>
 <div class="cell">
@@ -407,7 +441,7 @@ Characteristics of Pearson’s correlation coefficient <span class="math inline"
 </div>
 </div>
 </div>
-<p>Though all datasets have a Pearson’s correlation of <span class="math inline">\(r = 0.82\)</span>, when plotted the four datasets look very different. Graph I is a standard linear association where a Pearson’s correlation would be suitable. Graph II would appear to be a non-linear association and a non-parametric analysis would be appropriate. Graph III again shows a linear relationship (approaching r = 1) where an outlier has lowered the correlation coefficient. Graph IV shows no association between the two variables (X, Y) but an oultier has inflated the correlation higher.</p>
+<p>Though all datasets have a Pearson’s correlation of <span class="math inline">\(r = 0.82\)</span>, when plotted the four datasets look very different. Graph I is a standard linear association where a Pearson’s correlation would be suitable. Graph II would appear to be a non-linear association and a non-parametric analysis would be appropriate. Graph III again shows a linear association (approaching r = 1) where an outlier has lowered the correlation coefficient. Graph IV shows no association between the two variables (X, Y) but an oultier has inflated the correlation higher.</p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -561,7 +595,6 @@ Characteristics of Spearman’s rank correlation coefficient <span class="math i
 </div>
 </div>
 <p>Using the data in <a href="#fig-correlation0">Figure&nbsp;<span>9.1</span></a> and the <a href="#eq-rk1">Equation&nbsp;<span>9.7</span></a> we find the Spearman’s correlation coefficient <span class="math inline">\(r_{s}= 0.65\)</span>.</p>
-<p>&nbsp;</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -695,7 +728,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 </body></html>
