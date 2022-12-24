@@ -256,8 +256,8 @@ Learning objectives
 <div class="callout-body-container callout-body">
 <ul>
 <li>Understand the concept of correlation of two numeric variables.</li>
-<li>Compute Pearson’s r and Spearmans <span class="math inline">\(r_{s}\)</span> correlation coefficients between two numeric variables</li>
-<li>Discuss the possible meaning of correlations that we observe.</li>
+<li>Compute Pearson’s r (or Spearmans <span class="math inline">\(r_{s}\)</span>) correlation coefficient between two numeric variables</li>
+<li>Discuss the possible meaning of correlation that we observe.</li>
 </ul>
 </div>
 </div>
@@ -316,7 +316,7 @@ Null hypothesis and alternative hypothesis
 </div>
 <p>The <code>Scatterplot</code> dialogue box opens, as shown below <a href="#fig-lungcap_scatter2">Figure&nbsp;<span>19.3</span></a>:</p>
 <div id="fig-lungcap_scatter2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter2.png" class="lightbox" title="The Scatterplot dialogue box" data-gallery="quarto-lightbox-gallery-5"><img src="images/lungcap_scatter2.png" width="470" height="442" class="figure-img"></a></p>
+<figure class="figure"><p><a href="images/lungcap_scatter2.png" class="lightbox" title="The Scatterplot dialogue box" data-gallery="quarto-lightbox-gallery-5"><img src="images/lungcap_scatter2.png" width="450" height="442" class="figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;19.3: The Scatterplot dialogue box</figcaption><p></p>
 </figure>
 </div>
@@ -365,15 +365,16 @@ Null hypothesis and alternative hypothesis
 <p></p><figcaption class="figure-caption">Figure&nbsp;19.7: The Correlation Matrix dialogue box</figcaption><p></p>
 </figure>
 </div>
-<p>Transfer the <code>Age</code> and <code>LungCap</code> variables from the box on the left-hand side of the screen into the box on the right-hand side by highlighting the variables and pressing the Arrow Button (<a href="images/right_arrow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/right_arrow.png" width="23" height="21"></a>) (alternatively, drag and drop the variables), respectively. Finally, from <code>Additional Options</code> check the <code>Confidence Intervals</code> box. We will end up with the following screen:</p>
+<p>Transfer the <code>Age</code> and <code>LungCap</code> variables from the box on the left-hand side of the screen into the box on the right-hand side by highlighting the variables and pressing the Arrow Button (<a href="images/right_arrow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/right_arrow.png" width="23" height="21"></a>) (alternatively, drag and drop the variables), respectively.</p>
+<p>In the <code>Correlation Coefficients</code> section we can select between the following three: Pearson’s, Spearman, or Kendall’s coefficient. We keep the default choice of Pearson. Finally, from <code>Additional Options</code> check the <code>Confidence Intervals</code> box. We will end up with the following screen:</p>
 <div id="fig-lungcap_scatter7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter7.png" class="lightbox" title="Transfer the Age and LungCap variables from the left-hand side to the right-hand side box and check the Confidence Intervals box" data-gallery="quarto-lightbox-gallery-12"><img src="images/lungcap_scatter7.png" width="500" height="530" class="figure-img"></a></p>
+<figure class="figure"><p><a href="images/lungcap_scatter7.png" class="lightbox" title="Transfer the Age and LungCap variables from the left-hand side to the right-hand side box and check the Confidence Intervals box" data-gallery="quarto-lightbox-gallery-12"><img src="images/lungcap_scatter7.png" width="480" height="530" class="figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;19.8: Transfer the <code>Age</code> and <code>LungCap</code> variables from the left-hand side to the right-hand side box and check the <code>Confidence Intervals</code> box</figcaption><p></p>
 </figure>
 </div>
 <p>The output table should look like the following (<a href="#fig-lungcap_cortable">Figure&nbsp;<span>19.9</span></a>):</p>
 <div id="fig-lungcap_cortable" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_cortable.png" class="lightbox" title="The output table of correlation coefficient" data-gallery="quarto-lightbox-gallery-13"><img src="images/lungcap_cortable.png" width="350" height="290" class="figure-img"></a></p>
+<figure class="figure"><p><a href="images/lungcap_cortable.png" class="lightbox" title="The output table of correlation coefficient" data-gallery="quarto-lightbox-gallery-13"><img src="images/lungcap_cortable.png" width="350" height="280" class="figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;19.9: The output table of correlation coefficient</figcaption><p></p>
 </figure>
 </div>
@@ -387,7 +388,7 @@ Interpretation of the results
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There is evidence of a significant <strong>linear positive very strong</strong> association between <strong>Age</strong> and <strong>Lung Capacity</strong> (r= 0.82, 95% CI: 0.79, 0.84, p &lt; 0.001).</p>
+<p>There is evidence of a significant <strong>linear positive very strong</strong> association between <strong>Age</strong> and <strong>Lung Capacity</strong> (r= 0.82, 95% CI: 0.79 to 0.84, p &lt; 0.001).</p>
 </div>
 </div>
 
@@ -518,7 +519,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
 
 
 </body></html>

@@ -311,14 +311,13 @@ pcor9 <- dat9|>
 
 The @tbl-correlation demonstrates how to interpret the strength of an association.
 
-
-| Value of r          | Strength of association |
-|---------------------|-------------------------|
-| $|r| \geq{0.8}$     | very strong association |
-| $0.6\leq|r| < 0.8$  | strong association      |
-| $0.4\leq|r| < 0.6$  | moderate association    |
-| $0.2\leq|r| < 0.4$  | weak association        |
-| $|r| < 0.2$         | very weak association   |
+| Value of r         | Strength of association |
+|--------------------|-------------------------|
+| $|r| \geq{0.8}$    | very strong association |
+| $0.6\leq|r| < 0.8$ | strong association      |
+| $0.4\leq|r| < 0.6$ | moderate association    |
+| $0.2\leq|r| < 0.4$ | weak association        |
+| $|r| < 0.2$        | very weak association   |
 
 : Interpretation of the values of the sample estimate of the correlation coefficient {#tbl-correlation}
 
@@ -431,7 +430,7 @@ The 95% CI calculated from @eq-r5 and @eq-r6 is 0.48 to 0.73, so there are quite
 ::: {.callout-note icon="false"}
 ## Step 5: Interpret the results
 
-There is evidence of a positive association between dbp and sbp (r= 0.62, 95%CI: 0.48, 0.73, p \< 0.001).
+There is evidence of a positive association between dbp and sbp (r= 0.62, 95% CI: 0.48 to 0.73, p \< 0.001).
 :::
 
  
