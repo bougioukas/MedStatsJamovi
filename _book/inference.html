@@ -17,6 +17,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -223,6 +242,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
 <li><a href="#hypothesis-testsing" id="toc-hypothesis-testsing" class="nav-link active" data-scroll-target="#hypothesis-testsing"><span class="toc-section-number">5.1</span>  Hypothesis Testsing</a></li>
   <li><a href="#type-of-errors-and-power-of-the-test" id="toc-type-of-errors-and-power-of-the-test" class="nav-link" data-scroll-target="#type-of-errors-and-power-of-the-test"><span class="toc-section-number">5.2</span>  Type of Errors and Power of the test</a></li>
+  <li><a href="#choosing-a-significance-level" id="toc-choosing-a-significance-level" class="nav-link" data-scroll-target="#choosing-a-significance-level"><span class="toc-section-number">5.3</span>  Choosing a significance level</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -367,7 +387,7 @@ Example
 <p><strong>Step 4: Decide whether or not the result is statistically significant.</strong></p>
 <p>We can calculate the p-value using a statistical program such as Jamovi. In our example, the p-value is &lt;0.001 (so less than α=0.05) and <span class="math inline">\(H_{0}\)</span> is rejected. We can also estimate the 95%CI of mean as following:</p>
 <p><span class="math display">\[ 95\%CI= \bar{x} \ \pm 1.96  \frac{\sigma}{\sqrt{n}}= 82 \ \pm 1.96  \frac{8}{\sqrt{20}}= 82 \ \pm \frac{15.68}{4.472} = 82 \ \pm 3.506 = [78.49, 85.51]\]</span></p>
-<p>Note that, in this case, the value of null hypothesis, 68, is not included in the range of values of the 95%CI.</p>
+<p>Note that, in this case, the value of null hypothesis, 68, is not included in the range of values of the 95% CI.</p>
 <p><strong>Step 5: Interpret the results.</strong></p>
 <p>The mean heart rate (82 bpm) in hyperthyroidism patients is significantly higher than the heart rate in healthy adults (68 bpm).</p>
 </section><section id="type-of-errors-and-power-of-the-test" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="type-of-errors-and-power-of-the-test">
@@ -378,14 +398,49 @@ Example
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-type_errors" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/type_errors.png" class="lightbox" title="Types of error in hypothesis testing." data-gallery="quarto-lightbox-gallery-1"><img src="images/type_errors.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/type_errors.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Types of error in hypothesis testing."><img src="images/type_errors.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;5.1: Types of error in hypothesis testing.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Factors Influencing Power
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>A. Effect Size: as effect size increases, power tends to increase</strong></p>
+<p>If we have too little power in a study, then we will not be able to detect clinically interesting differences or associations. <strong>If we have too much power in a study, then tiny, arbitrary differences or associations could be detected as statistically significant, and that is not in the best interest of science</strong>. So we want enough power for our test statistics to be significant when they encounter the smallest differences or weakest associations that have reached the threshold of being clinically noteworthy. The judgment about what is clinically noteworthy is not a statistical issue; it depends on the expertise of researchers within the applied area of study.</p>
+<p>For example, a difference in means is an example of an effect size. How is effect size related to power? Let’s think about the effect of a low-dose aspirin on pain, compared with the effect of a prescription pain medication. Suppose a person is suffering from back pain. Which pill do you think will have a bigger effect on the person’s pain? We would hope that the prescription pain medication would be more effective than aspirin, resulting in a bigger reduction in pain than aspirin would provide. Which pill’s effect would be easier to detect? It should be easier to “see” the bigger effect, which came from the prescription pain medication. This is true in statistics, too. A larger effect size is easier for the test statistics to “see,” leading to a greater probability of a statistically significant result. In other words, <strong>as effect size increases, power tends to increase</strong>. If researchers are interested in detecting a small effect size because it is clinically important, they will need more power.</p>
+<p><strong>B. Sample Size: as the sample size goes up, power generally goes up.</strong></p>
+<p>The factor that is most easily changed by researchers is sample size, and it has a huge effect on power. As <span class="math inline">\(n\)</span> goes up, power generally goes up.</p>
+<p>The most common question that researchers bring to a statistician is, “How many participants should I have in my study?” Sometimes researchers talk about calculating power, but in fact researchers calculate the sample size that will give them the amount of power that they want.</p>
+<p><strong>C. Standard deviation: as variability decreases, power tends to increase</strong></p>
+<p>A way to increase the statistical power would be to make the population standard deviation, σ, smaller, and that is not so easy to do.Generally speaking, variability can be reduced by controlling extraneous variables.</p>
+<p>For example, in the glucosamine study, <span class="citation" data-cites="Wilkens2010">Wilkens et al. (<a href="references.html#ref-Wilkens2010" role="doc-biblioref">2010</a>)</span> described the inclusion and exclusion criteria for participants. Among the inclusion criteria, the researchers accepted patients if they were 25 years or older, had nonspecific chronic back pain below the 12th rib for at least 6 months, and had a certain score or higher on a measure of self-reported low back pain. Participants were excluded if, among other things, they had certain diagnoses (pregnancy, spinal fracture, etc.) and prior use of glucosamine.</p>
+<p>If the researchers let any adult into the study, there would be much more extraneous variability. For example, if people with spinal fractures were admitted to the study, their experience of back pain probably would differ considerably from similar people who did not have spinal fractures. The inclusion and exclusion criteria defining the sample would reduce some of this extraneous variability, allowing the researchers a better chance of detecting any effect of glucosamine. Thus, the researchers would have a better chance of finding statistical significance, meaning that the power would be greater.</p>
+<p><strong>D. Significance Level α: as α goes up, power goes up.</strong></p>
+<p>It would be easier to find statistical significance with a larger significance level (e.g.&nbsp;α=0.1), compared with finding a significant result with a smaller α (e.g.&nbsp;α=0.05). All else being the same, as α goes up, power goes up. And as α goes down, like from 0.05 to 0.01, power goes down.</p>
+</div>
+</div>
+</section><section id="choosing-a-significance-level" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="choosing-a-significance-level">
+<span class="header-section-number">5.3</span> Choosing a significance level</h2>
+<p>Reducing the error probability of one type of error increases the chance of making the other type. As a result, the significance level, α, is often adjusted based on the consequences of any decisions that might follow from the result of a significance test.</p>
+<p>By convention, most scientific studies use a significance level of α = 0.05; small enough such that the chance of a Type I error is relatively rare (occurring on average 5 out of 100 times), but also large enough to prevent the null hypothesis from almost never being rejected. If a Type I error is especially dangerous or costly, a smaller value of α is chosen (e.g., 0.01). Under this scenario, very strong evidence against <span class="math inline">\(H_{0}\)</span> is required in order to reject <span class="math inline">\(H_{0}\)</span>.</p>
+<p>Conversely, if a Type II error is relatively dangerous, then a larger value of α is chosen (e.g., 0.10). Hypothesis tests with larger values of α will reject <span class="math inline">\(H_{0}\)</span> more often. For example, in the early stages of assessing a drug therapy, it may be important to continue further testing even if there is not very strong initial evidence for a beneficial effect. If the scientists conducting the research know that any initial positive results will eventually be more rigorously tested in a larger study, they might choose to use α = 0.10 to reduce the chances of making a Type II error: prematurely ending research on what might turn out to be a promising drug.</p>
+<p>A government agency responsible for approving drugs to be marketed to the general population, however, would like to minimize the chances of making a Type I error— approving a drug that turns out to be unsafe or ineffective. As a result, they might conduct tests at significance level 0.01 in order to reduce the chances of concluding that a drug works when it is in fact ineffective.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-Wilkens2010" class="csl-entry" role="doc-biblioentry">
+Wilkens, Philip, Inger B. Scheel, Oliver Grundnes, Christian Hellum, and Kjersti Storheim. 2010. <span>“Effect of Glucosamine on Pain-Related Disability in Patients With Chronic Low Back Pain and Degenerative Lumbar Osteoarthritis.”</span> <em>JAMA</em> 304 (1): 45. <a href="https://doi.org/10.1001/jama.2010.893">https://doi.org/10.1001/jama.2010.893</a>.
+</div>
+</div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -512,7 +567,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 </body></html>
