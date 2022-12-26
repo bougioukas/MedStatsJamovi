@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -232,7 +235,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#independent-vs-dependent-samples" id="toc-independent-vs-dependent-samples" class="nav-link active" data-scroll-target="#independent-vs-dependent-samples"><span class="toc-section-number">6.1</span>  Independent Vs Dependent samples</a></li>
+  <li><a href="#two-sample-t-test-students-t-test" id="toc-two-sample-t-test-students-t-test" class="nav-link" data-scroll-target="#two-sample-t-test-students-t-test"><span class="toc-section-number">6.2</span>  Two-sample t-test (Student’s t-test)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -253,7 +263,25 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Two sample t-test (Student’s t-test) can be used if we have two independent (unrelated) groups (e.g., males-females, unmatched case-controls, treatment-non treatment) and one quantitative variable of interest (e.g., age, weight, systolic blood pressure). For example, we may want to compare the age in males and females or the weights in two groups of children, each child being randomly allocated to receive either a dietary supplement or placebo.</p>
+<section id="independent-vs-dependent-samples" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="independent-vs-dependent-samples"><span class="header-section-number">6.1</span> Independent Vs Dependent samples</h2>
+<p>Two samples may classified either as independent or dependent (paired) groups of observations (<a href="#fig-samples">Figure&nbsp;<span>6.1</span></a>).</p>
+<div id="fig-samples" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="images/samples.png" class="lightbox" title="Depiction of independent Vs dependent (paired) samples" data-gallery="quarto-lightbox-gallery-1"><img src="images/samples.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Depiction of independent Vs dependent (paired) samples</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Independent samples</strong></p>
+<p>Two samples are independent (unrelated) if the measurements of one group are not related to or somehow paired or matched with the measurements of the other group.</p>
+<p>For example, one group of participants is randomly assigned to treatment group, while a second and separate group of participants is randomly assigned to placebo group (randomized controlled trial). These two groups are independent because the individuals in the treatment group are in no way paired or matched with corresponding members in the placebo group .</p>
+<p><strong>Dependent samples</strong></p>
+<p>Two samples are dependent (paired or matched) if the measurements of one group are related to or somehow paired or matched with the measurements of the other group.</p>
+<p>For example, two measurements that are taken at two different times from the same individuals (before-after design) are related.</p>
+</section>
+<section id="two-sample-t-test-students-t-test" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="two-sample-t-test-students-t-test"><span class="header-section-number">6.2</span> Two-sample t-test (Student’s t-test)</h2>
+<p>Two sample t-test (Student’s t-test) can be used if we have two independent (unrelated) groups (e.g., males/females, treatment/non-treatment) and one quantitative variable of interest (e.g., age, weight, systolic blood pressure). For example, we may want to compare the age in males and females or the weights in two groups of children, each child being randomly allocated to receive either a dietary supplement or placebo.</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -268,13 +296,104 @@ ul.task-list li input[type="checkbox"] {
 <li>The groups are independent</li>
 <li>The outcome of interest is continuous</li>
 <li>The data is normally distributed in both groups</li>
-<li>The data in both groups have similar standard deviations</li>
+<li>The data in both groups have equal variances (homogeneity of variance)</li>
 </ol>
 </div>
 </div>
-<p><span class="math display">\[t = \frac{\bar{x}_{1} - \bar{x}_{2}}{se_{dif}}\]</span></p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Steps of hypothesis testing for Student’s t-test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Step 1: State the null hypothesis and alternative hypothesis</strong></p>
+<p><span class="math inline">\(H_{0}\)</span>: the population means in the two groups are equal (<span class="math inline">\(μ_{1}=μ_{2}\)</span> or <span class="math inline">\(μ_{1} - μ_{2} = 0\)</span>).</p>
+<p><span class="math inline">\(H_{1}\)</span>: the population means in the two groups are not equal (<span class="math inline">\(μ_{1} \neq μ_{2}\)</span>).</p>
+<p><strong>Step 2:</strong> Set the level of significance α = 0.05.</p>
+<p><strong>Step 3:</strong> Identify the appropriate test statistic and check the assumptions. Calculate the test statistic using the data.</p>
+<p>Τhe appropriate parametric statistical test, for testing <span class="math inline">\(H_{0}\)</span>, is the Student’s t-test. (NOTE: first check for normal distributions and homogeneity of variance).</p>
+<p>The formula of the test is given by the t-statistic as follows:</p>
+<p><span id="eq-t"><span class="math display">\[t = \frac{\bar{x}_{1} - \bar{x}_{2}}{SE_{\bar{x}_{1} - \bar{x}_{2}}} = \frac{\bar{x}_{1} - \bar{x}_{2}}{s_{p} \cdot \sqrt{\frac{1}{n_{1}} + \frac{1}{n_{2}}}} \tag{6.1}\]</span></span> where <span class="math inline">\(s_{p}\)</span> is an estimate of the pooled standard deviation of the two groups which is calculated by the following equation:</p>
+<p><span id="eq-sp"><span class="math display">\[s_{p} = \sqrt{\frac{(n_{1}-1)s_{1}^2 + (n_{2}-1)s_{2}^2}{n_{1}+ n_{2}-2}} \tag{6.2}\]</span></span></p>
+<p>Under the null hypothesis, the t-statistic follows the t-distribution with <span class="math inline">\(n_{1}+ n_{2}-2\)</span> degrees of freedom (df).</p>
+<p><strong>Step 4:</strong> Decide whether or not the result is statistically significant.</p>
+<p>Based on the calculated t-statistic (<a href="#eq-t">Equation&nbsp;<span>6.1</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed t-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
+<div id="fig-ttest1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="images/ttest1.png" class="lightbox" title="The two-tailed rejection region (area of the two red tails) equals to a=0.05" data-gallery="quarto-lightbox-gallery-2"><img src="images/ttest1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: The two-tailed rejection region (area of the two red tails) equals to a=0.05</figcaption><p></p>
+</figure>
+</div>
+<p>In practice, we use the p-value (as generated by Jamovi based on the value of the t-statistic <a href="#eq-t">Equation&nbsp;<span>6.1</span></a>) to guide our decision:</p>
+<ul>
+<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+<li>If p − value ≥ α, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+</ul>
+<p>The 95% confidence interval (CI) for the difference of the two means at significance level α=0.05, with df, and for a two-tailed t-test is given by:</p>
+<p><span id="eq-ci"><span class="math display">\[ 95\% \ CI = \bar{x}_{1} - \bar{x}_{2} \pm t_{df;0.05/2} \cdot SE_{\bar{x}_{1} - \bar{x}_{2}} \tag{6.3}\]</span></span></p>
+<blockquote class="blockquote">
+<p>Note that, if the means are significantly different (reject <span class="math inline">\(H_{0}\)</span>), the 95% CI of the difference in means will not include <strong>zero</strong>.</p>
+</blockquote>
+<p><strong>Step 5:</strong> Interpretation of the results.</p>
+<p>Report the difference in means, the 95% CI, and the p-value of the test.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Not equal variances
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the assumption of equal variances is not satisfied, the t-statistic is given by the following expression (Welch’s t-test):</p>
+<p><span id="eq-t2"><span class="math display">\[t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}} \tag{6.4}\]</span></span></p>
+<p>The distribution of the test statistic is approximated as an ordinary t-distribution with the degrees of freedom df calculated using the Welch–Satterthwaite equation:</p>
+<p><span id="eq-sp2"><span class="math display">\[ df= \frac{(s_{1}^2/n_{1} + s_{2}^2/n_{2})^2}{(s_{1}^2/n_{1})^2/(n_{1}-1)+(s_{2}^2/n_{2})^2/(n_{2}-1)} \tag{6.5}\]</span></span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Blood pressure levels were measured in 100 diabetic and 100 non-diabetic men aged 40-49 years. Mean systolic blood pressure (sbp) was 146.4 mmHg with standard deviation 18.5 mmHg among the diabetics and 140.4 mmHg with standard deviation 16.8 mmHg among the non-diabetics. Supposed that the assumptions of Normality and constant variance are satisfied, perform a two-tailed two-sample t-test to compare the means in the two groups (α=0.05).</p>
+<p><strong>Step 1: State the null hypothesis and alternative hypothesis</strong></p>
+<p><span class="math inline">\(H_{0}\)</span>: the population means of sbp in the two groups are equal (<span class="math inline">\(μ_{1}=μ_{2}\)</span> or <span class="math inline">\(μ_{1} - μ_{2} = 0\)</span>).</p>
+<p><span class="math inline">\(H_{1}\)</span>: the population means of sbp in the two groups are not equal (<span class="math inline">\(μ_{1} \neq μ_{2}\)</span>).</p>
+<p><strong>Step 2:</strong> We set the level of significance α = 0.05.</p>
+<p><strong>Step 3:</strong> We calculate the test statistic.</p>
+<p>First, we calculate the pooled standard deviation of the two groups (<a href="#eq-sp">Equation&nbsp;<span>6.2</span></a>):</p>
+<p><span class="math display">\[s_{p} = \sqrt{\frac{(n_{1}-1)s_{1}^2 + (n_{2}-1)s_{2}^2}{n_{1} + n_{2}-2}} = \sqrt{\frac{(100-1)18.5^2 + (100-1)16.8^2}{100 + 100-2}} \approx 17.67\]</span></p>
+<p>and then the test t-statistic from <a href="#eq-t">Equation&nbsp;<span>6.1</span></a>:</p>
+<p><span class="math display">\[t = \frac{\bar{x}_{1} - \bar{x}_{2}}{s_{p} \cdot \sqrt{\frac{1}{n_{1}} + \frac{1}{n_{2}}}} = \frac{146.4 - 140.4}{17.67 \cdot \sqrt{\frac{1}{100} + \frac{1}{100}}} \approx 2.4\]</span> The t-statistic follows the t-distribution with 198 degrees of freedom (df).</p>
+<p>Using a statistical calculator for t-distribution (such as the distrACTION module from Jamovi), we can compute the probability <span class="math inline">\(Pr(T \geq 2.4)= 0.0087\)</span>. Then, the p-value for a two tailed test is 2*0.0087=0.0174 &lt; 0.05.</p>
+<div id="fig-t_p1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="images/t_p1.png" class="lightbox" title="We compute the probability Pr(T \geq 2.4)= 0.0087. The orange area is half of the p-value." data-gallery="quarto-lightbox-gallery-3"><img src="images/t_p1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.3: We compute the probability <span class="math inline">\(Pr(T \geq 2.4)= 0.0087\)</span>. The orange area is half of the p-value.</figcaption><p></p>
+</figure>
+</div>
+<p>The 95% confidence interval (CI) of the difference at α=0.05, for the two-tailed t-test and for 198 degrees of freedom is (<a href="#eq-ci">Equation&nbsp;<span>6.3</span></a>):</p>
+<p><span class="math display">\[ 95\% \ CI = \bar{x}_{1} - \bar{x}_{2} \pm t_{df;0.05/2} \cdot SE_{\bar{x}_{1} - \bar{x}_{2}}= 6 \pm 1.972 \cdot 2.5 \approx [1.1, 10.9] \ mmHg\]</span> Therefore, the 95% confidence interval for the difference in the two means ranges from 1.1 mmHg to 10.9 mmHg. Note that the <strong>zero</strong> is not included in the 95% CI of the difference in means.</p>
+<p><strong>Step 5:</strong> Interpretation of the results.</p>
+<p>The mean systolic blood pressure (146.4 mmHg, sd=18.5 mmHg) in diabetic men is significantly higher than the mean systolic blood pressure in non-diabetic men (140.6 mmHg, sd=16.8 mmHg) (MD=6 mmHg, 95% CI: 1.1 to 10.9, p=0.017).</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -407,6 +526,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
 
 
 

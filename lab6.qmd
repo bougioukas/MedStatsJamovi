@@ -18,20 +18,10 @@ When we have finished this Lab, we should be able to:
 -   Interpret the results
 :::
 
- 
-
-## Parametric and non-parametric statistical tests
-
-There are two types of statistical tests and they are described as parametric and nonparametric. The parametric tests (e.g., t-test, ANOVA), make certain assumptions about the distribution of the unknown parameter of interest and thus the test statistic is valid under these assumptions. For non-parametric tests (e.g., Mann-Whitney test, Wilcoxon tests), there are no such assumptions. Most nonparametric tests use some way of ranking the measurements. Nonparametric tests are about 95% as powerful as parametric tests.
-
-## The samples
-
-Two samples are independent if the sample values selected from one population are not related to or somehow paired or matched with the sample values selected from the other population. For example, one group of subjects is treated with a drug, while a second and separate group of subjects is given a placebo. These two sample groups are independent because the individuals in the treatment group are in no way paired or matched with corresponding members in the placebo group.
 
 ## Two-sample t-test (Student's t-test)
 
 Two sample t-test (Student's t-test) can be used if we have two independent (unrelated) groups (e.g., males-females, treatment-non treatment) and one quantitative variable of interest.
-
 
 ### Opening the file
 
@@ -41,7 +31,6 @@ Open the dataset named `depression` from the file tab in the menu:
 
 The dataset `depression` has 76 patients and includes two variables. The `treatment` variable and the `HDRS` variable (@fig-depression1). Double-click on the variable name `HDRS` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
 
-
 ### Research question
 
 In an experiment designed to test the effectiveness of paroxetine for treating bipolar depression, the participants were randomly assigned into two groups (intervention Vs placebo).
@@ -49,8 +38,6 @@ In an experiment designed to test the effectiveness of paroxetine for treating b
 The researchers used the Hamilton Depression Rating Scale (HDRS) to measure the depression state of the participants and wanted to find out if the HDRS score is different in paroxetine group as compared to placebo group at the end of the experiment. The significance level α was set to 0.05.
 
 Note A score of 0--7 in HDRS is generally accepted to be within the normal range, while a score of 20 or higher indicates at least moderate severity.
-
-
 
 ### Hypothesis Testsing
 
@@ -60,7 +47,6 @@ Note A score of 0--7 in HDRS is generally accepted to be within the normal range
 -   $H_0$: the means of HDRS in the two groups are equal ($\mu_{1} = \mu_{2}$)
 -   $H_1$: the means of HDRS in the two groups are different ($\mu_{1} \neq \mu_{2}$)
 :::
-
 
 ### Assumptions
 

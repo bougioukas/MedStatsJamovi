@@ -291,7 +291,7 @@ P(X=8)=\left (\begin{array}{c} 20\\8\end{array}\right )0.3^8(1-0.3)^{20-8}=0.114
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-prob20patients" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-prob20patients-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Probability of response among 20 patients receiving a medication."><img src="categorical_files/figure-html/fig-prob20patients-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-prob20patients-1.png" class="lightbox" title="Probability of response among 20 patients receiving a medication." data-gallery="quarto-lightbox-gallery-1"><img src="categorical_files/figure-html/fig-prob20patients-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.1: Probability of response among 20 patients receiving a medication.</figcaption><p></p>
 </figure>
 </div>
@@ -308,7 +308,7 @@ P(X=8)=\left (\begin{array}{c} 20\\8\end{array}\right )0.3^8(1-0.3)^{20-8}=0.114
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-empirical" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-empirical-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Empirical distribution of p from a study of x=8 responders among n=20 patients."><img src="categorical_files/figure-html/fig-empirical-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-empirical-1.png" class="lightbox" title="Empirical distribution of p from a study of x=8 responders among n=20 patients." data-gallery="quarto-lightbox-gallery-2"><img src="categorical_files/figure-html/fig-empirical-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.2: Empirical distribution of <span class="math inline">\(p\)</span> from a study of <span class="math inline">\(x=8\)</span> responders among <span class="math inline">\(n=20\)</span> patients.</figcaption><p></p>
 </figure>
 </div>
@@ -322,7 +322,7 @@ Z=\frac{\hat p-p}{\sqrt{p(1-p)/n}}\sim N(0,1)
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-exactVSaprox" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-exactVSaprox-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Exact (red) distribution of the response rate p and distribution based on the normal approximation (green)."><img src="categorical_files/figure-html/fig-exactVSaprox-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-exactVSaprox-1.png" class="lightbox" title="Exact (red) distribution of the response rate p and distribution based on the normal approximation (green)." data-gallery="quarto-lightbox-gallery-3"><img src="categorical_files/figure-html/fig-exactVSaprox-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.3: Exact (red) distribution of the response rate p and distribution based on the normal approximation (green).</figcaption><p></p>
 </figure>
 </div>
@@ -358,7 +358,7 @@ Z=\frac{\hat p-p}{\sqrt{p(1-p)/n}}\sim N(0,1)
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ovarian" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-ovarian-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Normal approximation to the distribution of the difference in overall response rates in the ovarian cancer study plus observed overall response rate difference in the two treatment arms (dashed line)."><img src="categorical_files/figure-html/fig-ovarian-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-ovarian-1.png" class="lightbox" title="Normal approximation to the distribution of the difference in overall response rates in the ovarian cancer study plus observed overall response rate difference in the two treatment arms (dashed line)." data-gallery="quarto-lightbox-gallery-4"><img src="categorical_files/figure-html/fig-ovarian-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.4: Normal approximation to the distribution of the difference in overall response rates in the ovarian cancer study plus observed overall response rate difference in the two treatment arms (dashed line).</figcaption><p></p>
 </figure>
 </div>
@@ -368,7 +368,7 @@ Z=\frac{\hat p-p}{\sqrt{p(1-p)/n}}\sim N(0,1)
 </h4>
 <p>Confidence intervals for the difference of two proportions can be calculated as usual by appealing to properties of the normal distribution. For example, a 95% two-sided confidence interval in the previous example will be <span class="math display">\[
 \small
-\left ( \hat p_1-\hat p_2-1.96\times \sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n-2}}+
+\left ( \hat p_1-\hat p_2-1.96\times \sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n-2}},
 \hat p_1-\hat p_2+1.96\times \sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n-2}}\right )
 \]</span> In the above, <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> are not known, so we substitute <span class="math inline">\(\hat p_1\)</span> and <span class="math inline">\(\hat p_2\)</span> for them respectively in order to calculate the confidence interval. Theory tells us that this will work if <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> are not too small. In the ovarian cancer study example, the 95% two-sided confidence interval of the difference in overall response rates between belotecan and topotecan is <span class="math display">\[
 (-0.113,
@@ -381,7 +381,7 @@ Z=\frac{\hat p-p}{\sqrt{p(1-p)/n}}\sim N(0,1)
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ovarian2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-ovarian2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Two-sided 95% confidence interval of the difference in overall response rates in the ovarian cancer study versus its value under H_0 (dashed line)."><img src="categorical_files/figure-html/fig-ovarian2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-ovarian2-1.png" class="lightbox" title="Two-sided 95% confidence interval of the difference in overall response rates in the ovarian cancer study versus its value under H_0 (dashed line)." data-gallery="quarto-lightbox-gallery-5"><img src="categorical_files/figure-html/fig-ovarian2-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.5: Two-sided 95% confidence interval of the difference in overall response rates in the ovarian cancer study versus its value under <span class="math inline">\(H_0\)</span> (dashed line).</figcaption><p></p>
 </figure>
 </div>
@@ -394,7 +394,7 @@ Z=\frac{\hat p_1-\hat p_2}{\sqrt{\hat p(1-\hat p) \left ( \frac{1}{n_1}+\frac{1}
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ovarian3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-ovarian3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Calculation of a p-value associated with the difference in overall response rates in the ovarian cancer study. Both the areas under the curve of the shaded regions are summed to produce the two-sided p value."><img src="categorical_files/figure-html/fig-ovarian3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-ovarian3-1.png" class="lightbox" title="Calculation of a p-value associated with the difference in overall response rates in the ovarian cancer study. Both the areas under the curve of the shaded regions are summed to produce the two-sided p value." data-gallery="quarto-lightbox-gallery-6"><img src="categorical_files/figure-html/fig-ovarian3-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.6: Calculation of a p-value associated with the difference in overall response rates in the ovarian cancer study. Both the areas under the curve of the shaded regions are summed to produce the two-sided p value.</figcaption><p></p>
 </figure>
 </div>
@@ -409,40 +409,40 @@ Z=\frac{\hat p_1-\hat p_2}{\sqrt{\hat p(1-\hat p) \left ( \frac{1}{n_1}+\frac{1}
 <div id="tbl-ct1" class="anchored">
 
 <div class="tabwid">
-<style>.cl-da38b276{}.cl-da30a6c6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-da33e868{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-da33e872{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-da33fbfa{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da33fc04{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da33fc05{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da33fc06{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da33fc0e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da33fc0f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table class="cl-da38b276">
+<style>.cl-88a5a298{}.cl-889d6de4{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-88a0bbac{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-88a0bbb6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-88a0d024{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88a0d02e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88a0d02f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88a0d030{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88a0d038{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88a0d039{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table class="cl-88a5a298">
 <caption>Table&nbsp;8.1:  Response frequency by treatment arm in the reccurrent ovarian cancer study. </caption>
 <thead>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-da33fbfa"><p class="cl-da33e868"><span class="cl-da30a6c6"></span></p></th>
-<th colspan="2" class="cl-da33fc04"><p class="cl-da33e872"><span class="cl-da30a6c6">Treatment group</span></p></th>
-<th class="cl-da33fc04"><p class="cl-da33e872"><span class="cl-da30a6c6"></span></p></th>
+<th class="cl-88a0d024"><p class="cl-88a0bbac"><span class="cl-889d6de4"></span></p></th>
+<th colspan="2" class="cl-88a0d02e"><p class="cl-88a0bbb6"><span class="cl-889d6de4">Treatment group</span></p></th>
+<th class="cl-88a0d02e"><p class="cl-88a0bbb6"><span class="cl-889d6de4"></span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-da33fbfa"><p class="cl-da33e868"><span class="cl-da30a6c6">Response</span></p></th>
-<th class="cl-da33fc04"><p class="cl-da33e872"><span class="cl-da30a6c6">Belotecan </span></p></th>
-<th class="cl-da33fc04"><p class="cl-da33e872"><span class="cl-da30a6c6">Topotecan</span></p></th>
-<th class="cl-da33fc04"><p class="cl-da33e872"><span class="cl-da30a6c6">Total</span></p></th>
+<th class="cl-88a0d024"><p class="cl-88a0bbac"><span class="cl-889d6de4">Response</span></p></th>
+<th class="cl-88a0d02e"><p class="cl-88a0bbb6"><span class="cl-889d6de4">Belotecan </span></p></th>
+<th class="cl-88a0d02e"><p class="cl-88a0bbb6"><span class="cl-889d6de4">Topotecan</span></p></th>
+<th class="cl-88a0d02e"><p class="cl-88a0bbb6"><span class="cl-889d6de4">Total</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-da33fc05"><p class="cl-da33e868"><span class="cl-da30a6c6">Yes</span></p></td>
-<td class="cl-da33fc06"><p class="cl-da33e872"><span class="cl-da30a6c6">21</span></p></td>
-<td class="cl-da33fc06"><p class="cl-da33e872"><span class="cl-da30a6c6">18</span></p></td>
-<td class="cl-da33fc06"><p class="cl-da33e872"><span class="cl-da30a6c6">39</span></p></td>
+<td class="cl-88a0d02f"><p class="cl-88a0bbac"><span class="cl-889d6de4">Yes</span></p></td>
+<td class="cl-88a0d030"><p class="cl-88a0bbb6"><span class="cl-889d6de4">21</span></p></td>
+<td class="cl-88a0d030"><p class="cl-88a0bbb6"><span class="cl-889d6de4">18</span></p></td>
+<td class="cl-88a0d030"><p class="cl-88a0bbb6"><span class="cl-889d6de4">39</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-da33fc05"><p class="cl-da33e868"><span class="cl-da30a6c6">No</span></p></td>
-<td class="cl-da33fc06"><p class="cl-da33e872"><span class="cl-da30a6c6">50</span></p></td>
-<td class="cl-da33fc06"><p class="cl-da33e872"><span class="cl-da30a6c6">51</span></p></td>
-<td class="cl-da33fc06"><p class="cl-da33e872"><span class="cl-da30a6c6">101</span></p></td>
+<td class="cl-88a0d02f"><p class="cl-88a0bbac"><span class="cl-889d6de4">No</span></p></td>
+<td class="cl-88a0d030"><p class="cl-88a0bbb6"><span class="cl-889d6de4">50</span></p></td>
+<td class="cl-88a0d030"><p class="cl-88a0bbb6"><span class="cl-889d6de4">51</span></p></td>
+<td class="cl-88a0d030"><p class="cl-88a0bbb6"><span class="cl-889d6de4">101</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-da33fc0e"><p class="cl-da33e868"><span class="cl-da30a6c6">Total</span></p></td>
-<td class="cl-da33fc0f"><p class="cl-da33e872"><span class="cl-da30a6c6">71</span></p></td>
-<td class="cl-da33fc0f"><p class="cl-da33e872"><span class="cl-da30a6c6">69</span></p></td>
-<td class="cl-da33fc0f"><p class="cl-da33e872"><span class="cl-da30a6c6">140</span></p></td>
+<td class="cl-88a0d038"><p class="cl-88a0bbac"><span class="cl-889d6de4">Total</span></p></td>
+<td class="cl-88a0d039"><p class="cl-88a0bbb6"><span class="cl-889d6de4">71</span></p></td>
+<td class="cl-88a0d039"><p class="cl-88a0bbb6"><span class="cl-889d6de4">69</span></p></td>
+<td class="cl-88a0d039"><p class="cl-88a0bbb6"><span class="cl-889d6de4">140</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -456,40 +456,40 @@ Z=\frac{\hat p_1-\hat p_2}{\sqrt{\hat p(1-\hat p) \left ( \frac{1}{n_1}+\frac{1}
 <div id="tbl-ct2" class="anchored">
 
 <div class="tabwid">
-<style>.cl-da58b5e4{table-layout:auto;}.cl-da50c1ea{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-da53f342{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-da53f34c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-da540698{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da5406a2{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da5406ac{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da5406ad{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da5406ae{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da5406af{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table class="cl-da58b5e4">
+<style>.cl-88c4eeaa{table-layout:auto;}.cl-88bd57b2{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-88c05642{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-88c0564c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-88c068d0{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88c068da{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88c068db{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88c068e4{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88c068e5{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-88c068e6{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table class="cl-88c4eeaa">
 <caption>Table&nbsp;8.2:  CVD by smoking status in the EGAT study. </caption>
 <thead>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-da540698"><p class="cl-da53f342"><span class="cl-da50c1ea"></span></p></th>
-<th colspan="2" class="cl-da5406a2"><p class="cl-da53f34c"><span class="cl-da50c1ea">Smoker?</span></p></th>
-<th class="cl-da5406a2"><p class="cl-da53f34c"><span class="cl-da50c1ea"></span></p></th>
+<th class="cl-88c068d0"><p class="cl-88c05642"><span class="cl-88bd57b2"></span></p></th>
+<th colspan="2" class="cl-88c068da"><p class="cl-88c0564c"><span class="cl-88bd57b2">Smoker?</span></p></th>
+<th class="cl-88c068da"><p class="cl-88c0564c"><span class="cl-88bd57b2"></span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-da540698"><p class="cl-da53f342"><span class="cl-da50c1ea">Death from CVD?</span></p></th>
-<th class="cl-da5406a2"><p class="cl-da53f34c"><span class="cl-da50c1ea">Yes </span></p></th>
-<th class="cl-da5406a2"><p class="cl-da53f34c"><span class="cl-da50c1ea">No</span></p></th>
-<th class="cl-da5406a2"><p class="cl-da53f34c"><span class="cl-da50c1ea">Total</span></p></th>
+<th class="cl-88c068d0"><p class="cl-88c05642"><span class="cl-88bd57b2">Death from CVD?</span></p></th>
+<th class="cl-88c068da"><p class="cl-88c0564c"><span class="cl-88bd57b2">Yes </span></p></th>
+<th class="cl-88c068da"><p class="cl-88c0564c"><span class="cl-88bd57b2">No</span></p></th>
+<th class="cl-88c068da"><p class="cl-88c0564c"><span class="cl-88bd57b2">Total</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-da5406ac"><p class="cl-da53f342"><span class="cl-da50c1ea">Yes</span></p></td>
-<td class="cl-da5406ad"><p class="cl-da53f34c"><span class="cl-da50c1ea">31</span></p></td>
-<td class="cl-da5406ad"><p class="cl-da53f34c"><span class="cl-da50c1ea">15</span></p></td>
-<td class="cl-da5406ad"><p class="cl-da53f34c"><span class="cl-da50c1ea">46</span></p></td>
+<td class="cl-88c068db"><p class="cl-88c05642"><span class="cl-88bd57b2">Yes</span></p></td>
+<td class="cl-88c068e4"><p class="cl-88c0564c"><span class="cl-88bd57b2">31</span></p></td>
+<td class="cl-88c068e4"><p class="cl-88c0564c"><span class="cl-88bd57b2">15</span></p></td>
+<td class="cl-88c068e4"><p class="cl-88c0564c"><span class="cl-88bd57b2">46</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-da5406ac"><p class="cl-da53f342"><span class="cl-da50c1ea">No</span></p></td>
-<td class="cl-da5406ad"><p class="cl-da53f34c"><span class="cl-da50c1ea">1,386</span></p></td>
-<td class="cl-da5406ad"><p class="cl-da53f34c"><span class="cl-da50c1ea">1,883</span></p></td>
-<td class="cl-da5406ad"><p class="cl-da53f34c"><span class="cl-da50c1ea">3,269</span></p></td>
+<td class="cl-88c068db"><p class="cl-88c05642"><span class="cl-88bd57b2">No</span></p></td>
+<td class="cl-88c068e4"><p class="cl-88c0564c"><span class="cl-88bd57b2">1,386</span></p></td>
+<td class="cl-88c068e4"><p class="cl-88c0564c"><span class="cl-88bd57b2">1,883</span></p></td>
+<td class="cl-88c068e4"><p class="cl-88c0564c"><span class="cl-88bd57b2">3,269</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-da5406ae"><p class="cl-da53f342"><span class="cl-da50c1ea">Total</span></p></td>
-<td class="cl-da5406af"><p class="cl-da53f34c"><span class="cl-da50c1ea">1,417</span></p></td>
-<td class="cl-da5406af"><p class="cl-da53f34c"><span class="cl-da50c1ea">1,898</span></p></td>
-<td class="cl-da5406af"><p class="cl-da53f34c"><span class="cl-da50c1ea">3,315</span></p></td>
+<td class="cl-88c068e5"><p class="cl-88c05642"><span class="cl-88bd57b2">Total</span></p></td>
+<td class="cl-88c068e6"><p class="cl-88c0564c"><span class="cl-88bd57b2">1,417</span></p></td>
+<td class="cl-88c068e6"><p class="cl-88c0564c"><span class="cl-88bd57b2">1,898</span></p></td>
+<td class="cl-88c068e6"><p class="cl-88c0564c"><span class="cl-88bd57b2">3,315</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -503,7 +503,7 @@ Z=\frac{\hat p_1-\hat p_2}{\sqrt{\hat p(1-\hat p) \left ( \frac{1}{n_1}+\frac{1}
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ct3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-ct3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="TEXT TEXT."><img src="categorical_files/figure-html/fig-ct3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-ct3-1.png" class="lightbox" title="TEXT TEXT." data-gallery="quarto-lightbox-gallery-7"><img src="categorical_files/figure-html/fig-ct3-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.7: TEXT TEXT.</figcaption><p></p>
 </figure>
 </div>
@@ -513,7 +513,7 @@ Z=\frac{\hat p_1-\hat p_2}{\sqrt{\hat p(1-\hat p) \left ( \frac{1}{n_1}+\frac{1}
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ct4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-ct4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="TEXT TEXT."><img src="categorical_files/figure-html/fig-ct4-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-ct4-1.png" class="lightbox" title="TEXT TEXT." data-gallery="quarto-lightbox-gallery-8"><img src="categorical_files/figure-html/fig-ct4-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.8: TEXT TEXT.</figcaption><p></p>
 </figure>
 </div>
@@ -528,7 +528,7 @@ X=\sum_{i=1}^{r\times c}\frac{(O_i-E_i)^2}{E_i}
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-chi_distribution" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-chi_distribution-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="The chi-square distribution and observed test statistic in the ovarian cancer trial."><img src="categorical_files/figure-html/fig-chi_distribution-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-chi_distribution-1.png" class="lightbox" title="The chi-square distribution and observed test statistic in the ovarian cancer trial." data-gallery="quarto-lightbox-gallery-9"><img src="categorical_files/figure-html/fig-chi_distribution-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.9: The chi-square distribution and observed test statistic in the ovarian cancer trial.</figcaption><p></p>
 </figure>
 </div>
@@ -546,7 +546,7 @@ X=\sum_{i=1}^{r\times c}\frac{(O_i-E_i)^2}{E_i}
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-egat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="categorical_files/figure-html/fig-egat-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Percent of CVD deaths among smokers and non-smokers in the EGAT cohort study."><img src="categorical_files/figure-html/fig-egat-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="categorical_files/figure-html/fig-egat-1.png" class="lightbox" title="Percent of CVD deaths among smokers and non-smokers in the EGAT cohort study." data-gallery="quarto-lightbox-gallery-10"><img src="categorical_files/figure-html/fig-egat-1.png" class="img-fluid figure-img" width="672"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8.10: Percent of CVD deaths among smokers and non-smokers in the EGAT cohort study.</figcaption><p></p>
 </figure>
 </div>
@@ -559,24 +559,24 @@ X=\sum_{i=1}^{r\times c}\frac{(O_i-E_i)^2}{E_i}
 <div id="tbl-chi_test" class="anchored">
 
 <div class="tabwid">
-<style>.cl-dcd12c02{table-layout:auto;}.cl-dcc976ba{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-dccc8b8e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dccc8b98{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dccc9e58{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dccc9e62{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dccc9e63{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dccc9e6c{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table class="cl-dcd12c02">
+<style>.cl-8b433baa{table-layout:auto;}.cl-8b3af6e8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8b3e3092{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b3e309c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b3e4442{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b3e4456{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b3e4457{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b3e4458{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table class="cl-8b433baa">
 <caption>Table&nbsp;8.3:  Chi-square test of the association between CVD and smoking status in the EGAT study. </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-dccc9e58"><p class="cl-dccc8b8e"><span class="cl-dcc976ba">Test statistic</span></p></th>
-<th class="cl-dccc9e62"><p class="cl-dccc8b98"><span class="cl-dcc976ba">Obs. value</span></p></th>
-<th class="cl-dccc9e62"><p class="cl-dccc8b98"><span class="cl-dcc976ba">DF</span></p></th>
-<th class="cl-dccc9e62"><p class="cl-dccc8b98"><span class="cl-dcc976ba">P value</span></p></th>
-<th class="cl-dccc9e58"><p class="cl-dccc8b8e"><span class="cl-dcc976ba"></span></p></th>
-<th class="cl-dccc9e62"><p class="cl-dccc8b98"><span class="cl-dcc976ba">N</span></p></th>
+<th class="cl-8b3e4442"><p class="cl-8b3e3092"><span class="cl-8b3af6e8">Test statistic</span></p></th>
+<th class="cl-8b3e4456"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">Obs. value</span></p></th>
+<th class="cl-8b3e4456"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">DF</span></p></th>
+<th class="cl-8b3e4456"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">P value</span></p></th>
+<th class="cl-8b3e4442"><p class="cl-8b3e3092"><span class="cl-8b3af6e8"></span></p></th>
+<th class="cl-8b3e4456"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">N</span></p></th>
 </tr></thead>
 <tbody><tr style="overflow-wrap:break-word;">
-<td class="cl-dccc9e63"><p class="cl-dccc8b8e"><span class="cl-dcc976ba">χ²</span></p></td>
-<td class="cl-dccc9e6c"><p class="cl-dccc8b98"><span class="cl-dcc976ba">11.57784</span></p></td>
-<td class="cl-dccc9e6c"><p class="cl-dccc8b98"><span class="cl-dcc976ba">1</span></p></td>
-<td class="cl-dccc9e6c"><p class="cl-dccc8b98"><span class="cl-dcc976ba">0.0006674236</span></p></td>
-<td class="cl-dccc9e63"><p class="cl-dccc8b8e"><span class="cl-dcc976ba">N</span></p></td>
-<td class="cl-dccc9e6c"><p class="cl-dccc8b98"><span class="cl-dcc976ba">3,315</span></p></td>
+<td class="cl-8b3e4457"><p class="cl-8b3e3092"><span class="cl-8b3af6e8">χ²</span></p></td>
+<td class="cl-8b3e4458"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">11.57784</span></p></td>
+<td class="cl-8b3e4458"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">1</span></p></td>
+<td class="cl-8b3e4458"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">0.0006674236</span></p></td>
+<td class="cl-8b3e4457"><p class="cl-8b3e3092"><span class="cl-8b3af6e8">N</span></p></td>
+<td class="cl-8b3e4458"><p class="cl-8b3e309c"><span class="cl-8b3af6e8">3,315</span></p></td>
 </tr></tbody>
 </table>
 </div>
@@ -594,26 +594,26 @@ RR=\frac{\frac{31}{1417}}{\frac{15}{1898}}=2.77\]</span></p>
 <div id="tbl-rr" class="anchored">
 
 <div class="tabwid">
-<style>.cl-dce8eb1c{table-layout:auto;}.cl-dce12486{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-dce41f24{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dce41f2e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dce430b8{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dce430c2{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dce430c3{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dce430cc{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table class="cl-dce8eb1c">
+<style>.cl-8b5a719e{table-layout:auto;}.cl-8b529b7c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8b5595de{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b5595e8{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b55a790{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b55a79a{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b55a79b{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b55a79c{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table class="cl-8b5a719e">
 <caption>Table&nbsp;8.4:  Estimation of the relative CVD risk between smokers and non-smokers in the EGAT study. </caption>
 <thead>
 <tr style="overflow-wrap:break-word;">
-<th colspan="2" class="cl-dce430b8"><p class="cl-dce41f24"><span class="cl-dce12486"></span></p></th>
-<th colspan="2" class="cl-dce430c2"><p class="cl-dce41f2e"><span class="cl-dce12486">95% confidence interval</span></p></th>
+<th colspan="2" class="cl-8b55a790"><p class="cl-8b5595de"><span class="cl-8b529b7c"></span></p></th>
+<th colspan="2" class="cl-8b55a79a"><p class="cl-8b5595e8"><span class="cl-8b529b7c">95% confidence interval</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-dce430b8"><p class="cl-dce41f24"><span class="cl-dce12486"></span></p></th>
-<th class="cl-dce430c2"><p class="cl-dce41f2e"><span class="cl-dce12486">Point estimate</span></p></th>
-<th class="cl-dce430c2"><p class="cl-dce41f2e"><span class="cl-dce12486">Lower bound</span></p></th>
-<th class="cl-dce430c2"><p class="cl-dce41f2e"><span class="cl-dce12486">Upper bound</span></p></th>
+<th class="cl-8b55a790"><p class="cl-8b5595de"><span class="cl-8b529b7c"></span></p></th>
+<th class="cl-8b55a79a"><p class="cl-8b5595e8"><span class="cl-8b529b7c">Point estimate</span></p></th>
+<th class="cl-8b55a79a"><p class="cl-8b5595e8"><span class="cl-8b529b7c">Lower bound</span></p></th>
+<th class="cl-8b55a79a"><p class="cl-8b5595e8"><span class="cl-8b529b7c">Upper bound</span></p></th>
 </tr>
 </thead>
 <tbody><tr style="overflow-wrap:break-word;">
-<td class="cl-dce430c3"><p class="cl-dce41f24"><span class="cl-dce12486">Relative risk</span></p></td>
-<td class="cl-dce430cc"><p class="cl-dce41f2e"><span class="cl-dce12486">2.768196</span></p></td>
-<td class="cl-dce430cc"><p class="cl-dce41f2e"><span class="cl-dce12486">1.500194</span></p></td>
-<td class="cl-dce430cc"><p class="cl-dce41f2e"><span class="cl-dce12486">5.107944</span></p></td>
+<td class="cl-8b55a79b"><p class="cl-8b5595de"><span class="cl-8b529b7c">Relative risk</span></p></td>
+<td class="cl-8b55a79c"><p class="cl-8b5595e8"><span class="cl-8b529b7c">2.768196</span></p></td>
+<td class="cl-8b55a79c"><p class="cl-8b5595e8"><span class="cl-8b529b7c">1.500194</span></p></td>
+<td class="cl-8b55a79c"><p class="cl-8b5595e8"><span class="cl-8b529b7c">5.107944</span></p></td>
 </tr></tbody>
 </table>
 </div>
@@ -623,15 +623,13 @@ RR=\frac{\frac{31}{1417}}{\frac{15}{1898}}=2.77\]</span></p>
 <p>Since the 95% confidence interval <span class="math inline">\((1.5, 5.11)\)</span> does not include the value <span class="math inline">\(RR=1\)</span>, which is explicitly anticipated by the null hypothesis of no difference in CVD risk, we reject <span class="math inline">\(H_0:RR=1\)</span>. The conclusion is that the risk of CVD is <em>different</em> between smokers and non-smokers. A straightforward inspection of the point estimate <span class="math inline">\(RR=2.77\)</span>, suggests that the risk of CVD is significantly elevated among smokers compared to non-smokers.</p>
 </section></section><section id="the-odds-and-odds-ratio" class="level2" data-number="8.6"><h2 data-number="8.6" class="anchored" data-anchor-id="the-odds-and-odds-ratio">
 <span class="header-section-number">8.6</span> The odds and odds ratio</h2>
-<p>Another way to go about understanding differences in risk is using the odds ratio. Before we get to that, let’s define the concept of <em>odds</em>. Odds is the ratio between the proportion of those who experienced an event over the proportion of those who did not among the exposed and similarly among the unexposed. In the EGAT study (Table 2), the odds of CVD among smokers is <span class="math display">\[
-\psi_1=\frac{\frac{31}{1417}}{\frac{1386}{1417}}=\frac{31}{1386}=0.0224\]</span></p>
-<p>Similarly, the odds of CVD among non-smokers is <span class="math display">\[
-\psi_2=\frac{\frac{15}{1898}}{\frac{1883}{1898}}=\frac{15}{1883}=0.00797\]</span></p>
+<p>Another way to go about understanding differences in risk is using the odds ratio. Before we get to that, let’s define the concept of <em>odds</em>. Odds is the ratio between the proportion of those who experienced an event over the proportion of those who did not among the exposed and similarly among the unexposed. In the EGAT study (Table 2), the odds of CVD among smokers is <span class="math display">\[odds_1=\frac{\frac{31}{1417}}{\frac{1386}{1417}}=\frac{31}{1386}=0.0224\]</span></p>
+<p>Similarly, the odds of CVD among non-smokers is <span class="math display">\[odds_2=\frac{\frac{15}{1898}}{\frac{1883}{1898}}=\frac{15}{1883}=0.00797\]</span></p>
 <p>Similarly to the concept of a relative risk, we have the idea of an odds <em>ratio</em>. This is the ratio of the odds among exposed and unexposed individuals, i.e.,</p>
 <div class="cell">
 
 </div>
-<p><span class="math display">\[\psi=\frac{\psi_1}{\psi_2}=\frac{31\times 1883}{15\times 1386}=2.81\]</span></p>
+<p><span class="math display">\[OR=\frac{odds_1}{odds_2}=\frac{31\times 1883}{15\times 1386}=2.81\]</span></p>
 <p>Going back to Table 2 we see that we can estimate the odds ratio as the ratio of the product of the counts in the main diagonal of the table (cells [1,2] and [2,3]) divided by the product of the counts on the secondary diagonal (cells [1,3] and [2,2]).</p>
 <section id="case-control-studies" class="level3"><h3 class="anchored" data-anchor-id="case-control-studies">Case-control studies</h3>
 <p>From these calculations we understand that the odds is not a measure of risk. It’s simply a measure of the increase or decrease of the proportion of some characteristic of interest (e.g., a disease, response to therapy, etc.) between two groups. So, it would not be unreasonable to ask why we need the odds ratio at all, given that we have the relative risk to work with. So what’s the attraction here? Why has the odds ratio, as a measure of the relative risk persisted over time and is used widely to this day? There are three reasons for the persistence of the odds ratio as a measure of risk: case-control studies; case-control studies; case-control studies!</p>
@@ -642,40 +640,40 @@ RR=\frac{\frac{31}{1417}}{\frac{15}{1898}}=2.77\]</span></p>
 <div id="tbl-example1" class="anchored">
 
 <div class="tabwid">
-<style>.cl-dd12e1ce{table-layout:auto;}.cl-dd0b4f90{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-dd0e550a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dd0e5514{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dd0e6950{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dd0e695a{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dd0e695b{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dd0e6964{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dd0e6965{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dd0e696e{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table class="cl-dd12e1ce">
+<style>.cl-8b8477be{table-layout:auto;}.cl-8b7cb3e4{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8b7fb38c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b7fb396{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b7fc692{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b7fc69c{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b7fc6a6{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b7fc6a7{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b7fc6a8{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b7fc6a9{background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table class="cl-8b8477be">
 <caption>Table&nbsp;8.5:  Occurrence of melanoma by sun exposure. </caption>
 <thead>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-dd0e6950"><p class="cl-dd0e550a"><span class="cl-dd0b4f90"></span></p></th>
-<th colspan="2" class="cl-dd0e695a"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">Sun burn after 20?</span></p></th>
-<th class="cl-dd0e695a"><p class="cl-dd0e5514"><span class="cl-dd0b4f90"></span></p></th>
+<th class="cl-8b7fc692"><p class="cl-8b7fb38c"><span class="cl-8b7cb3e4"></span></p></th>
+<th colspan="2" class="cl-8b7fc69c"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">Sun burn after 20?</span></p></th>
+<th class="cl-8b7fc69c"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4"></span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-dd0e6950"><p class="cl-dd0e550a"><span class="cl-dd0b4f90">Melanoma?</span></p></th>
-<th class="cl-dd0e695a"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">Yes </span></p></th>
-<th class="cl-dd0e695a"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">No</span></p></th>
-<th class="cl-dd0e695a"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">Total</span></p></th>
+<th class="cl-8b7fc692"><p class="cl-8b7fb38c"><span class="cl-8b7cb3e4">Melanoma?</span></p></th>
+<th class="cl-8b7fc69c"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">Yes </span></p></th>
+<th class="cl-8b7fc69c"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">No</span></p></th>
+<th class="cl-8b7fc69c"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">Total</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-dd0e695b"><p class="cl-dd0e550a"><span class="cl-dd0b4f90">Yes</span></p></td>
-<td class="cl-dd0e6964"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">297</span></p></td>
-<td class="cl-dd0e6964"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">561</span></p></td>
-<td class="cl-dd0e6964"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">858</span></p></td>
+<td class="cl-8b7fc6a6"><p class="cl-8b7fb38c"><span class="cl-8b7cb3e4">Yes</span></p></td>
+<td class="cl-8b7fc6a7"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">297</span></p></td>
+<td class="cl-8b7fc6a7"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">561</span></p></td>
+<td class="cl-8b7fc6a7"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">858</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-dd0e695b"><p class="cl-dd0e550a"><span class="cl-dd0b4f90">No</span></p></td>
-<td class="cl-dd0e6964"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">130</span></p></td>
-<td class="cl-dd0e6964"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">347</span></p></td>
-<td class="cl-dd0e6964"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">477</span></p></td>
+<td class="cl-8b7fc6a6"><p class="cl-8b7fb38c"><span class="cl-8b7cb3e4">No</span></p></td>
+<td class="cl-8b7fc6a7"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">130</span></p></td>
+<td class="cl-8b7fc6a7"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">347</span></p></td>
+<td class="cl-8b7fc6a7"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">477</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-dd0e6965"><p class="cl-dd0e550a"><span class="cl-dd0b4f90">Total</span></p></td>
-<td class="cl-dd0e696e"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">427</span></p></td>
-<td class="cl-dd0e696e"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">908</span></p></td>
-<td class="cl-dd0e696e"><p class="cl-dd0e5514"><span class="cl-dd0b4f90">1,335</span></p></td>
+<td class="cl-8b7fc6a8"><p class="cl-8b7fb38c"><span class="cl-8b7cb3e4">Total</span></p></td>
+<td class="cl-8b7fc6a9"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">427</span></p></td>
+<td class="cl-8b7fc6a9"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">908</span></p></td>
+<td class="cl-8b7fc6a9"><p class="cl-8b7fb396"><span class="cl-8b7cb3e4">1,335</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -684,16 +682,16 @@ RR=\frac{\frac{31}{1417}}{\frac{15}{1898}}=2.77\]</span></p>
 </div>
 </div>
 <p>From this table, we can calculate the relative risk as <span class="math inline">\(RR=1.13\)</span> with an associated 95% confidence interval <span class="math inline">\((1.04, 1.22)\)</span> and go on to conclude that there is some weak evidence of a statistically significant elevation of melanoma risk among those who had experienced a sunburn after their 20th year. But something is wrong.</p>
-<p>If these data are to be believed, there is a devastating epidemic of melanoma in Yorkshire! After all, <span class="math inline">\(0.643\%\)</span> of the study population had experienced melanoma. Is it sun spots? Is it the famous English fair complexion in combination with summer vacations in sunnier environs? What is going on? What is happening is that we are in effect analyzing a <em>retrospective</em> study as if it were a prospective study. A retrospective study is one where the event has already occurred, and we look back for the reasons. A prospective study by contrast is one where we don’t know whether the event has happened at the start of the study and we look forward in time to see if it occurs. In the melanoma study, researchers identified almost 900 melanoma cases, but these cases did not occur among the <span class="math inline">\(1335\)</span> subjects participating in the study. The denominator of these melanoma cases could be hundreds of thousands or even millions of people. There were 14.9 million people living in Northern England as of the <a href="https://en.wikipedia.org/wiki/2011_United_Kingdom_census">2011 census</a>, the same period when this study took place. Consequently, the estimation of the relative risk is not accurate. By contrast, the odds ratio is <span class="math inline">\(\psi=1.41\)</span>. This number is calculated as a function of proportions within the cases and the controls. So it is valid, despite the retrospective nature of the study design (because we don’t need to know the size of the population that our cases and controls came from as these numbers cancel in the calculation of the odds ratio). And this is why the odds ratio is so popular: it does not care whether the study is prospective or retrospective.</p>
-<p>However, can the odds ratio be interpreted as a relative risk? To answer that, let’s return to the EGAT study. This is a prospectively designed study from the perspective that we did not know at the start who would die from CVD. In that study, the relative risk was <span class="math inline">\(RR=2.77\)</span>. The odds ratio was <span class="math inline">\(\psi=2.81\)</span>, which is very close to the relative risk. How come? This is the case because death from CVD is a fairly rare event. So the odds ratio <span class="math display">\[
-\psi=\frac{\frac{31}{1417}\times
+<p>If these data are to be believed, there is a devastating epidemic of melanoma in Yorkshire! After all, (858/1335) x 100= <span class="math inline">\(64.3\%\)</span> of the study population had experienced melanoma. Is it sun spots? Is it the famous English fair complexion in combination with summer vacations in sunnier environs? What is going on? What is happening is that we are in effect analyzing a <em>retrospective</em> study as if it were a prospective study. A retrospective study is one where the event has already occurred, and we look back for the reasons. A prospective study by contrast is one where we don’t know whether the event has happened at the start of the study and we look forward in time to see if it occurs. In the melanoma study, researchers identified almost 900 melanoma cases, but these cases did not occur among the <span class="math inline">\(1335\)</span> subjects participating in the study. The denominator of these melanoma cases could be hundreds of thousands or even millions of people. There were 14.9 million people living in Northern England as of the <a href="https://en.wikipedia.org/wiki/2011_United_Kingdom_census">2011 census</a>, the same period when this study took place. Consequently, the estimation of the relative risk is not accurate. By contrast, the odds ratio is <span class="math inline">\(OR=1.41\)</span>. This number is calculated as a function of proportions within the cases and the controls. So it is valid, despite the retrospective nature of the study design (because we don’t need to know the size of the population that our cases and controls came from as these numbers cancel in the calculation of the odds ratio). And this is why the odds ratio is so popular: it does not care whether the study is prospective or retrospective.</p>
+<p>However, can the odds ratio be interpreted as a relative risk? To answer that, let’s return to the EGAT study. This is a prospectively designed study from the perspective that we did not know at the start who would die from CVD. In that study, the relative risk was <span class="math inline">\(RR=2.77\)</span>. The odds ratio was <span class="math inline">\(OR=2.81\)</span>, which is very close to the relative risk. How come? This is the case because death from CVD is a fairly rare event. So the odds ratio <span class="math display">\[
+OR=\frac{\frac{31}{1417}\times
            \frac{1883}{1898}}
           {\frac{1386}{1417}\times
            \frac{15}{1898}} \approx
       \frac{\frac{31}{1417}}
            {\frac{15}{1898}}=
-           2.77=RR\]</span> The above approximation is possible because the proportions of those who did not experience CVD are almost 100% (i.e., <span class="math inline">\(\frac{1883}{1898}\approx 1\)</span> and <span class="math inline">\(\frac{1386}{1417} \approx 1\)</span>). So, for rare events, <span class="math inline">\(\psi\approx RR\)</span> and the odds ratio can be interpreted as a relative risk!</p>
-<p>Given that melanoma is fairly rare cancer, the odds ratio in the melanoma study will be close to the true relative risk in the population; a lot closer than the relative risk produced by the case-control study. So our point estimate of the odds ratio <span class="math inline">\(\psi=1.41\)</span>, suggests that the elevation of melanoma risk associated with sun exposure is <span class="math inline">\(41.3\%\)</span> and not <span class="math inline">\(12.6\%\)</span> as would be suggested by the relative risk estimate.</p>
+           2.77=RR\]</span> The above approximation is possible because the proportions of those who did not experience CVD are almost 100% (i.e., <span class="math inline">\(\frac{1883}{1898}\approx 1\)</span> and <span class="math inline">\(\frac{1386}{1417} \approx 1\)</span>). So, for rare events, <span class="math inline">\(OR \approx RR\)</span> and the odds ratio can be interpreted as a relative risk!</p>
+<p>Given that melanoma is fairly rare cancer, the odds ratio in the melanoma study will be close to the true relative risk in the population; a lot closer than the relative risk produced by the case-control study. So our point estimate of the odds ratio <span class="math inline">\(OR=1.41\)</span>, suggests that the elevation of melanoma risk associated with sun exposure is <span class="math inline">\(41.3\%\)</span> and not <span class="math inline">\(12.6\%\)</span> as would be suggested by the relative risk estimate.</p>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -822,7 +820,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 </body></html>
