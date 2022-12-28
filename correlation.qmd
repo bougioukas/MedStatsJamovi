@@ -406,7 +406,7 @@ $$t = \frac{r}{SE_{r}}= \frac{0.62}{0.081}= 7.65$$
 ::: {.callout-note icon="false"}
 ## Step 4: Decide whether or not the result is statistically significant
 
-When we run the test, we get a value for the t-statistic (here t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom (here df=94). Using a statistical calculator for t-distribution (such as the distrACTION module from Jamovi), we can compute the probability $Pr(T \geq 7.65)$. Then, the p-value for a two tailed test is $2 \cdot Pr(T \geq 7.65)$. In our example, the p-value \< 0.001 which is less than α=0.05 (so, we reject $H_{0}$). 
+When we perform the test, we get a value for the t-statistic (here t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom (here df=94). Using a statistical calculator for t-distribution (such as the distrACTION module from Jamovi), we can compute the probability $Pr(T \geq 7.65)$. Then, the p-value for a two tailed test is $2 \cdot Pr(T \geq 7.65)$. In our example, the p-value \< 0.001 which is less than α=0.05 (so, we reject $H_{0}$).
 
 Note that the significance of correlation also depends upon the sample size. If the sample size is large, even a weak correlation may be significant, and for a small sample size, even a strong association may or may not be significant.
 

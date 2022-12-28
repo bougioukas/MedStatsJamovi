@@ -77,7 +77,7 @@ Report the difference in means, the 95% CI, and the p-value of the test.
 :::
 
 ::: {.callout-important icon="false"}
-## Not equal variances
+## Not equal variances-Welch's t-test
 
 If the assumption of equal variances is not satisfied, the t-statistic is given by the following expression (Welch's t-test):
 
@@ -88,14 +88,10 @@ The distribution of the test statistic is approximated as an ordinary t-distribu
 $$ df= \frac{(s_{1}^2/n_{1} + s_{2}^2/n_{2})^2}{(s_{1}^2/n_{1})^2/(n_{1}-1)+(s_{2}^2/n_{2})^2/(n_{2}-1)}$$ {#eq-sp2}
 :::
 
-::: {.callout-important icon="false"}
-## Mann-Whitney U test
 
-When there is violation of normality, the Mann-Whitney U test can be used. This test compares two independent samples based on the ranks of the values and is often considered the non-parametric equivalent to the Student's t-test.
-:::
 
 ::: {.callout-note icon="false"}
-## Example
+## Example-Student's t-test
 
 Blood pressure levels were measured in 100 diabetic and 100 non-diabetic men aged 40-49 years. Mean systolic blood pressure (sbp) was 146.4 mmHg with standard deviation 18.5 mmHg among the diabetics and 140.4 mmHg with standard deviation 16.8 mmHg among the non-diabetics. Supposed that the assumptions of Normality and constant variance are satisfied, perform a two-tailed two-sample t-test to compare the means in the two groups (α=0.05).
 
@@ -128,6 +124,13 @@ $$ 95\% \ CI = \bar{x}_{1} - \bar{x}_{2} \pm t_{198;0.05/2} \cdot SE_{\bar{x}_{1
 **Step 5:** Interpretation of the results.
 
 The mean systolic blood pressure (146.4 mmHg, sd=18.5 mmHg) in diabetic men is significantly higher than the mean systolic blood pressure in non-diabetic men (140.6 mmHg, sd=16.8 mmHg) (MD=6 mmHg, 95% CI: 1.1 to 10.9, p=0.017).
+:::
+
+
+::: {.callout-important icon="false"}
+## Mann-Whitney U test
+
+When there is violation of normality, the Mann-Whitney U test can be used. This test compares two independent samples based on the ranks of the values and is often considered the non-parametric equivalent to the Student's t-test.
 :::
 
  
@@ -208,7 +211,7 @@ Report the mean of the differences, the 95% CI, and the p-value of the test.
 
 
 ::: {.callout-note icon="false"}
-## Example
+## Example-Paired t-test
 
 Systolic blood pressure (sbp) levels were measured in 16 middle-aged men before and after a standard exercise. The mean of differences (after-before) in sbp following exercise was 6.6 mmHg (risen) and the standard deviation of the differences was 6.0 mmHg. Supposed that the assumption of Normality of the differences is satisfied, perform a two-tailed paired t-test to investigate if the mean of differences is significant (α=0.05).
 
