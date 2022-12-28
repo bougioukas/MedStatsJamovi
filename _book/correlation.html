@@ -519,8 +519,8 @@ Step 4: Decide whether or not the result is statistically significant
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When we run the test, we get a value for the t-statistic (here t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom.</p>
-<p>We also get a p-value. In our example, the p-value &lt; 0.001 which is less than α=0.05 (so, we reject <span class="math inline">\(H_{0}\)</span>). Note that the significance of correlation also depends upon the sample size. If the sample size is large, even a weak correlation may be significant, and for a small sample size, even a strong association may or may not be significant.</p>
+<p>When we run the test, we get a value for the t-statistic (here t= 7.65) that we compare with the t-distribution with n-2 degrees of freedom (here df=94). Using a statistical calculator for t-distribution (such as the distrACTION module from Jamovi), we can compute the probability <span class="math inline">\(Pr(T \geq 7.65)\)</span>. Then, the p-value for a two tailed test is <span class="math inline">\(2 \cdot Pr(T \geq 7.65)\)</span>. In our example, the p-value &lt; 0.001 which is less than α=0.05 (so, we reject <span class="math inline">\(H_{0}\)</span>).</p>
+<p>Note that the significance of correlation also depends upon the sample size. If the sample size is large, even a weak correlation may be significant, and for a small sample size, even a strong association may or may not be significant.</p>
 <p>To find a 95% confidence interval for ρ we have to use a Fisher’s z transformation to get a quantity <span class="math inline">\(Z_{r}\)</span> that has approximately Normal distribution. The Fisher’s z transformation of sample correlation coefficient r is:</p>
 <p><span id="eq-r3"><span class="math display">\[ Z_{r}= \frac{1}{2} ln \frac{1+r}{1-r}  \tag{9.3}\]</span></span></p>
 <p>The 95% CI of the <span class="math inline">\(Z_{r}\)</span> is:</p>
@@ -541,7 +541,7 @@ Step 5: Interpret the results
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There is evidence of a positive association between dbp and sbp (r= 0.62, 95% CI: 0.48 to 0.73, p &lt; 0.001).</p>
+<p>There is evidence of a strong positive linear association between dbp and sbp (r= 0.62, 95% CI: 0.48 to 0.73, p &lt; 0.001).</p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -728,7 +728,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":true,"closeEffect":"zoom","openEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"loop":true,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 </body></html>
