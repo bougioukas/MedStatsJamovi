@@ -266,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="header-section-number">7.2</span> The basic idea of ANOVA</h2>
 <p>ANOVA separates the total variability in the data into that which can be attributed to differences between the individuals from different groups (between-group or explained variation), and to the random variation between the individuals within each group (within-group or unexplained variation). Then we can test whether the variability in the data comes mostly from the variability within each group or can truly be attributed to the variability between groups.</p>
 <div id="fig-anova1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/anova1.png" class="lightbox" title="We can separate the “total” variance into variance across groups (between groups) and in the same groups (within group)." data-gallery="quarto-lightbox-gallery-1"><img src="images/anova1.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/anova1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="We can separate the “total” variance into variance across groups (between groups) and in the same groups (within group)."><img src="images/anova1.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;7.1: We can separate the “total” variance into variance across groups (between groups) and in the same groups (within group).</figcaption><p></p>
 </figure>
 </div>
@@ -353,13 +353,13 @@ Steps of hypothesis testing for one-way ANOVA test
 <p><span class="math inline">\(H_{1}\)</span>: at least one group mean differs from the others (<span class="math inline">\(μ_{i} \neq μ_{j}, \ i,j = 1, 2, 3, ...\)</span>)</p>
 <p><strong>Step 2:</strong> Set the level of significance α = 0.05.</p>
 <p><strong>Step 3:</strong> Identify the appropriate test statistic and check the assumptions. Calculate the test statistic using the data.</p>
-<p>Τhe appropriate parametric statistical test, for testing <span class="math inline">\(H_{0}\)</span>, is the ANOVA test. (NOTE: first check for normal distributions and homogeneity of variance). The F-statistic is calculated by creating a ratio of the between-groups variance to the within-groups variance:</p>
+<p>Τhe appropriate parametric statistical test, for testing <span class="math inline">\(H_{0}\)</span>, is the ANOVA test. (NOTE: first check for normal distributions and homogeneity of variance). The F-statistic is calculated by creating a ratio of the between-groups variance (<a href="#eq-ms1">Equation&nbsp;<span>7.6</span></a>) to the within-groups variance (<a href="#eq-ms2">Equation&nbsp;<span>7.7</span></a>):</p>
 <p><span id="eq-f_ratio"><span class="math display">\[F = \frac{MS_{B}}{MS_{W}} \tag{7.8}\]</span></span></p>
 <p>This statistic follows an F-distribution with a pair of degrees of freedom <span class="math inline">\(df_{B} =k−1\)</span> (numerator), <span class="math inline">\(df_{W} =n−k\)</span> (denominator).</p>
 <p><strong>Step 4:</strong> Decide whether or not the result is statistically significant.</p>
-<p>Based on the calculated F-statistic (<a href="#eq-ss">Equation&nbsp;<span>7.1</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed F-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
+<p>Based on the calculated F-statistic (<a href="#eq-f_ratio">Equation&nbsp;<span>7.8</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed F-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
 <div id="fig-anova2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/anova2.png" class="lightbox" title="Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA." data-gallery="quarto-lightbox-gallery-2"><img src="images/anova2.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<figure class="figure"><p><a href="images/anova2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA."><img src="images/anova2.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;7.2: Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA.</figcaption><p></p>
 </figure>
 </div>
@@ -403,7 +403,7 @@ The familywise error rate (FWER)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Not equal variances-Welch’s t-test
+Not equal variances-Welch’s ANOVA test
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -551,7 +551,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","loop":true,"closeEffect":"zoom","selector":".lightbox"});</script>
 
 
 </body></html>

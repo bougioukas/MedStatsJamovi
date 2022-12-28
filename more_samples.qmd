@@ -117,7 +117,7 @@ $H_{1}$: at least one group mean differs from the others ($μ_{i} \neq μ_{j}, \
 
 **Step 3:** Identify the appropriate test statistic and check the assumptions. Calculate the test statistic using the data.
 
-Τhe appropriate parametric statistical test, for testing $H_{0}$, is the ANOVA test. (NOTE: first check for normal distributions and homogeneity of variance). The F-statistic is calculated by creating a ratio of the between-groups variance to the within-groups variance:
+Τhe appropriate parametric statistical test, for testing $H_{0}$, is the ANOVA test. (NOTE: first check for normal distributions and homogeneity of variance). The F-statistic is calculated by creating a ratio of the between-groups variance (@eq-ms1) to the within-groups variance (@eq-ms2):
 
  
 $$F = \frac{MS_{B}}{MS_{W}}$$ {#eq-f_ratio}
@@ -127,7 +127,7 @@ This statistic follows an F-distribution with a pair of degrees of freedom $df_{
 
 **Step 4:** Decide whether or not the result is statistically significant.
 
-Based on the calculated F-statistic (@eq-ss), we have to decide whether to reject or fail to reject the $H_{0}$. If the computed F-value falls in the rejection region (area of the two red tails), we reject $H_{0}$.
+Based on the calculated F-statistic (@eq-f_ratio), we have to decide whether to reject or fail to reject the $H_{0}$. If the computed F-value falls in the rejection region (area of the two red tails), we reject $H_{0}$.
 
 ![Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA.](images/anova2.png){#fig-anova2 width="50%"}
 
@@ -176,7 +176,7 @@ This result indicates that the likelihood of committing at least one Type I erro
 
 
 ::: {.callout-important icon="false"}
-## Not equal variances-Welch's t-test
+## Not equal variances-Welch's ANOVA test
 
 If the assumption of equal variances is not satisfied, we use the Welch's ANOVA test.
 
@@ -187,5 +187,6 @@ If the assumption of equal variances is not satisfied, we use the Welch's ANOVA 
 ## Kruskal-Wallis test
 
 When there is violation of normality, the Kruskal-Wallis test can be used. This test compares multiple independent samples based on the ranks of the values and is often considered the non-parametric equivalent to the ANOVA test.
+
 :::
 
