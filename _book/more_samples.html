@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.251">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Introduction to Medical Statistics with Jamovi - 7&nbsp; Inference for numerical data: &gt;2 samples</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,7 +18,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -41,7 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -59,29 +57,20 @@ ul.task-list li input[type="checkbox"] {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
@@ -96,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -108,8 +97,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
@@ -160,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
@@ -168,8 +157,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
   </div>
@@ -220,25 +209,26 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">7.1</span>  Introduction</a></li>
+  <li><a href="#the-basic-idea-of-anova" id="toc-the-basic-idea-of-anova" class="nav-link" data-scroll-target="#the-basic-idea-of-anova"><span class="toc-section-number">7.2</span>  The basic idea of ANOVA</a></li>
+  <li><a href="#hypothesis-testing-of-anova" id="toc-hypothesis-testing-of-anova" class="nav-link" data-scroll-target="#hypothesis-testing-of-anova"><span class="toc-section-number">7.3</span>  Hypothesis testing of ANOVA</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-more_samples" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></span></h1>
 </div>
 
 
@@ -250,13 +240,192 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header>
+</header><section id="introduction" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">7.1</span> Introduction</h2>
+<p>In this chapter, we introduce the use of one-way analysis of variance (ANOVA) for hypothesis testing of more than two sample means with normal distributions. ANOVA was first introduced by the statistician R.A. Fisher in 1921 and is now widely applied in the biomedical and other research fields. ANOVA is a single global test to determine whether the means differ in any groups. In addition, the term “one-way” is used because the participants are separated into groups by one factor (e.g., intervention).</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Assumptions for conducting a one-way ANOVA test</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The groups are independent</li>
+<li>The outcome of interest is continuous</li>
+<li>The data is normally distributed in all groups</li>
+<li>The data in all groups have equal variances (homogeneity of variance)</li>
+</ol>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="the-basic-idea-of-anova" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="the-basic-idea-of-anova">
+<span class="header-section-number">7.2</span> The basic idea of ANOVA</h2>
+<p>ANOVA separates the total variability in the data into that which can be attributed to differences between the individuals from different groups (between-group or explained variation), and to the random variation between the individuals within each group (within-group or unexplained variation). Then we can test whether the variability in the data comes mostly from the variability within each group or can truly be attributed to the variability between groups.</p>
+<div id="fig-anova1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/anova1.png" class="lightbox" title="We can separate the “total” variance into variance across groups (between groups) and in the same groups (within group)." data-gallery="quarto-lightbox-gallery-1"><img src="images/anova1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7.1: We can separate the “total” variance into variance across groups (between groups) and in the same groups (within group).</figcaption><p></p>
+</figure>
+</div>
+<p>These components of variation are measured using variances, hence the name analysis of variance (ANOVA). Under the null hypothesis “the group means are the same”, the between-group variance will be similar to the within group variance. If, however, there are differences between the groups, then the between-group variance will be larger than the within-group variance. The F-ratio, which is the test statistic for ANOVA, is obtained by dividing between-group variability by within-group variability.</p>
+<p>The calculation of the F-ratio involves to calculate the Sum of Squares, SS, the degrees of freedom, df, and finally the variances (Mean Squares, MS). Let’s see each of them more analytically:</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40z"></path></svg> Sum of Squares components
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Total sum of squares can be partitioned into between sum of squares and within sum of squares:</p>
+<p><span id="eq-ss"><span class="math display">\[SS_{T} = SS_{B} + SS_{W} \tag{7.1}\]</span></span></p>
+<blockquote class="blockquote">
+<p><strong>Total sum of squares (<span class="math inline">\(SS_{T}\)</span>):</strong> The total sum of squares, denoted by <span class="math inline">\(SS_{T}\)</span> , measures the total variation of all observations.</p>
+</blockquote>
+<p><span id="eq-aov1"><span class="math display">\[SS_{T} = \sum_{j=1}^k \sum_{i=1}^{n_{j}} ( x_{ij}-{\bar{x_{g}})^2 } \tag{7.2}\]</span></span></p>
+<p>where,</p>
+<p>k: the number of groups (independent samples)</p>
+<p>j: the index over groups (j=1,2,3,…, k)</p>
+<p><span class="math inline">\(n_{j}\)</span>: the sample size of the jth group</p>
+<p>i: the index over the individuals (i=1,2,3,…, <span class="math inline">\(n_{j}\)</span>)</p>
+<p><span class="math inline">\(x_{ij}\)</span>: the score for an individual, i, within a particular group j</p>
+<p><span class="math inline">\(\bar{x_{g}}\)</span>: grand mean (mean for all groups combined)</p>
+<blockquote class="blockquote">
+<p><strong>Between-group sum of squares (<span class="math inline">\(SS_{B}\)</span>):</strong> The between groups sum of squares, denoted by <span class="math inline">\(SS_{B}\)</span>, measures the variation between group means at various levels of the treatment, that is, the between-group variation.</p>
+</blockquote>
+<p><span id="eq-aov2"><span class="math display">\[SS_{B} = \sum_{j=1}^k n_{j}( \bar{x}_j-{\bar{x_{g}})^2 } \tag{7.3}\]</span></span></p>
+<p>where <span class="math inline">\(\bar{x}_j\)</span>: sample mean of group j.</p>
+<blockquote class="blockquote">
+<p><strong>Within-group or error sum of squares (<span class="math inline">\(SS_{W}\)</span>):</strong> The within groups sum of squares, denoted by <span class="math inline">\(SS_{W}\)</span>, measures the variation of observations within treatment groups, that is, the within-group variation. This reflects the random error of an experiment not related to the treatment factor.</p>
+</blockquote>
+<p><span id="eq-aov3"><span class="math display">\[SS_{W} = \sum_{j=1}^k \sum_{i=1}^{n_{j}} ( x_{ij}-{\bar{x_{j}})^2 } \tag{7.4}\]</span></span></p>
+</div>
+</div>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40z"></path></svg> Degrees of freedom
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Each sum of square (<span class="math inline">\(SS_{T}\)</span>, <span class="math inline">\(SS_{B}\)</span>, <span class="math inline">\(SS_{W}\)</span>) has different degrees of freedom associated with it. The degrees of freedom for the total variance is <span class="math inline">\(df_{T}=n-1\)</span> (where n is the total number of observations in the study, which means that <span class="math inline">\(n = n_{1} + n_{2} + . . . + n_{k}\)</span>), the degrees of freedom for the between-groups variance is <span class="math inline">\(df_{B}=k-1\)</span>, the degrees of freedom for the within-groups variance is <span class="math inline">\(df_{w}=n-k\)</span>. Obviously:</p>
+<p><span id="eq-df1"><span class="math display">\[df_{T}=df_{B}+df_{W} \tag{7.5}\]</span></span></p>
+</div>
+</div>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40z"></path></svg> Means of Squares
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The estimate of the between-groups variance is given by dividing the <span class="math inline">\(SS_{B}\)</span> by the <span class="math inline">\(df_{B}\)</span>:</p>
+<p><span id="eq-ms1"><span class="math display">\[MS_{B}= \frac{SS_{B}}{df_{B}} = \frac{SS_{B}}{k-1} \tag{7.6}\]</span></span></p>
+<p>and for within-groups variance:</p>
+<p><span id="eq-ms2"><span class="math display">\[MS_{W}= \frac{SS_{W}}{df_{W}} = \frac{SS_{W}}{n-k} \tag{7.7}\]</span></span></p>
+</div>
+</div>
+</section><section id="hypothesis-testing-of-anova" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="hypothesis-testing-of-anova">
+<span class="header-section-number">7.3</span> Hypothesis testing of ANOVA</h2>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Steps of hypothesis testing for one-way ANOVA test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Step 1: State the null hypothesis and alternative hypothesis</strong></p>
+<p><span class="math inline">\(H_{0}\)</span>: all group means are equal (<span class="math inline">\(μ_{1}=μ_{2}=...=μ_{k}\)</span>).</p>
+<p><span class="math inline">\(H_{1}\)</span>: at least one group mean differs from the others (<span class="math inline">\(μ_{i} \neq μ_{j}, \ i,j = 1, 2, 3, ...\)</span>)</p>
+<p><strong>Step 2:</strong> Set the level of significance α = 0.05.</p>
+<p><strong>Step 3:</strong> Identify the appropriate test statistic and check the assumptions. Calculate the test statistic using the data.</p>
+<p>Τhe appropriate parametric statistical test, for testing <span class="math inline">\(H_{0}\)</span>, is the ANOVA test. (NOTE: first check for normal distributions and homogeneity of variance). The F-statistic is calculated by creating a ratio of the between-groups variance to the within-groups variance:</p>
+<p><span id="eq-f_ratio"><span class="math display">\[F = \frac{MS_{B}}{MS_{W}} \tag{7.8}\]</span></span></p>
+<p>This statistic follows an F-distribution with a pair of degrees of freedom <span class="math inline">\(df_{B} =k−1\)</span> (numerator), <span class="math inline">\(df_{W} =n−k\)</span> (denominator).</p>
+<p><strong>Step 4:</strong> Decide whether or not the result is statistically significant.</p>
+<p>Based on the calculated F-statistic (<a href="#eq-ss">Equation&nbsp;<span>7.1</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed F-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
+<div id="fig-anova2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/anova2.png" class="lightbox" title="Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA." data-gallery="quarto-lightbox-gallery-2"><img src="images/anova2.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7.2: Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA.</figcaption><p></p>
+</figure>
+</div>
+<p>An interesting point about the F-ratio is that because it is the ratio of between variance to within variance, if its value is less than 1 then it must, by definition, represent a non-significant effect.</p>
+<p>In practice, we use the p-value (as generated by Jamovi based on the value of the F-statistic) to guide our decision:</p>
+<ul>
+<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+<li>If p − value ≥ α, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+</ul>
+<p><strong>Step 5:</strong> Interpretation of the results. If we reject <span class="math inline">\(H_{0}\)</span> in ANOVA, there is at least one mean that differs from the others. It is often of interest to further examine which of the means are significantly different and which are not. However, it is invalid to employ multiple two independent samples t-test to examine the difference of means for each pair of groups because this will inevitably lead to a rapid increase in the probability of the familywise Type I error rate (FWER). In this case, we can employ a post-hoc procedure (e.g.&nbsp;Tukey test, Games-Howell tets) to compare three or more groups while controlling the probability of making at least one Type I error.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The familywise error rate (FWER)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>The familywise Type I error rate (represented by the notation <span class="math inline">\(α_{FW}\)</span>) is the likelihood that there will be at least one Type I error in a set of c comparisons.</p></li>
+<li><p>The per comparison Type I error rate (represented by the notation <span class="math inline">\(α_{PC}\)</span>) is the likelihood that any single comparison will result in a Type I error.</p></li>
+</ol>
+<p>The following equation defines the relationship between the familywise Type I error rate and the per comparison Type I error rate, where c the number of comparisons:</p>
+<p><span id="eq-fwer"><span class="math display">\[ α_{FW} = 1-(1-α_{PC})^c \tag{7.9}\]</span></span></p>
+<p>For an example, when we are interested in comparing means of A, B and C groups, we may consider performing a set of three comparisons as following:</p>
+<p><strong>Hypothesis 1:</strong> mean values of group A and group B are equal (comparison of A and B).</p>
+<p><strong>Hypothesis 2:</strong> mean values of group A and group C are equal (comparison of A and C).</p>
+<p><strong>Hypothesis 3:</strong> mean values of group B and group C are equal (comparison of B and C).</p>
+<p>The three aforementioned comparisons can be conceptualized as a family/set of comparisons, with c=3. If for each of the comparisons the value αPC equals to 0.05, the familywise Type I error rate becomes (<a href="#eq-fwer">Equation&nbsp;<span>7.9</span></a>):</p>
+<p><span class="math display">\[ α_{FW} = 1-(1-0.05)^3= 1-0.95^3=1-0.857= 0.143\]</span></p>
+<p>This result indicates that the likelihood of committing at least one Type I error in the set of three comparisons is 0.143 instead of 0.05 (almost three times greater).</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Not equal variances-Welch’s t-test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the assumption of equal variances is not satisfied, we use the Welch’s ANOVA test.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Kruskal-Wallis test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When there is violation of normality, the Kruskal-Wallis test can be used. This test compares multiple independent samples based on the ranks of the values and is often considered the non-parametric equivalent to the ANOVA test.</p>
+</div>
+</div>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -367,9 +536,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./two_samples.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></span>
       </a>          
@@ -381,12 +548,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer>
-
+</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
 
 
 </body></html>
