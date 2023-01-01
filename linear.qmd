@@ -1,1 +1,372 @@
-# Simple linear regression
+# Simple linear regression {#sec-linear}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+library(GGally)
+library(rstatix)
+library(kableExtra)
+library(moderndive)
+
+library(here)
+library(tidyverse)
+
+
+library(readxl)
+BirthWeight <- read_excel(here("data", "BirthWeight.xlsx")) %>% 
+  mutate(weight = weight*1000)
+```
+
+When we have finished this chapter, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Fit and interpret simple linear models
+-   Assess the quality of a linear regression fit
+:::
+
+## Introduction to simple linear regression
+
+Simple linear regression involves a numeric dependent (or response) variable $Y$ and one independent (or explanatory) variable  $X$ that is either numeric or categorical.
+
+Often it is of interest to quantify the linear association between two numeric variables, $X$ and $Y$, and given the value of one variable for an individual, to predict the value of the other variable. This is not possible from the correlation coefficient as it simply indicates the strength of the association as a single number; in order to describe the association between the values of the two variables, a technique called regression is used. In regression, we assume that a change in the independent variable, $X$, will lead directly to a change in the dependent variable $Y$. However, the term "dependent" does not necessarily imply a cause-and-effect relationship between the two variables.
+
+We may recall from secondary/high school algebra that the equation of a line is: $$y = \alpha + \beta \cdot x  $$ {#eq-line1}
+
+
+![The equation of line.](images/line.png){#fig-line width="50%"}
+
+
+The @eq-line1 is defined by two coefficients (parameters) $\alpha$ and $\beta$.
+
+-   The **intercept coefficient** $\alpha$ is the value of $y$ when $x = 0$ (the point where the fitted line crosses the y-axis; @fig-line).
+
+-   The **slope coefficient** $\beta$ for $x$ is the mean change in $y$ for every one unit increase in $x$ (@fig-line).
+
+## Example: Association between weight and height
+
+Let's say that we want to explore the association between height and weight for the sample of 550 infants of 1 month age.
+
+A first step that is usually useful in studying the association between two continuous variables is to prepare a scatter plot of the data (@fig-scatter1). The pattern made by the points plotted on the scatter plot usually suggests the basic nature and strength of the association between two variables.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-scatter1
+#| fig-cap: Scatter plot with weight and height of infants of 1 month age.
+#| fig-width: 6.0
+#| fig-height: 5.0
+
+BirthWeight %>% 
+  ggplot(aes(height, weight)) +
+  geom_point()
+```
+
+As we can see in @fig-scatter1, the points seem to be scattered around an invisible line . The scatter plot also shows that, in general, infants with high height tend to have high weight (positive association). Additionally, @fig-cor1 presents the results of the correlation analysis:
+
+```{r}
+#| echo: false
+#| label: fig-cor1
+#| fig-cap: Correlation table for weight and height.
+
+cor1 <- BirthWeight %>% 
+  select(height, weight) %>% 
+  cor_test(method="pearson")
+
+kable(cor1, digits = 2) %>% 
+kable_styling(font_size = 15, full_width = T, latex_options = c("striped", "HOLD_position")) %>% 
+row_spec(0, bold = T)
+```
+
+There is a high positive linear correlation (r=0.71, 95% CI: 0.67 to 0.75, p \<0.001) between weight and height for infants of 1 month age which is significant.
+
+To select the best fitting straight line of the data set, it is necessary to determine the estimated values $a$ and $b$ of parameters $\alpha$ and $\beta$ in @eq-line1. The regression equation of the model becomes:
+
+$$\widehat{y} = a  + b \cdot x$$ {#eq-line2}
+
+Why do we put a "hat" on top of the $y$? It's a form of notation commonly used in regression to indicate that we have a **predicted value**, or the value of $y$ **on the regression line** for a given $x$ value.
+
+The values of the intercept $a$ and the slope $b$ of height are presented in the following table (@fig-eq_table):
+
+```{r}
+#| echo: false
+
+model_height  <- lm(weight ~ height, data = BirthWeight)
+
+evals_line <- model_height %>%
+  moderndive::get_regression_table() %>%
+  pull(estimate)
+```
+
+```{r}
+#| echo: false
+#| label: fig-eq_table
+#| fig-cap: The linear regression table.
+
+get_regression_table(model_height) %>%
+  knitr::kable(
+    digits = 2,
+    booktabs = TRUE,
+    linesep = ""
+  ) %>%
+  kable_styling(font_size = ifelse(knitr:::is_latex_output(), 10, 16),
+                latex_options = c("hold_position"))
+```
+
+We draw the regression line that fits the data in @fig-scatter_line:
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-scatter_line
+#| fig-cap: Scatter plot of weight and height with the regression line.
+#| fig-width: 6.0
+#| fig-height: 5.0
+
+ggstatsplot::ggscatterstats(
+   data = BirthWeight,                                            
+   x = height,                                                  
+   y = weight, 
+   point.args = list(size = 2, alpha = 0.4),
+   point.label.args = list(size = 2, color = "grey20", fill = "grey20"),
+   #smooth.line.args = list(size = 1, color = "blue"),
+   bf.message = F,
+   marginal = F,
+   xlab = "Height (cm)",                 
+   ylab = "Weight (g)",
+   method = "lm",
+   formula = y ~ x,
+   messages = F, 
+   results.subtitle = F)
+
+```
+
+ 
+
+**The intercept** $a$
+
+Now, let's focus on interpreting the regression table in @fig-eq_table. In the **estimate** column are the intercept $a$ = `r format(evals_line[1], digits=6)` and the slope $b$ = `r format(evals_line[2], digits=5)` for height. Thus the equation of the regression line becomes:
+
+$$
+\begin{aligned}
+\widehat{y} &= a + b \cdot x\\
+\widehat{\text{weight}} &= a + b \cdot\text{height}\\
+&= -5412.15 + 178.31\cdot\text{height}
+\end{aligned}
+$$
+
+The intercept $a$ = `r format(evals_line[1], digits=6)` is the average weight for those infants with height of 0. Or in graphical terms, it's where the line intersects the $y$ axis when $x$ = 0 (@fig-intercept). Note, however, that while the intercept of the regression line has a mathematical interpretation, it has no *physical* interpretation here, since observing a weight of 0 is impossible.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-intercept
+#| fig-cap: Data of infants’ body height-body weight with fitted line crossing the y-axis.
+#| fig-width: 7.0
+#| fig-height: 5.5
+
+
+plot(BirthWeight$height, BirthWeight$weight, xlab="infant's body height (cm)", xlim=c(0, 70), xaxs="i", ylab="infant's body weight (g)",ylim=c(-6000, 7000), col="green")
+abline(model_height, col="red") 
+text(x=10,y=-2900, label="fitted line", srt=25, cex=1) 
+text(49, -4300, bquote(paste (hat(weight), "= -5412.15+178.31*height")),col="black", cex=0.95)
+```
+
+ 
+
+**The slope** $b$
+
+Of greater interest is the slope of height, $b=`r format(evals_line[2], digits=5)`$, as this summarizes the association between the height and weight variables.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-slope
+#| fig-cap: Scatter plot of infants’ body height-body weight and graphically calculation of the slope.
+#| fig-width: 7.2
+#| fig-height: 5.8
+
+plot(BirthWeight$height, BirthWeight$weight, xlab="infant's body height (cm)", ylab="infant's body weight (g)", col="green", cex.lab=1.08) 
+abline(model_height, col="red") 
+segments(56, 4556, 60, 4556) 
+segments(60, 4556, 60, 5268) 
+text(x=55.6,y=4800, label="(56, 4560)") 
+text(x=59,y=5400, label="(60, 5270)") 
+text(x=58,y=4400, label="dx") 
+text(x=60.5,y=4900, label="dy") 
+text(x=48.8,y=3500, label="fitted line", srt=22, cex=1.1)
+text(55.7, 3400, bquote(paste (hat(weight), "= -5412.15+178.31*height")),col="black", cex=0.9)
+```
+
+The graphical calculation of the slope from two points of the fitted line is (@fig-slope):
+
+$$  
+b =\frac{dy}{dx}=\frac{5270-4560}{60-56}= \frac{710}{4} \approx 178
+$$ Note that, in this example, the coefficient has units g/cm.
+
+Additionally, note that the sign is positive, suggesting a positive association between these two variables, meaning infants with higher height also tend to have higher weight. Recall from earlier that the correlation coefficient was $r = 0.71$. They both have the same positive sign, but have a different value. Recall further that the correlation's interpretation is the "strength of linear association". The slope's interpretation is a little different:
+
+> For every 1 cm increase in height, there is **on average** an associated increase of `r format(evals_line[2], digits=3)` g of weight.
+
+We only state that there is an **associated** increase and not necessarily a **causal** increase. In other words, just because two variables are strongly associated, it doesn't necessarily mean that one causes the other. This is summed up in the often quoted phrase, "correlation is not necessarily causation."
+
+Furthermore, we say that this associated increase is **on average** `r format(evals_line[2], digits=3)` g of weight, because we might have two infants whose height differ by 1 cm, but their difference in weight won't necessarily be exactly `r format(evals_line[2], digits=3)`. What the slope of `r format(evals_line[2], digits=3)` is saying is that **across all possible infants, the *average* difference in weight between two infants whose height differ by 1 cm is `r format(evals_line[2], digits=3)` g**.
+
+::: {.callout-tip icon="false"}
+## Interpretation of linear regression
+
+In summary, we can say that the regression coefficient of the height (178) is significantly different from zero (p \< 0.001) and indicates that there's on average an increase of 178 g ($95\%$CI: 164 to 193) in weight for every 1 cm increase in height. Note that the $95\%$CI does not include the hypothesized null value of zero for the slope.
+:::
+
+ 
+
+## The Standard error (SE) of the regression slope
+
+The third column of the regression table in @fig-eq_table corresponds to the *standard error* of our estimates. We are interested in understanding the standard error of the slope ($SE_{b}$).
+
+> Say we hypothetically collected 1000 samples of pairs of weight and height, computed the 1000 resulting values of the fitted slope $b$, and visualized them in a histogram. This would be a visualization of the *sampling distribution* of $b$. The standard deviation of the *sampling distribution* of $b$ has a special name: the *standard error* of $b$. 
+
+The coefficient for the independent variable ‘height’ is 178.31. The standard error is 7.49, which is a measure of the variability around this estimate for the regression slope.
+
+ 
+
+## Test statistic and confidence intervals for the slope
+
+The fourth column of the regression table in @fig-eq_table corresponds to a *t-statistic*. The hypothesis testing for the slope is:
+
+$$
+\begin{aligned}
+H_0 &: \beta = 0\\
+\text{vs } H_1&: \beta \neq 0.
+\end{aligned}
+$$
+
+The null hypothesis, $H_{0}$, states that the coefficient of the independent variable (height) is equal to zero, and the alternative hypothesis, $H_{1}$, states that the coefficient of the independent variable is not equal to zero.
+
+The **t-statistic** for the slope is defined by the following equation:
+
+$$\ t = \frac{\ b}{\text{SE}_b}$$
+
+In our example:
+
+$$\ t = \frac{\ b_1}{\text{SE}_{b_1}}=\frac{\ 178.31}{\text{7.49}} = 23.81$$
+
+The $95\%$ CI of the coefficient $b$ for a significance level α = 0.05, $df=n-2$ degrees of freedom and for a two-tailed t-test is given by:
+
+
+$$ 95\% \ \text{CI}_{b} = b \pm t_{df; 0.05/2} \cdot \text{SE}_{b}$$
+
+
+In our example:
+
+$$ 95\% \ \text{CI}_{b} = 178.31 \pm 1.96 \cdot \text{7.49}= 178.31 \pm 14.68 \Rightarrow 95\% \text{CI}_{b}= \ (163.6, 193)$$
+ 
+
+## Observed, predicted (fitted) values and residuals
+
+We define the following three concepts:
+
+1. **Observed** values $y$, or the observed value of the dependent variable for a given $x$ value
+1. **Predicted** (or fitted) values $\widehat{y}$, or the value on the regression line for a given $x$ value
+1. **Residuals** $y - \widehat{y}$, or the error (ε) between the observed value and the predicted value for a given $x$ value
+
+![The equation of line.](images/line2.png){#fig-line2 width="70%"}
+
+The residuals are exactly the **vertical** distance between the observed data point and the associated point on the regression line (predicted value) (@fig-line2). Positive residuals have associated y values above the fitted line and negative residuals have values below. We want the residuals to be small in magnitude, because large negative residuals are as bad as large positive residuals.
+
+
+@fig-residuals shows these values:
+
+```{r}
+#| echo: false
+#| label: fig-residuals
+#| fig-cap: Regression points (first 10 out of 550 infants).
+
+regression_points <- get_regression_points(model_height)
+regression_points %>%
+  slice(1:10) %>%
+  knitr::kable(
+    digits = 3,
+    booktabs = TRUE,
+    linesep = ""
+  ) %>%
+  kable_styling(font_size = ifelse(knitr:::is_latex_output(), 10, 16),
+                latex_options = c("hold_position"))
+```
+
+Observe in the above table that **weight_hat** contains the fitted values $\widehat{y}$ = $\widehat{\text{weight}}$.
+
+The **residual** column is simply $e_i = y - \widehat{y} = weight - weight\_hat$.
+
+
+Let's see, for example, the values for the first infant and have a visual representation:
+
+- The **observed value** $y$ = 3950 is infant's weight for $x$ = 55.5.
+
+- The **predicted value** $\widehat{y}$ is the value 4483.939 on the regression line for $x$ = 55.5. This value is computed using the intercept and slope in the previous regression in @fig-eq_table: 
+$$\widehat{y} = α + b \cdot x = -5412.145 + 178.308 \cdot 55.5 = 4483.9$$
+
+- The **residual**  is computed by subtracting the predicted (fitted) value $\widehat{y}$ from the observed value $y$. The residual can be thought of as a model's error or "lack of fit" for a particular observation.  In the case of this infant, it is $y - \widehat{y}$ = 3950 - 4483.9 = -533.9 .  
+
+
+A “best-fitting” line refers to the line that **minimizes** the **sum of squared residuals (RSS)**, also known as sum of squared estimate of errors (SSE) out of all possible lines we can draw through the points. 
+
+$$
+min(RSS) =min\sum_{i=1}^{n}(y_i - \widehat{y}_i)^2
+$$
+
+In @fig-min_slope, we have found the minimum value of RSS (it turns out to be 97723317) and have drawn a horizontal dashed green line. At the point where this minimum touches the graph, we have read down to the x axis to find the best value of the slope. This is the value 178.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: fig-min_slope
+#| fig-cap: The sum of the squares of the residuals against the value of the coefficient of the slope which we are trying to estimate.
+#| fig-width: 7.2
+#| fig-height: 5.8
+
+b <- seq(70, 285, 1) 
+sse <- numeric(length(b)) 
+
+for (i in 1:length(b)) { 
+  a <- mean(BirthWeight$weight)-b[i]*mean(BirthWeight$height) 
+  residual <- BirthWeight$weight - a - b[i]* BirthWeight$height 
+  sse[i] <- sum(residual^2) }
+
+plot(b, sse, type="l", ylim=c(90000000, 128460432), xlab=bquote(hat(b)[1]), ylab="RSS") 
+arrows(178, 97723317, 178, 88500000, length = 0.1, col="red") 
+abline(h=97723317,col="green", lty=2) 
+lines(b,sse)
+text(x=178, y=101723317, bquote("min \n(178, 97723317)"), col="black", cex=0.8)
+```
+
+ 
+
+## Quality of a linear regression fit
+
+The quality of a linear regression fit is typically assessed using two related quantities: residual standard error (RSE) and the coefficient of determination R$^2$.
+
+
+**Residual standard error (RSE)**
+
+RSE represents the average distance that the observed values fall from the regression line. Conveniently, it tells us how wrong the regression model is on average using the units of the response variable. Smaller values are better because it indicates that the observations are closer to the fitted line. In our example: 
+
+
+$$\ RSE = \sqrt{\frac{\ RSS}{n-2}}= \sqrt{\frac{\ 97723317}{550-2}}= 422.3$$
+
+ 
+
+**Coefficient of determination R$^2$**
+
+The R$^2$ is the fraction of the total variation in $y$ that is explained by the regression.
+
+
+$$\ R^2 = \frac{\ explained \ \ variation}{total \ \ variation}$$
+
+The R$^2$ value is called the **coefficient of determination** and indicates the percentage of the variance in the dependent variable that can be explained or accounted for by the independent variable. Hence, it is a measure of the **‘goodness of fit’** of the regression line to the data. It ranges between 0 and 1 (it won’t be negative). An R$^2$ statistic that is close to 1 indicates that a large proportion of the variability in the response has been explained by the regression. A number near 0 indicates that the regression did not explain much of the variability in the response.
+
+In our example takes the value 0.5085. It indicates that about 51% of the variation in infant’s body weight can be explained by the variation of the infant’s body height. In simple linear regression $\sqrt{0.5085} =  0.713$ which equals to the Pearson’s correlation coefficient, r.
+

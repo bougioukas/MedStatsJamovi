@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.251">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Introduction to Medical Statistics with Jamovi - 10&nbsp; Simple linear regression</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,7 +18,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -41,7 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -59,29 +57,21 @@ ul.task-list li input[type="checkbox"] {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><script src="site_libs/kePrint-0.0.1/kePrint.js"></script><link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
@@ -96,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -108,8 +98,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
@@ -160,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
@@ -168,8 +158,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
   </div>
@@ -220,25 +210,29 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#introduction-to-simple-linear-regression" id="toc-introduction-to-simple-linear-regression" class="nav-link active" data-scroll-target="#introduction-to-simple-linear-regression"><span class="toc-section-number">10.1</span>  Introduction to simple linear regression</a></li>
+  <li><a href="#example-association-between-weight-and-height" id="toc-example-association-between-weight-and-height" class="nav-link" data-scroll-target="#example-association-between-weight-and-height"><span class="toc-section-number">10.2</span>  Example: Association between weight and height</a></li>
+  <li><a href="#the-standard-error-se-of-the-regression-slope" id="toc-the-standard-error-se-of-the-regression-slope" class="nav-link" data-scroll-target="#the-standard-error-se-of-the-regression-slope"><span class="toc-section-number">10.3</span>  The Standard error (SE) of the regression slope</a></li>
+  <li><a href="#test-statistic-and-confidence-intervals-for-the-slope" id="toc-test-statistic-and-confidence-intervals-for-the-slope" class="nav-link" data-scroll-target="#test-statistic-and-confidence-intervals-for-the-slope"><span class="toc-section-number">10.4</span>  Test statistic and confidence intervals for the slope</a></li>
+  <li><a href="#observed-predicted-fitted-values-and-residuals" id="toc-observed-predicted-fitted-values-and-residuals" class="nav-link" data-scroll-target="#observed-predicted-fitted-values-and-residuals"><span class="toc-section-number">10.5</span>  Observed, predicted (fitted) values and residuals</a></li>
+  <li><a href="#quality-of-a-linear-regression-fit" id="toc-quality-of-a-linear-regression-fit" class="nav-link" data-scroll-target="#quality-of-a-linear-regression-fit"><span class="toc-section-number">10.6</span>  Quality of a linear regression fit</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-linear" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span></h1>
 </div>
 
 
@@ -250,13 +244,543 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header>
+</header><p>When we have finished this chapter, we should be able to:</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Fit and interpret simple linear models</li>
+<li>Assess the quality of a linear regression fit</li>
+</ul>
+</div>
+</div>
+<section id="introduction-to-simple-linear-regression" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="introduction-to-simple-linear-regression">
+<span class="header-section-number">10.1</span> Introduction to simple linear regression</h2>
+<p>Simple linear regression involves a numeric dependent (or response) variable <span class="math inline">\(Y\)</span> and one independent (or explanatory) variable <span class="math inline">\(X\)</span> that is either numeric or categorical.</p>
+<p>Often it is of interest to quantify the linear association between two numeric variables, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, and given the value of one variable for an individual, to predict the value of the other variable. This is not possible from the correlation coefficient as it simply indicates the strength of the association as a single number; in order to describe the association between the values of the two variables, a technique called regression is used. In regression, we assume that a change in the independent variable, <span class="math inline">\(X\)</span>, will lead directly to a change in the dependent variable <span class="math inline">\(Y\)</span>. However, the term “dependent” does not necessarily imply a cause-and-effect relationship between the two variables.</p>
+<p>We may recall from secondary/high school algebra that the equation of a line is: <span id="eq-line1"><span class="math display">\[y = \alpha + \beta \cdot x   \tag{10.1}\]</span></span></p>
+<div id="fig-line" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/line.png" class="lightbox" title="The equation of line." data-gallery="quarto-lightbox-gallery-1"><img src="images/line.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.1: The equation of line.</figcaption><p></p>
+</figure>
+</div>
+<p>The <a href="#eq-line1">Equation&nbsp;<span>10.1</span></a> is defined by two coefficients (parameters) <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</p>
+<ul>
+<li><p>The <strong>intercept coefficient</strong> <span class="math inline">\(\alpha\)</span> is the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x = 0\)</span> (the point where the fitted line crosses the y-axis; <a href="#fig-line">Figure&nbsp;<span>10.1</span></a>).</p></li>
+<li><p>The <strong>slope coefficient</strong> <span class="math inline">\(\beta\)</span> for <span class="math inline">\(x\)</span> is the mean change in <span class="math inline">\(y\)</span> for every one unit increase in <span class="math inline">\(x\)</span> (<a href="#fig-line">Figure&nbsp;<span>10.1</span></a>).</p></li>
+</ul></section><section id="example-association-between-weight-and-height" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="example-association-between-weight-and-height">
+<span class="header-section-number">10.2</span> Example: Association between weight and height</h2>
+<p>Let’s say that we want to explore the association between height and weight for the sample of 550 infants of 1 month age.</p>
+<p>A first step that is usually useful in studying the association between two continuous variables is to prepare a scatter plot of the data (<a href="#fig-scatter1">Figure&nbsp;<span>10.2</span></a>). The pattern made by the points plotted on the scatter plot usually suggests the basic nature and strength of the association between two variables.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-scatter1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="linear_files/figure-html/fig-scatter1-1.png" class="lightbox" title="Scatter plot with weight and height of infants of 1 month age." data-gallery="quarto-lightbox-gallery-2"><img src="linear_files/figure-html/fig-scatter1-1.png" class="img-fluid figure-img" width="576"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.2: Scatter plot with weight and height of infants of 1 month age.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As we can see in <a href="#fig-scatter1">Figure&nbsp;<span>10.2</span></a>, the points seem to be scattered around an invisible line . The scatter plot also shows that, in general, infants with high height tend to have high weight (positive association). Additionally, <a href="#fig-cor1">Figure&nbsp;<span>10.3</span></a> presents the results of the correlation analysis:</p>
+<div class="cell">
+<div id="fig-cor1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><table class="table" style="font-size: 15px; margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;font-weight: bold;">
+var1
+</th>
+<th style="text-align:left;font-weight: bold;">
+var2
+</th>
+<th style="text-align:right;font-weight: bold;">
+cor
+</th>
+<th style="text-align:right;font-weight: bold;">
+statistic
+</th>
+<th style="text-align:right;font-weight: bold;">
+p
+</th>
+<th style="text-align:right;font-weight: bold;">
+conf.low
+</th>
+<th style="text-align:right;font-weight: bold;">
+conf.high
+</th>
+<th style="text-align:left;font-weight: bold;">
+method
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align:left;">
+height
+</td>
+<td style="text-align:left;">
+weight
+</td>
+<td style="text-align:right;">
+0.71
+</td>
+<td style="text-align:right;">
+23.81
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+<td style="text-align:left;">
+Pearson
+</td>
+</tr></tbody>
+</table>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.3: Correlation table for weight and height.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>There is a high positive linear correlation (r=0.71, 95% CI: 0.67 to 0.75, p &lt;0.001) between weight and height for infants of 1 month age which is significant.</p>
+<p>To select the best fitting straight line of the data set, it is necessary to determine the estimated values <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> of parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> in <a href="#eq-line1">Equation&nbsp;<span>10.1</span></a>. The regression equation of the model becomes:</p>
+<p><span id="eq-line2"><span class="math display">\[\widehat{y} = a  + b \cdot x \tag{10.2}\]</span></span></p>
+<p>Why do we put a “hat” on top of the <span class="math inline">\(y\)</span>? It’s a form of notation commonly used in regression to indicate that we have a <strong>predicted value</strong>, or the value of <span class="math inline">\(y\)</span> <strong>on the regression line</strong> for a given <span class="math inline">\(x\)</span> value.</p>
+<p>The values of the intercept <span class="math inline">\(a\)</span> and the slope <span class="math inline">\(b\)</span> of height are presented in the following table (<a href="#fig-eq_table">Figure&nbsp;<span>10.4</span></a>):</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div id="fig-eq_table" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:right;">
+estimate
+</th>
+<th style="text-align:right;">
+std_error
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p_value
+</th>
+<th style="text-align:right;">
+lower_ci
+</th>
+<th style="text-align:right;">
+upper_ci
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+intercept
+</td>
+<td style="text-align:right;">
+-5412.15
+</td>
+<td style="text-align:right;">
+411.04
+</td>
+<td style="text-align:right;">
+-13.17
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+-6219.55
+</td>
+<td style="text-align:right;">
+-4604.74
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+height
+</td>
+<td style="text-align:right;">
+178.31
+</td>
+<td style="text-align:right;">
+7.49
+</td>
+<td style="text-align:right;">
+23.81
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+163.60
+</td>
+<td style="text-align:right;">
+193.02
+</td>
+</tr>
+</tbody>
+</table>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.4: The linear regression table.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>We draw the regression line that fits the data in <a href="#fig-scatter_line">Figure&nbsp;<span>10.5</span></a>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-scatter_line" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="linear_files/figure-html/fig-scatter_line-1.png" class="lightbox" title="Scatter plot of weight and height with the regression line." data-gallery="quarto-lightbox-gallery-3"><img src="linear_files/figure-html/fig-scatter_line-1.png" class="img-fluid figure-img" width="576"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.5: Scatter plot of weight and height with the regression line.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><strong>The intercept</strong> <span class="math inline">\(a\)</span></p>
+<p>Now, let’s focus on interpreting the regression table in <a href="#fig-eq_table">Figure&nbsp;<span>10.4</span></a>. In the <strong>estimate</strong> column are the intercept <span class="math inline">\(a\)</span> = -5412.15 and the slope <span class="math inline">\(b\)</span> = 178.31 for height. Thus the equation of the regression line becomes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\widehat{y} &amp;= a + b \cdot x\\
+\widehat{\text{weight}} &amp;= a + b \cdot\text{height}\\
+&amp;= -5412.15 + 178.31\cdot\text{height}
+\end{aligned}
+\]</span></p>
+<p>The intercept <span class="math inline">\(a\)</span> = -5412.15 is the average weight for those infants with height of 0. Or in graphical terms, it’s where the line intersects the <span class="math inline">\(y\)</span> axis when <span class="math inline">\(x\)</span> = 0 (<a href="#fig-intercept">Figure&nbsp;<span>10.6</span></a>). Note, however, that while the intercept of the regression line has a mathematical interpretation, it has no <em>physical</em> interpretation here, since observing a weight of 0 is impossible.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-intercept" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="linear_files/figure-html/fig-intercept-1.png" class="lightbox" title="Data of infants’ body height-body weight with fitted line crossing the y-axis." data-gallery="quarto-lightbox-gallery-4"><img src="linear_files/figure-html/fig-intercept-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.6: Data of infants’ body height-body weight with fitted line crossing the y-axis.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><strong>The slope</strong> <span class="math inline">\(b\)</span></p>
+<p>Of greater interest is the slope of height, <span class="math inline">\(b=178.31\)</span>, as this summarizes the association between the height and weight variables.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-slope" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="linear_files/figure-html/fig-slope-1.png" class="lightbox" title="Scatter plot of infants’ body height-body weight and graphically calculation of the slope." data-gallery="quarto-lightbox-gallery-5"><img src="linear_files/figure-html/fig-slope-1.png" class="img-fluid figure-img" width="691"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.7: Scatter plot of infants’ body height-body weight and graphically calculation of the slope.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The graphical calculation of the slope from two points of the fitted line is (<a href="#fig-slope">Figure&nbsp;<span>10.7</span></a>):</p>
+<p><span class="math display">\[  
+b =\frac{dy}{dx}=\frac{5270-4560}{60-56}= \frac{710}{4} \approx 178
+\]</span> Note that, in this example, the coefficient has units g/cm.</p>
+<p>Additionally, note that the sign is positive, suggesting a positive association between these two variables, meaning infants with higher height also tend to have higher weight. Recall from earlier that the correlation coefficient was <span class="math inline">\(r = 0.71\)</span>. They both have the same positive sign, but have a different value. Recall further that the correlation’s interpretation is the “strength of linear association”. The slope’s interpretation is a little different:</p>
+<blockquote class="blockquote">
+<p>For every 1 cm increase in height, there is <strong>on average</strong> an associated increase of 178 g of weight.</p>
+</blockquote>
+<p>We only state that there is an <strong>associated</strong> increase and not necessarily a <strong>causal</strong> increase. In other words, just because two variables are strongly associated, it doesn’t necessarily mean that one causes the other. This is summed up in the often quoted phrase, “correlation is not necessarily causation.”</p>
+<p>Furthermore, we say that this associated increase is <strong>on average</strong> 178 g of weight, because we might have two infants whose height differ by 1 cm, but their difference in weight won’t necessarily be exactly 178. What the slope of 178 is saying is that <strong>across all possible infants, the <em>average</em> difference in weight between two infants whose height differ by 1 cm is 178 g</strong>.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Interpretation of linear regression
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In summary, we can say that the regression coefficient of the height (178) is significantly different from zero (p &lt; 0.001) and indicates that there’s on average an increase of 178 g (<span class="math inline">\(95\%\)</span>CI: 164 to 193) in weight for every 1 cm increase in height. Note that the <span class="math inline">\(95\%\)</span>CI does not include the hypothesized null value of zero for the slope.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="the-standard-error-se-of-the-regression-slope" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="the-standard-error-se-of-the-regression-slope">
+<span class="header-section-number">10.3</span> The Standard error (SE) of the regression slope</h2>
+<p>The third column of the regression table in <a href="#fig-eq_table">Figure&nbsp;<span>10.4</span></a> corresponds to the <em>standard error</em> of our estimates. We are interested in understanding the standard error of the slope (<span class="math inline">\(SE_{b}\)</span>).</p>
+<blockquote class="blockquote">
+<p>Say we hypothetically collected 1000 samples of pairs of weight and height, computed the 1000 resulting values of the fitted slope <span class="math inline">\(b\)</span>, and visualized them in a histogram. This would be a visualization of the <em>sampling distribution</em> of <span class="math inline">\(b\)</span>. The standard deviation of the <em>sampling distribution</em> of <span class="math inline">\(b\)</span> has a special name: the <em>standard error</em> of <span class="math inline">\(b\)</span>.</p>
+</blockquote>
+<p>The coefficient for the independent variable ‘height’ is 178.31. The standard error is 7.49, which is a measure of the variability around this estimate for the regression slope.</p>
+<p>&nbsp;</p>
+</section><section id="test-statistic-and-confidence-intervals-for-the-slope" class="level2" data-number="10.4"><h2 data-number="10.4" class="anchored" data-anchor-id="test-statistic-and-confidence-intervals-for-the-slope">
+<span class="header-section-number">10.4</span> Test statistic and confidence intervals for the slope</h2>
+<p>The fourth column of the regression table in <a href="#fig-eq_table">Figure&nbsp;<span>10.4</span></a> corresponds to a <em>t-statistic</em>. The hypothesis testing for the slope is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0 &amp;: \beta = 0\\
+\text{vs } H_1&amp;: \beta \neq 0.
+\end{aligned}
+\]</span></p>
+<p>The null hypothesis, <span class="math inline">\(H_{0}\)</span>, states that the coefficient of the independent variable (height) is equal to zero, and the alternative hypothesis, <span class="math inline">\(H_{1}\)</span>, states that the coefficient of the independent variable is not equal to zero.</p>
+<p>The <strong>t-statistic</strong> for the slope is defined by the following equation:</p>
+<p><span class="math display">\[\ t = \frac{\ b}{\text{SE}_b}\]</span></p>
+<p>In our example:</p>
+<p><span class="math display">\[\ t = \frac{\ b_1}{\text{SE}_{b_1}}=\frac{\ 178.31}{\text{7.49}} = 23.81\]</span></p>
+<p>The <span class="math inline">\(95\%\)</span> CI of the coefficient <span class="math inline">\(b\)</span> for a significance level α = 0.05, <span class="math inline">\(df=n-2\)</span> degrees of freedom and for a two-tailed t-test is given by:</p>
+<p><span class="math display">\[ 95\% \ \text{CI}_{b} = b \pm t_{df; 0.05/2} \cdot \text{SE}_{b}\]</span></p>
+<p>In our example:</p>
+<p><span class="math display">\[ 95\% \ \text{CI}_{b} = 178.31 \pm 1.96 \cdot \text{7.49}= 178.31 \pm 14.68 \Rightarrow 95\% \text{CI}_{b}= \ (163.6, 193)\]</span> &nbsp;</p>
+</section><section id="observed-predicted-fitted-values-and-residuals" class="level2" data-number="10.5"><h2 data-number="10.5" class="anchored" data-anchor-id="observed-predicted-fitted-values-and-residuals">
+<span class="header-section-number">10.5</span> Observed, predicted (fitted) values and residuals</h2>
+<p>We define the following three concepts:</p>
+<ol type="1">
+<li>
+<strong>Observed</strong> values <span class="math inline">\(y\)</span>, or the observed value of the dependent variable for a given <span class="math inline">\(x\)</span> value</li>
+<li>
+<strong>Predicted</strong> (or fitted) values <span class="math inline">\(\widehat{y}\)</span>, or the value on the regression line for a given <span class="math inline">\(x\)</span> value</li>
+<li>
+<strong>Residuals</strong> <span class="math inline">\(y - \widehat{y}\)</span>, or the error (ε) between the observed value and the predicted value for a given <span class="math inline">\(x\)</span> value</li>
+</ol>
+<div id="fig-line2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/line2.png" class="lightbox" title="The equation of line." data-gallery="quarto-lightbox-gallery-6"><img src="images/line2.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.8: The equation of line.</figcaption><p></p>
+</figure>
+</div>
+<p>The residuals are exactly the <strong>vertical</strong> distance between the observed data point and the associated point on the regression line (predicted value) (<a href="#fig-line2">Figure&nbsp;<span>10.8</span></a>). Positive residuals have associated y values above the fitted line and negative residuals have values below. We want the residuals to be small in magnitude, because large negative residuals are as bad as large positive residuals.</p>
+<p><a href="#fig-residuals">Figure&nbsp;<span>10.9</span></a> shows these values:</p>
+<div class="cell">
+<div id="fig-residuals" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:right;">
+ID
+</th>
+<th style="text-align:right;">
+weight
+</th>
+<th style="text-align:right;">
+height
+</th>
+<th style="text-align:right;">
+weight_hat
+</th>
+<th style="text-align:right;">
+residual
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3950
+</td>
+<td style="text-align:right;">
+55.5
+</td>
+<td style="text-align:right;">
+4483.939
+</td>
+<td style="text-align:right;">
+-533.939
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4630
+</td>
+<td style="text-align:right;">
+57.0
+</td>
+<td style="text-align:right;">
+4751.401
+</td>
+<td style="text-align:right;">
+-121.401
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4750
+</td>
+<td style="text-align:right;">
+56.0
+</td>
+<td style="text-align:right;">
+4573.093
+</td>
+<td style="text-align:right;">
+176.907
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3920
+</td>
+<td style="text-align:right;">
+56.0
+</td>
+<td style="text-align:right;">
+4573.093
+</td>
+<td style="text-align:right;">
+-653.093
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4560
+</td>
+<td style="text-align:right;">
+55.0
+</td>
+<td style="text-align:right;">
+4394.785
+</td>
+<td style="text-align:right;">
+165.215
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+3640
+</td>
+<td style="text-align:right;">
+51.5
+</td>
+<td style="text-align:right;">
+3770.708
+</td>
+<td style="text-align:right;">
+-130.708
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+3550
+</td>
+<td style="text-align:right;">
+56.0
+</td>
+<td style="text-align:right;">
+4573.093
+</td>
+<td style="text-align:right;">
+-1023.093
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+4530
+</td>
+<td style="text-align:right;">
+57.0
+</td>
+<td style="text-align:right;">
+4751.401
+</td>
+<td style="text-align:right;">
+-221.401
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+4970
+</td>
+<td style="text-align:right;">
+58.5
+</td>
+<td style="text-align:right;">
+5018.863
+</td>
+<td style="text-align:right;">
+-48.863
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+3740
+</td>
+<td style="text-align:right;">
+52.0
+</td>
+<td style="text-align:right;">
+3859.862
+</td>
+<td style="text-align:right;">
+-119.862
+</td>
+</tr>
+</tbody>
+</table>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.9: Regression points (first 10 out of 550 infants).</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>Observe in the above table that <strong>weight_hat</strong> contains the fitted values <span class="math inline">\(\widehat{y}\)</span> = <span class="math inline">\(\widehat{\text{weight}}\)</span>.</p>
+<p>The <strong>residual</strong> column is simply <span class="math inline">\(e_i = y - \widehat{y} = weight - weight\_hat\)</span>.</p>
+<p>Let’s see, for example, the values for the first infant and have a visual representation:</p>
+<ul>
+<li><p>The <strong>observed value</strong> <span class="math inline">\(y\)</span> = 3950 is infant’s weight for <span class="math inline">\(x\)</span> = 55.5.</p></li>
+<li><p>The <strong>predicted value</strong> <span class="math inline">\(\widehat{y}\)</span> is the value 4483.939 on the regression line for <span class="math inline">\(x\)</span> = 55.5. This value is computed using the intercept and slope in the previous regression in <a href="#fig-eq_table">Figure&nbsp;<span>10.4</span></a>: <span class="math display">\[\widehat{y} = α + b \cdot x = -5412.145 + 178.308 \cdot 55.5 = 4483.9\]</span></p></li>
+<li><p>The <strong>residual</strong> is computed by subtracting the predicted (fitted) value <span class="math inline">\(\widehat{y}\)</span> from the observed value <span class="math inline">\(y\)</span>. The residual can be thought of as a model’s error or “lack of fit” for a particular observation. In the case of this infant, it is <span class="math inline">\(y - \widehat{y}\)</span> = 3950 - 4483.9 = -533.9 .</p></li>
+</ul>
+<p>A “best-fitting” line refers to the line that <strong>minimizes</strong> the <strong>sum of squared residuals (RSS)</strong>, also known as sum of squared estimate of errors (SSE) out of all possible lines we can draw through the points.</p>
+<p><span class="math display">\[
+min(RSS) =min\sum_{i=1}^{n}(y_i - \widehat{y}_i)^2
+\]</span></p>
+<p>In <a href="#fig-min_slope">Figure&nbsp;<span>10.10</span></a>, we have found the minimum value of RSS (it turns out to be 97723317) and have drawn a horizontal dashed green line. At the point where this minimum touches the graph, we have read down to the x axis to find the best value of the slope. This is the value 178.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-min_slope" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="linear_files/figure-html/fig-min_slope-1.png" class="lightbox" title="The sum of the squares of the residuals against the value of the coefficient of the slope which we are trying to estimate." data-gallery="quarto-lightbox-gallery-7"><img src="linear_files/figure-html/fig-min_slope-1.png" class="img-fluid figure-img" width="691"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10.10: The sum of the squares of the residuals against the value of the coefficient of the slope which we are trying to estimate.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="quality-of-a-linear-regression-fit" class="level2" data-number="10.6"><h2 data-number="10.6" class="anchored" data-anchor-id="quality-of-a-linear-regression-fit">
+<span class="header-section-number">10.6</span> Quality of a linear regression fit</h2>
+<p>The quality of a linear regression fit is typically assessed using two related quantities: residual standard error (RSE) and the coefficient of determination R<span class="math inline">\(^2\)</span>.</p>
+<p><strong>Residual standard error (RSE)</strong></p>
+<p>RSE represents the average distance that the observed values fall from the regression line. Conveniently, it tells us how wrong the regression model is on average using the units of the response variable. Smaller values are better because it indicates that the observations are closer to the fitted line. In our example:</p>
+<p><span class="math display">\[\ RSE = \sqrt{\frac{\ RSS}{n-2}}= \sqrt{\frac{\ 97723317}{550-2}}= 422.3\]</span></p>
+<p>&nbsp;</p>
+<p><strong>Coefficient of determination R<span class="math inline">\(^2\)</span></strong></p>
+<p>The R<span class="math inline">\(^2\)</span> is the fraction of the total variation in <span class="math inline">\(y\)</span> that is explained by the regression.</p>
+<p><span class="math display">\[\ R^2 = \frac{\ explained \ \ variation}{total \ \ variation}\]</span></p>
+<p>The R<span class="math inline">\(^2\)</span> value is called the <strong>coefficient of determination</strong> and indicates the percentage of the variance in the dependent variable that can be explained or accounted for by the independent variable. Hence, it is a measure of the <strong>‘goodness of fit’</strong> of the regression line to the data. It ranges between 0 and 1 (it won’t be negative). An R<span class="math inline">\(^2\)</span> statistic that is close to 1 indicates that a large proportion of the variability in the response has been explained by the regression. A number near 0 indicates that the regression did not explain much of the variability in the response.</p>
+<p>In our example takes the value 0.5085. It indicates that about 51% of the variation in infant’s body weight can be explained by the variation of the infant’s body height. In simple linear regression <span class="math inline">\(\sqrt{0.5085} = 0.713\)</span> which equals to the Pearson’s correlation coefficient, r.</p>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -367,9 +891,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./correlation.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation</span></span>
       </a>          
@@ -381,12 +903,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer>
-
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
 
 
 </body></html>
