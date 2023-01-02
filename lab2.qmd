@@ -28,7 +28,6 @@ When we have finished this Lab, we should be able to:
 
 In this Lab, we will use the data from `arrhythmia` dataset that we have already downloaded in our PC. (**Note:** This starts by assuming we know how to get data into Jamovi).
 
-
 ## Summarizing Categorical Data (Frequency Statistics for one categorical variable)
 
 Consider the binary `sex` variable in arrhythmia dataset. A simple way for summarizing the data is to create a table that shows the number of times each category has been observed.
@@ -44,19 +43,15 @@ flowchart LR
 
 from the top menu, as shown below in @fig-descriptives1.
 
-![In the Analyses Tab select Exploration and click on Descriptives](images/descriptives1.png){#fig-descriptives1}
+![In the Analyses Tab select Exploration and click on Descriptives](images/descriptives1.png){#fig-descriptives1 width=90%}
 
 The `Descriptives` dialogue box opens, as shown below @fig-descriptives2:
 
-![The Descriptives dialogue box](images/descriptives2.png){#fig-descriptives2 width="500" height="442"}
+![The Descriptives dialogue box](images/descriptives2.png){#fig-descriptives2 width=75%}
 
-Transfer the `sex` variable from the box on the left side of the screen into the `Variables` box on the right side by highlighting the variable and pressing the Arrow Button (alternatively, drag and drop the variable `sex`). We will end up with the following screen:
+Transfer the `sex` variable from the box on the left-hand side of the screen into the `Variables` box on the right-hand side by highlighting the variable and pressing the Arrow Button (alternatively, drag and drop the variable `sex`). Then, we check the `Frequency tables` box and we also unchecked all the other options for descriptive statistics. We will end up with the following screen:
 
-![Transfer the `sex` variable into the `Variables` box](images/descriptives3.png){#fig-descriptives3 width="500" height="442"}
-
-Finally, we check the `Frequency tables` box and we also unchecked all the other options for descriptive statistics as shown below:
-
-![Check the `Frequency tables` box and unchecked all the other options for descriptive statistics](images/descriptives4.png){#fig-descriptives4}
+![Transfer the `sex` variable into the `Variables` box. Check the `Frequency tables` box and unchecked all the other options for descriptive statistics.](images/descriptives4.png){#fig-descriptives4 width=75%}
 
 The output should look like the following:
 
@@ -64,9 +59,9 @@ The output should look like the following:
 
 The percentage of female patients (55%, 249/452) is larger than the percentage of male patients (45%, 203/452) in our data.
 
-To generate a basic descriptive plot navigate to the `Plot` section and check the `Bar Plot`, as shown below:
+To generate a basic descriptive plot navigate to the `Plots` section and check the `Bar Plot`, as shown below:
 
-![From the Plot section check the `Bar Plot`](images/descriptives6.png){#fig-descriptives6}
+![From the Plots section check the `Bar Plot`](images/descriptives6.png){#fig-descriptives6 width=75%}
 
 The Bar Plot produced here presents the absolute frequencies (counts).
 
@@ -83,9 +78,12 @@ flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
+from the top menu, as shown in @fig-descriptives1.
+
+
 Now, select the variables `age` and `QRS` and drag them in the empty `Variables` box, as shown below:
 
-![select the variables `age` and `QRS`](images/descriptives8.png){#fig-descriptives8}
+![select the variables `age` and `QRS`](images/descriptives8.png){#fig-descriptives8 width=75%}
 
 Next, we decide how to display our data tables. We have got the following two options:
 
@@ -97,7 +95,7 @@ Let' select variable across columns (the default).
 
 We can now select the relevant descriptive statistics in the `Statistics` section:
 
-![select the descriptive statistics of interest](images/descriptives9.png){#fig-descriptives9}
+![select the descriptive statistics of interest](images/descriptives9.png){#fig-descriptives9 width=75%}
 
 Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below:
 
@@ -105,7 +103,7 @@ Once we have selected our descriptive statistics, a table will appear in the out
 
 For continuous data we can select Histograms, Box Plots, Violin and Data as shown below:
 
-![Select Histograms, Box Plots, and Violin plots.](images/descriptives11.png){#fig-descriptives11}
+![Select Histograms, Box Plots, and Violin plots.](images/descriptives11.png){#fig-descriptives11 width=75%}
 
 ![Histograms of age](images/hist1.png){#fig-hist1}
 

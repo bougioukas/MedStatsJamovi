@@ -143,9 +143,6 @@ ggstatsplot::ggscatterstats(
 
 ```
 
- 
-
-**The intercept** $a$
 
 Now, let's focus on interpreting the regression table in @fig-eq_table. In the **estimate** column are the intercept $a$ = `r format(evals_line[1], digits=6)` and the slope $b$ = `r format(evals_line[2], digits=5)` for height. Thus the equation of the regression line becomes:
 
@@ -153,11 +150,15 @@ $$
 \begin{aligned}
 \widehat{y} &= a + b \cdot x\\
 \widehat{\text{weight}} &= a + b \cdot\text{height}\\
-&= -5412.15 + 178.31\cdot\text{height}
+\widehat{\text{weight}}&= -5412.15 + 178.31\cdot\text{height}
 \end{aligned}
 $$
 
-The intercept $a$ = `r format(evals_line[1], digits=6)` is the average weight for those infants with height of 0. Or in graphical terms, it's where the line intersects the $y$ axis when $x$ = 0 (@fig-intercept). Note, however, that while the intercept of the regression line has a mathematical interpretation, it has no *physical* interpretation here, since observing a weight of 0 is impossible.
+ 
+
+**The intercept** $a$
+
+The intercept $a$ = `r format(evals_line[1], digits=6)` is the average weight for those infants with height of 0. In graphical terms, it's where the line intersects the $y$ axis when $x$ = 0 (@fig-intercept). Note, however, that while the intercept of the regression line has a mathematical interpretation, it has no *physical* interpretation here, since observing a weight of 0 is impossible.
 
 ```{r}
 #| echo: false
@@ -178,7 +179,7 @@ text(49, -4300, bquote(paste (hat(weight), "= -5412.15+178.31*height")),col="bla
 
 **The slope** $b$
 
-Of greater interest is the slope of height, $b=`r format(evals_line[2], digits=5)`$, as this summarizes the association between the height and weight variables.
+Of greater interest is the slope of height, $b=`r format(evals_line[2], digits=5)`$, as it summarizes the association between the height and weight variables.
 
 ```{r}
 #| echo: false
@@ -247,7 +248,7 @@ The null hypothesis, $H_{0}$, states that the coefficient of the independent var
 
 The **t-statistic** for the slope is defined by the following equation:
 
-$$\ t = \frac{\ b}{\text{SE}_b}$$
+$$\ t = \frac{\ b}{\text{SE}_b}$$ {#eq-tstats}
 
 In our example:
 
@@ -256,7 +257,7 @@ $$\ t = \frac{\ b_1}{\text{SE}_{b_1}}=\frac{\ 178.31}{\text{7.49}} = 23.81$$
 The $95\%$ CI of the coefficient $b$ for a significance level α = 0.05, $df=n-2$ degrees of freedom and for a two-tailed t-test is given by:
 
 
-$$ 95\% \ \text{CI}_{b} = b \pm t_{df; 0.05/2} \cdot \text{SE}_{b}$$
+$$ 95\% \ \text{CI}_{b} = b \pm t_{df; 0.05/2} \cdot \text{SE}_{b}$$ {#eq-tci}
 
 
 In our example:
@@ -296,7 +297,7 @@ regression_points %>%
                 latex_options = c("hold_position"))
 ```
 
-Observe in the above table that **weight_hat** contains the fitted values $\widehat{y}$ = $\widehat{\text{weight}}$.
+Observe in the above table that **weight_hat** contains the predicted (fitted) values $\widehat{y}$ = $\widehat{\text{weight}}$.
 
 The **residual** column is simply $e_i = y - \widehat{y} = weight - weight\_hat$.
 
@@ -311,11 +312,9 @@ $$\widehat{y} = α + b \cdot x = -5412.145 + 178.308 \cdot 55.5 = 4483.9$$
 - The **residual**  is computed by subtracting the predicted (fitted) value $\widehat{y}$ from the observed value $y$. The residual can be thought of as a model's error or "lack of fit" for a particular observation.  In the case of this infant, it is $y - \widehat{y}$ = 3950 - 4483.9 = -533.9 .  
 
 
-A “best-fitting” line refers to the line that **minimizes** the **sum of squared residuals (RSS)**, also known as sum of squared estimate of errors (SSE) out of all possible lines we can draw through the points. 
+A “best-fitting” line refers to the line that **minimizes** the **sum of squared residuals (RSS)**, also known as sum of squared estimate of errors (SSE) out of all possible lines we can draw through the points. The method of least squares is the most popular method used to calculate the coefficients of the regression line.
 
-$$
-min(RSS) =min\sum_{i=1}^{n}(y_i - \widehat{y}_i)^2
-$$
+$$ min(RSS) =min\sum_{i=1}^{n}(y_i - \widehat{y}_i)^2 $$ {#eq-minrss}
 
 In @fig-min_slope, we have found the minimum value of RSS (it turns out to be 97723317) and have drawn a horizontal dashed green line. At the point where this minimum touches the graph, we have read down to the x axis to find the best value of the slope. This is the value 178.
 
@@ -355,7 +354,7 @@ The quality of a linear regression fit is typically assessed using two related q
 RSE represents the average distance that the observed values fall from the regression line. Conveniently, it tells us how wrong the regression model is on average using the units of the response variable. Smaller values are better because it indicates that the observations are closer to the fitted line. In our example: 
 
 
-$$\ RSE = \sqrt{\frac{\ RSS}{n-2}}= \sqrt{\frac{\ 97723317}{550-2}}= 422.3$$
+$$\ RSE = \sqrt{\frac{\ RSS}{n-2}}= \sqrt{\frac{\ 97723317}{550-2}}= 422.3$$ {#eq-rse}
 
  
 
@@ -364,7 +363,7 @@ $$\ RSE = \sqrt{\frac{\ RSS}{n-2}}= \sqrt{\frac{\ 97723317}{550-2}}= 422.3$$
 The R$^2$ is the fraction of the total variation in $y$ that is explained by the regression.
 
 
-$$\ R^2 = \frac{\ explained \ \ variation}{total \ \ variation}$$
+$$\ R^2 = \frac{\ explained \ \ variation}{total \ \ variation}$$ {#eq-r2}
 
 The R$^2$ value is called the **coefficient of determination** and indicates the percentage of the variance in the dependent variable that can be explained or accounted for by the independent variable. Hence, it is a measure of the **‘goodness of fit’** of the regression line to the data. It ranges between 0 and 1 (it won’t be negative). An R$^2$ statistic that is close to 1 indicates that a large proportion of the variability in the response has been explained by the regression. A number near 0 indicates that the regression did not explain much of the variability in the response.
 

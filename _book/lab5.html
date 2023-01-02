@@ -259,14 +259,14 @@ Learning objectives
 <p>&nbsp;</p>
 <p>In this Lab we are going to test whether the sample mean and the mean of the population of a variable of interest differ significantly (<a href="#fig-z1">Figure&nbsp;<span>15.1</span></a>) using the theory of hypothesis testing.</p>
 <div id="fig-z1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/z1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Example of a simple research question"><img src="images/z1.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/z1.png" class="lightbox" title="Example of a simple research question" data-gallery="quarto-lightbox-gallery-1"><img src="images/z1.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.1: Example of a simple research question</figcaption><p></p>
 </figure>
 </div>
 <p>We are going to answer in the research question with the help of a <code>Shiny</code> application. So, clink on the following link <a href="https://antoinesoetewey.shinyapps.io/statistics-201/">Z-Test</a>.</p>
 <p>A <code>Shiny</code> app opens in a web window as shown below (<a href="#fig-shiny_app10">Figure&nbsp;<span>15.2</span></a>):</p>
 <div id="fig-shiny_app10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The Shiny application for hypothesis testing"><img src="images/shiny_app10.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/shiny_app10.png" class="lightbox" title="The Shiny application for hypothesis testing" data-gallery="quarto-lightbox-gallery-2"><img src="images/shiny_app10.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.2: The Shiny application for hypothesis testing</figcaption><p></p>
 </figure>
 </div>
@@ -325,7 +325,7 @@ Step 1: Determine the appropriate null hypothesis and alternative hypothesis
 </div>
 <p>First, we select from the drop down menu <strong>Inference for one mean</strong>. Then we set the <strong>Null hypothesis:</strong> <span class="math inline">\(H_{0}: μ= 8\)</span> and the <strong>Alternative</strong> <span class="math inline">\(\neq\)</span> (two sided test). We also check the box of variance of the population, where we type <span class="math inline">\(\sigma^2 = 4\)</span>, as shown below (<a href="#fig-shiny_app11">Figure&nbsp;<span>15.3</span></a>):</p>
 <div id="fig-shiny_app11" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Settings for one sample Z-test"><img src="images/shiny_app11.png" class="img-fluid figure-img" width="400"></a></p>
+<figure class="figure"><p><a href="images/shiny_app11.png" class="lightbox" title="Settings for one sample Z-test" data-gallery="quarto-lightbox-gallery-3"><img src="images/shiny_app11.png" class="img-fluid figure-img" width="400"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.3: Settings for one sample Z-test</figcaption><p></p>
 </figure>
 </div>
@@ -344,7 +344,7 @@ Step 2: Set the level of significance, α
 </div>
 <p>At the slider bar we keep the default value α=0.05 for the level of significance (<a href="#fig-shiny_app12">Figure&nbsp;<span>15.4</span></a>):</p>
 <div id="fig-shiny_app12" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="We set the value α=0.05 for the level of significance"><img src="images/shiny_app12.png" class="img-fluid figure-img" width="400"></a></p>
+<figure class="figure"><p><a href="images/shiny_app12.png" class="lightbox" title="We set the value α=0.05 for the level of significance" data-gallery="quarto-lightbox-gallery-4"><img src="images/shiny_app12.png" class="img-fluid figure-img" width="400"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.4: We set the value α=0.05 for the level of significance</figcaption><p></p>
 </figure>
 </div>
@@ -364,7 +364,7 @@ Step 3: Identify the appropriate test statistic and check the assumptions. Calcu
 </div>
 <p>In the <strong>Sample</strong> box type the values of the treatment group 7, 6, 9, 8, 8, 7, 7, 6, 8, 6 (<a href="#fig-shiny_app13">Figure&nbsp;<span>15.5</span></a>):</p>
 <div id="fig-shiny_app13" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="The sample data of the treatment group"><img src="images/shiny_app13.png" class="img-fluid figure-img" width="400"></a></p>
+<figure class="figure"><p><a href="images/shiny_app13.png" class="lightbox" title="The sample data of the treatment group" data-gallery="quarto-lightbox-gallery-5"><img src="images/shiny_app13.png" class="img-fluid figure-img" width="400"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.5: The sample data of the treatment group</figcaption><p></p>
 </figure>
 </div>
@@ -391,7 +391,7 @@ Step 4: Decide whether or not the result is statistically significant
 </div>
 <p>In our example, we observe that the p-value for a two-sided test is equal to 2*0.103= 0.206 &gt; 0.05 (<a href="#fig-shiny_app14">Figure&nbsp;<span>15.6</span></a>). So, the sample mean and the mean of the population does not differ significantly in days to recover from the disease, we can not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</p>
 <div id="fig-shiny_app14" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="The blue vertical line of Test stististic=-1.265 is outside of the rejection region. Therefore, we failed to reject Ho."><img src="images/shiny_app14.png" class="img-fluid figure-img" width="800"></a></p>
+<figure class="figure"><p><a href="images/shiny_app14.png" class="lightbox" title="The blue vertical line of Test stististic=-1.265 is outside of the rejection region. Therefore, we failed to reject Ho." data-gallery="quarto-lightbox-gallery-6"><img src="images/shiny_app14.png" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;15.6: The blue vertical line of Test stististic=-1.265 is outside of the rejection region. Therefore, we failed to reject Ho.</figcaption><p></p>
 </figure>
 </div>
@@ -538,7 +538,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
 
 
 </body></html>

@@ -227,8 +227,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
 <li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link" data-scroll-target="#opening-the-file">Opening the file</a></li>
   <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
-  <li><a href="#hypothesis-testsing" id="toc-hypothesis-testsing" class="nav-link" data-scroll-target="#hypothesis-testsing">Hypothesis Testsing</a></li>
+  <li><a href="#hypothesis-testsing-for-the-students-t-test" id="toc-hypothesis-testsing-for-the-students-t-test" class="nav-link" data-scroll-target="#hypothesis-testsing-for-the-students-t-test">Hypothesis Testsing for the Student’s t-test</a></li>
   <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#run-the-students-t-test" id="toc-run-the-students-t-test" class="nav-link" data-scroll-target="#run-the-students-t-test">Run the Student’s t-test</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -272,7 +273,7 @@ Learning objectives
 <section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
 <p>Open the dataset named <code>depression</code> from the file tab in the menu:</p>
 <div id="fig-depression1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/depression1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The depression dataset"><img src="images/depression1.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="images/depression1.png" class="lightbox" title="The depression dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/depression1.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;16.1: The depression dataset</figcaption><p></p>
 </figure>
 </div>
@@ -281,7 +282,7 @@ Learning objectives
 <p>In an experiment designed to test the effectiveness of paroxetine for treating bipolar depression, the participants were randomly assigned into two groups (intervention Vs placebo).</p>
 <p>The researchers used the Hamilton Depression Rating Scale (HDRS) to measure the depression state of the participants and wanted to find out if the HDRS score is different in paroxetine group as compared to placebo group at the end of the experiment. The significance level α was set to 0.05.</p>
 <p>Note A score of 0–7 in HDRS is generally accepted to be within the normal range, while a score of 20 or higher indicates at least moderate severity.</p>
-</section><section id="hypothesis-testsing" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing">Hypothesis Testsing</h3>
+</section><section id="hypothesis-testsing-for-the-students-t-test" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing-for-the-students-t-test">Hypothesis Testsing for the Student’s t-test</h3>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -296,7 +297,7 @@ Null hypothesis and alternative hypothesis
 <li>
 <span class="math inline">\(H_0\)</span>: the means of HDRS in the two groups are equal (<span class="math inline">\(\mu_{1} = \mu_{2}\)</span>)</li>
 <li>
-<span class="math inline">\(H_1\)</span>: the means of HDRS in the two groups are different (<span class="math inline">\(\mu_{1} \neq \mu_{2}\)</span>)</li>
+<span class="math inline">\(H_1\)</span>: the means of HDRS in the two groups are not equal (<span class="math inline">\(\mu_{1} \neq \mu_{2}\)</span>)</li>
 </ul>
 </div>
 </div>
@@ -337,28 +338,165 @@ Assumptions of the Student’s t-test
 </div>
 <p>Drag the variable <code>HDRS</code> into the <code>Variables</code> box and split it by the <code>treatment</code> variable, as shown below (<a href="#fig-descriptives12">Figure&nbsp;<span>16.2</span></a>):</p>
 <div id="fig-descriptives12" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="select the descriptive statistics of interest"><img src="images/descriptives12.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.2: select the descriptive statistics of interest</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives12.png" class="lightbox" title="Split the variable HDRS by treatment group" data-gallery="quarto-lightbox-gallery-4"><img src="images/descriptives12.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.2: Split the variable HDRS by treatment group</figcaption><p></p>
 </figure>
 </div>
-<p>We can now select the relevant descriptive statistics in the <code>Statistics</code> section:</p>
+<p>We can now select the relevant descriptive statistics such as <code>Percantiles</code>, <code>Skewness</code>, <code>Kurtosis</code> and the <code>Shapiro-Wilk</code> test from the <code>Statistics</code> section:</p>
 <div id="fig-descriptives13" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="select the descriptive statistics of interest"><img src="images/descriptives13.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.3: select the descriptive statistics of interest</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" title="In the Statistics section select the descriptive statistics of interest." data-gallery="quarto-lightbox-gallery-5"><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.3: In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
 </figure>
 </div>
-<p>Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below:</p>
+<p>Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below:</p>
 <div id="fig-descriptives14" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Descriptive statistics of HDSR by group"><img src="images/descriptives14.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.4: Descriptive statistics of HDSR by group</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives14.png" class="lightbox" title="Descriptive statistics of HDSR by treatment group" data-gallery="quarto-lightbox-gallery-6"><img src="images/descriptives14.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.4: Descriptive statistics of HDSR by treatment group</figcaption><p></p>
 </figure>
 </div>
-<p>Then we can check the Density from Histograms, as shown below (<a href="#fig-descriptives15">Figure&nbsp;<span>16.5</span></a>):</p>
+<p>The means are close to medians (20.3 vs 21 and 21.5 vs 21). The skewness is approximately zero (symmetric distribution) and the (excess) kurtosis is close to zero (mesokurtic distribution) indicating normal distributions for both groups.</p>
+<p>Additionally, the Shapiro-Wilk tests of normality suggest that the data for the <code>HDRS</code> in both groups, paroxetine and placebo, are normally distributed (p=0.67 &gt;0.05 and p=0.61 &gt;0.05, respectively). (NOTE: If the <span class="math inline">\(p \geq 0.05\)</span>, then the data came from a normally distributed population).</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remember: Hypothesis testing for Shapiro-Wilk test for normality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(H_{0}\)</span>: the data came from a normally distributed population.</p>
+<p><span class="math inline">\(H_{1}\)</span>: the data tested are not normally distributed.</p>
+<ul>
+<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+<li>If p − value ≥ 0.05, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>Then we can check the <code>Density</code> from <code>Histograms</code> in the <code>Plot</code> section, as shown below (<a href="#fig-descriptives15">Figure&nbsp;<span>16.6</span></a>):</p>
+<div id="fig-plots_density" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" title="In the Plot section select Density from Histograms." data-gallery="quarto-lightbox-gallery-7"><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.5: In the Plot section select Density from Histograms.</figcaption><p></p>
+</figure>
+</div>
+<p>A graph is generated in the output window on our right-hand side, as shown below:</p>
 <div id="fig-descriptives15" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Select Histograms, Box Plots, and Violin plots."><img src="images/descriptives15.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.5: Select Histograms, Box Plots, and Violin plots.</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives15.png" class="lightbox" title="In the Plots section select Density from Histograms." data-gallery="quarto-lightbox-gallery-8"><img src="images/descriptives15.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.6: In the Plots section select Density from Histograms.</figcaption><p></p>
 </figure>
 </div>
+<p>The above figure shows that the data are close to symmetry and the assumption of a normal distribution is reasonable.</p>
+<p><strong>B. Homogeneity of variance</strong></p>
+<p>The second assumption that should be satisfied is the homogeneity of variance. We observe in the summary table of <a href="#fig-descriptives14">Figure&nbsp;<span>16.4</span></a> that the two standard deviations (3.65 vs 3.41) are similar (see also below the Levene’s test for equality of variances in <a href="#fig-t_test4">Figure&nbsp;<span>16.10</span></a>).</p>
+<p>&nbsp;</p>
+</section><section id="run-the-students-t-test" class="level3"><h3 class="anchored" data-anchor-id="run-the-students-t-test">Run the Student’s t-test</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Perform a Student’s t-test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will perform a Student’s t-test to test the null hypothesis that the mean HDRS score is the same for both groups (paroxetine and placebo).</p>
+<p>We select:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
+  A(Analyses) -.-&gt; B(T-Tests) -.-&gt; C(Independent Samples T-Test)
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<div id="fig-t_test1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/t_test1.png" class="lightbox" title="In the Plots section select Density from Histograms." data-gallery="quarto-lightbox-gallery-9"><img src="images/t_test1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.7: In the Plots section select Density from Histograms.</figcaption><p></p>
+</figure>
+</div>
+<p>The <code>Independent Samples T-Test</code> dialogue box opens. Drag and drop the numeric variable <code>HSDR</code> to Dependent Variables and the independent variable <code>treatment</code> to Grouping Variable, as shown below <a href="#fig-t_test2">Figure&nbsp;<span>16.8</span></a>:</p>
+<div id="fig-t_test2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/t_test2.png" class="lightbox" title="The Independent Samples T-Test dialogue box" data-gallery="quarto-lightbox-gallery-10"><img src="images/t_test2.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.8: The Independent Samples T-Test dialogue box</figcaption><p></p>
+</figure>
+</div>
+<p>We observe that we can select between the following three Tests: Students’s, Welch’s, or Mann-Whitney U. We keep the default choice of Students’s test. Finally, from <code>Additional Statistics</code> check the <code>Mean difference</code>, <code>Confidence Intervals</code>, <code>Descriptive</code>, and <code>Descriptive plots</code> boxes. Finally, from <code>Assumption Checks</code> tick the <code>Homogeneity test</code>. We will end up with the following screen:</p>
+<div id="fig-t_test3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/t_test3.png" class="lightbox" title="Additional statistics and tests." data-gallery="quarto-lightbox-gallery-11"><img src="images/t_test3.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.9: Additional statistics and tests.</figcaption><p></p>
+</figure>
+</div>
+<p>First, we look at the table of <code>Levene's test</code> for equality of variances (<a href="#fig-t_test4">Figure&nbsp;<span>16.10</span></a>):</p>
+<div id="fig-t_test4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/t_test4.png" class="lightbox" title="Levene’s test." data-gallery="quarto-lightbox-gallery-12"><img src="images/t_test4.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.10: Levene’s test.</figcaption><p></p>
+</figure>
+</div>
+<p>Since the p = 0.646 ≥ 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected. (NOTE: If the <span class="math inline">\(p \geq 0.05\)</span>, then the population variances of HDRs in two groups are equal).</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remember: Hypothesis testing for Levene’s test for equality of variances
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(H_{0}\)</span>: the variances of HDRs in two groups are equal</p>
+<p><span class="math inline">\(H_{1}\)</span>: the variances of HDRs in two groups are not equal</p>
+<ul>
+<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+<li>If p − value ≥ 0.05, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>If the assumption of equal variances is not satisfied (Levene’s test gives p &lt; 0.05, reject <span class="math inline">\(H_0\)</span>), the Welch’s t-test should be used from the available Tests in Jamovi (<a href="#fig-t_test3">Figure&nbsp;<span>16.9</span></a>).</p>
+<p>Next, we can inspect again the results in the group descriptives (<a href="#fig-t_test5">Figure&nbsp;<span>16.11</span></a>) and plots (<a href="#fig-t_test6">Figure&nbsp;<span>16.12</span></a>):</p>
+<div id="fig-t_test5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/t_test5.png" class="lightbox" title="Group descriptives." data-gallery="quarto-lightbox-gallery-13"><img src="images/t_test5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.11: Group descriptives.</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-t_test6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/t_test6.png" class="lightbox" title="Plot of mean and median of HDRS by treatment." data-gallery="quarto-lightbox-gallery-14"><img src="images/t_test6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.12: Plot of mean and median of HDRS by treatment.</figcaption><p></p>
+</figure>
+</div>
+<p>Finally, we present the results of the Student’s t-test in the table of the <a href="#fig-t_test7">Figure&nbsp;<span>16.13</span></a>:</p>
+<div id="fig-t_test7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/t_test7.png" class="lightbox" title="The results of the t-test." data-gallery="quarto-lightbox-gallery-15"><img src="images/t_test7.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.13: The results of the t-test.</figcaption><p></p>
+</figure>
+</div>
+<p>The p-value = 0.16 is greater than 0.05. There is no evidence of a significant difference in mean HDRS between the two groups (failed to reject Ho). The difference between means (20.33 - 21.49) equals to -1.16 units of the HDRS and note that the 95% confidence interval of the difference in means (-2.78 to 0.47) <strong>includes</strong> the hypothesized null value of 0. Based on these results, there is not evidence that paroxetine is effective as a treatment for bipolar depression.</p>
+<p>Note that the paroxetine sample (n= 33) has 32 (33-1) degrees of freedom and the placebo sample (n= 43) has 42 (43-1), so we have 74 (32 + 42) df in total. Another way of thinking of this is that the complete sample size is 76, and we have estimated two parameters from the data (the two means), so we have 76-2 = 74 df.</p>
+<p>The Student t-test for two independent samples does not have any restrictions on <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> —<strong>they can be equal or unequal</strong>. However, equal samples are preferred because when a total of 2n subjects are available, their equal division among the groups maximizes the power to detect a specified difference.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Mann-Whitney U test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When there is violation of normality, the Mann-Whitney U test can be selected from the available Tests in Jamovi (<a href="#fig-t_test4">Figure&nbsp;<span>16.10</span></a>). This test compares two independent samples based on the ranks of the values and is often considered the non-parametric equivalent to the Student’s t-test.</p>
+</div>
+</div>
+<p>&nbsp;</p>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -487,7 +625,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true});</script>
 
 
 </body></html>
