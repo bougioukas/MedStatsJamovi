@@ -269,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Two samples may classified either as independent or dependent (paired) groups of observations (<a href="#fig-samples">Figure&nbsp;<span>6.1</span></a>).</p>
 <div id="fig-samples" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="images/samples.png" class="lightbox" title="Depiction of independent Vs dependent (paired) samples" data-gallery="quarto-lightbox-gallery-1"><img src="images/samples.png" class="img-fluid figure-img"></a></p>
+<p><a href="images/samples.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Depiction of independent Vs dependent (paired) samples"><img src="images/samples.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Depiction of independent Vs dependent (paired) samples</figcaption><p></p>
 </figure>
 </div>
@@ -298,6 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <li>The outcome of interest is continuous</li>
 <li>The data is normally distributed in both groups</li>
 <li>The data in both groups have equal variances (homogeneity of variance)</li>
+<li>The observations are independent</li>
 </ol>
 </div>
 </div>
@@ -325,7 +326,7 @@ Steps of hypothesis testing for Student’s t-test
 <p>Based on the calculated t-statistic (<a href="#eq-t">Equation&nbsp;<span>6.1</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed t-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
 <div id="fig-ttest1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="images/ttest1.png" class="lightbox" title="The two-tailed rejection region (area of the two red tails) equals to a=0.05" data-gallery="quarto-lightbox-gallery-2"><img src="images/ttest1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p><a href="images/ttest1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The two-tailed rejection region (area of the two red tails) equals to a=0.05"><img src="images/ttest1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.2: The two-tailed rejection region (area of the two red tails) equals to a=0.05</figcaption><p></p>
 </figure>
 </div>
@@ -382,7 +383,7 @@ Example-Student’s t-test
 <p>Using a statistical calculator for t-distribution (such as the distrACTION module from Jamovi), we can compute the probability <span class="math inline">\(Pr(T \geq 2.4)= 0.0087\)</span> (<a href="#fig-t_p1">Figure&nbsp;<span>6.3</span></a>). Then, the p-value for a two tailed test is 2*0.0087=0.0174 &lt; 0.05 (reject <span class="math inline">\(H_{0}\)</span>).</p>
 <div id="fig-t_p1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="images/t_p1.png" class="lightbox" title="We compute the probability Pr(T \geq 2.4)= 0.0087. The orange area is half of the p-value." data-gallery="quarto-lightbox-gallery-3"><img src="images/t_p1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p><a href="images/t_p1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="We compute the probability Pr(T \geq 2.4)= 0.0087. The orange area is half of the p-value."><img src="images/t_p1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.3: We compute the probability <span class="math inline">\(Pr(T \geq 2.4)= 0.0087\)</span>. The orange area is half of the p-value.</figcaption><p></p>
 </figure>
 </div>
@@ -472,7 +473,8 @@ Mann-Whitney U test
 <ol type="1">
 <li>The groups are dependent</li>
 <li>The outcome of interest is continuous</li>
-<li>The <strong>differences</strong> between the pairs of measurements, <span class="math inline">\(d_{i}\)</span>s, are normally distributed.</li>
+<li>The <strong>differences</strong> between the pairs of measurements, <span class="math inline">\(d_{i}\)</span>s, are normally distributed</li>
+<li>The <span class="math inline">\(d_{i}\)</span>s are independent of each other</li>
 </ol>
 </div>
 </div>
@@ -488,8 +490,8 @@ Steps of hypothesis testing for paired t-test
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Step 1: State the null hypothesis and alternative hypothesis</strong></p>
-<p><span class="math inline">\(H_{0}\)</span>: the mean of the differences in the population is zero (<span class="math inline">\(μ_{\bar{d}}=0\)</span>).</p>
-<p><span class="math inline">\(H_{1}\)</span>: the mean of the differences in the population is not zero (<span class="math inline">\(μ_{\bar{d}} \neq 0\)</span>).</p>
+<p><span class="math inline">\(H_{0}\)</span>: the population mean change or difference is zero (<span class="math inline">\(μ_{d}=0\)</span>).</p>
+<p><span class="math inline">\(H_{1}\)</span>: the population mean change or difference is non-zero (<span class="math inline">\(μ_{d} \neq 0\)</span>).</p>
 <p><strong>Step 2:</strong> Set the level of significance α = 0.05.</p>
 <p><strong>Step 3:</strong> Identify the appropriate test statistic and check the assumptions. Calculate the test statistic using the data.</p>
 <p>Τhe appropriate parametric statistical test, for testing <span class="math inline">\(H_{0}\)</span>, is the paired t-test. (NOTE: first check for normal distribution of the <strong>differences</strong>).</p>
@@ -501,7 +503,7 @@ Steps of hypothesis testing for paired t-test
 <p>Based on the calculated t-statistic (<a href="#eq-tp">Equation&nbsp;<span>6.6</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed t-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/ttest1.png" class="lightbox" title="The two-tailed rejection region (area of the two red tails) equals to a=0.05" data-gallery="quarto-lightbox-gallery-4"><img src="images/ttest1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p><a href="images/ttest1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="The two-tailed rejection region (area of the two red tails) equals to a=0.05"><img src="images/ttest1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
 <p></p><figcaption class="figure-caption">The two-tailed rejection region (area of the two red tails) equals to a=0.05</figcaption><p></p>
 </figure>
 </div>
@@ -529,10 +531,10 @@ Example-Paired t-test
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Systolic blood pressure (sbp) levels were measured in 16 middle-aged men before and after a standard exercise. The mean of differences (after-before) in sbp following exercise was 6.6 mmHg (risen) and the standard deviation of the differences was 6.0 mmHg. Supposed that the assumption of Normality of the differences is satisfied, perform a two-tailed paired t-test to investigate if the mean of differences is significant (α=0.05).</p>
+<p>Systolic blood pressure (sbp) levels were measured in 16 middle-aged men before and after a standard exercise. The mean change (after-before) in sbp following exercise was 6.6 mmHg (risen) and the standard deviation of the differences was 6.0 mmHg. Supposed that the assumption of Normality of the differences is satisfied, perform a two-tailed paired t-test to investigate if the mean change is significant (α=0.05).</p>
 <p><strong>Step 1: State the null hypothesis and alternative hypothesis</strong></p>
-<p><span class="math inline">\(H_{0}\)</span>: the mean of differences of sbp is zero (<span class="math inline">\(μ_{\bar{d}}=0\)</span>).</p>
-<p><span class="math inline">\(H_{1}\)</span>: the mean of differences of sbp is not zero (<span class="math inline">\(μ_{\bar{d}} \neq 0\)</span>).</p>
+<p><span class="math inline">\(H_{0}\)</span>: the mean difference of sbp is zero (<span class="math inline">\(μ_{d}=0\)</span>).</p>
+<p><span class="math inline">\(H_{1}\)</span>: the mean difference of sbp is non-zero (<span class="math inline">\(μ_{d} \neq 0\)</span>).</p>
 <p><strong>Step 2:</strong> We set the level of significance α = 0.05.</p>
 <p><strong>Step 3:</strong> We calculate the test statistic.</p>
 <p>The test t-statistic from <a href="#eq-tp">Equation&nbsp;<span>6.6</span></a> is:</p>
@@ -541,15 +543,15 @@ Example-Paired t-test
 <p>Using a statistical calculator for t-distribution (such as the distrACTION module from Jamovi), we can compute the probability <span class="math inline">\(Pr(T \geq 4.4)= 0.0003\)</span> (<a href="#fig-t_p2">Figure&nbsp;<span>6.4</span></a>). Then, the p-value for a two tailed test is 2*0.0003=0.0006 &lt; 0.05 (reject <span class="math inline">\(H_{0}\)</span>).</p>
 <div id="fig-t_p2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="images/t_p2.png" class="lightbox" title="We compute the probability Pr(T \geq 4.4)= 0.0003. The orange area is half of the p-value." data-gallery="quarto-lightbox-gallery-5"><img src="images/t_p2.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p><a href="images/t_p2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="We compute the probability Pr(T \geq 4.4)= 0.0003. The orange area is half of the p-value."><img src="images/t_p2.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6.4: We compute the probability <span class="math inline">\(Pr(T \geq 4.4)= 0.0003\)</span>. The orange area is half of the p-value.</figcaption><p></p>
 </figure>
 </div>
-<p>The 95% confidence interval (CI) of the difference at α=0.05, for the two-tailed t-test and for 15 degrees of freedom is (<a href="#eq-cip">Equation&nbsp;<span>6.7</span></a>):</p>
+<p>The 95% confidence interval (CI) of the mean difference at α=0.05, for the two-tailed t-test and for 15 degrees of freedom is (<a href="#eq-cip">Equation&nbsp;<span>6.7</span></a>):</p>
 <p><span class="math display">\[ 95\% \ CI = \bar{d} \pm t_{15;0.05/2} \cdot SE_{\bar{d}}= 6.6 \pm 2.131 \cdot 1.5= 6.6 \pm 3.197 \approx [3.4, 9.8] \ mmHg\]</span></p>
-<p>Therefore, the 95% confidence interval for mean of the differences ranges from 3.4 mmHg to 9.8 mmHg. Note that the <strong>zero</strong> is not included in the 95% CI mean of differences.</p>
+<p>Therefore, the 95% confidence interval for the mean difference ranges from 3.4 mmHg to 9.8 mmHg. Note that the <strong>zero</strong> is not included in the 95% CI of the mean difference.</p>
 <p><strong>Step 5:</strong> Interpretation of the results.</p>
-<p>The mean of differences (after-before) in systolic blood pressure following exercise was 6.6 mmHg (sd=6.0 mmHg) which was a significant increase (p&lt;0.001).</p>
+<p>The mean difference (after-before) in systolic blood pressure following exercise was 6.6 mmHg (sd=6.0 mmHg) which was a significant increase (p&lt;0.001).</p>
 </div>
 </div>
 <div class="callout-important callout callout-style-default no-icon callout-captioned">
@@ -700,7 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 

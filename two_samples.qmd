@@ -29,6 +29,7 @@ Two sample t-test (Student's t-test) can be used if we have two independent (unr
 2.  The outcome of interest is continuous
 3.  The data is normally distributed in both groups
 4.  The data in both groups have equal variances (homogeneity of variance)
+5. The observations are independent
 :::
 
 ::: {.callout-tip icon="false"}
@@ -153,7 +154,8 @@ A paired t-test is used to assess whether the mean of the differences between th
 
 1.  The groups are dependent
 2.  The outcome of interest is continuous
-3.  The **differences** between the pairs of measurements, $d_{i}$s, are normally distributed.
+3.  The **differences** between the pairs of measurements, $d_{i}$s, are normally distributed
+4. The $d_{i}$s are independent of each other
 :::
 
 Because of the paired nature of the data, the two samples must be of the same size, $n$. We have $n$ differences $d$, with sample mean $\bar{d}$ and standard deviation $s_{\bar{d}}$.
@@ -163,9 +165,9 @@ Because of the paired nature of the data, the two samples must be of the same si
 
 **Step 1: State the null hypothesis and alternative hypothesis**
 
-$H_{0}$: the mean of the differences in the population is zero ($μ_{\bar{d}}=0$).
+$H_{0}$: the population mean change or difference is zero ($μ_{d}=0$).
 
-$H_{1}$: the mean of the differences in the population is not zero ($μ_{\bar{d}} \neq 0$).
+$H_{1}$: the population mean change or difference is non-zero ($μ_{d} \neq 0$).
 
 **Step 2:** Set the level of significance α = 0.05.
 
@@ -206,13 +208,13 @@ Report the mean of the differences, the 95% CI, and the p-value of the test.
 ::: {.callout-note icon="false"}
 ## Example-Paired t-test
 
-Systolic blood pressure (sbp) levels were measured in 16 middle-aged men before and after a standard exercise. The mean of differences (after-before) in sbp following exercise was 6.6 mmHg (risen) and the standard deviation of the differences was 6.0 mmHg. Supposed that the assumption of Normality of the differences is satisfied, perform a two-tailed paired t-test to investigate if the mean of differences is significant (α=0.05).
+Systolic blood pressure (sbp) levels were measured in 16 middle-aged men before and after a standard exercise. The mean change (after-before) in sbp following exercise was 6.6 mmHg (risen) and the standard deviation of the differences was 6.0 mmHg. Supposed that the assumption of Normality of the differences is satisfied, perform a two-tailed paired t-test to investigate if the mean change is significant (α=0.05).
 
 **Step 1: State the null hypothesis and alternative hypothesis**
 
-$H_{0}$: the mean of differences of sbp is zero ($μ_{\bar{d}}=0$).
+$H_{0}$: the mean difference of sbp is zero ($μ_{d}=0$).
 
-$H_{1}$: the mean of differences of sbp is not zero ($μ_{\bar{d}} \neq 0$).
+$H_{1}$: the mean difference of sbp is non-zero ($μ_{d} \neq 0$).
 
 **Step 2:** We set the level of significance α = 0.05.
 
@@ -228,15 +230,15 @@ Using a statistical calculator for t-distribution (such as the distrACTION modul
 
 ![We compute the probability $Pr(T \geq 4.4)= 0.0003$. The orange area is half of the p-value.](images/t_p2.png){#fig-t_p2 width="60%"}
 
-The 95% confidence interval (CI) of the difference at α=0.05, for the two-tailed t-test and for 15 degrees of freedom is (@eq-cip):
+The 95% confidence interval (CI) of the mean difference at α=0.05, for the two-tailed t-test and for 15 degrees of freedom is (@eq-cip):
 
 $$ 95\% \ CI = \bar{d} \pm t_{15;0.05/2} \cdot SE_{\bar{d}}= 6.6 \pm 2.131 \cdot 1.5= 6.6 \pm 3.197 \approx [3.4, 9.8] \ mmHg$$
 
-Therefore, the 95% confidence interval for mean of the differences ranges from 3.4 mmHg to 9.8 mmHg. Note that the **zero** is not included in the 95% CI mean of differences.
+Therefore, the 95% confidence interval for the mean difference ranges from 3.4 mmHg to 9.8 mmHg. Note that the **zero** is not included in the 95% CI of the mean difference.
 
 **Step 5:** Interpretation of the results.
 
-The mean of differences (after-before) in systolic blood pressure following exercise was 6.6 mmHg (sd=6.0 mmHg) which was a significant increase (p\<0.001).
+The mean difference (after-before) in systolic blood pressure following exercise was 6.6 mmHg (sd=6.0 mmHg) which was a significant increase (p\<0.001).
 :::
 
 ::: {.callout-important icon="false"}
