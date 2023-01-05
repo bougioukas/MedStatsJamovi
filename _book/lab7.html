@@ -234,6 +234,16 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#run-post-hoc-tests" id="toc-run-post-hoc-tests" class="nav-link" data-scroll-target="#run-post-hoc-tests">Run post-hoc tests</a></li>
   </ul>
 </li>
+  <li>
+<a href="#kruskal-wallis-test" id="toc-kruskal-wallis-test" class="nav-link" data-scroll-target="#kruskal-wallis-test"><span class="toc-section-number">17.3</span>  Kruskal-Wallis test</a>
+  <ul class="collapse">
+<li><a href="#opening-the-file-1" id="toc-opening-the-file-1" class="nav-link" data-scroll-target="#opening-the-file-1">Opening the file</a></li>
+  <li><a href="#research-question-1" id="toc-research-question-1" class="nav-link" data-scroll-target="#research-question-1">Research question</a></li>
+  <li><a href="#hypothesis-testsing-for-the-kruskal-wallis-test" id="toc-hypothesis-testsing-for-the-kruskal-wallis-test" class="nav-link" data-scroll-target="#hypothesis-testsing-for-the-kruskal-wallis-test">Hypothesis Testsing for the Kruskal-Wallis test</a></li>
+  <li><a href="#run-the-kruskal-wallis-test" id="toc-run-the-kruskal-wallis-test" class="nav-link" data-scroll-target="#run-the-kruskal-wallis-test">Run the Kruskal-Wallis test</a></li>
+  <li><a href="#run-post-hoc-tests-1" id="toc-run-post-hoc-tests-1" class="nav-link" data-scroll-target="#run-post-hoc-tests-1">Run post-hoc tests</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -280,7 +290,7 @@ Learning objectives
 <section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
 <p>Open the dataset named <code>dataDWL</code> from the file tab in the menu:</p>
 <div id="fig-dataDWL" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/dataDWL.png" class="lightbox" title="The dataDWL dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/dataDWL.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<figure class="figure"><p><a href="images/dataDWL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The dataDWL dataset"><img src="images/dataDWL.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;17.1: The dataDWL dataset</figcaption><p></p>
 </figure>
 </div>
@@ -341,22 +351,28 @@ Check if the following assumptions are satisfied
 </div>
 </div>
 </div>
-<p>Drag the variable <code>WeightLoss</code> into the <code>Variables</code> box and split it by the <code>Diet</code> variable. Additionally, select <code>Variable across columns</code>, as shown below (<a href="#fig-diet1">Figure&nbsp;<span>17.2</span></a>):</p>
+<p>from the top menu, as shown below in <a href="#fig-diet0">Figure&nbsp;<span>17.2</span></a>.</p>
+<div id="fig-diet0" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="In the Analyses Tab select Exploration and click on Descriptives."><img src="images/diet0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.2: In the Analyses Tab select Exploration and click on Descriptives.</figcaption><p></p>
+</figure>
+</div>
+<p>Drag the variable <code>WeightLoss</code> into the <code>Variables</code> box and split it by the <code>Diet</code> variable. Additionally, select <code>Variable across rows</code>, as shown below (<a href="#fig-diet1">Figure&nbsp;<span>17.3</span></a>):</p>
 <div id="fig-diet1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet1.png" class="lightbox" title="Split the variable WeightLoss by Diet group" data-gallery="quarto-lightbox-gallery-2"><img src="images/diet1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.2: Split the variable WeightLoss by Diet group</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Split the variable WeightLoss by Diet group"><img src="images/diet1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.3: Split the variable WeightLoss by Diet group</figcaption><p></p>
 </figure>
 </div>
-<p>We can now select the relevant descriptive statistics such as <code>Percantiles</code>, <code>Skewness</code>, <code>Kurtosis</code> and the <code>Shapiro-Wilk</code> test from the <code>Statistics</code> section (<a href="#fig-descriptives13">Figure&nbsp;<span>17.3</span></a>):</p>
+<p>We can now select the relevant descriptive statistics such as <code>Percantiles</code>, <code>Skewness</code>, <code>Kurtosis</code> and the <code>Shapiro-Wilk</code> test from the <code>Statistics</code> section (<a href="#fig-descriptives13">Figure&nbsp;<span>17.21</span></a>):</p>
 <div id="fig-descriptives13" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" title="In the Statistics section select the descriptive statistics of interest." data-gallery="quarto-lightbox-gallery-3"><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.3: In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="In the Statistics section select the descriptive statistics of interest."><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.4: In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
 </figure>
 </div>
-<p>Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (<a href="#fig-diet2">Figure&nbsp;<span>17.4</span></a>):</p>
+<p>Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (<a href="#fig-diet2">Figure&nbsp;<span>17.5</span></a>):</p>
 <div id="fig-diet2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet2.png" class="lightbox" title="Descriptive statistics of WeightLoss by Diet group (click on image to zoom in)." data-gallery="quarto-lightbox-gallery-4"><img src="images/diet2.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.4: Descriptive statistics of WeightLoss by Diet group (click on image to zoom in).</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Descriptive statistics of WeightLoss by Diet group (click on image to zoom in)."><img src="images/diet2.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.5: Descriptive statistics of WeightLoss by Diet group (click on image to zoom in).</figcaption><p></p>
 </figure>
 </div>
 <p>The means are close to medians and the standard deviations are also similar indicating normal distributions for all groups. Additionally, both shape measures, skewness and (excess) kurtosis, have values in the acceptable range [-1, 1] which indicate symmetric and mesokurtic distributions, respectively.</p>
@@ -379,21 +395,21 @@ Remember: Hypothesis testing for Shapiro-Wilk test for normality
 </ul>
 </div>
 </div>
-<p>Then we can check the <code>Density</code> from <code>Histograms</code> in the <code>Plot</code> section, as shown below (<a href="#fig-plots_density">Figure&nbsp;<span>17.5</span></a>):</p>
+<p>Then we can check the <code>Density</code> from <code>Histograms</code> in the <code>Plot</code> section, as shown below (<a href="#fig-plots_density">Figure&nbsp;<span>17.6</span></a>):</p>
 <div id="fig-plots_density" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" title="In the Plot section select Density from Histograms." data-gallery="quarto-lightbox-gallery-5"><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.5: In the Plot section select Density from Histograms.</figcaption><p></p>
+<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="In the Plot section select Density from Histograms."><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.6: In the Plot section select Density from Histograms.</figcaption><p></p>
 </figure>
 </div>
-<p>A graph (<a href="#fig-diet3">Figure&nbsp;<span>17.6</span></a>) is generated in the output window on our right-hand side:</p>
+<p>A graph (<a href="#fig-diet3">Figure&nbsp;<span>17.7</span></a>) is generated in the output window on our right-hand side:</p>
 <div id="fig-diet3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet3.png" class="lightbox" title="In the Plots section select Density from Histograms." data-gallery="quarto-lightbox-gallery-6"><img src="images/diet3.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.6: In the Plots section select Density from Histograms.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="The Density plot of WeightLoss for each Diet."><img src="images/diet3.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.7: The Density plot of WeightLoss for each Diet.</figcaption><p></p>
 </figure>
 </div>
 <p>The above density plots show that the data are close to symmetry and the assumption of a normal distribution is reasonable for all diet groups.</p>
 <p><strong>B. Homogeneity of variance</strong></p>
-<p>The second assumption that should be satisfied is the homogeneity of variance. We observe in the summary table of <a href="#fig-diet2">Figure&nbsp;<span>17.4</span></a> that the standard deviations are similar (see also below the Levene’s test for equality of variances in <a href="lab6.html#fig-t_test4">Figure&nbsp;<span>16.10</span></a>).</p>
+<p>The second assumption that should be satisfied is the homogeneity of variance. We observe in the summary table of <a href="#fig-diet2">Figure&nbsp;<span>17.5</span></a> that the standard deviations are similar (see also below the Levene’s test for equality of variances in <a href="lab6.html#fig-t_test4">Figure&nbsp;<span>16.10</span></a>).</p>
 <p>&nbsp;</p>
 </section><section id="run-the-anova-test" class="level3"><h3 class="anchored" data-anchor-id="run-the-anova-test">Run the ANOVA test</h3>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
@@ -424,26 +440,26 @@ Perform a ANOVA test
 </div>
 </div>
 <div id="fig-diet4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet4.png" class="lightbox" title="Conducting ANOVA test." data-gallery="quarto-lightbox-gallery-7"><img src="images/diet4.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.7: Conducting ANOVA test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Conducting ANOVA test."><img src="images/diet4.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.8: Conducting ANOVA test.</figcaption><p></p>
 </figure>
 </div>
-<p>The <code>One-Way ANOVA</code> dialogue box opens. Drag and drop the numeric variable <code>WeightLoss</code> to Dependent Variables and the independent variable <code>Diet</code> to Grouping Variable, as shown below <a href="#fig-diet5">Figure&nbsp;<span>17.8</span></a>:</p>
+<p>The <code>One-Way ANOVA</code> dialogue box opens. Drag and drop the numeric variable <code>WeightLoss</code> to Dependent Variables and the independent variable <code>Diet</code> to Grouping Variable, as shown below <a href="#fig-diet5">Figure&nbsp;<span>17.9</span></a>:</p>
 <div id="fig-diet5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet5.png" class="lightbox" title="One-Way ANOVA dialogue box" data-gallery="quarto-lightbox-gallery-8"><img src="images/diet5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.8: One-Way ANOVA dialogue box</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="One-Way ANOVA dialogue box"><img src="images/diet5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.9: One-Way ANOVA dialogue box</figcaption><p></p>
 </figure>
 </div>
 <p>We observe that we can select between the following two Tests: Welch’s test (the default), or Fisher’s test. At the moment, we keep the default choice. Moreover, from <code>Additional Statistics</code> check the <code>Descriptive</code>, and <code>Descriptive plots</code> boxes. Finally, from <code>Assumption Checks</code> tick the <code>Homogeneity test</code>. We will end up with the following screen:</p>
 <div id="fig-diet6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet6.png" class="lightbox" title="Additional statistics and tests." data-gallery="quarto-lightbox-gallery-9"><img src="images/diet6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.9: Additional statistics and tests.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Additional statistics and tests."><img src="images/diet6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.10: Additional statistics and tests.</figcaption><p></p>
 </figure>
 </div>
-<p>First, we look at the table of <code>Levene's test</code> for equality of variances (<a href="#fig-diet7">Figure&nbsp;<span>17.10</span></a>):</p>
+<p>First, we look at the table of <code>Levene's test</code> for equality of variances (<a href="#fig-diet7">Figure&nbsp;<span>17.11</span></a>):</p>
 <div id="fig-diet7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet7.png" class="lightbox" title="Levene’s test." data-gallery="quarto-lightbox-gallery-10"><img src="images/diet7.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.10: Levene’s test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Levene’s test."><img src="images/diet7.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.11: Levene’s test.</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
@@ -464,31 +480,31 @@ Remember: Hypothesis testing for Levene’s test for equality of variances
 </ul>
 </div>
 </div>
-<p>Since p = 0.583 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and <strong>we have to perform the Fisher’s test (assume equal variances)</strong> (<a href="#fig-diet8">Figure&nbsp;<span>17.11</span></a>). (NOTE: If the <span class="math inline">\(p \geq 0.05\)</span>, then the population variances of WeightLoss in all groups are assumed equal).</p>
+<p>Since p = 0.583 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and <strong>we have to perform the Fisher’s test (assume equal variances)</strong> (<a href="#fig-diet8">Figure&nbsp;<span>17.12</span></a>). (NOTE: If the <span class="math inline">\(p \geq 0.05\)</span>, then the population variances of WeightLoss in all groups are assumed equal).</p>
 <div id="fig-diet8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet8.png" class="lightbox" title="Fisher’s ANOVA test." data-gallery="quarto-lightbox-gallery-11"><img src="images/diet8.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.11: Fisher’s ANOVA test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Fisher’s ANOVA test."><img src="images/diet8.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.12: Fisher’s ANOVA test.</figcaption><p></p>
 </figure>
 </div>
-<p>If the assumption of equal variances is not satisfied (Levene’s test gives p &lt; 0.05, reject <span class="math inline">\(H_0\)</span>), the Welch’s test should be used from the available Tests in Jamovi (<a href="#fig-diet8">Figure&nbsp;<span>17.11</span></a>).</p>
-<p>Next, we can inspect again the results in the group descriptives table (<a href="#fig-diet9">Figure&nbsp;<span>17.12</span></a>) and pertinent plots (<a href="#fig-diet9">Figure&nbsp;<span>17.12</span></a>):</p>
+<p>If the assumption of equal variances is not satisfied (Levene’s test gives p &lt; 0.05, reject <span class="math inline">\(H_0\)</span>), the Welch’s test should be used from the available Tests in Jamovi (<a href="#fig-diet8">Figure&nbsp;<span>17.12</span></a>).</p>
+<p>Next, we can inspect again the results in the group descriptives table (<a href="#fig-diet9">Figure&nbsp;<span>17.13</span></a>) and pertinent plots (<a href="#fig-diet9">Figure&nbsp;<span>17.13</span></a>):</p>
 <div id="fig-diet9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet9.png" class="lightbox" title="Group descriptives." data-gallery="quarto-lightbox-gallery-12"><img src="images/diet9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.12: Group descriptives.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Group descriptives."><img src="images/diet9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.13: Group descriptives.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-diet10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet10.png" class="lightbox" title="Plot of mean (95% CI) of WeightLoss by Diet." data-gallery="quarto-lightbox-gallery-13"><img src="images/diet10.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.13: Plot of mean (95% CI) of WeightLoss by Diet.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Plot of mean (95% CI) of WeightLoss by Diet."><img src="images/diet10.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.14: Plot of mean (95% CI) of WeightLoss by Diet.</figcaption><p></p>
 </figure>
 </div>
-<p>Finally, we present the results of the Fisher’s ANOVA test in the table of the <a href="#fig-diet11">Figure&nbsp;<span>17.14</span></a>:</p>
+<p>Finally, we present the results of the Fisher’s ANOVA test in the table of the <a href="#fig-diet11">Figure&nbsp;<span>17.15</span></a>:</p>
 <div id="fig-diet11" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet11.png" class="lightbox" title="The results of the Fisher’s ANOVA test." data-gallery="quarto-lightbox-gallery-14"><img src="images/diet11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.14: The results of the Fisher’s ANOVA test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="The results of the Fisher’s ANOVA test."><img src="images/diet11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.15: The results of the Fisher’s ANOVA test.</figcaption><p></p>
 </figure>
 </div>
-<p>In <a href="#fig-diet11">Figure&nbsp;<span>17.14</span></a>, F= 6.12 indicates the obtained F-statistic= (variation between sample means <span class="math inline">\(/\)</span> variation within the samples). Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 3 and 56, respectively (numarator: variation between sample means; denominator: variation within the samples).</p>
+<p>In <a href="#fig-diet11">Figure&nbsp;<span>17.15</span></a>, F= 6.12 indicates the obtained F-statistic= (variation between sample means <span class="math inline">\(/\)</span> variation within the samples). Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 3 and 56, respectively (numarator: variation between sample means; denominator: variation within the samples).</p>
 <p>The p-value=0.001 is less than 0.05 (reject <span class="math inline">\(H_0\)</span> of the ANOVA test). <strong>There is at least one diet with mean weight loss which is different from the other means</strong>.</p>
 </div>
 </div>
@@ -509,20 +525,185 @@ Perform post-hoc tests
 <li><p>Games-Howell (unequal variances)</p></li>
 <li><p>Tukey (equal variances)</p></li>
 </ul>
-<p>Based on the result of Levene’s test (p = 0.583 &gt; 0.05, the <span class="math inline">\(H_0\)</span> is not rejected) (<a href="#fig-diet7">Figure&nbsp;<span>17.10</span></a>), we should select the Tukey (equal variances) post-hoc test. Additionally, check the <code>Flag significant comparisons</code> as shown below (<a href="#fig-diet12">Figure&nbsp;<span>17.15</span></a>):</p>
+<p>Based on the result of Levene’s test (p = 0.583 &gt; 0.05, the <span class="math inline">\(H_0\)</span> is not rejected) (<a href="#fig-diet7">Figure&nbsp;<span>17.11</span></a>), we should select the Tukey (equal variances) post-hoc test. Additionally, check the <code>Flag significant comparisons</code> as shown below (<a href="#fig-diet12">Figure&nbsp;<span>17.16</span></a>):</p>
 <div id="fig-diet12" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet12.png" class="lightbox" title="Select the appropriate post-hoc test." data-gallery="quarto-lightbox-gallery-15"><img src="images/diet12.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.15: Select the appropriate post-hoc test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Select the appropriate post-hoc test."><img src="images/diet12.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.16: Select the appropriate post-hoc test.</figcaption><p></p>
 </figure>
 </div>
-<p>Once we have selected our post-hoc test, a table will appear in the output window on our right-hand side, as shown below (<a href="#fig-diet13">Figure&nbsp;<span>17.16</span></a>):</p>
+<p>Once we have selected our post-hoc test, a table will appear in the output window on our right-hand side, as shown below (<a href="#fig-diet13">Figure&nbsp;<span>17.17</span></a>):</p>
 <div id="fig-diet13" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/diet13.png" class="lightbox" title="Table with the results of the post-hoc tests." data-gallery="quarto-lightbox-gallery-16"><img src="images/diet13.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17.16: Table with the results of the post-hoc tests.</figcaption><p></p>
+<figure class="figure"><p><a href="images/diet13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Table with the results of the post-hoc tests."><img src="images/diet13.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.17: Table with the results of the post-hoc tests.</figcaption><p></p>
 </figure>
 </div>
 <p><strong>Interpretation</strong></p>
-<p>Pairwise comparisons were carried out using the method of Tukey and the adjusted p-values were calculated. <strong>The weight loss from diet C seems to be significantly larger than diet A (mean difference = 2.93 kg, p=0.005 &lt;0.05) and diet B (mean difference = 3.21 kg, p=0.002 &lt;0.05)</strong>.</p>
+<p>Pairwise comparisons were carried out using the method of Tukey and the adjusted p-values were calculated. <strong>The weight loss following diet C is significantly larger compared to diet A (mean difference = 2.93 kg, p=0.005 &lt;0.05) or diet B (mean difference = 3.21 kg, p=0.002 &lt;0.05)</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section></section><section id="kruskal-wallis-test" class="level2" data-number="17.3"><h2 data-number="17.3" class="anchored" data-anchor-id="kruskal-wallis-test">
+<span class="header-section-number">17.3</span> Kruskal-Wallis test</h2>
+<p>The Kruskal-Wallis test is a rank-based non-parametric alternative to the one-way ANOVA and an extension of the Mann-Whitney U test to allow the comparison of more than two independent groups. It’s usually recommended when the normality assumption of one-way ANOVA test is not met (non-normal distributions).</p>
+<section id="opening-the-file-1" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file-1">Opening the file</h3>
+<p>Open the dataset named <code>dataVO2</code> from the file tab in the menu:</p>
+<div id="fig-dataVO2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/dataVO2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="The dataVO2 dataset"><img src="images/dataVO2.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.18: The dataVO2 dataset</figcaption><p></p>
+</figure>
+</div>
+<p>The dataset <code>dataVO2</code> includes 30 participants and has two variables. The numeric <code>VO2max</code> variable and the <code>sport</code> variable (with levels “rowers”, “runners”, and “triathletes”).</p>
+</section><section id="research-question-1" class="level3"><h3 class="anchored" data-anchor-id="research-question-1">Research question</h3>
+<p>We want to compare the VO2max in three different sports (runners, rowers, and triathletes).</p>
+</section><section id="hypothesis-testsing-for-the-kruskal-wallis-test" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing-for-the-kruskal-wallis-test">Hypothesis Testsing for the Kruskal-Wallis test</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Null hypothesis and alternative hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: the distribution of <span class="math inline">\(VO2_{max}\)</span> is the same in all groups (the medians of <span class="math inline">\(VO2_{max}\)</span> in the three sports are the same)</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: there is at least one group with <span class="math inline">\(VO2_{max}\)</span> distribution different from the others (there is at least one sport with median <span class="math inline">\(VO2_{max}\)</span> different from the others)</p></li>
+</ul>
+</div>
+</div>
+<p><strong>Explore the descriptive characteristics of distribution for each group and check for normality</strong></p>
+<p>The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test).</p>
+<p>We select:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-3">flowchart LR
+  A(Analyses) -.-&gt; B(Exploration) -.-&gt; C(Descriptives)
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<p>from the top menu, as shown below in <a href="#fig-athletes0">Figure&nbsp;<span>17.19</span></a>.</p>
+<div id="fig-athletes0" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="In the Analyses Tab select Exploration and click on Descriptives."><img src="images/athletes0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.19: In the Analyses Tab select Exploration and click on Descriptives.</figcaption><p></p>
+</figure>
+</div>
+<p>The Descriptives dialogue box opens. Drag the variable <code>VO2max</code> into the <code>Variables</code> box and split it by the <code>VO2max</code> variable. Additionally, select <code>Variable across rows</code>, as shown below (<a href="#fig-athletes1">Figure&nbsp;<span>17.20</span></a>):</p>
+<div id="fig-athletes1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Split the variable VO2max by sport group."><img src="images/athletes1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.20: Split the variable VO2max by sport group.</figcaption><p></p>
+</figure>
+</div>
+<p>We can now select the relevant descriptive statistics such as <code>Percantiles</code>, <code>Skewness</code>, <code>Kurtosis</code> and the <code>Shapiro-Wilk</code> test from the <code>Statistics</code> section (<a href="#fig-descriptives13">Figure&nbsp;<span>17.21</span></a>):</p>
+<div id="fig-descriptives13" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="In the Statistics section select the descriptive statistics of interest."><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.21: In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
+</figure>
+</div>
+<p>Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (<a href="#fig-athletes2">Figure&nbsp;<span>17.22</span></a>):</p>
+<div id="fig-athletes2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Descriptive statistics of VO2max by sport group (click on the image to zoom in)."><img src="images/athletes2.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.22: Descriptive statistics of VO2max by sport group (click on the image to zoom in).</figcaption><p></p>
+</figure>
+</div>
+<p>The sample size is relative small. Moreover, the skewness=1.51 and the kurtosis=1.6 for the triathletes are out of the range of -1 and 1 indicating non-normal distribution. We can also see that the data for the triathletes is not normally distributed (p=0.023 &lt;0.05) according to the Shapiro-Wilk test.</p>
+<p>Next, in the <code>Plots</code> section we can visualize the distribution of VO2max for the three groups. Check the boxes of <code>Box Plot</code>, <code>Violin</code>, <code>Data</code> and <code>Mean</code> from <code>Box Plots</code>, as shown below (<a href="#fig-athletes3">Figure&nbsp;<span>17.23</span></a>):</p>
+<div id="fig-athletes3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="In the Plot section select Box Plots."><img src="images/athletes3.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.23: In the Plot section select Box Plots.</figcaption><p></p>
+</figure>
+</div>
+<p>A graph (<a href="#fig-athletes4">Figure&nbsp;<span>17.24</span></a>) is generated in the output window on our right-hand side:</p>
+<div id="fig-athletes4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="In the Plots section select Density from Histograms."><img src="images/athletes4.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.24: In the Plots section select Density from Histograms.</figcaption><p></p>
+</figure>
+</div>
+<p>The above figure shows that the data in triathletes group have some outliers. Additionally, we can observe that the runners group seems to have the largest VO2max.</p>
+<p>By considering all of the information together (small samples, graphs, normality test) the overall decision is against of normality.</p>
+<p>&nbsp;</p>
+</section><section id="run-the-kruskal-wallis-test" class="level3"><h3 class="anchored" data-anchor-id="run-the-kruskal-wallis-test">Run the Kruskal-Wallis test</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Perform a Kruskal-Wallis test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will perform Kruskal-Wallis to test the null hypothesis that the median <span class="math inline">\(VO2_{max}\)</span> is the same for all sports.</p>
+<p>We select:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-4">flowchart LR
+  A(Analyses) -.-&gt; B(ANOVA) -.-&gt; C(Non-Parametric \nOne-Way ANOVA  \nKruskal-Wallis)
+</pre>
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<div id="fig-athletes5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Conducting Kruskal-Wallis test."><img src="images/athletes5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.25: Conducting Kruskal-Wallis test.</figcaption><p></p>
+</figure>
+</div>
+<p>The <code>One-Way ANOVA (Non-parametric)</code> dialogue box opens. Drag and drop the numeric variable <code>VO2max</code> to Dependent Variables and the independent variable <code>sport</code> to Grouping Variable, as shown below <a href="#fig-athletes6">Figure&nbsp;<span>17.26</span></a>:</p>
+<div id="fig-athletes6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="One-Way ANOVA (Non-parametric) dialogue box"><img src="images/athletes6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.26: One-Way ANOVA (Non-parametric) dialogue box</figcaption><p></p>
+</figure>
+</div>
+<p>The results of the Kruskal-Wallis test are presented in the table of the <a href="#fig-athletes7">Figure&nbsp;<span>17.27</span></a>:</p>
+<div id="fig-athletes7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="The results of the Kruskal-Wallis test."><img src="images/athletes7.png" class="img-fluid figure-img" style="width:45.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.27: The results of the Kruskal-Wallis test.</figcaption><p></p>
+</figure>
+</div>
+<p>The p-value (&lt;0.001) is lower than 0.05. There is at least one sport in which the VO2max is different from the others.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="run-post-hoc-tests-1" class="level3"><h3 class="anchored" data-anchor-id="run-post-hoc-tests-1">Run post-hoc tests</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Perform post-hoc tests
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>significant</strong> Kruskal-Wallis test is generally followed by post-hoc tests to perform multiple pairwise comparisons between groups. Jamovi provides a pertinent test named <code>DSCF pairwise comparisons</code>:</p>
+<div id="fig-athletes8" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Check the DSCF post-hoc test."><img src="images/athletes8.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.28: Check the DSCF post-hoc test.</figcaption><p></p>
+</figure>
+</div>
+<p>A table appears in the output window on our right-hand side, as shown below (<a href="#fig-athletes9">Figure&nbsp;<span>17.29</span></a>):</p>
+<div id="fig-athletes9" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/athletes9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Table with the results of the post-hoc tests."><img src="images/athletes9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.29: Table with the results of the post-hoc tests.</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Interpretation</strong></p>
+<p>Pairwise comparisons were carried out using the method of Dwas-Steel-Critchlow-Flinger and adjusting p-values were calculated. The runners’ VO2max (median= 77.2, IQR=[74.2, 79.5] mL/kg/min) seems to be significantly higher than rowers (69.6 [67.8, 73.1] mL/kg/min) (p=0.005 &lt;0.05) and triathletes (65.4 [64.0, 67.6] mL/kg/min) (p=0.003 &lt;0.05).</p>
 </div>
 </div>
 
@@ -653,7 +834,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true,"selector":".lightbox"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
 
 
 </body></html>

@@ -28,7 +28,7 @@ Open the dataset named `depression` from the file tab in the menu:
 
 ![The depression dataset](images/depression1.png){#fig-depression1 width="85%"}
 
-The dataset `depression` has 76 patients and includes two variables. The `treatment` variable and the `HDRS` variable (@fig-depression1). Double-click on the variable name `HDRS` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
+The dataset `depression` includes 76 patients and has two variables. The `treatment` variable and the `HDRS` variable (@fig-depression1). Double-click on the variable name `HDRS` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
 
 ### Research question
 
