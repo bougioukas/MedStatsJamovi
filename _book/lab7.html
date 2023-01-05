@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.251">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Introduction to Medical Statistics with Jamovi - 17&nbsp; LAB VII: Inference for numerical data (&gt;2 samples)</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,7 +18,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -41,7 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -59,29 +57,21 @@ ul.task-list li input[type="checkbox"] {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
@@ -96,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -108,8 +98,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
@@ -160,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
@@ -168,8 +158,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
   </div>
@@ -220,25 +210,35 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">17.1</span>  Introduction</a></li>
+  <li>
+<a href="#one-way-analysis-of-variance-anova" id="toc-one-way-analysis-of-variance-anova" class="nav-link" data-scroll-target="#one-way-analysis-of-variance-anova"><span class="toc-section-number">17.2</span>  One-way Analysis of Variance (ANOVA)</a>
+  <ul class="collapse">
+<li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link" data-scroll-target="#opening-the-file">Opening the file</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#hypothesis-testsing-for-the-anova-test" id="toc-hypothesis-testsing-for-the-anova-test" class="nav-link" data-scroll-target="#hypothesis-testsing-for-the-anova-test">Hypothesis Testsing for the ANOVA test</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#run-the-anova-test" id="toc-run-the-anova-test" class="nav-link" data-scroll-target="#run-the-anova-test">Run the ANOVA test</a></li>
+  <li><a href="#run-post-hoc-tests" id="toc-run-post-hoc-tests" class="nav-link" data-scroll-target="#run-post-hoc-tests">Run post-hoc tests</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-lab7" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span></h1>
 </div>
 
 
@@ -250,13 +250,284 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header>
+</header><p>When we have finished this Lab, we should be able to:</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Applying hypothesis testing</li>
+<li>Compare more than two independent samples</li>
+<li>Interpret the results</li>
+</ul>
+</div>
+</div>
+<section id="introduction" class="level2" data-number="17.1"><h2 data-number="17.1" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">17.1</span> Introduction</h2>
+<p>The one-way analysis of variance (one-way ANOVA) or the non-parametric Kruskal-Wallis test are used to detect whether there are any differences between more than two independent (unrelated) samples.</p>
+<p>Althought, these tests can detect a difference between several groups they do not inform about which groups are different from the others. At first sight we might clarify the question by comparing all groups in pairs with t-tests or Mann-Whitney U tests. However, that procedure may lead us to the wrong conclusions (known as multiple comparisons problem).</p>
+<p>Why is this procedure inappropriate? Quite simply, because we would be wrongly testing the null hypothesis. Each comparison one conducts increases the likelihood of committing at least one Type I error within a set of comparisons (famillywise Type I error rate).</p>
+<p>This is the reason why, after an ANOVA or Kruskal-Wallis test concluding on a difference between groups, we should not just compare all possible pairs of groups with t-tests or Mann-Whitney U tests. Instead we perform statistical tests that take into account the number of comparisons (post hoc tests). Some of the more commonly used ones are Tukey test, Games-Howell test, and Bonferroni correction.</p>
+</section><section id="one-way-analysis-of-variance-anova" class="level2" data-number="17.2"><h2 data-number="17.2" class="anchored" data-anchor-id="one-way-analysis-of-variance-anova">
+<span class="header-section-number">17.2</span> One-way Analysis of Variance (ANOVA)</h2>
+<p>One-way analysis of variance, usually referred to as one-way ANOVA, is a statistical test used when we want to compare several means. We may think of it as an extension of Student’s t-test to the case of more than two samples.</p>
+<section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
+<p>Open the dataset named <code>dataDWL</code> from the file tab in the menu:</p>
+<div id="fig-dataDWL" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/dataDWL.png" class="lightbox" title="The dataDWL dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/dataDWL.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.1: The dataDWL dataset</figcaption><p></p>
+</figure>
+</div>
+<p>The dataset <code>dataDWL</code> has 60 participants and includes two variables (<a href="#fig-dataDWL">Figure&nbsp;<span>17.1</span></a>). The numeric <code>WeightLoss</code> variable and the <code>Diet</code> variable (with levels “A”, “B”, “C” and “D”).</p>
+</section><section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
+<p>Consider the example of the variations between weight loss according to four different types of diet (A, B, C, and D). The question that may be asked is: does the average weight loss (units in kg) differ according to the diet?</p>
+</section><section id="hypothesis-testsing-for-the-anova-test" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing-for-the-anova-test">Hypothesis Testsing for the ANOVA test</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Null hypothesis and alternative hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<span class="math inline">\(H_0\)</span>: all group means are equal (the means of weight loss in the four diets are equal: <span class="math inline">\(\mu_{A} = \mu_{B} = \mu_{C} = \mu_{D}\)</span>)</li>
+<li>
+<span class="math inline">\(H_1\)</span>: at least one group mean differs from the others (there is at least one diet with mean weight loss different from the others)</li>
+</ul>
+</div>
+</div>
+</section><section id="assumptions" class="level3"><h3 class="anchored" data-anchor-id="assumptions">Assumptions</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check if the following assumptions are satisfied
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The dependent variable, <code>WeightLoss</code>, should be approximately <strong>normally</strong> distributed for all groups</li>
+<li>The data in groups have similar <strong>variance</strong> (also named as homogeneity of variance or homoscedasticity)</li>
+</ol>
+</div>
+</div>
+<p><strong>A. Explore the descriptive characteristics of distribution for each group and check for normality</strong></p>
+<p>The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test) and for equality of variances (e.g., Levene’s test) can be used.</p>
+<p>We select:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A(Analyses) -.-&gt; B(Exploration) -.-&gt; C(Descriptives)
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<p>Drag the variable <code>WeightLoss</code> into the <code>Variables</code> box and split it by the <code>Diet</code> variable. Additionally, select <code>Variable across columns</code>, as shown below (<a href="#fig-diet1">Figure&nbsp;<span>17.2</span></a>):</p>
+<div id="fig-diet1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet1.png" class="lightbox" title="Split the variable WeightLoss by Diet group" data-gallery="quarto-lightbox-gallery-2"><img src="images/diet1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.2: Split the variable WeightLoss by Diet group</figcaption><p></p>
+</figure>
+</div>
+<p>We can now select the relevant descriptive statistics such as <code>Percantiles</code>, <code>Skewness</code>, <code>Kurtosis</code> and the <code>Shapiro-Wilk</code> test from the <code>Statistics</code> section (<a href="#fig-descriptives13">Figure&nbsp;<span>17.3</span></a>):</p>
+<div id="fig-descriptives13" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" title="In the Statistics section select the descriptive statistics of interest." data-gallery="quarto-lightbox-gallery-3"><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.3: In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
+</figure>
+</div>
+<p>Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (<a href="#fig-diet2">Figure&nbsp;<span>17.4</span></a>):</p>
+<div id="fig-diet2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet2.png" class="lightbox" title="Descriptive statistics of WeightLoss by Diet group (click on image to zoom in)." data-gallery="quarto-lightbox-gallery-4"><img src="images/diet2.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.4: Descriptive statistics of WeightLoss by Diet group (click on image to zoom in).</figcaption><p></p>
+</figure>
+</div>
+<p>The means are close to medians and the standard deviations are also similar indicating normal distributions for all groups. Additionally, both shape measures, skewness and (excess) kurtosis, have values in the acceptable range [-1, 1] which indicate symmetric and mesokurtic distributions, respectively.</p>
+<p>The Shapiro-Wilk tests of normality suggest that the data for the <code>WeightLoss</code> in all groups are normally distributed (p &gt; 0.05 <span class="math inline">\(\Rightarrow H_0\)</span> is not rejected).</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remember: Hypothesis testing for Shapiro-Wilk test for normality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(H_{0}\)</span>: the data came from a normally distributed population.</p>
+<p><span class="math inline">\(H_{1}\)</span>: the data tested are not normally distributed.</p>
+<ul>
+<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+<li>If p − value ≥ 0.05, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>Then we can check the <code>Density</code> from <code>Histograms</code> in the <code>Plot</code> section, as shown below (<a href="#fig-plots_density">Figure&nbsp;<span>17.5</span></a>):</p>
+<div id="fig-plots_density" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" title="In the Plot section select Density from Histograms." data-gallery="quarto-lightbox-gallery-5"><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.5: In the Plot section select Density from Histograms.</figcaption><p></p>
+</figure>
+</div>
+<p>A graph (<a href="#fig-diet3">Figure&nbsp;<span>17.6</span></a>) is generated in the output window on our right-hand side:</p>
+<div id="fig-diet3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet3.png" class="lightbox" title="In the Plots section select Density from Histograms." data-gallery="quarto-lightbox-gallery-6"><img src="images/diet3.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.6: In the Plots section select Density from Histograms.</figcaption><p></p>
+</figure>
+</div>
+<p>The above density plots show that the data are close to symmetry and the assumption of a normal distribution is reasonable for all diet groups.</p>
+<p><strong>B. Homogeneity of variance</strong></p>
+<p>The second assumption that should be satisfied is the homogeneity of variance. We observe in the summary table of <a href="#fig-diet2">Figure&nbsp;<span>17.4</span></a> that the standard deviations are similar (see also below the Levene’s test for equality of variances in <a href="lab6.html#fig-t_test4">Figure&nbsp;<span>16.10</span></a>).</p>
+<p>&nbsp;</p>
+</section><section id="run-the-anova-test" class="level3"><h3 class="anchored" data-anchor-id="run-the-anova-test">Run the ANOVA test</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Perform a ANOVA test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will perform ANOVA to test the null hypothesis that the mean WeightLoss is the same for all diet groups.</p>
+<p>We select:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
+  A(Analyses) -.-&gt; B(ANOVA) -.-&gt; C(One-Way ANOVA)
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<div id="fig-diet4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet4.png" class="lightbox" title="Conducting ANOVA test." data-gallery="quarto-lightbox-gallery-7"><img src="images/diet4.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.7: Conducting ANOVA test.</figcaption><p></p>
+</figure>
+</div>
+<p>The <code>One-Way ANOVA</code> dialogue box opens. Drag and drop the numeric variable <code>WeightLoss</code> to Dependent Variables and the independent variable <code>Diet</code> to Grouping Variable, as shown below <a href="#fig-diet5">Figure&nbsp;<span>17.8</span></a>:</p>
+<div id="fig-diet5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet5.png" class="lightbox" title="One-Way ANOVA dialogue box" data-gallery="quarto-lightbox-gallery-8"><img src="images/diet5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.8: One-Way ANOVA dialogue box</figcaption><p></p>
+</figure>
+</div>
+<p>We observe that we can select between the following two Tests: Welch’s test (the default), or Fisher’s test. At the moment, we keep the default choice. Moreover, from <code>Additional Statistics</code> check the <code>Descriptive</code>, and <code>Descriptive plots</code> boxes. Finally, from <code>Assumption Checks</code> tick the <code>Homogeneity test</code>. We will end up with the following screen:</p>
+<div id="fig-diet6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet6.png" class="lightbox" title="Additional statistics and tests." data-gallery="quarto-lightbox-gallery-9"><img src="images/diet6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.9: Additional statistics and tests.</figcaption><p></p>
+</figure>
+</div>
+<p>First, we look at the table of <code>Levene's test</code> for equality of variances (<a href="#fig-diet7">Figure&nbsp;<span>17.10</span></a>):</p>
+<div id="fig-diet7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet7.png" class="lightbox" title="Levene’s test." data-gallery="quarto-lightbox-gallery-10"><img src="images/diet7.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.10: Levene’s test.</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Remember: Hypothesis testing for Levene’s test for equality of variances
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(H_{0}\)</span>: the variances of WeightLoss in all groups are equal</p>
+<p><span class="math inline">\(H_{1}\)</span>: the variances of WeightLoss differ between groups</p>
+<ul>
+<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+<li>If p − value ≥ 0.05, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>Since p = 0.583 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and <strong>we have to perform the Fisher’s test (assume equal variances)</strong> (<a href="#fig-diet8">Figure&nbsp;<span>17.11</span></a>). (NOTE: If the <span class="math inline">\(p \geq 0.05\)</span>, then the population variances of WeightLoss in all groups are assumed equal).</p>
+<div id="fig-diet8" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet8.png" class="lightbox" title="Fisher’s ANOVA test." data-gallery="quarto-lightbox-gallery-11"><img src="images/diet8.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.11: Fisher’s ANOVA test.</figcaption><p></p>
+</figure>
+</div>
+<p>If the assumption of equal variances is not satisfied (Levene’s test gives p &lt; 0.05, reject <span class="math inline">\(H_0\)</span>), the Welch’s test should be used from the available Tests in Jamovi (<a href="#fig-diet8">Figure&nbsp;<span>17.11</span></a>).</p>
+<p>Next, we can inspect again the results in the group descriptives table (<a href="#fig-diet9">Figure&nbsp;<span>17.12</span></a>) and pertinent plots (<a href="#fig-diet9">Figure&nbsp;<span>17.12</span></a>):</p>
+<div id="fig-diet9" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet9.png" class="lightbox" title="Group descriptives." data-gallery="quarto-lightbox-gallery-12"><img src="images/diet9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.12: Group descriptives.</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-diet10" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet10.png" class="lightbox" title="Plot of mean (95% CI) of WeightLoss by Diet." data-gallery="quarto-lightbox-gallery-13"><img src="images/diet10.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.13: Plot of mean (95% CI) of WeightLoss by Diet.</figcaption><p></p>
+</figure>
+</div>
+<p>Finally, we present the results of the Fisher’s ANOVA test in the table of the <a href="#fig-diet11">Figure&nbsp;<span>17.14</span></a>:</p>
+<div id="fig-diet11" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet11.png" class="lightbox" title="The results of the Fisher’s ANOVA test." data-gallery="quarto-lightbox-gallery-14"><img src="images/diet11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.14: The results of the Fisher’s ANOVA test.</figcaption><p></p>
+</figure>
+</div>
+<p>In <a href="#fig-diet11">Figure&nbsp;<span>17.14</span></a>, F= 6.12 indicates the obtained F-statistic= (variation between sample means <span class="math inline">\(/\)</span> variation within the samples). Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 3 and 56, respectively (numarator: variation between sample means; denominator: variation within the samples).</p>
+<p>The p-value=0.001 is less than 0.05 (reject <span class="math inline">\(H_0\)</span> of the ANOVA test). <strong>There is at least one diet with mean weight loss which is different from the other means</strong>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="run-post-hoc-tests" class="level3"><h3 class="anchored" data-anchor-id="run-post-hoc-tests">Run post-hoc tests</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Perform post-hoc tests
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>significant</strong> one-way ANOVA is generally followed by post-hoc tests to perform multiple pairwise comparisons between groups. From the <code>One-Way ANOVA</code> dialogue click on <code>Post-Hoc Tests</code> bar. We have got the following two options:</p>
+<ul>
+<li><p>Games-Howell (unequal variances)</p></li>
+<li><p>Tukey (equal variances)</p></li>
+</ul>
+<p>Based on the result of Levene’s test (p = 0.583 &gt; 0.05, the <span class="math inline">\(H_0\)</span> is not rejected) (<a href="#fig-diet7">Figure&nbsp;<span>17.10</span></a>), we should select the Tukey (equal variances) post-hoc test. Additionally, check the <code>Flag significant comparisons</code> as shown below (<a href="#fig-diet12">Figure&nbsp;<span>17.15</span></a>):</p>
+<div id="fig-diet12" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet12.png" class="lightbox" title="Select the appropriate post-hoc test." data-gallery="quarto-lightbox-gallery-15"><img src="images/diet12.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.15: Select the appropriate post-hoc test.</figcaption><p></p>
+</figure>
+</div>
+<p>Once we have selected our post-hoc test, a table will appear in the output window on our right-hand side, as shown below (<a href="#fig-diet13">Figure&nbsp;<span>17.16</span></a>):</p>
+<div id="fig-diet13" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/diet13.png" class="lightbox" title="Table with the results of the post-hoc tests." data-gallery="quarto-lightbox-gallery-16"><img src="images/diet13.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17.16: Table with the results of the post-hoc tests.</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Interpretation</strong></p>
+<p>Pairwise comparisons were carried out using the method of Tukey and the adjusted p-values were calculated. <strong>The weight loss from diet C seems to be significantly larger than diet A (mean difference = 2.93 kg, p=0.005 &lt;0.05) and diet B (mean difference = 3.21 kg, p=0.002 &lt;0.05)</strong>.</p>
+</div>
+</div>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -367,9 +638,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./lab6.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span>
       </a>          
@@ -381,12 +650,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer>
-
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true,"selector":".lightbox"});</script>
 
 
 </body></html>

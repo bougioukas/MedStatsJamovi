@@ -242,7 +242,32 @@ ul.task-list li input[type="checkbox"] {
 
 </header><section id="introduction" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="introduction">
 <span class="header-section-number">7.1</span> Introduction</h2>
-<p>In this chapter, we introduce the use of one-way analysis of variance (ANOVA) for hypothesis testing of more than two sample means with normal distributions. ANOVA was first introduced by the statistician R.A. Fisher in 1921 and is now widely applied in the biomedical and other research fields. ANOVA is a single global test to determine whether the means differ in any groups. In addition, the term “one-way” is used because the participants are separated into groups by one factor (e.g., intervention).</p>
+<p>In this chapter, we introduce the use of one-way analysis of variance (ANOVA) for hypothesis testing of more than two sample means with normal distributions. ANOVA was first introduced by the statistician R.A. Fisher in 1921 and is now widely applied in the biomedical and other research fields.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The mathematical model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose we want to compare the means of <span class="math inline">\(k\)</span> different populations (groups). Any individual score, <span class="math inline">\(x_{ij}\)</span>, can be written as follows:</p>
+<p><span id="eq-model"><span class="math display">\[x_{ij} = μ + α_j + ε_{ij} \tag{7.1}\]</span></span></p>
+<p>where,</p>
+<p><span class="math inline">\(j\)</span>: the index over groups (j=1,2,3,…, k)</p>
+<p><span class="math inline">\(i\)</span>: the index over the individuals (i=1,2,3,…, <span class="math inline">\(n_{j}\)</span>)</p>
+<p><span class="math inline">\(μ\)</span>: expected mean of individuals in all groups</p>
+<p><span class="math inline">\(α_j\)</span>: the effect of the <span class="math inline">\(j^{th}\)</span> treatment</p>
+<p><span class="math inline">\(ε_{ij}\)</span>: an error term (the residual of the model)</p>
+<p>An alternative way to write the model in <a href="#eq-model">Equation&nbsp;<span>7.1</span></a> is:</p>
+<p><span id="eq-model2"><span class="math display">\[x_{ij} = μ_j + ε_{ij} \tag{7.2}\]</span></span></p>
+<p>where <span class="math inline">\(μ_j= μ + α_j\)</span> is the expected mean of the <span class="math inline">\(j^{th}\)</span> group</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>ANOVA is a single global test to determine whether the means differ in any groups. In addition, the term “one-way” is used because the participants are separated into groups by one factor (e.g., intervention).</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -283,11 +308,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>Total sum of squares can be partitioned into between sum of squares and within sum of squares:</p>
-<p><span id="eq-ss"><span class="math display">\[SS_{T} = SS_{B} + SS_{W} \tag{7.1}\]</span></span></p>
+<p><span id="eq-ss"><span class="math display">\[SS_{T} = SS_{B} + SS_{W} \tag{7.3}\]</span></span></p>
 <blockquote class="blockquote">
-<p><strong>Total sum of squares (<span class="math inline">\(SS_{T}\)</span>):</strong> The total sum of squares, denoted by <span class="math inline">\(SS_{T}\)</span> , measures the total variation of all observations.</p>
+<p><strong>Total sum of squares (</strong><span class="math inline">\(SS_{T}\)</span>): The total sum of squares, denoted by <span class="math inline">\(SS_{T}\)</span> , measures the total variation of all observations.</p>
 </blockquote>
-<p><span id="eq-aov1"><span class="math display">\[SS_{T} = \sum_{j=1}^k \sum_{i=1}^{n_{j}} ( x_{ij}-{\bar{x_{g}})^2 } \tag{7.2}\]</span></span></p>
+<p><span id="eq-aov1"><span class="math display">\[SS_{T} = \sum_{j=1}^k \sum_{i=1}^{n_{j}} ( x_{ij}-{\bar{x_{g}})^2 } \tag{7.4}\]</span></span></p>
 <p>where,</p>
 <p>k: the number of groups (independent samples)</p>
 <p>j: the index over groups (j=1,2,3,…, k)</p>
@@ -296,14 +321,14 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math inline">\(x_{ij}\)</span>: the score for an individual, i, within a particular group j</p>
 <p><span class="math inline">\(\bar{x_{g}}\)</span>: grand mean (mean for all groups combined)</p>
 <blockquote class="blockquote">
-<p><strong>Between-group sum of squares (<span class="math inline">\(SS_{B}\)</span>):</strong> The between groups sum of squares, denoted by <span class="math inline">\(SS_{B}\)</span>, measures the variation between group means at various levels of the treatment, that is, the between-group variation.</p>
+<p><strong>Between-group sum of squares (</strong><span class="math inline">\(SS_{B}\)</span>): The between groups sum of squares, denoted by <span class="math inline">\(SS_{B}\)</span>, measures the variation between group means at various levels of the treatment, that is, the between-group variation.</p>
 </blockquote>
-<p><span id="eq-aov2"><span class="math display">\[SS_{B} = \sum_{j=1}^k n_{j}( \bar{x}_j-{\bar{x_{g}})^2 } \tag{7.3}\]</span></span></p>
+<p><span id="eq-aov2"><span class="math display">\[SS_{B} = \sum_{j=1}^k n_{j}( \bar{x}_j-{\bar{x_{g}})^2 } \tag{7.5}\]</span></span></p>
 <p>where <span class="math inline">\(\bar{x}_j\)</span>: sample mean of group j.</p>
 <blockquote class="blockquote">
-<p><strong>Within-group or error sum of squares (<span class="math inline">\(SS_{W}\)</span>):</strong> The within groups sum of squares, denoted by <span class="math inline">\(SS_{W}\)</span>, measures the variation of observations within treatment groups, that is, the within-group variation. This reflects the random error of an experiment not related to the treatment factor.</p>
+<p><strong>Within-group or error sum of squares (</strong><span class="math inline">\(SS_{W}\)</span>): The within groups sum of squares, denoted by <span class="math inline">\(SS_{W}\)</span>, measures the variation of observations within treatment groups, that is, the within-group variation. This reflects the random error of an experiment not related to the treatment factor.</p>
 </blockquote>
-<p><span id="eq-aov3"><span class="math display">\[SS_{W} = \sum_{j=1}^k \sum_{i=1}^{n_{j}} ( x_{ij}-{\bar{x_{j}})^2 } \tag{7.4}\]</span></span></p>
+<p><span id="eq-aov3"><span class="math display">\[SS_{W} = \sum_{j=1}^k \sum_{i=1}^{n_{j}} ( x_{ij}-{\bar{x_{j}})^2 } \tag{7.6}\]</span></span></p>
 </div>
 </div>
 <div class="callout-caution callout callout-style-default no-icon callout-captioned">
@@ -317,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>Each sum of square (<span class="math inline">\(SS_{T}\)</span>, <span class="math inline">\(SS_{B}\)</span>, <span class="math inline">\(SS_{W}\)</span>) has different degrees of freedom associated with it. The degrees of freedom for the total variance is <span class="math inline">\(df_{T}=n-1\)</span> (where n is the total number of observations in the study, which means that <span class="math inline">\(n = n_{1} + n_{2} + . . . + n_{k}\)</span>), the degrees of freedom for the between-groups variance is <span class="math inline">\(df_{B}=k-1\)</span>, the degrees of freedom for the within-groups variance is <span class="math inline">\(df_{w}=n-k\)</span>. Obviously:</p>
-<p><span id="eq-df1"><span class="math display">\[df_{T}=df_{B}+df_{W} \tag{7.5}\]</span></span></p>
+<p><span id="eq-df1"><span class="math display">\[df_{T}=df_{B}+df_{W} \tag{7.7}\]</span></span></p>
 </div>
 </div>
 <div class="callout-caution callout callout-style-default no-icon callout-captioned">
@@ -331,9 +356,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>The estimate of the between-groups variance is given by dividing the <span class="math inline">\(SS_{B}\)</span> by the <span class="math inline">\(df_{B}\)</span>:</p>
-<p><span id="eq-ms1"><span class="math display">\[MS_{B}= \frac{SS_{B}}{df_{B}} = \frac{SS_{B}}{k-1} \tag{7.6}\]</span></span></p>
+<p><span id="eq-ms1"><span class="math display">\[MS_{B}= \frac{SS_{B}}{df_{B}} = \frac{SS_{B}}{k-1} \tag{7.8}\]</span></span></p>
 <p>and for within-groups variance:</p>
-<p><span id="eq-ms2"><span class="math display">\[MS_{W}= \frac{SS_{W}}{df_{W}} = \frac{SS_{W}}{n-k} \tag{7.7}\]</span></span></p>
+<p><span id="eq-ms2"><span class="math display">\[MS_{W}= \frac{SS_{W}}{df_{W}} = \frac{SS_{W}}{n-k} \tag{7.9}\]</span></span></p>
 </div>
 </div>
 </section><section id="hypothesis-testing-of-anova" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="hypothesis-testing-of-anova">
@@ -353,11 +378,11 @@ Steps of hypothesis testing for one-way ANOVA test
 <p><span class="math inline">\(H_{1}\)</span>: at least one group mean differs from the others (<span class="math inline">\(μ_{i} \neq μ_{j}, \ i,j = 1, 2, 3, ...\)</span>)</p>
 <p><strong>Step 2:</strong> Set the level of significance α = 0.05.</p>
 <p><strong>Step 3:</strong> Identify the appropriate test statistic and check the assumptions. Calculate the test statistic using the data.</p>
-<p>Τhe appropriate parametric statistical test, for testing <span class="math inline">\(H_{0}\)</span>, is the ANOVA test. (NOTE: first check for normal distributions and homogeneity of variance). The F-statistic is calculated by creating a ratio of the between-groups variance (<a href="#eq-ms1">Equation&nbsp;<span>7.6</span></a>) to the within-groups variance (<a href="#eq-ms2">Equation&nbsp;<span>7.7</span></a>):</p>
-<p><span id="eq-f_ratio"><span class="math display">\[F = \frac{MS_{B}}{MS_{W}} \tag{7.8}\]</span></span></p>
+<p>Τhe appropriate parametric statistical test, for testing <span class="math inline">\(H_{0}\)</span>, is the ANOVA test. (NOTE: first check for normal distributions and homogeneity of variance). The F-statistic is calculated by creating a ratio of the between-groups variance (<a href="#eq-ms1">Equation&nbsp;<span>7.8</span></a>) to the within-groups variance (<a href="#eq-ms2">Equation&nbsp;<span>7.9</span></a>):</p>
+<p><span id="eq-f_ratio"><span class="math display">\[F = \frac{MS_{B}}{MS_{W}} \tag{7.10}\]</span></span></p>
 <p>This statistic follows an F-distribution with a pair of degrees of freedom <span class="math inline">\(df_{B} =k−1\)</span> (numerator), <span class="math inline">\(df_{W} =n−k\)</span> (denominator).</p>
 <p><strong>Step 4:</strong> Decide whether or not the result is statistically significant.</p>
-<p>Based on the calculated F-statistic (<a href="#eq-f_ratio">Equation&nbsp;<span>7.8</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed F-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
+<p>Based on the calculated F-statistic (<a href="#eq-f_ratio">Equation&nbsp;<span>7.10</span></a>), we have to decide whether to reject or fail to reject the <span class="math inline">\(H_{0}\)</span>. If the computed F-value falls in the rejection region (area of the two red tails), we reject <span class="math inline">\(H_{0}\)</span>.</p>
 <div id="fig-anova2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/anova2.png" class="lightbox" title="Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA." data-gallery="quarto-lightbox-gallery-2"><img src="images/anova2.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;7.2: Illustration of rejection and non-rejection regions for the F-test for one-way ANOVA.</figcaption><p></p>
@@ -387,12 +412,12 @@ The familywise error rate (FWER)
 <li><p>The per comparison Type I error rate (represented by the notation <span class="math inline">\(α_{PC}\)</span>) is the likelihood that any single comparison will result in a Type I error.</p></li>
 </ol>
 <p>The following equation defines the relationship between the familywise Type I error rate and the per comparison Type I error rate, where c the number of comparisons:</p>
-<p><span id="eq-fwer"><span class="math display">\[ α_{FW} = 1-(1-α_{PC})^c \tag{7.9}\]</span></span></p>
+<p><span id="eq-fwer"><span class="math display">\[ α_{FW} = 1-(1-α_{PC})^c \tag{7.11}\]</span></span></p>
 <p>For an example, when we are interested in comparing means of A, B and C groups, we may consider performing a set of three comparisons as following:</p>
 <p><strong>Hypothesis 1:</strong> mean values of group A and group B are equal (comparison of A and B).</p>
 <p><strong>Hypothesis 2:</strong> mean values of group A and group C are equal (comparison of A and C).</p>
 <p><strong>Hypothesis 3:</strong> mean values of group B and group C are equal (comparison of B and C).</p>
-<p>The three aforementioned comparisons can be conceptualized as a family/set of comparisons, with c=3. If for each of the comparisons the value αPC equals to 0.05, the familywise Type I error rate becomes (<a href="#eq-fwer">Equation&nbsp;<span>7.9</span></a>):</p>
+<p>The three aforementioned comparisons can be conceptualized as a family/set of comparisons, with c=3. If for each of the comparisons the value αPC equals to 0.05, the familywise Type I error rate becomes (<a href="#eq-fwer">Equation&nbsp;<span>7.11</span></a>):</p>
 <p><span class="math display">\[ α_{FW} = 1-(1-0.05)^3= 1-0.95^3=1-0.857= 0.143\]</span></p>
 <p>This result indicates that the likelihood of committing at least one Type I error in the set of three comparisons is 0.143 instead of 0.05 (almost three times greater).</p>
 </div>
@@ -551,7 +576,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
 
 
 </body></html>

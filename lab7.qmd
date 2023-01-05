@@ -1,1 +1,234 @@
-# LAB VII: Inference for numerical data (\>2 samples)
+# LAB VII: Inference for numerical data (\>2 samples) {#sec-lab7}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Applying hypothesis testing
+-   Compare more than two independent samples
+-   Interpret the results
+:::
+
+## Introduction
+
+The one-way analysis of variance (one-way ANOVA) or the non-parametric Kruskal-Wallis test are used to detect whether there are any differences between more than two independent (unrelated) samples.
+
+Althought, these tests can detect a difference between several groups they do not inform about which groups are different from the others. At first sight we might clarify the question by comparing all groups in pairs with t-tests or Mann-Whitney U tests. However, that procedure may lead us to the wrong conclusions (known as multiple comparisons problem).
+
+Why is this procedure inappropriate? Quite simply, because we would be wrongly testing the null hypothesis. Each comparison one conducts increases the likelihood of committing at least one Type I error within a set of comparisons (famillywise Type I error rate). 
+
+This is the reason why, after an ANOVA or Kruskal-Wallis test concluding on a difference between groups, we should not just compare all possible pairs of groups with t-tests or Mann-Whitney U tests. Instead we perform statistical tests that take into account the number of comparisons (post hoc tests). Some of the more commonly used ones are Tukey test, Games-Howell test, and Bonferroni correction.
+
+
+## One-way Analysis of Variance (ANOVA)
+
+One-way analysis of variance, usually referred to as one-way ANOVA, is a statistical test used when we want to compare several means. We may think of it as an extension of Student’s t-test to the case of more than two samples.
+
+
+### Opening the file
+
+Open the dataset named `dataDWL` from the file tab in the menu:
+
+![The dataDWL dataset](images/dataDWL.png){#fig-dataDWL width="85%"}
+
+The dataset `dataDWL` has 60 participants and includes two variables (@fig-dataDWL). The numeric `WeightLoss` variable and the `Diet` variable (with levels "A", "B", "C" and "D").
+
+
+
+### Research question
+
+Consider the example of the variations between weight loss according to four different types of diet (A, B, C, and D). The question that may be asked is: does the average weight loss (units in kg) differ according to the diet?
+
+
+
+### Hypothesis Testsing for the ANOVA test
+
+::: {.callout-note icon="false"}
+## Null hypothesis and alternative hypothesis
+
+* $H_0$: all group means are equal (the means of weight loss in the four diets are equal: $\mu_{A} = \mu_{B} = \mu_{C} = \mu_{D}$)
+* $H_1$: at least one group mean differs from the others (there is at least one diet with mean weight loss different from the others)
+
+:::
+
+
+
+### Assumptions
+
+::: {.callout-note icon="false"}
+## Check if the following assumptions are satisfied
+
+1. The dependent variable, `WeightLoss`, should be approximately **normally** distributed for all groups
+2. The data in  groups have similar **variance** (also named as homogeneity of variance or homoscedasticity)
+
+:::
+
+
+**A. Explore the descriptive characteristics of distribution for each group and check for normality**
+
+The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test) and for equality of variances (e.g., Levene's test) can be used.
+
+
+We select:
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
+```
+
+
+
+Drag the variable `WeightLoss` into the `Variables` box and split it by the `Diet` variable. Additionally, select `Variable across columns`, as shown below (@fig-diet1):
+
+![Split the variable WeightLoss by Diet group](images/diet1.png){#fig-diet1 width="75%"}
+
+
+We can now select the relevant descriptive statistics such as `Percantiles`, `Skewness`, `Kurtosis` and the `Shapiro-Wilk` test from the `Statistics` section (@fig-descriptives13):
+
+![In the Statistics section select the descriptive statistics of interest.](images/descriptives13.png){#fig-descriptives13 width="70%"}
+
+Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (@fig-diet2):
+
+![Descriptive statistics of WeightLoss by Diet group (click on image to zoom in).](images/diet2.png){#fig-diet2}
+
+The means are close to medians and the standard deviations are also similar indicating normal distributions for all groups. Additionally, both shape measures, skewness and (excess) kurtosis, have values in the acceptable range [-1, 1] which indicate symmetric and mesokurtic distributions, respectively. 
+
+
+The Shapiro-Wilk tests of normality suggest that the data for the `WeightLoss` in all groups are normally distributed (p > 0.05 $\Rightarrow H_0$ is not rejected).
+
+
+
+::: callout-important
+# Remember: Hypothesis testing for Shapiro-Wilk test for normality
+
+$H_{0}$: the data came from a normally distributed population.
+
+$H_{1}$: the data tested are not normally distributed.
+
+-   If p − value \< 0.05, reject the null hypothesis, $H_{0}$.
+-   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
+:::
+
+
+Then we can check the `Density` from `Histograms` in the `Plot` section, as shown below (@fig-plots_density):
+
+![In the Plot section select Density from Histograms.](images/plots_density.png){#fig-plots_density width="75%"}
+
+
+A graph (@fig-diet3) is generated in the output window on our right-hand side:
+
+![In the Plots section select Density from Histograms.](images/diet3.png){#fig-diet3 width="70%"}
+
+The above density plots show that the data are close to symmetry and the assumption of a normal distribution is reasonable for all diet groups.
+
+
+
+**B. Homogeneity of variance**
+
+The second assumption that should be satisfied is the homogeneity of variance. We observe in the summary table of @fig-diet2 that the standard deviations are similar (see also below the Levene's test for equality of variances in @fig-t_test4).
+
+ 
+
+### Run the ANOVA test
+
+::: {.callout-note icon="false"}
+# Perform a ANOVA test
+
+We will perform ANOVA to test the null hypothesis that the mean WeightLoss is the same for all diet groups.
+
+We select:
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(ANOVA) -.-> C(One-Way ANOVA)
+```
+
+![Conducting ANOVA test.](images/diet4.png){#fig-diet4 width="75%"}
+
+The `One-Way ANOVA` dialogue box opens. Drag and drop the numeric variable `WeightLoss` to Dependent Variables and the independent variable `Diet` to Grouping Variable, as shown below @fig-diet5:
+
+![One-Way ANOVA dialogue box](images/diet5.png){#fig-diet5 width="75%"}
+
+We observe that we can select between the following two Tests: Welch's test (the default), or Fisher's test. At the moment, we keep the default choice. Moreover, from `Additional Statistics` check the `Descriptive`, and `Descriptive plots` boxes. Finally, from `Assumption Checks` tick the `Homogeneity test`. We will end up with the following screen:
+
+![Additional statistics and tests.](images/diet6.png){#fig-diet6 width="75%"}
+
+First, we look at the table of `Levene's test` for equality of variances (@fig-diet7):
+
+![Levene's test.](images/diet7.png){#fig-diet7 width="60%"}
+
+::: callout-important
+# Remember: Hypothesis testing for Levene's test for equality of variances
+
+$H_{0}$: the variances of WeightLoss in all groups are equal
+
+$H_{1}$: the variances of WeightLoss differ between groups
+
+-   If p − value \< 0.05, reject the null hypothesis, $H_{0}$.
+-   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
+:::
+
+
+Since p = 0.583 > 0.05, the $H_0$ of the Levene's test is not rejected and **we have to perform the Fisher's test (assume equal variances)** (@fig-diet8). (NOTE: If the $p \geq 0.05$, then the population variances of WeightLoss in all groups are assumed equal).
+
+![Fisher's ANOVA test.](images/diet8.png){#fig-diet8 width="75%"}
+
+If the assumption of equal variances is not satisfied (Levene's test gives p \< 0.05, reject $H_0$), the Welch's test should be used from the available Tests in Jamovi (@fig-diet8).
+
+
+Next, we can inspect again the results in the group descriptives table (@fig-diet9) and pertinent plots (@fig-diet9):
+
+![Group descriptives.](images/diet9.png){#fig-diet9 width="65%"}
+
+![Plot of mean (95% CI) of WeightLoss by Diet.](images/diet10.png){#fig-diet10 width="55%"}
+
+Finally, we present the results of the Fisher's ANOVA test in the table of the @fig-diet11:
+
+![The results of the Fisher's ANOVA test.](images/diet11.png){#fig-diet11 width="55%"}
+
+In @fig-diet11, F= 6.12 indicates the obtained F-statistic= (variation between sample means $/$ variation within the samples). Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 3 and 56, respectively (numarator: variation between sample means; denominator: variation within the samples).
+
+The p-value=0.001 is less than 0.05 (reject $H_0$ of the ANOVA test). **There is at least one diet with mean weight loss which is different from the other means**.
+
+:::
+
+ 
+
+### Run post-hoc tests
+
+::: {.callout-note icon="false"}
+# Perform post-hoc tests
+
+A **significant** one-way ANOVA is generally followed by post-hoc tests to perform multiple pairwise comparisons between groups. From the `One-Way ANOVA` dialogue click on `Post-Hoc Tests` bar. We have got the following two options:
+
+-   Games-Howell (unequal variances)
+
+-   Tukey (equal variances) 
+
+Based on the result of Levene's test (p = 0.583 > 0.05, the $H_0$ is not rejected) (@fig-diet7), we should select the Tukey (equal variances) post-hoc test. Additionally, check the `Flag significant comparisons` as shown below (@fig-diet12):
+
+![Select the appropriate post-hoc test.](images/diet12.png){#fig-diet12 width="70%"}
+
+
+
+Once we have selected our post-hoc test, a table will appear in the output window on our right-hand side, as shown below (@fig-diet13):
+
+![Table with the results of the post-hoc tests.](images/diet13.png){#fig-diet13 width="70%"}
+
+
+**Interpretation**
+
+Pairwise comparisons were carried out using the method of Tukey and the adjusted p-values were calculated. **The weight loss from diet C seems to be significantly larger than diet A (mean difference = 2.93 kg, p=0.005 <0.05) and diet B (mean difference = 3.21 kg, p=0.002 <0.05)**.
+
+:::
+
+
+

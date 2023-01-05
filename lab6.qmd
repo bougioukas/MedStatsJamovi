@@ -26,7 +26,7 @@ Two sample t-test (Student's t-test) can be used if we have two independent (unr
 
 Open the dataset named `depression` from the file tab in the menu:
 
-![The depression dataset](images/depression1.png){#fig-depression1 width=85%}
+![The depression dataset](images/depression1.png){#fig-depression1 width="85%"}
 
 The dataset `depression` has 76 patients and includes two variables. The `treatment` variable and the `HDRS` variable (@fig-depression1). Double-click on the variable name `HDRS` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
 
@@ -47,7 +47,7 @@ Note A score of 0--7 in HDRS is generally accepted to be within the normal range
 -   $H_1$: the means of HDRS in the two groups are not equal ($\mu_{1} \neq \mu_{2}$)
 :::
 
-### Assumptions 
+### Assumptions
 
 ::: {.callout-note icon="false"}
 ## Check if the following assumptions are satisfied
@@ -130,7 +130,8 @@ The `Independent Samples T-Test` dialogue box opens. Drag and drop the numeric v
 
 ![The Independent Samples T-Test dialogue box](images/t_test2.png){#fig-t_test2 width="75%"}
 
-We observe that we can select between the following three Tests: Students's, Welch's, or Mann-Whitney U. We keep the default choice of Students's test. Finally, from `Additional Statistics` check the `Mean difference`, `Confidence Intervals`, `Descriptive`, and `Descriptive plots` boxes. Finally, from `Assumption Checks` tick the `Homogeneity test`. We will end up with the following screen:
+We observe that we can select between the following three Tests: Students's (the default), Welch's, or Mann-Whitney U. At the moment, we keep the default choice of Students's test.
+From `Additional Statistics` check the `Mean difference`, `Confidence Intervals`, `Descriptive`, and `Descriptive plots` boxes. Finally, from `Assumption Checks` tick the `Homogeneity test`. We will end up with the following screen:
 
 ![Additional statistics and tests.](images/t_test3.png){#fig-t_test3 width="75%"}
 
@@ -138,7 +139,6 @@ First, we look at the table of `Levene's test` for equality of variances (@fig-t
 
 ![Levene's test.](images/t_test4.png){#fig-t_test4 width="60%"}
 
-Since the p = 0.646 ≥ 0.05, the $H_0$ of the Levene's test is not rejected. (NOTE: If the $p \geq 0.05$, then the population variances of HDRs in two groups are equal).
 
 ::: callout-important
 # Remember: Hypothesis testing for Levene's test for equality of variances
@@ -151,7 +151,9 @@ $H_{1}$: the variances of HDRs in two groups are not equal
 -   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
 :::
 
-If the assumption of equal variances is not satisfied (Levene's test gives p \< 0.05, reject $H_0$), the Welch's t-test should be used from the available Tests in Jamovi (@fig-t_test3).
+Since p = 0.646 > 0.05, the $H_0$ of the Levene's test is not rejected and we keep the default choice of **Students's** test (@fig-t_test3). (NOTE: If the $p \geq 0.05$, then the population variances of HDRS in two groups groups are assumed equal).
+
+If the assumption of equal variances is not satisfied (Levene's test gives p \< 0.05, reject $H_0$), the Welch's test should be used from the available Tests in Jamovi (@fig-t_test3).
 
 Next, we can inspect again the results in the group descriptives table (@fig-t_test5) and pertinent plots (@fig-t_test6):
 
@@ -161,7 +163,7 @@ Next, we can inspect again the results in the group descriptives table (@fig-t_t
 
 Finally, we present the results of the Student's t-test in the table of the @fig-t_test7:
 
-![The results of the Student's  t-test.](images/t_test7.png){#fig-t_test7 width="75%"}
+![The results of the Student's t-test.](images/t_test7.png){#fig-t_test7 width="90%"}
 
 The p-value = 0.16 is greater than 0.05. There is **no evidence** of a significant difference in mean HDRS between the two groups (failed to reject $H_0$). The difference between means (20.33 - 21.49) equals to -1.16 units of the HDRS and note that the 95% confidence interval of the difference in means (-2.78 to 0.47) **includes** the hypothesized null value of 0. Based on these results, there is not evidence that paroxetine is effective as a treatment for bipolar depression.
 
@@ -180,22 +182,17 @@ When there is violation of normality, the Mann-Whitney U test can be selected fr
 
 ## Paired samples t-test
 
-The paired samples design can effectively reduce the effect of non-treatment factors and improve the efficiency of the experiment.
-A paired samples t-test is used to estimate whether the means of two related measurements are significantly different from one another.
-
+The paired samples design can effectively reduce the effect of non-treatment factors and improve the efficiency of the experiment. A paired samples t-test is used to estimate whether the means of two related measurements are significantly different from one another.
 
 Open the dataset named `weight` from the file tab in the menu:
 
-![The weight dataset](images/weight_data.png){#fig-weight_data width=85%}
+![The weight dataset](images/weight_data.png){#fig-weight_data width="85%"}
 
 The dataset `weight` contains the birth and discharge weight of 25 newborns (@fig-weight_data). Double-click on the name of the variables `birth_weight` and `discharge_weight` to change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
-
-
 
 ### Research question
 
 We might ask if the **mean difference** of the weight in birth and in discharge equals to zero or not. If the **differences** between the pairs of measurements are normally distributed, a paired t-test is the most appropriate statistical test.
-
 
 ### Hypothesis Testsing for the paired samples t-test
 
@@ -204,9 +201,7 @@ We might ask if the **mean difference** of the weight in birth and in discharge 
 
 -   H~0~: the mean difference in weight is zero ($\mu_{d} = 0$)
 -   H~1~: the mean difference in weight is non-zero ($\mu_{d} \neq 0$)
-
 :::
-
 
 ### Assumptions
 
@@ -216,15 +211,13 @@ We might ask if the **mean difference** of the weight in birth and in discharge 
 1.  The **differences** between the pairs of measurements, $d_{i}$s, are normally distributed. (NOTE: It is not essential for the original observations to be normally distributed).
 :::
 
-
-**Explore the characteristics of the distribution of differences, $d_{i}$**
+**Explore the characteristics of the distribution of differences,** $d_{i}$
 
 First, we have to calculate the differences $d_{i}= birth\_weight_i - discharge\_weight_i$ (@fig-paired2). For more details go to the section *11.6 Transforming data: Computing a new variable* in @sec-lab1.
 
-![Calculation of the variable of differences d](images/paired2.png){#fig-paired2 width=90%}
+![Calculation of the variable of differences d](images/paired2.png){#fig-paired2 width="90%"}
 
-The distributions of the differences,$d_{i}$, can be explored with appropriate plots and summary statistics. 
-
+The distributions of the differences,$d_{i}$, can be explored with appropriate plots and summary statistics.
 
 We select:
 
@@ -239,8 +232,7 @@ Drag the variable `d` into the `Variables` box, as shown below (@fig-paired3):
 
 We can now select the relevant descriptive statistics such as `Percantiles`, `Skewness`, `Kurtosis` and the `Shapiro-Wilk` test from the `Statistics` section:
 
-![In the Statistics section select the descriptive statistics of interest.](images/descriptives13.png){#fig-descriptives13 width="75%"}
-
+![In the Statistics section select the descriptive statistics of interest.](images/descriptives13.png){width="75%"}
 
 Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below:
 
@@ -248,22 +240,17 @@ Once we have selected our descriptive statistics, a table will appear in the out
 
 The mean is close to median (39.6 vs 40). Moreover, both skewness and (excess) kurtosis are approximately zero indicating a symmetric and mesokurtic distribution of the weight differences.
 
-
 Then we can check the `Density` from `Histograms` in the `Plot` section, as shown below (@fig-plots_density):
 
-![In the Plot section select Density from Histograms.](images/plots_density.png){#fig-plots_density width="75%"}
+![In the Plot section select Density from Histograms.](images/plots_density.png){width="75%"}
 
 A graph is generated in the output window on our right-hand side, as shown below:
-
-
 
 ![In the Plots section select Density from Histograms.](images/paired5.png){#fig-paired5 width="65%"}
 
 The above figure shows that the data are close to symmetry and the assumption of a normal distribution is reasonable.
 
 Additionally, the Shapiro-Wilk test of normality suggests that the data for the differences, $d_{i}$, are normally distributed (p=0.74 \>0.05). (NOTE: If the $p \geq 0.05$, then the data came from a normally distributed population).
-
-
 
 ### Run the paired samples t-test
 
@@ -281,9 +268,7 @@ flowchart LR
 
 ![Conducting a Paired Samples T-Test.](images/paired1.png){#fig-paired1 width="75%"}
 
-
 The `Paired Samples T-Test` dialogue box opens. Drag and drop the variables `birth_weight` and `discharge_weight` to Paired Variables, as shown below @fig-paired6:
-
 
 ![The Paired Samples T-Test dialogue box](images/paired6.png){#fig-paired6 width="75%"}
 
@@ -291,7 +276,7 @@ We observe that we can select between the following two Tests: Students's or Wil
 
 ![Additional statistics and tests.](images/paired7.png){#fig-paired7 width="75%"}
 
-Next, we can inspect the results in the table with descriptive statistics  (@fig-paired8) and plots (@fig-t_test6):
+Next, we can inspect the results in the table with descriptive statistics (@fig-paired8) and plots (@fig-t_test6):
 
 ![Table with descriptive statistics.](images/paired8.png){#fig-paired8 width="75%"}
 
@@ -306,9 +291,7 @@ Finally, we present the results of the Student's paired samples t-test in the ta
 ![The results of the Paired Samples t-test.](images/paired10.png){#fig-paired10 width="95%"}
 
 There was a **significant** reduction in weight (39.6 g) after the discharge (p-value \<0.001 that is lower than 0.05; reject $H_0$). Note that the 95% confidence interval (26.3 to 52.9) **doesn't include** the null hypothesized value of 0. However, is this reduction of clinical importance?
-
 :::
-
 
 ::: {.callout-important icon="false"}
 ## Wilcoxon Signed-Rank test
