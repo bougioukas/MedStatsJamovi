@@ -67,7 +67,12 @@ flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-Drag the variable `HDRS` into the `Variables` box and split it by the `treatment` variable, as shown below (@fig-descriptives12):
+from the top menu, as shown below in @fig-hdrs0.
+
+![In the Analyses Tab select Exploration and click on Descriptives.](images/hdrs0.png){#fig-hdrs0 width="75%"}
+
+
+The `Descriptives` dialogue box opens. Drag the variable `HDRS` into the `Variables` box and split it by the `treatment` variable, as shown below (@fig-descriptives12):
 
 ![Split the variable HDRS by treatment group](images/descriptives12.png){#fig-descriptives12 width="75%"}
 
@@ -130,15 +135,13 @@ The `Independent Samples T-Test` dialogue box opens. Drag and drop the numeric v
 
 ![The Independent Samples T-Test dialogue box](images/t_test2.png){#fig-t_test2 width="75%"}
 
-We observe that we can select between the following three Tests: Students's (the default), Welch's, or Mann-Whitney U. At the moment, we keep the default choice of Students's test.
-From `Additional Statistics` check the `Mean difference`, `Confidence Intervals`, `Descriptive`, and `Descriptive plots` boxes. Finally, from `Assumption Checks` tick the `Homogeneity test`. We will end up with the following screen:
+We observe that we can select between the following three Tests: Students's (the default), Welch's, or Mann-Whitney U. At the moment, we keep the default choice of Students's test. From `Additional Statistics` check the `Mean difference`, `Confidence Intervals`, `Descriptive`, and `Descriptive plots` boxes. Finally, from `Assumption Checks` tick the `Homogeneity test`. We will end up with the following screen:
 
 ![Additional statistics and tests.](images/t_test3.png){#fig-t_test3 width="75%"}
 
 First, we look at the table of `Levene's test` for equality of variances (@fig-t_test4):
 
 ![Levene's test.](images/t_test4.png){#fig-t_test4 width="60%"}
-
 
 ::: callout-important
 # Remember: Hypothesis testing for Levene's test for equality of variances
@@ -151,7 +154,7 @@ $H_{1}$: the variances of HDRs in two groups are not equal
 -   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
 :::
 
-Since p = 0.646 > 0.05, the $H_0$ of the Levene's test is not rejected and we keep the default choice of **Students's** test (@fig-t_test3). (NOTE: If the $p \geq 0.05$, then the population variances of HDRS in two groups groups are assumed equal).
+Since p = 0.646 \> 0.05, the $H_0$ of the Levene's test is not rejected and we keep the default choice of **Students's** test (@fig-t_test3). (NOTE: If the $p \geq 0.05$, then the population variances of HDRS in two groups groups are assumed equal).
 
 If the assumption of equal variances is not satisfied (Levene's test gives p \< 0.05, reject $H_0$), the Welch's test should be used from the available Tests in Jamovi (@fig-t_test3).
 
@@ -213,7 +216,7 @@ We might ask if the **mean difference** of the weight in birth and in discharge 
 
 **Explore the characteristics of the distribution of differences,** $d_{i}$
 
-First, we have to calculate the differences $d_{i}= birth\_weight_i - discharge\_weight_i$ (@fig-paired2). For more details go to the section *11.6 Transforming data: Computing a new variable* in @sec-lab1.
+First, we have to calculate the differences $d_{i}= birth\_weight_i - discharge\_weight_i$ (@fig-paired2) from Data tab in the main menu of Jamovi. For more details go to the section *11.6 Transforming data: Computing a new variable* in @sec-lab1.
 
 ![Calculation of the variable of differences d](images/paired2.png){#fig-paired2 width="90%"}
 
@@ -226,7 +229,11 @@ flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-Drag the variable `d` into the `Variables` box, as shown below (@fig-paired3):
+from the top menu, as shown below in @fig-weight0.
+
+![In the Analyses Tab select Exploration and click on Descriptives.](images/weight0.png){#fig-weight0 width="75%"}
+
+The `Descriptives` dialogue box opens. Drag the variable `d` into the `Variables` box, as shown below (@fig-paired3):
 
 ![Drag the variable of the differences `d` into the `Variables` box](images/paired3.png){#fig-paired3 width="75%"}
 

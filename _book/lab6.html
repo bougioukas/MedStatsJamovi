@@ -282,7 +282,7 @@ Learning objectives
 <section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
 <p>Open the dataset named <code>depression</code> from the file tab in the menu:</p>
 <div id="fig-depression1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/depression1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The depression dataset"><img src="images/depression1.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<figure class="figure"><p><a href="images/depression1.png" class="lightbox" title="The depression dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/depression1.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;16.1: The depression dataset</figcaption><p></p>
 </figure>
 </div>
@@ -345,22 +345,28 @@ Check if the following assumptions are satisfied
 </div>
 </div>
 </div>
-<p>Drag the variable <code>HDRS</code> into the <code>Variables</code> box and split it by the <code>treatment</code> variable, as shown below (<a href="#fig-descriptives12">Figure&nbsp;<span>16.2</span></a>):</p>
+<p>from the top menu, as shown below in <a href="#fig-hdrs0">Figure&nbsp;<span>16.2</span></a>.</p>
+<div id="fig-hdrs0" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/hdrs0.png" class="lightbox" title="In the Analyses Tab select Exploration and click on Descriptives." data-gallery="quarto-lightbox-gallery-4"><img src="images/hdrs0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.2: In the Analyses Tab select Exploration and click on Descriptives.</figcaption><p></p>
+</figure>
+</div>
+<p>The <code>Descriptives</code> dialogue box opens. Drag the variable <code>HDRS</code> into the <code>Variables</code> box and split it by the <code>treatment</code> variable, as shown below (<a href="#fig-descriptives12">Figure&nbsp;<span>16.3</span></a>):</p>
 <div id="fig-descriptives12" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Split the variable HDRS by treatment group"><img src="images/descriptives12.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.2: Split the variable HDRS by treatment group</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives12.png" class="lightbox" title="Split the variable HDRS by treatment group" data-gallery="quarto-lightbox-gallery-5"><img src="images/descriptives12.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.3: Split the variable HDRS by treatment group</figcaption><p></p>
 </figure>
 </div>
 <p>We can now select the relevant descriptive statistics such as <code>Percantiles</code>, <code>Skewness</code>, <code>Kurtosis</code> and the <code>Shapiro-Wilk</code> test from the <code>Statistics</code> section:</p>
 <div id="fig-descriptives13" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="In the Statistics section select the descriptive statistics of interest."><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.3: In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" title="In the Statistics section select the descriptive statistics of interest." data-gallery="quarto-lightbox-gallery-6"><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.4: In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
 </figure>
 </div>
 <p>Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below:</p>
 <div id="fig-descriptives14" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Descriptive statistics of HDSR by treatment group"><img src="images/descriptives14.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.4: Descriptive statistics of HDSR by treatment group</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives14.png" class="lightbox" title="Descriptive statistics of HDSR by treatment group" data-gallery="quarto-lightbox-gallery-7"><img src="images/descriptives14.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.5: Descriptive statistics of HDSR by treatment group</figcaption><p></p>
 </figure>
 </div>
 <p>The means are close to medians (20.3 vs 21 and 21.5 vs 21). The skewness is approximately zero (symmetric distribution) and the (excess) kurtosis is close to zero (mesokurtic distribution) indicating normal distributions for both groups.</p>
@@ -383,21 +389,21 @@ Remember: Hypothesis testing for Shapiro-Wilk test for normality
 </ul>
 </div>
 </div>
-<p>Then we can check the <code>Density</code> from <code>Histograms</code> in the <code>Plot</code> section, as shown below (<a href="#fig-descriptives15">Figure&nbsp;<span>16.6</span></a>):</p>
+<p>Then we can check the <code>Density</code> from <code>Histograms</code> in the <code>Plot</code> section, as shown below (<a href="#fig-descriptives15">Figure&nbsp;<span>16.7</span></a>):</p>
 <div id="fig-plots_density" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="In the Plot section select Density from Histograms."><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.5: In the Plot section select Density from Histograms.</figcaption><p></p>
+<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" title="In the Plot section select Density from Histograms." data-gallery="quarto-lightbox-gallery-8"><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.6: In the Plot section select Density from Histograms.</figcaption><p></p>
 </figure>
 </div>
 <p>A graph is generated in the output window on our right-hand side, as shown below:</p>
 <div id="fig-descriptives15" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/descriptives15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="In the Plots section select Density from Histograms."><img src="images/descriptives15.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.6: In the Plots section select Density from Histograms.</figcaption><p></p>
+<figure class="figure"><p><a href="images/descriptives15.png" class="lightbox" title="In the Plots section select Density from Histograms." data-gallery="quarto-lightbox-gallery-9"><img src="images/descriptives15.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.7: In the Plots section select Density from Histograms.</figcaption><p></p>
 </figure>
 </div>
 <p>The above figure shows that the data are close to symmetry and the assumption of a normal distribution is reasonable.</p>
 <p><strong>B. Homogeneity of variance</strong></p>
-<p>The second assumption that should be satisfied is the homogeneity of variance. We observe in the summary table of <a href="#fig-descriptives14">Figure&nbsp;<span>16.4</span></a> that the two standard deviations (3.65 vs 3.41) are similar (see also below the Levene’s test for equality of variances in <a href="#fig-t_test4">Figure&nbsp;<span>16.10</span></a>).</p>
+<p>The second assumption that should be satisfied is the homogeneity of variance. We observe in the summary table of <a href="#fig-descriptives14">Figure&nbsp;<span>16.5</span></a> that the two standard deviations (3.65 vs 3.41) are similar (see also below the Levene’s test for equality of variances in <a href="#fig-t_test4">Figure&nbsp;<span>16.11</span></a>).</p>
 <p>&nbsp;</p>
 </section><section id="run-the-students-t-test" class="level3"><h3 class="anchored" data-anchor-id="run-the-students-t-test">Run the Student’s t-test</h3>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
@@ -428,26 +434,26 @@ Perform a Student’s t-test
 </div>
 </div>
 <div id="fig-t_test1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/t_test1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Conducting an Independent Samples T-Test."><img src="images/t_test1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.7: Conducting an Independent Samples T-Test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/t_test1.png" class="lightbox" title="Conducting an Independent Samples T-Test." data-gallery="quarto-lightbox-gallery-10"><img src="images/t_test1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.8: Conducting an Independent Samples T-Test.</figcaption><p></p>
 </figure>
 </div>
-<p>The <code>Independent Samples T-Test</code> dialogue box opens. Drag and drop the numeric variable <code>HSDR</code> to Dependent Variables and the independent variable <code>treatment</code> to Grouping Variable, as shown below <a href="#fig-t_test2">Figure&nbsp;<span>16.8</span></a>:</p>
+<p>The <code>Independent Samples T-Test</code> dialogue box opens. Drag and drop the numeric variable <code>HSDR</code> to Dependent Variables and the independent variable <code>treatment</code> to Grouping Variable, as shown below <a href="#fig-t_test2">Figure&nbsp;<span>16.9</span></a>:</p>
 <div id="fig-t_test2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/t_test2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="The Independent Samples T-Test dialogue box"><img src="images/t_test2.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.8: The Independent Samples T-Test dialogue box</figcaption><p></p>
+<figure class="figure"><p><a href="images/t_test2.png" class="lightbox" title="The Independent Samples T-Test dialogue box" data-gallery="quarto-lightbox-gallery-11"><img src="images/t_test2.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.9: The Independent Samples T-Test dialogue box</figcaption><p></p>
 </figure>
 </div>
 <p>We observe that we can select between the following three Tests: Students’s (the default), Welch’s, or Mann-Whitney U. At the moment, we keep the default choice of Students’s test. From <code>Additional Statistics</code> check the <code>Mean difference</code>, <code>Confidence Intervals</code>, <code>Descriptive</code>, and <code>Descriptive plots</code> boxes. Finally, from <code>Assumption Checks</code> tick the <code>Homogeneity test</code>. We will end up with the following screen:</p>
 <div id="fig-t_test3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/t_test3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Additional statistics and tests."><img src="images/t_test3.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.9: Additional statistics and tests.</figcaption><p></p>
+<figure class="figure"><p><a href="images/t_test3.png" class="lightbox" title="Additional statistics and tests." data-gallery="quarto-lightbox-gallery-12"><img src="images/t_test3.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.10: Additional statistics and tests.</figcaption><p></p>
 </figure>
 </div>
-<p>First, we look at the table of <code>Levene's test</code> for equality of variances (<a href="#fig-t_test4">Figure&nbsp;<span>16.10</span></a>):</p>
+<p>First, we look at the table of <code>Levene's test</code> for equality of variances (<a href="#fig-t_test4">Figure&nbsp;<span>16.11</span></a>):</p>
 <div id="fig-t_test4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/t_test4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Levene’s test."><img src="images/t_test4.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.10: Levene’s test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/t_test4.png" class="lightbox" title="Levene’s test." data-gallery="quarto-lightbox-gallery-13"><img src="images/t_test4.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.11: Levene’s test.</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
@@ -468,23 +474,23 @@ Remember: Hypothesis testing for Levene’s test for equality of variances
 </ul>
 </div>
 </div>
-<p>Since p = 0.646 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and we keep the default choice of <strong>Students’s</strong> test (<a href="#fig-t_test3">Figure&nbsp;<span>16.9</span></a>). (NOTE: If the <span class="math inline">\(p \geq 0.05\)</span>, then the population variances of HDRS in two groups groups are assumed equal).</p>
-<p>If the assumption of equal variances is not satisfied (Levene’s test gives p &lt; 0.05, reject <span class="math inline">\(H_0\)</span>), the Welch’s test should be used from the available Tests in Jamovi (<a href="#fig-t_test3">Figure&nbsp;<span>16.9</span></a>).</p>
-<p>Next, we can inspect again the results in the group descriptives table (<a href="#fig-t_test5">Figure&nbsp;<span>16.11</span></a>) and pertinent plots (<a href="#fig-t_test6">Figure&nbsp;<span>16.12</span></a>):</p>
+<p>Since p = 0.646 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and we keep the default choice of <strong>Students’s</strong> test (<a href="#fig-t_test3">Figure&nbsp;<span>16.10</span></a>). (NOTE: If the <span class="math inline">\(p \geq 0.05\)</span>, then the population variances of HDRS in two groups groups are assumed equal).</p>
+<p>If the assumption of equal variances is not satisfied (Levene’s test gives p &lt; 0.05, reject <span class="math inline">\(H_0\)</span>), the Welch’s test should be used from the available Tests in Jamovi (<a href="#fig-t_test3">Figure&nbsp;<span>16.10</span></a>).</p>
+<p>Next, we can inspect again the results in the group descriptives table (<a href="#fig-t_test5">Figure&nbsp;<span>16.12</span></a>) and pertinent plots (<a href="#fig-t_test6">Figure&nbsp;<span>16.13</span></a>):</p>
 <div id="fig-t_test5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/t_test5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Group descriptives."><img src="images/t_test5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.11: Group descriptives.</figcaption><p></p>
+<figure class="figure"><p><a href="images/t_test5.png" class="lightbox" title="Group descriptives." data-gallery="quarto-lightbox-gallery-14"><img src="images/t_test5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.12: Group descriptives.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-t_test6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/t_test6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Plot of mean (95% CI) and median of HDRS by treatment."><img src="images/t_test6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.12: Plot of mean (95% CI) and median of HDRS by treatment.</figcaption><p></p>
+<figure class="figure"><p><a href="images/t_test6.png" class="lightbox" title="Plot of mean (95% CI) and median of HDRS by treatment." data-gallery="quarto-lightbox-gallery-15"><img src="images/t_test6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.13: Plot of mean (95% CI) and median of HDRS by treatment.</figcaption><p></p>
 </figure>
 </div>
-<p>Finally, we present the results of the Student’s t-test in the table of the <a href="#fig-t_test7">Figure&nbsp;<span>16.13</span></a>:</p>
+<p>Finally, we present the results of the Student’s t-test in the table of the <a href="#fig-t_test7">Figure&nbsp;<span>16.14</span></a>:</p>
 <div id="fig-t_test7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/t_test7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="The results of the Student’s t-test."><img src="images/t_test7.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.13: The results of the Student’s t-test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/t_test7.png" class="lightbox" title="The results of the Student’s t-test." data-gallery="quarto-lightbox-gallery-16"><img src="images/t_test7.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.14: The results of the Student’s t-test.</figcaption><p></p>
 </figure>
 </div>
 <p>The p-value = 0.16 is greater than 0.05. There is <strong>no evidence</strong> of a significant difference in mean HDRS between the two groups (failed to reject <span class="math inline">\(H_0\)</span>). The difference between means (20.33 - 21.49) equals to -1.16 units of the HDRS and note that the 95% confidence interval of the difference in means (-2.78 to 0.47) <strong>includes</strong> the hypothesized null value of 0. Based on these results, there is not evidence that paroxetine is effective as a treatment for bipolar depression.</p>
@@ -502,7 +508,7 @@ Mann-Whitney U test
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When there is violation of normality, the Mann-Whitney U test can be selected from the available Tests in Jamovi (<a href="#fig-t_test4">Figure&nbsp;<span>16.10</span></a>). This test compares two independent samples based on the ranks of the values and is often considered the non-parametric equivalent to the Student’s t-test.</p>
+<p>When there is violation of normality, the Mann-Whitney U test can be selected from the available Tests in Jamovi (<a href="#fig-t_test4">Figure&nbsp;<span>16.11</span></a>). This test compares two independent samples based on the ranks of the values and is often considered the non-parametric equivalent to the Student’s t-test.</p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -511,11 +517,11 @@ Mann-Whitney U test
 <p>The paired samples design can effectively reduce the effect of non-treatment factors and improve the efficiency of the experiment. A paired samples t-test is used to estimate whether the means of two related measurements are significantly different from one another.</p>
 <p>Open the dataset named <code>weight</code> from the file tab in the menu:</p>
 <div id="fig-weight_data" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/weight_data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="The weight dataset"><img src="images/weight_data.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.14: The weight dataset</figcaption><p></p>
+<figure class="figure"><p><a href="images/weight_data.png" class="lightbox" title="The weight dataset" data-gallery="quarto-lightbox-gallery-17"><img src="images/weight_data.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.15: The weight dataset</figcaption><p></p>
 </figure>
 </div>
-<p>The dataset <code>weight</code> contains the birth and discharge weight of 25 newborns (<a href="#fig-weight_data">Figure&nbsp;<span>16.14</span></a>). Double-click on the name of the variables <code>birth_weight</code> and <code>discharge_weight</code> to change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/continuous.png" width="23" height="21"></a>.</p>
+<p>The dataset <code>weight</code> contains the birth and discharge weight of 25 newborns (<a href="#fig-weight_data">Figure&nbsp;<span>16.15</span></a>). Double-click on the name of the variables <code>birth_weight</code> and <code>discharge_weight</code> to change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/continuous.png" width="23" height="21"></a>.</p>
 <section id="research-question-1" class="level3"><h3 class="anchored" data-anchor-id="research-question-1">Research question</h3>
 <p>We might ask if the <strong>mean difference</strong> of the weight in birth and in discharge equals to zero or not. If the <strong>differences</strong> between the pairs of measurements are normally distributed, a paired t-test is the most appropriate statistical test.</p>
 </section><section id="hypothesis-testsing-for-the-paired-samples-t-test" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing-for-the-paired-samples-t-test">Hypothesis Testsing for the paired samples t-test</h3>
@@ -552,10 +558,10 @@ Check if the following assumption is satisfied
 </div>
 </div>
 <p><strong>Explore the characteristics of the distribution of differences,</strong> <span class="math inline">\(d_{i}\)</span></p>
-<p>First, we have to calculate the differences <span class="math inline">\(d_{i}= birth\_weight_i - discharge\_weight_i\)</span> (<a href="#fig-paired2">Figure&nbsp;<span>16.15</span></a>). For more details go to the section <em>11.6 Transforming data: Computing a new variable</em> in <a href="lab1.html"><span>Chapter&nbsp;11</span></a>.</p>
+<p>First, we have to calculate the differences <span class="math inline">\(d_{i}= birth\_weight_i - discharge\_weight_i\)</span> (<a href="#fig-paired2">Figure&nbsp;<span>16.16</span></a>) from Data tab in the main menu of Jamovi. For more details go to the section <em>11.6 Transforming data: Computing a new variable</em> in <a href="lab1.html"><span>Chapter&nbsp;11</span></a>.</p>
 <div id="fig-paired2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Calculation of the variable of differences d"><img src="images/paired2.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.15: Calculation of the variable of differences d</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired2.png" class="lightbox" title="Calculation of the variable of differences d" data-gallery="quarto-lightbox-gallery-20"><img src="images/paired2.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.16: Calculation of the variable of differences d</figcaption><p></p>
 </figure>
 </div>
 <p>The distributions of the differences,<span class="math inline">\(d_{i}\)</span>, can be explored with appropriate plots and summary statistics.</p>
@@ -575,35 +581,41 @@ Check if the following assumption is satisfied
 </div>
 </div>
 </div>
-<p>Drag the variable <code>d</code> into the <code>Variables</code> box, as shown below (<a href="#fig-paired3">Figure&nbsp;<span>16.16</span></a>):</p>
+<p>from the top menu, as shown below in <a href="#fig-weight0">Figure&nbsp;<span>16.17</span></a>.</p>
+<div id="fig-weight0" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/weight0.png" class="lightbox" title="In the Analyses Tab select Exploration and click on Descriptives." data-gallery="quarto-lightbox-gallery-21"><img src="images/weight0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.17: In the Analyses Tab select Exploration and click on Descriptives.</figcaption><p></p>
+</figure>
+</div>
+<p>The <code>Descriptives</code> dialogue box opens. Drag the variable <code>d</code> into the <code>Variables</code> box, as shown below (<a href="#fig-paired3">Figure&nbsp;<span>16.18</span></a>):</p>
 <div id="fig-paired3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Drag the variable of the differences d into the Variables box"><img src="images/paired3.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.16: Drag the variable of the differences <code>d</code> into the <code>Variables</code> box</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired3.png" class="lightbox" title="Drag the variable of the differences d into the Variables box" data-gallery="quarto-lightbox-gallery-22"><img src="images/paired3.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.18: Drag the variable of the differences <code>d</code> into the <code>Variables</code> box</figcaption><p></p>
 </figure>
 </div>
 <p>We can now select the relevant descriptive statistics such as <code>Percantiles</code>, <code>Skewness</code>, <code>Kurtosis</code> and the <code>Shapiro-Wilk</code> test from the <code>Statistics</code> section:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="In the Statistics section select the descriptive statistics of interest."><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<figure class="figure"><p><a href="images/descriptives13.png" class="lightbox" title="In the Statistics section select the descriptive statistics of interest." data-gallery="quarto-lightbox-gallery-23"><img src="images/descriptives13.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
 <p></p><figcaption class="figure-caption">In the Statistics section select the descriptive statistics of interest.</figcaption><p></p>
 </figure>
 </div>
 <p>Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below:</p>
 <div id="fig-paired4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Descriptive statistics of the differences."><img src="images/paired4.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.17: Descriptive statistics of the differences.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired4.png" class="lightbox" title="Descriptive statistics of the differences." data-gallery="quarto-lightbox-gallery-24"><img src="images/paired4.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.19: Descriptive statistics of the differences.</figcaption><p></p>
 </figure>
 </div>
 <p>The mean is close to median (39.6 vs 40). Moreover, both skewness and (excess) kurtosis are approximately zero indicating a symmetric and mesokurtic distribution of the weight differences.</p>
 <p>Then we can check the <code>Density</code> from <code>Histograms</code> in the <code>Plot</code> section, as shown below (<a href="lab7.html#fig-plots_density">Figure&nbsp;<span>17.6</span></a>):</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="In the Plot section select Density from Histograms."><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<figure class="figure"><p><a href="images/plots_density.png" class="lightbox" title="In the Plot section select Density from Histograms." data-gallery="quarto-lightbox-gallery-25"><img src="images/plots_density.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
 <p></p><figcaption class="figure-caption">In the Plot section select Density from Histograms.</figcaption><p></p>
 </figure>
 </div>
 <p>A graph is generated in the output window on our right-hand side, as shown below:</p>
 <div id="fig-paired5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="In the Plots section select Density from Histograms."><img src="images/paired5.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.18: In the Plots section select Density from Histograms.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired5.png" class="lightbox" title="In the Plots section select Density from Histograms." data-gallery="quarto-lightbox-gallery-26"><img src="images/paired5.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.20: In the Plots section select Density from Histograms.</figcaption><p></p>
 </figure>
 </div>
 <p>The above figure shows that the data are close to symmetry and the assumption of a normal distribution is reasonable.</p>
@@ -637,43 +649,43 @@ Perform a paired samples t-test
 </div>
 </div>
 <div id="fig-paired1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Conducting a Paired Samples T-Test."><img src="images/paired1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.19: Conducting a Paired Samples T-Test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired1.png" class="lightbox" title="Conducting a Paired Samples T-Test." data-gallery="quarto-lightbox-gallery-27"><img src="images/paired1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.21: Conducting a Paired Samples T-Test.</figcaption><p></p>
 </figure>
 </div>
-<p>The <code>Paired Samples T-Test</code> dialogue box opens. Drag and drop the variables <code>birth_weight</code> and <code>discharge_weight</code> to Paired Variables, as shown below <a href="#fig-paired6">Figure&nbsp;<span>16.20</span></a>:</p>
+<p>The <code>Paired Samples T-Test</code> dialogue box opens. Drag and drop the variables <code>birth_weight</code> and <code>discharge_weight</code> to Paired Variables, as shown below <a href="#fig-paired6">Figure&nbsp;<span>16.22</span></a>:</p>
 <div id="fig-paired6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="The Paired Samples T-Test dialogue box"><img src="images/paired6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.20: The Paired Samples T-Test dialogue box</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired6.png" class="lightbox" title="The Paired Samples T-Test dialogue box" data-gallery="quarto-lightbox-gallery-28"><img src="images/paired6.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.22: The Paired Samples T-Test dialogue box</figcaption><p></p>
 </figure>
 </div>
 <p>We observe that we can select between the following two Tests: Students’s or Wilcoxon rank. We keep the default choice of Students’s paired t-test. Moreover, from <code>Additional Statistics</code> check the <code>Mean difference</code>, <code>Confidence Intervals</code>, <code>Descriptive</code>, and <code>Descriptive plots</code> boxes. Finally, from <code>Assumption Checks</code> tick the <code>Normality test</code>. We will end up with the following screen:</p>
 <div id="fig-paired7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Additional statistics and tests."><img src="images/paired7.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.21: Additional statistics and tests.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired7.png" class="lightbox" title="Additional statistics and tests." data-gallery="quarto-lightbox-gallery-29"><img src="images/paired7.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.23: Additional statistics and tests.</figcaption><p></p>
 </figure>
 </div>
-<p>Next, we can inspect the results in the table with descriptive statistics (<a href="#fig-paired8">Figure&nbsp;<span>16.22</span></a>) and plots (<a href="#fig-t_test6">Figure&nbsp;<span>16.12</span></a>):</p>
+<p>Next, we can inspect the results in the table with descriptive statistics (<a href="#fig-paired8">Figure&nbsp;<span>16.24</span></a>) and plots (<a href="#fig-t_test6">Figure&nbsp;<span>16.13</span></a>):</p>
 <div id="fig-paired8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Table with descriptive statistics."><img src="images/paired8.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.22: Table with descriptive statistics.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired8.png" class="lightbox" title="Table with descriptive statistics." data-gallery="quarto-lightbox-gallery-30"><img src="images/paired8.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.24: Table with descriptive statistics.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-paired9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Plot of mean and median of birth weigt and discharge_weight."><img src="images/paired9.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.23: Plot of mean and median of <em>birth weigt</em> and <em>discharge_weight</em>.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired9.png" class="lightbox" title="Plot of mean and median of birth weigt and discharge_weight." data-gallery="quarto-lightbox-gallery-31"><img src="images/paired9.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.25: Plot of mean and median of <em>birth weigt</em> and <em>discharge_weight</em>.</figcaption><p></p>
 </figure>
 </div>
-<p>The Shapiro-Wilk test of normality of the differences has previously calculated (<a href="#fig-paired4">Figure&nbsp;<span>16.17</span></a>) and is also presented below:</p>
+<p>The Shapiro-Wilk test of normality of the differences has previously calculated (<a href="#fig-paired4">Figure&nbsp;<span>16.19</span></a>) and is also presented below:</p>
 <div id="fig-paired90" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired90.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Test of normality of the differences."><img src="images/paired90.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.24: Test of normality of the differences.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired90.png" class="lightbox" title="Test of normality of the differences." data-gallery="quarto-lightbox-gallery-32"><img src="images/paired90.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.26: Test of normality of the differences.</figcaption><p></p>
 </figure>
 </div>
-<p>Finally, we present the results of the Student’s paired samples t-test in the table of the <a href="#fig-paired10">Figure&nbsp;<span>16.25</span></a>:</p>
+<p>Finally, we present the results of the Student’s paired samples t-test in the table of the <a href="#fig-paired10">Figure&nbsp;<span>16.27</span></a>:</p>
 <div id="fig-paired10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/paired10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="The results of the Paired Samples t-test."><img src="images/paired10.png" class="img-fluid figure-img" style="width:95.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16.25: The results of the Paired Samples t-test.</figcaption><p></p>
+<figure class="figure"><p><a href="images/paired10.png" class="lightbox" title="The results of the Paired Samples t-test." data-gallery="quarto-lightbox-gallery-33"><img src="images/paired10.png" class="img-fluid figure-img" style="width:95.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16.27: The results of the Paired Samples t-test.</figcaption><p></p>
 </figure>
 </div>
 <p>There was a <strong>significant</strong> reduction in weight (39.6 g) after the discharge (p-value &lt;0.001 that is lower than 0.05; reject <span class="math inline">\(H_0\)</span>). Note that the 95% confidence interval (26.3 to 52.9) <strong>doesn’t include</strong> the null hypothesized value of 0. However, is this reduction of clinical importance?</p>
@@ -689,7 +701,7 @@ Wilcoxon Signed-Rank test
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When there is violation of normality, the Wilcoxon Rank test can be selected from the available Tests in Jamovi (<a href="#fig-paired7">Figure&nbsp;<span>16.21</span></a>). This test is based on the sign and the magnitude of the rank of the differences between pairs of measurements, rather than the actual values. It is often considered the non-parametric equivalent to the Student’s paired samples t-test.</p>
+<p>When there is violation of normality, the Wilcoxon Rank test can be selected from the available Tests in Jamovi (<a href="#fig-paired7">Figure&nbsp;<span>16.23</span></a>). This test is based on the sign and the magnitude of the rank of the differences between pairs of measurements, rather than the actual values. It is often considered the non-parametric equivalent to the Student’s paired samples t-test.</p>
 </div>
 </div>
 
@@ -820,7 +832,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","loop":true,"closeEffect":"zoom","selector":".lightbox"});</script>
 
 
 </body></html>

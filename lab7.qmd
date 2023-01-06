@@ -23,15 +23,13 @@ The one-way analysis of variance (one-way ANOVA) or the non-parametric Kruskal-W
 
 Althought, these tests can detect a difference between several groups they do not inform about which groups are different from the others. At first sight we might clarify the question by comparing all groups in pairs with t-tests or Mann-Whitney U tests. However, that procedure may lead us to the wrong conclusions (known as multiple comparisons problem).
 
-Why is this procedure inappropriate? Quite simply, because we would be wrongly testing the null hypothesis. Each comparison one conducts increases the likelihood of committing at least one Type I error within a set of comparisons (famillywise Type I error rate). 
+Why is this procedure inappropriate? Quite simply, because we would be wrongly testing the null hypothesis. Each comparison one conducts increases the likelihood of committing at least one Type I error within a set of comparisons (famillywise Type I error rate).
 
 This is the reason why, after an ANOVA or Kruskal-Wallis test concluding on a difference between groups, we should not just compare all possible pairs of groups with t-tests or Mann-Whitney U tests. Instead we perform statistical tests that take into account the number of comparisons (post hoc tests). Some of the more commonly used ones are Tukey test, Games-Howell test, and Bonferroni correction.
 
-
 ## One-way Analysis of Variance (ANOVA)
 
-One-way analysis of variance, usually referred to as one-way ANOVA, is a statistical test used when we want to compare several means. We may think of it as an extension of Student’s t-test to the case of more than two samples.
-
+One-way analysis of variance, usually referred to as one-way ANOVA, is a statistical test used when we want to compare several means. We may think of it as an extension of Student's t-test to the case of more than two samples.
 
 ### Opening the file
 
@@ -41,41 +39,31 @@ Open the dataset named `dataDWL` from the file tab in the menu:
 
 The dataset `dataDWL` has 60 participants and includes two variables (@fig-dataDWL). The numeric `WeightLoss` variable and the `Diet` variable (with levels "A", "B", "C" and "D").
 
-
-
 ### Research question
 
 Consider the example of the variations between weight loss according to four different types of diet (A, B, C, and D). The question that may be asked is: does the average weight loss (units in kg) differ according to the diet?
-
-
 
 ### Hypothesis Testsing for the ANOVA test
 
 ::: {.callout-note icon="false"}
 ## Null hypothesis and alternative hypothesis
 
-* $H_0$: all group means are equal (the means of weight loss in the four diets are equal: $\mu_{A} = \mu_{B} = \mu_{C} = \mu_{D}$)
-* $H_1$: at least one group mean differs from the others (there is at least one diet with mean weight loss different from the others)
-
+-   $H_0$: all group means are equal (the means of weight loss in the four diets are equal: $\mu_{A} = \mu_{B} = \mu_{C} = \mu_{D}$)
+-   $H_1$: at least one group mean differs from the others (there is at least one diet with mean weight loss different from the others)
 :::
-
-
 
 ### Assumptions
 
 ::: {.callout-note icon="false"}
 ## Check if the following assumptions are satisfied
 
-1. The dependent variable, `WeightLoss`, should be approximately **normally** distributed for all groups
-2. The data in  groups have similar **variance** (also named as homogeneity of variance or homoscedasticity)
-
+1.  The dependent variable, `WeightLoss`, should be approximately **normally** distributed for all groups
+2.  The data in groups have similar **variance** (also named as homogeneity of variance or homoscedasticity)
 :::
-
 
 **A. Explore the descriptive characteristics of distribution for each group and check for normality**
 
 The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test) and for equality of variances (e.g., Levene's test) can be used.
-
 
 We select:
 
@@ -88,11 +76,9 @@ from the top menu, as shown below in @fig-diet0.
 
 ![In the Analyses Tab select Exploration and click on Descriptives.](images/diet0.png){#fig-diet0 width="75%"}
 
-
-Drag the variable `WeightLoss` into the `Variables` box and split it by the `Diet` variable. Additionally, select `Variable across rows`, as shown below (@fig-diet1):
+The `Descriptives` dialogue box opens. Drag the variable `WeightLoss` into the `Variables` box and split it by the `Diet` variable. Additionally, select `Variable across rows`, as shown below (@fig-diet1):
 
 ![Split the variable WeightLoss by Diet group](images/diet1.png){#fig-diet1 width="75%"}
-
 
 We can now select the relevant descriptive statistics such as `Percantiles`, `Skewness`, `Kurtosis` and the `Shapiro-Wilk` test from the `Statistics` section (@fig-descriptives13):
 
@@ -102,12 +88,9 @@ Once we have selected our descriptive statistics, a table will appear in the out
 
 ![Descriptive statistics of WeightLoss by Diet group (click on image to zoom in).](images/diet2.png){#fig-diet2}
 
-The means are close to medians and the standard deviations are also similar indicating normal distributions for all groups. Additionally, both shape measures, skewness and (excess) kurtosis, have values in the acceptable range [-1, 1] which indicate symmetric and mesokurtic distributions, respectively. 
+The means are close to medians and the standard deviations are also similar indicating normal distributions for all groups. Additionally, both shape measures, skewness and (excess) kurtosis, have values in the acceptable range \[-1, 1\] which indicate symmetric and mesokurtic distributions, respectively.
 
-
-The Shapiro-Wilk tests of normality suggest that the data for the `WeightLoss` in all groups are normally distributed (p > 0.05 $\Rightarrow H_0$ is not rejected).
-
-
+The Shapiro-Wilk tests of normality suggest that the data for the `WeightLoss` in all groups are normally distributed (p \> 0.05 $\Rightarrow H_0$ is not rejected).
 
 ::: callout-important
 # Remember: Hypothesis testing for Shapiro-Wilk test for normality
@@ -120,19 +103,15 @@ $H_{1}$: the data tested are not normally distributed.
 -   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
 :::
 
-
 Then we can check the `Density` from `Histograms` in the `Plot` section, as shown below (@fig-plots_density):
 
 ![In the Plot section select Density from Histograms.](images/plots_density.png){#fig-plots_density width="75%"}
-
 
 A graph (@fig-diet3) is generated in the output window on our right-hand side:
 
 ![The Density plot of WeightLoss for each Diet.](images/diet3.png){#fig-diet3 width="70%"}
 
 The above density plots show that the data are close to symmetry and the assumption of a normal distribution is reasonable for all diet groups.
-
-
 
 **B. Homogeneity of variance**
 
@@ -179,13 +158,11 @@ $H_{1}$: the variances of WeightLoss differ between groups
 -   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
 :::
 
-
-Since p = 0.583 > 0.05, the $H_0$ of the Levene's test is not rejected and **we have to perform the Fisher's test (assume equal variances)** (@fig-diet8). (NOTE: If the $p \geq 0.05$, then the population variances of WeightLoss in all groups are assumed equal).
+Since p = 0.583 \> 0.05, the $H_0$ of the Levene's test is not rejected and **we have to perform the Fisher's test (assume equal variances)** (@fig-diet8). (NOTE: If the $p \geq 0.05$, then the population variances of WeightLoss in all groups are assumed equal).
 
 ![Fisher's ANOVA test.](images/diet8.png){#fig-diet8 width="75%"}
 
 If the assumption of equal variances is not satisfied (Levene's test gives p \< 0.05, reject $H_0$), the Welch's test should be used from the available Tests in Jamovi (@fig-diet8).
-
 
 Next, we can inspect again the results in the group descriptives table (@fig-diet9) and pertinent plots (@fig-diet9):
 
@@ -200,7 +177,6 @@ Finally, we present the results of the Fisher's ANOVA test in the table of the @
 In @fig-diet11, F= 6.12 indicates the obtained F-statistic= (variation between sample means $/$ variation within the samples). Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 3 and 56, respectively (numarator: variation between sample means; denominator: variation within the samples).
 
 The p-value=0.001 is less than 0.05 (reject $H_0$ of the ANOVA test). **There is at least one diet with mean weight loss which is different from the other means**.
-
 :::
 
  
@@ -214,32 +190,26 @@ A **significant** one-way ANOVA is generally followed by post-hoc tests to perfo
 
 -   Games-Howell (unequal variances)
 
--   Tukey (equal variances) 
+-   Tukey (equal variances)
 
-Based on the result of Levene's test (p = 0.583 > 0.05, the $H_0$ is not rejected) (@fig-diet7), we should select the Tukey (equal variances) post-hoc test. Additionally, check the `Flag significant comparisons` as shown below (@fig-diet12):
+Based on the result of Levene's test (p = 0.583 \> 0.05, the $H_0$ is not rejected) (@fig-diet7), we should select the Tukey (equal variances) post-hoc test. Additionally, check the `Flag significant comparisons` as shown below (@fig-diet12):
 
 ![Select the appropriate post-hoc test.](images/diet12.png){#fig-diet12 width="70%"}
-
-
 
 Once we have selected our post-hoc test, a table will appear in the output window on our right-hand side, as shown below (@fig-diet13):
 
 ![Table with the results of the post-hoc tests.](images/diet13.png){#fig-diet13 width="70%"}
 
-
 **Interpretation**
 
-Pairwise comparisons were carried out using the method of Tukey and the adjusted p-values were calculated. **The weight loss following diet C is significantly larger compared to diet A (mean difference = 2.93 kg, p=0.005 <0.05) or diet B (mean difference = 3.21 kg, p=0.002 <0.05)**.
-
+Pairwise comparisons were carried out using the method of Tukey and the adjusted p-values were calculated. **The weight loss following diet C is significantly larger compared to diet A (mean difference = 2.93 kg, p=0.005 \<0.05) or diet B (mean difference = 3.21 kg, p=0.002 \<0.05)**.
 :::
 
  
 
 ## Kruskal-Wallis test
 
-The Kruskal-Wallis test is a rank-based non-parametric alternative to the one-way ANOVA and an extension of the Mann-Whitney U test to allow the comparison of more than two independent groups. It’s usually recommended when the normality assumption of one-way ANOVA test is not met (non-normal distributions).
-
-
+The Kruskal-Wallis test is a rank-based non-parametric alternative to the one-way ANOVA and an extension of the Mann-Whitney U test to allow the comparison of more than two independent groups. It's usually recommended when the normality assumption of one-way ANOVA test is not met (non-normal distributions).
 
 ### Opening the file
 
@@ -249,30 +219,23 @@ Open the dataset named `dataVO2` from the file tab in the menu:
 
 The dataset `dataVO2` includes 30 participants and has two variables. The numeric `VO2max` variable and the `sport` variable (with levels "rowers", "runners", and "triathletes").
 
-
 ### Research question
 
 We want to compare the VO2max in three different sports (runners, rowers, and triathletes).
-
-
 
 ### Hypothesis Testsing for the Kruskal-Wallis test
 
 ::: {.callout-note icon="false"}
 ## Null hypothesis and alternative hypothesis
 
-* $H_0$: the distribution of $VO2_{max}$ is the same in all groups (the medians of $VO2_{max}$ in the three sports are the same)
+-   $H_0$: the distribution of $VO2_{max}$ is the same in all groups (the medians of $VO2_{max}$ in the three sports are the same)
 
-* $H_1$: there is at least one group with $VO2_{max}$ distribution different from the others (there is at least one sport with median $VO2_{max}$ different from the others) 
-
+-   $H_1$: there is at least one group with $VO2_{max}$ distribution different from the others (there is at least one sport with median $VO2_{max}$ different from the others)
 :::
-
-
 
 **Explore the descriptive characteristics of distribution for each group and check for normality**
 
 The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test).
-
 
 We select:
 
@@ -289,19 +252,15 @@ The Descriptives dialogue box opens. Drag the variable `VO2max` into the `Variab
 
 ![Split the variable VO2max by sport group.](images/athletes1.png){#fig-athletes1 width="75%"}
 
-
 We can now select the relevant descriptive statistics such as `Percantiles`, `Skewness`, `Kurtosis` and the `Shapiro-Wilk` test from the `Statistics` section (@fig-descriptives13):
 
-![In the Statistics section select the descriptive statistics of interest.](images/descriptives13.png){#fig-descriptives13 width="70%"}
-
+![In the Statistics section select the descriptive statistics of interest.](images/descriptives13.png){width="70%"}
 
 Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (@fig-athletes2):
 
 ![Descriptive statistics of VO2max by sport group (click on the image to zoom in).](images/athletes2.png){#fig-athletes2}
 
-
-The sample size is relative small. Moreover, the skewness=1.51 and the kurtosis=1.6 for the triathletes are out of the range of -1 and 1 indicating non-normal distribution. We can also see that the data for the triathletes is not normally distributed (p=0.023 <0.05) according to the Shapiro-Wilk test.
-
+The sample size is relative small. Moreover, the skewness=1.51 and the kurtosis=1.6 for the triathletes are out of the range of -1 and 1 indicating non-normal distribution. We can also see that the data for the triathletes is not normally distributed (p=0.023 \<0.05) according to the Shapiro-Wilk test.
 
 Next, in the `Plots` section we can visualize the distribution of VO2max for the three groups. Check the boxes of `Box Plot`, `Violin`, `Data` and `Mean` from `Box Plots`, as shown below (@fig-athletes3):
 
@@ -312,7 +271,6 @@ A graph (@fig-athletes4) is generated in the output window on our right-hand sid
 ![In the Plots section select Density from Histograms.](images/athletes4.png){#fig-athletes4 width="70%"}
 
 The above figure shows that the data in triathletes group have some outliers. Additionally, we can observe that the runners group seems to have the largest VO2max.
-
 
 By considering all of the information together (small samples, graphs, normality test) the overall decision is against of normality.
 
@@ -332,23 +290,18 @@ flowchart LR
   A(Analyses) -.-> B(ANOVA) -.-> C(Non-Parametric \nOne-Way ANOVA  \nKruskal-Wallis)
 ```
 
-
 ![Conducting Kruskal-Wallis test.](images/athletes5.png){#fig-athletes5 width="75%"}
-
 
 The `One-Way ANOVA (Non-parametric)` dialogue box opens. Drag and drop the numeric variable `VO2max` to Dependent Variables and the independent variable `sport` to Grouping Variable, as shown below @fig-athletes6:
 
 ![One-Way ANOVA (Non-parametric) dialogue box](images/athletes6.png){#fig-athletes6 width="75%"}
 
-
 The results of the Kruskal-Wallis test are presented in the table of the @fig-athletes7:
 
 ![The results of the Kruskal-Wallis test.](images/athletes7.png){#fig-athletes7 width="45%"}
 
-The p-value (<0.001) is lower than 0.05. There is at least one sport in which the VO2max is different from the others.
-
+The p-value (\<0.001) is lower than 0.05. There is at least one sport in which the VO2max is different from the others.
 :::
-
 
  
 
@@ -361,13 +314,11 @@ A **significant** Kruskal-Wallis test is generally followed by post-hoc tests to
 
 ![Check the DSCF post-hoc test.](images/athletes8.png){#fig-athletes8 width="70%"}
 
-
 A table appears in the output window on our right-hand side, as shown below (@fig-athletes9):
 
 ![Table with the results of the post-hoc tests.](images/athletes9.png){#fig-athletes9 width="65%"}
 
 **Interpretation**
 
-Pairwise comparisons were carried out using the method of Dwas-Steel-Critchlow-Flinger and adjusting p-values were calculated. The runners' VO2max (median= 77.2, IQR=[74.2, 79.5] mL/kg/min) seems to be significantly higher than rowers (69.6 [67.8, 73.1] mL/kg/min) (p=0.005 <0.05) and triathletes (65.4 [64.0, 67.6] mL/kg/min) (p=0.003 <0.05).
-
+Pairwise comparisons were carried out using the method of Dwas-Steel-Critchlow-Flinger and adjusting p-values were calculated. The runners' VO2max (median= 77.2, IQR=\[74.2, 79.5\] mL/kg/min) seems to be significantly higher than rowers (69.6 \[67.8, 73.1\] mL/kg/min) (p=0.005 \<0.05) and triathletes (65.4 \[64.0, 67.6\] mL/kg/min) (p=0.003 \<0.05).
 :::
