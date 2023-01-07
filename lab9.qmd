@@ -29,11 +29,11 @@ In this Lab, we will use the data from `LungCapacity` dataset.(**Note:** This st
 
 ### Opening the file
 
-Open the dataset named `LungCapacity` from the file tab in the menu:
+Open the dataset named "LungCapacity" from the file tab in the menu:
 
-![The LungCapacity dataset](images/lungcap.png){#fig-lungcap1}
+![The "LungCapacity" dataset.](images/lungcap.png){#fig-lungcap1 width=85%}
 
-The dataset `LungCapacity` has 725 participants and includes three variables. The numeric variables of interest are the `Age` and the `LungCap` (@fig-lungcap1). Double-click on the variable name `Age` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
+The dataset "LungCapacity" has 725 participants and includes three variables. The numeric variables of interest are the `Age` and the `LungCap` (@fig-lungcap1). Double-click on the variable name `Age` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
 
 ### Research question
 
@@ -44,35 +44,32 @@ Let's say that we want to explore the association between age (in years) and lun
 ::: {.callout-note icon="false"}
 ## Null hypothesis and alternative hypothesis
 
--   $H_{0}:$ there is not association between `Age` and `LungCap` ($ρ = 0$).
+-   $H_{0}:$ there is not association between age and lung capacity ($ρ = 0$).
 
--   $H_{1}:$ there is association between `Age` and `LungCap` ($ρ \neq 0$).
+-   $H_{1}:$ there is association between age and lung capacity ($ρ \neq 0$).
 :::
 
 ### Graphical display with a scatter plot
 
-A first step that is usually useful in studying the association between two continuous variables is to prepare a **scatter plot** of the data. The pattern made by the points plotted on the scatter plot usually suggests the basic nature and strength of the association between two variables.
+A first step that is usually useful in studying the association between two continuous variables is to prepare a **scatterplot** of the data. The pattern made by the points plotted on the scatterplot usually suggests the basic nature and strength of the association between two variables.
 
-The flowchart of the process is:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
-  A(Analyses tab) -.-> B(Exploration) -.-> C(Scatter plot)
+  A(Analyses) -.-> B(Exploration) -.-> C(Scatterplot)
 ```
 
-from the top menu, as shown below in @fig-lungcap_scatter1.
+as shown below in @fig-lungcap_scatter1.
 
-![In the Analyses Tab select Exploration and click on Scatterplot](images/lungcap_scatter1.png){#fig-lungcap_scatter1}
+![In the menu at the top, choose Analyze > Exploration ![](images/explor_icon.png){width="35" height="33"} > Scatterplot.](images/lungcap_scatter1.png){#fig-lungcap_scatter1 width=85%}
 
-The `Scatterplot` dialogue box opens, as shown below @fig-lungcap_scatter2:
+The *Scatterplot dialogue box* opens (@fig-lungcap_scatter3). Transfer the `Age` and `LungCap` variables from the left-hand pane into the *X-Axis* and *Y-Axis* boxes on the right-hand side, respecteively, by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}). Alternatively, drag and drop the variables. Finally, from **Marginals** click on the "**Densities**" radio button. We will end up with the following screen:
 
-![The Scatterplot dialogue box](images/lungcap_scatter2.png){#fig-lungcap_scatter2 width="450" height="442"}
+![The Scatterplot dialogue box options.](images/lungcap_scatter3.png){#fig-lungcap_scatter3 width="500" height="442"}
 
-Transfer the `Age` and `LungCap` variables from the box on the left side of the screen into the `X-Axis` and `Y-Axis` boxes on the right side by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}) (alternatively, drag and drop the variables), respectively. Finally, from `Marginals` click on the `Densities` radio button. We will end up with the following screen:
 
-![Transfer the `Age` variable into the `X-Axis` box and the `LungCap` variable into the `Y-Axis` box](images/lungcap_scatter3.png){#fig-lungcap_scatter3 width="500" height="442"}
-
-The output should look like the following graph (@fig-lungcap_scatter4):
+The resulting graph looks like this (@fig-lungcap_scatter4):
 
 ![The Scatter of Age and Lung Capacity with the marginal density plots](images/lungcap_scatter4.png){#fig-lungcap_scatter4 width="600"}
 
@@ -86,30 +83,24 @@ The Pearson's correlation coefficient can quantify the strength of this linear a
 
 ### Applying the Pearson's correlation coefficient, r
 
-Running correlation in Jamovi requires only a few steps once the data is ready to go. To start, click on the `Regression` and then on `Correlation Matrix`:
+Running correlation in Jamovi requires only a few steps once the data is ready to go. In the top menu navigate to:
 
 ```{mermaid}
 flowchart LR
-  A(Analyses tab) -.-> B(Regression) -.-> C(Correlation Matrix)
+  A(Analyses) -.-> B(Regression) -.-> C(Correlation Matrix)
 ```
 
-from the top menu, as shown below in @fig-lungcap_scatter5.
+as shown below in @fig-lungcap_scatter5.
 
-![In the Analyses Tab select Regression and click on Correlation Matrix](images/lungcap_scatter5.png){#fig-lungcap_scatter5}
+![In the menu at the top, choose Analyses > Regression ![](images/reg_icon.png){width="35" height="33"} > Correlation Matrix.](images/lungcap_scatter5.png){#fig-lungcap_scatter5 width=85%}
 
-The `Correlation Matrix` dialogue box opens, as shown below @fig-lungcap_scatter6:
+The *Correlation Matrix dialogue box* opens (@fig-lungcap_scatter7). Transfer both `Age` and `LungCap` variables from the left-hand pane into the right-hand pane by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}). Additionally, from the *Correlation Coefficients* section we can select between the following three: Pearson's, Spearman, or Kendall's coefficient. We keep the default choice of "**Pearson**". Finally, from **Additional Options** check "**Flag significant correlations**" and the "**Confidence Intervals**" boxes. We will end up with the following screen:
 
-![The Correlation Matrix dialogue box](images/lungcap_scatter6.png){#fig-lungcap_scatter6 width="500" height="530"}
-
-Transfer the `Age` and `LungCap` variables from the box on the left-hand side of the screen into the box on the right-hand side by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}) (alternatively, drag and drop the variables), respectively.
-
-In the `Correlation Coefficients` section we can select between the following three: Pearson's, Spearman, or Kendall's coefficient. We keep the default choice of Pearson. Finally, from `Additional Options` check the `Confidence Intervals` box. We will end up with the following screen:
-
-![Transfer the `Age` and `LungCap` variables from the left-hand side to the right-hand side box and check the `Confidence Intervals` box](images/lungcap_scatter7.png){#fig-lungcap_scatter7 width="480" height="530"}
+![The Correlation Matrix dialogue box options.](images/lungcap_scatter7.png){#fig-lungcap_scatter7 width=65%}
 
 The output table should look like the following (@fig-lungcap_cortable):
 
-![The output table of correlation coefficient](images/lungcap_cortable.png){#fig-lungcap_cortable width="350" height="280"}
+![The correlation matrix table. ](images/lungcap_cortable.png){#fig-lungcap_cortable width=50%}
 
 ::: {.callout-note icon="false"}
 ## Interpretation of the results

@@ -34,56 +34,55 @@ Consider the binary `sex` variable in arrhythmia dataset. A simple way for summa
 
 Firstly, we add labels to numerically coded values of `sex` variable (see @sec-lab1) (0 = male, 1 = female).
 
-Then we select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-from the top menu, as shown below in @fig-descriptives1.
+as shown below in @fig-descriptives1.
 
-![In the Analyses Tab select Exploration and click on Descriptives](images/descriptives1.png){#fig-descriptives1 width=90%}
+![In the menu at the top, choose Analyses \> Exploration ![](images/explor_icon.png){width="35" height="33"} \> Descriptives.](images/descriptives1.png){#fig-descriptives1 width="85%"}
 
-The `Descriptives` dialogue box opens, as shown below @fig-descriptives2:
+The *Descriptives* dialogue box opens, as shown below @fig-descriptives2:
 
-![The Descriptives dialogue box](images/descriptives2.png){#fig-descriptives2 width=75%}
+![The Descriptives dialogue box.](images/descriptives2.png){#fig-descriptives2 width="75%"}
 
-Transfer the `sex` variable from the box on the left-hand side of the screen into the `Variables` box on the right-hand side by highlighting the variable and pressing the Arrow Button (alternatively, drag and drop the variable `sex`). Then, we check the `Frequency tables` box and we also unchecked all the other options for descriptive statistics. We will end up with the following screen:
+Transfer the `sex` variable from the left-hand pane into the *Variables* pane by highlighting the variable and pressing the **Arrow** Button (![](images/right_arrow.png){width="23" height="21"}). Alternatively, drag and drop the variable. Next, we tick the "**Frequency tables**" box and we also uncheck all the other options of descriptive statistics. We will end up with the following screen (@fig-descriptives4):
 
-![Transfer the `sex` variable into the `Variables` box. Check the `Frequency tables` box and unchecked all the other options for descriptive statistics.](images/descriptives4.png){#fig-descriptives4 width=75%}
+![Drag and drop the **sex** variable to Variables pane](images/descriptives4.png){#fig-descriptives4 width="75%"}
 
 The output should look like the following:
 
-![The output of frequency distribution of sex](images/descriptives5.png){#fig-descriptives5}
+![Frequency distribution table of **sex**](images/descriptives5.png){#fig-descriptives5 width="55%"}
 
 The percentage of female patients (55%, 249/452) is larger than the percentage of male patients (45%, 203/452) in our data.
 
-To generate a basic descriptive plot navigate to the `Plots` section and check the `Bar Plot`, as shown below:
+To generate a basic descriptive plot navigate to the *Plots* section and check the **Bar Plot**, as shown below (@fig-descriptives6):
 
-![From the Plots section check the `Bar Plot`](images/descriptives6.png){#fig-descriptives6 width=75%}
+![From the Plots section check the Bar plot](images/descriptives6.png){#fig-descriptives6 width="75%"}
 
-The Bar Plot produced here presents the absolute frequencies (counts).
+The bar plot produced here presents the absolute frequencies (counts) (@fig-descriptives7).
 
-![The `Bar Plot` produced by Jamovi for a binary variable](images/descriptives7.png){#fig-descriptives7}
+![The bar plot produced by Jamovi for the binary variable **sex**](images/descriptives7.png){#fig-descriptives7 width=50%}
 
 More descriptive plots are available for all data types using the `surveymv` and `JJStatsPlot` modules.
 
 ## Summarizing Numerical Data
 
-Navigate to:
+From the top menu navigate to:
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-from the top menu, as shown in @fig-descriptives1.
+as shown in @fig-descriptives1.
 
+Now, drag and drop the variables `age` and `QRS` into the empty *Variables* box, as shown below (@fig-descriptives8):
 
-Now, select the variables `age` and `QRS` and drag them in the empty `Variables` box, as shown below:
-
-![select the variables `age` and `QRS`](images/descriptives8.png){#fig-descriptives8 width=75%}
+![Drag and drop the age and QRS to Variables pane.](images/descriptives8.png){#fig-descriptives8 width="75%"}
 
 Next, we decide how to display our data tables. We have got the following two options:
 
@@ -93,26 +92,26 @@ Next, we decide how to display our data tables. We have got the following two op
 
 Let' select variable across columns (the default).
 
-We can now select the relevant descriptive statistics in the `Statistics` section:
+We can now select the relevant descriptive statistics in the *Statistics* section:
 
-![select the descriptive statistics of interest](images/descriptives9.png){#fig-descriptives9 width=75%}
+![Select the descriptive statistics of interest.](images/descriptives9.png){#fig-descriptives9 width="75%"}
 
-Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below:
+Once we have selected our descriptive statistics, a table will appear in the output window on our right, as shown below (@fig-descriptives10):
 
-![Descriptive statistics of interest for `age` and `QRS` variables](images/descriptives10.png){#fig-descriptives10}
+![Descriptive statistics for variables **age** and **QRS**](images/descriptives10.png){#fig-descriptives10 width=45%}
 
 For continuous data we can select Histograms, Box Plots, Violin and Data as shown below:
 
-![Select Histograms, Box Plots, and Violin plots.](images/descriptives11.png){#fig-descriptives11 width=75%}
+![From the Plots section select Histograms, Box Plots, and Violin plots.](images/descriptives11.png){#fig-descriptives11 width="75%"}
 
-![Histograms of age](images/hist1.png){#fig-hist1}
+![Histograms of age](images/hist1.png){#fig-hist1 width=55%}
 
-![Violin plot of age](images/violin1.png){#fig-violin1}
+![Violin plot of age](images/violin1.png){#fig-violin1 width=55%}
 
 Age is a symmetrical distribution.
 
-![Histograms of QRS](images/hist2.png){#fig-hist2}
+![Histograms of QRS](images/hist2.png){#fig-hist2 width=55%}
 
-![Violin plot of QRS](images/violin2.png){#fig-violin2}
+![Violin plot of QRS](images/violin2.png){#fig-violin2 width=55%}
 
 QRS is an asymmetrical distribution (the data are skewed to the right).

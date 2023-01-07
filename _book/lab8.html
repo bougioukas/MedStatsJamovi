@@ -415,22 +415,50 @@ Chi-square test
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Odds ratio
+Risk and Odds ratio
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let’s calculate the odds ratio of the 2x2 table in <a href="#fig-chi7">Figure&nbsp;<span>18.9</span></a> by hand:</p>
-<p><span class="math display">\[ Odds \ Ratio = \frac{\frac{41}{49}}{\frac{16}{99}} =\frac{0.837}{0.162} = 5.17\]</span> We can also find the odds ratio with the 95% CI using Jamovi.</p>
-<p>In the <code>Statistics</code> section, check the <code>Odds ratio</code> and <code>Condidence intervals</code> boxes, as shown below (<a href="#fig-odds1">Figure&nbsp;<span>18.11</span></a>):</p>
-<div id="fig-odds1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/odds1.png" class="lightbox" title="Calculate the odds ratio and 95% condidence intervals." data-gallery="quarto-lightbox-gallery-11"><img src="images/odds1.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.11: Calculate the odds ratio and 95% condidence intervals.</figcaption><p></p>
+<p>First we need to reshape the contingency table. Double click on the variable name <code>ulcer</code> and change the order of levels using the (up/down) arrows as follows (<a href="#fig-chi9">Figure&nbsp;<span>18.11</span></a>):</p>
+<div id="fig-chi9" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/chi9.png" class="lightbox" title="Reorder the levels of the variable ulcer." data-gallery="quarto-lightbox-gallery-11"><img src="images/chi9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.11: Reorder the levels of the variable ulcer.</figcaption><p></p>
 </figure>
 </div>
-<p>The output is following (<a href="#fig-odds2">Figure&nbsp;<span>18.12</span></a>):</p>
-<div id="fig-odds2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/odds2.png" class="lightbox" title="The odds ratio and 95% condidence interval of the 2x2 table." data-gallery="quarto-lightbox-gallery-12"><img src="images/odds2.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.12: The odds ratio and 95% condidence interval of the 2x2 table.</figcaption><p></p>
+<p>Similarly, change the order of levels for the variable <code>status</code> (<a href="#fig-chi10">Figure&nbsp;<span>18.12</span></a>):</p>
+<div id="fig-chi10" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/chi10.png" class="lightbox" title="Reorder the levels of the variable status." data-gallery="quarto-lightbox-gallery-12"><img src="images/chi10.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.12: Reorder the levels of the variable status.</figcaption><p></p>
+</figure>
+</div>
+<p>The reshaped table follows:</p>
+<div id="fig-chi11" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/chi11.png" class="lightbox" title="The reshaped contingency 2x2 table" data-gallery="quarto-lightbox-gallery-13"><img src="images/chi11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.13: The reshaped contingency 2x2 table</figcaption><p></p>
+</figure>
+</div>
+<p>In the <code>Statistics</code> section, check the <code>Relative risk</code>, <code>Odds ratio</code> and <code>Condidence intervals</code> boxes, as follows (<a href="#fig-chi12">Figure&nbsp;<span>18.14</span></a>):</p>
+<div id="fig-chi12" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/chi12.png" class="lightbox" title="Select the relative risk, odds ratio and 95% condidence intervals." data-gallery="quarto-lightbox-gallery-14"><img src="images/chi12.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.14: Select the relative risk, odds ratio and 95% condidence intervals.</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Risk Ratio</strong></p>
+<p>First, we calculate the risk ratio (RR) of the 2x2 table in <a href="#fig-chi11">Figure&nbsp;<span>18.13</span></a> by hand:</p>
+<p><span class="math display">\[ Risk \ Ratio = \frac{\frac{41}{90}}{\frac{16}{115}} =\frac{0.4556}{0.1391} = 3.27\]</span> Using Jamovi we get the following output (<a href="#fig-chi13">Figure&nbsp;<span>18.15</span></a>):</p>
+<div id="fig-chi13" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/chi13.png" class="lightbox" title="The relative risk with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-15"><img src="images/chi13.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.15: The relative risk with 95% condidence intervals.</figcaption><p></p>
+</figure>
+</div>
+<p>The risk of dying is 3.27 (95% CI: 1.97, 5.44) times higher for patients with ulcerated tumors compared to non-ulcerated tumors. Note that the 95% confidence interval of the RR <strong>does not include</strong> the hypothesized null value of 1.</p>
+<p><strong>Odds Ratio</strong></p>
+<p>Next, let’s calculate the odds ratio of the 2x2 table in <a href="#fig-chi11">Figure&nbsp;<span>18.13</span></a> by hand:</p>
+<p><span class="math display">\[ Odds \ Ratio = \frac{\frac{41}{49}}{\frac{16}{99}} =\frac{0.837}{0.162} = 5.18\]</span></p>
+<p>Using Jamovi we get the following output (<a href="#fig-chi14">Figure&nbsp;<span>18.16</span></a>):</p>
+<div id="fig-chi14" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/chi14.png" class="lightbox" title="The odds ratio with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-16"><img src="images/chi14.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.16: The odds ratio with 95% condidence intervals.</figcaption><p></p>
 </figure>
 </div>
 <p>The odds of dying is 5.18 (95% CI: 2.65, 10.13) times higher for patients with ulcerated tumors compared to non-ulcerated tumors patients. Note that the 95% confidence interval of the OR <strong>does not include</strong> the hypothesized null value of 1.</p>
@@ -564,7 +592,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
 
 
 </body></html>

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.251">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Introduction to Medical Statistics with Jamovi - 20&nbsp; LAB X: Simple linear regression</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,7 +18,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -41,7 +37,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -59,29 +57,21 @@ ul.task-list li input[type="checkbox"] {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
@@ -96,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -108,8 +98,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
@@ -160,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
@@ -168,8 +158,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
   </div>
@@ -220,25 +210,29 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link active" data-scroll-target="#opening-the-file">Opening the file</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#hypothesis-testsing" id="toc-hypothesis-testsing" class="nav-link" data-scroll-target="#hypothesis-testsing">Hypothesis Testsing</a></li>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot">Scatter plot</a></li>
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression">Linear regression</a></li>
+  <li><a href="#fit-a-simple-linear-regression-model" id="toc-fit-a-simple-linear-regression-model" class="nav-link" data-scroll-target="#fit-a-simple-linear-regression-model">Fit a simple linear regression model</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-lab10" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></span></h1>
 </div>
 
 
@@ -250,13 +244,136 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header>
+</header><p>When we have finished this Lab, we should be able to:</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Understand the linear regression model</li>
+<li>Explore how a factor (independent variable) affect a response (dependent) variable.</li>
+<li>Interpret the results</li>
+</ul>
+</div>
+</div>
+<p>In this Lab, we will use the data from “LungCapacity” dataset that we have already seen in the previous chapter (<a href="lab9.html"><span>Chapter&nbsp;19</span></a>).</p>
+<section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
+<p>Open the dataset named “LungCapacity” from the file tab in the menu:</p>
+<div id="fig-lungcap1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/lungcap.png" class="lightbox" title="The LungCapacity dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/lungcap.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20.1: The LungCapacity dataset</figcaption><p></p>
+</figure>
+</div>
+<p>Double-click on the variable name <code>Age</code> and change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/continuous.png" width="23" height="21"></a>.</p>
+</section><section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
+<p>Let’s say that we want to <strong>model</strong> the association between age (in years) and lung capacity (in liters) for the sample of 725 participants in a survey. In other words, we want to find the parameters of a mathematical equation such as <span class="math inline">\(y = \alpha + \beta \cdot x\)</span>.</p>
+</section><section id="hypothesis-testsing" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing">Hypothesis Testsing</h3>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Null hypothesis and alternative hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><span class="math inline">\(H_{0}:\)</span> the two variables are not linearly related. There is no effect between age and lung capacity (<span class="math inline">\(β = 0\)</span>).</p></li>
+<li><p><span class="math inline">\(H_{1}:\)</span> the two variables are linearly related. There is an effect between age and lung capacity (<span class="math inline">\(β \neq 0\)</span>).</p></li>
+</ul>
+</div>
+</div>
+</section><section id="scatter-plot" class="level3"><h3 class="anchored" data-anchor-id="scatter-plot">Scatter plot</h3>
+<p>We start our analysis by creating the scatter plot of the response variable <code>LungCap</code> and the explanatory variable <code>Age</code> (see <a href="lab9.html"><span>Chapter&nbsp;19</span></a>).</p>
+<div id="fig-linear1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/linear1.png" class="lightbox" title="The Scatter plot of Age and Lung Capacity" data-gallery="quarto-lightbox-gallery-4"><img src="images/linear1.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20.2: The Scatter plot of Age and Lung Capacity</figcaption><p></p>
+</figure>
+</div>
+<p>As before, there is a clear upward trend indicating that increase in <code>Age</code> intake tends to coincide with increase in <code>LungCap</code>. Moreover, the trend seems to be linear, so a straight line can capture the overall pattern.</p>
+</section><section id="linear-regression" class="level3"><h3 class="anchored" data-anchor-id="linear-regression">Linear regression</h3>
+<p>The process of fitting a linear regression model to the data involves finding a straight line that can be considered as the <strong>best representation</strong> of the overall association between age and lung capacity.</p>
+<p>To choose a line, we need to explain what we mean by the “best representation” of the data. In the <a href="linear.html"><span>Chapter&nbsp;10</span></a> we said that a “best-fitting” line refers to the line that <strong>minimizes</strong> the <strong>sum of squared residuals (RSS)</strong>. Therefore, we refer to the resulting model as the least-squares linear regression model and to the corresponding line as the <strong>least-squares regression line</strong>.</p>
+</section><section id="fit-a-simple-linear-regression-model" class="level3"><h3 class="anchored" data-anchor-id="fit-a-simple-linear-regression-model">Fit a simple linear regression model</h3>
+<p>On the Jamovi top menu navigate to</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A(Analyses) -.-&gt; B(Regression) -.-&gt; C(Linear Regression)
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<p>as shown below (<a href="#fig-linear2">Figure&nbsp;<span>20.3</span></a>).</p>
+<div id="fig-linear2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/linear2.png" class="lightbox" title="In the menu at the top, choose Analyze > Regression  > Linear Regression." data-gallery="quarto-lightbox-gallery-6"><img src="images/linear2.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20.3: In the menu at the top, choose Analyze &gt; Regression <a href="images/reg_icon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/reg_icon.png" width="35" height="33" class="figure-img"></a> &gt; Linear Regression.</figcaption><p></p>
+</figure>
+</div>
+<p>The <em>Linear Regression dialogue box</em> opens (<a href="#fig-linear3">Figure&nbsp;<span>20.4</span></a>). From the left-hand pane drag the variable <code>LunCap</code> into the <em>Dependent Variable</em> box and the variable <code>Age</code> into the <em>Covariates</em> box on the right-hand side, as shown below:</p>
+<div id="fig-linear3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/linear3.png" class="lightbox" title="The Linear Regression dialogue box options." data-gallery="quarto-lightbox-gallery-7"><img src="images/linear3.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20.4: The Linear Regression dialogue box options.</figcaption><p></p>
+</figure>
+</div>
+<p>Additionally, from the <em>Model Coefficients</em> section tick the box “<strong>Confidence interval</strong>” in <strong>Estimate</strong> (<a href="#fig-linear4">Figure&nbsp;<span>20.5</span></a>):</p>
+<div id="fig-linear4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/linear4.png" class="lightbox" title="The Model Coefficients dialogue box options." data-gallery="quarto-lightbox-gallery-8"><img src="images/linear4.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20.5: The Model Coefficients dialogue box options.</figcaption><p></p>
+</figure>
+</div>
+<p>The output table with the model coefficients should look like the following (<a href="#fig-linear5">Figure&nbsp;<span>20.6</span></a>):</p>
+<div id="fig-linear5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/linear5.png" class="lightbox" title="The model coefficients table." data-gallery="quarto-lightbox-gallery-9"><img src="images/linear5.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20.6: The model coefficients table.</figcaption><p></p>
+</figure>
+</div>
+<p>Now, let’s find the equation from the regression table in <a href="#fig-linear5">Figure&nbsp;<span>20.6</span></a>. In the <strong>Estimate</strong> column are the intercept a=0.54 and the slope b=0.26 for age. Thus the equation of the regression line becomes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\widehat{y} &amp;= a + b \cdot x\\
+\widehat{\text{LungCap}} &amp;= a + b \cdot\text{Age}\\
+\widehat{\text{LungCap}}&amp;= 0.54 + 0.26\cdot\text{Age}
+\end{aligned}
+\]</span></p>
+<p>Finally, the quality of our model is presented in <a href="#fig-linear6">Figure&nbsp;<span>20.7</span></a>:</p>
+<div id="fig-linear6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="images/linear6.png" class="lightbox" title="The coefficient of determination." data-gallery="quarto-lightbox-gallery-10"><img src="images/linear6.png" class="img-fluid figure-img" style="width:35.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20.7: The coefficient of determination.</figcaption><p></p>
+</figure>
+</div>
+<p>In our example takes the value 0.67. It indicates that about 67% of the variation in lung capacity can be explained by the variation of the age. In simple linear regression <span class="math inline">\(\sqrt{0.67} = 0.82\)</span> which equals to the Pearson’s correlation coefficient, r.</p>
+<p>&nbsp;</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Interpretation of the results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The regression coefficient of the <code>Age</code> (b=0.26) is significantly different from zero (p &lt; 0.001) and indicates that there’s on average an increase of 0.26 liters (<span class="math inline">\(95\%\)</span>CI: 0.24 to 0.27) in lung capacity for every 1 year increase in age. Note that the <span class="math inline">\(95\%\)</span>CI does not include the hypothesized null value of zero for the slope.</p>
+</div>
+</div>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -367,9 +484,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./lab9.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span>
       </a>          
@@ -381,12 +496,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer>
-
+</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":true,"selector":".lightbox","closeEffect":"zoom"});</script>
 
 
 </body></html>

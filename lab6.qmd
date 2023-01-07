@@ -71,7 +71,6 @@ from the top menu, as shown below in @fig-hdrs0.
 
 ![In the Analyses Tab select Exploration and click on Descriptives.](images/hdrs0.png){#fig-hdrs0 width="75%"}
 
-
 The `Descriptives` dialogue box opens. Drag the variable `HDRS` into the `Variables` box and split it by the `treatment` variable, as shown below (@fig-descriptives12):
 
 ![Split the variable HDRS by treatment group](images/descriptives12.png){#fig-descriptives12 width="75%"}

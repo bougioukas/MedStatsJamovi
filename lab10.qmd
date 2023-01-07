@@ -1,1 +1,116 @@
-# LAB X: Simple linear regression
+# LAB X: Simple linear regression {#sec-lab10}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Understand the linear regression model
+-   Explore how a factor (independent variable) affect a response (dependent) variable. 
+-   Interpret the results
+:::
+
+In this Lab, we will use the data from "LungCapacity" dataset that we have already seen in the previous chapter (@sec-lab9).
+
+### Opening the file
+
+Open the dataset named "LungCapacity" from the file tab in the menu:
+
+![The LungCapacity dataset](images/lungcap.png){#fig-lungcap1 width=85%}
+
+Double-click on the variable name `Age` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
+
+
+### Research question
+
+Let's say that we want to **model** the association between age (in years) and lung capacity (in liters) for the sample of 725 participants in a survey. In other words, we want to find the parameters of a mathematical equation such as $y = \alpha + \beta \cdot x$.
+
+
+### Hypothesis Testsing
+
+::: {.callout-note icon="false"}
+## Null hypothesis and alternative hypothesis
+
+-   $H_{0}:$ the two variables are not linearly related. There is no effect between age and lung  capacity ($β = 0$).
+
+-   $H_{1}:$ the two variables are linearly related. There is an effect between age and lung capacity ($β \neq 0$).
+:::
+
+
+### Scatter plot
+
+We start our analysis by creating the scatter plot of the response variable `LungCap` and the explanatory variable `Age` (see @sec-lab9).
+
+![The Scatter plot of Age and Lung Capacity](images/linear1.png){#fig-linear1 width=65%}
+
+
+As before, there is a clear upward trend indicating that increase in `Age` intake tends to coincide with increase in `LungCap`. Moreover, the trend seems to be linear, so a straight line can capture the overall pattern.
+
+
+
+### Linear regression
+
+The process of fitting a linear regression model to the data involves finding a straight line that can be considered as the **best representation** of the overall association between age and lung capacity.
+
+To choose a line, we need to explain what we mean by the “best representation” of the data. In the @sec-linear we said that a "best-fitting" line refers to the line that **minimizes** the **sum of squared residuals (RSS)**. Therefore, we refer to the resulting model as the least-squares linear regression model and to the corresponding line as the **least-squares regression line**.
+
+
+### Fit a simple linear regression model
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(Regression) -.-> C(Linear Regression)
+```
+
+as shown below (@fig-linear2).
+
+![In the menu at the top, choose Analyze > Regression ![](images/reg_icon.png){width="35" height="33"} > Linear Regression.](images/linear2.png){#fig-linear2 width=85%}
+
+
+The *Linear Regression dialogue box* opens (@fig-linear3). From the left-hand pane drag the variable `LunCap` into the *Dependent Variable* box and the variable `Age` into the *Covariates* box on the right-hand side, as shown below:
+
+![The Linear Regression dialogue box options.](images/linear3.png){#fig-linear3 width=65%}
+
+
+Additionally, from the *Model Coefficients* section tick the box "**Confidence interval**" in **Estimate** (@fig-linear4):
+
+![The Model Coefficients dialogue box options.](images/linear4.png){#fig-linear4 width=75%}
+
+The output table with the model coefficients should look like the following (@fig-linear5):
+
+![The model coefficients table.](images/linear5.png){#fig-linear5 width=75%}
+
+
+Now, let's find the equation from the regression table in @fig-linear5. In the **Estimate** column are the intercept a=0.54 and the slope b=0.26 for age. Thus the equation of the regression line becomes:
+
+$$
+\begin{aligned}
+\widehat{y} &= a + b \cdot x\\
+\widehat{\text{LungCap}} &= a + b \cdot\text{Age}\\
+\widehat{\text{LungCap}}&= 0.54 + 0.26\cdot\text{Age}
+\end{aligned}
+$$
+
+Finally, the quality of our model is presented in @fig-linear6:
+
+![The coefficient of determination. ](images/linear6.png){#fig-linear6 width=35%}
+
+In our example takes the value 0.67. It indicates that about 67% of the variation in lung capacity can be explained by the variation of the age. In simple linear regression $\sqrt{0.67} = 0.82$ which equals to the Pearson's correlation coefficient, r.
+
+ 
+
+::: {.callout-note icon="false"}
+## Interpretation of the results
+
+The regression coefficient of the `Age` (b=0.26) is significantly different from zero (p \< 0.001) and indicates that there's on average an increase of 0.26 liters ($95\%$CI: 0.24 to 0.27) in lung capacity for every 1 year increase in age. Note that the $95\%$CI does not include the hypothesized null value of zero for the slope.
+:::
+

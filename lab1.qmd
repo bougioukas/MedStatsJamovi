@@ -218,11 +218,11 @@ The meta-data (data about the data) for this dataset are as following:
 
 ### Opening the file
 
-To open this Jamovi file, click on the File tab ![](images/hbars.png){width="28" height="17"} at the top left hand corner (just left of the 'Variables' tab) (@fig-tab_analysis_file).
+To open this Jamovi file, click on the **File** tab ![](images/hbars.png){width="28" height="17"} at the top left hand corner (just left of the **Variables** tab) (@fig-tab_analysis_file).
 
 ![Click on the File tab](images/tab_analysis_file.png){#fig-tab_analysis_file}
 
-This will open the menu shown in @fig-open_file. Select 'Open' and then 'This PC', and choose the excel file 'arrhythmia' from the files listed on 'Browse' which are stored on our computer folders:
+This will open the menu shown in @fig-open_file. Select '**Open**' and then '**This PC**', and choose the excel file 'arrhythmia' from the files listed on '**Browse**' which are stored on our computer folders:
 
 ```{r}
 #| label: fig-open_file
@@ -240,7 +240,7 @@ The flowchart of the process is:
 
 ```{mermaid}
 flowchart LR
-  A(File tab) -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia.xlsx')
+  A(File tab) -.-> B(Open) -.-> C(This PC) -.-> D(Browse) -.-> E(Open \n 'arrhythmia')
 ```
 
  
@@ -277,11 +277,11 @@ We close the variable settings by pressing the arrow in the top-right corner ![]
 
 ### Filtering data
 
-Next, we select the **Filters button** ![](images/filters.png){width="25" height="23"} from the Data tab. This opens the "Row FILTERS" view at the top of the Jamovi screen where we can add a filter called *Filter 1* (@fig-filter1_age). Let's say that we want to study only the adults from the participants.
+Next, we select the **Filters button** ![](images/filters.png){width="25" height="23"} from the **Data** tab. This opens the "Row FILTERS" view at the top of the Jamovi screen where we can add a filter called "**Filter 1**" (@fig-filter1_age). Let's say that we want to study only the adults from the participants.
 
 ![Adding a filter](images/filter1_age.png){#fig-filter1_age}
 
-In order to access functions, press the ![](images/fx.png){width="25" height="23"} icon in the filter settings and from `VARIABLES` double-click on `age` (or we just type the variable name but if the variable has a space, we must use `'..'` around the variable name). Then type the condition `age >= 18` and press `ENTER` from the keyboard in the formula box.
+In order to access functions, press the ![](images/fx.png){width="25" height="23"} icon in the filter settings and from "**VARIABLES**" double-click on `age` (or we just type the variable name but if the variable has a space, we must use `'..'` around the variable name). Then type the condition `age >= 18` and press **ENTER** from the keyboard in the formula box.
 
 ::: callout-tip
 ## Relational (or comparison) operators in Jamovi
@@ -306,7 +306,7 @@ Finally, if we want to delete the filter permanently, click on the cross of the 
 
 But we can do more complicated filters than this! Let's say that we're interested in the **adult females**. In fact we can specify this in three ways:
 
-**a)** by using the `and` operator in 'Filter 1' which means that both conditions (adults and females) in the expression must be true at the same time. Therefore, we type the expression `age >= 18 and sex == 'female'` (@fig-filter1_age_and_sex):
+**a)** by using the `and` operator in "**Filter 1**" which means that both conditions (adults and females) in the expression must be true at the same time. Therefore, we type the expression `age >= 18 and sex == 'female'` (@fig-filter1_age_and_sex):
 
 ```{r}
 #| label: fig-filter1_age_and_sex
@@ -320,7 +320,7 @@ knitr::include_graphics(here::here("images", "filter1_age_and_sex.png"))
 
 Note that in the above expression we can also use double quotes around the `"female"` (i.e. `age >= 18 and sex == "female"`) or even the coded value (i.e. `age >= 18 and sex == 1`).
 
-**b)** by adding the second condition (i.e. `sex == "female"`) as another expression to Filter 1 (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex):
+**b)** by adding the second condition (i.e. `sex == "female"`) as **another expression** to "**Filter 1**" (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex):
 
 ```{r}
 #| label: fig-filter1_age_sex
@@ -334,7 +334,7 @@ knitr::include_graphics(here::here("images", "filter1_age_sex.png"))
 
 This additional expression comes to be represented with its own column `F1(2)` (@fig-filter1_age_sex), and by looking at the ticks and crosses, we can see which expression is responsible for excluding each row.
 
-**c)** adding a new `Filter 2` (by selecting the large + to the left of the filters dialog box) (@fig-filter2). In this case, we can activate or inactivate the filters separately.
+**c)** adding a new "**Filter 2**" (by selecting the **large +** to the left of the filters dialog box) (@fig-filter2). In this case, we can activate or inactivate the filters separately.
 
 ```{r}
 #| label: fig-filter2
@@ -366,7 +366,7 @@ $$BMI = weight/height^2$$ {#eq-bmi}
 BMI is a person's weight in kilograms divided by the square of height in meters. A high BMI can indicate high body fatness.
 :::
 
-Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the Data tab and then select **Append** from the **Computed Variable** list. (Alternatively, select the Compute button ![](images/compute_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-compute_append). The black dot symbol in the right of the column header indicates that this is a computed variable.
+Adding computed variables to a Jamovi spreadsheet is straightforward. Click on **Add** button available on the **Data** tab and then select **Append** from the **Computed Variable** list. (Alternatively, select the **Compute** button ![](images/compute_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-compute_append). The black dot symbol in the right of the column header indicates that this is a computed variable.
 
 ```{r}
 #| label: fig-compute_append
@@ -378,7 +378,7 @@ Adding computed variables to a Jamovi spreadsheet is straightforward. Click on *
 knitr::include_graphics(here::here("images", "compute_append.png"))
 ```
 
-To set up the computed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "COMPUTED VARIABLE" view where we can set the name of the computed variable as BMI and specify the @eq-bmi in the formula box (note that we must divide the height by 100 and use the exponentiation operator \^ or \*\*) (@fig-compute_bmi):
+To set up the computed variable, either double-click on the column header, or select **Setup** button ![](images/setup_button.png){width="36" height="34"}) from the **Data** tab. This opens the "**COMPUTED VARIABLE**" view where we can set the name of the computed variable as `BMI` and specify the @eq-bmi in the **Formula** box (note that we must divide the height by 100 and use the exponentiation operator \^ or \*\*) (@fig-compute_bmi):
 
 ```{r}
 #| label: fig-compute_bmi
@@ -390,7 +390,7 @@ To set up the computed variable, either double-click on the column header, or se
 knitr::include_graphics(here::here("images", "compute_bmi.png"))
 ```
 
-Finally, we can round the variable BMI to one decimal place using the `ROUND()` function:
+Finally, we can round the variable `BMI` to one decimal place using the `ROUND()` function:
 
 ```{r}
 #| label: fig-round
@@ -404,7 +404,7 @@ knitr::include_graphics(here::here("images", "round.png"))
 
 ### Transforming a variable
 
-Sometimes it can be useful to convert a quantitative variable into a qualitative variable with levels. For example, the BMI is often categorized as follows:
+Sometimes it can be useful to convert a quantitative variable into a qualitative variable with levels. For example, the `BMI` is often categorized as follows:
 
 -   less than 18.5 `r fa("arrow-right", fill = "orange")` underweight
 
@@ -414,7 +414,7 @@ Sometimes it can be useful to convert a quantitative variable into a qualitative
 
 -   30.0 or higher `r fa("arrow-right", fill = "orange")` obesity
 
-Click on **Add** button available on the Data tab and select **Append** from the **Transformed Variable** list. (Alternatively, select the Transform button ![](images/transform_button.png){width="26" height="24"}). An empty column has been created at the end of our dataset (@fig-transform_append).
+Click on **Add** button available on the Data tab and select **Append** from the **Transformed Variable** list. (Alternatively, select the **Transform** button ![](images/transform_button.png){width="36" height="34"}). An empty column has been created at the end of our dataset (@fig-transform_append).
 
 ```{r}
 #| label: fig-transform_append
@@ -426,7 +426,7 @@ Click on **Add** button available on the Data tab and select **Append** from the
 knitr::include_graphics(here::here("images", "transform_append.png"))
 ```
 
-To set up the transformed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "TRANSFORMED VARIABLE" view where we can set the name of the transformed variable such as BMI2 and create the transformation by selecting the source variable, here the BMI, in the Source Variable field, and creating a new transformation using transform field (@fig-create_new_transf).
+To set up the transformed variable, either double-click on the column header, or select Setup from the Data tab. This opens the "**TRANSFORMED VARIABLE**" view where we can set the name of the transformed variable such as BMI2 and create the transformation by selecting the source variable, here the BMI, in the Source Variable field, and creating a new transformation using transform field (@fig-create_new_transf).
 
 ```{mermaid}
 flowchart LR
@@ -456,13 +456,13 @@ This opens the "TRANSFORM" view where Jamovi gives each transformation a name (e
 knitr::include_graphics(here::here("images", "transf_view.png"))
 ```
 
-Now we need to add conditions. Jamovi uses simple `if ... else` statements and executes each statement starting from the top. So let's start!
+Now we need to **add conditions**. Jamovi uses simple `if ... else` statements and executes each statement starting from the top. So let's start!
 
-First, select **`+ Add recode condition`**. Second, we need to populate the **boxes** with the information as follows (@fig-recode1):
+First, select **`+ Add recode condition`**. Second, we need to fill the **boxes** with the information as follows (@fig-recode1):
 
--   The **`$source`** is the variable we want to transform (here BMI)- don't change this.
+-   The **`$source`** is the variable we want to transform (here `BMI`)- don't change this.
 -   Select the appropriate **comparison operator** (here `<` )
--   In the next box, we will put the BMI value we want as the cut off point.
+-   In the next box, we will put the `BMI` value we want as the cut off point.
 -   After the use, add our new label (here `'underweight'`). If we are using text we must enclose it in `'...'`
 
 ```{r}
@@ -487,7 +487,7 @@ We can add as many conditions as we want by selecting `+ Add recode condition`. 
 knitr::include_graphics(here::here("images", "recode2.png"))
 ```
 
-Finally, after the `else use` box just add the label (here `'obese'`) for the data that does not meet the above conditions.
+Finally, after the `else use` box just add the label  for the data that does not meet the above conditions (here `'obese'`).
 
 ```{r}
 #| label: fig-recode3
@@ -502,7 +502,7 @@ knitr::include_graphics(here::here("images", "recode3.png"))
 ::: {.callout-tip icon="false"}
 ## Editing the transformed variable
 
-The **red dot** symbol in the right of the column header indicates that this is a transformed variable. Additionally, we can edit existing transformations by selecting **Edit** (@fig-edit).
+The **red dot** symbol in the right of the column header indicates that this is a transformed variable. Additionally, we can edit existing transformations by selecting **Edit...** (@fig-edit).
 
 ```{r}
 #| label: fig-edit

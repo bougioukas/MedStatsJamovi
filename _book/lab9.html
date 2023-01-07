@@ -264,13 +264,13 @@ Learning objectives
 <p>&nbsp;</p>
 <p>In this Lab, we will use the data from <code>LungCapacity</code> dataset.(<strong>Note:</strong> This starts by assuming we know how to get data into Jamovi).</p>
 <section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
-<p>Open the dataset named <code>LungCapacity</code> from the file tab in the menu:</p>
+<p>Open the dataset named “LungCapacity” from the file tab in the menu:</p>
 <div id="fig-lungcap1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap.png" class="lightbox" title="The LungCapacity dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/lungcap.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.1: The LungCapacity dataset</figcaption><p></p>
+<figure class="figure"><p><a href="images/lungcap.png" class="lightbox" title="The “LungCapacity” dataset." data-gallery="quarto-lightbox-gallery-1"><img src="images/lungcap.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.1: The “LungCapacity” dataset.</figcaption><p></p>
 </figure>
 </div>
-<p>The dataset <code>LungCapacity</code> has 725 participants and includes three variables. The numeric variables of interest are the <code>Age</code> and the <code>LungCap</code> (<a href="#fig-lungcap1">Figure&nbsp;<span>19.1</span></a>). Double-click on the variable name <code>Age</code> and change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/continuous.png" width="23" height="21"></a>.</p>
+<p>The dataset “LungCapacity” has 725 participants and includes three variables. The numeric variables of interest are the <code>Age</code> and the <code>LungCap</code> (<a href="lab10.html#fig-lungcap1">Figure&nbsp;<span>20.1</span></a>). Double-click on the variable name <code>Age</code> and change the measure type from nominal <a href="images/nominal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/nominal.png" width="23" height="21"></a> to continuous <a href="images/continuous.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/continuous.png" width="23" height="21"></a>.</p>
 </section><section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
 <p>Let’s say that we want to explore the association between age (in years) and lung capacity (in liters) for the sample of 725 participants in a survey.</p>
 </section><section id="hypothesis-testsing" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing">Hypothesis Testsing</h3>
@@ -285,21 +285,21 @@ Null hypothesis and alternative hypothesis
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p><span class="math inline">\(H_{0}:\)</span> there is not association between <code>Age</code> and <code>LungCap</code> (<span class="math inline">\(ρ = 0\)</span>).</p></li>
-<li><p><span class="math inline">\(H_{1}:\)</span> there is association between <code>Age</code> and <code>LungCap</code> (<span class="math inline">\(ρ \neq 0\)</span>).</p></li>
+<li><p><span class="math inline">\(H_{0}:\)</span> there is not association between age and lung capacity (<span class="math inline">\(ρ = 0\)</span>).</p></li>
+<li><p><span class="math inline">\(H_{1}:\)</span> there is association between age and lung capacity (<span class="math inline">\(ρ \neq 0\)</span>).</p></li>
 </ul>
 </div>
 </div>
 </section><section id="graphical-display-with-a-scatter-plot" class="level3"><h3 class="anchored" data-anchor-id="graphical-display-with-a-scatter-plot">Graphical display with a scatter plot</h3>
-<p>A first step that is usually useful in studying the association between two continuous variables is to prepare a <strong>scatter plot</strong> of the data. The pattern made by the points plotted on the scatter plot usually suggests the basic nature and strength of the association between two variables.</p>
-<p>The flowchart of the process is:</p>
+<p>A first step that is usually useful in studying the association between two continuous variables is to prepare a <strong>scatterplot</strong> of the data. The pattern made by the points plotted on the scatterplot usually suggests the basic nature and strength of the association between two variables.</p>
+<p>On the Jamovi top menu navigate to</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <p>
 </p>
 <pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  A(Analyses tab) -.-&gt; B(Exploration) -.-&gt; C(Scatter plot)
+  A(Analyses) -.-&gt; B(Exploration) -.-&gt; C(Scatterplot)
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -308,28 +308,22 @@ Null hypothesis and alternative hypothesis
 </div>
 </div>
 </div>
-<p>from the top menu, as shown below in <a href="#fig-lungcap_scatter1">Figure&nbsp;<span>19.2</span></a>.</p>
+<p>as shown below in <a href="#fig-lungcap_scatter1">Figure&nbsp;<span>19.2</span></a>.</p>
 <div id="fig-lungcap_scatter1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter1.png" class="lightbox" title="In the Analyses Tab select Exploration and click on Scatterplot" data-gallery="quarto-lightbox-gallery-4"><img src="images/lungcap_scatter1.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.2: In the Analyses Tab select Exploration and click on Scatterplot</figcaption><p></p>
+<figure class="figure"><p><a href="images/lungcap_scatter1.png" class="lightbox" title="In the menu at the top, choose Analyze > Exploration  > Scatterplot." data-gallery="quarto-lightbox-gallery-5"><img src="images/lungcap_scatter1.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.2: In the menu at the top, choose Analyze &gt; Exploration <a href="images/explor_icon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/explor_icon.png" width="35" height="33" class="figure-img"></a> &gt; Scatterplot.</figcaption><p></p>
 </figure>
 </div>
-<p>The <code>Scatterplot</code> dialogue box opens, as shown below <a href="#fig-lungcap_scatter2">Figure&nbsp;<span>19.3</span></a>:</p>
-<div id="fig-lungcap_scatter2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter2.png" class="lightbox" title="The Scatterplot dialogue box" data-gallery="quarto-lightbox-gallery-5"><img src="images/lungcap_scatter2.png" width="450" height="442" class="figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.3: The Scatterplot dialogue box</figcaption><p></p>
-</figure>
-</div>
-<p>Transfer the <code>Age</code> and <code>LungCap</code> variables from the box on the left side of the screen into the <code>X-Axis</code> and <code>Y-Axis</code> boxes on the right side by highlighting the variables and pressing the Arrow Button (<a href="images/right_arrow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/right_arrow.png" width="23" height="21"></a>) (alternatively, drag and drop the variables), respectively. Finally, from <code>Marginals</code> click on the <code>Densities</code> radio button. We will end up with the following screen:</p>
+<p>The <em>Scatterplot dialogue box</em> opens (<a href="#fig-lungcap_scatter3">Figure&nbsp;<span>19.3</span></a>). Transfer the <code>Age</code> and <code>LungCap</code> variables from the left-hand pane into the <em>X-Axis</em> and <em>Y-Axis</em> boxes on the right-hand side, respecteively, by highlighting the variables and pressing the Arrow Button (<a href="images/right_arrow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/right_arrow.png" width="23" height="21"></a>). Alternatively, drag and drop the variables. Finally, from <strong>Marginals</strong> click on the “<strong>Densities</strong>” radio button. We will end up with the following screen:</p>
 <div id="fig-lungcap_scatter3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter3.png" class="lightbox" title="Transfer the Age variable into the X-Axis box and the LungCap variable into the Y-Axis box" data-gallery="quarto-lightbox-gallery-7"><img src="images/lungcap_scatter3.png" width="500" height="442" class="figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.4: Transfer the <code>Age</code> variable into the <code>X-Axis</code> box and the <code>LungCap</code> variable into the <code>Y-Axis</code> box</figcaption><p></p>
+<figure class="figure"><p><a href="images/lungcap_scatter3.png" class="lightbox" title="The Scatterplot dialogue box options." data-gallery="quarto-lightbox-gallery-7"><img src="images/lungcap_scatter3.png" width="500" height="442" class="figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.3: The Scatterplot dialogue box options.</figcaption><p></p>
 </figure>
 </div>
-<p>The output should look like the following graph (<a href="#fig-lungcap_scatter4">Figure&nbsp;<span>19.5</span></a>):</p>
+<p>The resulting graph looks like this (<a href="#fig-lungcap_scatter4">Figure&nbsp;<span>19.4</span></a>):</p>
 <div id="fig-lungcap_scatter4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/lungcap_scatter4.png" class="lightbox" title="The Scatter of Age and Lung Capacity with the marginal density plots" data-gallery="quarto-lightbox-gallery-8"><img src="images/lungcap_scatter4.png" class="img-fluid figure-img" width="600"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.5: The Scatter of Age and Lung Capacity with the marginal density plots</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.4: The Scatter of Age and Lung Capacity with the marginal density plots</figcaption><p></p>
 </figure>
 </div>
 <p>The above density plots (light blue histograms) show that the data are approximately <strong>normally distributed</strong> for both <code>Age</code> and <code>LungCap</code> (we have a large sample so the graphs are reliable).</p>
@@ -337,14 +331,14 @@ Null hypothesis and alternative hypothesis
 <p>The Pearson’s correlation coefficient can quantify the strength of this linear association (alternative is Spearman’s correlation coefficients).</p>
 <p>&nbsp;</p>
 </section><section id="applying-the-pearsons-correlation-coefficient-r" class="level3"><h3 class="anchored" data-anchor-id="applying-the-pearsons-correlation-coefficient-r">Applying the Pearson’s correlation coefficient, r</h3>
-<p>Running correlation in Jamovi requires only a few steps once the data is ready to go. To start, click on the <code>Regression</code> and then on <code>Correlation Matrix</code>:</p>
+<p>Running correlation in Jamovi requires only a few steps once the data is ready to go. In the top menu navigate to:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <p>
 </p>
 <pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
-  A(Analyses tab) -.-&gt; B(Regression) -.-&gt; C(Correlation Matrix)
+  A(Analyses) -.-&gt; B(Regression) -.-&gt; C(Correlation Matrix)
 </pre>
 <div id="mermaid-tooltip-2" class="mermaidTooltip">
 
@@ -353,29 +347,22 @@ Null hypothesis and alternative hypothesis
 </div>
 </div>
 </div>
-<p>from the top menu, as shown below in <a href="#fig-lungcap_scatter5">Figure&nbsp;<span>19.6</span></a>.</p>
+<p>as shown below in <a href="#fig-lungcap_scatter5">Figure&nbsp;<span>19.5</span></a>.</p>
 <div id="fig-lungcap_scatter5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter5.png" class="lightbox" title="In the Analyses Tab select Regression and click on Correlation Matrix" data-gallery="quarto-lightbox-gallery-9"><img src="images/lungcap_scatter5.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.6: In the Analyses Tab select Regression and click on Correlation Matrix</figcaption><p></p>
+<figure class="figure"><p><a href="images/lungcap_scatter5.png" class="lightbox" title="In the menu at the top, choose Analyses > Regression  > Correlation Matrix." data-gallery="quarto-lightbox-gallery-10"><img src="images/lungcap_scatter5.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.5: In the menu at the top, choose Analyses &gt; Regression <a href="images/reg_icon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/reg_icon.png" width="35" height="33" class="figure-img"></a> &gt; Correlation Matrix.</figcaption><p></p>
 </figure>
 </div>
-<p>The <code>Correlation Matrix</code> dialogue box opens, as shown below <a href="#fig-lungcap_scatter6">Figure&nbsp;<span>19.7</span></a>:</p>
-<div id="fig-lungcap_scatter6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter6.png" class="lightbox" title="The Correlation Matrix dialogue box" data-gallery="quarto-lightbox-gallery-10"><img src="images/lungcap_scatter6.png" width="500" height="530" class="figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.7: The Correlation Matrix dialogue box</figcaption><p></p>
-</figure>
-</div>
-<p>Transfer the <code>Age</code> and <code>LungCap</code> variables from the box on the left-hand side of the screen into the box on the right-hand side by highlighting the variables and pressing the Arrow Button (<a href="images/right_arrow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/right_arrow.png" width="23" height="21"></a>) (alternatively, drag and drop the variables), respectively.</p>
-<p>In the <code>Correlation Coefficients</code> section we can select between the following three: Pearson’s, Spearman, or Kendall’s coefficient. We keep the default choice of Pearson. Finally, from <code>Additional Options</code> check the <code>Confidence Intervals</code> box. We will end up with the following screen:</p>
+<p>The <em>Correlation Matrix dialogue box</em> opens (<a href="#fig-lungcap_scatter7">Figure&nbsp;<span>19.6</span></a>). Transfer both <code>Age</code> and <code>LungCap</code> variables from the left-hand pane into the right-hand pane by highlighting the variables and pressing the Arrow Button (<a href="images/right_arrow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/right_arrow.png" width="23" height="21"></a>). Additionally, from the <em>Correlation Coefficients</em> section we can select between the following three: Pearson’s, Spearman, or Kendall’s coefficient. We keep the default choice of “<strong>Pearson</strong>”. Finally, from <strong>Additional Options</strong> check “<strong>Flag significant correlations</strong>” and the “<strong>Confidence Intervals</strong>” boxes. We will end up with the following screen:</p>
 <div id="fig-lungcap_scatter7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_scatter7.png" class="lightbox" title="Transfer the Age and LungCap variables from the left-hand side to the right-hand side box and check the Confidence Intervals box" data-gallery="quarto-lightbox-gallery-12"><img src="images/lungcap_scatter7.png" width="480" height="530" class="figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.8: Transfer the <code>Age</code> and <code>LungCap</code> variables from the left-hand side to the right-hand side box and check the <code>Confidence Intervals</code> box</figcaption><p></p>
+<figure class="figure"><p><a href="images/lungcap_scatter7.png" class="lightbox" title="The Correlation Matrix dialogue box options." data-gallery="quarto-lightbox-gallery-12"><img src="images/lungcap_scatter7.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.6: The Correlation Matrix dialogue box options.</figcaption><p></p>
 </figure>
 </div>
-<p>The output table should look like the following (<a href="#fig-lungcap_cortable">Figure&nbsp;<span>19.9</span></a>):</p>
+<p>The output table should look like the following (<a href="#fig-lungcap_cortable">Figure&nbsp;<span>19.7</span></a>):</p>
 <div id="fig-lungcap_cortable" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/lungcap_cortable.png" class="lightbox" title="The output table of correlation coefficient" data-gallery="quarto-lightbox-gallery-13"><img src="images/lungcap_cortable.png" width="350" height="280" class="figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19.9: The output table of correlation coefficient</figcaption><p></p>
+<figure class="figure"><p><a href="images/lungcap_cortable.png" class="lightbox" title="The correlation matrix table." data-gallery="quarto-lightbox-gallery-13"><img src="images/lungcap_cortable.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19.7: The correlation matrix table.</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
@@ -519,7 +506,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 </body></html>
