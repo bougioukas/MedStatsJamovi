@@ -231,6 +231,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#hypothesis-testsing-for-the-pearsons-chi-square-test-of-independence" id="toc-hypothesis-testsing-for-the-pearsons-chi-square-test-of-independence" class="nav-link" data-scroll-target="#hypothesis-testsing-for-the-pearsons-chi-square-test-of-independence">Hypothesis Testsing for the Pearson’s Chi-square test of independence</a></li>
   <li><a href="#assumption" id="toc-assumption" class="nav-link" data-scroll-target="#assumption">Assumption</a></li>
   <li><a href="#explore-the-data-with-plots-and-tables" id="toc-explore-the-data-with-plots-and-tables" class="nav-link" data-scroll-target="#explore-the-data-with-plots-and-tables">Explore the data with plots and tables</a></li>
+  <li><a href="#chi-square-test" id="toc-chi-square-test" class="nav-link" data-scroll-target="#chi-square-test">Chi-square test</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#risk-ratio-rr-and-odds-ratio-or" id="toc-risk-ratio-rr-and-odds-ratio-or" class="nav-link" data-scroll-target="#risk-ratio-rr-and-odds-ratio-or"><span class="toc-section-number">18.3</span>  Risk ratio (RR) and Odds ratio (OR)</a>
+  <ul class="collapse">
+<li><a href="#risk-ratio-or-relative-risk" id="toc-risk-ratio-or-relative-risk" class="nav-link" data-scroll-target="#risk-ratio-or-relative-risk">Risk ratio (or relative risk)</a></li>
+  <li><a href="#odds-ratio" id="toc-odds-ratio" class="nav-link" data-scroll-target="#odds-ratio">Odds Ratio</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -275,13 +283,13 @@ Learning objectives
 <p>If we want to see whether there’s an association between two categorical variables we can use the chi-square test, often called chi-square test of independence. This is an extremely elegant statistic based on the simple idea of comparing the frequencies we observe in certain categories to the frequencies we might expect to get in those categories by chance.</p>
 <section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
 <p>We will use the “Survival from Malignant Melanoma” dataset named “meldata”. The data consist of measurements made on patients with malignant melanoma, a type of skin cancer. Each patient had their tumor removed by surgery at the Department of Plastic Surgery, University Hospital of Odense, Denmark, between 1962 and 1977.</p>
-<p>Open the dataset named <code>meldata</code> from the file tab in the menu:</p>
+<p>Open the dataset named “meldata” from the file tab in the menu:</p>
 <div id="fig-chi_data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/chi_data.png" class="lightbox" title="The meldata dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/chi_data.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.1: The meldata dataset</figcaption><p></p>
 </figure>
 </div>
-<p>The dataset <code>meldata</code> includes 205 patients and has seven variables. We are intrested in association between the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died)(<a href="#fig-chi_data">Figure&nbsp;<span>18.1</span></a>).</p>
+<p>The dataset “meldata” includes 205 patients and has seven variables. We are interested in association between the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died)(<a href="#fig-chi_data">Figure&nbsp;<span>18.1</span></a>).</p>
 </section><section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
 <p>We are interested in the association between tumor ulceration and death from melanoma.</p>
 </section><section id="hypothesis-testsing-for-the-pearsons-chi-square-test-of-independence" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing-for-the-pearsons-chi-square-test-of-independence">Hypothesis Testsing for the Pearson’s Chi-square test of independence</h3>
@@ -297,9 +305,9 @@ Null hypothesis and alternative hypothesis
 <div class="callout-body-container callout-body">
 <ul>
 <li>
-<span class="math inline">\(H_0\)</span>: There is no association between the two categorical variables (they are independent). In other words, there is no difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors (<span class="math inline">\(p_{ulcerated} = p_{non-ulcertaed}\)</span>).</li>
+<span class="math inline">\(H_0\)</span>: There is no association between the two categorical variables (they are independent). In other words, there is no difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors (<span class="math inline">\(p_{ulcerated} = p_{non-ulcertaed}\)</span>). Also RR=1, OR=1.</li>
 <li>
-<span class="math inline">\(H_1\)</span>: There is association between the two categorical variables (they are dependent). In other words, there is difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors (<span class="math inline">\(p_{ulcerated} \neq p_{non-ulcertaed}\)</span>).</li>
+<span class="math inline">\(H_1\)</span>: There is association between the two categorical variables (they are dependent). In other words, there is difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors (<span class="math inline">\(p_{ulcerated} \neq p_{non-ulcertaed}\)</span>). Also RR≠1, OR≠1.</li>
 </ul>
 </div>
 </div>
@@ -319,7 +327,7 @@ Check if the following assumption is satisfied
 </div>
 </div>
 </section><section id="explore-the-data-with-plots-and-tables" class="level3"><h3 class="anchored" data-anchor-id="explore-the-data-with-plots-and-tables">Explore the data with plots and tables</h3>
-<p>We select:</p>
+<p>On the Jamovi top menu navigate to</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -336,58 +344,59 @@ Check if the following assumption is satisfied
 </div>
 </div>
 </div>
-<p>from the top menu, as shown below in <a href="#fig-chi0">Figure&nbsp;<span>18.2</span></a>.</p>
+<p>as shown below in <a href="#fig-chi0">Figure&nbsp;<span>18.2</span></a>.</p>
 <div id="fig-chi0" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi0.png" class="lightbox" title="In the Analyses Tab select Frequencies and click on the x2  test of association." data-gallery="quarto-lightbox-gallery-2"><img src="images/chi0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.2: In the Analyses Tab select Frequencies and click on the x<sup>2 </sup> test of association.</figcaption><p></p>
+<figure class="figure"><p><a href="images/chi0.png" class="lightbox" title="In the menu at the top, choose Analyses > Frequencies  > x2  test of association." data-gallery="quarto-lightbox-gallery-3"><img src="images/chi0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.2: In the menu at the top, choose Analyses &gt; Frequencies <a href="images/freq_icon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/freq_icon.png" width="35" height="33" class="figure-img"></a> &gt; x<sup>2 </sup> test of association.</figcaption><p></p>
 </figure>
 </div>
-<p>The <code>Contingency Tables</code> dialogue box opens. Drag the variable <code>ulcer</code> into the <code>Rows</code> box and the variable <code>status</code> into the <code>Columns</code> box, as shown below (<a href="#fig-chi1">Figure&nbsp;<span>18.3</span></a>):</p>
+<p>The <em>Contingency Tables dialogue box</em> opens. Drag the variable <code>ulcer</code> into the <em>Rows</em> field and the variable <code>status</code> into the <em>Columns</em> field, as shown below (<a href="#fig-chi1">Figure&nbsp;<span>18.3</span></a>):</p>
 <div id="fig-chi1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi1.png" class="lightbox" title="Drag the variable ulcer into the Rows and the variable status into the Columns." data-gallery="quarto-lightbox-gallery-3"><img src="images/chi1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.3: Drag the variable <code>ulcer</code> into the <code>Rows</code> and the variable <code>status</code> into the <code>Columns</code>.</figcaption><p></p>
+<figure class="figure"><p><a href="images/chi1.png" class="lightbox" title="Contingency Tables dialogue box. Drag the variable ulcer into the Rows and the variable status into the Columns." data-gallery="quarto-lightbox-gallery-4"><img src="images/chi1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.3: Contingency Tables dialogue box. Drag the variable <strong>ulcer</strong> into the Rows and the variable <strong>status</strong> into the Columns.</figcaption><p></p>
 </figure>
 </div>
 <p><strong>A. Stacked bar plot</strong></p>
-<p>First, it is useful to plot the data as counts. In the <code>Plot</code> section, check the <code>Bar Plot</code> and <code>Stacked</code> bar type, as shown below (<a href="#fig-chi2">Figure&nbsp;<span>18.4</span></a>):</p>
+<p>First, it is useful to plot the data as counts. In the <em>Plot</em> section, check the <strong>Bar Plot</strong> and <strong>Stacked</strong> bar type, as shown below (<a href="#fig-chi2">Figure&nbsp;<span>18.4</span></a>):</p>
 <div id="fig-chi2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi2.png" class="lightbox" title="Stacked bar plot with counts (absolute frequencies)." data-gallery="quarto-lightbox-gallery-4"><img src="images/chi2.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.4: Stacked bar plot with counts (absolute frequencies).</figcaption><p></p>
+<figure class="figure"><p><a href="images/chi2.png" class="lightbox" title="Check the Bar Plot and Stacked bar type in the Plots section." data-gallery="quarto-lightbox-gallery-5"><img src="images/chi2.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.4: Check the Bar Plot and Stacked bar type in the Plots section.</figcaption><p></p>
 </figure>
 </div>
 <p>A bar plot is generated in the output on our right-hand side, as shown below (<a href="#fig-chi3">Figure&nbsp;<span>18.5</span></a>):</p>
 <div id="fig-chi3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi3.png" class="lightbox" title="Stacked bar plot with counts (absolute frequencies)." data-gallery="quarto-lightbox-gallery-5"><img src="images/chi3.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/chi3.png" class="lightbox" title="Stacked bar plot with counts (absolute frequencies)." data-gallery="quarto-lightbox-gallery-6"><img src="images/chi3.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.5: Stacked bar plot with counts (absolute frequencies).</figcaption><p></p>
 </figure>
 </div>
-<p>In practice, it is percentages we are comparing. Let’s create a stacked bar plot with percentages. In the <code>Plot</code> section, now, check the <code>Percentages</code> and <code>within rows</code>, as shown below (<a href="#fig-chi4">Figure&nbsp;<span>18.6</span></a>):</p>
+<p>In practice, it is percentages we are comparing. Let’s create a stacked bar plot with percentages. In the <em>Plot</em> section, now, check the <strong>Percentages</strong> and <strong>within rows</strong>, as shown below (<a href="#fig-chi4">Figure&nbsp;<span>18.6</span></a>):</p>
 <div id="fig-chi4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi4.png" class="lightbox" title="Select the Y-axis to present within row percentages." data-gallery="quarto-lightbox-gallery-6"><img src="images/chi4.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/chi4.png" class="lightbox" title="Select the Y-axis to present within row percentages." data-gallery="quarto-lightbox-gallery-7"><img src="images/chi4.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.6: Select the Y-axis to present within row percentages.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig-chi5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi5.png" class="lightbox" title="Stacked bar plot with row percentages." data-gallery="quarto-lightbox-gallery-7"><img src="images/chi5.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/chi5.png" class="lightbox" title="Stacked bar plot with row percentages." data-gallery="quarto-lightbox-gallery-8"><img src="images/chi5.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.7: Stacked bar plot with row percentages.</figcaption><p></p>
 </figure>
 </div>
 <p>Just from the plot in <a href="#fig-chi5">Figure&nbsp;<span>18.7</span></a>, death from melanoma in the ulcerated tumor (Present) group is around 45% and in the non-ulcerated (Absent) group around 15%. The number of patients included in the study is not huge, however, this still looks like a real difference given its effect size.</p>
 <p><strong>B. Contingency Table</strong></p>
-<p>We will create a contingency <code>2x2</code> table with row percentages and the expected counts for the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died). In the <code>Cells</code> section, check the <code>Row</code> and <code>Expected counts</code> boxes, as shown below (<a href="#fig-chi6">Figure&nbsp;<span>18.8</span></a>):</p>
+<p>We will create a contingency <code>2x2</code> table with row percentages and the expected counts for the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died). In the <em>Cells</em> section, tick the <strong>Row</strong> and <strong>Expected counts</strong> boxes, as shown below (<a href="#fig-chi6">Figure&nbsp;<span>18.8</span></a>):</p>
 <div id="fig-chi6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi6.png" class="lightbox" title="Select row percentages and expected counts." data-gallery="quarto-lightbox-gallery-8"><img src="images/chi6.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/chi6.png" class="lightbox" title="Select row percentages and expected counts." data-gallery="quarto-lightbox-gallery-9"><img src="images/chi6.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.8: Select row percentages and expected counts.</figcaption><p></p>
 </figure>
 </div>
 <p>We present the generated contingency table in <a href="#fig-chi7">Figure&nbsp;<span>18.9</span></a>:</p>
 <div id="fig-chi7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi7.png" class="lightbox" title="Contingency table of ulcer and status." data-gallery="quarto-lightbox-gallery-9"><img src="images/chi7.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.9: Contingency table of ulcer and status.</figcaption><p></p>
+<figure class="figure"><p><a href="images/chi7.png" class="lightbox" title="Contingency table of ulcer and status." data-gallery="quarto-lightbox-gallery-10"><img src="images/chi7.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.9: Contingency table of <strong>ulcer</strong> and <strong>status</strong>.</figcaption><p></p>
 </figure>
 </div>
 <p>From the raw frequencies, there seems to be a large difference, as we noted in <a href="#fig-chi5">Figure&nbsp;<span>18.7</span></a>. The proportion of patients with ulcerated tumors who die equals to 46% compared with non-ulcerated tumors 14%.</p>
 <p>Additionally, as we observe in <a href="#fig-chi7">Figure&nbsp;<span>18.9</span></a> the assumption of chi-square test is fulfilled (all the expected counts are greater than 5; green cells).</p>
+</section><section id="chi-square-test" class="level3"><h3 class="anchored" data-anchor-id="chi-square-test">Chi-square test</h3>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -400,7 +409,7 @@ Chi-square test
 <div class="callout-body-container callout-body">
 <p>Finally, we see the results of the chi-square test.</p>
 <div id="fig-chi8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi8.png" class="lightbox" title="Table with the results of chi-square test." data-gallery="quarto-lightbox-gallery-10"><img src="images/chi8.png" class="img-fluid figure-img" style="width:45.0%"></a></p>
+<figure class="figure"><p><a href="images/chi8.png" class="lightbox" title="Table with the results of chi-square test." data-gallery="quarto-lightbox-gallery-11"><img src="images/chi8.png" class="img-fluid figure-img" style="width:45.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.10: Table with the results of chi-square test.</figcaption><p></p>
 </figure>
 </div>
@@ -409,61 +418,52 @@ Chi-square test
 </div>
 <p><strong>Interpretation</strong></p>
 <p>There is evidence for an association between the ulcer and status (reject <span class="math inline">\(H_0\)</span>). The proportion of patients with ulcerated tumors who died (46%) is significant larger compared with non-ulcerated tumors (14%) (p-value &lt;0.001).</p>
-<div class="callout-important callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Risk and Odds ratio
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>&nbsp;</p>
+</section></section><section id="risk-ratio-rr-and-odds-ratio-or" class="level2" data-number="18.3"><h2 data-number="18.3" class="anchored" data-anchor-id="risk-ratio-rr-and-odds-ratio-or">
+<span class="header-section-number">18.3</span> Risk ratio (RR) and Odds ratio (OR)</h2>
 <p>First we need to reshape the contingency table. Double click on the variable name <code>ulcer</code> and change the order of levels using the (up/down) arrows as follows (<a href="#fig-chi9">Figure&nbsp;<span>18.11</span></a>):</p>
 <div id="fig-chi9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi9.png" class="lightbox" title="Reorder the levels of the variable ulcer." data-gallery="quarto-lightbox-gallery-11"><img src="images/chi9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/chi9.png" class="lightbox" title="Reorder the levels of the variable ulcer." data-gallery="quarto-lightbox-gallery-12"><img src="images/chi9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.11: Reorder the levels of the variable ulcer.</figcaption><p></p>
 </figure>
 </div>
 <p>Similarly, change the order of levels for the variable <code>status</code> (<a href="#fig-chi10">Figure&nbsp;<span>18.12</span></a>):</p>
 <div id="fig-chi10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi10.png" class="lightbox" title="Reorder the levels of the variable status." data-gallery="quarto-lightbox-gallery-12"><img src="images/chi10.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/chi10.png" class="lightbox" title="Reorder the levels of the variable status." data-gallery="quarto-lightbox-gallery-13"><img src="images/chi10.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.12: Reorder the levels of the variable status.</figcaption><p></p>
 </figure>
 </div>
 <p>The reshaped table follows:</p>
 <div id="fig-chi11" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi11.png" class="lightbox" title="The reshaped contingency 2x2 table" data-gallery="quarto-lightbox-gallery-13"><img src="images/chi11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<figure class="figure"><p><a href="images/chi11.png" class="lightbox" title="The reshaped contingency 2x2 table" data-gallery="quarto-lightbox-gallery-14"><img src="images/chi11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.13: The reshaped contingency 2x2 table</figcaption><p></p>
 </figure>
 </div>
-<p>In the <code>Statistics</code> section, check the <code>Relative risk</code>, <code>Odds ratio</code> and <code>Condidence intervals</code> boxes, as follows (<a href="#fig-chi12">Figure&nbsp;<span>18.14</span></a>):</p>
+<p>In the <em>Statistics</em> section, check the <strong>Relative risk</strong>, <strong>Odds ratio</strong> and <strong>Condidence intervals</strong> boxes, as follows (<a href="#fig-chi12">Figure&nbsp;<span>18.14</span></a>):</p>
 <div id="fig-chi12" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi12.png" class="lightbox" title="Select the relative risk, odds ratio and 95% condidence intervals." data-gallery="quarto-lightbox-gallery-14"><img src="images/chi12.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figure class="figure"><p><a href="images/chi12.png" class="lightbox" title="Select the relative risk, odds ratio and 95% condidence intervals." data-gallery="quarto-lightbox-gallery-15"><img src="images/chi12.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.14: Select the relative risk, odds ratio and 95% condidence intervals.</figcaption><p></p>
 </figure>
 </div>
-<p><strong>Risk Ratio</strong></p>
+<section id="risk-ratio-or-relative-risk" class="level3"><h3 class="anchored" data-anchor-id="risk-ratio-or-relative-risk">Risk ratio (or relative risk)</h3>
 <p>First, we calculate the risk ratio (RR) of the 2x2 table in <a href="#fig-chi11">Figure&nbsp;<span>18.13</span></a> by hand:</p>
 <p><span class="math display">\[ Risk \ Ratio = \frac{\frac{41}{90}}{\frac{16}{115}} =\frac{0.4556}{0.1391} = 3.27\]</span> Using Jamovi we get the following output (<a href="#fig-chi13">Figure&nbsp;<span>18.15</span></a>):</p>
 <div id="fig-chi13" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi13.png" class="lightbox" title="The relative risk with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-15"><img src="images/chi13.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.15: The relative risk with 95% condidence intervals.</figcaption><p></p>
+<figure class="figure"><p><a href="images/chi13.png" class="lightbox" title="The risk ratio (relative risk) with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-16"><img src="images/chi13.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18.15: The risk ratio (relative risk) with 95% condidence intervals.</figcaption><p></p>
 </figure>
 </div>
-<p>The risk of dying is 3.27 (95% CI: 1.97, 5.44) times higher for patients with ulcerated tumors compared to non-ulcerated tumors. Note that the 95% confidence interval of the RR <strong>does not include</strong> the hypothesized null value of 1.</p>
-<p><strong>Odds Ratio</strong></p>
+<p>The <strong>risk</strong> of dying is <strong>3.27 times higher</strong> for patients with ulcerated tumors compared to non-ulcerated tumors. Note that the 95% confidence interval of the RR (1.97, 5.44) <strong>does not include</strong> the hypothesized <strong>null value of 1</strong>.</p>
+</section><section id="odds-ratio" class="level3"><h3 class="anchored" data-anchor-id="odds-ratio">Odds Ratio</h3>
 <p>Next, let’s calculate the odds ratio of the 2x2 table in <a href="#fig-chi11">Figure&nbsp;<span>18.13</span></a> by hand:</p>
 <p><span class="math display">\[ Odds \ Ratio = \frac{\frac{41}{49}}{\frac{16}{99}} =\frac{0.837}{0.162} = 5.18\]</span></p>
 <p>Using Jamovi we get the following output (<a href="#fig-chi14">Figure&nbsp;<span>18.16</span></a>):</p>
 <div id="fig-chi14" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi14.png" class="lightbox" title="The odds ratio with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-16"><img src="images/chi14.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<figure class="figure"><p><a href="images/chi14.png" class="lightbox" title="The odds ratio with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-17"><img src="images/chi14.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;18.16: The odds ratio with 95% condidence intervals.</figcaption><p></p>
 </figure>
 </div>
-<p>The odds of dying is 5.18 (95% CI: 2.65, 10.13) times higher for patients with ulcerated tumors compared to non-ulcerated tumors patients. Note that the 95% confidence interval of the OR <strong>does not include</strong> the hypothesized null value of 1.</p>
-</div>
-</div>
+<p>The <strong>odds</strong> of dying is <strong>5.18 times higher</strong> for patients with ulcerated tumors compared to non-ulcerated tumors patients. Note that the 95% confidence interval of the OR (2.65, 10.13) <strong>does not include</strong> the hypothesized <strong>null value of 1</strong>.</p>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -592,7 +592,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true});</script>
 
 
 </body></html>

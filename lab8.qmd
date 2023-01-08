@@ -29,11 +29,11 @@ If we want to see whether there's an association between two categorical variabl
 
 We will use the "Survival from Malignant Melanoma" dataset named "meldata". The data consist of measurements made on patients with malignant melanoma, a type of skin cancer. Each patient had their tumor removed by surgery at the Department of Plastic Surgery, University Hospital of Odense, Denmark, between 1962 and 1977.
 
-Open the dataset named `meldata` from the file tab in the menu:
+Open the dataset named "meldata" from the file tab in the menu:
 
 ![The meldata dataset](images/chi_data.png){#fig-chi_data width="85%"}
 
-The dataset `meldata` includes 205 patients and has seven variables. We are intrested in association between the binary variables `ulcer` (Absent/Present) and `satus` (Alive/Died)(@fig-chi_data).
+The dataset "meldata" includes 205 patients and has seven variables. We are interested in association between the binary variables `ulcer` (Absent/Present) and `satus` (Alive/Died)(@fig-chi_data).
 
 ### Research question
 
@@ -44,8 +44,8 @@ We are interested in the association between tumor ulceration and death from mel
 ::: {.callout-note icon="false"}
 ## Null hypothesis and alternative hypothesis
 
--   $H_0$: There is no association between the two categorical variables (they are independent). In other words, there is no difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors ($p_{ulcerated} = p_{non-ulcertaed}$).
--   $H_1$: There is association between the two categorical variables (they are dependent). In other words, there is difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors ($p_{ulcerated} \neq p_{non-ulcertaed}$).
+-   $H_0$: There is no association between the two categorical variables (they are independent). In other words, there is no difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors ($p_{ulcerated} = p_{non-ulcertaed}$). Also RR=1, OR=1.
+-   $H_1$: There is association between the two categorical variables (they are dependent). In other words, there is difference in the proportion of patients with ulcerated tumors who die compared with non-ulcerated tumors ($p_{ulcerated} \neq p_{non-ulcertaed}$). Also RR≠1, OR≠1.
 :::
 
 ### Assumption
@@ -60,32 +60,32 @@ We are interested in the association between tumor ulceration and death from mel
 
 ### Explore the data with plots and tables
 
-We select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(Frequencies) -.-> C(Contingency Tables \nIndependent Samples \nx<sup>2 </sup> test of association)
 ```
 
-from the top menu, as shown below in @fig-chi0.
+as shown below in @fig-chi0.
 
-![In the Analyses Tab select Frequencies and click on the x<sup>2 </sup> test of association.](images/chi0.png){#fig-chi0 width="75%"}
+![In the menu at the top, choose Analyses \> Frequencies ![](images/freq_icon.png){width="35" height="33"} \> x<sup>2 </sup> test of association.](images/chi0.png){#fig-chi0 width="75%"}
 
-The `Contingency Tables` dialogue box opens. Drag the variable `ulcer` into the `Rows` box and the variable `status` into the `Columns` box, as shown below (@fig-chi1):
+The *Contingency Tables dialogue box* opens. Drag the variable `ulcer` into the *Rows* field and the variable `status` into the *Columns* field, as shown below (@fig-chi1):
 
-![Drag the variable `ulcer` into the `Rows` and the variable `status` into the `Columns`.](images/chi1.png){#fig-chi1 width="75%"}
+![Contingency Tables dialogue box. Drag the variable **ulcer** into the Rows and the variable **status** into the Columns.](images/chi1.png){#fig-chi1 width="75%"}
 
 **A. Stacked bar plot**
 
-First, it is useful to plot the data as counts. In the `Plot` section, check the `Bar Plot` and `Stacked` bar type, as shown below (@fig-chi2):
+First, it is useful to plot the data as counts. In the *Plot* section, check the **Bar Plot** and **Stacked** bar type, as shown below (@fig-chi2):
 
-![Stacked bar plot with counts (absolute frequencies).](images/chi2.png){#fig-chi2 width="70%"}
+![Check the Bar Plot and Stacked bar type in the Plots section.](images/chi2.png){#fig-chi2 width="70%"}
 
 A bar plot is generated in the output on our right-hand side, as shown below (@fig-chi3):
 
 ![Stacked bar plot with counts (absolute frequencies).](images/chi3.png){#fig-chi3 width="65%"}
 
-In practice, it is percentages we are comparing. Let's create a stacked bar plot with percentages. In the `Plot` section, now, check the `Percentages` and `within rows`, as shown below (@fig-chi4):
+In practice, it is percentages we are comparing. Let's create a stacked bar plot with percentages. In the *Plot* section, now, check the **Percentages** and **within rows**, as shown below (@fig-chi4):
 
 ![Select the Y-axis to present within row percentages.](images/chi4.png){#fig-chi4 width="65%"}
 
@@ -95,17 +95,21 @@ Just from the plot in @fig-chi5, death from melanoma in the ulcerated tumor (Pre
 
 **B. Contingency Table**
 
-We will create a contingency `2x2` table with row percentages and the expected counts for the binary variables `ulcer` (Absent/Present) and `satus` (Alive/Died). In the `Cells` section, check the `Row` and `Expected counts` boxes, as shown below (@fig-chi6):
+We will create a contingency `2x2` table with row percentages and the expected counts for the binary variables `ulcer` (Absent/Present) and `satus` (Alive/Died). In the *Cells* section, tick the **Row** and **Expected counts** boxes, as shown below (@fig-chi6):
 
 ![Select row percentages and expected counts.](images/chi6.png){#fig-chi6 width="65%"}
 
 We present the generated contingency table in @fig-chi7:
 
-![Contingency table of ulcer and status.](images/chi7.png){#fig-chi7 width="65%"}
+![Contingency table of **ulcer** and **status**.](images/chi7.png){#fig-chi7 width="65%"}
 
 From the raw frequencies, there seems to be a large difference, as we noted in @fig-chi5. The proportion of patients with ulcerated tumors who die equals to 46% compared with non-ulcerated tumors 14%.
 
 Additionally, as we observe in @fig-chi7 the assumption of chi-square test is fulfilled (all the expected counts are greater than 5; green cells).
+
+
+
+### Chi-square test
 
 ::: {.callout-note icon="false"}
 ## Chi-square test
@@ -121,11 +125,12 @@ Since p\<0.001, there is evidence for an association between the ulcer and statu
 
 There is evidence for an association between the ulcer and status (reject $H_0$). The proportion of patients with ulcerated tumors who died (46%) is significant larger compared with non-ulcerated tumors (14%) (p-value \<0.001).
 
-::: {.callout-important icon="false"}
-## Risk and Odds ratio
+ 
+
+
+## Risk ratio (RR) and Odds ratio (OR)
 
 First we need to reshape the contingency table. Double click on the variable name `ulcer` and change the order of levels using the (up/down) arrows as follows (@fig-chi9):
-
 
 ![Reorder the levels of the variable ulcer.](images/chi9.png){#fig-chi9 width="65%"}
 
@@ -137,25 +142,23 @@ The reshaped table follows:
 
 ![The reshaped contingency 2x2 table](images/chi11.png){#fig-chi11 width="55%"}
 
-
-In the `Statistics` section, check the `Relative risk`, `Odds ratio` and `Condidence intervals` boxes, as follows (@fig-chi12):
+In the *Statistics* section, check the **Relative risk**, **Odds ratio** and **Condidence intervals** boxes, as follows (@fig-chi12):
 
 ![Select the relative risk, odds ratio and 95% condidence intervals.](images/chi12.png){#fig-chi12 width="65%"}
 
 
-**Risk Ratio**
+### Risk ratio (or relative risk)
 
 First, we calculate the risk ratio (RR) of the 2x2 table in @fig-chi11 by hand:
 
-$$ Risk \ Ratio = \frac{\frac{41}{90}}{\frac{16}{115}} =\frac{0.4556}{0.1391} = 3.27$$
-Using Jamovi we get the following output (@fig-chi13):
+$$ Risk \ Ratio = \frac{\frac{41}{90}}{\frac{16}{115}} =\frac{0.4556}{0.1391} = 3.27$$ Using Jamovi we get the following output (@fig-chi13):
 
-![The relative risk with 95% condidence intervals.](images/chi13.png){#fig-chi13 width="55%"}
+![The risk ratio (relative risk) with 95% condidence intervals.](images/chi13.png){#fig-chi13 width="55%"}
 
-The risk of dying is 3.27 (95\% CI: 1.97, 5.44) times higher for patients with ulcerated tumors compared to non-ulcerated tumors. Note that the 95% confidence interval of the RR **does not include** the hypothesized null value of 1.
+The **risk** of dying is **3.27  times higher** for patients with ulcerated tumors compared to non-ulcerated tumors. Note that the 95% confidence interval of the RR (1.97, 5.44) **does not include** the hypothesized **null value of 1**.
 
 
-**Odds Ratio**
+### Odds Ratio
 
 Next, let's calculate the odds ratio of the 2x2 table in @fig-chi11 by hand:
 
@@ -166,5 +169,5 @@ Using Jamovi we get the following output (@fig-chi14):
 ![The odds ratio with 95% condidence intervals.](images/chi14.png){#fig-chi14 width="55%"}
 
 
-The odds of dying is 5.18 (95% CI: 2.65, 10.13) times higher for patients with ulcerated tumors compared to non-ulcerated tumors patients. Note that the 95% confidence interval of the OR **does not include** the hypothesized null value of 1.
-:::
+The **odds** of dying is **5.18  times higher** for patients with ulcerated tumors compared to non-ulcerated tumors patients. Note that the 95% confidence interval of the OR (2.65, 10.13) **does not include** the hypothesized **null value of 1**.
+

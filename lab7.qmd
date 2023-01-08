@@ -33,15 +33,15 @@ One-way analysis of variance, usually referred to as one-way ANOVA, is a statist
 
 ### Opening the file
 
-Open the dataset named `dataDWL` from the file tab in the menu:
+Open the dataset named "dataDWL" from the file tab in the menu:
 
 ![The dataDWL dataset](images/dataDWL.png){#fig-dataDWL width="85%"}
 
-The dataset `dataDWL` has 60 participants and includes two variables (@fig-dataDWL). The numeric `WeightLoss` variable and the `Diet` variable (with levels "A", "B", "C" and "D").
+The dataset "dataDWL" has 60 participants and includes two variables (@fig-dataDWL). The numeric `WeightLoss` variable and the `Diet` variable (with levels `A`, `B`, `C` and `D`).
 
 ### Research question
 
-Consider the example of the variations between weight loss according to four different types of diet (A, B, C, and D). The question that may be asked is: does the average weight loss (units in kg) differ according to the diet?
+Consider the example of the variations between weight loss according to four different types of diet (`A`, `B`, `C`, and `D`). The question that may be asked is: does the average weight loss (units in kg) differ according to the diet?
 
 ### Hypothesis Testsing for the ANOVA test
 
@@ -65,28 +65,30 @@ Consider the example of the variations between weight loss according to four dif
 
 The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test) and for equality of variances (e.g., Levene's test) can be used.
 
-We select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-from the top menu, as shown below in @fig-diet0.
+as shown below in @fig-diet0.
 
-![In the Analyses Tab select Exploration and click on Descriptives.](images/diet0.png){#fig-diet0 width="75%"}
 
-The `Descriptives` dialogue box opens. Drag the variable `WeightLoss` into the `Variables` box and split it by the `Diet` variable. Additionally, select `Variable across rows`, as shown below (@fig-diet1):
+![In the menu at the top, choose Analyses \> Exploration ![](images/explor_icon.png){width="35" height="33"} \> Descriptives.](images/diet0.png){#fig-diet0 width="75%"}
 
-![Split the variable WeightLoss by Diet group](images/diet1.png){#fig-diet1 width="75%"}
 
-We can now select the relevant descriptive statistics such as `Percantiles`, `Skewness`, `Kurtosis` and the `Shapiro-Wilk` test from the `Statistics` section (@fig-descriptives13):
+The *Descriptives dialogue box* opens. Drag the variable `WeightLoss` into the *Variables* field and *split* it by the `Diet` variable. Additionally, select **Variable across rows**, as shown below (@fig-diet1):
+
+![Split the variable **WeightLoss** by **Diet** group and select Variables across rows.](images/diet1.png){#fig-diet1 width="75%"}
+
+We can now select the relevant descriptive statistics such as **Percantiles**, **Skewness**, **Kurtosis** and the **Shapiro-Wilk** test from the *Statistics* section (@fig-descriptives13):
 
 ![In the Statistics section select the descriptive statistics of interest.](images/descriptives13.png){#fig-descriptives13 width="70%"}
 
 Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (@fig-diet2):
 
-![Descriptive statistics of WeightLoss by Diet group (click on image to zoom in).](images/diet2.png){#fig-diet2}
+![Descriptive statistics of **WeightLoss** by **Diet** group (click on figure to zoom in).](images/diet2.png){#fig-diet2}
 
 The means are close to medians and the standard deviations are also similar indicating normal distributions for all groups. Additionally, both shape measures, skewness and (excess) kurtosis, have values in the acceptable range \[-1, 1\] which indicate symmetric and mesokurtic distributions, respectively.
 
@@ -103,13 +105,13 @@ $H_{1}$: the data tested are not normally distributed.
 -   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
 :::
 
-Then we can check the `Density` from `Histograms` in the `Plot` section, as shown below (@fig-plots_density):
+Then we can check the **Density** box from *Histograms* in the *Plot* section, as shown below (@fig-plots_density):
 
-![In the Plot section select Density from Histograms.](images/plots_density.png){#fig-plots_density width="75%"}
+![In the Plots section select Density from Histograms.](images/plots_density.png){#fig-plots_density width="75%"}
 
 A graph (@fig-diet3) is generated in the output window on our right-hand side:
 
-![The Density plot of WeightLoss for each Diet.](images/diet3.png){#fig-diet3 width="70%"}
+![The Density plot of **WeightLoss** for each **Diet**.](images/diet3.png){#fig-diet3 width="70%"}
 
 The above density plots show that the data are close to symmetry and the assumption of a normal distribution is reasonable for all diet groups.
 
@@ -122,62 +124,78 @@ The second assumption that should be satisfied is the homogeneity of variance. W
 ### Run the ANOVA test
 
 ::: {.callout-note icon="false"}
-# Perform a ANOVA test
+# Perform ANOVA in Jamovi
 
-We will perform ANOVA to test the null hypothesis that the mean WeightLoss is the same for all diet groups.
+We will perform ANOVA to test the null hypothesis that the mean `WeightLoss` is the same for all `Diet` groups.
 
-We select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(ANOVA) -.-> C(One-Way ANOVA)
 ```
 
-![Conducting ANOVA test.](images/diet4.png){#fig-diet4 width="75%"}
+as shown below in @fig-diet4.
 
-The `One-Way ANOVA` dialogue box opens. Drag and drop the numeric variable `WeightLoss` to Dependent Variables and the independent variable `Diet` to Grouping Variable, as shown below @fig-diet5:
+![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses \> ANOVA ![](images/anova_icon.png){width="35" height="33"} \> One-Way ANOVA.](images/diet4.png){#fig-diet4 width="75%"}
 
-![One-Way ANOVA dialogue box](images/diet5.png){#fig-diet5 width="75%"}
+The *One-Way ANOVA dialogue box* opens. Drag and drop the `WeightLoss` to Dependent Variables field and the `Diet` to Grouping Variable, as shown below @fig-diet5:
 
-We observe that we can select between the following two Tests: Welch's test (the default), or Fisher's test. At the moment, we keep the default choice. Moreover, from `Additional Statistics` check the `Descriptive`, and `Descriptive plots` boxes. Finally, from `Assumption Checks` tick the `Homogeneity test`. We will end up with the following screen:
+![One-Way ANOVA dialogue box. Drag the **WeightLoss** into the Dependent Variables field and the **Diet** into the Grouping Variable field.](images/diet5.png){#fig-diet5 width="75%"}
+
+We observe that we can select between the following two Tests: Welch's test (the default), or Fisher's test. At the moment, we keep the default choice. Moreover, from **Additional Statistics** check the **Descriptive** and **Descriptive plots** boxes. Finally, from **Assumption Checks** tick the **Homogeneity test** box. We will end up with the following screen:
 
 ![Additional statistics and tests.](images/diet6.png){#fig-diet6 width="75%"}
+:::
 
-First, we look at the table of `Levene's test` for equality of variances (@fig-diet7):
+
+First, we look at the table of **Levene's test** for equality of variances (@fig-diet7):
 
 ![Levene's test.](images/diet7.png){#fig-diet7 width="60%"}
 
 ::: callout-important
 # Remember: Hypothesis testing for Levene's test for equality of variances
 
-$H_{0}$: the variances of WeightLoss in all groups are equal
+$H_{0}$: the variances of `WeightLoss` in all groups are equal ($σ^2_A=σ^2_B=σ^2_C=σ^2_D$)
 
-$H_{1}$: the variances of WeightLoss differ between groups
+$H_{1}$: the variances of `WeightLoss` differ between groups ($σ^2_i\neq σ^2_j$, where $i,j= A, B, C, D$ and $i\neq j$)
 
 -   If p − value \< 0.05, reject the null hypothesis, $H_{0}$.
 -   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
 :::
 
-Since p = 0.583 \> 0.05, the $H_0$ of the Levene's test is not rejected and **we have to perform the Fisher's test (assume equal variances)** (@fig-diet8). (NOTE: If the $p \geq 0.05$, then the population variances of WeightLoss in all groups are assumed equal).
+Since p = 0.583 \> 0.05, the $H_0$ of the Levene's test is not rejected and we have to perform the **Fisher's test** which assumes equal variances (@fig-diet8). So, let's tick on the **Assume equal (Fisher's)** box. (NOTE: If the $p \geq 0.05$, then the population variances of `WeightLoss` in all groups are assumed equal).
 
 ![Fisher's ANOVA test.](images/diet8.png){#fig-diet8 width="75%"}
 
-If the assumption of equal variances is not satisfied (Levene's test gives p \< 0.05, reject $H_0$), the Welch's test should be used from the available Tests in Jamovi (@fig-diet8).
+::: {.callout-important icon="false"}
+## ANOVA test (Welch's option)
+
+If the assumption of equal variances is not satisfied (Levene's test gives p \< 0.05, reject $H_0$), the Welch's option of ANOVA should be used from the available Tests in Jamovi (@fig-diet8).
+
+:::
+
 
 Next, we can inspect again the results in the group descriptives table (@fig-diet9) and pertinent plots (@fig-diet9):
 
-![Group descriptives.](images/diet9.png){#fig-diet9 width="65%"}
+![Group descriptive statistics.](images/diet9.png){#fig-diet9 width="65%"}
 
 ![Plot of mean (95% CI) of WeightLoss by Diet.](images/diet10.png){#fig-diet10 width="55%"}
 
-Finally, we present the results of the Fisher's ANOVA test in the table of the @fig-diet11:
+From the @fig-diet10 we observe that the participants following the diet C have on average the higher weight loss. 
+
+
+Finally, we present the results of the Fisher's ANOVA test in the table of @fig-diet11:
 
 ![The results of the Fisher's ANOVA test.](images/diet11.png){#fig-diet11 width="55%"}
 
-In @fig-diet11, F= 6.12 indicates the obtained F-statistic= (variation between sample means $/$ variation within the samples). Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 3 and 56, respectively (numarator: variation between sample means; denominator: variation within the samples).
+In @fig-diet11, F= 6.12 indicates the F-statistic:
+
+$$F= \frac{variation \ between \ sample \ means}{variation \ within \ the \ samples}$$ 
+
+Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 3 and 56, respectively.
 
 The p-value=0.001 is less than 0.05 (reject $H_0$ of the ANOVA test). **There is at least one diet with mean weight loss which is different from the other means**.
-:::
 
  
 
@@ -186,19 +204,19 @@ The p-value=0.001 is less than 0.05 (reject $H_0$ of the ANOVA test). **There is
 ::: {.callout-note icon="false"}
 # Perform post-hoc tests
 
-A **significant** one-way ANOVA is generally followed by post-hoc tests to perform multiple pairwise comparisons between groups. From the `One-Way ANOVA` dialogue click on `Post-Hoc Tests` bar. We have got the following two options:
+A **significant** one-way ANOVA is generally followed by post-hoc tests to perform multiple pairwise comparisons between groups. From the *One-Way ANOVA dialogue box* click on *Post-Hoc Tests* section. We have got the following two options:
 
 -   Games-Howell (unequal variances)
 
 -   Tukey (equal variances)
 
-Based on the result of Levene's test (p = 0.583 \> 0.05, the $H_0$ is not rejected) (@fig-diet7), we should select the Tukey (equal variances) post-hoc test. Additionally, check the `Flag significant comparisons` as shown below (@fig-diet12):
+Based on the result of Levene's test (p = 0.583 \> 0.05, the $H_0$ is not rejected) (@fig-diet7), we should select the **Tukey (equal variances)** post-hoc test. Additionally, check the **Flag significant comparisons** as shown below (@fig-diet12):
 
-![Select the appropriate post-hoc test.](images/diet12.png){#fig-diet12 width="70%"}
+![Select the appropriate post-hoc test. For equal variances the Tukey post hoc test.](images/diet12.png){#fig-diet12 width="70%"}
 
 Once we have selected our post-hoc test, a table will appear in the output window on our right-hand side, as shown below (@fig-diet13):
 
-![Table with the results of the post-hoc tests.](images/diet13.png){#fig-diet13 width="70%"}
+![Table with the results of the Tukey post-hoc test.](images/diet13.png){#fig-diet13 width="70%"}
 
 **Interpretation**
 
@@ -213,11 +231,11 @@ The Kruskal-Wallis test is a rank-based non-parametric alternative to the one-wa
 
 ### Opening the file
 
-Open the dataset named `dataVO2` from the file tab in the menu:
+Open the dataset named "dataVO2" from the file tab in the menu:
 
 ![The dataVO2 dataset](images/dataVO2.png){#fig-dataVO2 width="85%"}
 
-The dataset `dataVO2` includes 30 participants and has two variables. The numeric `VO2max` variable and the `sport` variable (with levels "rowers", "runners", and "triathletes").
+The dataset "dataVO2" includes 30 participants and has two variables. The numeric `VO2max` variable and the `sport` variable (with levels `rowers`, `runners`, and `triathletes`).
 
 ### Research question
 
@@ -237,24 +255,24 @@ We want to compare the VO2max in three different sports (runners, rowers, and tr
 
 The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test).
 
-We select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-from the top menu, as shown below in @fig-athletes0.
+as shown below in @fig-athletes0.
 
-![In the Analyses Tab select Exploration and click on Descriptives.](images/athletes0.png){#fig-athletes0 width="75%"}
+![In the menu at the top, choose Analyses \> Exploration ![](images/explor_icon.png){width="35" height="33"} \> Descriptives.](images/athletes0.png){#fig-athletes0 width="75%"}
 
-The Descriptives dialogue box opens. Drag the variable `VO2max` into the `Variables` box and split it by the `VO2max` variable. Additionally, select `Variable across rows`, as shown below (@fig-athletes1):
+The *Descriptives dialogue box* opens. Drag the variable `VO2max` into the `Variables` field and split it by the `VO2max` variable. Additionally, select **Variable across rows**, as shown below (@fig-athletes1):
 
-![Split the variable VO2max by sport group.](images/athletes1.png){#fig-athletes1 width="75%"}
+![The Descriptives dialogue box. Split the variable VO2max by sport group and select Variable across rows.](images/athletes1.png){#fig-athletes1 width="75%"}
 
-We can now select the relevant descriptive statistics such as `Percantiles`, `Skewness`, `Kurtosis` and the `Shapiro-Wilk` test from the `Statistics` section (@fig-descriptives13):
+We can now select the relevant descriptive statistics such as **Percantiles**, **Skewness**, **Kurtosis** and the **Shapiro-Wilk** test from the *Statistics* section (@fig-descriptives13):
 
-![In the Statistics section select the descriptive statistics of interest.](images/descriptives13.png){width="70%"}
+![Select the descriptive statistics of interest from the Statistics section.](images/descriptives13.png){width="70%"}
 
 Once we have selected our descriptive statistics, a table will appear in the output window on our right-hand side, as shown below (@fig-athletes2):
 
@@ -262,13 +280,13 @@ Once we have selected our descriptive statistics, a table will appear in the out
 
 The sample size is relative small. Moreover, the skewness=1.51 and the kurtosis=1.6 for the triathletes are out of the range of -1 and 1 indicating non-normal distribution. We can also see that the data for the triathletes is not normally distributed (p=0.023 \<0.05) according to the Shapiro-Wilk test.
 
-Next, in the `Plots` section we can visualize the distribution of VO2max for the three groups. Check the boxes of `Box Plot`, `Violin`, `Data` and `Mean` from `Box Plots`, as shown below (@fig-athletes3):
+Next, in the *Plots* section we can visualize the distribution of `VO2max` for the three groups. From **Box Plots** choices tick the boxes of **Box Plot**, **Violin**, **Data** and **Mean**, as shown below (@fig-athletes3):
 
-![In the Plot section select Box Plots.](images/athletes3.png){#fig-athletes3 width="75%"}
+![In the Plot section tick the boxes of Box Plots.](images/athletes3.png){#fig-athletes3 width="75%"}
 
 A graph (@fig-athletes4) is generated in the output window on our right-hand side:
 
-![In the Plots section select Density from Histograms.](images/athletes4.png){#fig-athletes4 width="70%"}
+![Box-violin plot graph.](images/athletes4.png){#fig-athletes4 width="70%"}
 
 The above figure shows that the data in triathletes group have some outliers. Additionally, we can observe that the runners group seems to have the largest VO2max.
 
@@ -279,29 +297,33 @@ By considering all of the information together (small samples, graphs, normality
 ### Run the Kruskal-Wallis test
 
 ::: {.callout-note icon="false"}
-# Perform a Kruskal-Wallis test
+# Perform Kruskal-Wallis test in Jamovi
 
-We will perform Kruskal-Wallis to test the null hypothesis that the median $VO2_{max}$ is the same for all sports.
+We will perform Kruskal-Wallis test to decide about the null hypothesis that the median $VO2_{max}$ is the same for all sports.
 
-We select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(ANOVA) -.-> C(Non-Parametric \nOne-Way ANOVA  \nKruskal-Wallis)
 ```
 
-![Conducting Kruskal-Wallis test.](images/athletes5.png){#fig-athletes5 width="75%"}
+as shown below in @fig-athletes5.
 
-The `One-Way ANOVA (Non-parametric)` dialogue box opens. Drag and drop the numeric variable `VO2max` to Dependent Variables and the independent variable `sport` to Grouping Variable, as shown below @fig-athletes6:
+![Conducting Kruskal-Wallis test in Jamovi. In the menu at the top, choose Analyses \> ANOVA ![](images/anova_icon.png){width="35" height="33"} \> One-Way ANOVA Kruskal-Wallis.](images/athletes5.png){#fig-athletes5 width="75%"}
 
-![One-Way ANOVA (Non-parametric) dialogue box](images/athletes6.png){#fig-athletes6 width="75%"}
+The *One-Way ANOVA (Non-parametric) dialogue box* opens. Drag and drop the numeric variable `VO2max` to Dependent Variables and the independent variable `sport` to Grouping Variable, as shown below @fig-athletes6:
+
+![One-Way ANOVA (Non-parametric) dialogue box. Drag and drop the VO2max into Dependent Variables and the sport into Grouping Variable. ](images/athletes6.png){#fig-athletes6 width="75%"}
+
+:::
+
 
 The results of the Kruskal-Wallis test are presented in the table of the @fig-athletes7:
 
 ![The results of the Kruskal-Wallis test.](images/athletes7.png){#fig-athletes7 width="45%"}
 
-The p-value (\<0.001) is lower than 0.05. There is at least one sport in which the VO2max is different from the others.
-:::
+The p-value (\<0.001) is lower than 0.05. **There is at least one sport in which the VO2max is different from the others**.
 
  
 

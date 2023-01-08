@@ -25,13 +25,13 @@ When we have finished this Lab, we should be able to:
 
  
 
-In this Lab, we will use the data from `LungCapacity` dataset.(**Note:** This starts by assuming we know how to get data into Jamovi).
+In this Lab, we will use the data from "LungCapacity" dataset.(**Note:** This starts by assuming we know how to get data into Jamovi).
 
 ### Opening the file
 
 Open the dataset named "LungCapacity" from the file tab in the menu:
 
-![The "LungCapacity" dataset.](images/lungcap.png){#fig-lungcap1 width=85%}
+![The "LungCapacity" dataset.](images/lungcap.png){#fig-lungcap1 width="85%"}
 
 The dataset "LungCapacity" has 725 participants and includes three variables. The numeric variables of interest are the `Age` and the `LungCap` (@fig-lungcap1). Double-click on the variable name `Age` and change the measure type from nominal ![](images/nominal.png){width="23" height="21"} to continuous ![](images/continuous.png){width="23" height="21"}.
 
@@ -62,12 +62,11 @@ flowchart LR
 
 as shown below in @fig-lungcap_scatter1.
 
-![In the menu at the top, choose Analyze > Exploration ![](images/explor_icon.png){width="35" height="33"} > Scatterplot.](images/lungcap_scatter1.png){#fig-lungcap_scatter1 width=85%}
+![In the menu at the top, choose Analyses \> Exploration ![](images/explor_icon.png){width="35" height="33"} \> Scatterplot.](images/lungcap_scatter1.png){#fig-lungcap_scatter1 width="85%"}
 
-The *Scatterplot dialogue box* opens (@fig-lungcap_scatter3). Transfer the `Age` and `LungCap` variables from the left-hand pane into the *X-Axis* and *Y-Axis* boxes on the right-hand side, respecteively, by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}). Alternatively, drag and drop the variables. Finally, from **Marginals** click on the "**Densities**" radio button. We will end up with the following screen:
+The *Scatterplot dialogue box* opens (@fig-lungcap_scatter3). Transfer the `Age` and `LungCap` variables from the left-hand pane into the *X-Axis* and *Y-Axis* fields on the right-hand side, respectively, by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}). Alternatively, drag and drop the variables. Finally, from **Marginals** click on the "**Densities**" radio button. We will end up with the following screen:
 
 ![The Scatterplot dialogue box options.](images/lungcap_scatter3.png){#fig-lungcap_scatter3 width="500" height="442"}
-
 
 The resulting graph looks like this (@fig-lungcap_scatter4):
 
@@ -92,15 +91,15 @@ flowchart LR
 
 as shown below in @fig-lungcap_scatter5.
 
-![In the menu at the top, choose Analyses > Regression ![](images/reg_icon.png){width="35" height="33"} > Correlation Matrix.](images/lungcap_scatter5.png){#fig-lungcap_scatter5 width=85%}
+![In the menu at the top, choose Analyses \> Regression ![](images/reg_icon.png){width="35" height="33"} \> Correlation Matrix.](images/lungcap_scatter5.png){#fig-lungcap_scatter5 width="85%"}
 
-The *Correlation Matrix dialogue box* opens (@fig-lungcap_scatter7). Transfer both `Age` and `LungCap` variables from the left-hand pane into the right-hand pane by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}). Additionally, from the *Correlation Coefficients* section we can select between the following three: Pearson's, Spearman, or Kendall's coefficient. We keep the default choice of "**Pearson**". Finally, from **Additional Options** check "**Flag significant correlations**" and the "**Confidence Intervals**" boxes. We will end up with the following screen:
+The *Correlation Matrix dialogue box* opens (@fig-lungcap_scatter7). Transfer both `Age` and `LungCap` variables from the left-hand pane into the right-hand pane by highlighting the variables and pressing the Arrow Button (![](images/right_arrow.png){width="23" height="21"}). Additionally, from the *Correlation Coefficients* choices we can select between the following three options: Pearson's, Spearman, or Kendall's coefficient. We keep the default choice of "**Pearson**". Finally, from **Additional Options** check "**Flag significant correlations**" and the "**Confidence Intervals**" boxes. We will end up with the following screen:
 
-![The Correlation Matrix dialogue box options.](images/lungcap_scatter7.png){#fig-lungcap_scatter7 width=65%}
+![The Correlation Matrix dialogue box options. Drag and drop the **Age** and **LungCap** into the right-hand pane. Check the boxes of interest in the additional options.](images/lungcap_scatter7.png){#fig-lungcap_scatter7 width="65%"}
 
 The output table should look like the following (@fig-lungcap_cortable):
 
-![The correlation matrix table. ](images/lungcap_cortable.png){#fig-lungcap_cortable width=50%}
+![The correlation matrix table.](images/lungcap_cortable.png){#fig-lungcap_cortable width="50%"}
 
 ::: {.callout-note icon="false"}
 ## Interpretation of the results

@@ -60,14 +60,14 @@ Note A score of 0--7 in HDRS is generally accepted to be within the normal range
 
 The distributions can be explored visually with appropriate plots. Additionally, summary statistics and significance tests to check for normality (e.g., Shapiro-Wilk test) and for equality of variances (e.g., Levene's test) can be used.
 
-We select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-from the top menu, as shown below in @fig-hdrs0.
+as shown below in @fig-hdrs0.
 
 ![In the Analyses Tab select Exploration and click on Descriptives.](images/hdrs0.png){#fig-hdrs0 width="75%"}
 
@@ -221,14 +221,14 @@ First, we have to calculate the differences $d_{i}= birth\_weight_i - discharge\
 
 The distributions of the differences,$d_{i}$, can be explored with appropriate plots and summary statistics.
 
-We select:
+On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
   A(Analyses) -.-> B(Exploration) -.-> C(Descriptives)
 ```
 
-from the top menu, as shown below in @fig-weight0.
+as shown below in @fig-weight0.
 
 ![In the Analyses Tab select Exploration and click on Descriptives.](images/weight0.png){#fig-weight0 width="75%"}
 
