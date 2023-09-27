@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.4.322">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Introduction to Medical Statistics with Jamovi - 1&nbsp; Introduction</title>
 <style>
@@ -14,14 +14,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -35,8 +36,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -65,6 +65,11 @@ div.csl-indent {
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -74,213 +79,236 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
-}</script><script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.26/datatables.js"></script><script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="site_libs/dt-ext-scroller-1.12.1/css/scroller.dataTables.min.css" rel="stylesheet">
-<script src="site_libs/dt-ext-scroller-1.12.1/js/dataTables.scroller.min.js"></script><link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.29/datatables.js"></script><script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script><link href="site_libs/dt-ext-scroller-1.13.4/css/scroller.dataTables.min.css" rel="stylesheet">
+<script src="site_libs/dt-ext-scroller-1.13.4/js/dataTables.scroller.min.js"></script><link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./introduction.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/bougioukas/medstatsjamovi" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Medical Statistics</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Medical Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
+  <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
+  <a href="./inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
+  <a href="./two_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
+  <a href="./more_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
+  <a href="./linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Jamovi LAB</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
+  <a href="./lab4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
+  <a href="./lab7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
+  <a href="./lab8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
+  <a href="./lab9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></a>
+  <a href="./lab10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#how-to-use-this-online-textbook" id="toc-how-to-use-this-online-textbook" class="nav-link active" data-scroll-target="#how-to-use-this-online-textbook"><span class="toc-section-number">1.1</span>  How to use this online textbook</a></li>
+<li><a href="#how-to-use-this-online-textbook" id="toc-how-to-use-this-online-textbook" class="nav-link active" data-scroll-target="#how-to-use-this-online-textbook"><span class="header-section-number">1.1</span> How to use this online textbook</a></li>
   <li>
-<a href="#statistics-and-medicine" id="toc-statistics-and-medicine" class="nav-link" data-scroll-target="#statistics-and-medicine"><span class="toc-section-number">1.2</span>  Statistics and Medicine</a>
+<a href="#statistics-and-medicine" id="toc-statistics-and-medicine" class="nav-link" data-scroll-target="#statistics-and-medicine"><span class="header-section-number">1.2</span> Statistics and Medicine</a>
   <ul class="collapse">
 <li><a href="#importance-of-statistics-in-medical-field" id="toc-importance-of-statistics-in-medical-field" class="nav-link" data-scroll-target="#importance-of-statistics-in-medical-field">Importance of Statistics in Medical field</a></li>
   <li><a href="#why-use-statistics" id="toc-why-use-statistics" class="nav-link" data-scroll-target="#why-use-statistics">Why use Statistics?</a></li>
   </ul>
 </li>
   <li>
-<a href="#the-discipline-of-statistics" id="toc-the-discipline-of-statistics" class="nav-link" data-scroll-target="#the-discipline-of-statistics"><span class="toc-section-number">1.3</span>  The discipline of statistics</a>
+<a href="#the-discipline-of-statistics" id="toc-the-discipline-of-statistics" class="nav-link" data-scroll-target="#the-discipline-of-statistics"><span class="header-section-number">1.3</span> The discipline of statistics</a>
   <ul class="collapse">
 <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
   <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential Statistics</a></li>
   </ul>
 </li>
   <li>
-<a href="#data-and-variables" id="toc-data-and-variables" class="nav-link" data-scroll-target="#data-and-variables"><span class="toc-section-number">1.4</span>  Data and Variables</a>
+<a href="#data-and-variables" id="toc-data-and-variables" class="nav-link" data-scroll-target="#data-and-variables"><span class="header-section-number">1.4</span> Data and Variables</a>
   <ul class="collapse">
 <li><a href="#biomedical-data" id="toc-biomedical-data" class="nav-link" data-scroll-target="#biomedical-data">Biomedical Data</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   </ul>
 </li>
   <li>
-<a href="#types-of-data" id="toc-types-of-data" class="nav-link" data-scroll-target="#types-of-data"><span class="toc-section-number">1.5</span>  Types of Data</a>
+<a href="#types-of-data" id="toc-types-of-data" class="nav-link" data-scroll-target="#types-of-data"><span class="header-section-number">1.5</span> Types of Data</a>
   <ul class="collapse">
 <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a></li>
   <li><a href="#numerical-data" id="toc-numerical-data" class="nav-link" data-scroll-target="#numerical-data">Numerical Data</a></li>
   </ul>
 </li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"></path></svg> Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path></svg> Exercises</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./introduction.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
 </div>
 
 
@@ -288,17 +316,19 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
+
 </header><p>When we have finished this chapter, we should be able to:</p>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Learning objectives
 </div>
 </div>
@@ -316,12 +346,12 @@ Learning objectives
 <p>This online textbook includes <strong>two</strong> Parts, <strong>“Medical Statistics”</strong> and <strong>“Jamovi LAB”</strong>. For each theoretical chapter (e.g., “Descriptive Statistics”) in first part there is a practical lab with Jamovi in the second part (e.g., “Lab II:Descriptive Statistics”).</p>
 <p>Additionally, throughout this online textbook there are some inserts or callouts (colored “boxes”) that are designed to bring out some of the important information and help our learning. These inserts are distinguished by different colors:</p>
 <p><span class="math inline">\(\color{green}{Green\ color}:\)</span> Tips and notes that provide important information for a topic.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 A title
 </div>
 </div>
@@ -331,12 +361,12 @@ A title
 </div>
 <p>&nbsp;</p>
 <p><span class="math inline">\(\color{orange}{Orange\ color}:\)</span> Objectives of the chapter.</p>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Learning objectives
 </div>
 </div>
@@ -350,13 +380,13 @@ Learning objectives
 </div>
 <p>&nbsp;</p>
 <p><span class="math inline">\(\color{orange}{Orange\ color\ with\ a\ rocket\ icon}:\)</span> Additional information that can be expanded by the user (<strong>click on it</strong>).</p>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40z"></path></svg> A title
+<div class="callout-title-container flex-fill">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg> A title
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -368,12 +398,12 @@ Learning objectives
 </div>
 <p>&nbsp;</p>
 <p><span class="math inline">\(\color{#CC5500}{Deep\ Orange\ color}:\)</span> Assumptions for a statistical test.</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 A title
 </div>
 </div>
@@ -383,12 +413,12 @@ A title
 </div>
 <p>&nbsp;</p>
 <p><span class="math inline">\(\color{red}{Red\ color\ with\ an\ exclamation\ mark\ icon}:\)</span> Point caution that we should pay attention to.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 A title
 </div>
 </div>
@@ -398,12 +428,12 @@ A title
 </div>
 <p>&nbsp;</p>
 <p><span class="math inline">\(\color{blue}{Blue\ color}:\)</span> Examples provide step-by-step approaches to answering questions.</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example: A title
 </div>
 </div>
@@ -413,23 +443,23 @@ Example: A title
 </div>
 <p>&nbsp;</p>
 <p><span class="math inline">\(\color{grey}{Grey\ color}:\)</span> Exercises with embedded answers.</p>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Exercise 1.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>This is the first exercise.</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -465,9 +495,8 @@ Answer
 <div class="cell page-columns page-full" data-fig-width="9">
 <div class="cell-output-display column-screen-inset-right">
 <div id="fig-branches" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p>
-</p>
-<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+<figure class="figure"><div>
+<pre class="mermaid mermaid-js" data-label="fig-branches">flowchart LR
   
     A[Statistics]--- B[Descriptive statistics]
     A --- C[Inferential statistics]
@@ -479,31 +508,26 @@ Answer
     
     
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
 </div>
-
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: The discipline of statistics and its two branches, descriptive statistics and inferential statistics</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;1.1: The discipline of statistics and its two branches, descriptive statistics and inferential statistics</figcaption></figure>
 </div>
 </div>
 </div>
 <section id="descriptive-statistics" class="level3"><h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h3>
 <p>The methods and techniques of descriptive statistics aim at summarizing large quantities of data by a few numbers, in a way that highlights the most important numerical features of the data.</p>
-<p>Descriptive statistics include measures of frequency and measures of location and dispersion. They also include a description of the general shape of the distribution of the data. These terms will be explained in <a href="descriptive.html"><span>Chapter&nbsp;2</span></a>.</p>
+<p>Descriptive statistics include measures of frequency and measures of location and dispersion. They also include a description of the general shape of the distribution of the data. These terms will be explained in <a href="descriptive.html" class="quarto-xref"><span>Chapter&nbsp;2</span></a>.</p>
 </section><section id="inferential-statistics" class="level3"><h3 class="anchored" data-anchor-id="inferential-statistics">Inferential Statistics</h3>
-<p>Inferential statistics include estimation and hypothesis testing. They aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. We could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population (see <a href="estimation.html"><span>Chapter&nbsp;4</span></a> and <a href="inference.html"><span>Chapter&nbsp;5</span></a>).</p>
+<p>Inferential statistics include estimation and hypothesis testing. They aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. We could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population (see <a href="estimation.html" class="quarto-xref"><span>Chapter&nbsp;4</span></a> and <a href="inference.html" class="quarto-xref"><span>Chapter&nbsp;5</span></a>).</p>
 </section></section><section id="data-and-variables" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="data-and-variables">
 <span class="header-section-number">1.4</span> Data and Variables</h2>
 <section id="biomedical-data" class="level3"><h3 class="anchored" data-anchor-id="biomedical-data">Biomedical Data</h3>
 <p><strong>Biomedical data</strong> have unique features compared with data in other domains. The data may include administrative health data, biomarker data, biometric data (for example, from wearable technologies) and imaging, and may originate from many different sources, including Electronic Health Records (EHRs), clinical registries, biobanks, the internet and patient self-reports.</p>
-<p>Biomedical data can be transformed into <strong>information</strong>. This information can become <strong>knowledge</strong> if the researchers and clinicians understand it (<a href="#fig-info">Figure&nbsp;<span>1.2</span></a>).</p>
+<p>Biomedical data can be transformed into <strong>information</strong>. This information can become <strong>knowledge</strong> if the researchers and clinicians understand it (<a href="#fig-info" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-info" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/info.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="From data to knowledge."><img src="images/info.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: From data to knowledge.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;1.2: From data to knowledge.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -516,33 +540,32 @@ Answer
 </section><section id="variables" class="level3"><h3 class="anchored" data-anchor-id="variables">Variables</h3>
 <p>A <strong>variable</strong> is a quantity or property that is <strong>free to vary</strong>, or take on different values. To gain information on a variable, it is necessary to design and conduct experiments.</p>
 <p>Researchers design experiments to test if changes to one or more variables are <strong>associated</strong> with changes to another variable of interest. For example, if researchers think a new therapy is more effective than the usual care for the treatment of foot corns, they could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment. In this experiment, the type of treatment each participant received (i.e., new treatment vs.&nbsp;conventional treatment) is the <strong>independent variable</strong> (IV), while the number of patients with completely healed corns is the <strong>dependent variable</strong> (DV) or the <strong>outcome</strong> variable.</p>
-<p>In a randomized controlled trial (RCT), <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns at three months. They recorded 20 variables for 202 patients; the data are presented in the table of <a href="#fig-data_corn">Figure&nbsp;<span>1.3</span></a>:</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<p>In a randomized controlled trial (RCT), <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns at three months. They recorded 20 variables for 202 patients; the data are presented in the table of <a href="#fig-data_corn" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example: Raw data of 20 variables for 202 patients with foot corns treated with salicylic acid plasters or scalpel debridement in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div id="fig-data_corn" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><div id="htmlwidget-770b027da2369a4eaca9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-770b027da2369a4eaca9">{"x":{"filter":"none","vertical":false,"extensions":["Scroller"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202],["corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel"],["Central","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Limbrick","Limbrick","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","First Park","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Limbrick","Limbrick","Limbrick","Limbrick","Darnall","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Manor","Manor","Manor","Manor","Manor","Central","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Darnall","Darnall"],["female","female","male","female","female","female","female","male","female","male","female","male","male","female","female","male","female","male","female","male","female","male","male","female","male","female","male","female","male","female","male","female","male","female","female","male","male","female","female","female","female","male","male","female","female","male","male","male","female","male","male","male","female","female","female","female","female","female","female","female","female","male","male","female","female","male","female","female","male","male","male","female","female","female","female","female","male","male","female","female","female","male","female","male","female","male","male","female","female","female","male","female","female","male","female","female","male","male","female","female","female","male","female","male","male","female","female","male","male","female","male","female","male","male","female","male","male","male","male","female","male","male","female","male","female","female","male","female","female","female","female","male","male","male","female","male","female","female","female","female","female","female","female","female","male","male","female","female","female","female","female","male","male","male","female","female","male","female","female","female","male","female","female","female","female","female","male","male","female","female","female","male","male","female","female","female","female","female","female","male","female","female","male","male","female","male","female","female","female","male","female","male","female","female","female","female","male","male","male","male","male","male"],[1,null,3,2,1,1,1,1,1,2,1,1,3,1,3,3,3,1,2,null,2,1,3,3,2,3,1,1,2,3,1,1,3,3,3,1,2,3,2,3,2,3,3,1,3,3,1,1,2,2,1,1,3,2,3,1,3,1,3,1,1,3,3,1,3,2,2,1,1,3,1,3,3,1,3,1,2,1,1,3,1,3,1,1,1,null,2,3,1,2,2,1,1,3,1,3,null,3,1,1,2,2,3,1,2,3,3,3,2,1,1,3,1,1,2,3,1,1,3,1,3,1,3,2,1,3,null,2,3,1,1,2,1,3,3,1,3,1,3,3,3,3,1,3,3,3,3,2,1,2,1,3,2,3,1,1,3,1,1,3,2,3,3,3,2,1,3,3,2,1,3,2,3,2,3,3,3,2,3,3,2,3,2,1,1,3,2,3,3,1,3,1,3,3,1,1,1,3,3,3,3,3],[1,null,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],[77,32,39,76,69,79,70,64,73,65,33,67,36,77,30,19,66,43,79,50,44,59,63,76,77,60,55,70,80,40,50,78,43,70,44,83,69,66,65,32,90,40,36,69,37,56,53,49,42,74,76,60,69,34,38,49,57,70,45,65,36,42,64,52,65,70,45,51,41,60,65,55,60,61,57,88,69,67,89,81,76,86,69,45,42,20,88,29,84,73,27,63,64,70,83,52,31,60,58,61,77,50,73,53,84,52,68,63,54,27,64,73,46,76,61,62,63,65,65,35,78,71,55,61,71,44,39,78,73,33,61,79,72,29,61,45,35,45,47,32,46,34,86,31,59,55,52,71,70,78,80,32,69,63,52,80,73,86,65,19,74,70,44,46,85,54,40,69,85,49,49,68,44,71,47,40,68,52,42,60,76,49,84,54,70,45,68,65,33,79,68,82,75,49,76,82,68,45,47,49,62,63],[1.1,null,5.3,7.6,1.4,4.6,9,4.6,2.4,3.3,7,0.7,2,1,4,6,1,7.6,7.8,1.5,3.6,0.1,5.4,8.8,8.5,5,1,8.8,3.3,6.2,5,2.5,1.6,6,9.8,9.5,2,5.4,2,7.5,4.5,2.4,5,3.2,8.5,6,0.4,3.3,1.4,1.5,0,0.1,1,5,3.7,5.4,1.9,5.4,7.4,6.7,9.4,7,1,4,8,7.9,3,6.2,0.5,8.5,0,7.6,2.5,3.4,6.5,2.7,8.6,8.7,4.1,7,0.6,1.2,4.9,10,3.8,2.4,7.4,4.5,0,9.1,10,4.5,6.6,2.4,9.5,5,3.4,5.2,9.6,6,4.7,7.3,7.5,0,4.5,1.2,7.2,3,0,0,3.1,8.9,2.5,0.4,6.2,7.3,4.8,7.5,2.5,4,2.5,2,5.6,6.6,5,8,6.6,5.2,4.6,0,4.9,4.3,4,8.4,8,8.5,9.4,7.8,9.3,10,9.9,8.9,8,9.1,8.2,5,4.6,4.7,6.5,8,6,3.1,5.7,6.7,6.8,1.5,3,7.5,7,5.5,0,4.7,7.2,5,3.3,1,2.5,9.1,4.7,6.6,6.2,3.6,7,6,10,9.2,10,2,10,6.8,2.5,10,7.3,2.8,4.9,9,8.5,6.1,8.6,6.2,8.4,8,10,10,1,10,1,9.4,8.8,9.7,6.8,4.3],[0.796,null,0.62,0.727,0.691,1,0.796,0.796,0.727,1,0.796,1,1,0.656,0.796,0.727,0.195,0.189,0.195,0.796,0.691,1,0.62,0.264,0.727,0.796,1,0.76,0.814,0.727,0.796,0.796,0.796,0.727,0.195,0.088,0.848,0.85,1,0.62,0.727,0.691,-0.066,0.796,0.195,0.691,0.85,0.796,0.727,1,1,0.727,0.796,0.796,0.796,1,1,0.725,1,0.796,0.157,1,0.516,0.691,0.727,0.727,0.62,0.848,0.088,0.03,0.516,0.195,0.159,0.796,0.727,0.364,0.03,0.656,0.727,0.656,0.264,0.727,0.725,-0.041,0.691,0.796,0.62,0.796,0.848,0.725,1,0.796,1,0.727,0.796,0.656,0.796,0.088,1,0.691,0.656,0.088,0.796,1,0.814,0.725,-0.016,0.587,1,1,0.727,0.195,0.796,1,0.796,0.727,0.691,0.796,0.796,null,1,null,0.62,0.691,0.487,0.691,0.796,0.725,0.691,1,0.62,0.796,1,0.159,0.691,0.516,0.159,0.656,0.656,0.76,0.088,1,0.85,0.62,0.691,0.796,0.796,0.796,0.796,0.796,1,0.796,0.796,0.85,0.725,0.796,1,0.71,0.725,0.62,0.796,1,0.656,0.62,1,0.796,0.691,0.159,0.656,0.796,0.743,0.159,0.124,0.727,-0.077,0.159,0.088,1,0.088,0.796,0.796,1,0.088,0.796,1,0.195,0.76,0.691,0.691,0.796,0.088,0.76,-0.074,0.195,0.691,0.727,1,0.264,0.193,-0.077,0.691,0.85],[90,null,51,80,85,45,75,50,98,95,95,85,95,90,88,92,90,55,65,100,65,50,74,95,87,90,100,82,77,60,100,95,95,95,100,79,75,55,99,80,50,100,75,65,85,84,89,75,91,62,98,55,60,90,40,55,100,43,95,86,15,70,61,60,75,50,60,65,75,73,50,45,60,15,65,50,39,40,56,40,null,95,95,0,85,100,90,70,98,88,49,85,98,80,100,85,80,54,99,90,55,60,80,80,80,60,40,75,75,80,71,65,50,85,88,70,76,95,89,95,79,94,80,82,40,80,90,70,96,90,70,95,70,95,89,68,85,50,85,100,50,90,50,61,80,80,90,60,70,80,100,50,90,90,50,85,80,81,92,60,88,75,53,66,79,71,80,90,70,70,85,80,60,83,0,null,85,85,35,80,79,80,51,100,80,65,60,70,95,75,50,70,50,50,60,70,100,100,50,30,44,90],[6,null,6,4,4,2,3,4,1,4,4,3,4,3,2,4,6,4,4,4,4,4,4,6,2,4,4,6,4,4,2,4,6,3,4,6,1,6,4,5,2,4,4,1,4,4,4,3,4,3,4,4,4,3,4,4,2,2,3,2,4,4,4,4,4,1,4,3,4,4,6,4,2,4,4,2,4,6,4,4,6,4,2,4,4,2,4,4,2,4,4,6,5,6,2,2,2,4,3,1,4,2,4,4,1,3,1,4,4,6,6,4,1,4,4,3,3,4,4,4,4,4,4,4,2,4,4,1,4,2,4,4,6,4,4,5,4,4,1,4,4,4,2,4,4,4,4,1,2,4,6,4,2,4,4,4,4,1,4,4,5,4,4,4,4,6,4,4,1,2,4,4,6,4,4,4,4,4,4,4,2,4,4,2,3,2,4,3,4,4,4,5,5,3,4,2,6,4,4,4,4,4],[null,null,5,4,2,3,5,10,5,4,2,2,3,2,5,5,6,4,3,4,3,10,4,1,3,7,6,2,3,2,2,4,2,4,3,3,2,2,4,5,3,3,5,5,4,2,3,4,4,4,3,3,4,2,2,3,2,2,2,2,5,3,4,4,8,3,5,2,3,5,3,5,4,2,5,6,2,5,5,5,2,4,3,4,5,5,4,4,2,3,3,1,2,3,3,8,1,4,2,3,2,5,7,4,6,2,3,2,2,2,4,5,2,3,6,5,6,5,6,3,3,3,5,3,6,2,3,3,3,2,3,2,4,4,4,4,3,3,3,4,2,4,3,5,3,5,5,3,5,1,3,5,8,5,3,5,1,3,4,9,4,4,4,8,10,1,5,4,4,10,4,3,3,5,4,4,5,3,4,2,3,3,3,7,3,5,2,4,5,3,5,5,4,6,2,2,2,4,6,3,5,8],[2,null,5,0,1,2,0,10,0,4,2,0,4,1,4,5,0,4,3,4,1,10,2,1,3,6,0,2,3,2,2,2,0,4,3,2,0,2,0,3,null,1,null,0,4,2,null,2,0,0,0,0,2,null,0,3,0,null,2,1,4,null,3,4,8,1,1,0,0,2,3,3,0,0,4,6,0,4,null,3,2,3,0,4,5,0,2,4,1,2,2,0,1,2,3,4,0,0,0,null,0,2,0,1,3,0,3,1,null,null,4,5,0,null,5,3,2,2,6,0,0,0,4,0,null,2,3,3,2,null,0,0,2,null,2,1,1,2,2,2,2,4,2,3,1,6,null,0,0,2,1,0,4,4,1,5,1,3,2,null,3,2,3,5,0,null,0,3,3,3,4,3,0,3,3,3,0,3,3,0,0,1,2,null,0,null,1,4,5,0,2,0,5,5,1,1,0,4,5,3,4,10],[null,null,0,-4,-1,-1,-5,0,-5,0,0,-2,1,-1,-1,0,-6,0,0,0,-2,0,-2,0,0,-1,-6,0,0,0,0,-2,-2,0,0,-1,-2,0,-4,-2,null,-2,null,-5,0,0,null,-2,-4,-4,-3,-3,-2,null,-2,0,-2,null,0,-1,-1,null,-1,0,0,-2,-4,-2,-3,-3,0,-2,-4,-2,-1,0,-2,-1,null,-2,0,-1,-3,0,0,-5,-2,0,-1,-1,-1,-1,-1,-1,0,-4,-1,-4,-2,null,-2,-3,-7,-3,-3,-2,0,-1,null,null,0,0,-2,null,-1,-2,-4,-3,0,-3,-3,-3,-1,-3,null,0,0,0,-1,null,-3,-2,-2,null,-2,-3,-2,-1,-1,-2,0,0,-1,-2,-2,1,null,-3,-5,1,-2,-5,-4,-1,-2,0,0,0,-2,null,-1,-2,-1,-3,-10,null,-5,-1,-1,-7,0,0,-3,-2,-1,-1,-5,0,-1,-2,-3,-2,-1,null,-3,null,-1,0,0,-3,-3,-5,1,-1,-1,-1,-2,0,-1,0,-1,2],[0,null,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,null,0,null,1,0,0,null,0,1,1,1,1,0,null,1,0,1,null,0,0,0,null,0,0,0,0,0,1,1,0,0,0,1,1,0,0,1,0,null,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,null,1,0,1,0,0,1,0,0,null,null,0,0,1,null,0,0,0,0,0,1,1,1,0,1,null,0,0,0,0,null,1,1,0,null,0,0,0,0,0,0,0,0,0,0,0,0,null,1,1,0,0,1,0,0,0,0,0,0,0,null,0,0,0,0,1,null,1,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,0,null,1,null,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0],[2,null,5,0,1,2,0,10,0,4,2,0,4,1,4,5,0,4,3,4,1,10,2,1,3,6,0,2,3,2,2,2,0,4,3,2,0,2,0,3,null,1,null,0,4,2,2,2,0,0,0,0,2,null,0,3,0,null,2,1,4,null,3,4,8,1,1,0,0,2,3,3,0,0,4,6,0,4,null,3,2,3,0,4,5,0,2,4,1,2,2,0,1,2,3,4,0,0,0,null,0,2,0,1,3,0,3,1,1,3,4,5,0,0,5,3,2,2,6,0,0,0,4,0,0,2,3,3,2,null,0,0,2,null,2,1,1,2,2,2,2,4,2,3,1,6,null,0,0,2,1,0,4,4,1,5,1,3,2,7,3,2,3,5,0,null,0,3,3,3,4,3,0,3,3,3,0,3,3,0,0,1,2,3,0,null,1,4,5,0,2,0,5,5,1,1,0,4,5,3,4,10],[null,null,0,-4,-1,-1,-5,0,-5,0,0,-2,1,-1,-1,0,-6,0,0,0,-2,0,-2,0,0,-1,-6,0,0,0,0,-2,-2,0,0,-1,-2,0,-4,-2,null,-2,null,-5,0,0,-1,-2,-4,-4,-3,-3,-2,null,-2,0,-2,null,0,-1,-1,null,-1,0,0,-2,-4,-2,-3,-3,0,-2,-4,-2,-1,0,-2,-1,null,-2,0,-1,-3,0,0,-5,-2,0,-1,-1,-1,-1,-1,-1,0,-4,-1,-4,-2,null,-2,-3,-7,-3,-3,-2,0,-1,-1,1,0,0,-2,-3,-1,-2,-4,-3,0,-3,-3,-3,-1,-3,-6,0,0,0,-1,null,-3,-2,-2,null,-2,-3,-2,-1,-1,-2,0,0,-1,-2,-2,1,null,-3,-5,1,-2,-5,-4,-1,-2,0,0,0,-2,-2,-1,-2,-1,-3,-10,null,-5,-1,-1,-7,0,0,-3,-2,-1,-1,-5,0,-1,-2,-3,-2,-1,-4,-3,null,-1,0,0,-3,-3,-5,1,-1,-1,-1,-2,0,-1,0,-1,2],[0,null,0,1,1,1,1,0,1,0,0,1,0,1,1,0,1,0,0,0,1,0,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1,0,1,1,null,1,null,1,0,0,1,1,1,1,1,1,1,null,1,0,1,null,0,1,1,null,1,0,0,1,1,1,1,1,0,1,1,1,1,0,1,1,null,1,0,1,1,0,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,null,1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,1,null,1,1,1,null,1,1,1,1,1,1,0,0,1,1,1,0,null,1,1,0,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,null,1,1,1,1,0,0,1,1,1,1,1,0,1,1,1,1,1,1,1,null,1,0,0,1,1,1,0,1,1,1,1,0,1,0,1,0],[1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[0,null,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,null,0,null,1,0,0,0,0,1,1,1,1,0,null,1,0,1,null,0,0,0,null,0,0,0,0,0,1,1,0,0,0,1,1,0,0,1,0,null,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,null,1,0,1,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0,null,1,1,0,null,0,0,0,0,0,0,0,0,0,0,0,0,null,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,null,1,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,0,0,1,null,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>group<\/th>\n      <th>center<\/th>\n      <th>gender<\/th>\n      <th>smoking_history<\/th>\n      <th>no_of_corns<\/th>\n      <th>age<\/th>\n      <th>pain_baseline<\/th>\n      <th>eq5d_baseline<\/th>\n      <th>eq5d_VAS_baseline<\/th>\n      <th>index_corn_site<\/th>\n      <th>cornsize_base<\/th>\n      <th>cornsize_3<\/th>\n      <th>cornsize_change<\/th>\n      <th>cornresolved<\/th>\n      <th>cornsize_imp3<\/th>\n      <th>cornsize_change_imp<\/th>\n      <th>healed<\/th>\n      <th>healedknown<\/th>\n      <th>complete_healed<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"t","columnDefs":[{"className":"dt-center","targets":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]},{"orderable":false,"targets":0}],"scrollY":202,"scroller":true,"scrollX":true,"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script><p></p><figcaption class="figure-caption">Figure&nbsp;1.3: Table with raw data as recorded in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
-</figure>
+<figure class="figure"><div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f0e3d182d9897621e62e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f0e3d182d9897621e62e">{"x":{"filter":"none","vertical":false,"extensions":["Scroller"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202],["corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel"],["Central","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Limbrick","Limbrick","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","First Park","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Limbrick","Limbrick","Limbrick","Limbrick","Darnall","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Manor","Manor","Manor","Manor","Manor","Central","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Darnall","Darnall"],["female","female","male","female","female","female","female","male","female","male","female","male","male","female","female","male","female","male","female","male","female","male","male","female","male","female","male","female","male","female","male","female","male","female","female","male","male","female","female","female","female","male","male","female","female","male","male","male","female","male","male","male","female","female","female","female","female","female","female","female","female","male","male","female","female","male","female","female","male","male","male","female","female","female","female","female","male","male","female","female","female","male","female","male","female","male","male","female","female","female","male","female","female","male","female","female","male","male","female","female","female","male","female","male","male","female","female","male","male","female","male","female","male","male","female","male","male","male","male","female","male","male","female","male","female","female","male","female","female","female","female","male","male","male","female","male","female","female","female","female","female","female","female","female","male","male","female","female","female","female","female","male","male","male","female","female","male","female","female","female","male","female","female","female","female","female","male","male","female","female","female","male","male","female","female","female","female","female","female","male","female","female","male","male","female","male","female","female","female","male","female","male","female","female","female","female","male","male","male","male","male","male"],[1,null,3,2,1,1,1,1,1,2,1,1,3,1,3,3,3,1,2,null,2,1,3,3,2,3,1,1,2,3,1,1,3,3,3,1,2,3,2,3,2,3,3,1,3,3,1,1,2,2,1,1,3,2,3,1,3,1,3,1,1,3,3,1,3,2,2,1,1,3,1,3,3,1,3,1,2,1,1,3,1,3,1,1,1,null,2,3,1,2,2,1,1,3,1,3,null,3,1,1,2,2,3,1,2,3,3,3,2,1,1,3,1,1,2,3,1,1,3,1,3,1,3,2,1,3,null,2,3,1,1,2,1,3,3,1,3,1,3,3,3,3,1,3,3,3,3,2,1,2,1,3,2,3,1,1,3,1,1,3,2,3,3,3,2,1,3,3,2,1,3,2,3,2,3,3,3,2,3,3,2,3,2,1,1,3,2,3,3,1,3,1,3,3,1,1,1,3,3,3,3,3],[1,null,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],[77,32,39,76,69,79,70,64,73,65,33,67,36,77,30,19,66,43,79,50,44,59,63,76,77,60,55,70,80,40,50,78,43,70,44,83,69,66,65,32,90,40,36,69,37,56,53,49,42,74,76,60,69,34,38,49,57,70,45,65,36,42,64,52,65,70,45,51,41,60,65,55,60,61,57,88,69,67,89,81,76,86,69,45,42,20,88,29,84,73,27,63,64,70,83,52,31,60,58,61,77,50,73,53,84,52,68,63,54,27,64,73,46,76,61,62,63,65,65,35,78,71,55,61,71,44,39,78,73,33,61,79,72,29,61,45,35,45,47,32,46,34,86,31,59,55,52,71,70,78,80,32,69,63,52,80,73,86,65,19,74,70,44,46,85,54,40,69,85,49,49,68,44,71,47,40,68,52,42,60,76,49,84,54,70,45,68,65,33,79,68,82,75,49,76,82,68,45,47,49,62,63],[1.1,null,5.3,7.6,1.4,4.6,9,4.6,2.4,3.3,7,0.7,2,1,4,6,1,7.6,7.8,1.5,3.6,0.1,5.4,8.800000000000001,8.5,5,1,8.800000000000001,3.3,6.2,5,2.5,1.6,6,9.800000000000001,9.5,2,5.4,2,7.5,4.5,2.4,5,3.2,8.5,6,0.4,3.3,1.4,1.5,0,0.1,1,5,3.7,5.4,1.9,5.4,7.4,6.7,9.4,7,1,4,8,7.9,3,6.2,0.5,8.5,0,7.6,2.5,3.4,6.5,2.7,8.6,8.699999999999999,4.1,7,0.6,1.2,4.9,10,3.8,2.4,7.4,4.5,0,9.1,10,4.5,6.6,2.4,9.5,5,3.4,5.2,9.6,6,4.7,7.3,7.5,0,4.5,1.2,7.2,3,0,0,3.1,8.9,2.5,0.4,6.2,7.3,4.8,7.5,2.5,4,2.5,2,5.6,6.6,5,8,6.6,5.2,4.6,0,4.9,4.3,4,8.4,8,8.5,9.4,7.8,9.300000000000001,10,9.9,8.9,8,9.1,8.199999999999999,5,4.6,4.7,6.5,8,6,3.1,5.7,6.7,6.8,1.5,3,7.5,7,5.5,0,4.7,7.2,5,3.3,1,2.5,9.1,4.7,6.6,6.2,3.6,7,6,10,9.199999999999999,10,2,10,6.8,2.5,10,7.3,2.8,4.9,9,8.5,6.1,8.6,6.2,8.4,8,10,10,1,10,1,9.4,8.800000000000001,9.699999999999999,6.8,4.3],[0.796,null,0.62,0.727,0.6909999999999999,1,0.796,0.796,0.727,1,0.796,1,1,0.656,0.796,0.727,0.195,0.189,0.195,0.796,0.6909999999999999,1,0.62,0.264,0.727,0.796,1,0.76,0.8139999999999999,0.727,0.796,0.796,0.796,0.727,0.195,0.08799999999999999,0.848,0.85,1,0.62,0.727,0.6909999999999999,-0.066,0.796,0.195,0.6909999999999999,0.85,0.796,0.727,1,1,0.727,0.796,0.796,0.796,1,1,0.725,1,0.796,0.157,1,0.516,0.6909999999999999,0.727,0.727,0.62,0.848,0.08799999999999999,0.03,0.516,0.195,0.159,0.796,0.727,0.364,0.03,0.656,0.727,0.656,0.264,0.727,0.725,-0.041,0.6909999999999999,0.796,0.62,0.796,0.848,0.725,1,0.796,1,0.727,0.796,0.656,0.796,0.08799999999999999,1,0.6909999999999999,0.656,0.08799999999999999,0.796,1,0.8139999999999999,0.725,-0.016,0.587,1,1,0.727,0.195,0.796,1,0.796,0.727,0.6909999999999999,0.796,0.796,null,1,null,0.62,0.6909999999999999,0.487,0.6909999999999999,0.796,0.725,0.6909999999999999,1,0.62,0.796,1,0.159,0.6909999999999999,0.516,0.159,0.656,0.656,0.76,0.08799999999999999,1,0.85,0.62,0.6909999999999999,0.796,0.796,0.796,0.796,0.796,1,0.796,0.796,0.85,0.725,0.796,1,0.71,0.725,0.62,0.796,1,0.656,0.62,1,0.796,0.6909999999999999,0.159,0.656,0.796,0.743,0.159,0.124,0.727,-0.077,0.159,0.08799999999999999,1,0.08799999999999999,0.796,0.796,1,0.08799999999999999,0.796,1,0.195,0.76,0.6909999999999999,0.6909999999999999,0.796,0.08799999999999999,0.76,-0.074,0.195,0.6909999999999999,0.727,1,0.264,0.193,-0.077,0.6909999999999999,0.85],[90,null,51,80,85,45,75,50,98,95,95,85,95,90,88,92,90,55,65,100,65,50,74,95,87,90,100,82,77,60,100,95,95,95,100,79,75,55,99,80,50,100,75,65,85,84,89,75,91,62,98,55,60,90,40,55,100,43,95,86,15,70,61,60,75,50,60,65,75,73,50,45,60,15,65,50,39,40,56,40,null,95,95,0,85,100,90,70,98,88,49,85,98,80,100,85,80,54,99,90,55,60,80,80,80,60,40,75,75,80,71,65,50,85,88,70,76,95,89,95,79,94,80,82,40,80,90,70,96,90,70,95,70,95,89,68,85,50,85,100,50,90,50,61,80,80,90,60,70,80,100,50,90,90,50,85,80,81,92,60,88,75,53,66,79,71,80,90,70,70,85,80,60,83,0,null,85,85,35,80,79,80,51,100,80,65,60,70,95,75,50,70,50,50,60,70,100,100,50,30,44,90],[6,null,6,4,4,2,3,4,1,4,4,3,4,3,2,4,6,4,4,4,4,4,4,6,2,4,4,6,4,4,2,4,6,3,4,6,1,6,4,5,2,4,4,1,4,4,4,3,4,3,4,4,4,3,4,4,2,2,3,2,4,4,4,4,4,1,4,3,4,4,6,4,2,4,4,2,4,6,4,4,6,4,2,4,4,2,4,4,2,4,4,6,5,6,2,2,2,4,3,1,4,2,4,4,1,3,1,4,4,6,6,4,1,4,4,3,3,4,4,4,4,4,4,4,2,4,4,1,4,2,4,4,6,4,4,5,4,4,1,4,4,4,2,4,4,4,4,1,2,4,6,4,2,4,4,4,4,1,4,4,5,4,4,4,4,6,4,4,1,2,4,4,6,4,4,4,4,4,4,4,2,4,4,2,3,2,4,3,4,4,4,5,5,3,4,2,6,4,4,4,4,4],[null,null,5,4,2,3,5,10,5,4,2,2,3,2,5,5,6,4,3,4,3,10,4,1,3,7,6,2,3,2,2,4,2,4,3,3,2,2,4,5,3,3,5,5,4,2,3,4,4,4,3,3,4,2,2,3,2,2,2,2,5,3,4,4,8,3,5,2,3,5,3,5,4,2,5,6,2,5,5,5,2,4,3,4,5,5,4,4,2,3,3,1,2,3,3,8,1,4,2,3,2,5,7,4,6,2,3,2,2,2,4,5,2,3,6,5,6,5,6,3,3,3,5,3,6,2,3,3,3,2,3,2,4,4,4,4,3,3,3,4,2,4,3,5,3,5,5,3,5,1,3,5,8,5,3,5,1,3,4,9,4,4,4,8,10,1,5,4,4,10,4,3,3,5,4,4,5,3,4,2,3,3,3,7,3,5,2,4,5,3,5,5,4,6,2,2,2,4,6,3,5,8],[2,null,5,0,1,2,0,10,0,4,2,0,4,1,4,5,0,4,3,4,1,10,2,1,3,6,0,2,3,2,2,2,0,4,3,2,0,2,0,3,null,1,null,0,4,2,null,2,0,0,0,0,2,null,0,3,0,null,2,1,4,null,3,4,8,1,1,0,0,2,3,3,0,0,4,6,0,4,null,3,2,3,0,4,5,0,2,4,1,2,2,0,1,2,3,4,0,0,0,null,0,2,0,1,3,0,3,1,null,null,4,5,0,null,5,3,2,2,6,0,0,0,4,0,null,2,3,3,2,null,0,0,2,null,2,1,1,2,2,2,2,4,2,3,1,6,null,0,0,2,1,0,4,4,1,5,1,3,2,null,3,2,3,5,0,null,0,3,3,3,4,3,0,3,3,3,0,3,3,0,0,1,2,null,0,null,1,4,5,0,2,0,5,5,1,1,0,4,5,3,4,10],[null,null,0,-4,-1,-1,-5,0,-5,0,0,-2,1,-1,-1,0,-6,0,0,0,-2,0,-2,0,0,-1,-6,0,0,0,0,-2,-2,0,0,-1,-2,0,-4,-2,null,-2,null,-5,0,0,null,-2,-4,-4,-3,-3,-2,null,-2,0,-2,null,0,-1,-1,null,-1,0,0,-2,-4,-2,-3,-3,0,-2,-4,-2,-1,0,-2,-1,null,-2,0,-1,-3,0,0,-5,-2,0,-1,-1,-1,-1,-1,-1,0,-4,-1,-4,-2,null,-2,-3,-7,-3,-3,-2,0,-1,null,null,0,0,-2,null,-1,-2,-4,-3,0,-3,-3,-3,-1,-3,null,0,0,0,-1,null,-3,-2,-2,null,-2,-3,-2,-1,-1,-2,0,0,-1,-2,-2,1,null,-3,-5,1,-2,-5,-4,-1,-2,0,0,0,-2,null,-1,-2,-1,-3,-10,null,-5,-1,-1,-7,0,0,-3,-2,-1,-1,-5,0,-1,-2,-3,-2,-1,null,-3,null,-1,0,0,-3,-3,-5,1,-1,-1,-1,-2,0,-1,0,-1,2],[0,null,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,null,0,null,1,0,0,null,0,1,1,1,1,0,null,1,0,1,null,0,0,0,null,0,0,0,0,0,1,1,0,0,0,1,1,0,0,1,0,null,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,null,1,0,1,0,0,1,0,0,null,null,0,0,1,null,0,0,0,0,0,1,1,1,0,1,null,0,0,0,0,null,1,1,0,null,0,0,0,0,0,0,0,0,0,0,0,0,null,1,1,0,0,1,0,0,0,0,0,0,0,null,0,0,0,0,1,null,1,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,0,null,1,null,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0],[2,null,5,0,1,2,0,10,0,4,2,0,4,1,4,5,0,4,3,4,1,10,2,1,3,6,0,2,3,2,2,2,0,4,3,2,0,2,0,3,null,1,null,0,4,2,2,2,0,0,0,0,2,null,0,3,0,null,2,1,4,null,3,4,8,1,1,0,0,2,3,3,0,0,4,6,0,4,null,3,2,3,0,4,5,0,2,4,1,2,2,0,1,2,3,4,0,0,0,null,0,2,0,1,3,0,3,1,1,3,4,5,0,0,5,3,2,2,6,0,0,0,4,0,0,2,3,3,2,null,0,0,2,null,2,1,1,2,2,2,2,4,2,3,1,6,null,0,0,2,1,0,4,4,1,5,1,3,2,7,3,2,3,5,0,null,0,3,3,3,4,3,0,3,3,3,0,3,3,0,0,1,2,3,0,null,1,4,5,0,2,0,5,5,1,1,0,4,5,3,4,10],[null,null,0,-4,-1,-1,-5,0,-5,0,0,-2,1,-1,-1,0,-6,0,0,0,-2,0,-2,0,0,-1,-6,0,0,0,0,-2,-2,0,0,-1,-2,0,-4,-2,null,-2,null,-5,0,0,-1,-2,-4,-4,-3,-3,-2,null,-2,0,-2,null,0,-1,-1,null,-1,0,0,-2,-4,-2,-3,-3,0,-2,-4,-2,-1,0,-2,-1,null,-2,0,-1,-3,0,0,-5,-2,0,-1,-1,-1,-1,-1,-1,0,-4,-1,-4,-2,null,-2,-3,-7,-3,-3,-2,0,-1,-1,1,0,0,-2,-3,-1,-2,-4,-3,0,-3,-3,-3,-1,-3,-6,0,0,0,-1,null,-3,-2,-2,null,-2,-3,-2,-1,-1,-2,0,0,-1,-2,-2,1,null,-3,-5,1,-2,-5,-4,-1,-2,0,0,0,-2,-2,-1,-2,-1,-3,-10,null,-5,-1,-1,-7,0,0,-3,-2,-1,-1,-5,0,-1,-2,-3,-2,-1,-4,-3,null,-1,0,0,-3,-3,-5,1,-1,-1,-1,-2,0,-1,0,-1,2],[0,null,0,1,1,1,1,0,1,0,0,1,0,1,1,0,1,0,0,0,1,0,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1,0,1,1,null,1,null,1,0,0,1,1,1,1,1,1,1,null,1,0,1,null,0,1,1,null,1,0,0,1,1,1,1,1,0,1,1,1,1,0,1,1,null,1,0,1,1,0,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,null,1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,1,null,1,1,1,null,1,1,1,1,1,1,0,0,1,1,1,0,null,1,1,0,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,null,1,1,1,1,0,0,1,1,1,1,1,0,1,1,1,1,1,1,1,null,1,0,0,1,1,1,0,1,1,1,1,0,1,0,1,0],[1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[0,null,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,null,0,null,1,0,0,0,0,1,1,1,1,0,null,1,0,1,null,0,0,0,null,0,0,0,0,0,1,1,0,0,0,1,1,0,0,1,0,null,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,null,1,0,1,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0,null,1,1,0,null,0,0,0,0,0,0,0,0,0,0,0,0,null,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,null,1,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,0,0,1,null,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>group<\/th>\n      <th>center<\/th>\n      <th>gender<\/th>\n      <th>smoking_history<\/th>\n      <th>no_of_corns<\/th>\n      <th>age<\/th>\n      <th>pain_baseline<\/th>\n      <th>eq5d_baseline<\/th>\n      <th>eq5d_VAS_baseline<\/th>\n      <th>index_corn_site<\/th>\n      <th>cornsize_base<\/th>\n      <th>cornsize_3<\/th>\n      <th>cornsize_change<\/th>\n      <th>cornresolved<\/th>\n      <th>cornsize_imp3<\/th>\n      <th>cornsize_change_imp<\/th>\n      <th>healed<\/th>\n      <th>healedknown<\/th>\n      <th>complete_healed<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"t","columnDefs":[{"className":"dt-center","targets":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]},{"orderable":false,"targets":0}],"scrollY":202,"scroller":true,"scrollX":true,"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script><figcaption class="figure-caption">Figure&nbsp;1.3: Table with raw data as recorded in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption></figure>
 </div>
 </div>
 <p>In this example, the main independent variable of interest is the <code>group</code> (salicylic acid plasters Vs usual scalpel debridement) and the dependent variable is the <code>complete_healed</code> (completely healed corns at three months post-randomization).</p>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Independent Vs Dependent variables
 </div>
 </div>
@@ -554,23 +577,22 @@ Independent Vs Dependent variables
 <p>&nbsp;</p>
 </section></section><section id="types-of-data" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="types-of-data">
 <span class="header-section-number">1.5</span> Types of Data</h2>
-<p>Data in variable can be either <strong>categorical</strong> or <strong>numerical</strong> (otherwise known as qualitative and quantitative) in nature (<a href="#fig-types_data">Figure&nbsp;<span>1.4</span></a>).</p>
+<p>Data in variable can be either <strong>categorical</strong> or <strong>numerical</strong> (otherwise known as qualitative and quantitative) in nature (<a href="#fig-types_data" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-types_data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/types_data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Broad classification of the different types of data with examples."><img src="images/types_data.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.4: Broad classification of the different types of data with examples.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;1.4: Broad classification of the different types of data with examples.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -582,12 +604,12 @@ Note
 <section id="categorical-data" class="level3"><h3 class="anchored" data-anchor-id="categorical-data">Categorical Data</h3>
 <p><strong>A. Nominal Data</strong></p>
 <p><strong>Nominal categorical data</strong> are data that one can name and put into categories. They are not measured but simply <strong>counted</strong>. They often consist of <strong>unordered</strong> ‘either–or’ type observations which have two categories and are often know as <strong>binary</strong>. For example: dead or alive; cured or not cured; pregnant or not pregnant. However, nominal categorical data often can have <strong>more than two categories</strong>, for example, blood group A, B, AB, O; country of origin; ethnic group; eye color. In <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study <strong>gender</strong> is a binary variable (male or female), and the <strong>center</strong> where the the participants were treated is a nominal variable with seven levels (Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Numerical representation of categories are just codes
 </div>
 </div>
@@ -598,12 +620,12 @@ Numerical representation of categories are just codes
 <p>&nbsp;</p>
 <p><strong>Β. Ordinal Data</strong></p>
 <p>If there are more than two categories of classification it may be possible to <strong>order</strong> them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable <strong>pain</strong> where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study, the <strong>smoking history</strong> variable has three categories coded as non-smoker = 0, previous smoker = 1, and current smoker = 2. We know that someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, <strong>without further knowledge</strong> (of the current and past levels of tobacco consumption) it would be wrong to treat the codes of the categories as numerical quantities, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Collapsion of categories leads to a loss of information
 </div>
 </div>
@@ -616,12 +638,12 @@ Collapsion of categories leads to a loss of information
 <p><strong>A. Discrete (or count) Data</strong></p>
 <p><span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study recorded the number of corns each participant had at the start of the trial, since this can only be a whole number or integer value, for example, 0, 1, 2, or 3 in this trial, this is termed <strong>discrete</strong> or <strong>count</strong> data. Other examples are often counts per unit of time such as the number of deaths in a hospital per year, the number of visits to the GP in a year, or the number of attacks of asthma a person has per month. In dentistry, a common measure is the number of decayed, filled or missing teeth (DFM).</p>
 <p>The difference between discrete data and the ordinal data described earlier can be seen by considering an example of each:</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 <strong>Example: Ordinal Vs Discrete data</strong>
 </div>
 </div>
@@ -636,12 +658,12 @@ Collapsion of categories leads to a loss of information
 <p><strong>Β. Continuous (or measured) Data</strong></p>
 <p>Such data are measurements with units that can, in theory at least, <strong>take any value within a given range</strong> (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study are: age, corn size, and EQ-5D health-related quality of life questionnaire.</p>
 <p>Sometimes it is reasonable to treat discrete data as if they were continuous, at least as far as statistical analysis goes. While age is a continuous measurement, <strong>age at last birthday is discrete</strong>. In studies of adults with ages ranging from, say, 16 to 80, no harm is done in considering age in years as a continuous measurement (and this is standard practice), but for studies of pre-school children it would be better to use age in months. <strong>Heart rate</strong> (in beats per minute) is another discrete measurement that is usually regarded as continuous. Although the essential requirement for this change of status is that there should be a large number of different possible values, in practice we do not worry too much about analysing discrete measurements as if they were continuous.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Categorization of numerical data leads to a loss of information
 </div>
 </div>
@@ -657,12 +679,12 @@ Categorization of numerical data leads to a loss of information
 </div>
 </div>
 <p>&nbsp;</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Record the actual values
 </div>
 </div>
@@ -672,24 +694,24 @@ Record the actual values
 </div>
 </div>
 </section></section><section id="exercises" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="exercises">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"></path></svg> Exercises</h2>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path></svg> Exercises</h2>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Exercise 1.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Which are the main branches of statistics?</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -702,12 +724,12 @@ Answer
 </div>
 </div>
 </div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Exercise 1.2
 </div>
 </div>
@@ -715,12 +737,12 @@ Exercise 1.2
 <p><strong>A.</strong> What is the difference between dependent and independent variables?</p>
 <p><strong>B.</strong> Try to identify the independent and dependent variables in the following example study:</p>
 <p>“Examining the difference between paracetamol and aspirin in the relief of pain experienced by migraine sufferers.”</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -734,12 +756,12 @@ Answer
 </div>
 </div>
 </div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Exercise 1.3
 </div>
 </div>
@@ -751,12 +773,12 @@ Exercise 1.3
 <li>Hospitalization expenses in a hospital</li>
 <li>Assignment of a person in one of three groups in a clinical trial</li>
 </ol>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -769,12 +791,12 @@ Answer
 </div>
 </div>
 </div>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Exercise 1.4
 </div>
 </div>
@@ -786,12 +808,12 @@ Exercise 1.4
 <li>Blood cholesterol levels (mg/DL)</li>
 <li>Result of a biopsy (positive/negative)</li>
 </ol>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -806,29 +828,29 @@ Answer
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-cao2015" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-cao2015" class="csl-entry" role="listitem">
 Cao, Shiyi, Chen Yang, Yong Gan, and Zuxun Lu. 2015. <span>“The Health Effects of Passive Smoking: An Overview of Systematic Reviews Based on Observational Epidemiological Evidence.”</span> Edited by Yan Li. <em>PLOS ONE</em> 10 (10): e0139907. <a href="https://doi.org/10.1371/journal.pone.0139907">https://doi.org/10.1371/journal.pone.0139907</a>.
 </div>
-<div id="ref-doll2004" class="csl-entry" role="doc-biblioentry">
+<div id="ref-doll2004" class="csl-entry" role="listitem">
 Doll, Richard, Richard Peto, Jillian Boreham, and Isabelle Sutherland. 2004. <span>“Mortality in Relation to Smoking: 50 Years’ Observations on Male British Doctors.”</span> <em>BMJ</em> 328 (7455): 1519. <a href="https://doi.org/10.1136/bmj.38142.554479.ae">https://doi.org/10.1136/bmj.38142.554479.ae</a>.
 </div>
-<div id="ref-enstrom2003" class="csl-entry" role="doc-biblioentry">
+<div id="ref-enstrom2003" class="csl-entry" role="listitem">
 Enstrom, J. E. 2003. <span>“Environmental Tobacco Smoke and Tobacco Related Mortality in a Prospective Study of Californians, 1960-98.”</span> <em>BMJ</em> 326 (7398): 1057–50. <a href="https://doi.org/10.1136/bmj.326.7398.1057">https://doi.org/10.1136/bmj.326.7398.1057</a>.
 </div>
-<div id="ref-farndon2013" class="csl-entry" role="doc-biblioentry">
+<div id="ref-farndon2013" class="csl-entry" role="listitem">
 Farndon, Lisa J, Wesley Vernon, Stephen J Walters, Simon Dixon, Mike Bradburn, Michael Concannon, and Julia Potter. 2013. <span>“The Effectiveness of Salicylic Acid Plasters Compared with <span>‘Usual’</span> Scalpel Debridement of Corns: A Randomised Controlled Trial.”</span> <em>Journal of Foot and Ankle Research</em> 6 (1): 40. <a href="https://doi.org/10.1186/1757-1146-6-40">https://doi.org/10.1186/1757-1146-6-40</a>.
 </div>
-<div id="ref-hansen2010" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hansen2010" class="csl-entry" role="listitem">
 Hansen, Tine W., Lutgarde Thijs, Yan Li, Jose'Boggia, Masahiro Kikuya, Kristina Bjor̈klund-Bodega, Tom Richart, et al. 2010. <span>“Prognostic Value of Reading-to-Reading Blood Pressure Variability Over 24 Hours in 8938 Subjects From 11 Populations.”</span> <em>Hypertension</em> 55 (4): 1049–57. <a href="https://doi.org/10.1161/hypertensionaha.109.140798">https://doi.org/10.1161/hypertensionaha.109.140798</a>.
 </div>
-<div id="ref-osullivan1999" class="csl-entry" role="doc-biblioentry">
+<div id="ref-osullivan1999" class="csl-entry" role="listitem">
 O’Sullivan, J J, G Derrick, P Griggs, R Foxall, M Aitkin, and C Wren. 1999. <span>“Ambulatory Blood Pressure in Schoolchildren.”</span> <em>Archives of Disease in Childhood</em> 80 (6): 529–32. <a href="https://doi.org/10.1136/adc.80.6.529">https://doi.org/10.1136/adc.80.6.529</a>.
 </div>
-<div id="ref-Rigby2004" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Rigby2004" class="csl-entry" role="listitem">
 Rigby, Alan S, Gillian K Armstrong, Michael J Campbell, and Nick Summerton. 2004. <span>“A Survey of Statistics in Three UK General Practice Journal.”</span> <em>BMC Medical Research Methodology</em> 4 (1). <a href="https://doi.org/10.1186/1471-2288-4-28">https://doi.org/10.1186/1471-2288-4-28</a>.
 </div>
-<div id="ref-strasak2007" class="csl-entry" role="doc-biblioentry">
+<div id="ref-strasak2007" class="csl-entry" role="listitem">
 Strasak, Alexander M, Qamruz Zaman, Gerhard Marinell, Karl P Pfeiffer, and Hanno Ulmer. 2007. <span>“The Use of Statistics in Medical Research.”</span> <em>The American Statistician</em> 61 (1): 47–55. <a href="https://doi.org/10.1198/000313007x170242">https://doi.org/10.1198/000313007x170242</a>.
 </div>
 </div>
@@ -859,9 +881,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -873,17 +909,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -893,8 +945,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -909,24 +970,231 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -934,7 +1202,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -956,9 +1224,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
+    <div class="nav-footer-left">
+<p>Copyright 2022, Konstantinos I. Bougioukas</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","loop":true,"selector":".lightbox","closeEffect":"zoom"});</script>
 
 
 </body></html>

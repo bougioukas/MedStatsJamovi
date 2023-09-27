@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.4.322">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Introduction to Medical Statistics with Jamovi - 4&nbsp; Estimation and Confidence Intervals</title>
 <style>
@@ -14,7 +14,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -46,6 +46,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -55,175 +60,198 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/bougioukas/medstatsjamovi" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Medical Statistics</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Medical Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
+  <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
+  <a href="./inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
+  <a href="./two_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
+  <a href="./more_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
+  <a href="./linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Jamovi LAB</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
+  <a href="./lab4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
+  <a href="./lab7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
+  <a href="./lab8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
+  <a href="./lab9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></a>
+  <a href="./lab10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li>
-<a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"><span class="toc-section-number">4.1</span>  Estimation of population parametres</a>
+<a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"><span class="header-section-number">4.1</span> Estimation of population parametres</a>
   <ul class="collapse">
 <li><a href="#population-and-parameters" id="toc-population-and-parameters" class="nav-link" data-scroll-target="#population-and-parameters">Population and parameters</a></li>
   <li><a href="#sample-and-sample-statistics" id="toc-sample-and-sample-statistics" class="nav-link" data-scroll-target="#sample-and-sample-statistics">Sample and sample statistics</a></li>
@@ -231,26 +259,26 @@ ul.task-list li input[type="checkbox"] {
   </ul>
 </li>
   <li>
-<a href="#sample-distribution-vs-sampling-distribution" id="toc-sample-distribution-vs-sampling-distribution" class="nav-link" data-scroll-target="#sample-distribution-vs-sampling-distribution"><span class="toc-section-number">4.2</span>  Sample Distribution vs Sampling Distribution</a>
+<a href="#sample-distribution-vs-sampling-distribution" id="toc-sample-distribution-vs-sampling-distribution" class="nav-link" data-scroll-target="#sample-distribution-vs-sampling-distribution"><span class="header-section-number">4.2</span> Sample Distribution vs Sampling Distribution</a>
   <ul class="collapse">
 <li><a href="#sample-distribution" id="toc-sample-distribution" class="nav-link" data-scroll-target="#sample-distribution">Sample Distribution</a></li>
   <li><a href="#sampling-distribution" id="toc-sampling-distribution" class="nav-link" data-scroll-target="#sampling-distribution">Sampling Distribution</a></li>
   </ul>
 </li>
-  <li><a href="#what-is-standard-error-se-of-the-mean" id="toc-what-is-standard-error-se-of-the-mean" class="nav-link" data-scroll-target="#what-is-standard-error-se-of-the-mean"><span class="toc-section-number">4.3</span>  What is Standard Error (SE) of the mean?</a></li>
+  <li><a href="#what-is-standard-error-se-of-the-mean" id="toc-what-is-standard-error-se-of-the-mean" class="nav-link" data-scroll-target="#what-is-standard-error-se-of-the-mean"><span class="header-section-number">4.3</span> What is Standard Error (SE) of the mean?</a></li>
   <li>
-<a href="#central-limit-theorem-clm" id="toc-central-limit-theorem-clm" class="nav-link" data-scroll-target="#central-limit-theorem-clm"><span class="toc-section-number">4.4</span>  Central Limit Theorem (CLM)</a>
+<a href="#central-limit-theorem-clm" id="toc-central-limit-theorem-clm" class="nav-link" data-scroll-target="#central-limit-theorem-clm"><span class="header-section-number">4.4</span> Central Limit Theorem (CLM)</a>
   <ul class="collapse">
 <li><a href="#a-hypothetical-population" id="toc-a-hypothetical-population" class="nav-link" data-scroll-target="#a-hypothetical-population">A hypothetical population</a></li>
   <li><a href="#the-sampling-distribution-of-the-means" id="toc-the-sampling-distribution-of-the-means" class="nav-link" data-scroll-target="#the-sampling-distribution-of-the-means">The Sampling Distribution of the means</a></li>
   </ul>
 </li>
-  <li><a href="#the-confidence-intervals" id="toc-the-confidence-intervals" class="nav-link" data-scroll-target="#the-confidence-intervals"><span class="toc-section-number">4.5</span>  The confidence intervals</a></li>
+  <li><a href="#the-confidence-intervals" id="toc-the-confidence-intervals" class="nav-link" data-scroll-target="#the-confidence-intervals"><span class="header-section-number">4.5</span> The confidence intervals</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></h1>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></h1>
 </div>
 
 
@@ -258,9 +286,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
+
 
 </header><section id="estimation-of-population-parametres" class="level2 page-columns page-full" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="estimation-of-population-parametres">
 <span class="header-section-number">4.1</span> Estimation of population parametres</h2>
@@ -268,12 +298,12 @@ ul.task-list li input[type="checkbox"] {
 <p>In the statistical sense a <strong>population</strong> is a theoretical concept used to describe an entire group of individuals (not necessarily people) that share a set of characteristics. Examples are the population of all patients with diabetes mellitus, all people with depression, or the population of all middle-aged women.</p>
 <p>Researchers are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as <strong>parameters</strong>. Here, we use parameters <span class="math inline">\(μ\)</span> and <span class="math inline">\(σ^2\)</span> to denote the unknown <strong>population</strong> mean and variance respectively. For example, researchers want to know what the <strong>mean depression score</strong> for the <strong>population</strong> would be if all people with depression were treated with a new anti-depression treatment.</p>
 <p>Note that for all the distributions we discussed in the previous chapter, the population mean and variance of a random variable are related to the unknown parameters of probability distribution assumed for that random variable. Indeed, for normal distributions <span class="math inline">\(N(μ,σ^2)\)</span>, which are widely used in statistics, the population mean and variance are exactly the <strong>same</strong> parameters used to specify the distribution.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Parametric Tests
 </div>
 </div>
@@ -284,48 +314,42 @@ Parametric Tests
 <p>&nbsp;</p>
 </section><section id="sample-and-sample-statistics" class="level3"><h3 class="anchored" data-anchor-id="sample-and-sample-statistics">Sample and sample statistics</h3>
 <p>Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don’t usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a <strong>sample</strong>, a subset of the population that is intended to represent the population. In this case a <strong>sample statistic</strong> is used to estimate a population parameter (also named as <strong>point estimator</strong> since we estimate the parameter by a single value or point).</p>
-<p>In most cases, the best way to get a sample that accurately represents the population is by taking a <strong>random sample</strong> from the population (<a href="#fig-sample_param">Figure&nbsp;<span>4.1</span></a>). When selecting a random sample, each individual in the population has the <strong>same chance</strong> <strong>of being selected</strong> for the sample.</p>
+<p>In most cases, the best way to get a sample that accurately represents the population is by taking a <strong>random sample</strong> from the population (<a href="#fig-sample_param" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>). When selecting a random sample, each individual in the population has the <strong>same chance</strong> <strong>of being selected</strong> for the sample.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-sample_param" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/sample_param.png" class="lightbox" title="Parameters are referred to the population while statistics are referred to the sample." data-gallery="quarto-lightbox-gallery-1"><img src="images/sample_param.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: Parameters are referred to the population while statistics are referred to the sample.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.1: Parameters are referred to the population while statistics are referred to the sample.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
 </section><section id="using-the-sample-to-etimate-a-population-parameter" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="using-the-sample-to-etimate-a-population-parameter">Using the sample to etimate a population parameter</h3>
 <p>The researchers use the sample statistic value as an <strong>estimate</strong> of the population parameter value. The researchers are making an <strong>inference</strong> that the sample statistic is a value <strong>similar</strong> to the population parameter value based on the premise that the characteristics of those in the sample are similar to the characteristics of those in the entire population. When researchers use a sample statistic to infer the value of a population parameter, it is called <strong>inferential statistics</strong>.</p>
-<p>The process is represented schematically in <a href="#fig-estimation">Figure&nbsp;<span>4.2</span></a>. So, a sample is selected from population of interest to provide an <strong>estimate</strong> of a population parameter by using a <strong>sample statistic</strong>. If the sampling method used is random sample then we obtain an <strong>unbiased estimate</strong> of the population parameter.</p>
-<div class="cell page-columns page-full" data-fig-width="12">
+<p>The process is represented schematically in <a href="#fig-estimation" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>. So, a sample is selected from population of interest to provide an <strong>estimate</strong> of a population parameter by using a <strong>sample statistic</strong>. If the sampling method used is random sample then we obtain an <strong>unbiased estimate</strong> of the population parameter.</p>
+<div class="cell page-columns page-full" data-fig-width="12" data-layout-align="center">
 <div class="cell-output-display column-screen-inset-right">
 <div id="fig-estimation" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p>
-</p>
-<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB  
+<figure class="figure"><div>
+<pre class="mermaid mermaid-js" data-label="fig-estimation">flowchart TB  
     A((population)) -- sampling method --&gt; B((sample))
     A -.-&gt; C[Population parameter]
     B --&gt; D["point estimator &lt;br&gt; (a sample statistic)"]
     D --&gt; C
 
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
 </div>
-
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: Taking a sample of the population and using the sample to estimate a population parameter</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.2: Taking a sample of the population and using the sample to estimate a population parameter</figcaption></figure>
 </div>
 </div>
 </div>
-<p>In some circumstances the sample may consist of <strong>all the members</strong> of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The <strong>dotted arrow</strong> in <a href="#fig-estimation">Figure&nbsp;<span>4.2</span></a> connecting the population circle to population parameter box illustrates this. However, this situation will <strong>rarely</strong> be the case so, in practice, we take a sample which is often much smaller in size than the population under study.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<p>In some circumstances the sample may consist of <strong>all the members</strong> of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The <strong>dotted arrow</strong> in <a href="#fig-estimation" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> connecting the population circle to population parameter box illustrates this. However, this situation will <strong>rarely</strong> be the case so, in practice, we take a sample which is often much smaller in size than the population under study.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Estimation of population parametres
 </div>
 </div>
@@ -333,7 +357,7 @@ Estimation of population parametres
 <p><strong>Point Estimation</strong> refers to the process of guessing the unknown value of a parameter (e.g., population mean, <span class="math inline">\(\mu\)</span>) using the observed data. For this, we use a <strong>sample statistic</strong> as a <strong>point estimator</strong> of the population parameter. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, <strong>the sample mean and sample variance are statistics</strong>.</p>
 </div>
 </div>
-<p>Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in <a href="#tbl-parameters">Table&nbsp;<span>4.1</span></a>.</p>
+<p>Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in <a href="#tbl-parameters" class="quarto-xref">Table&nbsp;<span>4.1</span></a>.</p>
 <div id="tbl-parameters" class="anchored">
 <table class="table">
 <caption>Table&nbsp;4.1: Population parameters (Greek letters) and sample statistics</caption>
@@ -375,8 +399,7 @@ Estimation of population parametres
 <div class="cell-output-display">
 <div id="fig-sample1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/sample1.png" class="lightbox" title="Sample distribution of data from one sample." data-gallery="quarto-lightbox-gallery-2"><img src="images/sample1.png" class="img-fluid figure-img" style="width:20.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.3: Sample distribution of data from one sample.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.3: Sample distribution of data from one sample.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -387,17 +410,16 @@ Estimation of population parametres
 <div class="cell-output-display">
 <div id="fig-sampst" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/sampst.gif" class="lightbox" title="Sampling distribution of a statistic (e.g.&nbsp;sample mean) from many samples." data-gallery="quarto-lightbox-gallery-3"><img src="images/sampst.gif" class="img-fluid figure-img" style="width:80.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.4: Sampling distribution of a statistic (e.g.&nbsp;sample mean) from many samples.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.4: Sampling distribution of a statistic (e.g.&nbsp;sample mean) from many samples.</figcaption></figure>
 </div>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Sampling distribution
 </div>
 </div>
@@ -418,14 +440,10 @@ Sampling distribution
 <section id="a-hypothetical-population" class="level3"><h3 class="anchored" data-anchor-id="a-hypothetical-population">A hypothetical population</h3>
 <p>The importance of central limit theorem is that it works no matter the underlying distribution of the population data. The underlying population data could be noisy and central limit theorem will still hold. To illustrate this, let’s draw some data (100,000 observations):</p>
 <div class="cell">
-
-</div>
-<div class="cell">
 <div class="cell-output-display">
 <div id="fig-population" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-population-1.png" class="lightbox" title="A hypothetical population of 100,000 observations." data-gallery="quarto-lightbox-gallery-4"><img src="estimation_files/figure-html/fig-population-1.png" class="img-fluid figure-img" width="576"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.5: A hypothetical population of 100,000 observations.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.5: A hypothetical population of 100,000 observations.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -440,26 +458,22 @@ X1    1 1e+05 40.16 40.31     24   37.71 35.58   0 100   100 0.39    -1.56 0.13<
 <p>The data, we have just created above, will serve as the entire population (N=100,000) of data from which we can sample.</p>
 </section><section id="the-sampling-distribution-of-the-means" class="level3"><h3 class="anchored" data-anchor-id="the-sampling-distribution-of-the-means">The Sampling Distribution of the means</h3>
 <p>Now, what if we get 50,000 samples, each sample consisting of just 10 observations, save the means of those samples, and draw their histogram?</p>
-<div class="cell">
-
-</div>
 <p>The distribution of sample means (as a density plot) converges on a normal distribution where the provided location and scale parameters are from 50,000 sample means. Further, the center of the distribution is converging on the known population mean. The true population mean 40.16 (red dashed line) is very close to the mean of the 50,000 sample means.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-sampling_dis" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-sampling_dis-1.png" class="lightbox" title="The distribution of 50,000 sample means, each of size=10." data-gallery="quarto-lightbox-gallery-5"><img src="estimation_files/figure-html/fig-sampling_dis-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.6: The distribution of 50,000 sample means, each of size=10.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.6: The distribution of 50,000 sample means, each of size=10.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Properties of the sampling distribution of the mean
 </div>
 </div>
@@ -483,32 +497,24 @@ Properties of the sampling distribution of the mean
 <p>If the interval spreads out <span class="math inline">\(\pm 1.96\)</span> standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true but unknown population parameter.</p>
 <p>The formula for the confidence interval (CI) of mean looks like this:</p>
 <p><span id="eq-CI"><span class="math display">\[ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{\sigma}{\sqrt{n}}  \tag{4.2}\]</span></span></p>
-<p>and if the population standard deviation σ is unknown, the the sample standard deviation, sd, is used in the formula <a href="#eq-CI">Equation&nbsp;<span>4.2</span></a>:</p>
+<p>and if the population standard deviation σ is unknown, the the sample standard deviation, sd, is used in the formula <a href="#eq-CI" class="quarto-xref">Equation&nbsp;<span>4.2</span></a>:</p>
 <p><span id="eq-CI2"><span class="math display">\[ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{sd}{\sqrt{n}}  \tag{4.3}\]</span></span></p>
 <p>The real meaning of “confidence” is not evident and it must be understood from the point of view of the generating process. The confidence interval is based on the concept of repetition of the study under consideration. Thus, suppose we took many (infinite) samples from a population and built a 95% confidence interval from each sample. Then about 95% of those intervals would contain the population parameter.</p>
-<p>Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our hypothetical population (<a href="#fig-intervals1">Figure&nbsp;<span>4.7</span></a>). Each horizontal bar is a confidence interval (CI), centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line <span class="math inline">\(\mu\)</span> = 40.16). This is what we would expect using a 95% confidence level– approximately 95% of the intervals covering the population mean.</p>
-<div class="cell">
-
-</div>
+<p>Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our hypothetical population (<a href="#fig-intervals1" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>). Each horizontal bar is a confidence interval (CI), centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line <span class="math inline">\(\mu\)</span> = 40.16). This is what we would expect using a 95% confidence level– approximately 95% of the intervals covering the population mean.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-intervals1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-intervals1-1.png" class="lightbox" title="100 Sample Means of Size 10 (with 95% Intervals) from the Population." data-gallery="quarto-lightbox-gallery-6"><img src="estimation_files/figure-html/fig-intervals1-1.png" class="img-fluid figure-img" width="912"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.7: 100 Sample Means of Size 10 (with 95% Intervals) from the Population.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.7: 100 Sample Means of Size 10 (with 95% Intervals) from the Population.</figcaption></figure>
 </div>
 </div>
 </div>
-<p>Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population (<a href="#fig-intervals2">Figure&nbsp;<span>4.8</span></a>):</p>
-<div class="cell">
-
-</div>
+<p>Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population (<a href="#fig-intervals2" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>):</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-intervals2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-intervals2-1.png" class="lightbox" title="100 Sample Means of Size 50 (with 95% Intervals) from the Population." data-gallery="quarto-lightbox-gallery-7"><img src="estimation_files/figure-html/fig-intervals2-1.png" class="img-fluid figure-img" width="912"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.8: 100 Sample Means of Size 50 (with 95% Intervals) from the Population.</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;4.8: 100 Sample Means of Size 50 (with 95% Intervals) from the Population.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -542,9 +548,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -556,17 +576,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -576,8 +612,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -592,24 +637,231 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -617,7 +869,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -639,9 +891,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
+    <div class="nav-footer-left">
+<p>Copyright 2022, Konstantinos I. Bougioukas</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 </body></html>

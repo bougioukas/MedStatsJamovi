@@ -7,6 +7,7 @@ library(tidyverse)
 library(here)
 
 library(stevemisc)
+library(stevethemes)
 library(patchwork)
 
 library(gganimate)
@@ -1150,7 +1151,6 @@ The **normal Q--Q plot** shows each data value plotted against the value that wo
 
 qqnorm(data_birthweight$birthweight, pch = 1, frame = FALSE)
 qqline(data_birthweight$birthweight, col = "steelblue", lwd = 2)
-
 ```
 
 ::: {.callout-tip icon="false"}

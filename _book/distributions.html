@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.4.322">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Introduction to Medical Statistics with Jamovi - 3&nbsp; Probability Distributions - Normal distribution</title>
 <style>
@@ -14,7 +14,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -46,6 +46,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -55,175 +60,198 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
-}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./distributions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/bougioukas/medstatsjamovi" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Medical Statistics</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Medical Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
+  <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./distributions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
+  <a href="./inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
+  <a href="./two_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
+  <a href="./more_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
+  <a href="./linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Jamovi LAB</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
+  <a href="./lab4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
+  <a href="./lab7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
+  <a href="./lab8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
+  <a href="./lab9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></a>
+  <a href="./lab10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#sample-space-and-random-events" id="toc-sample-space-and-random-events" class="nav-link active" data-scroll-target="#sample-space-and-random-events"><span class="toc-section-number">3.1</span>  Sample Space and Random Events</a></li>
+<li><a href="#sample-space-and-random-events" id="toc-sample-space-and-random-events" class="nav-link active" data-scroll-target="#sample-space-and-random-events"><span class="header-section-number">3.1</span> Sample Space and Random Events</a></li>
   <li>
-<a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability"><span class="toc-section-number">3.2</span>  Probability</a>
+<a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability"><span class="header-section-number">3.2</span> Probability</a>
   <ul class="collapse">
 <li><a href="#definition-of-probability" id="toc-definition-of-probability" class="nav-link" data-scroll-target="#definition-of-probability">Definition of Probability</a></li>
   <li><a href="#fundamental-properties-of-probability" id="toc-fundamental-properties-of-probability" class="nav-link" data-scroll-target="#fundamental-properties-of-probability">Fundamental Properties of Probability</a></li>
@@ -232,9 +260,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ theorem</a></li>
   </ul>
 </li>
-  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables"><span class="toc-section-number">3.3</span>  Random Variables</a></li>
+  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables"><span class="header-section-number">3.3</span> Random Variables</a></li>
   <li>
-<a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"><span class="toc-section-number">3.4</span>  Probability distributions for Discrete Outcomes</a>
+<a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"><span class="header-section-number">3.4</span> Probability distributions for Discrete Outcomes</a>
   <ul class="collapse">
 <li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution">Bernoulli distribution</a></li>
   <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution">Binomial distribution</a></li>
@@ -242,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
   </ul>
 </li>
   <li>
-<a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"><span class="toc-section-number">3.5</span>  Probability distributions for Continuous Outcomes</a>
+<a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"><span class="header-section-number">3.5</span> Probability distributions for Continuous Outcomes</a>
   <ul class="collapse">
 <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution">Normal Distribution</a></li>
   <li><a href="#standard-normal-distribution" id="toc-standard-normal-distribution" class="nav-link" data-scroll-target="#standard-normal-distribution">Standard Normal distribution</a></li>
@@ -252,19 +280,19 @@ ul.task-list li input[type="checkbox"] {
   </ul>
 </li>
   <li>
-<a href="#descriptive-methods-for-assessing-normality" id="toc-descriptive-methods-for-assessing-normality" class="nav-link" data-scroll-target="#descriptive-methods-for-assessing-normality"><span class="toc-section-number">3.6</span>  Descriptive Methods for Assessing Normality</a>
+<a href="#descriptive-methods-for-assessing-normality" id="toc-descriptive-methods-for-assessing-normality" class="nav-link" data-scroll-target="#descriptive-methods-for-assessing-normality"><span class="header-section-number">3.6</span> Descriptive Methods for Assessing Normality</a>
   <ul class="collapse">
 <li><a href="#bell-shaped-empirical-distribution" id="toc-bell-shaped-empirical-distribution" class="nav-link" data-scroll-target="#bell-shaped-empirical-distribution">Bell-shaped Empirical Distribution</a></li>
   <li><a href="#shape-statistics-and-normality" id="toc-shape-statistics-and-normality" class="nav-link" data-scroll-target="#shape-statistics-and-normality">Shape statistics and normality</a></li>
   <li><a href="#q-q-plots" id="toc-q-q-plots" class="nav-link" data-scroll-target="#q-q-plots">Q-Q plots</a></li>
   </ul>
 </li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"></path></svg> Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path></svg> Exercises</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-distributions" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./distributions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-distributions" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></h1>
 </div>
 
 
@@ -272,9 +300,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
+
 
 </header><section id="sample-space-and-random-events" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="sample-space-and-random-events">
 <span class="header-section-number">3.1</span> Sample Space and Random Events</h2>
@@ -287,12 +317,12 @@ ul.task-list li input[type="checkbox"] {
 <p>The <strong>sample space Ω</strong> is defined as the set of <strong>all</strong> possible outcomes of the experiment. In the case of the roll of a die, the sample space can be written as the set of the six possible outcomes, Ω = {1, 2, 3, 4, 5, 6}.</p>
 <p>Different experiments will have different sample spaces that can be written in an equivalent way (flipping a coin: Ω ={H, T}, flipping two coins: Ω ={HH, HT, TH, TT}, testing for possible genotypes of a bi-allelic gene A: Ω ={AA, Aa, aa}).</p>
 <p>A <strong>random event A</strong>, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents <strong>a number</strong> of possible outcomes for the experiment. In the case of the roll of a die, the event “even number” may be represented by A = {2, 4, 6}, and the event “odd number” as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.</p>
-<div class="callout-important callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Two events always exist for an experiment
 </div>
 </div>
@@ -300,12 +330,12 @@ Two events always exist for an experiment
 <p>For each experiment, two events always exist: the <strong>sample space</strong> itself which comprises all possible outcomes and the <strong>empty set</strong> that contains no outcomes represented as <strong>A = ∅</strong> and called the impossible event.</p>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Basic types and operations of events using set theory
 </div>
 </div>
@@ -328,12 +358,12 @@ Basic types and operations of events using set theory
 <span class="header-section-number">3.2</span> Probability</h2>
 <p>The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.</p>
 <p>The first step towards determining the probability of an event is to establish a number of <strong>basic rules</strong> that capture the meaning of probability. The probability of an event is required to satisfy three <strong>axioms</strong> defined by <strong>Kolmogorov</strong>:</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 The Kolmogorov Axioms
 </div>
 </div>
@@ -347,12 +377,12 @@ The Kolmogorov Axioms
 </ol>
 </div>
 </div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example - Dice: Mutually exclusive events
 </div>
 </div>
@@ -369,24 +399,23 @@ Example - Dice: Mutually exclusive events
 <p>Consider performing an experiment a <strong>large number</strong> N of times, under the same experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:</p>
 <p><span id="eq-probability"><span class="math display">\[ P(A) = \lim_{N\to\infty} \frac{N(A)}{N} \tag{3.1}\]</span></span></p>
 <p>that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment.</p>
-<p>The obvious <strong>limitation</strong> of this definition is the need to perform the experiment a <strong>large number of times</strong>. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a <strong>coin toss</strong>: no matter the number of tosses, the occurrence of heads up <strong>will never be exactly</strong> 50%, which is what one would expect based on an empirical knowledge of the experiment at hand <a href="#fig-run">Figure&nbsp;<span>3.1</span></a>.</p>
+<p>The obvious <strong>limitation</strong> of this definition is the need to perform the experiment a <strong>large number of times</strong>. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a <strong>coin toss</strong>: no matter the number of tosses, the occurrence of heads up <strong>will never be exactly</strong> 50%, which is what one would expect based on an empirical knowledge of the experiment at hand <a href="#fig-run" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-run" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-run-1.gif" class="lightbox" title="Coin Flips Simulation showing long-term probability close to 0.5." data-gallery="quarto-lightbox-gallery-2"><img src="distributions_files/figure-html/fig-run-1.gif" class="img-fluid figure-img" style="width:100.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: Coin Flips Simulation showing long-term probability close to 0.5.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-run-1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Coin Flips Simulation showing long-term probability close to 0.5."><img src="distributions_files/figure-html/fig-run-1.gif" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Coin Flips Simulation showing long-term probability close to 0.5.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>Therefore, we may say that the probability of an event is the <strong>relative frequency</strong> of this set of outcomes over an indefinitely large number of experiments.</p>
 <p><span id="eq-probability2"><span class="math display">\[ P(A) \approx  \frac{number\ of\ times \ A\ occured}{total\ number\ of\  experiments} \tag{3.2}\]</span></span></p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Examples: Probability based on on Frequentist approach
 </div>
 </div>
@@ -399,12 +428,12 @@ Examples: Probability based on on Frequentist approach
 </div>
 <p><strong>B. Bayesian approach</strong></p>
 <p>Another method to assign probabilities is to use <strong>knowledge</strong> of the experiment, both theoretical and experimental, but without the need for extensive experimental data. The probability assigned to an event represents the <strong>degree of belief</strong> that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes’ theorem.</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example - Coin toss experiment
 </div>
 </div>
@@ -416,12 +445,12 @@ Example - Coin toss experiment
 <p>&nbsp;</p>
 </section><section id="fundamental-properties-of-probability" class="level3"><h3 class="anchored" data-anchor-id="fundamental-properties-of-probability">Fundamental Properties of Probability</h3>
 <p>The following <strong>properties</strong> are useful to assign and manipulate event probabilities.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Fundamental Properties of Probability
 </div>
 </div>
@@ -439,12 +468,12 @@ Fundamental Properties of Probability
 </div>
 </div>
 <p>&nbsp;</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example - Dice: The complement probability of the event A
 </div>
 </div>
@@ -464,12 +493,12 @@ Example - Dice: The complement probability of the event A
 <p><span id="eq-conditional"><span class="math display">\[P(A ∩ B) = P(A|B) · P(B) \tag{3.5}\]</span></span></p>
 <p>or</p>
 <p><span id="eq-conditional2"><span class="math display">\[ P(A|B)=  \frac{P(A ∩ B)}{P(B)} \tag{3.6}\]</span></span></p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example - Dice: Conditional probability
 </div>
 </div>
@@ -511,7 +540,7 @@ Example - Dice: Conditional probability
 <p>and since each combination has a probability of 1/36, <strong>P(A) = 5/36</strong>.</p>
 <p><strong>Event B</strong> is given by outcomes B={(3,1), (3,2), (3,3), (3,4), (3,5), (3, 6)}. The probability of event B is <strong>P(B) = 6/36 = 1/6</strong>.</p>
 <p>Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of <strong>(3,5)</strong> takes place, thus with probability <strong>P(A ∩ B) = 1/36</strong>.</p>
-<p>According to the definition of conditional probability <a href="#eq-conditional2">Equation&nbsp;<span>3.6</span></a>, the probability of interest is:</p>
+<p>According to the definition of conditional probability <a href="#eq-conditional2" class="quarto-xref">Equation&nbsp;<span>3.6</span></a>, the probability of interest is:</p>
 <p><span class="math inline">\(P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}\)</span></p>
 <p>Therefore, the occurrence of 3 in the first roll has <strong>increased</strong> the probability of A from P(A) = 5/36= 0.139 to P(A|B) = 1/6= 0.166.</p>
 </div>
@@ -522,13 +551,13 @@ Example - Dice: Conditional probability
 <p>On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event—e.g., the sum of both dice—depends on the first toss and the two events are not independent.</p>
 <p>Two events A and B are said to be <strong>statistically independent</strong> if:</p>
 <p><span id="eq-independent"><span class="math display">\[P(A ∩ B) = P(A) · P(B) \tag{3.7}\]</span></span></p>
-<p><a href="#eq-independent">Equation&nbsp;<span>3.7</span></a>, known as <strong>Multiplication Rule of Probability</strong>, follows directly from <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<p><a href="#eq-independent" class="quarto-xref">Equation&nbsp;<span>3.7</span></a>, known as <strong>Multiplication Rule of Probability</strong>, follows directly from <a href="#eq-conditional" class="quarto-xref">Equation&nbsp;<span>3.5</span></a>. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example - Statistical independence with dice
 </div>
 </div>
@@ -547,13 +576,13 @@ Example - Statistical independence with dice
 <p>The Bayes’ theorem can be written as:</p>
 <p><span id="eq-bayes"><span class="math display">\[P(A|B) = \frac{P(B|A)· P(A)}{P(B)} \tag{3.8}\]</span></span></p>
 <p>where A and B are events and <span class="math inline">\(P(B)\neq 0\)</span>.</p>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40z"></path></svg> Probabilities involved in Bayes’ theorem (Advanced)
+<div class="callout-title-container flex-fill">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg> Probabilities involved in Bayes’ theorem (Advanced)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -573,19 +602,19 @@ Example - Statistical independence with dice
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example - Probability of developing lung cancer for smokers
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25</p>
 <p>Further, suppose we know that if a person has lung cancer, the probability of being a smoker increases to P(SM|C) = 0.4. We are, however, interested in the probability of developing lung cancer if a person is a smoker, P(C|SM).</p>
-<p>From <a href="#eq-bayes">Equation&nbsp;<span>3.8</span></a>:</p>
+<p>From <a href="#eq-bayes" class="quarto-xref">Equation&nbsp;<span>3.8</span></a>:</p>
 <p><span class="math display">\[P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016\]</span> Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60%, (0.0016-0.001)/0.001= 0.6, higher than the overall probability of lung cancer.</p>
 </div>
 </div>
@@ -601,12 +630,12 @@ Example - Probability of developing lung cancer for smokers
 <p>Note that the total probability for the random variable is still 1. In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values. <strong>The probability rules we discussed earlier also apply to random variables</strong>. Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other’s probabilities, we say that they are independent.</p>
 <p>A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.</p>
 <p>Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 What do we need to know for a random variable?
 </div>
 </div>
@@ -629,12 +658,12 @@ What do we need to know for a random variable?
 <p>Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.</p>
 <p>A <strong>Bernoulli event</strong> is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p.&nbsp;As before, the probability for all possible values is one: P(X = 0) + P(X = 1) = 1.</p>
 <p>A <strong>Bernoulli trial</strong> is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a <strong>Bernoulli process</strong>.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Definition-Bernoulli distribution
 </div>
 </div>
@@ -651,43 +680,42 @@ Definition-Bernoulli distribution
 <p><span id="eq-bernouli3"><span class="math display">\[ \sigma= \sqrt{p(1-p)}= \sqrt{μ(μ-1)} \tag{3.11}\]</span></span></p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Bernoulli distribution: breast cancer
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>For example, let X be a random variable representing the five-year survival status of breast cancer patients, where X = 1 if the patient survived and X = 0 otherwise. Suppose that the probability of survival is p = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − p = 0.2. Then X has a Bernoulli distribution with parameter p = 0.8, and we denote this as</p>
 <p><span class="math display">\[X ∼ Bernoulli(0.8)\]</span> The pmf for this distribution is:</p>
-<p><span class="math display">\[P(X=x)={\begin{cases}0.2,&amp;for\ x=0\\0.8,&amp;for\ x=1\end{cases}}\]</span> Additionally, we can plot pmf for visualizing the distribution <a href="#fig-bern1">Figure&nbsp;<span>3.2</span></a>.</p>
+<p><span class="math display">\[P(X=x)={\begin{cases}0.2,&amp;for\ x=0\\0.8,&amp;for\ x=1\end{cases}}\]</span> Additionally, we can plot pmf for visualizing the distribution <a href="#fig-bern1" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-bern1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-bern1-1.png" class="lightbox" title="Plot of the pmf for Bernoulli(0.8) distribution." data-gallery="quarto-lightbox-gallery-4"><img src="distributions_files/figure-html/fig-bern1-1.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.2: Plot of the pmf for Bernoulli(0.8) distribution.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-bern1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Plot of the pmf for Bernoulli(0.8) distribution."><img src="distributions_files/figure-html/fig-bern1-1.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Plot of the pmf for Bernoulli(0.8) distribution.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights add up to 1.</p>
-<p>In the above example, from <a href="#eq-bernouli1">Equation&nbsp;<span>3.9</span></a> we take μ = 0.8. Therefore, we expect 80% of patients survive.</p>
-<p>From <a href="#eq-bernouli2">Equation&nbsp;<span>3.10</span></a> the variance of the random variable is <span class="math inline">\(σ^2 = 0.8 × 0.2 = 0.16\)</span>, and its standard deviation is <span class="math inline">\(σ = 0.4\)</span>. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). For comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes <span class="math inline">\(σ^2 = 0.6×(1−0.6) = 0.24\)</span>. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.</p>
+<p>In the above example, from <a href="#eq-bernouli1" class="quarto-xref">Equation&nbsp;<span>3.9</span></a> we take μ = 0.8. Therefore, we expect 80% of patients survive.</p>
+<p>From <a href="#eq-bernouli2" class="quarto-xref">Equation&nbsp;<span>3.10</span></a> the variance of the random variable is <span class="math inline">\(σ^2 = 0.8 × 0.2 = 0.16\)</span>, and its standard deviation is <span class="math inline">\(σ = 0.4\)</span>. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). For comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes <span class="math inline">\(σ^2 = 0.6×(1−0.6) = 0.24\)</span>. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.</p>
 </div>
 </div>
 <p>&nbsp;</p>
 </section><section id="binomial-distribution" class="level3"><h3 class="anchored" data-anchor-id="binomial-distribution">Binomial distribution</h3>
 <p>The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.</p>
 <p>The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of successes and failures in <span class="math inline">\(n\)</span> <strong>independent</strong> Bernoulli trials for some given value of n.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Definition-Binomial distribution
 </div>
 </div>
@@ -702,12 +730,12 @@ Definition-Binomial distribution
 <p><span id="eq-binom3"><span class="math display">\[σ = \sqrt{npq} \tag{3.15}\]</span></span></p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Binomial distribution: breast cancer
 </div>
 </div>
@@ -719,7 +747,7 @@ Example-Binomial distribution: breast cancer
 <p>Since X can be any integer number from 0 (no one survives) through 50 (everyone survives), its range is {0, 1, . . . , 50}. The range is a countable set. Therefore, the random variable X is discrete. The probability distribution of X is a binomial distribution, shown as:</p>
 <p><span class="math display">\[X ∼ Binomial(50, 0.8)\]</span></p>
 <p>The pmf of Binomial(50, 0.8) distribution specifies the probability of 0 through 50 survivals.</p>
-<p>According to <a href="#eq-binom0">Equation&nbsp;<span>3.12</span></a> we have:</p>
+<p>According to <a href="#eq-binom0" class="quarto-xref">Equation&nbsp;<span>3.12</span></a> we have:</p>
 <table class="table"><tbody>
 <tr class="odd">
 <td><strong>X</strong></td>
@@ -749,28 +777,27 @@ Example-Binomial distribution: breast cancer
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-binom1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-binom1-1.png" class="lightbox" title="Plot of the pmf for Binomial(50, 0.8) distribution." data-gallery="quarto-lightbox-gallery-5"><img src="distributions_files/figure-html/fig-binom1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.3: Plot of the pmf for Binomial(50, 0.8) distribution.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-binom1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Plot of the pmf for Binomial(50, 0.8) distribution."><img src="distributions_files/figure-html/fig-binom1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: Plot of the pmf for Binomial(50, 0.8) distribution.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probability for all possible values of the random variable is 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.</p>
 <p>Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:</p>
 <p><span class="math display">\[P(34≤X ≤ 36) = P(X = 34) + P(X = 35) + P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1\]</span></p>
-<p>For the breast cancer example and <a href="#eq-binom1">Equation&nbsp;<span>3.13</span></a>, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to <a href="#eq-binom2">Equation&nbsp;<span>3.14</span></a>, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.</p>
+<p>For the breast cancer example and <a href="#eq-binom1" class="quarto-xref">Equation&nbsp;<span>3.13</span></a>, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to <a href="#eq-binom2" class="quarto-xref">Equation&nbsp;<span>3.14</span></a>, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.</p>
 </div>
 </div>
 </section><section id="poisson-distribution" class="level3"><h3 class="anchored" data-anchor-id="poisson-distribution">Poisson distribution</h3>
 <p>So far, we have discussed the Bernoulli distribution for binary variables, and the binomial distribution for the number of times the outcome of interest (one of the two possible categories of the binary variable) occur within a set of n Bernoulli trials.</p>
 <p>While a random variable with a Binomial distribution is a count variable (e.g., number of people survived), its range is restricted to include integers from 0 through n only. For example, the number of survivals in a group of n = 50 cancer patients cannot exceed 50.</p>
 <p>Now, suppose that we are investigating the <strong>number of physician visits for each person in one year</strong>. Although very large numbers such as 100 are quite unlikely, there is no theoretical and prespecified upper limit to this random variable. Theoretically, its range is the set of all nonnegative integers.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Definition-Poisson distribution
 </div>
 </div>
@@ -781,19 +808,19 @@ Definition-Poisson distribution
 <p>The mean and variance of a random variable with Poisson(λ) distribution are the same and equal to λ. That is, μ = λ and <span class="math inline">\(σ^2 = λ\)</span>.</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Poisson distribution: physician visits
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>As an example, assume that the rate of physician visits per year is 2.5:</p>
 <p><span class="math display">\[X ∼ Poisson(2.5)\]</span> Therefore, the population mean and variance of this variable is 2.5.</p>
-<p>According to <a href="#eq-poisson1">Equation&nbsp;<span>3.17</span></a> the resulting probability table is:</p>
+<p>According to <a href="#eq-poisson1" class="quarto-xref">Equation&nbsp;<span>3.17</span></a> the resulting probability table is:</p>
 <table class="table"><tbody>
 <tr class="odd">
 <td><strong>X</strong></td>
@@ -814,13 +841,12 @@ Example-Poisson distribution: physician visits
 <td>0.03</td>
 </tr>
 </tbody></table>
-<p>The resulting plot of the pmf shows the probability of each possible value, which is any integer from 0 to infinity <a href="lab3.html#fig-poisson1">Figure&nbsp;<span>13.8</span></a>. In this case, the probability of values above 8 becomes almost 0.</p>
+<p>The resulting plot of the pmf shows the probability of each possible value, which is any integer from 0 to infinity <a href="lab3.html#fig-poisson1" class="quarto-xref">Figure&nbsp;<span>12.8</span></a>. In this case, the probability of values above 8 becomes almost 0.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-poisson1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-poisson1-1.png" class="lightbox" title="Plot of the pmf for Poisson(2.5) distribution." data-gallery="quarto-lightbox-gallery-6"><img src="distributions_files/figure-html/fig-poisson1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.4: Plot of the pmf for Poisson(2.5) distribution.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-poisson1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Plot of the pmf for Poisson(2.5) distribution."><img src="distributions_files/figure-html/fig-poisson1-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.4: Plot of the pmf for Poisson(2.5) distribution.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -835,58 +861,55 @@ Example-Poisson distribution: physician visits
 <p>Therefore, instead of talking about the probability of any specific value x for continuous random variable X, we talk about the probability that the value of the random variable is within a specific interval from x1 to x2; we show this probability as P(x1 ≤ X ≤ x2).</p>
 <p><span id="eq-continuous1"><span class="math display">\[ P(x_1\leq X \leq x_2)=\int_{x_1}^{x_2}f(x)dx  \tag{3.18}\]</span></span></p>
 <p>where f(x) is the probability density functions (pdf) of X .</p>
-<p>Clearly, in <a href="#eq-continuous1">Equation&nbsp;<span>3.18</span></a>, the probability of a certain point value in X is zero, and the area under the probability density curve of the interval (−∞, +∞) should be 1.</p>
+<p>Clearly, in <a href="#eq-continuous1" class="quarto-xref">Equation&nbsp;<span>3.18</span></a>, the probability of a certain point value in X is zero, and the area under the probability density curve of the interval (−∞, +∞) should be 1.</p>
 <section id="normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="normal-distribution">Normal Distribution</h3>
 <p>There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.</p>
-<p>A normal distribution is the familiar “bell curve” and it’s a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (<a href="#fig-normal">Figure&nbsp;<span>3.5</span></a>).</p>
+<p>A normal distribution is the familiar “bell curve” and it’s a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (<a href="#fig-normal" class="quarto-xref">Figure&nbsp;<span>3.5</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal-1.png" class="lightbox" title="The Normal probability distribution (often called Gaussian or bell-shaped distribution)." data-gallery="quarto-lightbox-gallery-7"><img src="distributions_files/figure-html/fig-normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.5: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="The Normal probability distribution (often called Gaussian or bell-shaped distribution)."><img src="distributions_files/figure-html/fig-normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.5: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption></figure>
 </div>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Definition of Normal Distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a>:</p>
+<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss" class="quarto-xref">Equation&nbsp;<span>3.19</span></a>:</p>
 <p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.19}\]</span></span></p>
 <p>where <span class="math inline">\(\pi=3.14\)</span> and <span class="math inline">\(e = 2.718\)</span>.</p>
 </div>
 </div>
-<p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.6</span></a>.</p>
+<p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal" class="quarto-xref">Figure&nbsp;<span>3.6</span></a>.</p>
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-compare_normal-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-1.png" class="lightbox" title="Effect of changing mean." data-gallery="quarto-lightbox-gallery-8"><img src="distributions_files/figure-html/fig-compare_normal-1.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(a) Effect of changing mean.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Effect of changing mean."><img src="distributions_files/figure-html/fig-compare_normal-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(a) Effect of changing mean.</figcaption></figure>
 </div>
 <div id="fig-compare_normal-2" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-2.png" class="lightbox" title="Effect of changing standard deviation." data-gallery="quarto-lightbox-gallery-9"><img src="distributions_files/figure-html/fig-compare_normal-2.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(b) Effect of changing standard deviation.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-compare_normal-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Effect of changing standard deviation."><img src="distributions_files/figure-html/fig-compare_normal-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(b) Effect of changing standard deviation.</figcaption></figure>
 </div>
 </div>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.6: Probability distribution functions of the Normal distributions with different means and standard deviations.</figcaption><p></p>
 </figure>
 </div>
 <p>&nbsp;</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Properties of Normal Distribution
 </div>
 </div>
@@ -894,9 +917,8 @@ Properties of Normal Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-normal_auc" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal_auc-1.png" class="lightbox" title="The area underneath a Normal Distribution" data-gallery="quarto-lightbox-gallery-10"><img src="distributions_files/figure-html/fig-normal_auc-1.png" class="img-fluid figure-img" width="1200"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.7: The area underneath a Normal Distribution</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-normal_auc-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="The area underneath a Normal Distribution"><img src="distributions_files/figure-html/fig-normal_auc-1.png" class="img-fluid figure-img" width="1200"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.7: The area underneath a Normal Distribution</figcaption></figure>
 </div>
 </div>
 </div>
@@ -911,12 +933,12 @@ Properties of Normal Distribution
 </div>
 </div>
 <p>&nbsp;</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Normal distribution: systolic blood pressure
 </div>
 </div>
@@ -939,55 +961,157 @@ Example-Normal distribution: systolic blood pressure
 </section><section id="standard-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="standard-normal-distribution">Standard Normal distribution</h3>
 <p>If the random variable X has a normal distribution with <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, then the standardized Normal deviate is:</p>
 <p><span id="eq-z"><span class="math display">\[ z= \frac{x-\mu}{\sigma}  \tag{3.20}\]</span></span></p>
-<p>The z (often called z-score) is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed as follows:</p>
+<p>The z (often called z-score) is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. In this case, <a href="#eq-gauss" class="quarto-xref">Equation&nbsp;<span>3.19</span></a> is transformed as follows:</p>
 <p><span id="eq-zd"><span class="math display">\[ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2}  \tag{3.21}\]</span></span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-standard_normal-1.png" class="lightbox" title="Standard Normal Distribution" data-gallery="quarto-lightbox-gallery-11"><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.8: Standard Normal Distribution</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-standard_normal-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Standard Normal Distribution"><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.8: Standard Normal Distribution</figcaption></figure>
 </div>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40z"></path></svg> Understanding the formula of Standard Normal distribution
+<div class="callout-title-container flex-fill">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:orange;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg> Understanding the formula of Standard Normal distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We can break down individual components of a z-distribution (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) and explain them until they seem more accessible.</p>
+<p>We can break down individual components of a z-distribution (<a href="#eq-z" class="quarto-xref">Equation&nbsp;<span>3.20</span></a>) and explain them until they seem more accessible.</p>
 <p><strong>First</strong>, we know from algebra that the formula <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> is a basic parabola (notice the square term). Adding a minus sign just flips the basic parabola <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> downward and we take a negative parabola <span class="math inline">\(\ -{\frac {1}{2}}z^{2}\)</span>.</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
+not found in Windows font database
+
+Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
+not found in Windows font database
+
+Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
+not found in Windows font database</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database</code></pre>
+</div>
 <div class="cell-output-display">
 <div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-basic_parabola-1.png" class="lightbox" title="(a) A basic parabola and (b) a negative parabola." data-gallery="quarto-lightbox-gallery-12"><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.9: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-basic_parabola-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="(a) A basic parabola and (b) a negative parabola."><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.9: (a) A basic parabola and (b) a negative parabola.</figcaption></figure>
 </div>
 </div>
 </div>
 <p><strong>Second</strong>, exponentiating the negative parabola (<span class="math inline">\(\  e^{-{\frac {1}{2}}z^{2}}\)</span>) makes it asymptote to 0.</p>
 <div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database
+
+Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
+family not found in Windows font database</code></pre>
+</div>
 <div class="cell-output-display">
 <div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-neg_parabola-1.png" class="lightbox" title="An exponentiated negative parabola." data-gallery="quarto-lightbox-gallery-13"><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.10: An exponentiated negative parabola.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-neg_parabola-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="An exponentiated negative parabola."><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.10: An exponentiated negative parabola.</figcaption></figure>
 </div>
 </div>
 </div>
-<p>Notice the tails in the <a href="#fig-neg_parabola">Figure&nbsp;<span>3.10</span></a> are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
+<p>Notice the tails in the <a href="#fig-neg_parabola" class="quarto-xref">Figure&nbsp;<span>3.10</span></a> are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
 <p><strong>Third</strong>, and with the above point in mind, it should be clear that <span class="math inline">\(\ {\frac {1}{{\sqrt {2\pi }}}}\)</span> will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by <span class="math inline">\(\ {\frac {1}{\sqrt {2\pi }}}\)</span> to equal about 0.398.</p>
 <p><strong>Fourth</strong>, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z.</p>
 </div>
@@ -995,33 +1119,33 @@ Example-Normal distribution: systolic blood pressure
 </div>
 <p>&nbsp;</p>
 <p>The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Diastolic Blood Pressure
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Z-scores are often used in medical settings to assess how an individual’s blood pressure compares to the mean population blood pressure.</p>
 <p>For example, the distribution of diastolic blood pressure for men is normally distributed with a mean of about 80 and a standard deviation of 20.</p>
-<p>If a certain man has a diastolic blood pressure of 100, we would calculate their z-score (<a href="#eq-zd">Equation&nbsp;<span>3.21</span></a>) to be:</p>
+<p>If a certain man has a diastolic blood pressure of 100, we would calculate their z-score (<a href="#eq-zd" class="quarto-xref">Equation&nbsp;<span>3.21</span></a>) to be:</p>
 <p><span class="math inline">\(z = \frac{(100 – 80)}{20} = 1\)</span></p>
 <p>This means that this man has a diastolic blood pressure that is 1 standard deviation above the mean.</p>
 </div>
 </div>
 <p>&nbsp;</p>
-<p>To find the area under the curve between two z-scores, <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span>, we have to integrate the pdf <a href="#eq-zd">Equation&nbsp;<span>3.21</span></a> as following:</p>
+<p>To find the area under the curve between two z-scores, <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span>, we have to integrate the pdf <a href="#eq-zd" class="quarto-xref">Equation&nbsp;<span>3.21</span></a> as following:</p>
 <p><span id="eq-integral"><span class="math display">\[ E=P(z_1\leq Z\leq z_2)={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz  \tag{3.22}\]</span></span></p>
 <p>&nbsp;</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Area under the curve
 </div>
 </div>
@@ -1030,13 +1154,12 @@ Example-Area under the curve
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-area" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-area-1.png" class="lightbox" title="Standard normal distribution with a shaded region" data-gallery="quarto-lightbox-gallery-14"><img src="distributions_files/figure-html/fig-area-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.11: Standard normal distribution with a shaded region</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-area-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Standard normal distribution with a shaded region"><img src="distributions_files/figure-html/fig-area-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.11: Standard normal distribution with a shaded region</figcaption></figure>
 </div>
 </div>
 </div>
-<p>One solution is to use the <a href="#eq-integral">Equation&nbsp;<span>3.22</span></a> with <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2:</p>
+<p>One solution is to use the <a href="#eq-integral" class="quarto-xref">Equation&nbsp;<span>3.22</span></a> with <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2:</p>
 <p><span class="math display">\[ E=P(1\leq Z\leq 2)={\frac {1}{{\sqrt {2\pi }}}}\int_{1}^{2}e^{-{\frac {1}{2}}z^2}dz \]</span></p>
 <p>In this case, however, we can easily calculate the area using the properties of the normal distribution:</p>
 <p><span class="math inline">\(E = P(0\leq Z\leq 2) - P(0\leq Z\leq 1) \approx 0.475 - 0.34 \approx 0.135\)</span></p>
@@ -1045,12 +1168,12 @@ Example-Area under the curve
 <p>&nbsp;</p>
 </section><section id="t-distribution" class="level3"><h3 class="anchored" data-anchor-id="t-distribution">t-distribution</h3>
 <p>The t-distribution (Student’s t-distribution) is a continuous probability distribution that is used in place of the Standard Normal distribution for small samples when the population variance, <span class="math inline">\(σ^2\)</span>, is unknown. William Sealy Gosset derived the t-distribution whilst working at the Guinness brewery, but was not permitted by his employer to publish under his own name so he decided to use the pseudonym “Student” for his published work.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Definition and properties of t-distribution
 </div>
 </div>
@@ -1060,9 +1183,8 @@ Definition and properties of t-distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-t" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-t-1.png" class="lightbox" title="t-distribution with df=3 Vs Standard Normal distribution" data-gallery="quarto-lightbox-gallery-15"><img src="distributions_files/figure-html/fig-t-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.12: t-distribution with df=3 Vs Standard Normal distribution</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-t-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="t-distribution with df=3 Vs Standard Normal distribution"><img src="distributions_files/figure-html/fig-t-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.12: t-distribution with df=3 Vs Standard Normal distribution</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1076,12 +1198,12 @@ Definition and properties of t-distribution
 </ul>
 </div>
 </div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Degrees of freedom
 </div>
 </div>
@@ -1097,12 +1219,12 @@ Example-Degrees of freedom
 <p>&nbsp;</p>
 </section><section id="chi-squared-distribution" class="level3"><h3 class="anchored" data-anchor-id="chi-squared-distribution">Chi-squared distribution</h3>
 <p>Chi-square (<span class="math inline">\(\chi^2\)</span>-distribution) distributions are a family of continuous probability distributions. They’re widely used in hypothesis tests, including the chi-square goodness of fit test and the chi-square test of independence.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Definition and properties of chi-squared distribution
 </div>
 </div>
@@ -1112,9 +1234,8 @@ Definition and properties of chi-squared distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-chi" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-chi-1.png" class="lightbox" title="chi-squared distribution with df=10, 15, and 20" data-gallery="quarto-lightbox-gallery-16"><img src="distributions_files/figure-html/fig-chi-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.13: chi-squared distribution with df=10, 15, and 20</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-chi-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="chi-squared distribution with df=10, 15, and 20"><img src="distributions_files/figure-html/fig-chi-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.13: chi-squared distribution with df=10, 15, and 20</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1125,12 +1246,12 @@ Definition and properties of chi-squared distribution
 <p>&nbsp;</p>
 </section><section id="f-distribution" class="level3"><h3 class="anchored" data-anchor-id="f-distribution">F-distribution</h3>
 <p>The F-distribution is the ratio of two chi-squared distributions and is used in hypothesis testing of whether two observed samples have the same variance.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Definition and properties of F-distribution
 </div>
 </div>
@@ -1141,9 +1262,8 @@ Definition and properties of F-distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-f" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-f-1.png" class="lightbox" title="F-distribution with different df1 and df2" data-gallery="quarto-lightbox-gallery-17"><img src="distributions_files/figure-html/fig-f-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.14: F-distribution with different df1 and df2</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-f-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="F-distribution with different df1 and df2"><img src="distributions_files/figure-html/fig-f-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.14: F-distribution with different df1 and df2</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1161,12 +1281,12 @@ Definition and properties of F-distribution
 </ol>
 <section id="bell-shaped-empirical-distribution" class="level3"><h3 class="anchored" data-anchor-id="bell-shaped-empirical-distribution">Bell-shaped Empirical Distribution</h3>
 <p>The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Example-Bell-shaped Empirical Distribution
 </div>
 </div>
@@ -1175,9 +1295,8 @@ Example-Bell-shaped Empirical Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-empirical" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-empirical-1.png" class="lightbox" title="Empirical relative frequency distribution of the birthweight." data-gallery="quarto-lightbox-gallery-18"><img src="distributions_files/figure-html/fig-empirical-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.15: Empirical relative frequency distribution of the birthweight.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-empirical-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Empirical relative frequency distribution of the birthweight."><img src="distributions_files/figure-html/fig-empirical-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.15: Empirical relative frequency distribution of the birthweight.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1187,24 +1306,21 @@ Example-Bell-shaped Empirical Distribution
 </section><section id="shape-statistics-and-normality" class="level3"><h3 class="anchored" data-anchor-id="shape-statistics-and-normality">Shape statistics and normality</h3>
 <p>There are two shape statistics that can indicate deviation from normality: <strong>skewness</strong> and <strong>kurtosis</strong>.</p>
 <p><strong>A. Skewness</strong></p>
-<p>Skewness is usually described as a measure of a distribution’s symmetry – or lack of symmetry. Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> c).</p>
+<p>Skewness is usually described as a measure of a distribution’s symmetry – or lack of symmetry. Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2" class="quarto-xref">Figure&nbsp;<span>3.16</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2" class="quarto-xref">Figure&nbsp;<span>3.16</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2" class="quarto-xref">Figure&nbsp;<span>3.16</span></a> c).</p>
 <p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values <strong>above +3 or below−3</strong> are a good indication that the variable is <strong>not normally</strong> distributed.</p>
 <div id="fig-skew2" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-skew2-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-1.png" class="lightbox" title="Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode." data-gallery="quarto-lightbox-gallery-19"><img src="distributions_files/figure-html/fig-skew2-1.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(a) Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode."><img src="distributions_files/figure-html/fig-skew2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(a) Left skewed distribution (negatively skewed). The mean and the meadian are too left to the mode.</figcaption></figure>
 </div>
 <div id="fig-skew2-2" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-2.png" class="lightbox" title="Symmetric distribution (zero skewness). The mean, median and mode are the same." data-gallery="quarto-lightbox-gallery-20"><img src="distributions_files/figure-html/fig-skew2-2.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(b) Symmetric distribution (zero skewness). The mean, median and mode are the same.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Symmetric distribution (zero skewness). The mean, median and mode are the same."><img src="distributions_files/figure-html/fig-skew2-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(b) Symmetric distribution (zero skewness). The mean, median and mode are the same.</figcaption></figure>
 </div>
 <div id="fig-skew2-3" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-3.png" class="lightbox" title="Right skewed distribution (positively skewed). The mean and median are to the right of the mode." data-gallery="quarto-lightbox-gallery-21"><img src="distributions_files/figure-html/fig-skew2-3.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(c) Right skewed distribution (positively skewed). The mean and median are to the right of the mode.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-skew2-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Right skewed distribution (positively skewed). The mean and median are to the right of the mode."><img src="distributions_files/figure-html/fig-skew2-3.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(c) Right skewed distribution (positively skewed). The mean and median are to the right of the mode.</figcaption></figure>
 </div>
 </div>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.16: Types of distribution according to the summetry.</figcaption><p></p>
@@ -1212,24 +1328,21 @@ Example-Bell-shaped Empirical Distribution
 </div>
 <p><strong>B. Kurtosis</strong></p>
 <p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The <strong>excess kurtosis</strong> parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low compared to a “normal” distribution).</p>
-<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> c).</p>
+<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis" class="quarto-xref">Figure&nbsp;<span>3.17</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis" class="quarto-xref">Figure&nbsp;<span>3.17</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis" class="quarto-xref">Figure&nbsp;<span>3.17</span></a> c).</p>
 <p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values <strong>below −3 or above +3</strong> strongly indicate <strong>non-normality</strong>.</p>
 <div id="fig-kurtosis" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-kurtosis-1" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-1.png" class="lightbox" title="Platykurtic distribution (negative excess kurtosis)." data-gallery="quarto-lightbox-gallery-22"><img src="distributions_files/figure-html/fig-kurtosis-1.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(a) Platykurtic distribution (negative excess kurtosis).</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Platykurtic distribution (negative excess kurtosis)."><img src="distributions_files/figure-html/fig-kurtosis-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(a) Platykurtic distribution (negative excess kurtosis).</figcaption></figure>
 </div>
 <div id="fig-kurtosis-2" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-2.png" class="lightbox" title="Mesokurtic distribution (zero excess kurtosis)." data-gallery="quarto-lightbox-gallery-23"><img src="distributions_files/figure-html/fig-kurtosis-2.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(b) Mesokurtic distribution (zero excess kurtosis).</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Mesokurtic distribution (zero excess kurtosis)."><img src="distributions_files/figure-html/fig-kurtosis-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(b) Mesokurtic distribution (zero excess kurtosis).</figcaption></figure>
 </div>
 <div id="fig-kurtosis-3" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 33.3%;justify-content: center;">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-3.png" class="lightbox" title="Leptokurtic (positive excess kurtosis)." data-gallery="quarto-lightbox-gallery-24"><img src="distributions_files/figure-html/fig-kurtosis-3.png" class="img-fluid figure-img" width="672"></a></p>
-<p></p><figcaption class="figure-caption">(c) Leptokurtic (positive excess kurtosis).</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-kurtosis-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Leptokurtic (positive excess kurtosis)."><img src="distributions_files/figure-html/fig-kurtosis-3.png" class="img-fluid figure-img" width="672"></a></p>
+<figcaption class="figure-caption">(c) Leptokurtic (positive excess kurtosis).</figcaption></figure>
 </div>
 </div>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3.17: Types of distribution according to the summetry.</figcaption><p></p>
@@ -1241,18 +1354,17 @@ Example-Bell-shaped Empirical Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-qq" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="distributions_files/figure-html/fig-qq-1.png" class="lightbox" title="Q-Q plot of Birthweight." data-gallery="quarto-lightbox-gallery-25"><img src="distributions_files/figure-html/fig-qq-1.png" class="img-fluid figure-img" width="768"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.18: Q-Q plot of Birthweight.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="distributions_files/figure-html/fig-qq-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Q-Q plot of Birthweight."><img src="distributions_files/figure-html/fig-qq-1.png" class="img-fluid figure-img" width="768"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;3.18: Q-Q plot of Birthweight.</figcaption></figure>
 </div>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Properties of an approximately bell-shaped empirical distribution
 </div>
 </div>
@@ -1261,42 +1373,42 @@ Properties of an approximately bell-shaped empirical distribution
 <ul>
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
-<li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean (<a href="#fig-normal_auc">Figure&nbsp;<span>3.7</span></a>)</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.16</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
-<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.17</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
-<li><p>In Q-Q plot (<a href="#fig-qq">Figure&nbsp;<span>3.18</span></a>) the points fall close to the <strong>straight line</strong>.</p></li>
+<li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean (<a href="#fig-normal_auc" class="quarto-xref">Figure&nbsp;<span>3.7</span></a>)</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2" class="quarto-xref">Figure&nbsp;<span>3.16</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
+<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis" class="quarto-xref">Figure&nbsp;<span>3.17</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
+<li><p>In Q-Q plot (<a href="#fig-qq" class="quarto-xref">Figure&nbsp;<span>3.18</span></a>) the points fall close to the <strong>straight line</strong>.</p></li>
 </ul>
 </div>
 </div>
 <p>&nbsp;</p>
 </section></section><section id="exercises" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="exercises">
-<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"></path></svg> Exercises</h2>
-<div class="callout callout callout-style-simple no-icon callout-captioned">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path></svg> Exercises</h2>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 <strong>Exercise 1.1</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>In 2012, 1,664,479 students took the SAT exam. The distribution of scores in the verbal section of the SAT had a mean μ=496 and a standard deviation σ=114 . Let X= a SAT exam verbal section score in 2012. Then <span class="math inline">\(X∼N(496,114^2)\)</span>.</p>
 <p>Find the z -scores for <span class="math inline">\(x_1\)</span>=325 and <span class="math inline">\(x_2\)</span>=366. Interpret each z -score. What can you say about <span class="math inline">\(x_1\)</span>=325 and <span class="math inline">\(x_2\)</span>=366 ?</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 <strong>Solution</strong>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The z-score (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) for <span class="math inline">\(x_1\)</span>=325 is <span class="math inline">\(z_1\)</span>=–1.5 .</p>
-<p>The z-score (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) for <span class="math inline">\(x_2\)</span>=366 is <span class="math inline">\(z_2\)</span>=–1.14 .</p>
+<p>The z-score (<a href="#eq-z" class="quarto-xref">Equation&nbsp;<span>3.20</span></a>) for <span class="math inline">\(x_1\)</span>=325 is <span class="math inline">\(z_1\)</span>=–1.5 .</p>
+<p>The z-score (<a href="#eq-z" class="quarto-xref">Equation&nbsp;<span>3.20</span></a>) for <span class="math inline">\(x_2\)</span>=366 is <span class="math inline">\(z_2\)</span>=–1.14 .</p>
 <p>Student 2 scored closer to the mean than Student 1 and, since they both had negative z -scores, Student 2 had the better score.</p>
 </div>
 </div>
@@ -1332,9 +1444,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1346,17 +1472,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1366,8 +1508,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1382,24 +1533,231 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1407,7 +1765,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1429,9 +1787,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
+    <div class="nav-footer-left">
+<p>Copyright 2022, Konstantinos I. Bougioukas</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"closeEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
 
 
 </body></html>

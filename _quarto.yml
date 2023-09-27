@@ -6,11 +6,11 @@ book:
   subtitle: "1st Edition"
   author: 
     - "Konstantinos I. Bougioukas, PhD"
-    - "Anna-Bettina Haidich, Assoc. Professor"
-    - "Constantin T. Yiannoutsos, Professor"
+    #- "Anna-Bettina Haidich, Assoc. Professor"
+    #- "Constantin T. Yiannoutsos, Professor"
   date: "November 29, 2022"
-  cover-image: images/cover.png
-  repo-url: https://github.com/bougioukas/medstatsjamovi
+  cover-image: images/cover3.png
+  #repo-url: https://github.com/bougioukas/medstatsjamovi
   chapters:
     - index.qmd
     - part: "Medical Statistics"
@@ -22,7 +22,7 @@ book:
         - inference.qmd
         - two_samples.qmd
         - more_samples.qmd
-        - categorical.qmd
+        #- categorical.qmd
         - correlation.qmd
         - linear.qmd
     - part: "Jamovi LAB"
@@ -56,6 +56,6 @@ format:
     link-external-newwindow: true
     code-link: true
     number-depth: 2
-    include-in-header: 
-      \usepackage{tikz}
+    #include-in-header: 
+      #\usepackage{tikz}
 editor: visual

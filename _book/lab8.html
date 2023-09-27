@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.4.322">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introduction to Medical Statistics with Jamovi - 18&nbsp; LAB VIII: Inference for categorical data</title>
+<title>Introduction to Medical Statistics with Jamovi - 17&nbsp; LAB VIII: Inference for categorical data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -14,7 +14,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -46,6 +46,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -55,176 +60,199 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab1.html">Jamovi LAB</a></li><li class="breadcrumb-item"><a href="./lab8.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/bougioukas/medstatsjamovi" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Medical Statistics</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Medical Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
+  <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
+  <a href="./inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
+  <a href="./two_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
+  <a href="./more_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
+  <a href="./linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Jamovi LAB</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Jamovi LAB</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
+  <a href="./lab4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
+  <a href="./lab7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab8.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
+  <a href="./lab8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
+  <a href="./lab9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></a>
+  <a href="./lab10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">18.1</span>  Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">17.1</span> Introduction</a></li>
   <li>
-<a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="toc-section-number">18.2</span>  Chi-square test of independence</a>
+<a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="header-section-number">17.2</span> Chi-square test of independence</a>
   <ul class="collapse">
 <li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link" data-scroll-target="#opening-the-file">Opening the file</a></li>
   <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
@@ -235,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
   </ul>
 </li>
   <li>
-<a href="#risk-ratio-rr-and-odds-ratio-or" id="toc-risk-ratio-rr-and-odds-ratio-or" class="nav-link" data-scroll-target="#risk-ratio-rr-and-odds-ratio-or"><span class="toc-section-number">18.3</span>  Risk ratio (RR) and Odds ratio (OR)</a>
+<a href="#risk-ratio-rr-and-odds-ratio-or" id="toc-risk-ratio-rr-and-odds-ratio-or" class="nav-link" data-scroll-target="#risk-ratio-rr-and-odds-ratio-or"><span class="header-section-number">17.3</span> Risk ratio (RR) and Odds ratio (OR)</a>
   <ul class="collapse">
 <li><a href="#risk-ratio-or-relative-risk" id="toc-risk-ratio-or-relative-risk" class="nav-link" data-scroll-target="#risk-ratio-or-relative-risk">Risk ratio (or relative risk)</a></li>
   <li><a href="#odds-ratio" id="toc-odds-ratio" class="nav-link" data-scroll-target="#odds-ratio">Odds Ratio</a></li>
@@ -244,8 +272,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-lab8" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab1.html">Jamovi LAB</a></li><li class="breadcrumb-item"><a href="./lab8.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-lab8" class="quarto-section-identifier"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></h1>
 </div>
 
 
@@ -253,17 +281,19 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
+
 </header><p>When we have finished this Lab, we should be able to:</p>
-<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Learning objectives
 </div>
 </div>
@@ -275,30 +305,29 @@ Learning objectives
 </ul>
 </div>
 </div>
-<section id="introduction" class="level2" data-number="18.1"><h2 data-number="18.1" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">18.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="17.1"><h2 data-number="17.1" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">17.1</span> Introduction</h2>
 <p>If we want to look at the association between two categorical variables then we can’t use the mean or any similar statistic because we don’t have any variables that have been measured continuously. Therefore, when we have measured categorical variables, we analyze frequencies. That is, we analyze the number of subjects that fall into each combination of categories. We can tabulate these frequencies and this is known as a cross-tabulation table or a two-way table or a <strong>contingency table</strong>.</p>
-</section><section id="chi-square-test-of-independence" class="level2" data-number="18.2"><h2 data-number="18.2" class="anchored" data-anchor-id="chi-square-test-of-independence">
-<span class="header-section-number">18.2</span> Chi-square test of independence</h2>
+</section><section id="chi-square-test-of-independence" class="level2" data-number="17.2"><h2 data-number="17.2" class="anchored" data-anchor-id="chi-square-test-of-independence">
+<span class="header-section-number">17.2</span> Chi-square test of independence</h2>
 <p>If we want to see whether there’s an association between two categorical variables we can use the chi-square test, often called chi-square test of independence. This is an extremely elegant statistic based on the simple idea of comparing the frequencies we observe in certain categories to the frequencies we might expect to get in those categories by chance.</p>
 <section id="opening-the-file" class="level3"><h3 class="anchored" data-anchor-id="opening-the-file">Opening the file</h3>
 <p>We will use the “Survival from Malignant Melanoma” dataset named “meldata”. The data consist of measurements made on patients with malignant melanoma, a type of skin cancer. Each patient had their tumor removed by surgery at the Department of Plastic Surgery, University Hospital of Odense, Denmark, between 1962 and 1977.</p>
 <p>Open the dataset named “meldata” from the file tab in the menu:</p>
 <div id="fig-chi_data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/chi_data.png" class="lightbox" title="The meldata dataset" data-gallery="quarto-lightbox-gallery-1"><img src="images/chi_data.png" class="img-fluid figure-img" style="width:85.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.1: The meldata dataset</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;17.1: The meldata dataset</figcaption></figure>
 </div>
-<p>The dataset “meldata” includes 205 patients and has seven variables. We are interested in association between the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died)(<a href="#fig-chi_data">Figure&nbsp;<span>18.1</span></a>).</p>
+<p>The dataset “meldata” includes 205 patients and has seven variables. We are interested in association between the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died)(<a href="#fig-chi_data" class="quarto-xref">Figure&nbsp;<span>17.1</span></a>).</p>
 </section><section id="research-question" class="level3"><h3 class="anchored" data-anchor-id="research-question">Research question</h3>
 <p>We are interested in the association between tumor ulceration and death from melanoma.</p>
 </section><section id="hypothesis-testsing-for-the-pearsons-chi-square-test-of-independence" class="level3"><h3 class="anchored" data-anchor-id="hypothesis-testsing-for-the-pearsons-chi-square-test-of-independence">Hypothesis Testsing for the Pearson’s Chi-square test of independence</h3>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Null hypothesis and alternative hypothesis
 </div>
 </div>
@@ -312,12 +341,12 @@ Null hypothesis and alternative hypothesis
 </div>
 </div>
 </section><section id="assumption" class="level3"><h3 class="anchored" data-anchor-id="assumption">Assumption</h3>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Check if the following assumption is satisfied
 </div>
 </div>
@@ -331,87 +360,73 @@ Check if the following assumption is satisfied
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<p>
-
-</p>
-<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
   A(Analyses) -.-&gt; B(Frequencies) -.-&gt; C(Contingency Tables \nIndependent Samples \nx&lt;sup&gt;2 &lt;/sup&gt; test of association)
 </pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-
 </div>
 </div>
 </div>
-<p>as shown below in <a href="#fig-chi0">Figure&nbsp;<span>18.2</span></a>.</p>
-<div id="fig-chi0" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi0.png" class="lightbox" title="In the menu at the top, choose Analyses > Frequencies  > x2  test of association." data-gallery="quarto-lightbox-gallery-3"><img src="images/chi0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.2: In the menu at the top, choose Analyses &gt; Frequencies <a href="images/freq_icon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/freq_icon.png" width="35" height="33" class="figure-img"></a> &gt; x<sup>2 </sup> test of association.</figcaption><p></p>
-</figure>
 </div>
-<p>The <em>Contingency Tables dialogue box</em> opens. Drag the variable <code>ulcer</code> into the <em>Rows</em> field and the variable <code>status</code> into the <em>Columns</em> field, as shown below (<a href="#fig-chi1">Figure&nbsp;<span>18.3</span></a>):</p>
+<p>as shown below in <span class="quarto-unresolved-ref">?fig-chi0</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/chi0.png" class="lightbox" title="In the menu at the top, choose Analyses > Frequencies  > x2  test of association." data-gallery="quarto-lightbox-gallery-4"><img src="images/chi0.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<figcaption class="figure-caption">In the menu at the top, choose Analyses &gt; Frequencies <a href="images/freq_icon.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/freq_icon.png" id="fig-chi0" width="35" height="33" class="figure-img"></a> &gt; x<sup>2 </sup> test of association.</figcaption></figure>
+</div>
+<p>The <em>Contingency Tables dialogue box</em> opens. Drag the variable <code>ulcer</code> into the <em>Rows</em> field and the variable <code>status</code> into the <em>Columns</em> field, as shown below (<a href="#fig-chi1" class="quarto-xref">Figure&nbsp;<span>17.2</span></a>):</p>
 <div id="fig-chi1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi1.png" class="lightbox" title="Contingency Tables dialogue box. Drag the variable ulcer into the Rows and the variable status into the Columns." data-gallery="quarto-lightbox-gallery-4"><img src="images/chi1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.3: Contingency Tables dialogue box. Drag the variable <strong>ulcer</strong> into the Rows and the variable <strong>status</strong> into the Columns.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi1.png" class="lightbox" title="Contingency Tables dialogue box. Drag the variable ulcer into the Rows and the variable status into the Columns." data-gallery="quarto-lightbox-gallery-5"><img src="images/chi1.png" class="img-fluid figure-img" style="width:75.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.2: Contingency Tables dialogue box. Drag the variable <strong>ulcer</strong> into the Rows and the variable <strong>status</strong> into the Columns.</figcaption></figure>
 </div>
 <p><strong>A. Stacked bar plot</strong></p>
-<p>First, it is useful to plot the data as counts. In the <em>Plot</em> section, check the <strong>Bar Plot</strong> and <strong>Stacked</strong> bar type, as shown below (<a href="#fig-chi2">Figure&nbsp;<span>18.4</span></a>):</p>
+<p>First, it is useful to plot the data as counts. In the <em>Plot</em> section, check the <strong>Bar Plot</strong> and <strong>Stacked</strong> bar type, as shown below (<a href="#fig-chi2" class="quarto-xref">Figure&nbsp;<span>17.3</span></a>):</p>
 <div id="fig-chi2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi2.png" class="lightbox" title="Check the Bar Plot and Stacked bar type in the Plots section." data-gallery="quarto-lightbox-gallery-5"><img src="images/chi2.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.4: Check the Bar Plot and Stacked bar type in the Plots section.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi2.png" class="lightbox" title="Check the Bar Plot and Stacked bar type in the Plots section." data-gallery="quarto-lightbox-gallery-6"><img src="images/chi2.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.3: Check the Bar Plot and Stacked bar type in the Plots section.</figcaption></figure>
 </div>
-<p>A bar plot is generated in the output on our right-hand side, as shown below (<a href="#fig-chi3">Figure&nbsp;<span>18.5</span></a>):</p>
+<p>A bar plot is generated in the output on our right-hand side, as shown below (<a href="#fig-chi3" class="quarto-xref">Figure&nbsp;<span>17.4</span></a>):</p>
 <div id="fig-chi3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi3.png" class="lightbox" title="Stacked bar plot with counts (absolute frequencies)." data-gallery="quarto-lightbox-gallery-6"><img src="images/chi3.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.5: Stacked bar plot with counts (absolute frequencies).</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi3.png" class="lightbox" title="Stacked bar plot with counts (absolute frequencies)." data-gallery="quarto-lightbox-gallery-7"><img src="images/chi3.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.4: Stacked bar plot with counts (absolute frequencies).</figcaption></figure>
 </div>
-<p>In practice, it is percentages we are comparing. Let’s create a stacked bar plot with percentages. In the <em>Plot</em> section, now, check the <strong>Percentages</strong> and <strong>within rows</strong>, as shown below (<a href="#fig-chi4">Figure&nbsp;<span>18.6</span></a>):</p>
+<p>In practice, it is percentages we are comparing. Let’s create a stacked bar plot with percentages. In the <em>Plot</em> section, now, check the <strong>Percentages</strong> and <strong>within rows</strong>, as shown below (<a href="#fig-chi4" class="quarto-xref">Figure&nbsp;<span>17.5</span></a>):</p>
 <div id="fig-chi4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi4.png" class="lightbox" title="Select the Y-axis to present within row percentages." data-gallery="quarto-lightbox-gallery-7"><img src="images/chi4.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.6: Select the Y-axis to present within row percentages.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi4.png" class="lightbox" title="Select the Y-axis to present within row percentages." data-gallery="quarto-lightbox-gallery-8"><img src="images/chi4.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.5: Select the Y-axis to present within row percentages.</figcaption></figure>
 </div>
 <div id="fig-chi5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi5.png" class="lightbox" title="Stacked bar plot with row percentages." data-gallery="quarto-lightbox-gallery-8"><img src="images/chi5.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.7: Stacked bar plot with row percentages.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi5.png" class="lightbox" title="Stacked bar plot with row percentages." data-gallery="quarto-lightbox-gallery-9"><img src="images/chi5.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.6: Stacked bar plot with row percentages.</figcaption></figure>
 </div>
-<p>Just from the plot in <a href="#fig-chi5">Figure&nbsp;<span>18.7</span></a>, death from melanoma in the ulcerated tumor (Present) group is around 45% and in the non-ulcerated (Absent) group around 15%. The number of patients included in the study is not huge, however, this still looks like a real difference given its effect size.</p>
+<p>Just from the plot in <a href="#fig-chi5" class="quarto-xref">Figure&nbsp;<span>17.6</span></a>, death from melanoma in the ulcerated tumor (Present) group is around 45% and in the non-ulcerated (Absent) group around 15%. The number of patients included in the study is not huge, however, this still looks like a real difference given its effect size.</p>
 <p><strong>B. Contingency Table</strong></p>
-<p>We will create a contingency <code>2x2</code> table with row percentages and the expected counts for the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died). In the <em>Cells</em> section, tick the <strong>Row</strong> and <strong>Expected counts</strong> boxes, as shown below (<a href="#fig-chi6">Figure&nbsp;<span>18.8</span></a>):</p>
+<p>We will create a contingency <code>2x2</code> table with row percentages and the expected counts for the binary variables <code>ulcer</code> (Absent/Present) and <code>satus</code> (Alive/Died). In the <em>Cells</em> section, tick the <strong>Row</strong> and <strong>Expected counts</strong> boxes, as shown below (<a href="#fig-chi6" class="quarto-xref">Figure&nbsp;<span>17.7</span></a>):</p>
 <div id="fig-chi6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi6.png" class="lightbox" title="Select row percentages and expected counts." data-gallery="quarto-lightbox-gallery-9"><img src="images/chi6.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.8: Select row percentages and expected counts.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi6.png" class="lightbox" title="Select row percentages and expected counts." data-gallery="quarto-lightbox-gallery-10"><img src="images/chi6.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.7: Select row percentages and expected counts.</figcaption></figure>
 </div>
-<p>We present the generated contingency table in <a href="#fig-chi7">Figure&nbsp;<span>18.9</span></a>:</p>
+<p>We present the generated contingency table in <a href="#fig-chi7" class="quarto-xref">Figure&nbsp;<span>17.8</span></a>:</p>
 <div id="fig-chi7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi7.png" class="lightbox" title="Contingency table of ulcer and status." data-gallery="quarto-lightbox-gallery-10"><img src="images/chi7.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.9: Contingency table of <strong>ulcer</strong> and <strong>status</strong>.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi7.png" class="lightbox" title="Contingency table of ulcer and status." data-gallery="quarto-lightbox-gallery-11"><img src="images/chi7.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.8: Contingency table of <strong>ulcer</strong> and <strong>status</strong>.</figcaption></figure>
 </div>
-<p>From the raw frequencies, there seems to be a large difference, as we noted in <a href="#fig-chi5">Figure&nbsp;<span>18.7</span></a>. The proportion of patients with ulcerated tumors who die equals to 46% compared with non-ulcerated tumors 14%.</p>
-<p>Additionally, as we observe in <a href="#fig-chi7">Figure&nbsp;<span>18.9</span></a> the assumption of chi-square test is fulfilled (all the expected counts are greater than 5; green cells).</p>
+<p>From the raw frequencies, there seems to be a large difference, as we noted in <a href="#fig-chi5" class="quarto-xref">Figure&nbsp;<span>17.6</span></a>. The proportion of patients with ulcerated tumors who die equals to 46% compared with non-ulcerated tumors 14%.</p>
+<p>Additionally, as we observe in <a href="#fig-chi7" class="quarto-xref">Figure&nbsp;<span>17.8</span></a> the assumption of chi-square test is fulfilled (all the expected counts are greater than 5; green cells).</p>
 </section><section id="chi-square-test" class="level3"><h3 class="anchored" data-anchor-id="chi-square-test">Chi-square test</h3>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Chi-square test
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Finally, we see the results of the chi-square test.</p>
 <div id="fig-chi8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi8.png" class="lightbox" title="Table with the results of chi-square test." data-gallery="quarto-lightbox-gallery-11"><img src="images/chi8.png" class="img-fluid figure-img" style="width:45.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.10: Table with the results of chi-square test.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi8.png" class="lightbox" title="Table with the results of chi-square test." data-gallery="quarto-lightbox-gallery-12"><img src="images/chi8.png" class="img-fluid figure-img" style="width:45.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.9: Table with the results of chi-square test.</figcaption></figure>
 </div>
 <p>Since p&lt;0.001, there is evidence for an association between the ulcer and status (reject <span class="math inline">\(H_0\)</span>).</p>
 </div>
@@ -419,49 +434,43 @@ Chi-square test
 <p><strong>Interpretation</strong></p>
 <p>There is evidence for an association between the ulcer and status (reject <span class="math inline">\(H_0\)</span>). The proportion of patients with ulcerated tumors who died (46%) is significant larger compared with non-ulcerated tumors (14%) (p-value &lt;0.001).</p>
 <p>&nbsp;</p>
-</section></section><section id="risk-ratio-rr-and-odds-ratio-or" class="level2" data-number="18.3"><h2 data-number="18.3" class="anchored" data-anchor-id="risk-ratio-rr-and-odds-ratio-or">
-<span class="header-section-number">18.3</span> Risk ratio (RR) and Odds ratio (OR)</h2>
-<p>First we need to reshape the contingency table. Double click on the variable name <code>ulcer</code> and change the order of levels using the (up/down) arrows as follows (<a href="#fig-chi9">Figure&nbsp;<span>18.11</span></a>):</p>
+</section></section><section id="risk-ratio-rr-and-odds-ratio-or" class="level2" data-number="17.3"><h2 data-number="17.3" class="anchored" data-anchor-id="risk-ratio-rr-and-odds-ratio-or">
+<span class="header-section-number">17.3</span> Risk ratio (RR) and Odds ratio (OR)</h2>
+<p>First we need to reshape the contingency table. Double click on the variable name <code>ulcer</code> and change the order of levels using the (up/down) arrows as follows (<a href="#fig-chi9" class="quarto-xref">Figure&nbsp;<span>17.10</span></a>):</p>
 <div id="fig-chi9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi9.png" class="lightbox" title="Reorder the levels of the variable ulcer." data-gallery="quarto-lightbox-gallery-12"><img src="images/chi9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.11: Reorder the levels of the variable ulcer.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi9.png" class="lightbox" title="Reorder the levels of the variable ulcer." data-gallery="quarto-lightbox-gallery-13"><img src="images/chi9.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.10: Reorder the levels of the variable ulcer.</figcaption></figure>
 </div>
-<p>Similarly, change the order of levels for the variable <code>status</code> (<a href="#fig-chi10">Figure&nbsp;<span>18.12</span></a>):</p>
+<p>Similarly, change the order of levels for the variable <code>status</code> (<a href="#fig-chi10" class="quarto-xref">Figure&nbsp;<span>17.11</span></a>):</p>
 <div id="fig-chi10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi10.png" class="lightbox" title="Reorder the levels of the variable status." data-gallery="quarto-lightbox-gallery-13"><img src="images/chi10.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.12: Reorder the levels of the variable status.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi10.png" class="lightbox" title="Reorder the levels of the variable status." data-gallery="quarto-lightbox-gallery-14"><img src="images/chi10.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.11: Reorder the levels of the variable status.</figcaption></figure>
 </div>
 <p>The reshaped table follows:</p>
 <div id="fig-chi11" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi11.png" class="lightbox" title="The reshaped contingency 2x2 table" data-gallery="quarto-lightbox-gallery-14"><img src="images/chi11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.13: The reshaped contingency 2x2 table</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi11.png" class="lightbox" title="The reshaped contingency 2x2 table" data-gallery="quarto-lightbox-gallery-15"><img src="images/chi11.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.12: The reshaped contingency 2x2 table</figcaption></figure>
 </div>
-<p>In the <em>Statistics</em> section, check the <strong>Relative risk</strong>, <strong>Odds ratio</strong> and <strong>Condidence intervals</strong> boxes, as follows (<a href="#fig-chi12">Figure&nbsp;<span>18.14</span></a>):</p>
+<p>In the <em>Statistics</em> section, check the <strong>Relative risk</strong>, <strong>Odds ratio</strong> and <strong>Condidence intervals</strong> boxes, as follows (<a href="#fig-chi12" class="quarto-xref">Figure&nbsp;<span>17.13</span></a>):</p>
 <div id="fig-chi12" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi12.png" class="lightbox" title="Select the relative risk, odds ratio and 95% condidence intervals." data-gallery="quarto-lightbox-gallery-15"><img src="images/chi12.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.14: Select the relative risk, odds ratio and 95% condidence intervals.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi12.png" class="lightbox" title="Select the relative risk, odds ratio and 95% condidence intervals." data-gallery="quarto-lightbox-gallery-16"><img src="images/chi12.png" class="img-fluid figure-img" style="width:65.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.13: Select the relative risk, odds ratio and 95% condidence intervals.</figcaption></figure>
 </div>
 <section id="risk-ratio-or-relative-risk" class="level3"><h3 class="anchored" data-anchor-id="risk-ratio-or-relative-risk">Risk ratio (or relative risk)</h3>
-<p>First, we calculate the risk ratio (RR) of the 2x2 table in <a href="#fig-chi11">Figure&nbsp;<span>18.13</span></a> by hand:</p>
-<p><span class="math display">\[ Risk \ Ratio = \frac{\frac{41}{90}}{\frac{16}{115}} =\frac{0.4556}{0.1391} = 3.27\]</span> Using Jamovi we get the following output (<a href="#fig-chi13">Figure&nbsp;<span>18.15</span></a>):</p>
+<p>First, we calculate the risk ratio (RR) of the 2x2 table in <a href="#fig-chi11" class="quarto-xref">Figure&nbsp;<span>17.12</span></a> by hand:</p>
+<p><span class="math display">\[ Risk \ Ratio = \frac{\frac{41}{90}}{\frac{16}{115}} =\frac{0.4556}{0.1391} = 3.27\]</span> Using Jamovi we get the following output (<a href="#fig-chi13" class="quarto-xref">Figure&nbsp;<span>17.14</span></a>):</p>
 <div id="fig-chi13" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi13.png" class="lightbox" title="The risk ratio (relative risk) with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-16"><img src="images/chi13.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.15: The risk ratio (relative risk) with 95% condidence intervals.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi13.png" class="lightbox" title="The risk ratio (relative risk) with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-17"><img src="images/chi13.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.14: The risk ratio (relative risk) with 95% condidence intervals.</figcaption></figure>
 </div>
 <p>The <strong>risk</strong> of dying is <strong>3.27 times higher</strong> for patients with ulcerated tumors compared to non-ulcerated tumors. Note that the 95% confidence interval of the RR (1.97, 5.44) <strong>does not include</strong> the hypothesized <strong>null value of 1</strong>.</p>
 </section><section id="odds-ratio" class="level3"><h3 class="anchored" data-anchor-id="odds-ratio">Odds Ratio</h3>
-<p>Next, let’s calculate the odds ratio of the 2x2 table in <a href="#fig-chi11">Figure&nbsp;<span>18.13</span></a> by hand:</p>
+<p>Next, let’s calculate the odds ratio of the 2x2 table in <a href="#fig-chi11" class="quarto-xref">Figure&nbsp;<span>17.12</span></a> by hand:</p>
 <p><span class="math display">\[ Odds \ Ratio = \frac{\frac{41}{49}}{\frac{16}{99}} =\frac{0.837}{0.162} = 5.18\]</span></p>
-<p>Using Jamovi we get the following output (<a href="#fig-chi14">Figure&nbsp;<span>18.16</span></a>):</p>
+<p>Using Jamovi we get the following output (<a href="#fig-chi14" class="quarto-xref">Figure&nbsp;<span>17.15</span></a>):</p>
 <div id="fig-chi14" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/chi14.png" class="lightbox" title="The odds ratio with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-17"><img src="images/chi14.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18.16: The odds ratio with 95% condidence intervals.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><a href="images/chi14.png" class="lightbox" title="The odds ratio with 95% condidence intervals." data-gallery="quarto-lightbox-gallery-18"><img src="images/chi14.png" class="img-fluid figure-img" style="width:55.0%"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;17.15: The odds ratio with 95% condidence intervals.</figcaption></figure>
 </div>
 <p>The <strong>odds</strong> of dying is <strong>5.18 times higher</strong> for patients with ulcerated tumors compared to non-ulcerated tumors patients. Note that the 95% confidence interval of the OR (2.65, 10.13) <strong>does not include</strong> the hypothesized <strong>null value of 1</strong>.</p>
 
@@ -493,9 +502,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -507,17 +530,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -527,8 +566,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -543,24 +591,231 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -568,7 +823,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -579,20 +834,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./lab7.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./lab9.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
+    <div class="nav-footer-left">
+<p>Copyright 2022, Konstantinos I. Bougioukas</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true});</script>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":true,"closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 </body></html>

@@ -17,7 +17,7 @@ When we have finished this Lab, we should be able to:
 -   Interpret the results
 :::
 
-In this Lab, we will use the data from "LungCapacity" dataset that we have already seen in the previous chapter (@sec-lab9).
+In this Lab, we will use the "LungCapacity" dataset that we have already seen in the previous chapter (@sec-lab9).
 
 ### Opening the file
 
@@ -47,7 +47,7 @@ We start our analysis by creating the scatter plot of the response variable `Lun
 
 ![The Scatter plot of Age and Lung Capacity](images/linear1.png){#fig-linear1 width="65%"}
 
-As before, there is a clear upward trend indicating that increase in `Age` intake tends to coincide with increase in `LungCap`. Moreover, the trend seems to be linear, so a straight line can capture the overall pattern.
+As before, there is a clear upward trend indicating that increase in `Age` tends to coincide with increase in `LungCap`. Moreover, the trend seems to be linear, so a straight line can capture the overall pattern.
 
 ### Linear regression
 
