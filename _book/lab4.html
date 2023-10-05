@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.322">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introduction to Medical Statistics with Jamovi - 2&nbsp; LAB IV: Estimation and Confidence Interval</title>
+<title>Introduction to Medical Statistics with Jamovi - 13&nbsp; LAB IV: Estimation and Confidence Interval</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,8 +26,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./estimation.html" rel="prev">
+<link href="./lab5.html" rel="next">
+<link href="./lab3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab4.html">Jamovi LAB</a></li><li class="breadcrumb-item"><a href="./lab4.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab1.html">Jamovi LAB</a></li><li class="breadcrumb-item"><a href="./lab4.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -110,8 +110,56 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./estimation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./two_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./more_samples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -127,8 +175,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./lab4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -147,13 +249,13 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt" id="toc-the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt" class="nav-link active" data-scroll-target="#the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt"><span class="header-section-number">2.1</span> The Sampling Distribution of mean and the Central Limit Theorem (CLT)</a></li>
-  <li><a href="#the-confidence-interval-of-mean" id="toc-the-confidence-interval-of-mean" class="nav-link" data-scroll-target="#the-confidence-interval-of-mean"><span class="header-section-number">2.2</span> The confidence interval of mean</a></li>
+<li><a href="#the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt" id="toc-the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt" class="nav-link active" data-scroll-target="#the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt"><span class="header-section-number">13.1</span> The Sampling Distribution of mean and the Central Limit Theorem (CLT)</a></li>
+  <li><a href="#the-confidence-interval-of-mean" id="toc-the-confidence-interval-of-mean" class="nav-link" data-scroll-target="#the-confidence-interval-of-mean"><span class="header-section-number">13.2</span> The confidence interval of mean</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab4.html">Jamovi LAB</a></li><li class="breadcrumb-item"><a href="./lab4.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-lab4" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab1.html">Jamovi LAB</a></li><li class="breadcrumb-item"><a href="./lab4.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-lab4" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></h1>
 </div>
 
 
@@ -186,34 +288,34 @@ Learning objectives
 </div>
 </div>
 <p>&nbsp;</p>
-<section id="the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt">
-<span class="header-section-number">2.1</span> The Sampling Distribution of mean and the Central Limit Theorem (CLT)</h2>
+<section id="the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="the-sampling-distribution-of-mean-and-the-central-limit-theorem-clt">
+<span class="header-section-number">13.1</span> The Sampling Distribution of mean and the Central Limit Theorem (CLT)</h2>
 <p>In this Lab we will learn the Central Limit Theorem (CLT), which is the basis for many statistical concepts. We are going to explore this concept with the help of a <code>Shiny</code> application. So, clink on the following link <a href="https://gallery.shinyapps.io/CLT_mean/">CLM</a>.</p>
-<p>A <code>Shiny</code> app opens in a web window as shown below (<a href="#fig-shiny_app1" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>):</p>
+<p>A <code>Shiny</code> app opens in a web window as shown below (<a href="#fig-shiny_app1" class="quarto-xref">Figure&nbsp;<span>13.1</span></a>):</p>
 <div id="fig-shiny_app1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The Shiny application simulating the Central limit Theorem for Means"><img src="images/shiny_app1.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.1: The Shiny application simulating the Central limit Theorem for Means</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app1.png" class="lightbox" title="The Shiny application simulating the Central limit Theorem for Means" data-gallery="quarto-lightbox-gallery-1"><img src="images/shiny_app1.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.1: The Shiny application simulating the Central limit Theorem for Means</figcaption></figure>
 </div>
 <p>To the left is the interactive panel with radio buttons and slider bars, and to the right there are three tabs: <code>Population Distribution, Samples, and Sampling Distribution</code>.</p>
-<p>First we are asked to choose from a Normal, Uniform, Right Skewed or Left Skewed <strong>Population distribution</strong> (Parent distribution) from the left panel. Let’s select <strong>Right skewed</strong> and then <strong>High skew</strong> from the drop down menu with the name Skew (<a href="#fig-shiny_app2" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
+<p>First we are asked to choose from a Normal, Uniform, Right Skewed or Left Skewed <strong>Population distribution</strong> (Parent distribution) from the left panel. Let’s select <strong>Right skewed</strong> and then <strong>High skew</strong> from the drop down menu with the name Skew (<a href="#fig-shiny_app2" class="quarto-xref">Figure&nbsp;<span>13.2</span></a>).</p>
 <div id="fig-shiny_app2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The case of a high right skewed population distribution"><img src="images/shiny_app2.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.2: The case of a high right skewed population distribution</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app2.png" class="lightbox" title="The case of a high right skewed population distribution" data-gallery="quarto-lightbox-gallery-2"><img src="images/shiny_app2.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.2: The case of a high right skewed population distribution</figcaption></figure>
 </div>
-<p>Next we set the value of the <code>Sample size</code> slider bar to 5 and the <code>Number of samples</code> to 1000 and we select the <strong>Sampling distribution</strong> tab. We observe that the sampling distribution is right skewed with <strong>mean approximately equal to population mean</strong> (<a href="#fig-shiny_app3" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>).</p>
+<p>Next we set the value of the <code>Sample size</code> slider bar to 5 and the <code>Number of samples</code> to 1000 and we select the <strong>Sampling distribution</strong> tab. We observe that the sampling distribution is right skewed with <strong>mean approximately equal to population mean</strong> (<a href="#fig-shiny_app3" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>).</p>
 <div id="fig-shiny_app3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Distribution of means of 1000 random samples, each consisting of 5 observations from a high right skewed population distribution"><img src="images/shiny_app3.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.3: Distribution of means of 1000 random samples, each consisting of 5 observations from a high right skewed population distribution</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app3.png" class="lightbox" title="Distribution of means of 1000 random samples, each consisting of 5 observations from a high right skewed population distribution" data-gallery="quarto-lightbox-gallery-3"><img src="images/shiny_app3.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.3: Distribution of means of 1000 random samples, each consisting of 5 observations from a high right skewed population distribution</figcaption></figure>
 </div>
-<p>Now, try to increase the <code>sample size</code> to 30 (<a href="#fig-shiny_app4" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>):</p>
+<p>Now, try to increase the <code>sample size</code> to 30 (<a href="#fig-shiny_app4" class="quarto-xref">Figure&nbsp;<span>13.4</span></a>):</p>
 <div id="fig-shiny_app4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Distribution of means of 1000 random samples, each consisting of 30 observations from a high right skewed population distribution"><img src="images/shiny_app4.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.4: Distribution of means of 1000 random samples, each consisting of 30 observations from a high right skewed population distribution</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app4.png" class="lightbox" title="Distribution of means of 1000 random samples, each consisting of 30 observations from a high right skewed population distribution" data-gallery="quarto-lightbox-gallery-4"><img src="images/shiny_app4.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.4: Distribution of means of 1000 random samples, each consisting of 30 observations from a high right skewed population distribution</figcaption></figure>
 </div>
-<p>and then increase it to 200 (<a href="#fig-shiny_app5" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>):</p>
+<p>and then increase it to 200 (<a href="#fig-shiny_app5" class="quarto-xref">Figure&nbsp;<span>13.5</span></a>):</p>
 <div id="fig-shiny_app5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Distribution of means of 1000 random samples, each consisting of 200 observations from a high right skewed population distribution"><img src="images/shiny_app5.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.5: Distribution of means of 1000 random samples, each consisting of 200 observations from a high right skewed population distribution</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app5.png" class="lightbox" title="Distribution of means of 1000 random samples, each consisting of 200 observations from a high right skewed population distribution" data-gallery="quarto-lightbox-gallery-5"><img src="images/shiny_app5.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.5: Distribution of means of 1000 random samples, each consisting of 200 observations from a high right skewed population distribution</figcaption></figure>
 </div>
 <p>We observe that the sampling distribution becomes closer and closer to Normal and the standard error of the mean, <code>SE</code>, (the standard deviation of sample means) gets smaller as the sample size increases. The important point is that whatever the parent distribution of a variable, the distribution of the sample means will be nearly Normal, as long as the samples are large enough.</p>
 <p>&nbsp;</p>
@@ -235,27 +337,27 @@ Properties of the sampling distribution of the mean
 </ul>
 </div>
 </div>
-</section><section id="the-confidence-interval-of-mean" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="the-confidence-interval-of-mean">
-<span class="header-section-number">2.2</span> The confidence interval of mean</h2>
+</section><section id="the-confidence-interval-of-mean" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="the-confidence-interval-of-mean">
+<span class="header-section-number">13.2</span> The confidence interval of mean</h2>
 <p>We are going to explore the concept of confidence interval (CI) of mean with the help of a <code>Shiny</code> application. So, clink on the following link <a href="https://shiny.rit.albany.edu/stat/confidence/">CIs</a>.</p>
-<p>A <code>Shiny</code> app opens in a web window as shown below (<a href="#fig-shiny_app6" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>):</p>
+<p>A <code>Shiny</code> app opens in a web window as shown below (<a href="#fig-shiny_app6" class="quarto-xref">Figure&nbsp;<span>13.6</span></a>):</p>
 <div id="fig-shiny_app6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Shiny application that simulates the concept of confidence interval (CI) of mean"><img src="images/shiny_app6.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.6: Shiny application that simulates the concept of confidence interval (CI) of mean</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app6.png" class="lightbox" title="Shiny application that simulates the concept of confidence interval (CI) of mean" data-gallery="quarto-lightbox-gallery-6"><img src="images/shiny_app6.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.6: Shiny application that simulates the concept of confidence interval (CI) of mean</figcaption></figure>
 </div>
 <p>To the left is the interactive panel with radio buttons and drop down menus, and to the right there are two tabs: <code>Plots and About</code>.</p>
-<p>First we are asked to choose if we want the <code>Confidence Interval Graph only</code> or the <code>Confidence Interval Graph Plus Sampling Distribution of the Mean</code>. Let’s select the first choice and set the value of the <code>Number of Simulated Samples</code> to <code>one</code> and the <code>Sample Size</code> to <code>10</code> from the drop down menus (<a href="#fig-shiny_app7" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>).</p>
-<p>We observe at the <code>Plot</code> tab that a horizontal bar has been created which represents the confidence interval (CI), centered on the sample mean (point). In this case, the 95%CI for the sample mean includes the true value of the population mean (it crosses the solid vertical line) and it is drawn as a black line (<a href="#fig-shiny_app7" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>).</p>
+<p>First we are asked to choose if we want the <code>Confidence Interval Graph only</code> or the <code>Confidence Interval Graph Plus Sampling Distribution of the Mean</code>. Let’s select the first choice and set the value of the <code>Number of Simulated Samples</code> to <code>one</code> and the <code>Sample Size</code> to <code>10</code> from the drop down menus (<a href="#fig-shiny_app7" class="quarto-xref">Figure&nbsp;<span>13.7</span></a>).</p>
+<p>We observe at the <code>Plot</code> tab that a horizontal bar has been created which represents the confidence interval (CI), centered on the sample mean (point). In this case, the 95%CI for the sample mean includes the true value of the population mean (it crosses the solid vertical line) and it is drawn as a black line (<a href="#fig-shiny_app7" class="quarto-xref">Figure&nbsp;<span>13.7</span></a>).</p>
 <div id="fig-shiny_app7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Confidence Interval Graph with one random sample of 10 observations selected from a normal population distribution"><img src="images/shiny_app7.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.7: Confidence Interval Graph with one random sample of 10 observations selected from a normal population distribution</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app7.png" class="lightbox" title="Confidence Interval Graph with one random sample of 10 observations selected from a normal population distribution" data-gallery="quarto-lightbox-gallery-7"><img src="images/shiny_app7.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.7: Confidence Interval Graph with one random sample of 10 observations selected from a normal population distribution</figcaption></figure>
 </div>
-<p>Now, try to increase the <code>Number of Simulated Samples</code> to 100 (<a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>):</p>
+<p>Now, try to increase the <code>Number of Simulated Samples</code> to 100 (<a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>13.8</span></a>):</p>
 <div id="fig-shiny_app8" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Confidence Interval Graph with 100 random samples, each consisting of 10 observations from a normal population distribution"><img src="images/shiny_app8.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.8: Confidence Interval Graph with 100 random samples, each consisting of 10 observations from a normal population distribution</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app8.png" class="lightbox" title="Confidence Interval Graph with 100 random samples, each consisting of 10 observations from a normal population distribution" data-gallery="quarto-lightbox-gallery-8"><img src="images/shiny_app8.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.8: Confidence Interval Graph with 100 random samples, each consisting of 10 observations from a normal population distribution</figcaption></figure>
 </div>
-<p>We observe that 5 out of 100 confidence intervals (red horizontal lines) do not include the true population mean (the solid vertical line) (<a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>). This is what we would expect – that the 95% confidence interval will not include the true population mean 5% of the time.</p>
+<p>We observe that 5 out of 100 confidence intervals (red horizontal lines) do not include the true population mean (the solid vertical line) (<a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>13.8</span></a>). This is what we would expect – that the 95% confidence interval will not include the true population mean 5% of the time.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -266,15 +368,15 @@ Properties of the sampling distribution of the mean
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For 95% of the calculated confidence intervals it will be true to say that the population mean, μ, lies within this interval. The problem is, as <a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> shows, with a single study we just do not know which one of these 100 intervals we will obtain and hence we will not know if it includes μ. Unfortunately, the CIs ARE NOT pre-labelled with “I am poor CI and do not include the population mean: do not choose me!”. Therefore, we usually interpret a 95% confidence interval of mean as the range of values within which we are 95% confident that the true population mean lies.</p>
+<p>For 95% of the calculated confidence intervals it will be true to say that the population mean, μ, lies within this interval. The problem is, as <a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>13.8</span></a> shows, with a single study we just do not know which one of these 100 intervals we will obtain and hence we will not know if it includes μ. Unfortunately, the CIs ARE NOT pre-labelled with “I am poor CI and do not include the population mean: do not choose me!”. Therefore, we usually interpret a 95% confidence interval of mean as the range of values within which we are 95% confident that the true population mean lies.</p>
 </div>
 </div>
-<p>Next, we create the confidence intervals of 100 randomly generated samples of size = 50 from the population (<a href="#fig-shiny_app9" class="quarto-xref">Figure&nbsp;<span>2.9</span></a>):</p>
+<p>Next, we create the confidence intervals of 100 randomly generated samples of size = 50 from the population (<a href="#fig-shiny_app9" class="quarto-xref">Figure&nbsp;<span>13.9</span></a>):</p>
 <div id="fig-shiny_app9" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="images/shiny_app9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Confidence Interval Graph with 100 random samples, each consisting of 50 observations from a normal population distribution"><img src="images/shiny_app9.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;2.9: Confidence Interval Graph with 100 random samples, each consisting of 50 observations from a normal population distribution</figcaption></figure>
+<figure class="figure"><p><a href="images/shiny_app9.png" class="lightbox" title="Confidence Interval Graph with 100 random samples, each consisting of 50 observations from a normal population distribution" data-gallery="quarto-lightbox-gallery-9"><img src="images/shiny_app9.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;13.9: Confidence Interval Graph with 100 random samples, each consisting of 50 observations from a normal population distribution</figcaption></figure>
 </div>
-<p>We observe that the sample means are closer to the true population mean and the 95%CIs of the mean become narrower (<a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>) increasing the sample size.</p>
+<p>We observe that the sample means are closer to the true population mean and the 95%CIs of the mean become narrower (<a href="#fig-shiny_app8" class="quarto-xref">Figure&nbsp;<span>13.8</span></a>) increasing the sample size.</p>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -635,13 +737,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./estimation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span>
+      <a href="./lab3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lab5.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -657,7 +759,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});</script>
 
 
 </body></html>
