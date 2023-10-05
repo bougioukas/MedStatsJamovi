@@ -15,28 +15,28 @@ book:
     - index.qmd
     - part: "Medical Statistics"
       chapters:
-        - introduction.qmd
-        - descriptive.qmd
-        - distributions.qmd
+        #- introduction.qmd
+        #- descriptive.qmd
+        #- distributions.qmd
         - estimation.qmd
-        - inference.qmd
-        - two_samples.qmd
-        - more_samples.qmd
+        #- inference.qmd
+        #- two_samples.qmd
+        #- more_samples.qmd
         #- categorical.qmd
-        - correlation.qmd
-        - linear.qmd
+        #- correlation.qmd
+        #- linear.qmd
     - part: "Jamovi LAB"
       chapters:
-        - lab1.qmd
-        - lab2.qmd
-        - lab3.qmd
+        #- lab1.qmd
+        #- lab2.qmd
+        #- lab3.qmd
         - lab4.qmd
-        - lab5.qmd
-        - lab6.qmd
-        - lab7.qmd
-        - lab8.qmd
-        - lab9.qmd
-        - lab10.qmd
+        #- lab5.qmd
+        #- lab6.qmd
+        #- lab7.qmd
+        #- lab8.qmd
+        #- lab9.qmd
+        #- lab10.qmd
     - references.qmd
   
   page-footer: 
