@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.322">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introduction to Medical Statistics with Jamovi - 4&nbsp; Estimation and Confidence Intervals</title>
+<title>Introduction to Medical Statistics with Jamovi - 1&nbsp; Estimation and Confidence Intervals</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,8 +26,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./inference.html" rel="next">
-<link href="./distributions.html" rel="prev">
+<link href="./lab4.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -111,56 +111,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./estimation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./two_samples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./more_samples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></a>
   </div>
 </li>
       </ul>
@@ -176,62 +128,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./lab4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span></a>
   </div>
 </li>
       </ul>
@@ -251,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
 <li>
-<a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"><span class="header-section-number">4.1</span> Estimation of population parametres</a>
+<a href="#estimation-of-population-parametres" id="toc-estimation-of-population-parametres" class="nav-link active" data-scroll-target="#estimation-of-population-parametres"><span class="header-section-number">1.1</span> Estimation of population parametres</a>
   <ul class="collapse">
 <li><a href="#population-and-parameters" id="toc-population-and-parameters" class="nav-link" data-scroll-target="#population-and-parameters">Population and parameters</a></li>
   <li><a href="#sample-and-sample-statistics" id="toc-sample-and-sample-statistics" class="nav-link" data-scroll-target="#sample-and-sample-statistics">Sample and sample statistics</a></li>
@@ -259,26 +157,26 @@ ul.task-list li input[type="checkbox"] {
   </ul>
 </li>
   <li>
-<a href="#sample-distribution-vs-sampling-distribution" id="toc-sample-distribution-vs-sampling-distribution" class="nav-link" data-scroll-target="#sample-distribution-vs-sampling-distribution"><span class="header-section-number">4.2</span> Sample Distribution vs Sampling Distribution</a>
+<a href="#sample-distribution-vs-sampling-distribution" id="toc-sample-distribution-vs-sampling-distribution" class="nav-link" data-scroll-target="#sample-distribution-vs-sampling-distribution"><span class="header-section-number">1.2</span> Sample Distribution vs Sampling Distribution</a>
   <ul class="collapse">
 <li><a href="#sample-distribution" id="toc-sample-distribution" class="nav-link" data-scroll-target="#sample-distribution">Sample Distribution</a></li>
   <li><a href="#sampling-distribution" id="toc-sampling-distribution" class="nav-link" data-scroll-target="#sampling-distribution">Sampling Distribution</a></li>
   </ul>
 </li>
-  <li><a href="#what-is-standard-error-se-of-the-mean" id="toc-what-is-standard-error-se-of-the-mean" class="nav-link" data-scroll-target="#what-is-standard-error-se-of-the-mean"><span class="header-section-number">4.3</span> What is Standard Error (SE) of the mean?</a></li>
+  <li><a href="#what-is-standard-error-se-of-the-mean" id="toc-what-is-standard-error-se-of-the-mean" class="nav-link" data-scroll-target="#what-is-standard-error-se-of-the-mean"><span class="header-section-number">1.3</span> What is Standard Error (SE) of the mean?</a></li>
   <li>
-<a href="#central-limit-theorem-clm" id="toc-central-limit-theorem-clm" class="nav-link" data-scroll-target="#central-limit-theorem-clm"><span class="header-section-number">4.4</span> Central Limit Theorem (CLM)</a>
+<a href="#central-limit-theorem-clm" id="toc-central-limit-theorem-clm" class="nav-link" data-scroll-target="#central-limit-theorem-clm"><span class="header-section-number">1.4</span> Central Limit Theorem (CLM)</a>
   <ul class="collapse">
 <li><a href="#a-hypothetical-population" id="toc-a-hypothetical-population" class="nav-link" data-scroll-target="#a-hypothetical-population">A hypothetical population</a></li>
   <li><a href="#the-sampling-distribution-of-the-means" id="toc-the-sampling-distribution-of-the-means" class="nav-link" data-scroll-target="#the-sampling-distribution-of-the-means">The Sampling Distribution of the means</a></li>
   </ul>
 </li>
-  <li><a href="#the-confidence-intervals" id="toc-the-confidence-intervals" class="nav-link" data-scroll-target="#the-confidence-intervals"><span class="header-section-number">4.5</span> The confidence intervals</a></li>
+  <li><a href="#the-confidence-intervals" id="toc-the-confidence-intervals" class="nav-link" data-scroll-target="#the-confidence-intervals"><span class="header-section-number">1.5</span> The confidence intervals</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></h1>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation.html">Medical Statistics</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Estimation and Confidence Intervals</span></span></h1>
 </div>
 
 
@@ -292,8 +190,8 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="estimation-of-population-parametres" class="level2 page-columns page-full" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="estimation-of-population-parametres">
-<span class="header-section-number">4.1</span> Estimation of population parametres</h2>
+</header><section id="estimation-of-population-parametres" class="level2 page-columns page-full" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="estimation-of-population-parametres">
+<span class="header-section-number">1.1</span> Estimation of population parametres</h2>
 <section id="population-and-parameters" class="level3"><h3 class="anchored" data-anchor-id="population-and-parameters">Population and parameters</h3>
 <p>In the statistical sense a <strong>population</strong> is a theoretical concept used to describe an entire group of individuals (not necessarily people) that share a set of characteristics. Examples are the population of all patients with diabetes mellitus, all people with depression, or the population of all middle-aged women.</p>
 <p>Researchers are specifically interested in quantities such as population mean and population variance of random variables (characteristics) of such populations. These quantities are unknown in general. We refer to these unknown quantities as <strong>parameters</strong>. Here, we use parameters <span class="math inline">\(μ\)</span> and <span class="math inline">\(σ^2\)</span> to denote the unknown <strong>population</strong> mean and variance respectively. For example, researchers want to know what the <strong>mean depression score</strong> for the <strong>population</strong> would be if all people with depression were treated with a new anti-depression treatment.</p>
@@ -314,19 +212,19 @@ Parametric Tests
 <p>&nbsp;</p>
 </section><section id="sample-and-sample-statistics" class="level3"><h3 class="anchored" data-anchor-id="sample-and-sample-statistics">Sample and sample statistics</h3>
 <p>Researchers want to know the population parameter, the value that would be obtained if the entire population were actually studied. Of course, they don’t usualy have the resources and time to study, for example, every individual with depression in the world, so a population parameter value is generally not available. They must instead study a <strong>sample</strong>, a subset of the population that is intended to represent the population. In this case a <strong>sample statistic</strong> is used to estimate a population parameter (also named as <strong>point estimator</strong> since we estimate the parameter by a single value or point).</p>
-<p>In most cases, the best way to get a sample that accurately represents the population is by taking a <strong>random sample</strong> from the population (<a href="#fig-sample_param" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>). When selecting a random sample, each individual in the population has the <strong>same chance</strong> <strong>of being selected</strong> for the sample.</p>
+<p>In most cases, the best way to get a sample that accurately represents the population is by taking a <strong>random sample</strong> from the population (<a href="#fig-sample_param" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>). When selecting a random sample, each individual in the population has the <strong>same chance</strong> <strong>of being selected</strong> for the sample.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-sample_param" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/sample_param.png" class="lightbox" title="Parameters are referred to the population while statistics are referred to the sample." data-gallery="quarto-lightbox-gallery-1"><img src="images/sample_param.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;4.1: Parameters are referred to the population while statistics are referred to the sample.</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.1: Parameters are referred to the population while statistics are referred to the sample.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
 </section><section id="using-the-sample-to-etimate-a-population-parameter" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="using-the-sample-to-etimate-a-population-parameter">Using the sample to etimate a population parameter</h3>
 <p>The researchers use the sample statistic value as an <strong>estimate</strong> of the population parameter value. The researchers are making an <strong>inference</strong> that the sample statistic is a value <strong>similar</strong> to the population parameter value based on the premise that the characteristics of those in the sample are similar to the characteristics of those in the entire population. When researchers use a sample statistic to infer the value of a population parameter, it is called <strong>inferential statistics</strong>.</p>
-<p>The process is represented schematically in <a href="#fig-estimation" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>. So, a sample is selected from population of interest to provide an <strong>estimate</strong> of a population parameter by using a <strong>sample statistic</strong>. If the sampling method used is random sample then we obtain an <strong>unbiased estimate</strong> of the population parameter.</p>
+<p>The process is represented schematically in <a href="#fig-estimation" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>. So, a sample is selected from population of interest to provide an <strong>estimate</strong> of a population parameter by using a <strong>sample statistic</strong>. If the sampling method used is random sample then we obtain an <strong>unbiased estimate</strong> of the population parameter.</p>
 <div class="cell page-columns page-full" data-fig-width="12" data-layout-align="center">
 <div class="cell-output-display column-screen-inset-right">
 <div id="fig-estimation" class="quarto-figure quarto-figure-center anchored">
@@ -339,11 +237,11 @@ Parametric Tests
 
 </pre>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;4.2: Taking a sample of the population and using the sample to estimate a population parameter</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.2: Taking a sample of the population and using the sample to estimate a population parameter</figcaption></figure>
 </div>
 </div>
 </div>
-<p>In some circumstances the sample may consist of <strong>all the members</strong> of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The <strong>dotted arrow</strong> in <a href="#fig-estimation" class="quarto-xref">Figure&nbsp;<span>4.2</span></a> connecting the population circle to population parameter box illustrates this. However, this situation will <strong>rarely</strong> be the case so, in practice, we take a sample which is often much smaller in size than the population under study.</p>
+<p>In some circumstances the sample may consist of <strong>all the members</strong> of a specifically defined population. For practical reasons, this is only likely to be the case if the population of interest is not too large. If all members of the population can be assessed, then the estimate of the parameter concerned is derived from information obtained on all members and so its value will be the population parameter itself. The <strong>dotted arrow</strong> in <a href="#fig-estimation" class="quarto-xref">Figure&nbsp;<span>1.2</span></a> connecting the population circle to population parameter box illustrates this. However, this situation will <strong>rarely</strong> be the case so, in practice, we take a sample which is often much smaller in size than the population under study.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -357,10 +255,10 @@ Estimation of population parametres
 <p><strong>Point Estimation</strong> refers to the process of guessing the unknown value of a parameter (e.g., population mean, <span class="math inline">\(\mu\)</span>) using the observed data. For this, we use a <strong>sample statistic</strong> as a <strong>point estimator</strong> of the population parameter. Statistics do not depend on any unknown parameter, and given the observed data, we should be able to find their values. For example, <strong>the sample mean and sample variance are statistics</strong>.</p>
 </div>
 </div>
-<p>Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in <a href="#tbl-parameters" class="quarto-xref">Table&nbsp;<span>4.1</span></a>.</p>
+<p>Some common population parameters (Greek Letters) and their corresponding sample statistics (or estimates) are described in <a href="#tbl-parameters" class="quarto-xref">Table&nbsp;<span>1.1</span></a>.</p>
 <div id="tbl-parameters" class="anchored">
 <table class="table">
-<caption>Table&nbsp;4.1: Population parameters (Greek letters) and sample statistics</caption>
+<caption>Table&nbsp;1.1: Population parameters (Greek letters) and sample statistics</caption>
 <thead><tr class="header">
 <th></th>
 <th>Population parameter</th>
@@ -391,15 +289,15 @@ Estimation of population parametres
 </table>
 </div>
 <p>&nbsp;</p>
-</section></section><section id="sample-distribution-vs-sampling-distribution" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="sample-distribution-vs-sampling-distribution">
-<span class="header-section-number">4.2</span> Sample Distribution vs Sampling Distribution</h2>
+</section></section><section id="sample-distribution-vs-sampling-distribution" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="sample-distribution-vs-sampling-distribution">
+<span class="header-section-number">1.2</span> Sample Distribution vs Sampling Distribution</h2>
 <section id="sample-distribution" class="level3"><h3 class="anchored" data-anchor-id="sample-distribution">Sample Distribution</h3>
 <p>The sample distribution is simply the data distribution of the sample which is randomly taken from the population. We can calculate a sample statistic such as the sample mean from the data in the sample.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-sample1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/sample1.png" class="lightbox" title="Sample distribution of data from one sample." data-gallery="quarto-lightbox-gallery-2"><img src="images/sample1.png" class="img-fluid figure-img" style="width:20.0%"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;4.3: Sample distribution of data from one sample.</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.3: Sample distribution of data from one sample.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -410,7 +308,7 @@ Estimation of population parametres
 <div class="cell-output-display">
 <div id="fig-sampst" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="images/sampst.gif" class="lightbox" title="Sampling distribution of a statistic (e.g.&nbsp;sample mean) from many samples." data-gallery="quarto-lightbox-gallery-3"><img src="images/sampst.gif" class="img-fluid figure-img" style="width:80.0%"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;4.4: Sampling distribution of a statistic (e.g.&nbsp;sample mean) from many samples.</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.4: Sampling distribution of a statistic (e.g.&nbsp;sample mean) from many samples.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -427,15 +325,15 @@ Sampling distribution
 <p>The sampling distribution is the theoretical distribution of possible values for a sample statistic.</p>
 </div>
 </div>
-</section></section><section id="what-is-standard-error-se-of-the-mean" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="what-is-standard-error-se-of-the-mean">
-<span class="header-section-number">4.3</span> What is Standard Error (SE) of the mean?</h2>
+</section></section><section id="what-is-standard-error-se-of-the-mean" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="what-is-standard-error-se-of-the-mean">
+<span class="header-section-number">1.3</span> What is Standard Error (SE) of the mean?</h2>
 <p>The standard deviation of the sampling distribution is known as the standard error (SE). There are multiple formulas for standard error depending of exactly what is our sampling distribution. The standard error of a mean is the population σ divided by the square root of the sample size n:</p>
-<p><span id="eq-se"><span class="math display">\[ SE = \frac{\sigma}{\sqrt{n}} \tag{4.1}\]</span></span></p>
+<p><span id="eq-se"><span class="math display">\[ SE = \frac{\sigma}{\sqrt{n}} \tag{1.1}\]</span></span></p>
 <p>However, because we usually do not have access to the population parameter σ, we instead use the sample standard deviation sd, as it is an estimate of the population standard deviation.</p>
 <p><span class="math display">\[ SE = \frac{sd}{\sqrt{n}}\]</span></p>
 <p>The <strong>Standard Error</strong> (SE) <strong>of the mean</strong> is a metric that describes the variability of sample means in the <strong>sampling distribution</strong>. SE gives us an indication of the uncertainty attached to the estimate of the population mean when taking only a sample - very uncertain when the sample size is small.</p>
-</section><section id="central-limit-theorem-clm" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="central-limit-theorem-clm">
-<span class="header-section-number">4.4</span> Central Limit Theorem (CLM)</h2>
+</section><section id="central-limit-theorem-clm" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="central-limit-theorem-clm">
+<span class="header-section-number">1.4</span> Central Limit Theorem (CLM)</h2>
 <p>The Central Limit Theorem (CLM) in statistics states that, given a sufficiently large sample size, the sampling distribution of the mean for a variable will approximate a normal distribution <strong>regardless</strong> of that variable’s distribution in the population.</p>
 <section id="a-hypothetical-population" class="level3"><h3 class="anchored" data-anchor-id="a-hypothetical-population">A hypothetical population</h3>
 <p>The importance of central limit theorem is that it works no matter the underlying distribution of the population data. The underlying population data could be noisy and central limit theorem will still hold. To illustrate this, let’s draw some data (100,000 observations):</p>
@@ -443,7 +341,7 @@ Sampling distribution
 <div class="cell-output-display">
 <div id="fig-population" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-population-1.png" class="lightbox" title="A hypothetical population of 100,000 observations." data-gallery="quarto-lightbox-gallery-4"><img src="estimation_files/figure-html/fig-population-1.png" class="img-fluid figure-img" width="576"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;4.5: A hypothetical population of 100,000 observations.</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.5: A hypothetical population of 100,000 observations.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -463,7 +361,7 @@ X1    1 1e+05 40.16 40.31     24   37.71 35.58   0 100   100 0.39    -1.56 0.13<
 <div class="cell-output-display">
 <div id="fig-sampling_dis" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-sampling_dis-1.png" class="lightbox" title="The distribution of 50,000 sample means, each of size=10." data-gallery="quarto-lightbox-gallery-5"><img src="estimation_files/figure-html/fig-sampling_dis-1.png" class="img-fluid figure-img" width="768"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;4.6: The distribution of 50,000 sample means, each of size=10.</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.6: The distribution of 50,000 sample means, each of size=10.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -485,8 +383,8 @@ Properties of the sampling distribution of the mean
 </ul>
 </div>
 </div>
-</section></section><section id="the-confidence-intervals" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="the-confidence-intervals">
-<span class="header-section-number">4.5</span> The confidence intervals</h2>
+</section></section><section id="the-confidence-intervals" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="the-confidence-intervals">
+<span class="header-section-number">1.5</span> The confidence intervals</h2>
 <p>We will base the definition of confidence interval on two ideas:</p>
 <ol type="1">
 <li><p>Our point estimate (e.g., mean from the sample) is the most plausible value of the actual parameter, so it makes sense to build the confidence interval around the point estimate.</p></li>
@@ -496,25 +394,25 @@ Properties of the sampling distribution of the mean
 <p>In this case, and in order to define an interval, we can make use of a well-known result from probability that applies to normal distributions: 95% of the distribution of sample means lies within <span class="math inline">\(\pm 1.96\)</span> standard errors (the standard deviation of this distribution) of the population mean.</p>
 <p>If the interval spreads out <span class="math inline">\(\pm 1.96\)</span> standard errors from a normally distributed point estimate, intuitively we can say that we are roughly 95% confident that we have captured the true but unknown population parameter.</p>
 <p>The formula for the confidence interval (CI) of mean looks like this:</p>
-<p><span id="eq-CI"><span class="math display">\[ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{\sigma}{\sqrt{n}}  \tag{4.2}\]</span></span></p>
-<p>and if the population standard deviation σ is unknown, the the sample standard deviation, sd, is used in the formula <a href="#eq-CI" class="quarto-xref">Equation&nbsp;<span>4.2</span></a>:</p>
-<p><span id="eq-CI2"><span class="math display">\[ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{sd}{\sqrt{n}}  \tag{4.3}\]</span></span></p>
+<p><span id="eq-CI"><span class="math display">\[ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{\sigma}{\sqrt{n}}  \tag{1.2}\]</span></span></p>
+<p>and if the population standard deviation σ is unknown, the the sample standard deviation, sd, is used in the formula <a href="#eq-CI" class="quarto-xref">Equation&nbsp;<span>1.2</span></a>:</p>
+<p><span id="eq-CI2"><span class="math display">\[ 95\%CI=\bar{x} \ \pm 1.96 \ SE_{\bar{x}} = \bar{x} \ \pm 1.96  \frac{sd}{\sqrt{n}}  \tag{1.3}\]</span></span></p>
 <p>The real meaning of “confidence” is not evident and it must be understood from the point of view of the generating process. The confidence interval is based on the concept of repetition of the study under consideration. Thus, suppose we took many (infinite) samples from a population and built a 95% confidence interval from each sample. Then about 95% of those intervals would contain the population parameter.</p>
-<p>Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our hypothetical population (<a href="#fig-intervals1" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>). Each horizontal bar is a confidence interval (CI), centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line <span class="math inline">\(\mu\)</span> = 40.16). This is what we would expect using a 95% confidence level– approximately 95% of the intervals covering the population mean.</p>
+<p>Now, we can present the confidence intervals of 100 randomly generated samples of size = 10 from our hypothetical population (<a href="#fig-intervals1" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>). Each horizontal bar is a confidence interval (CI), centered on a sample mean (point). The intervals all have the same length, but are centered on different sample means as a result of random sampling from the population. The five bold confidence intervals do not cover the true population mean (the vertical red dashed line <span class="math inline">\(\mu\)</span> = 40.16). This is what we would expect using a 95% confidence level– approximately 95% of the intervals covering the population mean.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-intervals1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-intervals1-1.png" class="lightbox" title="100 Sample Means of Size 10 (with 95% Intervals) from the Population." data-gallery="quarto-lightbox-gallery-6"><img src="estimation_files/figure-html/fig-intervals1-1.png" class="img-fluid figure-img" width="912"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;4.7: 100 Sample Means of Size 10 (with 95% Intervals) from the Population.</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.7: 100 Sample Means of Size 10 (with 95% Intervals) from the Population.</figcaption></figure>
 </div>
 </div>
 </div>
-<p>Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population (<a href="#fig-intervals2" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>):</p>
+<p>Next, we will create the confidence intervals of 100 randomly generated samples of size = 50 from our population (<a href="#fig-intervals2" class="quarto-xref">Figure&nbsp;<span>1.8</span></a>):</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-intervals2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="estimation_files/figure-html/fig-intervals2-1.png" class="lightbox" title="100 Sample Means of Size 50 (with 95% Intervals) from the Population." data-gallery="quarto-lightbox-gallery-7"><img src="estimation_files/figure-html/fig-intervals2-1.png" class="img-fluid figure-img" width="912"></a></p>
-<figcaption class="figure-caption">Figure&nbsp;4.8: 100 Sample Means of Size 50 (with 95% Intervals) from the Population.</figcaption></figure>
+<figcaption class="figure-caption">Figure&nbsp;1.8: 100 Sample Means of Size 50 (with 95% Intervals) from the Population.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -879,13 +777,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./distributions.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span>
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./inference.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lab4.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -901,7 +799,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});</script>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","loop":true,"selector":".lightbox","closeEffect":"zoom"});</script>
 
 
 </body></html>
