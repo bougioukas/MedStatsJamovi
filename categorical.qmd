@@ -1,5 +1,8 @@
 # Inference for categorical data {#sec-categorical}
 
+
+Chapter's author: **Constantine Giannoutsos**
+
 ```{r}
 #| include: false
 

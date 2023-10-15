@@ -22,7 +22,7 @@ book:
         - inference.qmd
         - two_samples.qmd
         - more_samples.qmd
-        #- categorical.qmd
+        - categorical.qmd
         - correlation.qmd
         - linear.qmd
     - part: "Jamovi LAB"
